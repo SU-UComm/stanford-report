@@ -1,0 +1,14 @@
+{
+  "name": "stanford-components",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "Run the build script",
+    "deploy": "Increment the version of all the components and deploy it to component service"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}
