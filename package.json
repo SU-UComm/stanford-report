@@ -3,12 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "Run the build script",
+    "build": "node ./build-components.js",
     "deploy": "Increment the version of all the components and deploy it to component service"
   },
   "author": "",
   "license": "ISC",
+  "type": "module",
   "devDependencies": {
+    "esbuild": "^0.19.5",
+    "glob": "^10.3.10",
+    "rimraf": "^5.0.5",
     "tailwindcss": "^3.3.5"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
