@@ -1,0 +1,71 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "featured-content",
+  "version": "0.0.1",
+  "namespace": "stanford",
+  "description": "",
+  "displayName": "",
+  "mainFunction": "main",
+  "icon": {
+    "id": "call_to_action",
+    "color": {
+      "type": "enum",
+      "value": "blue"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.js",
+      "input": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@17/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "preview.html"
+          }
+        }
+      }
+    }
+  }
+}

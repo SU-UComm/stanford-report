@@ -4,18 +4,27 @@
   "description": "",
   "scripts": {
     "build": "node ./build-components.js",
+    "watch": "node ./build-components.js --watch",
+    "start": "npm-run-all -p start:*",
+    "start:component-service": "dxp-next cmp dev .",
+    "start:watch": "npm run watch",
     "deploy": "Increment the version of all the components and deploy it to component service"
   },
   "author": "",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "args": "^5.0.3",
+    "chalk": "^5.3.0",
     "esbuild": "^0.19.5",
     "glob": "^10.3.10",
+    "npm-run-all": "^4.1.5",
     "rimraf": "^5.0.5",
     "tailwindcss": "^3.3.5"
   },
   "dependencies": {
+    "@squiz/xaccel-component-client-helpers": "^1.9.0-beta.24",
+    "@squiz/xaccel-component-server-helpers": "^1.9.0-beta.24",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

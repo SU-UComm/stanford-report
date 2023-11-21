@@ -1,7 +1,6 @@
-import '../../packages/card/Card'
+import { renderComponent } from '@squiz/xaccel-component-server-helpers'
+import Component from '../../packages/card/Card'
 
-export default async function main(args, info) {
-  return(
-    <Card />
-  )
+export default async (args, info) => {
+  return renderComponent({ Component, componentName: 'featured-content', args });
 }
