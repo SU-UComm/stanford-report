@@ -69,7 +69,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "preview.html"
+            "path": "../../packages/globalPreview/preview.html"
           }
         }
       }
