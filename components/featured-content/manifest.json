@@ -1,8 +1,8 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "featured-content",
-  "version": "0.0.1",
-  "namespace": "stanford",
+  "version": "0.0.2",
+  "namespace": "stanford-components",
   "description": "",
   "displayName": "",
   "mainFunction": "main",
@@ -19,8 +19,29 @@
       "entry": "./dist/server.js",
       "input": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "cta_text": {
+            "type": "string",
+            "default": "View all"
+          },
+          "cta_url": {
+            "type": "string"
+          },
+          "search_url": {
+            "type": "string"
+          },
+          "search_query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "search_url",
+          "search_query"
+        ]
       },
       "output": {
         "responseType": "html",
