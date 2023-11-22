@@ -1,21 +1,21 @@
 
-# Component Service bootstapper for Services
+# Stanford University Component Service
 
 A consistent approach to Componenet Services.
 
-Checkout the full documentation here: <insert link to docs> https://squizgroup.atlassian.net/wiki/spaces/SVG/pages/3116860843/Component+Service+best+practices
+The Stanford University Component Service uses Taiwind CSS and REACT and is incorporated into this package.
+
 
 ## System dependencies
-node v16+
-cmp cli tools
-
+See official instalation steps here 
+https://docs.squiz.net/component-service/latest/getting-started/index.html#installation
 
 ## Getting started
 
-Clone this project - or get the base package here:
+Clone this project
 
 ```bash
-  git clone git@gitlab.squiz.net:services/dxp/component-service/base.git
+  git clone git@gitlab.squiz.net:stanford/components.git
 ```
 
 Go to the project directory
@@ -30,6 +30,16 @@ Install dependencies
   npm install
 ```
 
+## Directory structure
+The core directory structure is defined below:
+- /components
+  - Contains all components in the system
+- /packages
+  - Use the packages directory to store any reusable elements. Eg - cards.
+- /build
+  - The core configuration files for local development and deployment
+  - Use with caution!
+  - Tailwind build processes and other packages cab be configured here
 
 
 ## Using
@@ -49,15 +59,15 @@ Build components for deployment.
 ### Deploying components <Not finalised>
 
 ```bash
-  npm run deploy
+  npm run deploy (currently not active)
 ```
 
 ### Creating new components
-<Not finalised> Copy the Base component.
+Start with the base component by duplicating the entire `/components/__su_base` folder.
 
 
 ## External files
-Sometimes we need to include external files, such as global css files from an existing site.
-<Not finalised> how can we include head/foot includes without manually per component?
+External files, such as global css, is placed within a centralised `preview.html` file located under `/packages/__globalPreview/`. 
 
+This file is used within each components `manifest.json` and can be used to add any specific external files or additional HTML to assist with the development process.
 
