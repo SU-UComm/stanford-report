@@ -1,0 +1,15 @@
+{
+  "extends": ["@squiz/xaccel"],
+  "rules": {
+    "import/prefer-default-export": 0
+  },
+  "overrides": [
+    // Ensure that the files run in node have file extensions for local imports
+    {
+      "files": ["build/*.js"],
+      "rules": {
+        "import/extensions": [2, "always", { "ignorePackages": true }]
+      }
+    }
+  ]
+}

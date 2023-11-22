@@ -1,0 +1,37 @@
+// Babel config use for ESLint parsing of .js files
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false
+      }
+    ],
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic"
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      // Jest sets the NODE_ENV to 'test' when it runs. Jest does not like ESM so we have to output the Babel as CommonJS
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "useBuiltIns": "usage",
+            "corejs": 3
+          }
+        ],
+        [
+          "@babel/preset-react",
+          {
+            "runtime": "automatic"
+          }
+        ]
+      ]
+    }
+  }
+}
