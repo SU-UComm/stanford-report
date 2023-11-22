@@ -1,16 +1,16 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "featured-content",
+  "name": "base-component",
   "version": "0.0.2",
   "namespace": "stanford-components",
-  "description": "",
-  "displayName": "Featured content",
+  "description": "Stanford university Base component.",
+  "displayName": "Base component",
   "mainFunction": "main",
   "icon": {
-    "id": "auto_awesome_mosaic",
+    "id": "foundation",
     "color": {
       "type": "enum",
-      "value": "blue"
+      "value": "gray"
     }
   },
   "functions": [
@@ -22,25 +22,10 @@
         "properties": {
           "title": {
             "type": "string"
-          },
-          "cta_text": {
-            "type": "string",
-            "default": "View all"
-          },
-          "cta_url": {
-            "type": "string"
-          },
-          "search_url": {
-            "type": "string"
-          },
-          "search_query": {
-            "type": "string"
           }
         },
         "required": [
-          "title",
-          "search_url",
-          "search_query"
+          "title"
         ]
       },
       "output": {
