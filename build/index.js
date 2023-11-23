@@ -59,7 +59,7 @@ const { watch, minify } = args.parse(process.argv);
     allBuildPromises.push(cleanDistPromise, buildPromise);
 
     // Wait for all the promises to resolve before we log that the component has finished building
-    Promise.all(componentBuildPromises).then(() => {
+    Promise.all(componentBuildPromises).then((results) => {
       console.log(`Build for ${componentFolder} complete \n`);
     });
   }

@@ -37,7 +37,9 @@ export async function watchComponent(componentPath) {
     );
   }
 
-  console.log(`watching for changes to the tailwind css files`);
+  console.log(
+    `watching for changes to ${listFormatter.format(tailwindEntryPoints)}`
+  );
   // Build the tailwind bundle for the component
   await buildCSS(tailwindEntryPoints, clientEntryPoints, componentPath, true);
 

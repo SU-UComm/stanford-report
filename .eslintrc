@@ -10,6 +10,14 @@
       "rules": {
         "import/extensions": [2, "always", { "ignorePackages": true }]
       }
+    },
+    // Overrides for tailwind config
+    {
+      "files": ["tailwind.config.cjs"],
+      "rules": {
+        "import/no-dynamic-require": 0,
+        "global-require": "off"
+      }
     }
   ]
 }
