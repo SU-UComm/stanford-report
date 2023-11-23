@@ -1,7 +1,7 @@
 {
     "title": "You might also like",
-    "cta_text": "View all",
-    "cta_url": "https://www.squiz.net/",
-    "search_url": "https://dxp-us-stage-search.funnelback.squiz.cloud/s/search.json",
-    "search_query": "?profile=search&collection=sug~sp-stanford-university-content-hub&num_ranks=3&start_rank=1&fmo=1&sort=dmetamtxCreated&query=null"
+    "ctaText": "View all",
+    "ctaUrl": "https://www.squiz.net/",
+    "searchUrl": "https://dxp-us-stage-search.funnelback.squiz.cloud/s/search.json",
+    "searchQuery": "?profile=search&collection=sug~sp-stanford-university-content-hub&num_ranks=3&start_rank=1&fmo=1&sort=dmetamtxCreated&query=!padrenull"
 }

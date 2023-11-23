@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "featured-content",
-  "version": "0.0.2",
+  "version": "0.0.211",
   "namespace": "stanford-components",
   "description": "",
   "displayName": "Featured content",
@@ -23,24 +23,24 @@
           "title": {
             "type": "string"
           },
-          "cta_text": {
+          "ctaText": {
             "type": "string",
             "default": "View all"
           },
-          "cta_url": {
+          "ctaUrl": {
             "type": "string"
           },
-          "search_url": {
+          "searchUrl": {
             "type": "string"
           },
-          "search_query": {
+          "searchQuery": {
             "type": "string"
           }
         },
         "required": [
           "title",
-          "search_url",
-          "search_query"
+          "searchUrl",
+          "searchQuery"
         ]
       },
       "output": {

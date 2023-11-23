@@ -16,18 +16,16 @@ import React from "react";
  * @constructor
  */
 
-export default function Card(input) {
-  const {
-    title,
-    description,
-    url,
-    imageUrl,
-    imageAlt,
-    taxonomy,
-    taxonomyUrl,
-    type,
-  } = input.data;
-
+export default function Card({
+  title,
+  description,
+  url,
+  imageUrl,
+  imageAlt,
+  taxonomy,
+  taxonomyUrl,
+  type,
+}) {
   return (
     <div className="md:su-basis-1/3 su-flex-grow">
       <article className="su-component-card su-relative su-w-full">
