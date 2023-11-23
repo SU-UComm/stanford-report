@@ -1,8 +1,7 @@
-import React from 'react';
+import React from "react";
 
 // these are our specific templates for the component.
-import Heading from '../../packages/headings/Heading';
-
+import Heading from "../../packages/headings/Heading";
 
 /**
  * Base component
@@ -13,10 +12,6 @@ import Heading from '../../packages/headings/Heading';
  * @constructor
  */
 
-export default function Base({
-    title,
-}) {
-    return (
-            <Heading title={title} />
-    );
+export default function Base({ title }) {
+  return <Heading title={title} />;
 }

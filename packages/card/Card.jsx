@@ -16,16 +16,18 @@ import React from "react";
  * @constructor
  */
 
-export default function Card({
-  title,
-  description,
-  url,
-  imageUrl,
-  imageAlt,
-  taxonomy,
-  taxonomyUrl,
-  type,
-}) {
+export default function Card({ data }) {
+  const {
+    title,
+    description,
+    url,
+    imageUrl,
+    imageAlt,
+    taxonomy,
+    taxonomyUrl,
+    type,
+  } = data;
+
   return (
     <div className="md:su-basis-1/3 su-flex-grow">
       <article className="su-component-card su-relative su-w-full">
@@ -38,7 +40,6 @@ export default function Card({
             />
           </div>
         )}
-
         {taxonomy && (
           <p className="su-relative su-z-10 su-text-[16px] lg:su-text-[18px] su-leading-[20.8px] lg:su-leading-[23.4px] su-mb-[13px] su-font-semibold">
             <a
@@ -49,7 +50,6 @@ export default function Card({
             </a>
           </p>
         )}
-
         <div className="su-flex su-flex-wrap su-gap-[9px]">
           <h2 className="su-w-full su-text-[21px] lg:su-text-[24px] su-leading-[25.2px] lg:su-leading-[28.8px] su-font-serif su-my-0">
             <a

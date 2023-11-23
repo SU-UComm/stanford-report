@@ -47,7 +47,6 @@ const mapCardDataFromFunnelbackResults = ({ title, listMetadata, liveUrl }) => {
  */
 
 export default function FeaturedContent({ title, ctaText, ctaUrl, data }) {
-  console.log(`#### data: ${JSON.stringify(data)}`);
   return (
     <div className="su-w-full su-component-multicolumn">
       <Heading title={title} ctaText={ctaText} ctaUrl={ctaUrl} />
@@ -57,9 +56,9 @@ export default function FeaturedContent({ title, ctaText, ctaUrl, data }) {
         data.response.resultPacket &&
         data.response.resultPacket.results && (
           <div className="su-relative su-flex su-flex-wrap md:su-flex-nowrap su-flex-1 su-gap-[68px] md:su-gap-[72px] lg:su-gap-[102px] su-place-content-between">
-            {data.response.resultPacket.results.map((result, index) => (
+            {data.response.resultPacket.results.map((result) => (
               <Card
-                key={index}
+                key={result.rank}
                 data={mapCardDataFromFunnelbackResults(result)}
               />
             ))}
