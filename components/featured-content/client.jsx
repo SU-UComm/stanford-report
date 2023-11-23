@@ -1,4 +1,4 @@
 import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
-import Component from "../../packages/card/Title";
+import Component from "./Component";
 
 hydrateComponent({ Component, componentName: "featured-content" });

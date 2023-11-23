@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
 const path = require("path");
 const plugin = require("tailwindcss/plugin");
 
