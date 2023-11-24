@@ -1,23 +1,25 @@
 {
-  "extends": ["@squiz/xaccel"],
-  "rules": {
-    "import/prefer-default-export": 0
-  },
-  "overrides": [
-    // Ensure that the files run in node have file extensions for local imports
-    {
-      "files": ["build/*.js"],
-      "rules": {
-        "import/extensions": [2, "always", { "ignorePackages": true }]
-      }
+    "extends": ["@squiz/xaccel"],
+    "rules": {
+        "import/prefer-default-export": 0
     },
-    // Overrides for tailwind config
-    {
-      "files": ["tailwind.config.cjs"],
-      "rules": {
-        "import/no-dynamic-require": 0,
-        "global-require": "off"
-      }
-    }
-  ]
+    "overrides": [
+        // Ensure that the files run in node have file extensions for local imports
+        {
+            "files": ["build/*.js"],
+            "rules": {
+                "import/extensions": [2, "always", { "ignorePackages": true }],
+                "no-console": "off"
+            }
+        },
+        // Overrides for tailwind config
+        {
+            "files": ["tailwind.config.cjs", "global/css/plugins/**/*"],
+            "rules": {
+                "import/no-dynamic-require": 0,
+                "global-require": "off",
+                "func-names": "off"
+            }
+        }
+    ]
 }

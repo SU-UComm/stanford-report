@@ -3,18 +3,18 @@
  * Only hover/focus variants are available.
  */
 module.exports = function () {
-    return function ({addUtilities}) {
+    return function ({ addUtilities }) {
         const utilities = {};
 
-        utilities['.link-no-underline'] = {
+        utilities[".link-no-underline"] = {
             a: {
-                textDecoration: 'none',
+                textDecoration: "none",
             },
         };
 
-        utilities['.link-underline'] = {
+        utilities[".link-underline"] = {
             a: {
-                textDecoration: 'underline',
+                textDecoration: "underline",
             },
         };
 
