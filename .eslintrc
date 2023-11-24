@@ -20,6 +20,19 @@
                 "global-require": "off",
                 "func-names": "off"
             }
+        },
+        // Overrides for the tests
+        {
+            "files": [
+                "*.spec.js",
+                "*.spec.jsx",
+                "*.test.js",
+                "*.test.jsx",
+                "jest.setup.js"
+            ],
+            "rules": {
+                "import/no-extraneous-dependencies": 0
+            }
         }
     ]
 }

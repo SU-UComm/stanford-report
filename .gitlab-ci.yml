@@ -11,11 +11,6 @@ stages:
     before_script:
         - npm ci
     stage: test
-
-test:lint:
-    extends: .test
-    script:
-        - npm run test:eslint
     rules:
         - if: $CI_PIPELINE_SOURCE == "merge_request_event"
         - if: $CI_COMMIT_BRANCH == "develop"
@@ -26,3 +21,13 @@ test:lint:
               paths:
                   - "**/*.js"
                   - "**/*.cjs"
+
+test:lint:
+    extends: .test
+    script:
+        - npm run test:eslint
+
+test:unit:
+    extends: .test
+    script:
+        - npm run test:unit
