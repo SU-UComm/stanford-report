@@ -5,10 +5,10 @@
  */
 
 module.exports = function () {
-    return function ({addUtilities}) {
+    return function ({ addUtilities }) {
         const newUtilities = {
-            '.break-words': {
-                wordBreak: 'break-word',
+            ".break-words": {
+                wordBreak: "break-word",
             },
         };
 

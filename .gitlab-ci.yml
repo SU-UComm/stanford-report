@@ -1,2 +1,33 @@
 include:
-  - template: Jobs/SAST.gitlab-ci.yml
+    - template: Jobs/SAST.gitlab-ci.yml
+
+stages:
+    - test
+
+.test:
+    image: docker-hub.squiz.net/au-client-implementation/docker-images/node:16
+    interruptible: true
+    needs: []
+    before_script:
+        - npm ci
+    stage: test
+    rules:
+        - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+        - if: $CI_COMMIT_BRANCH == "develop"
+        - if: $CI_COMMIT_BRANCH == "main"
+        - if: $CI_COMMIT_BRANCH
+          changes:
+              compare_to: "refs/heads/main"
+              paths:
+                  - "**/*.js"
+                  - "**/*.cjs"
+
+test:lint:
+    extends: .test
+    script:
+        - npm run test:eslint
+
+test:unit:
+    extends: .test
+    script:
+        - npm run test:unit

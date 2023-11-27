@@ -2,10 +2,10 @@
  * Backface visibility utility for resolving performance/rendering issues
  */
 module.exports = function () {
-    return function ({addUtilities}) {
+    return function ({ addUtilities }) {
         const newUtilities = {
-            '.backface-hidden': {
-                backfaceVisibility: 'hidden',
+            ".backface-hidden": {
+                backfaceVisibility: "hidden",
             },
         };
 
