@@ -15,12 +15,11 @@ export function GridRow({ children, classes }) {
 /**
  * Featured Grid package
  *
- * @param {string} alignment The alignment of the featured grid
  * @param {string} children The components children
  * @returns {JSX.Element}
  * @constructor
  */
-export default function FeaturedGrid({ alignment, children }) {
+export default function FeaturedGrid({ children }) {
   // align-left / align-right
 
   return (
