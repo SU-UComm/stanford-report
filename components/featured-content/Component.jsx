@@ -3,7 +3,7 @@ import React from "react";
 // these are our specific templates for the component.
 import Card from "../../packages/card/Card";
 import Heading from "../../packages/headings/Heading";
-import FeaturedGrid, { GridRow } from "../../packages/grids/FeaturedGrid";
+import { FeaturedGrid, GridRow } from "../../packages/grids/Grids";
 
 const mapCardDataFromFunnelbackResults = ({ title, listMetadata, liveUrl }) => {
   const description =
@@ -55,14 +55,14 @@ export default function FeaturedContent({
   alignment,
 }) {
   return (
-    <div className="su-w-full su-component-multicolumn">
+    <>
       <Heading title={title} ctaText={ctaText} ctaUrl={ctaUrl} />
 
       {data &&
         data.response &&
         data.response.resultPacket &&
         data.response.resultPacket.results && (
-          <FeaturedGrid alignment={alignment}>
+          <FeaturedGrid>
             <GridRow classes="md:su-basis-[58.333%] lg:su-basis-[64.5%] su-flex-grow">
               <Card
                 key={data.response.resultPacket.results[0].rank}
@@ -92,6 +92,6 @@ export default function FeaturedContent({
             </GridRow>
           </FeaturedGrid>
         )}
-    </div>
+    </>
   );
 }
