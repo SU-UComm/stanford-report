@@ -35,6 +35,9 @@
           },
           "searchQuery": {
             "type": "string"
+          },
+          "alignment": {
+            "type": "string"
           }
         },
         "required": [
