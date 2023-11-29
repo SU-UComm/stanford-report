@@ -3,7 +3,7 @@
  */
 
 module.exports = function () {
-    return {
-        DEFAULT: '250ms',
-    };
+  return {
+    DEFAULT: "250ms",
+  };
 };

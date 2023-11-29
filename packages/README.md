@@ -1,3 +1,3 @@
-# ????
+# Packages
 
-This folder contains reusable pieces of code, used between multiple components.
+This folder contains small, reuseble components that can be used within any other component.
