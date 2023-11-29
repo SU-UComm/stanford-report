@@ -10,53 +10,50 @@ import { buildCSS } from "./tailwindBuild.js";
  * @param {string} componentPath - The path to the component folder
  */
 export async function watchComponent(componentPath) {
-    // Get the entry points
-    const { serverEntryPoints, clientEntryPoints, tailwindEntryPoints } =
-        getEntryPoints(componentPath);
+  // Get the entry points
+  const { serverEntryPoints, clientEntryPoints, tailwindEntryPoints } =
+    getEntryPoints(componentPath);
 
-    // Check that we have a client entry point
-    if (clientEntryPoints.length > 0) {
-        // Define our context
-        const clientOptions = esbuildClientOptions(
-            componentPath,
-            clientEntryPoints
-        );
-
-        const clientCtx = await esbuild.context({
-            ...clientOptions,
-            plugins: [
-                ...(clientOptions.plugins || []),
-                reloadLogPlugin(componentPath, "client"),
-            ],
-        });
-
-        // Start Watching
-        await clientCtx.watch();
-        console.log(
-            `watching for changes to ${listFormatter.format(clientEntryPoints)}`
-        );
-    }
-
-    console.log(
-        `watching for changes to ${listFormatter.format(tailwindEntryPoints)}`
+  // Check that we have a client entry point
+  if (clientEntryPoints.length > 0) {
+    // Define our context
+    const clientOptions = esbuildClientOptions(
+      componentPath,
+      clientEntryPoints
     );
-    // Build the tailwind bundle for the component
-    await buildCSS(tailwindEntryPoints, clientEntryPoints, componentPath, true);
 
-    const serverOptions = esbuildServerOptions(
-        componentPath,
-        serverEntryPoints
-    );
-    const serverCtx = await esbuild.context({
-        ...serverOptions,
-        plugins: [
-            ...(serverOptions?.plugins || []),
-            reloadLogPlugin(componentPath, "server"),
-        ],
+    const clientCtx = await esbuild.context({
+      ...clientOptions,
+      plugins: [
+        ...(clientOptions.plugins || []),
+        reloadLogPlugin(componentPath, "client"),
+      ],
     });
 
-    await serverCtx.watch();
+    // Start Watching
+    await clientCtx.watch();
     console.log(
-        `watching for changes to ${listFormatter.format(serverEntryPoints)}`
+      `watching for changes to ${listFormatter.format(clientEntryPoints)}`
     );
+  }
+
+  console.log(
+    `watching for changes to ${listFormatter.format(tailwindEntryPoints)}`
+  );
+  // Build the tailwind bundle for the component
+  await buildCSS(tailwindEntryPoints, clientEntryPoints, componentPath, true);
+
+  const serverOptions = esbuildServerOptions(componentPath, serverEntryPoints);
+  const serverCtx = await esbuild.context({
+    ...serverOptions,
+    plugins: [
+      ...(serverOptions?.plugins || []),
+      reloadLogPlugin(componentPath, "server"),
+    ],
+  });
+
+  await serverCtx.watch();
+  console.log(
+    `watching for changes to ${listFormatter.format(serverEntryPoints)}`
+  );
 }

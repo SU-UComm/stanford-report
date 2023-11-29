@@ -1,6 +1,13 @@
-import React from "react";
+/**
+ * Card Data formatter - Funnelback
+ *
+ * @param {string} title The component title
+ * @param {object} listMetadata The Funnelback result listMetadata object
+ * @param {string} liveUrl The Funnelback Live URL
+ * @returns {object}
+ */
 
-export default function FormatCardDataFunnelback({
+export default function formatCardDataFunnelback({
   title,
   listMetadata,
   liveUrl,
