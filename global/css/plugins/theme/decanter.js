@@ -1,19 +1,19 @@
 /**
  * Decanter Variables.
  */
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = function () {
     // Shared vars.
     const fontSmoothing = {
-        '-webkit-font-smoothing': 'antialiased',
-        '-moz-osx-font-smoothing': 'grayscale',
+        "-webkit-font-smoothing": "antialiased",
+        "-moz-osx-font-smoothing": "grayscale",
     };
 
     // Psuedo storage since we don't have access to the `theme()` at this point.
     const theme = {};
     // eslint-disable-next-line global-require
-    theme.lineHeight = require('./lineHeight')();
+    theme.lineHeight = require("./lineHeight")();
 
     const modtype = {};
 
@@ -26,10 +26,10 @@ module.exports = function () {
         modtype[`type${i}`] = {
             fontSize: `${(1.15 ** i).toFixed(2)}em`,
             letterSpacing: `${(-0.01 - (i - 1) * 0.002).toFixed(3)}em`,
-            '@screen md': {
+            "@screen md": {
                 fontSize: `${(1.2 ** i).toFixed(2)}em`,
             },
-            '@screen lg': {
+            "@screen lg": {
                 fontSize: `${(1.25 ** i).toFixed(2)}em`,
             },
         };
@@ -38,34 +38,34 @@ module.exports = function () {
     // Returned values.
     return {
         base: {
-            rootFontSize: '62.5%',
-            baseLineHeight: '1.5',
+            rootFontSize: "62.5%",
+            baseLineHeight: "1.5",
             fontSmoothing,
-            inputFontSize: '1.8rem',
-            modularScale: '1.25',
+            inputFontSize: "1.8rem",
+            modularScale: "1.25",
         },
         screenMargins: {
-            xs: '20px',
-            sm: '30px',
-            md: '50px',
-            lg: '80px',
-            xl: '100px',
-            '2xl': '100px',
+            xs: "20px",
+            sm: "30px",
+            md: "50px",
+            lg: "80px",
+            xl: "100px",
+            "2xl": "100px",
         },
         // Shared settings between base and components.
         typography: {
             headings: {
                 lineHeight: theme.lineHeight.display,
-                marginBottom: '0.6em',
-                clear: 'both',
+                marginBottom: "0.6em",
+                clear: "both",
                 fontWeight: defaultTheme.fontWeight.bold,
                 a: {
-                    textDecoration: 'none',
+                    textDecoration: "none",
                     fontWeight: defaultTheme.fontWeight.bold,
                 },
             },
             type0: {
-                fontSize: '1em', // Base step for our modular typography system
+                fontSize: "1em", // Base step for our modular typography system
             },
             ...modtype,
         },

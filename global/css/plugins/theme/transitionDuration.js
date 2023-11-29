@@ -4,6 +4,6 @@
 
 module.exports = function () {
     return {
-        DEFAULT: '250ms',
+        DEFAULT: "250ms",
     };
 };

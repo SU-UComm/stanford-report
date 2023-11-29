@@ -1,48 +1,58 @@
 {
-  "name": "stanford-components",
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "build": "node ./build/index.js",
-    "watch": "npm-run-all -p watch:*",
-    "watch:js": "node ./build/index.js --watch",
-    "start": "npm-run-all -p start:*",
-    "start:component-service": "dxp-next cmp dev .",
-    "start:watch": "npm run watch",
-    "deploy": "Increment the version of all the components and deploy it to component service"
-  },
-  "author": "",
-  "license": "ISC",
-  "type": "module",
-  "devDependencies": {
-    "@babel/eslint-parser": "^7.23.3",
-    "@babel/preset-env": "^7.23.3",
-    "@babel/preset-react": "^7.23.3",
-    "@squiz/eslint-config-xaccel": "^0.3.4",
-    "args": "^5.0.3",
-    "autoprefixer": "^10.4.16",
-    "chalk": "^5.3.0",
-    "esbuild": "^0.19.5",
-    "esbuild-postcss": "^0.0.4",
-    "espree": "^9.6.1",
-    "glob": "^10.3.10",
-    "memoizee": "^0.4.15",
-    "node-fetch": "^2.7.0",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.31",
-    "rimraf": "^5.0.5",
-    "tailwindcss": "^3.3.5"
-  },
-  "dependencies": {
-    "@squiz/xaccel-component-client-helpers": "^1.9.0-beta.24",
-    "@squiz/xaccel-component-server-helpers": "^1.9.0-beta.24",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/forms": "^0.5.7",
-    "object-hash": "^3.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "volta": {
-    "node": "18.18.2"
-  }
+    "name": "stanford-components",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "build": "node ./build/index.js",
+        "watch": "npm-run-all -p watch:*",
+        "watch:js": "node ./build/index.js --watch",
+        "watch:unit": "jest --watch",
+        "start": "npm-run-all -p start:*",
+        "start:component-service": "dxp-next cmp dev .",
+        "start:watch": "npm run watch",
+        "test": "npm-run-all -p test:*",
+        "test:eslint": "eslint .",
+        "test:unit": "jest",
+        "test:coverage": "jest --coverage",
+        "deploy": "Increment the version of all the components and deploy it to component service"
+    },
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "devDependencies": {
+        "@babel/eslint-parser": "^7.23.3",
+        "@babel/preset-env": "^7.23.3",
+        "@babel/preset-react": "^7.23.3",
+        "@squiz/eslint-config-xaccel": "^0.3.4",
+        "@testing-library/jest-dom": "^6.1.4",
+        "@testing-library/react": "^12.1.5",
+        "args": "^5.0.3",
+        "autoprefixer": "^10.4.16",
+        "chalk": "^5.3.0",
+        "core-js": "^3.33.3",
+        "esbuild": "^0.19.5",
+        "esbuild-postcss": "^0.0.4",
+        "espree": "^9.6.1",
+        "glob": "^10.3.10",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "memoizee": "^0.4.15",
+        "node-fetch": "^2.7.0",
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.4.31",
+        "rimraf": "^5.0.5",
+        "tailwindcss": "^3.3.5"
+    },
+    "dependencies": {
+        "@squiz/xaccel-component-client-helpers": "^1.9.0-beta.24",
+        "@squiz/xaccel-component-server-helpers": "^1.9.0-beta.24",
+        "@tailwindcss/aspect-ratio": "^0.4.2",
+        "@tailwindcss/forms": "^0.5.7",
+        "object-hash": "^3.0.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
+    "volta": {
+        "node": "18.18.2"
+    }
 }
