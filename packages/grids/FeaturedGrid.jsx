@@ -1,5 +1,6 @@
 import React from "react";
-import { FeaturedGridContent } from "./Grids";
+import hash from "object-hash";
+import { FeaturedGridContent } from "./FeaturedGridContent";
 
 /**
  * Featured Grid package
@@ -28,15 +29,15 @@ export function FeaturedGrid({ items, alignment = "left" }) {
               : "",
           ].join(" ")}
         >
-          {items.map((item, i) =>
-            i !== 0 ? (
-              <FeaturedGridContent key={i} placement={i}>
+          {items.map((item, i) => {
+            return i !== 0 ? (
+              <FeaturedGridContent key={hash.MD5(item.props)} placement={i}>
                 {item}
               </FeaturedGridContent>
             ) : (
               ""
-            )
-          )}
+            );
+          })}
         </div>
       </div>
     </div>
