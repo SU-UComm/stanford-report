@@ -1,0 +1,44 @@
+import React from "react";
+import { FeaturedGridContent } from "./Grids";
+
+/**
+ * Featured Grid package
+ *
+ * @param {string} children The components children
+ * @returns {JSX.Element}
+ * @constructor
+ */
+export function FeaturedGrid({ items, alignment = "left" }) {
+  return (
+    <div className="su-w-full su-component-featured-grid">
+      <div className="su-flex su-flex-wrap md:su-flex-nowrap su-gap-[68px] md:su-gap-[72px] lg:su-gap-[160px]">
+        {items[0] && (
+          <FeaturedGridContent placement={1} alignment={alignment}>
+            {items[0]}
+          </FeaturedGridContent>
+        )}
+        <div
+          className={[
+            "su-relative su-flex su-flex-wrap md:su-items-center md:su-content-center su-gap-[80px] md:su-gap-[72px] lg:su-gap-[76px] md:su-basis-[39.5%] lg:su-basis-[30%] su-flex-grow before:su-w-full before:md:su-w-[1px] before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[1px] before:md:su-h-full",
+            alignment === "left"
+              ? "before:su-left-0 before:su-top-[-35px] before:md:su-top-0 before:md:su-left-[-36px] before:lg:su-left-[-80px]"
+              : "",
+            alignment === "right"
+              ? "before:su-right-0 before:su-top-[-35px] before:md:su-top-0 before:md:su-right-[-36px] before:lg:su-right-[-80px]"
+              : "",
+          ].join(" ")}
+        >
+          {items.map((item, i) =>
+            i !== 0 ? (
+              <FeaturedGridContent key={i} placement={i}>
+                {item}
+              </FeaturedGridContent>
+            ) : (
+              ""
+            )
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
