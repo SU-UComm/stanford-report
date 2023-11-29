@@ -1,5 +1,19 @@
 import React from "react";
 
+/**
+* Renders out the linked heading, as seen here: https://www.figma.com/file/Fxe0NRKM09lCA3oCkHXHwB/FINAL----Landing-Pages----Home?type=design&node-id=1440-21954&mode=dev
+*
+* @param {string} title
+* The main title
+*
+* @param {string} ctaText
+* The link's call to action text
+*
+* @param {string} ctaUrl
+* The call to action URL
+*
+* @return {JSX.element}
+*/
 export function LinkedHeading ({ title, ctaText, ctaUrl }) {
   return (
     <div className="su-component-line-heading su-flex su-flex-wrap su-items-center md:su-items-end su-gap-[5px] su-gap-x-[13px] md:su-gap-[13px]">
