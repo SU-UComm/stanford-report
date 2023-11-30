@@ -23,6 +23,8 @@ import { default as VerticalCard } from "./verticalCard.jsx";
 * 
 * @param {bool} hideImages
 * Determines if the card should display images or not.
+*
+* @return {JSX.Element}
 */
 export default function Card ({ data, cardType, cardSize, showDescriptionOnMobile, hideImages }) {
 
