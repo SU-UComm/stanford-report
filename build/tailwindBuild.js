@@ -14,9 +14,13 @@ export function resolveImport(relativePath, filePath) {
 
 function processNode(node, entryPoint) {
   let contentPaths = [];
+  console.log(node.type);
   // Check if this is an import declaration and it is local
   if (
-    node?.type === "ImportDeclaration" &&
+    (node?.type === "ImportDeclaration" ||
+      node?.type === "ExportDefaultDeclaration" ||
+      node?.type === "ExportNamedDeclaration") &&
+    node?.source?.value &&
     fs.existsSync(resolveImport(node?.source?.value, entryPoint))
   ) {
     // eslint-disable-next-line no-use-before-define
