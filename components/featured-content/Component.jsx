@@ -2,7 +2,7 @@ import React from "react";
 
 // these are our specific templates for the component.
 import Card from "../../packages/card/Card";
-import Heading from "../../packages/headings/Heading";
+import { LinkedHeading } from "../../packages/headings/Heading";
 import { FeaturedGrid } from "../../packages/grids/Grids";
 
 /**
@@ -26,7 +26,7 @@ export default function FeaturedContent({
 }) {
   return (
     <>
-      <Heading title={title} ctaText={ctaText} ctaUrl={ctaUrl} />
+      <LinkedHeading title={title} ctaText={ctaText} ctaUrl={ctaUrl} />
 
       <FeaturedGrid
         alignment={alignment}
