@@ -28,7 +28,7 @@ export function FeaturedGridContent({
   }
   // Supplementary, top position
   if (placement === 2) {
-    <div className="su-relative su-w-full">{children}</div>;
+    return <div className="su-relative su-w-full">{children}</div>;
   }
   // Catch all for all additional supplementary items (3+)
   return (
