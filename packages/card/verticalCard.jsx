@@ -1,9 +1,9 @@
 import React from "react";
 
 function titleSize (size) {
-    if (size === "featured") return "su-text-[35px] lg:su-text-[40px] xl:su-text-[43px]";
+    if (size === "featured") return "su-text-[35px] md:su-text-[40px] lg:su-text-[43px]";
     else if (size === "medium") return "su-text-[21px] lg:su-text-[24px]";
-    else if (size === "small") return "su-text-[21px] xl:su-text-[24px]";
+    else if (size === "small") return "su-text-[21px] lg:su-text-[24px]";
 }
 
 function typeIcon (type) {

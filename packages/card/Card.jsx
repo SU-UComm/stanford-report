@@ -1,6 +1,6 @@
 import React from "react";
 
-import { default as VerticalCard } from "./VerticalCard";
+import { default as VerticalCard } from "./verticalCard.jsx";
 
 /**
 * This component orchestrates the type of card
