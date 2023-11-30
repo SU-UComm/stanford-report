@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "featured-content",
-  "version": "0.0.211",
+  "version": "0.0.3",
   "namespace": "stanford-components",
   "description": "",
   "displayName": "Featured content",
@@ -21,33 +21,108 @@
         "type": "object",
         "properties": {
           "title": {
+            "title": "Heading",
+            "default": "Add a title",
             "type": "string"
           },
           "ctaText": {
+            "title": "Heading: Additional link text",
             "type": "string",
             "default": "View all"
           },
           "ctaUrl": {
-            "type": "string"
-          },
-          "searchUrl": {
-            "type": "string"
-          },
-          "searchQuery": {
+            "title": "Heading: Additional link URL",
             "type": "string"
           },
           "alignment": {
-            "type": "string",
+            "title": "Featured alignment",
+            "default": "left",
             "enum": [
               "left",
               "right"
             ]
+          },
+          "source": {
+            "title": "Content source",
+            "default": "Search",
+            "enum": [
+              "Search",
+              "Select"
+            ]
           }
         },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "source": {
+                  "const": "Search"
+                }
+              },
+              "required": [
+                ""
+              ]
+            },
+            "then": {
+              "properties": {
+                "searchUrl": {
+                  "type": "string",
+                  "title": "The Funnelback search JSON endpoint",
+                  "default": ""
+                },
+                "searchQuery": {
+                  "type": "string",
+                  "title": "The Funnelback search query",
+                  "default": "?"
+                }
+              },
+              "required": [
+                "searchUrl",
+                "searchQuery"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "source": {
+                  "const": "Select"
+                }
+              },
+              "required": [
+                ""
+              ]
+            },
+            "then": {
+              "properties": {
+                "featured": {
+                  "type": "string",
+                  "title": "Select Featured content <SquizLink>"
+                },
+                "supporting_01": {
+                  "type": "string",
+                  "title": "Select the first supporting feature <SquizLink>"
+                },
+                "supporting_02": {
+                  "type": "string",
+                  "title": "Select the second supporting feature <SquizLink>"
+                }
+              },
+              "required": [
+                "featured",
+                "supporting_01",
+                "supporting_02"
+              ]
+            }
+          },
+          {
+            "required": [
+              "source"
+            ]
+          }
+        ],
         "required": [
-          "title",
-          "searchUrl",
-          "searchQuery"
+          "source"
         ]
       },
       "output": {
