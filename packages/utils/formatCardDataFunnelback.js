@@ -31,8 +31,9 @@ export default function formatCardDataFunnelback({
     null;
 
   const taxonomyUrl = null; // need to map this
-
   const type = null; // need to map this
+  const videoUrl = null; // need to map this
+  const date = null; // need to map this
 
   return {
     title,
@@ -43,5 +44,7 @@ export default function formatCardDataFunnelback({
     taxonomy,
     taxonomyUrl,
     type,
+    videoUrl,
+    date,
   };
 }
