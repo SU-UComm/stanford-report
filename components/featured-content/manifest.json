@@ -37,7 +37,11 @@
             "type": "string"
           },
           "alignment": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+		"left",
+		"right",
+            ]
           }
         },
         "required": [
