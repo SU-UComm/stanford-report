@@ -39,8 +39,8 @@
           "alignment": {
             "type": "string",
             "enum": [
-		"left",
-		"right",
+              "left",
+              "right"
             ]
           }
         },
