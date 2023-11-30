@@ -24,7 +24,7 @@ import { default as VerticalCard } from "./verticalCard.jsx";
 * @param {bool} hideImages
 * Determines if the card should display images or not.
 */
-export default function Card ({ data, cardType, cardSize, limitedDescription, hideImages }) {
+export default function Card ({ data, cardType, cardSize, showDescriptionOnMobile, hideImages }) {
 
     // orchestrate the type of card to output
     switch (cardType) {
@@ -39,7 +39,7 @@ export default function Card ({ data, cardType, cardSize, limitedDescription, hi
                 <VerticalCard 
                     data={ data }
                     cardSize={ cardSize }
-                    limitedDescription={ limitedDescription }
+                    showDescriptionOnMobile={ showDescriptionOnMobile }
                     hideImages={ hideImages }
                 />
             );
