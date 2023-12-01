@@ -93,7 +93,7 @@ export default function VerticalCard({
       data-testid="vertical-card"
     >
       {displayImages && imageUrl && (
-        <div className="su-relative su-block su-aspect-[50/33] su-mb-[19px]">
+        <div className="su-relative su-block su-aspect-[50/33] su-mb-[19px]" data-testid="vertical-card-image-wrapper">
           <img
             className="su-absolute su-object-cover su-object-center su-w-full su-h-full"
             src={imageUrl}

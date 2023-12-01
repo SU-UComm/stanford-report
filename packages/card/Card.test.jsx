@@ -29,4 +29,22 @@ describe("Card", () => {
 
     expect(verticalCardElement).toBeInTheDocument();
   });
+
+  test("when hide images is set", () => {
+    render(<Card data={testData} cardType="vertical" hideImages />);
+
+    const image = screen.queryByTestId("vertical-card-image");
+
+    expect(image).toBe(null);
+  });
+
+  test("when hide images is not set", () => {
+    const data = { ...testData, imageUrl: "https://picsum.photos/500/330" };
+
+    render(<Card data={data} cardType="vertical" hideImages={false} />);
+
+    const image = screen.getByTestId("vertical-card-image-wrapper");
+
+    expect(image).toBeInTheDocument();
+  });
 });
