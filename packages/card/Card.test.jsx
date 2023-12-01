@@ -14,45 +14,19 @@ const testData = {
 };
 
 describe("Card", () => {
-  it("should render the component", () => {
-    render(<Card data={testData} />);
-    const article = document.querySelector("article");
-    expect(article).toBeInTheDocument();
+  test("when a specific card type is passed the vertical card is not shown", () => {
+    render(<Card data={testData} cardType="horizontal" />);
+
+    const verticalCardElement = screen.queryByTestId("vertical-card");
+
+    expect(verticalCardElement).toBeNull();
   });
 
-  it("should render an image when passed an image url", () => {
-    render(<Card data={{ ...testData, imageUrl: "https://example.com" }} />);
-    const image = document.querySelector("img");
-    expect(image).toBeInTheDocument();
-  });
+  test("when no card type is passed a vertical card should be shown", () => {
+    render(<Card data={testData} cardType={undefined} />);
 
-  it("should render the correct image url when passed", () => {
-    const imageUrl = "https://example.com/";
-    render(<Card data={{ ...testData, imageUrl }} />);
-    const image = document.querySelector("img");
-    expect(image.src).toBe(imageUrl);
-  });
+    const verticalCardElement = screen.getByTestId("vertical-card");
 
-  it("should render the correct image alt tag when passed", () => {
-    const imageUrl = "https://example.com/";
-    const imageAlt = "alt desc";
-    render(<Card data={{ ...testData, imageUrl, imageAlt }} />);
-    const image = document.querySelector("img");
-    expect(image.alt).toBe(imageAlt);
-  });
-
-  it("should render the taxonomy when passed", () => {
-    const taxonomy = "test taxonomy";
-    render(<Card data={{ ...testData, taxonomy }} />);
-    const taxonomyElement = screen.getByText(taxonomy);
-    expect(taxonomyElement).toBeInTheDocument();
-  });
-
-  it("should render the taxonomy with the correct link when passed", () => {
-    const taxonomy = "test taxonomy";
-    const taxonomyUrl = "https://example.com/";
-    render(<Card data={{ ...testData, taxonomy, taxonomyUrl }} />);
-    const taxonomyElement = screen.getByText(taxonomy);
-    expect(taxonomyElement.href).toBe(taxonomyUrl);
+    expect(verticalCardElement).toBeInTheDocument();
   });
 });
