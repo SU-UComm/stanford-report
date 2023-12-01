@@ -1,7 +1,7 @@
 import React from "react";
 
 // these are our specific templates for the component.
-import Heading from "../../packages/headings/Heading";
+import { LinkedHeading } from "../../packages/headings/LinkedHeading";
 
 /**
  * Base component
@@ -13,5 +13,5 @@ import Heading from "../../packages/headings/Heading";
  */
 
 export default function Base({ title }) {
-  return <Heading title={title} />;
+  return <LinkedHeading title={title} />;
 }

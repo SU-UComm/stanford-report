@@ -14,7 +14,6 @@ export function resolveImport(relativePath, filePath) {
 
 function processNode(node, entryPoint) {
   let contentPaths = [];
-  console.log(node.type);
   // Check if this is an import declaration and it is local
   if (
     (node?.type === "ImportDeclaration" ||
