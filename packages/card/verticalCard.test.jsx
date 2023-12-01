@@ -33,4 +33,12 @@ describe("Vertical Card", () => {
 
     expect(image).toBe(null);
   });
+
+  test("when hide image is not set and no URL for the image is provided it should not be shown.", () => {
+    render(<VerticalCard data={testData} cardType="vertical" />);
+
+    const image = document.querySelector("img");
+
+    expect(image).toBe(null);
+  });
 });
