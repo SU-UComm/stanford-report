@@ -25,4 +25,12 @@ describe("Vertical Card", () => {
     const image = document.querySelector("img");
     expect(image).toBeInTheDocument();
   });
+
+  test("when hide images is set", () => {
+    render(<VerticalCard data={testData} cardType="vertical" hideImages />);
+
+    const image = document.querySelector("img");
+
+    expect(image).toBe(null);
+  });
 });
