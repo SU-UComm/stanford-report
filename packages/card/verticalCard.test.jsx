@@ -35,7 +35,9 @@ describe("Vertical Card", () => {
   });
 
   test("when hide image is not set and no URL for the image is provided it should not be shown.", () => {
-    render(<VerticalCard data={testData} cardType="vertical" />);
+    render(
+      <VerticalCard data={testData} cardType="vertical" hideImages={false} />
+    );
 
     const image = document.querySelector("img");
 
