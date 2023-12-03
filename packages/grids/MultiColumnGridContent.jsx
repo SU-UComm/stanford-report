@@ -1,29 +1,35 @@
 import React from "react";
+import hash from "object-hash";
 
 /**
- * Multicolumn Grid Content helper
+ * Multi-column Grid Content package
  *
- * @param {string} children The components children
- * @param {string} placement The position within the grid
- * @param {string} gridColumns The total number of columns in the grid
+ * @param {component} children The child elements for this content placement
+ * @param {string} placement The position within the multicolumn grid from left to right
+ * @param {string} totalColumns The total number of columns for this grid
  * @returns {JSX.Element}
  * @constructor
  */
-export function MultiColumnGridContent({ children, placement, gridColumns }) {
-  // First column
-  if (placement === 1) {
-    return (
-      <div
-        className={[
-          "md:su-basis-[58.333%] lg:su-basis-[64.5%] su-flex-grow",
-        ].join(" ")}
-      >
-        {children}
-      </div>
-    );
-  }
+export function MultiColumnGridContent({
+  children,
+  placement,
+  totalColumns,
+  separator = false,
+}) {
+  const widthClasses =
+    totalColumns === 2 ? "md:su-basis-1/2" : "md:su-basis-1/3";
+  const separatorClasses =
+    totalColumns === 2
+      ? "before:su-w-full before:md:su-w-[1px] before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[1px] before:md:su-h-full before:su-left-0 before:su-top-[-34px] before:md:su-top-0 before:md:su-left-[-36px] before:lg:su-left-[-80px]"
+      : "before:su-w-full before:md:su-w-[1px] before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[1px] before:md:su-h-full before:su-left-0 before:su-top-[-34px] before:md:su-top-0 before:md:su-left-[-36px] before:lg:su-left-[-51px]";
   return (
-    <div className="su-relative su-w-full before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[1px] before:su-left-0 before:su-top-[-40px] md:before:su-top-[-36px] lg:before:su-top-[-38px]">
+    <div
+      className={[
+        "su-relative su-flex-grow",
+        widthClasses,
+        separator === true && placement !== 0 ? separatorClasses : "",
+      ].join(" ")}
+    >
       {children}
     </div>
   );

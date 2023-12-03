@@ -1,34 +1,37 @@
 import React from "react";
 import hash from "object-hash";
-import { MultiColumnGridContent } from "./FeaturedGridContent";
+import { MultiColumnGridContent } from "./MultiColumnGridContent";
 
 /**
  * MultiColumn Grid package
  *
- * @param {string} children The components children
+ * @param {string} items The elements to display in the grid
  * @returns {JSX.Element}
  * @constructor
  */
-export function FeaturedGrid({ items }) {
-  const twoColumnClasses = "";
+export function MultiColumnGrid({ items, separator = false }) {
+  const gridItems = items.length > 3 ? items.slice(0, 2) : items;
+  const totalColumns = items.length;
+  const gapClasses =
+    totalColumns === 2
+      ? "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[160px]"
+      : "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[102px]";
 
-  const threeColumnClasses = "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[102px]";
-  const gridColumnCount = items.length;
-
-  return (
-    <div className="su-w-full su-component-featured-grid">
+  return gridItems > 1 ? (
+    <div className="su-w-full su-component-multicolumn">
       <div
         className={[
           "su-relative su-flex su-flex-wrap md:su-flex-nowrap su-flex-1 su-place-content-between",
-          gridColumnCount === 2 ? twoColumnClasses : threeColumnClasses,
+          gapClasses,
         ].join(" ")}
       >
-        {items.map((item, i) => {
+        {gridItems.map((item, i) => {
           return (
             <MultiColumnGridContent
               key={hash.MD5(item.props)}
               placement={i}
-              gridColumns={gridColumnCount}
+              totalColumns={totalColumns}
+              separator={separator}
             >
               {item}
             </MultiColumnGridContent>
@@ -36,5 +39,7 @@ export function FeaturedGrid({ items }) {
         })}
       </div>
     </div>
+  ) : (
+    ""
   );
 }
