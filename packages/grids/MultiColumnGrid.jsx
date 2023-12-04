@@ -17,7 +17,7 @@ export function MultiColumnGrid({ items, separator = false }) {
       ? "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[160px]"
       : "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[102px]";
 
-  return gridItems > 1 ? (
+  return gridItems.length > 1 ? (
     <div className="su-w-full su-component-multicolumn">
       <div
         className={[
