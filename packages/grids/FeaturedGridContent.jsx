@@ -4,7 +4,7 @@ import React from "react";
  * GridContent helper
  *
  * @param {string} children The children (content) inside the component
- * @param {string} placement The position within the grid
+ * @param {number} placement The position within the grid
  * @param {string} alignment The alignment of the featured grid item (placement 1)
  * @returns {JSX.Element}
  * @constructor
