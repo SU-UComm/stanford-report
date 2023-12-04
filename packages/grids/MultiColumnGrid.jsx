@@ -6,6 +6,7 @@ import { MultiColumnGridContent } from "./MultiColumnGridContent";
  * MultiColumn Grid package
  *
  * @param {string} items The elements to display in the grid
+ * @param {boolean} separator Display line separators, defaults to false (off)
  * @returns {JSX.Element}
  * @constructor
  */
