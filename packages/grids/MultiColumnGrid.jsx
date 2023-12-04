@@ -1,18 +1,52 @@
 import React from "react";
+import hash from "object-hash";
+import { MultiColumnGridContent } from "./MultiColumnGridContent";
 
 /**
- * Multi-column Grid package
+ * MultiColumn Grid package
  *
- * @param {string} children The components children
+ * @param {string} items The elements to display in the grid
+ * @param {boolean} separator Display line separators, defaults to false (off)
  * @returns {JSX.Element}
  * @constructor
  */
-export function MultiColumnGrid({ children }) {
-  return (
+
+export function MultiColumnGrid({ items, separator = false }) {
+  const MAXIMUM_ITEMS = 3;
+  const MINIMUM_ITEMS = 1;
+
+  const gapClasses = {
+    "2col": "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[160px]",
+    "3col": "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[102px]",
+  };
+
+  const gridItems =
+    items.length > MAXIMUM_ITEMS ? items.slice(0, MAXIMUM_ITEMS - 1) : items;
+  const totalColumns = items.length;
+
+  return gridItems.length > MINIMUM_ITEMS ? (
     <div className="su-w-full su-component-multicolumn">
-      <div className="su-relative su-flex su-flex-wrap md:su-flex-nowrap su-flex-1 su-gap-[68px] md:su-gap-[72px] lg:su-gap-[102px] su-place-content-between">
-        {children}
+      <div
+        className={[
+          "su-relative su-flex su-flex-wrap md:su-flex-nowrap su-flex-1 su-place-content-between",
+          gapClasses[`${totalColumns}col`],
+        ].join(" ")}
+      >
+        {gridItems.map((item, i) => {
+          return (
+            <MultiColumnGridContent
+              key={hash.MD5(item.props)}
+              placement={i}
+              totalColumns={totalColumns}
+              separator={separator}
+            >
+              {item}
+            </MultiColumnGridContent>
+          );
+        })}
       </div>
     </div>
+  ) : (
+    ""
   );
 }
