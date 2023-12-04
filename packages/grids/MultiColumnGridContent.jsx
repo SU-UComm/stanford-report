@@ -1,5 +1,4 @@
 import React from "react";
-import hash from "object-hash";
 
 /**
  * Multi-column Grid Content package
