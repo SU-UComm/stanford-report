@@ -5,7 +5,8 @@ import { FeaturedGridContent } from "./FeaturedGridContent";
 /**
  * Featured Grid package
  *
- * @param {string} children The components children
+ * @param {array} items The content to output within the grid, usually React components
+ * @param {string} alignment The alignment of the featured grid item
  * @returns {JSX.Element}
  * @constructor
  */
@@ -16,7 +17,7 @@ export function FeaturedGrid({ items, alignment = "left" }) {
   const alignRightClasses =
     "before:su-right-0 before:su-top-[-35px] before:md:su-top-0 before:md:su-right-[-36px] before:lg:su-right-[-80px]";
 
-  return (
+  return items.length > 1 ? (
     <div className="su-w-full su-component-featured-grid">
       <div className="su-flex su-flex-wrap md:su-flex-nowrap su-gap-[68px] md:su-gap-[72px] lg:su-gap-[160px]">
         {items[0] && (
@@ -43,5 +44,7 @@ export function FeaturedGrid({ items, alignment = "left" }) {
         </div>
       </div>
     </div>
+  ) : (
+    ""
   );
 }
