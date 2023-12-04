@@ -93,7 +93,10 @@ export default function VerticalCard({
       data-testid="vertical-card"
     >
       {displayImages && imageUrl && (
-        <div className="su-relative su-block su-aspect-[50/33] su-mb-[19px]" data-testid="vertical-card-image-wrapper">
+        <div
+          className="su-relative su-block su-aspect-[50/33] su-mb-[19px]"
+          data-testid="vertical-card-image-wrapper"
+        >
           <img
             className="su-absolute su-object-cover su-object-center su-w-full su-h-full"
             src={imageUrl}
@@ -103,7 +106,10 @@ export default function VerticalCard({
       )}
 
       {taxonomy && (
-        <p className="su-relative su-z-10 su-text-[16px] lg:su-text-[18px] su-leading-[20.8px] lg:su-leading-[23.4px] su-mb-[13px] su-font-semibold">
+        <p
+          data-testid="vertical-card-taxonomy"
+          className="su-relative su-z-10 su-text-[16px] lg:su-text-[18px] su-leading-[20.8px] lg:su-leading-[23.4px] su-mb-[13px] su-font-semibold"
+        >
           <a
             href={taxonomyUrl}
             className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
@@ -128,7 +134,10 @@ export default function VerticalCard({
         </h2>
 
         {type && (
-          <p className="su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-[6px] su-flex-nowrap su-items-center su-text-[16px] su-leading-[20.8px]">
+          <p
+            data-testid="vertical-card-type"
+            className="su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-[6px] su-flex-nowrap su-items-center su-text-[16px] su-leading-[20.8px]"
+          >
             {SVGMap[type.toLowerCase()] || Fragment}
             <span>{type}</span>
           </p>

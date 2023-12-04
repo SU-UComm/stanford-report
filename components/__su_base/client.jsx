@@ -1,4 +1,4 @@
-import Component from './Component'
-import { hydrateComponent } from '@squiz/xaccel-component-client-helpers';
+import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
+import Component from "./Component";
 
-hydrateComponent({ Component, componentName: 'base-component' });
+hydrateComponent({ Component, componentName: "base-component" });

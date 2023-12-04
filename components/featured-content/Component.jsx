@@ -3,6 +3,7 @@ import React from "react";
 // these are our specific templates for the component.
 import Card from "../../packages/card/Card";
 import { LinkedHeading } from "../../packages/headings/Heading";
+<<<<<<< HEAD
 
 const mapCardDataFromFunnelbackResults = ({ title, listMetadata, liveUrl }) => {
   const description =
@@ -33,6 +34,9 @@ const mapCardDataFromFunnelbackResults = ({ title, listMetadata, liveUrl }) => {
     type,
   };
 };
+=======
+import { FeaturedGrid } from "../../packages/grids/Grids";
+>>>>>>> develop
 
 /**
  * Featured content component
@@ -46,8 +50,15 @@ const mapCardDataFromFunnelbackResults = ({ title, listMetadata, liveUrl }) => {
  * @constructor
  */
 
-export default function FeaturedContent({ title, ctaText, ctaUrl, data }) {
+export default function FeaturedContent({
+  title,
+  ctaText,
+  ctaUrl,
+  data,
+  alignment,
+}) {
   return (
+<<<<<<< HEAD
     <div className="su-w-full su-component-multicolumn">
       <LinkedHeading title={title} ctaText={ctaText} ctaUrl={ctaUrl} />
 
@@ -107,6 +118,20 @@ export default function FeaturedContent({ title, ctaText, ctaUrl, data }) {
             </div>
         )}
     </div>
+=======
+    <>
+      <LinkedHeading title={title} ctaText={ctaText} ctaUrl={ctaUrl} />
+
+      <FeaturedGrid
+        alignment={alignment}
+        items={[
+          <Card data={data[0]} />,
+          <Card data={data[1]} />,
+          <Card data={data[2]} />,
+        ]}
+      />
+    </>
+>>>>>>> develop
   );
 }
 
