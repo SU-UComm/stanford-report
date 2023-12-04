@@ -10,15 +10,22 @@ import { MultiColumnGridContent } from "./MultiColumnGridContent";
  * @returns {JSX.Element}
  * @constructor
  */
+
 export function MultiColumnGrid({ items, separator = false }) {
-  const gridItems = items.length > 3 ? items.slice(0, 2) : items;
+  const MAXIMUM_ITEMS = 3;
+  const MINIMUM_ITEMS = 1;
+
+  const TWO_COLUMNS = 2;
+
+  const gridItems =
+    items.length > MAXIMUM_ITEMS ? items.slice(0, MAXIMUM_ITEMS - 1) : items;
   const totalColumns = items.length;
   const gapClasses =
-    totalColumns === 2
+    totalColumns === TWO_COLUMNS
       ? "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[160px]"
       : "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[102px]";
 
-  return gridItems.length > 1 ? (
+  return gridItems.length > MINIMUM_ITEMS ? (
     <div className="su-w-full su-component-multicolumn">
       <div
         className={[
