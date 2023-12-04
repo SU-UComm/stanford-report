@@ -6,6 +6,20 @@
   "description": "",
   "displayName": "Featured content",
   "mainFunction": "main",
+  "environment": [
+    {
+      "name": "CONTENT_API",
+      "required": true
+    },
+    {
+      "name": "CONTENT_API_KEY",
+      "required": true
+    },
+    {
+      "name": "FB_JSON_URL",
+      "required": true
+    }
+  ],
   "icon": {
     "id": "auto_awesome_mosaic",
     "color": {
