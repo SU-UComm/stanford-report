@@ -44,17 +44,25 @@ describe("MultiColumnGrid", () => {
     expect(lineSeparators).toHaveLength(0);
   });
 
-  it("should render three columns with line separators between", () => {
+  it("should render three columns with line separators between, first item does not have separator", () => {
     render(<MultiColumnGrid items={testDataThreeColumns} separator />);
     const lineSeparators = document.querySelectorAll(".before\\:su-w-full");
+    const firstItemLineSeparator = document.querySelectorAll(
+      '[data-test="column-0"].before\\:su-w-full'
+    );
     expect(lineSeparators[0]).toBeInTheDocument();
     expect(lineSeparators).toHaveLength(2);
+    expect(firstItemLineSeparator).toHaveLength(0);
   });
 
-  it("should render two columns with a line separator between", () => {
+  it("should render two columns with a line separator between, first item does not have separator", () => {
     render(<MultiColumnGrid items={testDataTwoColumns} separator />);
     const lineSeparators = document.querySelectorAll(".before\\:su-w-full");
+    const firstItemLineSeparator = document.querySelectorAll(
+      '[data-test="column-0"].before\\:su-w-full'
+    );
     expect(lineSeparators[0]).toBeInTheDocument();
     expect(lineSeparators).toHaveLength(1);
+    expect(firstItemLineSeparator).toHaveLength(0);
   });
 });
