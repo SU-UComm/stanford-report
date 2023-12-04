@@ -24,7 +24,6 @@ export function MultiColumnGridContent({
       : "before:su-w-full before:md:su-w-[1px] before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[1px] before:md:su-h-full before:su-left-0 before:su-top-[-34px] before:md:su-top-0 before:md:su-left-[-36px] before:lg:su-left-[-51px]";
   return (
     <div
-      data-test={`column-${placement}`}
       className={[
         "su-relative su-flex-grow",
         widthClasses,
