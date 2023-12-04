@@ -5,7 +5,8 @@ import React from "react";
  *
  * @param {component} children The child elements for this content placement
  * @param {string} placement The position within the multicolumn grid from left to right
- * @param {string} totalColumns The total number of columns for this grid
+ * @param {number} totalColumns The total number of columns for this grid
+ * @param {boolean} separator Display line separators, defaults to false (off)
  * @returns {JSX.Element}
  * @constructor
  */
