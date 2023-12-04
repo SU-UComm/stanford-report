@@ -1,8 +1,12 @@
 {
-  "title": "You might also like",
+  "title": "Featured Content",
   "ctaText": "View all",
-  "ctaUrl": "https://www.squiz.net/",
+  "ctaUrl": "https://www.stanford.edu/",
+  "alignment": "left",
+  "source": "Select",
   "searchUrl": "https://dxp-us-stage-search.funnelback.squiz.cloud/s/search.json",
   "searchQuery": "?profile=search&collection=sug~sp-stanford-university-content-hub&num_ranks=3&start_rank=1&fmo=1&sort=dmetamtxCreated&query=!padrenull",
-  "alignment": "left"
+  "featured": "27904",
+  "supporting_01": "29619",
+  "supporting_02": "29669"
 }
