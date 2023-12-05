@@ -9,15 +9,15 @@
   "environment": [
     {
       "name": "CONTENT_API",
-      "required": true
+      "required": false
     },
     {
       "name": "CONTENT_API_KEY",
-      "required": true
+      "required": false
     },
     {
       "name": "FB_JSON_URL",
-      "required": true
+      "required": false
     }
   ],
   "icon": {

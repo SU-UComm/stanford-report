@@ -1,27 +1,34 @@
-import fetch from "node-fetch";
 import { renderComponent } from "@squiz/xaccel-component-server-helpers";
 import Component from "./Component";
+import CardDataAdapter from "../../packages/utils/CardDataAdapter";
 
 export default async (args, info) => {
   const { CONTENT_API, CONTENT_API_KEY, FB_JSON_URL } = info.set.environment;
+  // console.log(`######${JSON.stringify(info)}`);
   let data = null;
 
   // check what data source "Search" or "Select"
   if (args.source.toLowerCase() === "search") {
     // compose and fetch the FB search results
-    const searchUrl = `${args.searchUrl}${args.searchQuery}`;
-    const fetchData = await fetch(searchUrl);
-    data = await fetchData.json();
+    const adapter = new CardDataAdapter(FB_JSON_URL + args.searchQuery, "FB");
 
-    // WE NEED A UTIL that can return formatted JSON data
-    // eg returns array of formatted results suitable for cards formatCardDataFunnelback( data);
+    data = await adapter.fetch();
   }
   // When Select, use Matix Content API
   else if (args.source.toLowerCase() === "select") {
     // get our data from the Content API
-    // args.featured
-    // arg.supporting_01
-    // arg.supporting_02
+    const adapter = new CardDataAdapter(CONTENT_API, "MX");
+
+    adapter
+      .assets(args.featured, args.supporting_01, args.supporting_02)
+      .data("metadata", "attributes", "urls", "thumbnail")
+      .request({
+        headers: {
+          Authorization: CONTENT_API_KEY,
+        },
+      });
+
+    data = await adapter.fetch();
 
     data = [
       {

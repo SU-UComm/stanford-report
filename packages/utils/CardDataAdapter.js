@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
-import formatCardDataFunnelback from "../../packages/utils/formatCardDataFunnelback";
-import formatCardDataMatrix from "../../packages/utils/formatCardDataMatrix";
+import formatCardDataFunnelback from "./formatCardDataFunnelback";
+import formatCardDataMatrix from "./formatCardDataMatrix";
 
 /**
  * Orchestrates the transformation of data from
@@ -63,24 +63,37 @@ export default class CardDataAdapter {
    * @param {CallableFunction} callback
    * Transformed data output wrapper
    *
-   * @return {void}
+   * @return {array}
    */
-  async fetch(callback) {
-    switch (this.type) {
-      case "MX":
-        this.assetIds.forEach(async (assetid) => {
-          const url = `${this.url}/${assetid}?data=${this.assetData}`;
+  async fetch() {
+    const formattedData = [];
 
-          const res = await fetch(url, this.requestProps).catch((error) => {
-            throw new Error(error);
-          });
+    if (this.type === "MX") {
+      this.assetIds.forEach(async (assetid) => {
+        const url = `${this.url}/${assetid}?data=${this.assetData}`;
 
-          const json = await res.json();
-
-          callback(formatCardDataMatrix(json));
+        const res = await fetch(url, this.requestProps).catch((error) => {
+          throw new Error(error);
         });
-        break;
-      default:
+
+        const json = await res.json();
+
+        formattedData.push(formatCardDataMatrix(json));
+      });
+
+      return formattedData;
     }
+
+    const res = await fetch(this.url, this.requestProps).catch((error) => {
+      throw new Error(error);
+    });
+
+    const json = await res.json();
+
+    json.response.resultPacket.results.forEach((result) => {
+      formattedData.push(formatCardDataFunnelback(result));
+    });
+
+    return formattedData;
   }
 }
