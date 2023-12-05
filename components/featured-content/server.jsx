@@ -2,7 +2,8 @@ import fetch from "node-fetch";
 import { renderComponent } from "@squiz/xaccel-component-server-helpers";
 import Component from "./Component";
 
-export default async (args) => {
+export default async (args, info) => {
+  const { CONTENT_API, CONTENT_API_KEY, FB_JSON_URL } = info.set.environment;
   let data = null;
 
   // check what data source "Search" or "Select"
