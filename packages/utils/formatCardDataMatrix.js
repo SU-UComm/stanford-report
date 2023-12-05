@@ -1,4 +1,16 @@
 /**
+ * Utility to check for the presence of data.
+ *
+ * @param {array} arr A matrix metadata field array. Eg: "featuredVideo": [],
+ * @returns {string|null}
+ */
+function dataChecker(arr) {
+  return typeof arr !== "undefined" && arr.length > 0 && arr[0] !== ""
+    ? arr[0]
+    : null;
+}
+
+/**
  * Card Data formatter - Matrix
  *
  * @param {object} attributes Matrix asset attributes object
@@ -7,32 +19,22 @@
  * @param {object} thumbnail Matrix asset thumbnail object
  * @returns {object}
  */
-
-export default function formatCardDataMatrix({
-  attributes,
-  metadata,
-  url,
-  thumbnail,
-}) {
-  const title = attributes.short_name;
-  const description = metadata.summary || metadata.teaser;
+export default function formatCardDataMatrix({ attributes, metadata, url }) {
+  const title = attributes.name;
   const liveUrl = url;
-  const imageUrl = (thumbnail && thumbnail.url) || null;
-  const imageAlt = (thumbnail && thumbnail.alt) || null;
-  const taxonomy = null;
-  // card taxonomy url
-  const taxonomyUrl = null; // need to map this
-  // card type (Article, Q&A, Video etc)
-  const type = (metadata.ogType && metadata.ogType[0]) || null; // need to map this
-  // card video url, when available
-  const videoUrl = null; // need to map this
-  // card date, when available
-  const date = (metadata.publishedDate && metadata.publishedDate[0]) || null; // need to map this
+  const description = dataChecker(metadata.teaser);
+  const imageUrl = dataChecker(metadata.csFeaturedImageUrl);
+  const imageAlt = dataChecker(metadata.csFeaturedImageAlt);
+  const taxonomy = dataChecker(metadata.csTaxonomyName);
+  const taxonomyUrl = dataChecker(metadata.csTaxonomyUrl);
+  const type = dataChecker(metadata.csContentTypeName);
+  const videoUrl = dataChecker(metadata.featuredVideo);
+  const date = dataChecker(metadata.publishedDate);
 
   return {
     title,
-    description,
     liveUrl,
+    description,
     imageUrl,
     imageAlt,
     taxonomy,

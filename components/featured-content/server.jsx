@@ -20,10 +20,10 @@ export default async (args, info) => {
 
     adapter
       .assets(args.featured, args.supporting_01, args.supporting_02)
-      .data("metadata", "attributes", "urls", "thumbnail")
+      .data("metadata", "attributes", "urls")
       .request({
         headers: {
-          Authorization: CONTENT_API_KEY,
+          Authorization: `Bearer ${CONTENT_API_KEY}`,
         },
       });
 
