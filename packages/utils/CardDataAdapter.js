@@ -57,11 +57,8 @@ export default class CardDataAdapter {
   }
 
   /**
-   * Fetches data from the endpoint one by one and
-   * transforms it
-   *
-   * @param {CallableFunction} callback
-   * Transformed data output wrapper
+   * Fetches card data from selected endpoints, transforms
+   * it and then outputs an array of transformed data
    *
    * @return {array}
    */
