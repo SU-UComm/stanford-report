@@ -51,18 +51,12 @@
           "alignment": {
             "title": "Featured alignment",
             "default": "left",
-            "enum": [
-              "left",
-              "right"
-            ]
+            "enum": ["left", "right"]
           },
           "source": {
             "title": "Content source",
             "default": "Search",
-            "enum": [
-              "Search",
-              "Select"
-            ]
+            "enum": ["Search", "Select"]
           }
         },
         "allOf": [
@@ -73,9 +67,7 @@
                   "const": "Search"
                 }
               },
-              "required": [
-                ""
-              ]
+              "required": [""]
             },
             "then": {
               "properties": {
@@ -90,10 +82,7 @@
                   "default": "?"
                 }
               },
-              "required": [
-                "searchUrl",
-                "searchQuery"
-              ]
+              "required": ["searchUrl", "searchQuery"]
             }
           },
           {
@@ -103,9 +92,7 @@
                   "const": "Select"
                 }
               },
-              "required": [
-                ""
-              ]
+              "required": [""]
             },
             "then": {
               "properties": {
@@ -122,22 +109,14 @@
                   "title": "Select the second supporting feature <SquizLink>"
                 }
               },
-              "required": [
-                "featured",
-                "supporting_01",
-                "supporting_02"
-              ]
+              "required": ["featured", "supporting_01", "supporting_02"]
             }
           },
           {
-            "required": [
-              "source"
-            ]
+            "required": ["source"]
           }
         ],
-        "required": [
-          "source"
-        ]
+        "required": ["source"]
       },
       "output": {
         "responseType": "html",
