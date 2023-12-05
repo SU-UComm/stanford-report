@@ -1,4 +1,5 @@
 import React from "react";
+import { ChevronRight } from "../SVG-library/SVG";
 
 /**
  * Renders out the linked heading, as seen here: https://www.figma.com/file/Fxe0NRKM09lCA3oCkHXHwB/FINAL----Landing-Pages----Home?type=design&node-id=1440-21954&mode=dev
@@ -20,10 +21,12 @@ export function LinkedHeading({ title, ctaText = "View all", ctaUrl }) {
       <h2 className="su-text-[28px] su-font-serif su-text-black dark:su-text-white md:su-text-[35px] lg:su-text-[48px] su-w-full md:su-w-auto su-mb-0">
         {title}
       </h2>
+
       <hr
         aria-hidden="true"
         className="md:su-mb-[11px] lg:su-mb-[15px] su-flex-grow su-border-none su-bg-gradient-light-red-h su-h-[4px]"
       />
+
       {ctaUrl && (
         <a
           data-test="cta"
@@ -34,21 +37,8 @@ export function LinkedHeading({ title, ctaText = "View all", ctaUrl }) {
             <span>
               {ctaText} <span className="sr-only">{title}</span>
             </span>
-            <svg
-              className="su-fill-transparent su-stroke-current"
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="19"
-              viewBox="0 0 18 19"
-              fill="none"
-            >
-              <path
-                d="M6.75 4.25L12 9.5L6.75 14.75"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+
+            <ChevronRight />
           </span>
         </a>
       )}
