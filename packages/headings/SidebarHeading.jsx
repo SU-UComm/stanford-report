@@ -13,6 +13,9 @@ import { Announcement, EventsCalendar } from "../SVG-library/SVG";
  * @param {string} headingSize
  * The semantic heading tag
  *
+ * @param {string} color
+ * The colour variant to display
+ *
  * @return {JSX.element}
  */
 export function SidebarHeading({

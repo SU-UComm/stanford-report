@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import hash from "object-hash";
 import { SidebarHeading } from "../headings/Heading";
 import { ChevronRight, ExternalArrow } from "../SVG-library/SVG";
@@ -6,14 +6,23 @@ import { ChevronRight, ExternalArrow } from "../SVG-library/SVG";
 /**
  * Listing displayed in a sidebar, has a heading, listing and link
  *
+ * @param {JSX.element} children
+ * The children making  up the listing
+ *
  * @param {string} title
  * The title text
  *
  * @param {string} icon
  * The icon to display before the title text
  *
- * @param {string} headingSize
- * The semantic heading tag
+ * @param {string} ctaUrl
+ * The url for the CTA below the list
+ *
+ * @param {string} ctaText
+ * The text for the CTA
+ *
+ * @param {string} ctaIcon
+ * The icon displayed after the CTA text
  *
  * @return {JSX.element}
  */
