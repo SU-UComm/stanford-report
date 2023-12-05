@@ -41,7 +41,7 @@ const { watch, minify } = args.parse(process.argv);
     const componentBuildPromises = [];
 
     // Clean the previously built files
-    const cleanDistPromise = cleanDist(componentPath);
+    const cleanDistPromise = await cleanDist(componentPath);
 
     let buildPromise = null;
 
