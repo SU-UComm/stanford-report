@@ -1,6 +1,5 @@
 import React from "react";
-import Announcement from "../SVG-library/Announcement";
-import EventsCalendar from "../SVG-library/EventsCalendar";
+import { Announcement, EventsCalendar } from "../SVG-library/SVG";
 
 /**
  * Renders out the icon heading
@@ -43,7 +42,7 @@ export function SidebarHeading({
   return title !== "" ? (
     <Tag
       className={[
-        "su-component-sidebar-heading su-flex su-flex-wrap su-gap-[6px] su-my-0 su-font-sans",
+        "su-component-sidebar-heading su-w-full su-flex su-flex-wrap su-gap-[6px] su-my-0 su-font-sans",
         colorClassMap[color],
       ].join(" ")}
     >
