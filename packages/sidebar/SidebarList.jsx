@@ -35,7 +35,9 @@ export function SidebarList({
     externalarrow: "su-items-end",
   };
 
-  return (
+  const hasChildren = children !== undefined;
+
+  return hasChildren ? (
     <div
       className={[
         "su-component-sidebar-list su-flex su-flex-wrap su-gap-[27px]",
@@ -45,6 +47,7 @@ export function SidebarList({
       {children}
       {ctaUrl && (
         <a
+          data-test="cta"
           href={ctaUrl}
           className={[
             "su-transition su-justify-center md:su-justify-start su-w-full su-flex su-text-digital-red dark:su-text-dark-mode-red su-flex-nowrap su-gap-[2px] su-leading-[26.25px] su-text-[21px] su-font-semibold su-no-underline",
@@ -56,5 +59,7 @@ export function SidebarList({
         </a>
       )}
     </div>
+  ) : (
+    ""
   );
 }

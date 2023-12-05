@@ -8,6 +8,7 @@ import React from "react";
 export default function ExternalArrow() {
   return (
     <svg
+      data-testid="svg-externalarrow"
       aria-hidden="true"
       className="su-stroke-digital-red su-fill-transparent dark:su-stroke-dark-mode-red"
       xmlns="http://www.w3.org/2000/svg"

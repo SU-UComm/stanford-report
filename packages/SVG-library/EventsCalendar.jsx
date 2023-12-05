@@ -10,6 +10,7 @@ export default function EventsCalendar({ variant = DEFAULT_VARIANT }) {
   const variantsMap = {
     light: (
       <svg
+        data-testid="svg-eventscalendar-light"
         aria-hidden="true"
         width="27"
         height="32"
@@ -41,6 +42,7 @@ export default function EventsCalendar({ variant = DEFAULT_VARIANT }) {
     ),
     dark: (
       <svg
+        data-testid="svg-eventscalendar-dark"
         aria-hidden="true"
         width="27"
         height="32"

@@ -10,6 +10,7 @@ export default function Announcement({ variant = DEFAULT_VARIANT }) {
   const variantsMap = {
     light: (
       <svg
+        data-testid="svg-announcement-light"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         width="27"
@@ -38,6 +39,7 @@ export default function Announcement({ variant = DEFAULT_VARIANT }) {
     ),
     dark: (
       <svg
+        data-testid="svg-announcement-dark"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         width="27"
