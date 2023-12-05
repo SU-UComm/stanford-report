@@ -1,12 +1,7 @@
 import React from "react";
 
-<<<<<<< HEAD
-// these are our specific templates for the component.
-import { LinkedHeading } from "../../packages/headings/LinkedHeading";
-=======
 // import specific templates for the component
 import { LinkedHeading } from "../../packages/headings/Heading";
->>>>>>> develop
 
 /**
  * Base component
