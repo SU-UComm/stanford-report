@@ -29,9 +29,9 @@ import VerticalCard from "./verticalCard";
 export default function Card({
   data,
   cardType,
-  cardSize,
-  showDescriptionOnMobile,
-  hideImages,
+  cardSize = "small",
+  displayDescription = true,
+  displayThumbnail = true,
 }) {
   // orchestrate the type of card to output
   switch (cardType) {
@@ -46,8 +46,8 @@ export default function Card({
         <VerticalCard
           data={data}
           cardSize={cardSize}
-          showDescriptionOnMobile={showDescriptionOnMobile}
-          hideImages={hideImages}
+          displayDescription={displayDescription}
+          displayThumbnail={displayThumbnail}
         />
       );
   }

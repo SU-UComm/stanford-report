@@ -21,9 +21,16 @@ import {
  */
 function titleSize(size) {
   if (size === "featured")
-    return "su-text-[35px] md:su-text-[40px] lg:su-text-[43px]";
-  if (size === "medium") return "su-text-[21px] lg:su-text-[24px]";
-  if (size === "small") return "su-text-[21px] lg:su-text-[24px]";
+    return "su-text-[35px] md:su-text-[40px] lg:su-text-[43px] su-leading-[42px] md:su-leading-[48px] lg:su-leading-[51.6px]";
+  if (size === "medium")
+    return "su-text-[21px] lg:su-text-[24px] su-leading-[25.2px] lg:su-leading-[28.8px]";
+  return "su-text-[21px] lg:su-text-[24px] su-leading-[25.2px] lg:su-leading-[28.8px]";
+}
+
+function descriptionSize(size) {
+  if (size === "featured")
+    return "su-text-[18px] md:su-text-[19px] su-leading-[22.5px] md:su-leading-[23.75px] su-mt-[4px] md:su-mt-[14px]";
+  return "su-text-[19px] su-leading-[23.75px]";
 }
 
 /**
@@ -67,9 +74,9 @@ export default function VerticalCard({
     taxonomyUrl,
     type,
   },
-  cardSize,
-  showDescriptionOnMobile,
-  hideImages,
+  cardSize = "small",
+  displayDescription = true,
+  displayThumbnail = true,
 }) {
   const SVGMap = {
     article: <Article />,
@@ -79,20 +86,12 @@ export default function VerticalCard({
     book: <Book />,
   };
 
-  const displayImages = hideImages === false;
-
-  // for small cards only
-  const descriptionOnMobile =
-    cardSize === "small" && showDescriptionOnMobile === false
-      ? "su-hidden lg:su-block"
-      : "";
-
   return (
     <article
       className="su-component-card su-relative su-w-full"
       data-testid="vertical-card"
     >
-      {displayImages && imageUrl && (
+      {displayThumbnail && imageUrl && (
         <div
           className="su-relative su-block su-aspect-[50/33] su-mb-[19px]"
           data-testid="vertical-card-image-wrapper"
@@ -143,11 +142,11 @@ export default function VerticalCard({
           </p>
         )}
 
-        <p
-          className={`su-mb-0 ${descriptionOnMobile} su-text-[19px] su-leading-[23.75px]`}
-        >
-          {description}
-        </p>
+        {displayDescription && description && (
+          <p className={["su-mb-0", descriptionSize(cardSize)].join(" ")}>
+            {description}
+          </p>
+        )}
       </div>
     </article>
   );
