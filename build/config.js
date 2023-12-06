@@ -1,4 +1,5 @@
 import path from "path";
+import GlobalsPlugin from "esbuild-plugin-globals";
 
 // Define defaults for ESBuild
 export const esbuildDefaults = (componentPath, minify) => ({
@@ -23,4 +24,10 @@ export const esbuildClientOptions = (componentPath, entryPoints, minify) => ({
   format: "iife",
   target: "es2020",
   platform: "browser",
+  plugins: [
+    GlobalsPlugin({
+      react: "React",
+      "react-dom": "ReactDOM",
+    }),
+  ],
 });
