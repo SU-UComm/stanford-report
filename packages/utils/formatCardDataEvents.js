@@ -1,3 +1,32 @@
+/**
+ *
+ * @param {object} event
+ * the event object
+ *
+ * @param {string} event.title
+ * the event's title
+ *
+ * @param {string} event.description
+ * the event's description
+ *
+ * @param {array} event.event_instances
+ * the event instances is where the start and end dates
+ * will be pulled out from
+ *
+ * @param {string} event.localist_url
+ * the event's URL
+ *
+ * @param {string} event.photo_url
+ * the event's photo URL
+ *
+ * @param {array} event.departments
+ * assumed to be the location of the image's alt text (best candidate thus far)
+ *
+ * @param {object} event.filters
+ * location for the event types
+ *
+ * @returns {object}
+ */
 export default function formatCardDataEvents({
   event: {
     title,
