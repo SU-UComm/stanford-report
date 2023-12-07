@@ -14,7 +14,7 @@ describe("PullQuote", () => {
   it("should render the component", () => {
     render(
       <PullQuote
-        image={testData.avatar}
+        avatar={testData.avatar}
         name={testData.name}
         title={testData.title}
         quote={testData.quoteText}
@@ -27,7 +27,7 @@ describe("PullQuote", () => {
   it("should render the component with a large avatar", () => {
     render(
       <PullQuote
-        image={testData.avatar}
+        avatar={testData.avatar}
         name={testData.name}
         title={testData.title}
         quote={testData.quoteText}
@@ -43,7 +43,7 @@ describe("PullQuote", () => {
   it("should not render the component", () => {
     render(
       <PullQuote
-        image={testData.avatar}
+        avatar={testData.avatar}
         name={testData.name}
         title={testData.title}
       />
