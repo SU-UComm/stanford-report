@@ -42,6 +42,7 @@ export default function PullQuoteCard({
       )}
       {description && (
         <XssSafeContent
+          data-test="pullquote-description"
           content={description}
           elementType="div"
           className="[&>*]:su-my-0 [&>*]:su-text-[18px] [&>*]:dark:su-text-white [&>*]:su-font-sans [&>*]:su-w-full"
