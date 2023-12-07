@@ -36,7 +36,6 @@
         "properties": {
           "title": {
             "title": "Heading",
-            "default": "Add a title",
             "type": "string"
           },
           "ctaText": {
@@ -49,7 +48,7 @@
             "type": "string"
           },
           "alignment": {
-            "title": "Featured alignment",
+            "title": "Featured Card: Alignment",
             "default": "left",
             "enum": ["left", "right"]
           },
@@ -57,6 +56,16 @@
             "title": "Content source",
             "default": "Search",
             "enum": ["Search", "Select"]
+          },
+          "displayThumbnails": {
+            "title": "Display Supplementary Thumbnails",
+            "default": true,
+            "type": "boolean"
+          },
+          "displayDescriptions": {
+            "title": "Display Supplementary Descriptions",
+            "default": true,
+            "type": "boolean"
           }
         },
         "allOf": [
@@ -99,6 +108,10 @@
                 "featured": {
                   "type": "string",
                   "title": "Select Featured content <SquizLink>"
+                },
+                "featuredDescription": {
+                  "type": "string",
+                  "title": "Featured Content description"
                 },
                 "supporting_01": {
                   "type": "string",
