@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import {
   Article,
   QuestionAnswer,
@@ -29,8 +30,8 @@ function titleSize(size) {
 
 function descriptionSize(size) {
   if (size === "featured")
-    return "su-text-[18px] md:su-text-[19px] su-leading-[22.5px] md:su-leading-[23.75px] su-mt-[4px] md:su-mt-[14px]";
-  return "su-text-[19px] su-leading-[23.75px]";
+    return "[&>*]:su-text-[18px] [&>*]:md:su-text-[19px] [&>*]:su-leading-[22.5px] [&>*]:md:su-leading-[23.75px] [&>*]:su-mt-[4px] [&>*]:md:su-mt-[14px]";
+  return "[&>*]:su-text-[19px] [&>*]:su-leading-[23.75px]";
 }
 
 /**
@@ -109,12 +110,12 @@ export default function VerticalCard({
           data-testid="vertical-card-taxonomy"
           className="su-relative su-z-10 su-text-[16px] lg:su-text-[18px] su-leading-[20.8px] lg:su-leading-[23.4px] su-mb-[13px] su-font-semibold"
         >
-          <a
-            href={taxonomyUrl}
+          <XssSafeContent
             className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
-          >
-            {taxonomy}
-          </a>
+            content={taxonomy}
+            href={taxonomyUrl}
+            elementType="a"
+          />
         </p>
       )}
 
@@ -138,14 +139,15 @@ export default function VerticalCard({
             className="su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-[6px] su-flex-nowrap su-items-center su-text-[16px] su-leading-[20.8px]"
           >
             {SVGMap[type.toLowerCase()] || Fragment}
-            <span>{type}</span>
+            <XssSafeContent content={type} elementType="span" />
           </p>
         )}
 
         {displayDescription && description && (
-          <p className={["su-mb-0", descriptionSize(cardSize)].join(" ")}>
-            {description}
-          </p>
+          <XssSafeContent
+            className={["su-mb-0", descriptionSize(cardSize)].join(" ")}
+            content={description}
+          />
         )}
       </div>
     </article>

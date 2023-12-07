@@ -1,6 +1,7 @@
 import React from "react";
 
 import VerticalCard from "./verticalCard";
+import PullQuoteCard from "./PullQuoteCard";
 
 /**
  * This component orchestrates the type of card
@@ -41,6 +42,8 @@ export default function Card({
       break;
     case "avatar":
       break;
+    case "pullquote":
+      return <PullQuoteCard data={data} />;
     default:
       return (
         <VerticalCard

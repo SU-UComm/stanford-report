@@ -1,39 +1,66 @@
 import React from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Avatar } from "./Avatar";
 
 /**
  * Listing displayed in a sidebar, has a heading, listing and link
  *
- * @param {JSX.element} children
- * The children making  up the listing
- *
- * @param {string} cite
- * The title text
+ * @param {JSX.element} quote
+ * The child elements/text making up the quote
  *
  * @param {string} avatar
- * The icon to display before the title text
+ * The image URL of the avatar image (optional)
+ *
+ * @param {string} name
+ * The name of the person who made the quote
+ *
+ * @param {string} title
+ * The title/job of the person who made the quote
+ *
+ * @param {string} avatarSize
+ * The size of the avatar in the pullquote
+ *
+ * @param {string} tag
+ * The quote of tag to use - defaults to div, but could be article
  *
  * @return {JSX.element}
  */
-export function PullQuote({ children, avatar, name, title, tag = "div" }) {
-  const hasChildren = children !== undefined;
+export function PullQuote({
+  quote,
+  avatar,
+  name,
+  title,
+  avatarSize = "large",
+  tag = "div",
+}) {
   const Tag = tag;
 
-  return hasChildren ? (
+  return quote ? (
     <Tag
       className={[
-        "su-component-pullquote su-relative lg:su-pl-[52px] su-mt-0 su-flex su-flex-wrap su-gap-[27px] su-justify-center",
+        "su-component-pullquote su-mx-auto su-relative su-mt-0 su-flex su-flex-wrap su-gap-[27px] su-justify-center su-mt-0 su-pr-0 su-py-0",
       ].join(" ")}
     >
-      <Avatar image={avatar} avatarSize="large" />
-      <blockquote className="su-w-full dark:su-text-white dark:before:su-text-white su-pl-[39px] lg:su-pl-0 su-text-[28px] su-leading-[36.469px] lg:su-text-[36px] lg:su-leading-[46.888px] su-text-black su-font-semibold su-mt-0 su-pr-0 su-py-0">
-        <div className="su-relative after:su-content-['”'] before:su-text-[73px] before:su-leading-[109.5px] lg:before:su-leading-[139.5px] lg:before:su-text-[93px] before:su-font-semibold before:su-mt-[-20px] lg:before:su-mt-[-30px] before:su-content-['“'] before:su-text-black before:su-absolute before:su-left-0 lg:before:su-left-auto lg:before:su-right-full before:su-mr-[13px]">
-          {children}
-        </div>
+      <Avatar image={avatar} avatarSize={avatarSize} />
+      <blockquote
+        className={[
+          "su-w-full su-pl-[39px] dark:su-text-white dark:before:su-text-white su-font-serif lg:su-pl-0 su-text-black",
+          avatarSize === "large" ? "lg:su-pl-[39px]" : "lg:su-pl-0",
+        ].join(" ")}
+      >
+        <XssSafeContent
+          content={quote}
+          elementType="div"
+          className={[
+            "[&>*]:su-font-semibold [&>*]:su-font-serif [&>*]:su-text-[28px] [&>*]:su-leading-[36.469px] [&>*]:lg:su-text-[36px] [&>*]:lg:su-leading-[46.888px]",
+            "[&>*:last-child]:su-mb-0 [&>*:last-child]:after:su-content-['”']",
+            "su-relative before:su-text-[73px] before:su-leading-[109.5px] lg:before:su-leading-[139.5px] lg:before:su-text-[93px] before:su-font-semibold before:su-mt-[-25px] lg:before:su-mt-[-38px] before:su-content-['“'] before:su-text-serif before:su-text-black dark:su-text-white before:su-absolute before:su-right-full lg:before:su-right-full before:su-mr-[6px] lg:before:su-mr-[13px]",
+          ].join(" ")}
+        />
         {name && (
-          <cite>
-            <span>{name}</span>
-            {title && <span>{title}</span>}
+          <cite className="su-mt-[19px] su-font-sans su-text-[21px] su-leading-[25.2px] su-block">
+            <span className="su-font-bold su-block">{name}</span>
+            {title && <span className="su-block">{title}</span>}
           </cite>
         )}
       </blockquote>
