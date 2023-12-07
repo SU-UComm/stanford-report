@@ -196,26 +196,17 @@ function CardThumbnail({ size, children }) {
  */
 function EventDate({ time }) {
   const date = new Date(time);
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  const month = months[date.getMonth()];
-  const hours = date.getUTCHours();
-  const twelveHourTime = hours > 12 ? hours - 12 : hours;
-  const amPm = date.getUTCHours() >= 12 ? "pm" : "am";
-
-  const fullDate = `${month} ${date.getDay()} | ${twelveHourTime}:${date.getUTCMinutes()}${amPm}`;
+  const fullDate = new Intl.DateTimeFormat("en-US", {
+    day: "numeric",
+    month: "short",
+    hour12: true,
+    time: "long",
+    timeZone: "PST",
+    hour: "numeric",
+    minute: "numeric",
+  })
+    .format(date)
+    .replace(", ", " | ");
 
   return (
     <p data-testid="horizontal-event-date" className="su-mb-0 su-text-[16px]">
