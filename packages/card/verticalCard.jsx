@@ -145,7 +145,10 @@ export default function VerticalCard({
 
         {displayDescription && description && (
           <XssSafeContent
-            className={["su-mb-0", descriptionSize(cardSize)].join(" ")}
+            className={[
+              "su-mb-0 su-w-full [&>*:last-child]:su-mb-0",
+              descriptionSize(cardSize),
+            ].join(" ")}
             content={description}
           />
         )}
