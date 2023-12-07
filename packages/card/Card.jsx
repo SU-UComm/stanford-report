@@ -2,6 +2,7 @@ import React from "react";
 
 import VerticalCard from "./verticalCard";
 import PullQuoteCard from "./PullQuoteCard";
+import HorizontalCard from "./HorizontalCard";
 
 /**
  * This component orchestrates the type of card
@@ -37,7 +38,7 @@ export default function Card({
   // orchestrate the type of card to output
   switch (cardType) {
     case "horizontal":
-      return <div />;
+      return <HorizontalCard data={data} cardSize={cardSize} />;
     case "teaser":
       break;
     case "avatar":
