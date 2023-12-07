@@ -48,6 +48,7 @@
   "dependencies": {
     "@squiz/xaccel-component-client-helpers": "^1.9.0-beta.24",
     "@squiz/xaccel-component-server-helpers": "^1.9.0-beta.24",
+    "@squiz/xaccel-xss-safe-content": "^1.9.0-beta.17",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
     "object-hash": "^3.0.0",
