@@ -44,8 +44,8 @@ export function PullQuote({
       <Avatar image={avatar} avatarSize={avatarSize} />
       <blockquote
         className={[
-          "su-w-full su-pl-[39px] dark:su-text-white dark:before:su-text-white su-font-serif lg:su-pl-0 su-text-black",
-          avatarSize === "large" ? "lg:su-pl-[39px]" : "lg:su-pl-0",
+          "su-w-full su-pl-[39px] dark:su-text-white dark:before:su-text-white su-font-serif su-text-black",
+          avatarSize === "large" ? "lg:su-pl-[52px]" : "lg:su-pl-0",
         ].join(" ")}
       >
         <XssSafeContent
