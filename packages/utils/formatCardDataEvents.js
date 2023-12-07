@@ -13,7 +13,7 @@
  * the event instances is where the start and end dates
  * will be pulled out from
  *
- * @param {string} event.localist_url
+ * @param {string} event.url
  * the event's URL
  *
  * @param {string} event.photo_url
@@ -34,7 +34,7 @@ export default function formatCardDataEvents({
     // eslint-disable-next-line camelcase
     event_instances,
     // eslint-disable-next-line camelcase
-    localist_url,
+    url,
     // eslint-disable-next-line camelcase
     photo_url,
     departments,
@@ -49,7 +49,7 @@ export default function formatCardDataEvents({
 
   // liveUrl
   // eslint-disable-next-line camelcase
-  const liveUrl = localist_url;
+  const liveUrl = url;
 
   // image
   const [department] = departments;
