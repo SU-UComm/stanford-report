@@ -66,7 +66,7 @@ export default class CardDataAdapter {
     const formattedData = [];
 
     if (this.type === "MX") {
-      this.assetIds.forEach(async (assetid) => {
+      const promises = this.assetIds.map(async (assetid) => {
         const url = `${this.url}/${assetid}?data=${this.assetData}`;
 
         const res = await fetch(url, this.requestProps).catch((error) => {
@@ -74,11 +74,11 @@ export default class CardDataAdapter {
         });
 
         const json = await res.json();
-
-        formattedData.push(formatCardDataMatrix(json));
+        return formatCardDataMatrix(json);
       });
 
-      return formattedData;
+      // Wait for all promises to resolve before continuing
+      return Promise.all(promises);
     }
 
     const res = await fetch(this.url, this.requestProps).catch((error) => {

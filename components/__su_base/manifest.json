@@ -24,9 +24,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "title"
-        ]
+        "required": ["title"]
       },
       "output": {
         "responseType": "html",
@@ -42,14 +40,14 @@
             "location": "header",
             "file": {
               "type": "js",
-              "filepath": "https://unpkg.com/react@17/umd/react.production.min.js"
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
             }
           },
           {
             "location": "header",
             "file": {
               "type": "js",
-              "filepath": "https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
             }
           },
           {
