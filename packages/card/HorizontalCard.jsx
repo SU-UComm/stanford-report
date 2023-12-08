@@ -22,6 +22,27 @@ function cardTitleFont(size) {
 }
 
 /**
+ * checks if the date portion of two timestamps match
+ * eg: 2023-05-12 === 2023-05-12
+ *
+ * @param {string} start
+ * the starting date
+ *
+ * @param {string} end
+ * the ending date
+ *
+ * @returns {bool}
+ */
+function datesMatch(start, end) {
+  if (!end) return true;
+
+  const sDate = start.match(/(\d+-\d+-\d+)/)[0];
+  const eDate = end.match(/(\d+-\d+-\d+)/)[0];
+
+  return sDate === eDate;
+}
+
+/**
  * Horizontal package
  *
  * @param {string} title
@@ -64,6 +85,7 @@ export default function HorizontalCard({
     taxonomyUrl,
     type,
     date,
+    endDate,
   },
   cardSize,
 }) {
@@ -101,17 +123,12 @@ export default function HorizontalCard({
       </CardThumbnail>
 
       <div className={`su-flex su-flex-col ${contentGap[cardSize]}`}>
-        {cardSize === "small" && taxonomy && taxonomyUrl && (
+        {cardSize === "small" && taxonomy && (
           <p
-            className="su-mb-0 su-text-[16px]"
+            className="su-mb-0 su-text-[16px] su-font-semibold su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
             data-testid="horizontal-card-taxonomy"
           >
-            <a
-              className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
-              href={taxonomyUrl}
-            >
-              {taxonomy}
-            </a>
+            {taxonomy}
           </p>
         )}
 
@@ -131,7 +148,13 @@ export default function HorizontalCard({
         </h2>
 
         {/* only small cards will have the date */}
-        {cardSize === "small" && date && <EventDate time={date} />}
+        {cardSize === "small" && (
+          <div data-testid="horizontal-event-date">
+            {date && <EventDate start={date} end={endDate} />}
+
+            {/* {endDate && <EventDate time={endDate} />} */}
+          </div>
+        )}
 
         {cardSize === "large" && type && (
           <p
@@ -194,9 +217,10 @@ function CardThumbnail({ size, children }) {
  *
  * @returns {JSX.Element}
  */
-function EventDate({ time }) {
-  const date = new Date(time);
-  const fullDate = new Intl.DateTimeFormat("en-US", {
+function EventDate({ start, end }) {
+  const sDate = new Date(start);
+  const eDate = end ? new Date(end) : null;
+  const params = {
     day: "numeric",
     month: "short",
     hour12: true,
@@ -204,13 +228,39 @@ function EventDate({ time }) {
     timeZone: "PST",
     hour: "numeric",
     minute: "numeric",
-  })
-    .format(date)
-    .replace(", ", " | ");
+  };
 
-  return (
-    <p data-testid="horizontal-event-date" className="su-mb-0 su-text-[16px]">
-      {fullDate}
-    </p>
-  );
+  let fullDate = "";
+
+  // do the start end end dates match?
+  const matchingDates = datesMatch(start, end);
+
+  // if an end date is there, time is not present.
+  if (!matchingDates) {
+    delete params.time;
+    delete params.hour;
+    delete params.minute;
+  }
+
+  // start date
+  const startDateFull = new Intl.DateTimeFormat("en-US", params).format(sDate);
+
+  // end date
+  const endDateFull = end
+    ? new Intl.DateTimeFormat("en-US", params).format(eDate)
+    : "";
+
+  // single date for matching dates
+  if (matchingDates) {
+    return (
+      <span className="su-mb-0 su-text-[16px]">
+        {startDateFull.replace(/, /, " | ")}
+      </span>
+    );
+  }
+
+  // start day & end day
+  fullDate += `${startDateFull} - ${endDateFull}`;
+
+  return <span className="su-mb-0 su-text-[16px]">{fullDate}</span>;
 }

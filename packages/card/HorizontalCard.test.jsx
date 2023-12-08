@@ -91,11 +91,10 @@ describe("Horizontal Card", () => {
     expect(date).toBeInTheDocument();
   });
 
-  test("If the card is small, and has a taxonomy and taxonomy URL, the taxonomy should show", () => {
+  test("If the card is small, and has a taxonomy, the taxonomy should show", () => {
     const data = {
       ...testData,
       taxonomy: "Test taxonomy",
-      taxonomyUrl: "https://test.com",
     };
 
     render(<HorizontalCard data={data} cardSize="small" />);
@@ -107,8 +106,8 @@ describe("Horizontal Card", () => {
     expect(taxonomy).toBeInTheDocument();
   });
 
-  test("If the card is small, and has a taxonomy and no URL, the taxonomy should not show", () => {
-    const data = { ...testData, taxonomy: "Test taxonomy" };
+  test("If the card is small, and does not have a taxonomy, the taxonomy should not show", () => {
+    const data = { ...testData };
 
     render(<HorizontalCard data={data} cardSize="small" />);
 

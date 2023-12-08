@@ -1,6 +1,7 @@
 import fetch from "node-fetch";
 import formatCardDataFunnelback from "./formatCardDataFunnelback";
 import formatCardDataMatrix from "./formatCardDataMatrix";
+import formatCardDataEvents from "./formatCardDataEvents";
 
 /**
  * Orchestrates the transformation of data from
@@ -79,6 +80,20 @@ export default class CardDataAdapter {
 
       // Wait for all promises to resolve before continuing
       return Promise.all(promises);
+    }
+
+    if (this.type === "Events") {
+      const res = await fetch(this.url, this.requestProps).catch((error) => {
+        throw new Error(error);
+      });
+
+      const json = await res.json();
+
+      json.events.forEach((event, i) => {
+        formattedData.push(formatCardDataEvents(event));
+      });
+
+      return formattedData;
     }
 
     const res = await fetch(this.url, this.requestProps).catch((error) => {
