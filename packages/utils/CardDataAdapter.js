@@ -89,7 +89,7 @@ export default class CardDataAdapter {
 
       const json = await res.json();
 
-      json.events.forEach((event, i) => {
+      json.events.forEach((event) => {
         formattedData.push(formatCardDataEvents(event));
       });
 
