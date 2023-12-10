@@ -24,38 +24,47 @@ export function SidebarHeading({
   headingSize = "h2",
   color = "grey",
 }) {
-  const iconMap = {
-    announcement: {
+  const iconMap = new Map();
+  iconMap.set(
+    "announcement",
+    {
       light: <Announcement variant="light" />,
       dark: <Announcement variant="dark" />,
-    },
-    eventscalendar: {
+    }
+  );
+  iconMap.set(
+    "eventscalendar",
+    {
       light: <EventsCalendar variant="light" />,
       dark: <EventsCalendar variant="dark" />,
-    },
-  };
+    }
+  );
 
-  const colorClassMap = {
-    grey: "su-text-black-90 dark:su-text-white su-font-semibold su-text-[18px] su-items-end",
-    black:
-      "su-text-black dark:su-text-white su-font-bold su-text-[16px] md:su-text-[18px] su-items-start",
-  };
+  const colorClassMap = new Map();
+  colorClassMap.set(
+    "grey",
+    "su-text-black-90 dark:su-text-white su-font-semibold su-text-[18px] su-items-end"
+  );
+  colorClassMap.set(
+    "black",
+    "su-text-black dark:su-text-white su-font-bold su-text-[16px] md:su-text-[18px] su-items-start"
+  );
 
   const Tag = headingSize;
   return title !== "" ? (
     <Tag
       className={[
         "su-component-sidebar-heading su-w-full su-flex su-flex-wrap su-gap-[6px] su-my-0 su-font-sans",
-        colorClassMap[color],
+        colorClassMap.get(color),
       ].join(" ")}
     >
-      {iconMap[icon] && "light" in iconMap[icon] && "dark" in iconMap[icon] && (
+      {iconMap.get(icon) && "light" in iconMap.get(icon) && "dark" in iconMap.get(icon) && (
         <>
           <span data-test="icon" className="dark:su-hidden">
-            {iconMap[icon].light}
+            {iconMap.get(icon).light}
           </span>
           <span data-test="icon" className="su-hidden dark:su-block">
-            {iconMap[icon].dark}
+            {iconMap.get(icon).dark}
           </span>
         </>
       )}
