@@ -7,6 +7,8 @@ import {
   Book,
 } from "../SVG-library/SVG";
 
+import EventStartEndDate from "./EventStartEndDate";
+
 /**
  * Adds a serif font family to the <h2> node
  *
@@ -19,27 +21,6 @@ function cardTitleFont(size) {
   if (size === "large") return "su-font-serif";
 
   return "";
-}
-
-/**
- * checks if the date portion of two timestamps match
- * eg: 2023-05-12 === 2023-05-12
- *
- * @param {string} start
- * the starting date
- *
- * @param {string} end
- * the ending date
- *
- * @returns {bool}
- */
-function datesMatch(start, end) {
-  if (!end) return true;
-
-  const sDate = start.match(/(\d+-\d+-\d+)/)[0];
-  const eDate = end.match(/(\d+-\d+-\d+)/)[0];
-
-  return sDate === eDate;
 }
 
 /**
@@ -150,9 +131,7 @@ export default function HorizontalCard({
         {/* only small cards will have the date */}
         {cardSize === "small" && (
           <div data-testid="horizontal-event-date">
-            {date && <EventDate start={date} end={endDate} />}
-
-            {/* {endDate && <EventDate time={endDate} />} */}
+            <EventStartEndDate start={date} end={endDate} />
           </div>
         )}
 
@@ -207,60 +186,4 @@ function CardThumbnail({ size, children }) {
       {children}
     </div>
   );
-}
-
-/**
- * Date formatter sub-component
- *
- * @param {object} prop.time
- * The timestamp, comes from the date prop of the main component
- *
- * @returns {JSX.Element}
- */
-function EventDate({ start, end }) {
-  const sDate = new Date(start);
-  const eDate = end ? new Date(end) : null;
-  const params = {
-    day: "numeric",
-    month: "short",
-    hour12: true,
-    time: "long",
-    timeZone: "PST",
-    hour: "numeric",
-    minute: "numeric",
-  };
-
-  let fullDate = "";
-
-  // do the start end end dates match?
-  const matchingDates = datesMatch(start, end);
-
-  // if an end date is there, time is not present.
-  if (!matchingDates) {
-    delete params.time;
-    delete params.hour;
-    delete params.minute;
-  }
-
-  // start date
-  const startDateFull = new Intl.DateTimeFormat("en-US", params).format(sDate);
-
-  // end date
-  const endDateFull = end
-    ? new Intl.DateTimeFormat("en-US", params).format(eDate)
-    : "";
-
-  // single date for matching dates
-  if (matchingDates) {
-    return (
-      <span className="su-mb-0 su-text-[16px]">
-        {startDateFull.replace(/, /, " | ")}
-      </span>
-    );
-  }
-
-  // start day & end day
-  fullDate += `${startDateFull} - ${endDateFull}`;
-
-  return <span className="su-mb-0 su-text-[16px]">{fullDate}</span>;
 }

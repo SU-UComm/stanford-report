@@ -11,6 +11,8 @@ const testData = {
   taxonomy: null,
   taxonomyUrl: null,
   type: null,
+  date: "2023-12-09T12:00:00-08:00",
+  endDate: "2023-12-09T17:00:00-08:00",
 };
 
 describe("Card", () => {
