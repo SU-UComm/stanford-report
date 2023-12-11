@@ -79,13 +79,28 @@ export default function VerticalCard({
   displayDescription = true,
   displayThumbnail = true,
 }) {
-  const SVGMap = {
-    article: <Article />,
-    "q & a": <QuestionAnswer />,
-    video: <Video />,
-    podcast: <Podcast />,
-    book: <Book />,
-  };
+
+  const SVGMap = new Map();
+  SVGMap.set(
+    "article",
+    <Article />
+  );
+  SVGMap.set(
+    "q & a",
+    <QuestionAnswer />
+  );
+  SVGMap.set(
+    "video",
+    <Video />
+  );
+  SVGMap.set(
+    "podcast",
+    <Podcast />
+  );
+  SVGMap.set(
+    "book",
+    <Book />
+  );
 
   return (
     <article
@@ -138,7 +153,7 @@ export default function VerticalCard({
             data-testid="vertical-card-type"
             className="su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-[6px] su-flex-nowrap su-items-center su-text-[16px] su-leading-[20.8px]"
           >
-            {SVGMap[type.toLowerCase()] || Fragment}
+            {SVGMap.get(type.toLowerCase()) || Fragment}
             <XssSafeContent content={type} elementType="span" />
           </p>
         )}

@@ -7,9 +7,10 @@ import React from "react";
  */
 const DEFAULT_VARIANT = "light";
 export default function Announcement({ variant = DEFAULT_VARIANT }) {
-  const variantsMap = {
-    light: (
-      <svg
+  const variantsMap = new Map();
+  variantsMap.set(
+    "light",
+    <svg
         data-testid="svg-announcement-light"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
@@ -36,9 +37,10 @@ export default function Announcement({ variant = DEFAULT_VARIANT }) {
           </linearGradient>
         </defs>
       </svg>
-    ),
-    dark: (
-      <svg
+  );
+  variantsMap.set(
+    "dark",
+    <svg
         data-testid="svg-announcement-dark"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
@@ -65,11 +67,10 @@ export default function Announcement({ variant = DEFAULT_VARIANT }) {
           </linearGradient>
         </defs>
       </svg>
-    ),
-  };
+  );
 
-  if (variantsMap[variant] !== null) {
-    return variantsMap[variant];
+  if (variantsMap.get(variant) !== null) {
+    return variantsMap.get(variant);
   }
-  return variantsMap[DEFAULT_VARIANT];
+  return variantsMap.get(DEFAULT_VARIANT);
 }
