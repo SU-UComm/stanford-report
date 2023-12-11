@@ -37,28 +37,26 @@ export default function formatCardDataEvents({
     url,
     // eslint-disable-next-line camelcase
     photo_url,
-    departments,
     filters,
   },
 }) {
   // start date (date) and end date
   // eslint-disable-next-line camelcase
   const [instance] = event_instances;
-  const endDate = instance.end;
-  const date = instance.start;
+  const endDate = instance.event_instance.end;
+  const date = instance.event_instance.start;
 
   // liveUrl
   // eslint-disable-next-line camelcase
   const liveUrl = url;
 
   // image
-  const [department] = departments;
-  const imageAlt = department.name;
+  const imageAlt = title;
   // eslint-disable-next-line camelcase
   const imageUrl = photo_url;
 
   // taxonomy
-  const taxonomy = filters.event_types.name;
+  const taxonomy = filters.event_types[0].name;
   const taxonomyUrl = null;
 
   // type

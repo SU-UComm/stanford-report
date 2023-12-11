@@ -8,6 +8,8 @@ import {
   Book,
 } from "../SVG-library/SVG";
 
+import EventStartEndDate from "./EventStartEndDate";
+
 /**
  * Adds a serif font family to the <h2> node
  *
@@ -65,52 +67,26 @@ export default function HorizontalCard({
     taxonomyUrl,
     type,
     date,
+    endDate,
   },
   cardSize,
 }) {
   const SVGMap = new Map();
-  SVGMap.set(
-    "article",
-    <Article />
-  );
-  SVGMap.set(
-    "q & a",
-    <QuestionAnswer />
-  );
-  SVGMap.set(
-    "video",
-    <Video />
-  );
-  SVGMap.set(
-    "podcast",
-    <Podcast />
-  );
-  SVGMap.set(
-    "book",
-    <Book />
-  );
+  SVGMap.set("article", <Article />);
+  SVGMap.set("q & a", <QuestionAnswer />);
+  SVGMap.set("video", <Video />);
+  SVGMap.set("podcast", <Podcast />);
+  SVGMap.set("book", <Book />);
 
   // gap for the card <article> element
   const cardGap = new Map();
-  cardGap.set(
-    "large",
-    "su-gap-[20px] lg:su-gap-[48px]"
-  );
-  cardGap.set(
-    "small",
-    "su-gap-[19px]"
-  );
+  cardGap.set("large", "su-gap-[20px] lg:su-gap-[48px]");
+  cardGap.set("small", "su-gap-[19px]");
 
   // gap for the <div> node that holds info, like description & title
   const contentGap = new Map();
-  contentGap.set(
-    "large",
-    "su-gap-[9px] lg:su-gap-[12px]"
-  );
-  contentGap.set(
-    "small",
-    "su-gap-[6px]"
-  );
+  contentGap.set("large", "su-gap-[9px] lg:su-gap-[12px]");
+  contentGap.set("small", "su-gap-[6px]");
 
   return (
     <article
@@ -126,9 +102,9 @@ export default function HorizontalCard({
       </CardThumbnail>
 
       <div className={`su-flex su-flex-col ${contentGap.get(cardSize)}`}>
-        {cardSize === "small" && taxonomy && taxonomyUrl && (
+        {cardSize === "small" && taxonomy && (
           <p
-            className="su-mb-0 su-text-[16px]"
+            className="su-mb-0 su-text-[16px] su-font-semibold su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
             data-testid="horizontal-card-taxonomy"
           >
             <XssSafeContent
@@ -156,7 +132,11 @@ export default function HorizontalCard({
         </h2>
 
         {/* only small cards will have the date */}
-        {cardSize === "small" && date && <EventDate time={date} />}
+        {cardSize === "small" && (
+          <div data-testid="horizontal-event-date">
+            <EventStartEndDate start={date} end={endDate} />
+          </div>
+        )}
 
         {cardSize === "large" && type && (
           <p
@@ -174,9 +154,9 @@ export default function HorizontalCard({
             className="su-hidden lg:su-block lg:su-text-[18px]"
           >
             <XssSafeContent
-              className={[
-                "su-mb-0 su-w-full [&>*:last-child]:su-mb-0",
-              ].join(" ")}
+              className={["su-mb-0 su-w-full [&>*:last-child]:su-mb-0"].join(
+                " "
+              )}
               content={description}
             />
           </div>
@@ -213,34 +193,5 @@ function CardThumbnail({ size, children }) {
     <div className="listing-item__media su-w-[73px] su-h-[73px] su-relative su-overflow-hidden su-shrink-0">
       {children}
     </div>
-  );
-}
-
-/**
- * Date formatter sub-component
- *
- * @param {object} prop.time
- * The timestamp, comes from the date prop of the main component
- *
- * @returns {JSX.Element}
- */
-function EventDate({ time }) {
-  const date = new Date(time);
-  const fullDate = new Intl.DateTimeFormat("en-US", {
-    day: "numeric",
-    month: "short",
-    hour12: true,
-    time: "long",
-    timeZone: "PST",
-    hour: "numeric",
-    minute: "numeric",
-  })
-    .format(date)
-    .replace(", ", " | ");
-
-  return (
-    <p data-testid="horizontal-event-date" className="su-mb-0 su-text-[16px]">
-      {fullDate}
-    </p>
   );
 }
