@@ -15,10 +15,15 @@ export function MultiColumnGrid({ items, separator = false }) {
   const MAXIMUM_ITEMS = 3;
   const MINIMUM_ITEMS = 1;
 
-  const gapClasses = {
-    "2col": "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[160px]",
-    "3col": "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[102px]",
-  };
+  const gapClasses = new Map();
+  gapClasses.set(
+    "2col",
+    "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[160px]"
+  );
+  gapClasses.set(
+    "3col",
+    "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[102px]"
+  );
 
   const gridItems =
     items.length > MAXIMUM_ITEMS ? items.slice(0, MAXIMUM_ITEMS - 1) : items;
@@ -29,7 +34,7 @@ export function MultiColumnGrid({ items, separator = false }) {
       <div
         className={[
           "su-relative su-flex su-flex-wrap md:su-flex-nowrap su-flex-1 su-place-content-between",
-          gapClasses[`${totalColumns}col`],
+          gapClasses.get(`${totalColumns}col`),
         ].join(" ")}
       >
         {gridItems.map((item, i) => {
