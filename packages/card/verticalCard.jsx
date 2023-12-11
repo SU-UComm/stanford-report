@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import {
-  Article,
+  News,
   QuestionAnswer,
   Video,
   Podcast,
@@ -32,6 +32,12 @@ function descriptionSize(size) {
   if (size === "featured")
     return "[&>*]:su-text-[18px] [&>*]:md:su-text-[19px] [&>*]:su-leading-[22.5px] [&>*]:md:su-leading-[23.75px] [&>*]:su-mt-[4px] [&>*]:md:su-mt-[14px]";
   return "[&>*]:su-text-[19px] [&>*]:su-leading-[23.75px]";
+}
+
+function gapSize(size) {
+  if (size === "featured")
+    return "su-gap-[13px]";
+  return "su-gap-[9px]";
 }
 
 /**
@@ -81,26 +87,11 @@ export default function VerticalCard({
 }) {
 
   const SVGMap = new Map();
-  SVGMap.set(
-    "article",
-    <Article />
-  );
-  SVGMap.set(
-    "q & a",
-    <QuestionAnswer />
-  );
-  SVGMap.set(
-    "video",
-    <Video />
-  );
-  SVGMap.set(
-    "podcast",
-    <Podcast />
-  );
-  SVGMap.set(
-    "book",
-    <Book />
-  );
+  SVGMap.set("news", <News />);
+  SVGMap.set("q&amp;a", <QuestionAnswer />);
+  SVGMap.set("video", <Video />);
+  SVGMap.set("podcast", <Podcast />);
+  SVGMap.set("book", <Book />);
 
   return (
     <article
@@ -134,7 +125,7 @@ export default function VerticalCard({
         </p>
       )}
 
-      <div className="su-flex su-flex-wrap su-gap-[9px]">
+      <div className={`su-flex su-flex-wrap ${gapSize(cardSize)}`}>
         <h2
           className={`su-w-full ${titleSize(
             cardSize

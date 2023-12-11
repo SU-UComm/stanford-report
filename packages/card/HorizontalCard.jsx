@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import {
-  Article,
+  News,
   QuestionAnswer,
   Video,
   Podcast,
@@ -72,8 +72,8 @@ export default function HorizontalCard({
   cardSize,
 }) {
   const SVGMap = new Map();
-  SVGMap.set("article", <Article />);
-  SVGMap.set("q & a", <QuestionAnswer />);
+  SVGMap.set("news", <News />);
+  SVGMap.set("q&amp;a", <QuestionAnswer />);
   SVGMap.set("video", <Video />);
   SVGMap.set("podcast", <Podcast />);
   SVGMap.set("book", <Book />);

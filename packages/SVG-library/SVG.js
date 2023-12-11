@@ -1,5 +1,5 @@
 export { default as Announcement } from "./Announcement";
-export { default as Article } from "./Article";
+export { default as News } from "./News";
 export { default as Book } from "./Book";
 export { default as EventsCalendar } from "./EventsCalendar";
 export { default as ExternalArrow } from "./ExternalArrow";
