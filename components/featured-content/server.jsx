@@ -1,36 +1,35 @@
 import { renderComponent } from "@squiz/xaccel-component-server-helpers";
 import Component from "./Component";
 import CardDataAdapter from "../../packages/utils/CardDataAdapter";
+import MatrixCardService from "../../packages/utils/MatrixCardService";
 
 export default async (args, info) => {
-  const { CONTENT_API, CONTENT_API_KEY, FB_JSON_URL } = info.set.environment;
+  const { FB_JSON_URL, API_IDENTIFIER } = info.set.environment;
+  const { ctx } = info;
+  const adapter = new CardDataAdapter();
   let data = null;
 
   // check what data source "Search" or "Select"
   if (args.source.toLowerCase() === "search") {
-    // compose and fetch the FB search results
-    const adapter = new CardDataAdapter(FB_JSON_URL + args.searchQuery, "FB");
-
-    data = await adapter.fetch();
   }
   // When Select, use Matix Content API
   else if (args.source.toLowerCase() === "select") {
-    // get our data from the Content API
-    const adapter = new CardDataAdapter(CONTENT_API, "MX");
+    // Get our card URI's from the args object
+    const { featured, supporting1, supporting2 } = args;
+    const cards = { featured, supporting1, supporting2 };
+    // Create our service
+    const service = new MatrixCardService({ ctx, API_IDENTIFIER });
 
-    adapter
-      .assets(args.featured, args.supporting_01, args.supporting_02)
-      .data("metadata", "attributes", "urls")
-      .request({
-        headers: {
-          Authorization: `Bearer ${CONTENT_API_KEY}`,
-        },
-      });
+    // Set our card service
+    adapter.setCardService(service);
 
-    data = await adapter.fetch();
+    // get the cards data
+    data = await adapter.getCards(cards);
+
+    return JSON.stringify(data);
   }
 
-  const fbArgs = {
+  const renderProps = {
     ...args,
     data,
   };
@@ -38,6 +37,6 @@ export default async (args, info) => {
   return renderComponent({
     Component,
     componentName: "featured-content",
-    args: fbArgs,
+    args: renderProps,
   });
 };

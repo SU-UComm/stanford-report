@@ -107,22 +107,22 @@
               "properties": {
                 "featured": {
                   "type": "string",
-                  "title": "Select Featured content <SquizLink>"
+                  "title": "Select Featured content card"
                 },
                 "featuredDescription": {
                   "type": "string",
                   "title": "Featured Content description"
                 },
-                "supporting_01": {
+                "supporting1": {
                   "type": "string",
-                  "title": "Select the first supporting feature <SquizLink>"
+                  "title": "Select the first supporting feature card"
                 },
-                "supporting_02": {
+                "supporting2": {
                   "type": "string",
-                  "title": "Select the second supporting feature <SquizLink>"
+                  "title": "Select the second supporting feature card"
                 }
               },
-              "required": ["featured", "supporting_01", "supporting_02"]
+              "required": ["featured", "supporting1", "supporting2"]
             }
           },
           {
@@ -169,13 +169,40 @@
   "staticFiles": {
     "locationRoot": "./dist"
   },
+  "mockedUris": {
+    "matrix-asset://api-identifier/89422": {
+      "type": "file",
+      "path": "mocked-uris/featured-node.json"
+    },
+    "matrix-asset://api-identifier/89430": {
+      "type": "file",
+      "path": "mocked-uris/featured-node.json"
+    },
+    "matrix-asset://api-identifier/89426": {
+      "type": "file",
+      "path": "mocked-uris/featured-node.json"
+    }
+  },
   "previews": {
     "default": {
       "functionData": {
         "main": {
           "inputData": {
             "type": "file",
-            "path": "preview.data.json"
+            "path": "select.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "select": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "select.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
