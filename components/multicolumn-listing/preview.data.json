@@ -1,0 +1,16 @@
+{
+  "title": "Featured Content Grid",
+  "ctaText": "View all",
+  "ctaUrl": "https://www.stanford.edu/",
+  "alignment": "left",
+  "source": "Select",
+  "searchUrl": "https://dxp-us-stage-search.funnelback.squiz.cloud/s/search.json",
+  "searchQuery": "?profile=search&collection=sug~sp-stanford-university-content-hub&num_ranks=3&start_rank=1&fmo=1&sort=dmetamtxCreated&query=!padrenull",
+  "featured": "89422",
+  "featuredDescription": "",
+  "supporting_01": "89430",
+  "supporting_02": "89426",
+  "displayThumbnails": true,
+  "displayDescriptions": false,
+  "numberOfCards" : 3
+}
