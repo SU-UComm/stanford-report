@@ -4,6 +4,7 @@ import React from "react";
 import Card from "../../packages/card/Card";
 import { LinkedHeading } from "../../packages/headings/Heading";
 import { FeaturedGrid } from "../../packages/grids/Grids";
+import { Avatar, PullQuote } from "../../packages/quotes/Quotes";
 
 /**
  * Featured content component
@@ -23,7 +24,15 @@ export default function FeaturedContent({
   ctaUrl,
   data,
   alignment,
+  displayThumbnails,
+  displayDescriptions,
+  featuredDescription,
 }) {
+  const featuredCardData = data[0];
+  if (featuredDescription !== "" && featuredDescription !== null) {
+    featuredCardData.description = featuredDescription;
+  }
+
   return (
     <>
       <LinkedHeading title={title} ctaText={ctaText} ctaUrl={ctaUrl} />
@@ -31,9 +40,19 @@ export default function FeaturedContent({
       <FeaturedGrid
         alignment={alignment}
         items={[
-          <Card data={data[0]} />,
-          <Card data={data[1]} />,
-          <Card data={data[2]} />,
+          <Card data={featuredCardData} cardSize="featured" />,
+          <Card
+            data={data[1]}
+            displayThumbnail={displayThumbnails}
+            displayDescription={displayDescriptions}
+            cardSize="small"
+          />,
+          <Card
+            data={data[2]}
+            displayThumbnail={displayThumbnails}
+            displayDescription={displayDescriptions}
+            cardSize="small"
+          />,
         ]}
       />
     </>

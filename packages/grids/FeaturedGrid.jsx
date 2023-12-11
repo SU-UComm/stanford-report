@@ -34,7 +34,7 @@ export function FeaturedGrid({ items, alignment = "left" }) {
         >
           {items.map((item, i) => {
             return i !== 0 ? (
-              <FeaturedGridContent key={hash.MD5(item.props)} placement={i}>
+              <FeaturedGridContent key={hash.MD5(item.props)} placement={i + 1}>
                 {item}
               </FeaturedGridContent>
             ) : (

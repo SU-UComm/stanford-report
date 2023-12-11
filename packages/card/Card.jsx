@@ -1,6 +1,7 @@
 import React from "react";
 
 import VerticalCard from "./verticalCard";
+import PullQuoteCard from "./PullQuoteCard";
 import HorizontalCard from "./HorizontalCard";
 
 /**
@@ -30,9 +31,9 @@ import HorizontalCard from "./HorizontalCard";
 export default function Card({
   data,
   cardType,
-  cardSize,
-  showDescriptionOnMobile,
-  hideImages,
+  cardSize = "small",
+  displayDescription = true,
+  displayThumbnail = true,
 }) {
   // orchestrate the type of card to output
   switch (cardType) {
@@ -42,13 +43,15 @@ export default function Card({
       break;
     case "avatar":
       break;
+    case "pullquote":
+      return <PullQuoteCard data={data} />;
     default:
       return (
         <VerticalCard
           data={data}
           cardSize={cardSize}
-          showDescriptionOnMobile={showDescriptionOnMobile}
-          hideImages={hideImages}
+          displayDescription={displayDescription}
+          displayThumbnail={displayThumbnail}
         />
       );
   }

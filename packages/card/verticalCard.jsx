@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import {
   Article,
   QuestionAnswer,
@@ -21,9 +22,16 @@ import {
  */
 function titleSize(size) {
   if (size === "featured")
-    return "su-text-[35px] md:su-text-[40px] lg:su-text-[43px]";
-  if (size === "medium") return "su-text-[21px] lg:su-text-[24px]";
-  if (size === "small") return "su-text-[21px] lg:su-text-[24px]";
+    return "su-text-[35px] md:su-text-[40px] lg:su-text-[43px] su-leading-[42px] md:su-leading-[48px] lg:su-leading-[51.6px]";
+  if (size === "medium")
+    return "su-text-[21px] lg:su-text-[24px] su-leading-[25.2px] lg:su-leading-[28.8px]";
+  return "su-text-[21px] lg:su-text-[24px] su-leading-[25.2px] lg:su-leading-[28.8px]";
+}
+
+function descriptionSize(size) {
+  if (size === "featured")
+    return "[&>*]:su-text-[18px] [&>*]:md:su-text-[19px] [&>*]:su-leading-[22.5px] [&>*]:md:su-leading-[23.75px] [&>*]:su-mt-[4px] [&>*]:md:su-mt-[14px]";
+  return "[&>*]:su-text-[19px] [&>*]:su-leading-[23.75px]";
 }
 
 /**
@@ -67,9 +75,9 @@ export default function VerticalCard({
     taxonomyUrl,
     type,
   },
-  cardSize,
-  showDescriptionOnMobile,
-  hideImages,
+  cardSize = "small",
+  displayDescription = true,
+  displayThumbnail = true,
 }) {
   const SVGMap = {
     article: <Article />,
@@ -79,20 +87,12 @@ export default function VerticalCard({
     book: <Book />,
   };
 
-  const displayImages = hideImages === false;
-
-  // for small cards only
-  const descriptionOnMobile =
-    cardSize === "small" && showDescriptionOnMobile === false
-      ? "su-hidden lg:su-block"
-      : "";
-
   return (
     <article
       className="su-component-card su-relative su-w-full"
       data-testid="vertical-card"
     >
-      {displayImages && imageUrl && (
+      {displayThumbnail && imageUrl && (
         <div
           className="su-relative su-block su-aspect-[50/33] su-mb-[19px]"
           data-testid="vertical-card-image-wrapper"
@@ -110,12 +110,12 @@ export default function VerticalCard({
           data-testid="vertical-card-taxonomy"
           className="su-relative su-z-10 su-text-[16px] lg:su-text-[18px] su-leading-[20.8px] lg:su-leading-[23.4px] su-mb-[13px] su-font-semibold"
         >
-          <a
-            href={taxonomyUrl}
+          <XssSafeContent
             className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
-          >
-            {taxonomy}
-          </a>
+            content={taxonomy}
+            href={taxonomyUrl}
+            elementType="a"
+          />
         </p>
       )}
 
@@ -139,15 +139,19 @@ export default function VerticalCard({
             className="su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-[6px] su-flex-nowrap su-items-center su-text-[16px] su-leading-[20.8px]"
           >
             {SVGMap[type.toLowerCase()] || Fragment}
-            <span>{type}</span>
+            <XssSafeContent content={type} elementType="span" />
           </p>
         )}
 
-        <p
-          className={`su-mb-0 ${descriptionOnMobile} su-text-[19px] su-leading-[23.75px]`}
-        >
-          {description}
-        </p>
+        {displayDescription && description && (
+          <XssSafeContent
+            className={[
+              "su-mb-0 su-w-full [&>*:last-child]:su-mb-0",
+              descriptionSize(cardSize),
+            ].join(" ")}
+            content={description}
+          />
+        )}
       </div>
     </article>
   );

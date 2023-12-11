@@ -18,11 +18,15 @@ export function HorizontalCardGrid({ items, orientation = "horizontal" }) {
   const gridItems =
     items.length > MAXIMUM_ITEMS ? items.slice(0, MAXIMUM_ITEMS - 1) : items;
 
-  const orientationClassMap = {
-    vertical: "su-grid-cols-1 su-gap-[36px] md:su-gap-[27px]",
-    horizontal:
-      "su-grid-cols-1 md:su-grid-cols-2 lg:su-grid-cols-3 su-gap-[34px] md:su-gap-[36px] lg:su-gap-[48px]",
-  };
+  const orientationClassMap = new Map();
+  orientationClassMap.set(
+    "vertical",
+    "su-grid-cols-1 su-gap-[36px] md:su-gap-[27px]"
+  );
+  orientationClassMap.set(
+    "horizontal",
+    "su-grid-cols-1 md:su-grid-cols-2 lg:su-grid-cols-3 su-gap-[34px] md:su-gap-[36px] lg:su-gap-[48px]"
+  );
 
   return gridItems.length > MINIMUM_ITEMS ? (
     <div
@@ -32,7 +36,7 @@ export function HorizontalCardGrid({ items, orientation = "horizontal" }) {
       <div
         className={[
           "su-relative su-grid",
-          orientationClassMap[orientation],
+          orientationClassMap.get(orientation),
         ].join(" ")}
       >
         {gridItems.map((item) => {

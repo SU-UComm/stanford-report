@@ -31,7 +31,7 @@ export function LinkedHeading({ title, ctaText = "View all", ctaUrl }) {
         <a
           data-test="cta"
           href={ctaUrl}
-          className="su-flex su-no-underline su-items-center md:su-items-end md:su-mb-[8px] lg:su-mb-[12px] su-text-black dark:su-text-white su-flex-nowrap su-gap-[20px] md:su-gap-[13px] su-align-baseline su-text-[19px]"
+          className="su-flex su-no-underline hover:su-underline hover:su-text-digital-red dark:hover:su-text-dark-mode-red su-transition su-items-center md:su-items-end md:su-mb-[8px] lg:su-mb-[12px] su-text-black dark:su-text-white su-flex-nowrap su-gap-[20px] md:su-gap-[13px] su-align-baseline su-text-[19px]"
         >
           <span className="su-flex su-gap-[2px] su-items-center">
             <span>
