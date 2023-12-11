@@ -11,7 +11,6 @@ export default function formatCardDataFunnelback({
   title,
   listMetadata: {
     teaserPlain,
-    taxonomyContentCategoryText,
     image,
     taxonomyContentTypeText,
     taxonomyContentMainTopicText,
