@@ -1,7 +1,7 @@
 {
   "title": "Featured Content Grid",
-  "ctaText": "View all",
-  "ctaUrl": "https://www.stanford.edu/",
+  "ctaText": "",
+  "ctaUrl": "",
   "alignment": "left",
   "source": "Select",
   "searchUrl": "https://dxp-us-stage-search.funnelback.squiz.cloud/s/search.json",
