@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import {
   Article,
   QuestionAnswer,
@@ -67,29 +68,53 @@ export default function HorizontalCard({
   },
   cardSize,
 }) {
-  const SVGMap = {
-    article: <Article />,
-    "q & a": <QuestionAnswer />,
-    video: <Video />,
-    podcast: <Podcast />,
-    book: <Book />,
-  };
+  const SVGMap = new Map();
+  SVGMap.set(
+    "article",
+    <Article />
+  );
+  SVGMap.set(
+    "q & a",
+    <QuestionAnswer />
+  );
+  SVGMap.set(
+    "video",
+    <Video />
+  );
+  SVGMap.set(
+    "podcast",
+    <Podcast />
+  );
+  SVGMap.set(
+    "book",
+    <Book />
+  );
 
   // gap for the card <article> element
-  const cardGap = {
-    large: "su-gap-[20px] lg:su-gap-[48px]",
-    small: "su-gap-[19px]",
-  };
+  const cardGap = new Map();
+  cardGap.set(
+    "large",
+    "su-gap-[20px] lg:su-gap-[48px]"
+  );
+  cardGap.set(
+    "small",
+    "su-gap-[19px]"
+  );
 
   // gap for the <div> node that holds info, like description & title
-  const contentGap = {
-    large: "su-gap-[9px] lg:su-gap-[12px]",
-    small: "su-gap-[6px]",
-  };
+  const contentGap = new Map();
+  contentGap.set(
+    "large",
+    "su-gap-[9px] lg:su-gap-[12px]"
+  );
+  contentGap.set(
+    "small",
+    "su-gap-[6px]"
+  );
 
   return (
     <article
-      className={`listing-item su-flex ${cardGap[cardSize]}`}
+      className={`listing-item su-flex ${cardGap.get(cardSize)}`}
       data-testid="horizontal-card"
     >
       <CardThumbnail size={cardSize} imageUrl={imageUrl} imageAlt={imageAlt}>
@@ -100,18 +125,18 @@ export default function HorizontalCard({
         />
       </CardThumbnail>
 
-      <div className={`su-flex su-flex-col ${contentGap[cardSize]}`}>
+      <div className={`su-flex su-flex-col ${contentGap.get(cardSize)}`}>
         {cardSize === "small" && taxonomy && taxonomyUrl && (
           <p
             className="su-mb-0 su-text-[16px]"
             data-testid="horizontal-card-taxonomy"
           >
-            <a
+            <XssSafeContent
               className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
+              content={taxonomy}
               href={taxonomyUrl}
-            >
-              {taxonomy}
-            </a>
+              elementType="a"
+            />
           </p>
         )}
 
@@ -138,8 +163,8 @@ export default function HorizontalCard({
             data-testid="horizontal-card-type"
             className="su-flex su-font-bold su-text-black-70 dark:su-text-black-60 su-text-[14px] su-leading-[18.2px]"
           >
-            {SVGMap[type.toLowerCase()] || Fragment}
-            <span>{type}</span>
+            {SVGMap.get(type.toLowerCase()) || Fragment}
+            <XssSafeContent content={type} elementType="span" />
           </p>
         )}
 
@@ -148,7 +173,12 @@ export default function HorizontalCard({
             data-testid="horizontal-card-description"
             className="su-hidden lg:su-block lg:su-text-[18px]"
           >
-            {description}
+            <XssSafeContent
+              className={[
+                "su-mb-0 su-w-full [&>*:last-child]:su-mb-0",
+              ].join(" ")}
+              content={description}
+            />
           </div>
         )}
       </div>

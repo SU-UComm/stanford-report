@@ -20,11 +20,15 @@ export function ExternalLink({
   ctaText = "Read more",
   ctaSize = "small",
 }) {
-  const ctaSizeClasses = {
-    small: "",
-    medium: "",
-    large: "su-font-semibold su-text-[21px] su-leading-[26.25px]",
-  };
+  const ctaSizeClasses = new Map();
+  ctaSizeClasses.set(
+    "small",
+    ""
+  );
+  ctaSizeClasses.set(
+    "large",
+    "su-font-semibold su-text-[21px] su-leading-[26.25px]"
+  );
 
   return liveUrl ? (
     <a
@@ -32,7 +36,7 @@ export function ExternalLink({
       className={[
         "su-component-external-link su-flex su-items-center su-flex-nowrap su-no-underline hover:su-underline",
         "su-text-digital-red hover:su-text-digital-red dark:su-text-dark-mode-red",
-        ctaSizeClasses[ctaSize],
+        ctaSizeClasses.get(ctaSize),
       ].join(" ")}
       href={liveUrl}
     >

@@ -14,14 +14,22 @@ export function FeaturedGridContent({
   placement,
   alignment = "left",
 }) {
-  const rightAlignmentClasses = "md:su-order-2";
+  const alignClasses = new Map();
+  alignClasses.set(
+    "right",
+    "md:su-order-2"
+  );
+  alignClasses.set(
+    "left",
+    ""
+  );
   // Featured placement
   if (placement === 1) {
     return (
       <div
         className={[
           "md:su-basis-[58.333%] lg:su-basis-[64.5%] su-flex-grow",
-          alignment === "right" ? rightAlignmentClasses : "",
+          alignClasses.get(alignment),
         ].join(" ")}
       >
         {children}
