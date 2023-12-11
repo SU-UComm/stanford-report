@@ -36,8 +36,14 @@ function descriptionSize(size) {
 
 function gapSize(size) {
   if (size === "featured")
-    return "su-gap-[13px]";
-  return "su-gap-[9px]";
+    return "su-gap-[11px] md:su-gap-[13px] lg:su-gap-[13px]";
+  return "su-gap-[11px] md:su-gap-[12px] lg:su-gap-[9px]";
+}
+
+function imageMargin(size) {
+  if (size === "featured")
+    return "su-mb-[15px] md:su-mb-[26px] lg:su-mb-[38px]";
+  return "su-mb-[15px] md:su-mb-[18px] lg:su-mb-[19px]";
 }
 
 /**
@@ -100,7 +106,7 @@ export default function VerticalCard({
     >
       {displayThumbnail && imageUrl && (
         <div
-          className="su-relative su-block su-aspect-[50/33] su-mb-[19px]"
+          className={`su-relative su-block su-aspect-[50/33] ${imageMargin(cardSize)}`}
           data-testid="vertical-card-image-wrapper"
         >
           <img
