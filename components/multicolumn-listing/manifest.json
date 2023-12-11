@@ -66,6 +66,11 @@
             "title": "Display Supplementary Descriptions",
             "default": true,
             "type": "boolean"
+          },
+          "numberOfCards" : {
+            "title" : "Number of cards to display",
+            "default" : 3,
+            "enum" : [2, 3]
           }
         },
         "allOf": [
