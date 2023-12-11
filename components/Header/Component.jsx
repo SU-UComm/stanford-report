@@ -1,4 +1,5 @@
 import React from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 
 /**
  * Header component
@@ -9,6 +10,8 @@ import React from "react";
  */
 
 export default function Header({ data }) {
-  const markup = { __html: data };
-  return <div dangerouslySetInnerHTML={markup} />;
+  return <XssSafeContent
+    content={data}
+    elementType="div"
+  />;
 }
