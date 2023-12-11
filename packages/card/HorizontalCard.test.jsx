@@ -53,7 +53,7 @@ describe("Horizontal Card", () => {
   });
 
   test("If a large card size has a type, it should display the type node", () => {
-    const data = { ...testData, type: "Article" };
+    const data = { ...testData, type: "News" };
 
     render(<HorizontalCard data={data} cardSize="large" />);
 
@@ -120,7 +120,7 @@ describe("Horizontal Card", () => {
   });
 
   test("If the card is small, the type should not appear", () => {
-    const data = { ...testData, type: "Article" };
+    const data = { ...testData, type: "News" };
 
     render(<HorizontalCard data={data} cardSize="small" />);
 

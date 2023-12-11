@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import {
-  Article,
+  News,
   QuestionAnswer,
   Video,
   Podcast,
@@ -32,6 +32,18 @@ function descriptionSize(size) {
   if (size === "featured")
     return "[&>*]:su-text-[18px] [&>*]:md:su-text-[19px] [&>*]:su-leading-[22.5px] [&>*]:md:su-leading-[23.75px] [&>*]:su-mt-[4px] [&>*]:md:su-mt-[14px]";
   return "[&>*]:su-text-[19px] [&>*]:su-leading-[23.75px]";
+}
+
+function gapSize(size) {
+  if (size === "featured")
+    return "su-gap-[11px] md:su-gap-[13px] lg:su-gap-[13px]";
+  return "su-gap-[11px] md:su-gap-[12px] lg:su-gap-[9px]";
+}
+
+function imageMargin(size) {
+  if (size === "featured")
+    return "su-mb-[15px] md:su-mb-[26px] lg:su-mb-[38px]";
+  return "su-mb-[15px] md:su-mb-[18px] lg:su-mb-[19px]";
 }
 
 /**
@@ -81,26 +93,11 @@ export default function VerticalCard({
 }) {
 
   const SVGMap = new Map();
-  SVGMap.set(
-    "article",
-    <Article />
-  );
-  SVGMap.set(
-    "q & a",
-    <QuestionAnswer />
-  );
-  SVGMap.set(
-    "video",
-    <Video />
-  );
-  SVGMap.set(
-    "podcast",
-    <Podcast />
-  );
-  SVGMap.set(
-    "book",
-    <Book />
-  );
+  SVGMap.set("news", <News />);
+  SVGMap.set("q&amp;a", <QuestionAnswer />);
+  SVGMap.set("video", <Video />);
+  SVGMap.set("podcast", <Podcast />);
+  SVGMap.set("book", <Book />);
 
   return (
     <article
@@ -109,7 +106,7 @@ export default function VerticalCard({
     >
       {displayThumbnail && imageUrl && (
         <div
-          className="su-relative su-block su-aspect-[50/33] su-mb-[19px]"
+          className={`su-relative su-block su-aspect-[50/33] ${imageMargin(cardSize)}`}
           data-testid="vertical-card-image-wrapper"
         >
           <img
@@ -134,7 +131,7 @@ export default function VerticalCard({
         </p>
       )}
 
-      <div className="su-flex su-flex-wrap su-gap-[9px]">
+      <div className={`su-flex su-flex-wrap ${gapSize(cardSize)}`}>
         <h2
           className={`su-w-full ${titleSize(
             cardSize
