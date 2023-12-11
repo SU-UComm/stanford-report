@@ -56,6 +56,21 @@ export default class CardDataAdapter {
     return this;
   }
 
+  _noResponse() {
+    return {
+      title: "",
+      description: "",
+      liveUrl: null,
+      imageUrl: null,
+      imageAlt: null,
+      taxonomy: null,
+      taxonomyUrl: null,
+      type: null,
+      videoUrl: null,
+      date: null,
+    };
+  }
+
   /**
    * Fetches card data from selected endpoints, transforms
    * it and then outputs an array of transformed data
@@ -81,15 +96,21 @@ export default class CardDataAdapter {
       return Promise.all(promises);
     }
 
-    const res = await fetch(this.url, this.requestProps).catch((error) => {
-      throw new Error(error);
-    });
+    if (this.type === "FB") {
+      const res = await fetch(this.url, this.requestProps).catch((error) => {
+        throw new Error(error);
+      });
 
-    const json = await res.json();
+      const json = await res.json();
 
-    json.response.resultPacket.results.forEach((result) => {
-      formattedData.push(formatCardDataFunnelback(result));
-    });
+      if (!json.response.resultPacket.results.length) {
+        return formattedData;
+      }
+
+      json.response.resultPacket.results.forEach((result) => {
+        formattedData.push(formatCardDataFunnelback(result));
+      });
+    }
 
     return formattedData;
   }
