@@ -61,11 +61,6 @@
             "title": "Display Supplementary Descriptions",
             "default": true,
             "type": "boolean"
-          },
-          "numberOfCards" : {
-            "title" : "Number of cards to display",
-            "default" : 3,
-            "enum" : [2, 3]
           }
         },
         "allOf": [
@@ -89,6 +84,11 @@
                   "type": "string",
                   "title": "The Funnelback search query",
                   "default": "?"
+                },
+                "numberOfCards" : {
+                  "title" : "Number of cards to display",
+                  "default" : 3,
+                  "enum" : [2, 3]
                 }
               },
               "required": ["searchUrl", "searchQuery"]

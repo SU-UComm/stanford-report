@@ -26,24 +26,40 @@ export default function MulticolumnListing({
   alignment,
   displayThumbnails,
   displayDescriptions,
-  featuredDescription,
   numberOfCards,
+  source,
 }) {
-  const featuredCardData = data[0];
-
   const cards = [];
 
+  /**
+   * some data coming through might have empty values
+   * in the case of "Select", in that case, filter those
+   * out so the component doesn't get angry
+   */
+  data = data.filter(Boolean);
+
   data.forEach((cardData, i) => {
-    if (i <= numberOfCards - 1) {
+    if (source === "Select" && i <= numberOfCards - 1) {
       cards.push(
         <Card
           data={cardData}
           displayDescription={displayDescriptions}
           displayThumbnail={displayThumbnails}
-          cardSize="small"
+          cardSize="medium"
         />
       );
+
+      return;
     }
+
+    cards.push(
+      <Card
+        data={cardData}
+        displayDescription={displayDescriptions}
+        displayThumbnail={displayThumbnails}
+        cardSize="medium"
+      />
+    );
   });
 
   return (
