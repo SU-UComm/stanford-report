@@ -14,6 +14,7 @@ export default function formatCardDataFunnelback({
     image,
     taxonomyContentTypeText,
     taxonomyContentMainTopicText,
+    featuredVideo,
   },
   date,
   liveUrl,
@@ -27,7 +28,9 @@ export default function formatCardDataFunnelback({
 
   const taxonomyUrl = "#"; // need to map this
   const type = taxonomyContentTypeText[0]; // need to map this
-  // const videoUrl = null; // need to map this
+
+  // video
+  const videoUrl = featuredVideo; // need to map this
 
   return {
     title,
@@ -38,7 +41,7 @@ export default function formatCardDataFunnelback({
     taxonomy,
     taxonomyUrl,
     type,
-    // videoUrl,
+    videoUrl,
     date,
   };
 }
