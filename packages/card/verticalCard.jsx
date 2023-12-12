@@ -40,6 +40,24 @@ function imageMargin(size) {
   return "su-mb-[15px] md:su-mb-[18px] lg:su-mb-[19px]";
 }
 
+function taxonomySize(size) {
+  if (size === "featured")
+    return "su-text-[20px] md:su-text-[20px] su-leading-[26px]";
+  if (size === "medium")
+    return "su-text-[16px] md:su-text-[16px] md:su-text-[20px] su-leading-[20.8px] md:su-leading-[26px]";
+
+  return "su-text-[18px] su-leading-[23.4px]";
+}
+
+function typeSize(size) {
+  if (size === "featured")
+    return "su-text-[18px] su-leading-[23.4px] md:su-text-[20px] md:su-leading-[26px] lg:su-text-[20px] lg:su-leading-[26px]";
+  if (size === "medium")
+    return "su-text-[16px] su-leading-[20.8px] lg:su-text-[18px] lg:su-leading-[23.4px]";
+
+  return "su-text-[16px] su-leading-[20.8px]";
+}
+
 /**
  * Card package
  *
@@ -117,7 +135,9 @@ export default function VerticalCard({
       {taxonomy && (
         <p
           data-testid="vertical-card-taxonomy"
-          className="su-relative su-z-10 su-text-[16px] lg:su-text-[18px] su-leading-[20.8px] lg:su-leading-[23.4px] su-mb-[13px] su-font-semibold"
+          className={`su-relative su-z-10 su-mb-[13px] su-font-semibold ${taxonomySize(
+            cardSize
+          )}`} // size
         >
           <XssSafeContent
             className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
@@ -143,7 +163,9 @@ export default function VerticalCard({
         {type && (
           <p
             data-testid="vertical-card-type"
-            className="su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-[6px] su-flex-nowrap su-items-center su-text-[16px] su-leading-[20.8px]"
+            className={`su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-[6px] su-flex-nowrap su-items-center ${typeSize(
+              cardSize
+            )}`}
           >
             {SVGMap.get(type.toLowerCase()) || Fragment}
             <XssSafeContent content={type} elementType="span" />
@@ -164,6 +186,20 @@ export default function VerticalCard({
   );
 }
 
+/**
+ * renders out the video thumbnail
+ *
+ * @param {string} cardSize
+ * the size of the card component, eg: featured, medium & small
+ *
+ * @param {string} imageUrl
+ * the image's source
+ *
+ * @param {string} imageAlt
+ * the image's alt value
+ *
+ * @returns {JSX.Element}
+ */
 function VideoThumbnail({ cardSize, imageUrl, imageAlt }) {
   return (
     <a
