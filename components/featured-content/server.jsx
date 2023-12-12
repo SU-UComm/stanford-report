@@ -7,19 +7,19 @@ export default async (args, info) => {
   let data = null;
 
   // check what data source "Search" or "Select"
-  if (args.source.toLowerCase() === "search") {
+  if (args.contentConfiguration.source.toLowerCase() === "search") {
     // compose and fetch the FB search results
-    const adapter = new CardDataAdapter(FB_JSON_URL + args.searchQuery, "FB");
+    const adapter = new CardDataAdapter(FB_JSON_URL + args.contentConfiguration.searchQuery, "FB");
 
     data = await adapter.fetch();
   }
   // When Select, use Matix Content API
-  else if (args.source.toLowerCase() === "select") {
+  else if (args.contentConfiguration.source.toLowerCase() === "select") {
     // get our data from the Content API
     const adapter = new CardDataAdapter(CONTENT_API, "MX");
 
     adapter
-      .assets(args.featured, args.supporting_01, args.supporting_02)
+      .assets(args.contentConfiguration.featured, args.contentConfiguration.supporting_01, args.contentConfiguration.supporting_02)
       .data("metadata", "attributes", "urls")
       .request({
         headers: {
@@ -34,6 +34,8 @@ export default async (args, info) => {
     ...args,
     data,
   };
+
+  console.log(fbArgs);
 
   return renderComponent({
     Component,
