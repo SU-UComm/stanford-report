@@ -22,7 +22,7 @@ export default function formatCardDataFunnelback({
   const description = teaserPlain;
 
   const imageUrl = image;
-  // const imageAlt = null; // need to map this
+  const imageAlt = null; // need to map this
 
   const taxonomy = taxonomyContentMainTopicText;
 
@@ -37,7 +37,7 @@ export default function formatCardDataFunnelback({
     description,
     liveUrl,
     imageUrl,
-    // imageAlt,
+    imageAlt,
     taxonomy,
     taxonomyUrl,
     type,
