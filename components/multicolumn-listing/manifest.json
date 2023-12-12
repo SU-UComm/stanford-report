@@ -47,11 +47,6 @@
             "title": "Heading: Additional link URL",
             "type": "string"
           },
-          "alignment": {
-            "title": "Featured Card: Alignment",
-            "default": "left",
-            "enum": ["left", "right"]
-          },
           "source": {
             "title": "Content source",
             "default": "Search",
@@ -110,19 +105,15 @@
             },
             "then": {
               "properties": {
-                "featured": {
+                "columnOne": {
                   "type": "string",
                   "title": "Select Featured content <SquizLink>"
                 },
-                "featuredDescription": {
-                  "type": "string",
-                  "title": "Featured Content description"
-                },
-                "supporting_01": {
+                "columnTwo": {
                   "type": "string",
                   "title": "Select the first supporting feature <SquizLink>"
                 },
-                "supporting_02": {
+                "columnThree": {
                   "type": "string",
                   "title": "Select the second supporting feature <SquizLink>"
                 }

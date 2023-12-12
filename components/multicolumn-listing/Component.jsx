@@ -30,9 +30,6 @@ export default function MulticolumnListing({
   numberOfCards,
 }) {
   const featuredCardData = data[0];
-  if (featuredDescription !== "" && featuredDescription !== null) {
-    featuredCardData.description = featuredDescription;
-  }
 
   const cards = [];
 

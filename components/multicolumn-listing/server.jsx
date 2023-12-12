@@ -19,7 +19,7 @@ export default async (args, info) => {
     const adapter = new CardDataAdapter(CONTENT_API, "MX");
 
     adapter
-      .assets(args.featured, args.supporting_01, args.supporting_02)
+      .assets(args.columnOne, args.columnTwo, args.columnThree)
       .data("metadata", "attributes", "urls")
       .request({
         headers: {
