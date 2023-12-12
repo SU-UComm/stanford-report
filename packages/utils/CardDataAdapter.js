@@ -82,6 +82,22 @@ export default class CardDataAdapter {
       return Promise.all(promises);
     }
 
+    if (this.type === "FB") {
+      const res = await fetch(this.url, this.requestProps).catch((error) => {
+        throw new Error(error);
+      });
+
+      const json = await res.json();
+
+      if (!json.response.resultPacket.results.length) {
+        return formattedData;
+      }
+
+      json.response.resultPacket.results.forEach((result) => {
+        formattedData.push(formatCardDataFunnelback(result));
+      });
+    }
+
     if (this.type === "Events") {
       const res = await fetch(this.url, this.requestProps).catch((error) => {
         throw new Error(error);
@@ -92,19 +108,7 @@ export default class CardDataAdapter {
       json.events.forEach((event) => {
         formattedData.push(formatCardDataEvents(event));
       });
-
-      return formattedData;
     }
-
-    const res = await fetch(this.url, this.requestProps).catch((error) => {
-      throw new Error(error);
-    });
-
-    const json = await res.json();
-
-    json.response.resultPacket.results.forEach((result) => {
-      formattedData.push(formatCardDataFunnelback(result));
-    });
 
     return formattedData;
   }
