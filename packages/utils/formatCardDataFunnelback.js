@@ -16,6 +16,7 @@ export default function formatCardDataFunnelback({
     taxonomyContentMainTopicText,
     featuredVideo,
     taxonomyContentMainTopicLandingPageUrl,
+    imageAlt,
   },
   date,
   liveUrl,
@@ -23,7 +24,6 @@ export default function formatCardDataFunnelback({
   const description = teaserPlain;
 
   const imageUrl = image;
-  const imageAlt = null; // need to map this
 
   const taxonomy = taxonomyContentMainTopicText;
 
