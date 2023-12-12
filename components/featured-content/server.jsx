@@ -15,8 +15,7 @@ export default async (args, info) => {
   // When Select, use Matix Content API
   else if (args.source.toLowerCase() === "select") {
     // Get our card URI's from the args object
-    const { featured, supporting1, supporting2 } = args;
-    const cards = { featured, supporting1, supporting2 };
+    const { cards } = args;
     // Create our service
     const service = new MatrixCardService({ ctx, API_IDENTIFIER });
 
@@ -25,8 +24,6 @@ export default async (args, info) => {
 
     // get the cards data
     data = await adapter.getCards(cards);
-
-    return JSON.stringify(data);
   }
 
   const renderProps = {

@@ -4,10 +4,17 @@
   "ctaUrl": "https://www.stanford.edu/",
   "alignment": "left",
   "source": "Select",
-  "featured": "matrix-asset://api-identifier/89422",
-  "featuredDescription": "",
-  "supporting1": "matrix-asset://api-identifier/89430",
-  "supporting2": "matrix-asset://api-identifier/89426",
+  "cards": [
+    {
+      "cardAsset": "matrix-asset://api-identifier/89422"
+    },
+    {
+      "cardAsset": "matrix-asset://api-identifier/89430"
+    },
+    {
+      "cardAsset": "matrix-asset://api-identifier/89426"
+    }
+  ],
   "displayThumbnails": true,
   "displayDescriptions": false
 }

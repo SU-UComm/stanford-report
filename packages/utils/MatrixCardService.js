@@ -1,30 +1,32 @@
+import formatCardDataMatrix from "./formatCardDataMatrix";
+
 export default class MatrixCardService {
   constructor({ ctx, API_IDENTIFIER }) {
     this.ctx = ctx;
     this.API_IDENTIFIER = API_IDENTIFIER;
   }
 
-  async getCards(cardInfo) {
-    const {
-      featured: featuredUri,
-      supporting1: supportingOneUri,
-      supporting2: supportingTwoUri,
-    } = cardInfo;
+  async getCards(cards) {
+    // Get the API Identifier
+    const identifier = cards.at(0).cardAsset.split('/').at(2);
 
-    const featured = this.ctx.resolveUri(featuredUri);
-    const supporting1 = this.ctx.resolveUri(supportingOneUri);
-    const supporting2 = this.ctx.resolveUri(supportingTwoUri);
+    // Resolve the data for each of the cards
+    for (let index = 0; index < cards.length; index++) {
+      const card = cards[index];
 
-    return Promise.all([featured, supporting1, supporting2])
-      .catch((error) => {
-        throw new Error(`Error fetching Data in Matrix Card Service: ${error}`);
-      })
-      .then((data) => {
-        return {
-          featured: data.at(0),
-          supporting1: data.at(1),
-          supporting2: data.at(2),
-        };
-      });
+      // Resolve the data for the card
+      card.data = await this.ctx.resolveUri(card.cardAsset);
+
+      // Resolve the image asset id
+      const imageIds = card?.data?.metadata?.featuredImage;
+      const imageUris = imageIds.map((imageId) => `matrix-asset://${identifier}/${imageId}`);
+      const imageData = await Promise.all(imageUris.map((uri) => this.ctx.resolveUri(uri)));
+      card.data.metadata.featuredImage = imageData;
+
+      // After we have done all our data fetching transform the card data to the shape we expect
+      card.data = formatCardDataMatrix(card.data);
+    }
+
+    return cards.map(({data}) => data);
   }
 }

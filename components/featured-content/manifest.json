@@ -105,21 +105,28 @@
             },
             "then": {
               "properties": {
-                "featured": {
-                  "type": "string",
-                  "title": "Select Featured content card"
-                },
-                "featuredDescription": {
-                  "type": "string",
-                  "title": "Featured Content description"
-                },
-                "supporting1": {
-                  "type": "string",
-                  "title": "Select the first supporting feature card"
-                },
-                "supporting2": {
-                  "type": "string",
-                  "title": "Select the second supporting feature card"
+                "cards": {
+                  "title": "Cards",
+                  "description": "Select the assets that will be used for cards. The first card selected will be the featured card",
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "cardAsset": {
+                        "type": "string",
+                        "format": "matrix-asset-uri",
+                        "title": "Card Asset"
+                      },
+                      "featuredDescription": {
+                        "type": "string",
+                        "title": "Featured Content description",
+                        "description": "this will be used if this card is the featured card (first)"
+                      }
+                    },
+                    "required": ["cardAsset"]
+                  }
                 }
               },
               "required": ["featured", "supporting1", "supporting2"]
@@ -172,15 +179,27 @@
   "mockedUris": {
     "matrix-asset://api-identifier/89422": {
       "type": "file",
-      "path": "mocked-uris/featured-node.json"
+      "path": "mocked-uris/89422.json"
     },
     "matrix-asset://api-identifier/89430": {
       "type": "file",
-      "path": "mocked-uris/featured-node.json"
+      "path": "mocked-uris/89430.json"
     },
     "matrix-asset://api-identifier/89426": {
       "type": "file",
-      "path": "mocked-uris/featured-node.json"
+      "path": "mocked-uris/89426.json"
+    },
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/125800": {
+      "type": "file",
+      "path": "mocked-uris/125800.json"
+    },
+    "matrix-asset://api-identifier/125801": {
+      "type": "file",
+      "path": "mocked-uris/125801.json"
     }
   },
   "previews": {

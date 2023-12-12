@@ -1,0 +1,71 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json",
+  "name": "resolve-uri",
+  "namespace": "stanford-components",
+  "displayName": "[Development] Resolve URI",
+  "description": "This component is used to resolve the URI of an asset so in development we can work with accurate demo data",
+  "version": "0.0.1",
+  "mainFunction": "main",
+  "icon": {
+    "id": "fiber_new",
+    "color": {
+      "type": "enum",
+      "value": "blue"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "main.js",
+      "input": {
+        "type": "object",
+        "properties": {
+          "asset": {
+            "type": "string",
+            "title": "Asset",
+            "description": "The asset to resolve",
+            "format": "matrix-asset-uri"
+          }
+        },
+        "required": ["asset"]
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "default.css"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "default.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "previews/example.data.json"
+          },
+          "wrapper": {
+            "path": "previews/preview.html"
+          }
+        }
+      }
+    }
+  },
+  "staticFiles": {
+    "locationRoot": "static"
+  }
+}

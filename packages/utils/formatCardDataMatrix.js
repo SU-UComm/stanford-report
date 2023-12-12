@@ -23,8 +23,8 @@ export default function formatCardDataMatrix({ attributes, metadata, url }) {
   const title = attributes.name;
   const liveUrl = url;
   const description = dataChecker(metadata.teaser);
-  const imageUrl = dataChecker(metadata.csFeaturedImageUrl);
-  const imageAlt = dataChecker(metadata.csFeaturedImageAlt);
+  const imageUrl = dataChecker(metadata.featuredImage).url;
+  const imageAlt = dataChecker(metadata.featuredImage)?.attributes?.alt;
   const taxonomy = dataChecker(metadata.csTaxonomyName);
   const taxonomyUrl = dataChecker(metadata.csTaxonomyUrl);
   const type = dataChecker(metadata.csContentTypeName);
