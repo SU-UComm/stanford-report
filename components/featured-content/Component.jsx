@@ -19,38 +19,35 @@ import { Avatar, PullQuote } from "../../packages/quotes/Quotes";
  */
 
 export default function FeaturedContent({
-  title,
-  ctaText,
-  ctaUrl,
-  data,
-  alignment,
-  displayThumbnails,
-  displayDescriptions,
-  featuredDescription,
+  headingConfiguration,
+  contentConfiguration,
+  displayConfiguration,
+  data
 }) {
+
   const featuredCardData = data[0];
-  if (featuredDescription !== "" && featuredDescription !== null) {
-    featuredCardData.description = featuredDescription;
+  if (contentConfiguration.featuredDescription !== "" && contentConfiguration.featuredDescription !== null) {
+    featuredCardData.description = contentConfiguration.featuredDescription;
   }
 
   return (
     <>
-      <LinkedHeading title={title} ctaText={ctaText} ctaUrl={ctaUrl} />
+      <LinkedHeading title={headingConfiguration.title} ctaText={headingConfiguration.ctaText} ctaUrl={headingConfiguration.ctaUrl} />
 
       <FeaturedGrid
-        alignment={alignment}
+        alignment={displayConfiguration.alignment}
         items={[
           <Card data={featuredCardData} cardSize="featured" />,
           <Card
             data={data[1]}
-            displayThumbnail={displayThumbnails}
-            displayDescription={displayDescriptions}
+            displayThumbnail={displayConfiguration.displayThumbnails}
+            displayDescription={displayConfiguration.displayDescriptions}
             cardSize="small"
           />,
           <Card
             data={data[2]}
-            displayThumbnail={displayThumbnails}
-            displayDescription={displayDescriptions}
+            displayThumbnail={displayConfiguration.displayThumbnails}
+            displayDescription={displayConfiguration.displayDescriptions}
             cardSize="small"
           />,
         ]}

@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "featured-content",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "namespace": "stanford-components",
   "description": "",
   "displayName": "Featured content",
@@ -33,103 +33,125 @@
       "entry": "./dist/server.js",
       "input": {
         "type": "object",
+        "required": [],
         "properties": {
-          "title": {
-            "title": "Heading",
-            "type": "string"
-          },
-          "ctaText": {
-            "title": "Heading: Additional link text",
-            "type": "string",
-            "default": "View all"
-          },
-          "ctaUrl": {
-            "title": "Heading: Additional link URL",
-            "type": "string"
-          },
-          "alignment": {
-            "title": "Featured Card: Alignment",
-            "default": "left",
-            "enum": ["left", "right"]
-          },
-          "source": {
-            "title": "Content source",
-            "default": "Search",
-            "enum": ["Search", "Select"]
-          },
-          "displayThumbnails": {
-            "title": "Display Supplementary Thumbnails",
-            "default": true,
-            "type": "boolean"
-          },
-          "displayDescriptions": {
-            "title": "Display Supplementary Descriptions",
-            "default": true,
-            "type": "boolean"
-          }
-        },
-        "allOf": [
-          {
-            "if": {
-              "properties": {
-                "source": {
-                  "const": "Search"
-                }
+          "headingConfiguration": {
+            "title": "Section Heading Configuration",
+            "description": "The heading for the section, appearing before the grid of cards. If the title is empty, the heading and call to action link will be hidden.",
+            "type": "object",
+            "required": [],
+            "properties": {
+              "title": {
+                "title": "Heading",
+                "type": "string"
               },
-              "required": [""]
-            },
-            "then": {
-              "properties": {
-                "searchUrl": {
-                  "type": "string",
-                  "title": "The Funnelback search JSON endpoint",
-                  "default": ""
-                },
-                "searchQuery": {
-                  "type": "string",
-                  "title": "The Funnelback search query",
-                  "default": "?"
-                }
+              "ctaText": {
+                "title": "Link text",
+                "type": "string",
+                "default": "View all"
               },
-              "required": ["searchUrl", "searchQuery"]
+              "ctaUrl": {
+                "title": "Link URL",
+                "type": "string"
+              }
             }
           },
-          {
-            "if": {
-              "properties": {
-                "source": {
-                  "const": "Select"
-                }
-              },
-              "required": [""]
+          "contentConfiguration": {
+            "title": "Grid Content",
+            "description": "The cards to display in the grid area of the component. The featured card appears larger than the supplementary cards. When manually selecting cards, at least two must be selected for the grid to display.",
+            "type": "object",
+            "required": ["source"],
+            "properties": {
+              "source": {
+                "title": "Content source",
+                "default": "Search",
+                "enum": ["Search", "Select"],
+                "type": "string"
+              }
             },
-            "then": {
-              "properties": {
-                "featured": {
-                  "type": "string",
-                  "title": "Select Featured content <SquizLink>"
+            "allOf": [
+              {
+                "if": {
+                  "required": [],
+                  "properties": {
+                    "source": {
+                      "const": "Search"
+                    }
+                  }
                 },
-                "featuredDescription": {
-                  "type": "string",
-                  "title": "Featured Content description"
-                },
-                "supporting_01": {
-                  "type": "string",
-                  "title": "Select the first supporting feature <SquizLink>"
-                },
-                "supporting_02": {
-                  "type": "string",
-                  "title": "Select the second supporting feature <SquizLink>"
+                "then": {
+                  "required": ["searchUrl", "searchQuery"],
+                  "properties": {
+                    "searchUrl": {
+                      "type": "string",
+                      "title": "The Funnelback search JSON endpoint",
+                      "default": ""
+                    },
+                    "searchQuery": {
+                      "type": "string",
+                      "title": "The Funnelback search query",
+                      "default": "?"
+                    }
+                  }
                 }
               },
-              "required": ["featured", "supporting_01", "supporting_02"]
-            }
+              {
+                "if": {
+                  "required": [],
+                  "properties": {
+                    "source": {
+                      "const": "Select"
+                    }
+                  }
+                },
+                "then": {
+                  "required": ["featured", "supporting_01", "supporting_02"],
+                  "properties": {
+                    "featured": {
+                      "type": "string",
+                      "title": "Select Featured content <SquizLink>"
+                    },
+                    "featuredDescription": {
+                      "type": "string",
+                      "title": "Featured Content description"
+                    },
+                    "supporting_01": {
+                      "type": "string",
+                      "title": "Select the first supporting feature <SquizLink>"
+                    },
+                    "supporting_02": {
+                      "type": "string",
+                      "title": "Select the second supporting feature <SquizLink>"
+                    }
+                  }
+                }
+              }
+            ]
           },
-          {
-            "required": ["source"]
+          "displayConfiguration": {
+            "title": "Grid Display Configuration",
+            "type": "object",
+            "required": [],
+            "properties": {
+              "alignment": {
+                "title": "Featured Card: Alignment",
+                "description": "The position of the featured card on larger screens.",
+                "default": "left",
+                "enum": ["left", "right"]
+              },
+              "displayThumbnails": {
+                "title": "Display Supplementary Thumbnails",
+                "default": true,
+                "type": "boolean"
+              },
+              "displayDescriptions": {
+                "title": "Display Supplementary Descriptions",
+                "default": true,
+                "type": "boolean"
+              }
+            }
           }
-        ],
-        "required": ["source"]
+        }
       },
       "output": {
         "responseType": "html",
