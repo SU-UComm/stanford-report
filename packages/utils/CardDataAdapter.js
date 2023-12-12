@@ -57,21 +57,6 @@ export default class CardDataAdapter {
     return this;
   }
 
-  _noResponse() {
-    return {
-      title: "",
-      description: "",
-      liveUrl: null,
-      imageUrl: null,
-      imageAlt: null,
-      taxonomy: null,
-      taxonomyUrl: null,
-      type: null,
-      videoUrl: null,
-      date: null,
-    };
-  }
-
   /**
    * Fetches card data from selected endpoints, transforms
    * it and then outputs an array of transformed data
