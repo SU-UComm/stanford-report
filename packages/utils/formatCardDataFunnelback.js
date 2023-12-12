@@ -26,11 +26,11 @@ export default function formatCardDataFunnelback({
 
   const taxonomy = taxonomyContentMainTopicText;
 
-  const taxonomyUrl = "#"; // need to map this
-  const type = taxonomyContentTypeText[0]; // need to map this
+  const taxonomyUrl = "#";
+  const type = taxonomyContentTypeText[0];
 
   // video
-  const videoUrl = featuredVideo; // need to map this
+  const videoUrl = featuredVideo;
 
   return {
     title,
