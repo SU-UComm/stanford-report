@@ -4,14 +4,16 @@ import React from "react";
 import { LinkedHeading } from "../../packages/headings/Heading";
 
 /**
- * Base component
+ * Renders out the acknowledgement component
  *
- * @param {string} title The component title
- * ... any other options needed
+ * @param {string} title
+ * the title of the acknowledgement, only for screen readers.
+ *
+ * @param {string} content
+ * the text content of the acknowledgement
+ *
  * @returns {JSX.Element}
- * @constructor
  */
-
 export default function Acknowledgement({ title, content }) {
   return (
     <>
