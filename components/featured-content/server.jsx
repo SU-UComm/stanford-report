@@ -4,12 +4,14 @@ import CardDataAdapter from "../../packages/utils/CardDataAdapter";
 import MatrixCardService from "../../packages/utils/MatrixCardService";
 
 export default async (args, info) => {
+  // eslint-disable-next-line no-unused-vars
   const { FB_JSON_URL, API_IDENTIFIER } = info.set.environment;
   const { ctx } = info;
   const adapter = new CardDataAdapter();
   let data = null;
 
   // check what data source "Search" or "Select"
+  // eslint-disable-next-line no-empty
   if (args.source.toLowerCase() === "search") {
   }
   // When Select, use Matix Content API

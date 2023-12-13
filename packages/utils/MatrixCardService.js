@@ -1,4 +1,4 @@
-import resolveAssetUri from "./assetResolver";
+import resolveAssetUri from "./resolveAssetUri";
 import formatCardDataMatrix from "./formatCardDataMatrix";
 
 export default class MatrixCardService {
@@ -8,16 +8,26 @@ export default class MatrixCardService {
   }
 
   async getCards(cards) {
+    const cardsData = [];
     // Resolve the data for each of the cards
     for (let index = 0; index < cards.length; index++) {
+      // Get our current card
       const card = cards[index];
 
-      card.data = await resolveAssetUri({ctx: this.ctx, assetUri: card });
-
-      // After we have done all our data fetching transform the card data to the shape we expect
-      card.data = formatCardDataMatrix(card.data);
+      // Reassign the card data as our current card
+      cardsData[index] = resolveAssetUri({
+        ctx: this.ctx,
+        assetUri: card.cardAsset,
+        API_IDENTIFIER: this.API_IDENTIFIER,
+      });
     }
 
-    return cards.map(({data}) => data);
+    return Promise.all(cardsData)
+      .then((data) => data.map((cardData) => formatCardDataMatrix(cardData)))
+      .catch((error) => {
+        throw new Error(
+          `There was an error formatting the card data: ${error}`
+        );
+      });
   }
 }
