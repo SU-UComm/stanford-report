@@ -5,7 +5,7 @@
 export default class CardDataAdapter {
   constructor(cardService) {
     this.cardService = cardService;
-    this.getCards = null;
+    this.getCards = cardService.getCards;
   }
 
   setCardService(cardService) {
