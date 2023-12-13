@@ -46,12 +46,19 @@
     "tailwindcss": "^3.3.5"
   },
   "dependencies": {
+    "@react-aria/button": "^3.9.0",
+    "@react-aria/dialog": "^3.5.8",
+    "@react-aria/focus": "^3.15.0",
+    "@react-aria/overlays": "^3.19.0",
     "@squiz/xaccel-component-client-helpers": "^1.9.0-beta.24",
     "@squiz/xaccel-component-server-helpers": "^1.9.0-beta.24",
     "@squiz/xaccel-xss-safe-content": "^1.9.0-beta.17",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
+    "ally.js": "^1.4.1",
+    "focus-trap": "^7.5.4",
     "object-hash": "^3.0.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
