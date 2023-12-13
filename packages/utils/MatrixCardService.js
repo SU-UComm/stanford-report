@@ -12,10 +12,10 @@ export default class MatrixCardService {
     // Resolve the data for each of the cards
     for (let index = 0; index < cards.length; index++) {
       // Get our current card
-      const card = cards[index];
+      const card = cards[parseInt(index, 10)];
 
       // Reassign the card data as our current card
-      cardsData[index] = resolveAssetUri({
+      cardsData[parseInt(index, 10)] = resolveAssetUri({
         ctx: this.ctx,
         assetUri: card.cardAsset,
         API_IDENTIFIER: this.API_IDENTIFIER,
