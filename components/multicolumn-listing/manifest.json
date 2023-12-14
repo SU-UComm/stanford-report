@@ -1,0 +1,183 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "multicolumn-listing",
+  "version": "0.0.1",
+  "namespace": "stanford-components",
+  "description": "",
+  "displayName": "Multicolumn Listing",
+  "mainFunction": "main",
+  "environment": [
+    {
+      "name": "CONTENT_API",
+      "required": true
+    },
+    {
+      "name": "CONTENT_API_KEY",
+      "required": true
+    },
+    {
+      "name": "FB_JSON_URL",
+      "required": true
+    }
+  ],
+  "icon": {
+    "id": "auto_awesome_mosaic",
+    "color": {
+      "type": "enum",
+      "value": "blue"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.js",
+      "input": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "title": "Heading",
+            "type": "string"
+          },
+          "ctaText": {
+            "title": "Heading: Additional link text",
+            "type": "string",
+            "default": "View all"
+          },
+          "ctaUrl": {
+            "title": "Heading: Additional link URL",
+            "type": "string"
+          },
+          "source": {
+            "title": "Content source",
+            "default": "Search",
+            "enum": ["Search", "Select"]
+          },
+          "displayThumbnails": {
+            "title": "Display Supplementary Thumbnails",
+            "default": true,
+            "type": "boolean"
+          },
+          "displayDescriptions": {
+            "title": "Display Supplementary Descriptions",
+            "default": true,
+            "type": "boolean"
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "source": {
+                  "const": "Search"
+                }
+              },
+              "required": [""]
+            },
+            "then": {
+              "properties": {
+                "searchUrl": {
+                  "type": "string",
+                  "title": "The Funnelback search JSON endpoint",
+                  "default": ""
+                },
+                "searchQuery": {
+                  "type": "string",
+                  "title": "The Funnelback search query",
+                  "default": "?"
+                },
+                "numberOfCards" : {
+                  "title" : "Number of cards to display",
+                  "default" : 3,
+                  "enum" : [2, 3]
+                }
+              },
+              "required": ["searchUrl", "searchQuery"]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "source": {
+                  "const": "Select"
+                }
+              },
+              "required": [""]
+            },
+            "then": {
+              "properties": {
+                "columnOne": {
+                  "type": "string",
+                  "title": "Select Featured content <SquizLink>"
+                },
+                "columnTwo": {
+                  "type": "string",
+                  "title": "Select the first supporting feature <SquizLink>"
+                },
+                "columnThree": {
+                  "type": "string",
+                  "title": "Select the second supporting feature <SquizLink>"
+                }
+              },
+              "required": ["featured", "supporting_01", "supporting_02"]
+            }
+          },
+          {
+            "required": ["source"]
+          }
+        ],
+        "required": ["source"]
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}

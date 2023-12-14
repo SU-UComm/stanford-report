@@ -1,0 +1,14 @@
+{
+  "title": "Featured Content Grid",
+  "ctaText": "",
+  "ctaUrl": "",
+  "source": "Select",
+  "searchUrl": "https://dxp-us-stage-search.funnelback.squiz.cloud/s/search.json",
+  "searchQuery": "?profile=search&collection=sug~sp-stanford-university-content-hub&num_ranks=3&start_rank=1&fmo=1&sort=dmetamtxCreated&query=!padrenull",
+  "columnOne": "",
+  "columnTwo": "89430",
+  "columnThree": "89426",
+  "displayThumbnails": true,
+  "displayDescriptions": false,
+  "numberOfCards" : 3
+}
