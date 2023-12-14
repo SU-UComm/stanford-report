@@ -4,7 +4,6 @@ import React from "react";
 import Card from "../../packages/card/Card";
 import { LinkedHeading } from "../../packages/headings/Heading";
 import { FeaturedGrid } from "../../packages/grids/Grids";
-import { Avatar, PullQuote } from "../../packages/quotes/Quotes";
 
 /**
  * Featured content component
@@ -22,17 +21,23 @@ export default function FeaturedContent({
   headingConfiguration,
   contentConfiguration,
   displayConfiguration,
-  data
+  data,
 }) {
-
   const featuredCardData = data[0];
-  if (contentConfiguration.featuredDescription !== "" && contentConfiguration.featuredDescription !== null) {
+  if (
+    contentConfiguration.featuredDescription !== "" &&
+    contentConfiguration.featuredDescription !== null
+  ) {
     featuredCardData.description = contentConfiguration.featuredDescription;
   }
 
   return (
     <>
-      <LinkedHeading title={headingConfiguration.title} ctaText={headingConfiguration.ctaText} ctaUrl={headingConfiguration.ctaUrl} />
+      <LinkedHeading
+        title={headingConfiguration.title}
+        ctaText={headingConfiguration.ctaText}
+        ctaUrl={headingConfiguration.ctaUrl}
+      />
 
       <FeaturedGrid
         alignment={displayConfiguration.alignment}
