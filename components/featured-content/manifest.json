@@ -76,7 +76,7 @@
                   }
                 },
                 "then": {
-                  "required": ["searchUrl", "searchQuery"],
+                  "required": ["searchQuery"],
                   "properties": {
                     "searchQuery": {
                       "type": "string",
@@ -243,6 +243,19 @@
           "inputData": {
             "type": "file",
             "path": "select.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "search": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "search.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
