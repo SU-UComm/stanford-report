@@ -34,15 +34,26 @@ export function SidebarList({
   ctaText = "See all",
   ctaIcon = "chevronright",
 }) {
-  const iconMap = {
-    chevronright: <ChevronRight />,
-    externalarrow: <ExternalArrow />,
-  };
+  const iconMap = new Map();
+  iconMap.set(
+    "chevronright",
+    <ChevronRight />
+  );
 
-  const iconAlignments = {
-    chevronright: "su-items-center",
-    externalarrow: "su-items-end",
-  };
+  iconMap.set(
+    "externalarrow",
+    <ExternalArrow />
+  );
+
+  const iconAlignments = new Map();
+  iconAlignments.set(
+    "chevronright",
+    "su-items-center"
+  );
+  iconAlignments.set(
+    "externalarrow",
+    "su-items-end"
+  );
 
   const hasChildren = children !== undefined;
 
@@ -60,11 +71,11 @@ export function SidebarList({
           href={ctaUrl}
           className={[
             "su-transition su-justify-center md:su-justify-start su-w-full su-flex su-text-digital-red dark:su-text-dark-mode-red su-flex-nowrap su-gap-[2px] su-leading-[26.25px] su-text-[21px] su-font-semibold su-no-underline",
-            iconAlignments[ctaIcon],
+            iconAlignments.get(icon),
           ].join(" ")}
         >
           <span>{ctaText}</span>
-          {iconMap[ctaIcon]}
+          {iconMap.get(ctaIcon)}
         </a>
       )}
     </div>

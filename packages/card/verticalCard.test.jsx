@@ -98,7 +98,7 @@ describe("Vertical Card", () => {
   });
 
   test("when a card does have a type, the type should render", () => {
-    testData.type = "Article";
+    testData.type = "News";
 
     render(
       <VerticalCard data={testData} cardType="vertical" hideImages={false} />
@@ -112,13 +112,13 @@ describe("Vertical Card", () => {
   });
 
   test("The type of card should correspond to the type of SVG icon", () => {
-    testData.type = "Article";
+    testData.type = "News";
 
     render(
       <VerticalCard data={testData} cardType="vertical" hideImages={false} />
     );
 
-    const svg = document.querySelector(`[data-testid="svg-article"]`);
+    const svg = document.querySelector(`[data-testid="svg-news"]`);
 
     expect(svg).toBeInTheDocument();
   });

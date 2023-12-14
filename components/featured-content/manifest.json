@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "featured-content",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "namespace": "stanford-components",
   "description": "",
   "displayName": "Featured content",
@@ -29,110 +29,127 @@
       "entry": "./dist/server.js",
       "input": {
         "type": "object",
+        "required": [],
         "properties": {
-          "title": {
-            "title": "Heading",
-            "type": "string"
-          },
-          "ctaText": {
-            "title": "Heading: Additional link text",
-            "type": "string",
-            "default": "View all"
-          },
-          "ctaUrl": {
-            "title": "Heading: Additional link URL",
-            "type": "string"
-          },
-          "alignment": {
-            "title": "Featured Card: Alignment",
-            "default": "left",
-            "enum": ["left", "right"]
-          },
-          "source": {
-            "title": "Content source",
-            "default": "Search",
-            "enum": ["Search", "Select"]
-          },
-          "displayThumbnails": {
-            "title": "Display Supplementary Thumbnails",
-            "default": true,
-            "type": "boolean"
-          },
-          "displayDescriptions": {
-            "title": "Display Supplementary Descriptions",
-            "default": true,
-            "type": "boolean"
-          }
-        },
-        "allOf": [
-          {
-            "if": {
-              "properties": {
-                "source": {
-                  "const": "Search"
-                }
+          "headingConfiguration": {
+            "title": "Section Heading Configuration",
+            "description": "The heading for the section, appearing before the grid of cards. If the title is empty, the heading and call to action link will be hidden.",
+            "type": "object",
+            "required": [],
+            "properties": {
+              "title": {
+                "title": "Heading",
+                "type": "string"
               },
-              "required": [""]
-            },
-            "then": {
-              "properties": {
-                "searchUrl": {
-                  "type": "string",
-                  "title": "The Funnelback search JSON endpoint",
-                  "default": ""
-                },
-                "searchQuery": {
-                  "type": "string",
-                  "title": "The Funnelback search query",
-                  "default": "?"
-                }
+              "ctaText": {
+                "title": "Link text",
+                "type": "string",
+                "default": "View all"
               },
-              "required": ["searchUrl", "searchQuery"]
+              "ctaUrl": {
+                "title": "Link URL",
+                "type": "string"
+              }
             }
           },
-          {
-            "if": {
-              "properties": {
-                "source": {
-                  "const": "Select"
-                }
-              },
-              "required": [""]
+          "contentConfiguration": {
+            "title": "Grid Content",
+            "description": "The cards to display in the grid area of the component. The featured card appears larger than the supplementary cards. When manually selecting cards, at least three must be selected for the grid to display.",
+            "type": "object",
+            "required": ["source"],
+            "properties": {
+              "source": {
+                "title": "Content source",
+                "default": "Search",
+                "enum": ["Search", "Select"],
+                "type": "string"
+              }
             },
-            "then": {
-              "properties": {
-                "cards": {
-                  "title": "Cards",
-                  "description": "Select the assets that will be used for cards. The first card selected will be the featured card",
-                  "type": "array",
-                  "minItems": 3,
-                  "maxItems": 3,
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "cardAsset": {
-                        "type": "string",
-                        "format": "matrix-asset-uri",
-                        "title": "Card Asset"
-                      },
-                      "featuredDescription": {
-                        "type": "string",
-                        "title": "Featured Content description",
-                        "description": "this will be used if this card is the featured card (first)"
-                      }
-                    },
-                    "required": ["cardAsset"]
+            "allOf": [
+              {
+                "if": {
+                  "required": [],
+                  "properties": {
+                    "source": {
+                      "const": "Search"
+                    }
+                  }
+                },
+                "then": {
+                  "required": ["searchUrl", "searchQuery"],
+                  "properties": {
+                    "searchQuery": {
+                      "type": "string",
+                      "title": "The Funnelback search query",
+                      "default": "?"
+                    }
                   }
                 }
               },
-              "required": ["featured", "supporting1", "supporting2"]
-            }
+              {
+                "if": {
+                  "required": [],
+                  "properties": {
+                    "source": {
+                      "const": "Select"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [],
+                  "properties": {
+                    "cards": {
+                      "title": "Cards",
+                      "description": "Select the assets that will be used for cards. The first card selected will be the featured card.",
+                      "type": "array",
+                      "minItems": 3,
+                      "maxItems": 3,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "cardAsset": {
+                            "type": "string",
+                            "format": "matrix-asset-uri",
+                            "title": "Card Asset"
+                          }
+                        },
+                        "required": ["cardAsset"]
+                      }
+                    },
+                    "featuredDescription": {
+                      "type": "string",
+                      "title": "Featured Content description",
+                      "description": "If filled out, it will replace the description of the featured card (first)."
+                    }
+                  }
+                }
+              }
+            ]
           },
-          {
-            "required": ["source"]
+          "displayConfiguration": {
+            "title": "Grid Display Configuration",
+            "type": "object",
+            "required": [],
+            "properties": {
+              "alignment": {
+                "title": "Featured Card: Alignment",
+                "description": "The position of the featured card on larger screens.",
+                "default": "left",
+                "enum": ["left", "right"]
+              },
+              "displayThumbnails": {
+                "title": "Display Supplementary Thumbnails",
+                "default": true,
+                "type": "boolean"
+              },
+              "displayDescriptions": {
+                "title": "Display Supplementary Descriptions",
+                "default": true,
+                "type": "boolean"
+              }
+            }
           }
-        ],
-        "required": ["source"]
+        }
       },
       "output": {
         "responseType": "html",

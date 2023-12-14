@@ -7,9 +7,10 @@ import React from "react";
  */
 const DEFAULT_VARIANT = "light";
 export default function EventsCalendar({ variant = DEFAULT_VARIANT }) {
-  const variantsMap = {
-    light: (
-      <svg
+  const variantsMap = new Map();
+  variantsMap.set(
+    "light",
+    <svg
         data-testid="svg-eventscalendar-light"
         aria-hidden="true"
         width="27"
@@ -39,9 +40,10 @@ export default function EventsCalendar({ variant = DEFAULT_VARIANT }) {
           </linearGradient>
         </defs>
       </svg>
-    ),
-    dark: (
-      <svg
+  );
+  variantsMap.set(
+    "dark",
+    <svg
         data-testid="svg-eventscalendar-dark"
         aria-hidden="true"
         width="27"
@@ -71,11 +73,10 @@ export default function EventsCalendar({ variant = DEFAULT_VARIANT }) {
           </linearGradient>
         </defs>
       </svg>
-    ),
-  };
+  );
 
-  if (variantsMap[variant] !== null) {
-    return variantsMap[variant];
+  if (variantsMap.get(variant) !== null) {
+    return variantsMap.get(variant);
   }
-  return variantsMap[DEFAULT_VARIANT];
+  return variantsMap.get(DEFAULT_VARIANT);
 }
