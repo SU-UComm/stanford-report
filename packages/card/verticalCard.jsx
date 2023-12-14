@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { News, QuestionAnswer, Video, Podcast, Book } from "../SVG-library/SVG";
+import CardThumbnail from "./CardThumbnail";
 
 /**
  * This function will return the appropriate heading font
@@ -116,20 +117,16 @@ export default function VerticalCard({
       className="su-component-card su-relative su-w-full"
       data-testid="vertical-card"
     >
-      {displayThumbnail && imageUrl && !videoUrl && (
-        <ImageThumbnail
-          imageUrl={imageUrl}
-          imageAlt={imageAlt}
-          cardSize={cardSize}
-        />
-      )}
-
-      {displayThumbnail && videoUrl && (
-        <VideoThumbnail
-          imageUrl={imageUrl}
-          imageAlt={imageAlt}
-          cardSize={cardSize}
-        />
+      {displayThumbnail && imageUrl && (
+        <div className={`${imageMargin(cardSize)}`}>
+          <CardThumbnail
+            imageUrl={imageUrl}
+            alt={imageAlt}
+            aspectRatio="card"
+            videoUrl={videoUrl}
+            size={cardSize}
+          />
+        </div>
       )}
 
       {taxonomy && (
@@ -183,86 +180,5 @@ export default function VerticalCard({
         )}
       </div>
     </article>
-  );
-}
-
-/**
- * renders out the video thumbnail
- *
- * @param {string} cardSize
- * the size of the card component, eg: featured, medium & small
- *
- * @param {string} imageUrl
- * the image's source
- *
- * @param {string} imageAlt
- * the image's alt value
- *
- * @returns {JSX.Element}
- */
-function VideoThumbnail({ cardSize, imageUrl, imageAlt }) {
-  return (
-    <a
-      href="#"
-      className={`focus:su-outline-0 focus:su-ring su-relative su-z-10 su-block su-aspect-[50/33] ${imageMargin(
-        cardSize
-      )}`}
-    >
-      <img
-        className="su-absolute su-object-cover su-object-center su-w-full su-h-full"
-        src={imageUrl}
-        width="293"
-        height="195"
-        alt={imageAlt}
-      />
-
-      <svg
-        className="su-absolute su-left-[27px] su-bottom-[27px] su-drop-shadow-[0px_14px_28px_rgba(0,0,0,0.20)]"
-        aria-hidden="true"
-        width="60"
-        height="60"
-        viewBox="0 0 60 60"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M54.375 30C54.375 23.5353 51.8069 17.3355 47.2357 12.7643C42.6645 8.1931 36.4647 5.625 30 5.625C23.5353 5.625 17.3355 8.1931 12.7643 12.7643C8.1931 17.3355 5.625 23.5353 5.625 30C5.625 36.4647 8.1931 42.6645 12.7643 47.2357C17.3355 51.8069 23.5353 54.375 30 54.375C36.4647 54.375 42.6645 51.8069 47.2357 47.2357C51.8069 42.6645 54.375 36.4647 54.375 30ZM0 30C0 22.0435 3.1607 14.4129 8.7868 8.7868C14.4129 3.1607 22.0435 0 30 0C37.9565 0 45.5871 3.1607 51.2132 8.7868C56.8393 14.4129 60 22.0435 60 30C60 37.9565 56.8393 45.5871 51.2132 51.2132C45.5871 56.8393 37.9565 60 30 60C22.0435 60 14.4129 56.8393 8.7868 51.2132C3.1607 45.5871 0 37.9565 0 30ZM22.0664 17.2383C22.957 16.7461 24.0352 16.7578 24.9141 17.2969L41.7891 27.6094C42.6211 28.125 43.1367 29.0273 43.1367 30.0117C43.1367 30.9961 42.6211 31.8984 41.7891 32.4141L24.9141 42.7266C24.0469 43.2539 22.957 43.2773 22.0664 42.7852C21.1758 42.293 20.625 41.3555 20.625 40.3359V19.6875C20.625 18.668 21.1758 17.7305 22.0664 17.2383Z"
-          fill="white"
-        />
-      </svg>
-
-      <span className="sr-only">Watch video</span>
-    </a>
-  );
-}
-
-/**
- * card component's image thumbnail
- *
- * @param {string} cardSize
- * the size of the card component, eg: featured, medium & small
- *
- * @param {string} imageUrl
- * the image's source
- *
- * @param {string} imageAlt
- * the image's alt value
- *
- * @returns {JSX.Element}
- */
-function ImageThumbnail({ cardSize, imageUrl, imageAlt }) {
-  return (
-    <div
-      className={`su-relative su-block su-aspect-[50/33] ${imageMargin(
-        cardSize
-      )}`}
-      data-testid="vertical-card-image-wrapper"
-    >
-      <img
-        className="su-absolute su-object-cover su-object-center su-w-full su-h-full"
-        src={imageUrl}
-        alt={imageAlt}
-      />
-    </div>
   );
 }
