@@ -9,31 +9,29 @@
 
 export default function formatCardDataFunnelback({
   title,
-  listMetadata,
+  listMetadata: {
+    teaserPlain,
+    image,
+    taxonomyContentTypeText,
+    taxonomyContentMainTopicText,
+    featuredVideo,
+    taxonomyContentMainTopicLandingPageUrl,
+    imageAlt,
+  },
+  date,
   liveUrl,
 }) {
-  const description =
-    (listMetadata && listMetadata.description && listMetadata.description[0]) ||
-    null;
+  const description = teaserPlain;
 
-  const imageUrl =
-    (listMetadata &&
-      listMetadata.relatedImageURL &&
-      listMetadata.relatedImageURL[0]) ||
-    null;
+  const imageUrl = image;
 
-  const imageAlt = null; // need to map this
+  const taxonomy = taxonomyContentMainTopicText;
 
-  const taxonomy =
-    (listMetadata &&
-      listMetadata.taxonomyTopicsText &&
-      listMetadata.taxonomyTopicsText[0]) ||
-    null;
+  const taxonomyUrl = taxonomyContentMainTopicLandingPageUrl;
+  const type = taxonomyContentTypeText ? taxonomyContentTypeText[0] : "";
 
-  const taxonomyUrl = null; // need to map this
-  const type = null; // need to map this
-  const videoUrl = null; // need to map this
-  const date = null; // need to map this
+  // video
+  const videoUrl = featuredVideo;
 
   return {
     title,
