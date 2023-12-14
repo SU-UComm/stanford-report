@@ -1,12 +1,7 @@
 import React, { Fragment } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
-import {
-  News,
-  QuestionAnswer,
-  Video,
-  Podcast,
-  Book,
-} from "../SVG-library/SVG";
+import MediaThumbnail from "./MediaThumbnail";
+import { News, QuestionAnswer, Video, Podcast, Book } from "../SVG-library/SVG";
 
 import EventStartEndDate from "./EventStartEndDate";
 
@@ -22,6 +17,11 @@ function cardTitleFont(size) {
   if (size === "large") return "su-font-serif";
 
   return "";
+}
+
+function mediaContainerSize(size) {
+  if (size === "large")
+    return "listing-item__media su-w-[103px] su-h-[69px] md:su-w-[169px] md:su-h-[113px] lg:su-w-[292px] lg:su-h-[193px]";
 }
 
 /**
@@ -93,13 +93,27 @@ export default function HorizontalCard({
       className={`listing-item su-flex ${cardGap.get(cardSize)}`}
       data-testid="horizontal-card"
     >
-      <CardThumbnail size={cardSize} imageUrl={imageUrl} imageAlt={imageAlt}>
-        <img
-          className="su-object-cover su-object-center su-absolute su-w-full su-h-full"
-          src={imageUrl}
-          alt={imageAlt}
-        />
-      </CardThumbnail>
+      {cardSize === "large" && (
+        <div className="listing-item__media su-w-[103px] su-h-[69px] md:su-w-[169px] md:su-h-[113px] lg:su-w-[292px] lg:su-h-[193px]">
+          <MediaThumbnail
+            imageUrl={imageUrl}
+            alt={imageAlt}
+            mediaType="image"
+            aspectRatio="su-aspect-[50/33]"
+          />
+        </div>
+      )}
+
+      {cardSize === "small" && (
+        <div className="listing-item__media su-w-[73px] su-h-[73px] su-relative su-overflow-hidden su-shrink-0 su-relative">
+          <MediaThumbnail
+            imageUrl={imageUrl}
+            alt={imageAlt}
+            mediaType="image"
+            aspectRatio="su-aspect-[50/50]"
+          />
+        </div>
+      )}
 
       <div className={`su-flex su-flex-col ${contentGap.get(cardSize)}`}>
         {cardSize === "small" && taxonomy && (
@@ -163,35 +177,5 @@ export default function HorizontalCard({
         )}
       </div>
     </article>
-  );
-}
-
-/**
- * CardThumbnail renders out the card's thumbnail image
- * container
- *
- * @param {string} size
- * The size of the card, which dictates the image container
- * constraints, "large" or "small"
- *
- * @param {array} children
- * Child nodes to the card thumbnail
- *
- * @returns {JSX.Element}
- */
-function CardThumbnail({ size, children }) {
-  if (size === "large") {
-    return (
-      <div className="listing-item__media su-w-[103px] su-h-[69px] md:su-w-[169px] md:su-h-[113px] lg:su-w-[292px] lg:su-h-[193px] su-relative su-overflow-hidden su-shrink-0">
-        {children}
-      </div>
-    );
-  }
-
-  // small card tumbnail
-  return (
-    <div className="listing-item__media su-w-[73px] su-h-[73px] su-relative su-overflow-hidden su-shrink-0">
-      {children}
-    </div>
   );
 }
