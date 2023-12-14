@@ -2,6 +2,7 @@ import { renderComponent } from "@squiz/xaccel-component-server-helpers";
 import Component from "./Component";
 import CardDataAdapter from "../../packages/utils/CardDataAdapter";
 import MatrixCardService from "../../packages/utils/MatrixCardService";
+import FunnelbackCardService from "../../packages/utils/FunnelbackCardService";
 
 export default async (args, info) => {
   // eslint-disable-next-line no-unused-vars
@@ -14,8 +15,12 @@ export default async (args, info) => {
   // eslint-disable-next-line no-empty
   if (args.contentConfiguration.source.toLowerCase() === "search") {
     // compose and fetch the FB search results
-    // const adapter = new CardDataAdapter(FB_JSON_URL + args.contentConfiguration.searchQuery, "FB");
-    // data = await adapter.fetch();
+    const query = args.contentConfiguration.searchQuery;
+    const service = new FunnelbackCardService({ FB_JSON_URL, query });
+
+    adapter.setCardService(service);
+
+    data = await adapter.getCards();
   }
   // When Select, use Matix Content API
   else if (args.contentConfiguration.source.toLowerCase() === "select") {
