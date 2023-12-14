@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { News, QuestionAnswer, Video, Podcast, Book } from "../SVG-library/SVG";
-import MediaThumbnail from "./MediaThumbnail";
+import CardThumbnail from "./CardThumbnail";
 
 /**
  * This function will return the appropriate heading font
@@ -117,24 +117,14 @@ export default function VerticalCard({
       className="su-component-card su-relative su-w-full"
       data-testid="vertical-card"
     >
-      {displayThumbnail && imageUrl && !videoUrl && (
+      {displayThumbnail && imageUrl && (
         <div className={`${imageMargin(cardSize)}`}>
-          <MediaThumbnail
+          <CardThumbnail
             imageUrl={imageUrl}
             alt={imageAlt}
-            aspectRatio="su-aspect-[50/33]"
-            mediaType="image"
-          />
-        </div>
-      )}
-
-      {displayThumbnail && videoUrl && (
-        <div className={`${imageMargin(cardSize)}`}>
-          <MediaThumbnail
-            imageUrl={imageUrl}
-            alt={imageAlt}
-            aspectRatio="su-aspect-[50/33]"
-            mediaType="video"
+            aspectRatio="card"
+            videoUrl={videoUrl}
+            size={cardSize}
           />
         </div>
       )}

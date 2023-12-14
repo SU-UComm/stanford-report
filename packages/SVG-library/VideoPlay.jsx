@@ -5,10 +5,14 @@ import React from "react";
  *
  * @returns {JSX.Element}
  */
-export default function VideoPlay() {
-  return (
+const DEFAULT_VARIANT = "featured";
+export default function VideoPlay({ variant = DEFAULT_VARIANT }) {
+  const variantsMap = new Map();
+  variantsMap.set(
+    "featured",
     <svg
-      className="su-absolute su-left-[27px] su-bottom-[27px] su-drop-shadow-[0px_14px_28px_rgba(0,0,0,0.20)]"
+      data-testid="svg-videoplay"
+      className="su-drop-shadow-[0px_14px_28px_rgba(0,0,0,0.20)]"
       aria-hidden="true"
       width="60"
       height="60"
@@ -22,4 +26,9 @@ export default function VideoPlay() {
       />
     </svg>
   );
+
+  if (variantsMap.get(variant) !== null) {
+    return variantsMap.get(variant);
+  }
+  return variantsMap.get(DEFAULT_VARIANT);
 }
