@@ -38,8 +38,10 @@ export default function MulticolumnListing({
    */
   data = data.filter(Boolean);
 
+  console.log(JSON.stringify(data));
+
   data.forEach((cardData, i) => {
-    if (source === "Select" && i <= numberOfCards - 1) {
+    if (source === "Search" && i <= numberOfCards - 1) {
       cards.push(
         <Card
           data={cardData}
@@ -48,18 +50,16 @@ export default function MulticolumnListing({
           cardSize="medium"
         />
       );
-
-      return;
+    } else if (source === "Select") {
+      cards.push(
+        <Card
+          data={cardData}
+          displayDescription={displayDescriptions}
+          displayThumbnail={displayThumbnails}
+          cardSize="medium"
+        />
+      );
     }
-
-    cards.push(
-      <Card
-        data={cardData}
-        displayDescription={displayDescriptions}
-        displayThumbnail={displayThumbnails}
-        cardSize="medium"
-      />
-    );
   });
 
   return (

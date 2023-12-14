@@ -68,7 +68,7 @@ export default class CardDataAdapter {
 
     if (this.type === "MX") {
       const promises = this.assetIds.map(async (assetid) => {
-        if (!assetid) return; // passing an undefined assetid isn't healthy
+        if (!assetid) return null; // passing an undefined assetid isn't healthy
 
         const url = `${this.url}/${assetid}?data=${this.assetData}`;
 
