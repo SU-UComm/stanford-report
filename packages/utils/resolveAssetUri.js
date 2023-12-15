@@ -26,12 +26,22 @@ export default async function resolveAssetUri({
   const contentTypeIds = assetData?.metadata?.srContentType;
   promises.push(await resolveIDArray(contentTypeIds, ctx, API_IDENTIFIER));
 
+  const taxonomyIds = assetData?.metadata?.srContentMainTopic;
+  promises.push(await resolveIDArray(taxonomyIds, ctx, API_IDENTIFIER));
+
+  // const taxonomyPageIds = taxonomyIds?.metadata?.landingPage;
+  // promises.push(await resolveIDArray(taxonomyPageIds, ctx, API_IDENTIFIER));
+
   // Wait for our data to be returned
-  const [imageData, contentTypeData] = await Promise.all(promises);
+  const [imageData, contentTypeData, taxonomyData] = await Promise.all(
+    promises
+  );
 
   // Assign our data
   assetData.metadata.featuredImage = imageData;
   assetData.metadata.srContentType = contentTypeData;
+  assetData.metadata.srContentMainTopic = taxonomyData;
+  // assetData.metadata.taxonomyPageData = taxonomyPageData;
 
   return assetData;
 }
