@@ -10,6 +10,12 @@ function dataChecker(arr) {
     : null;
 }
 
+function dataStringChecker(str) {
+  return typeof str !== "undefined" && str.length > 0 && str[0] !== ""
+    ? str
+    : null;
+}
+
 /**
  * Card Data formatter - Matrix
  *
@@ -25,8 +31,8 @@ export default function formatCardDataMatrix({ attributes, metadata, url }) {
   const description = dataChecker(metadata.teaser);
   const imageUrl = dataChecker(metadata.featuredImage).url;
   const imageAlt = dataChecker(metadata.featuredImage)?.attributes?.alt;
-  const taxonomy = dataChecker(metadata.csTaxonomyName);
-  const taxonomyUrl = dataChecker(metadata.csTaxonomyUrl);
+  const taxonomy = dataStringChecker(metadata.srContentMainTopic[0].short_name);
+  const taxonomyUrl = dataStringChecker(metadata.taxonomyPageData[0]?.url);
   const type = dataChecker(metadata.srContentType)?.name;
   const videoUrl = dataChecker(metadata.featuredVideo);
   const date = dataChecker(metadata.publishedDate);

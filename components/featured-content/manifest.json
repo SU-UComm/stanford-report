@@ -190,6 +190,10 @@
     "locationRoot": "./dist"
   },
   "mockedUris": {
+    "matrix-asset://api-identifier/125002": {
+      "type": "file",
+      "path": "mocked-uris/125002.json"
+    },
     "matrix-asset://api-identifier/28375": {
       "type": "file",
       "path": "mocked-uris/28375.json"
