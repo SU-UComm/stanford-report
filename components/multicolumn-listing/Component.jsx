@@ -26,8 +26,7 @@ export default function MulticolumnListing({
   alignment,
   displayThumbnails,
   displayDescriptions,
-  numberOfCards,
-  source,
+  contentConfiguration: { source },
 }) {
   const cards = [];
 
@@ -38,10 +37,8 @@ export default function MulticolumnListing({
    */
   data = data.filter(Boolean);
 
-  console.log(JSON.stringify(data));
-
-  data.forEach((cardData, i) => {
-    if (source === "Search" && i <= numberOfCards - 1) {
+  data.forEach((cardData) => {
+    if (source === "Search") {
       cards.push(
         <Card
           data={cardData}

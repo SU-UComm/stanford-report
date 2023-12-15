@@ -1,6 +1,6 @@
 {
   "headingConfiguration": {
-    "title": "Featured Content Grid",
+    "title": "Multicolumn Listing",
     "ctaText": "View all",
     "ctaUrl": "https://www.stanford.edu/"
   },
@@ -16,11 +16,9 @@
       {
         "cardAsset": "matrix-asset://api-identifier/89426"
       }
-    ],
-    "featuredDescription": ""
+    ]
   },
   "displayConfiguration": {
-    "alignment": "left",
     "displayThumbnails": true,
     "displayDescriptions": false
   }

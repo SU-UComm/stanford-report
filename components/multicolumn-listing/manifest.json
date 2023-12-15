@@ -1,18 +1,14 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "multicolumn-listing",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "",
   "displayName": "Multicolumn Listing",
   "mainFunction": "main",
   "environment": [
     {
-      "name": "CONTENT_API",
-      "required": true
-    },
-    {
-      "name": "CONTENT_API_KEY",
+      "name": "API_IDENTIFIER",
       "required": true
     },
     {
@@ -66,6 +62,11 @@
                 "title": "Content source",
                 "default": "Search",
                 "enum": ["Search", "Select"],
+                "type": "string"
+              },
+              "searchQuery": {
+                "title": "Funnelback Query",
+                "default": "",
                 "type": "string"
               }
             },
@@ -241,6 +242,19 @@
           "inputData": {
             "type": "file",
             "path": "select.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "search": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "search.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
