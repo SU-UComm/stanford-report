@@ -1,0 +1,15 @@
+{
+  "headingConfiguration": {
+    "title": "Multicolumn Listing",
+    "ctaText": "View all",
+    "ctaUrl": "https://www.stanford.edu/"
+  },
+  "contentConfiguration": {
+    "source": "Search",
+    "searchQuery": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&log=false&query=!null"
+  },
+  "displayConfiguration": {
+    "displayThumbnails": true,
+    "displayDescriptions": false
+  }
+}

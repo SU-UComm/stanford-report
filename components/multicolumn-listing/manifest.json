@@ -1,18 +1,14 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "multicolumn-listing",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "",
   "displayName": "Multicolumn Listing",
   "mainFunction": "main",
   "environment": [
     {
-      "name": "CONTENT_API",
-      "required": true
-    },
-    {
-      "name": "CONTENT_API_KEY",
+      "name": "API_IDENTIFIER",
       "required": true
     },
     {
@@ -33,99 +29,126 @@
       "entry": "./dist/server.js",
       "input": {
         "type": "object",
+        "required": [],
         "properties": {
-          "title": {
-            "title": "Heading",
-            "type": "string"
-          },
-          "ctaText": {
-            "title": "Heading: Additional link text",
-            "type": "string",
-            "default": "View all"
-          },
-          "ctaUrl": {
-            "title": "Heading: Additional link URL",
-            "type": "string"
-          },
-          "source": {
-            "title": "Content source",
-            "default": "Search",
-            "enum": ["Search", "Select"]
-          },
-          "displayThumbnails": {
-            "title": "Display Supplementary Thumbnails",
-            "default": true,
-            "type": "boolean"
-          },
-          "displayDescriptions": {
-            "title": "Display Supplementary Descriptions",
-            "default": true,
-            "type": "boolean"
-          }
-        },
-        "allOf": [
-          {
-            "if": {
-              "properties": {
-                "source": {
-                  "const": "Search"
-                }
+          "headingConfiguration" : {
+            "title": "Section Heading Configuration",
+            "description": "The heading for the section, appearing before the grid of cards. If the title is empty, the heading and call to action link will be hidden.",
+            "type": "object",
+            "required": [],
+            "properties": {
+              "title": {
+                "title": "Heading",
+                "type": "string"
               },
-              "required": [""]
-            },
-            "then": {
-              "properties": {
-                "searchUrl": {
-                  "type": "string",
-                  "title": "The Funnelback search JSON endpoint",
-                  "default": ""
-                },
-                "searchQuery": {
-                  "type": "string",
-                  "title": "The Funnelback search query",
-                  "default": "?"
-                },
-                "numberOfCards" : {
-                  "title" : "Number of cards to display",
-                  "default" : 3,
-                  "enum" : [2, 3]
-                }
+              "ctaText": {
+                "title": "Heading: Additional link text",
+                "type": "string",
+                "default": "View all"
               },
-              "required": ["searchUrl", "searchQuery"]
+              "ctaUrl": {
+                "title": "Heading: Additional link URL",
+                "type": "string"
+              }
             }
           },
-          {
-            "if": {
-              "properties": {
-                "source": {
-                  "const": "Select"
-                }
+          "contentConfiguration": {
+            "title": "Grid Content",
+            "description": "The cards to display in the grid area of the component. The featured card appears larger than the supplementary cards. When manually selecting cards, at least three must be selected for the grid to display.",
+            "type": "object",
+            "required": ["source"],
+            "properties": {
+              "source": {
+                "title": "Content source",
+                "default": "Search",
+                "enum": ["Search", "Select"],
+                "type": "string"
               },
-              "required": [""]
+              "searchQuery": {
+                "title": "Funnelback Query",
+                "default": "",
+                "type": "string"
+              }
             },
-            "then": {
-              "properties": {
-                "columnOne": {
-                  "type": "string",
-                  "title": "Select Featured content <SquizLink>"
+            "allOf": [
+              {
+                "if": {
+                  "required": [],
+                  "properties": {
+                    "source": {
+                      "const": "Search"
+                    }
+                  }
                 },
-                "columnTwo": {
-                  "type": "string",
-                  "title": "Select the first supporting feature <SquizLink>"
-                },
-                "columnThree": {
-                  "type": "string",
-                  "title": "Select the second supporting feature <SquizLink>"
+                "then": {
+                  "required": ["searchQuery"],
+                  "properties": {
+                    "searchQuery": {
+                      "type": "string",
+                      "title": "The Funnelback search query",
+                      "default": "?"
+                    }
+                  }
                 }
               },
-              "required": ["featured", "supporting_01", "supporting_02"]
-            }
+              {
+                "if": {
+                  "required": [],
+                  "properties": {
+                    "source": {
+                      "const": "Select"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [],
+                  "properties": {
+                    "cards": {
+                      "title": "Cards",
+                      "description": "Select the assets that will be used for cards. The first card selected will be the featured card.",
+                      "type": "array",
+                      "minItems": 3,
+                      "maxItems": 3,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "cardAsset": {
+                            "type": "string",
+                            "format": "matrix-asset-uri",
+                            "title": "Card Asset"
+                          }
+                        },
+                        "required": ["cardAsset"]
+                      }
+                    },
+                    "featuredDescription": {
+                      "type": "string",
+                      "title": "Featured Content description",
+                      "description": "If filled out, it will replace the description of the featured card (first)."
+                    }
+                  }
+                }
+              }
+            ]
           },
-          {
-            "required": ["source"]
+          "displayConfiguration": {
+            "title": "Grid Display Configuration",
+            "type": "object",
+            "required": [],
+            "properties": {
+              "displayThumbnails": {
+                "title": "Display Supplementary Thumbnails",
+                "default": true,
+                "type": "boolean"
+              },
+              "displayDescriptions": {
+                "title": "Display Supplementary Descriptions",
+                "default": true,
+                "type": "boolean"
+              }
+            }
           }
-        ],
-        "required": ["source"]
+        }
       },
       "output": {
         "responseType": "html",
@@ -165,13 +188,73 @@
   "staticFiles": {
     "locationRoot": "./dist"
   },
+  "mockedUris": {
+    "matrix-asset://api-identifier/89422": {
+      "type": "file",
+      "path": "mocked-uris/89422.json"
+    },
+    "matrix-asset://api-identifier/89430": {
+      "type": "file",
+      "path": "mocked-uris/89430.json"
+    },
+    "matrix-asset://api-identifier/89426": {
+      "type": "file",
+      "path": "mocked-uris/89426.json"
+    },
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/125800": {
+      "type": "file",
+      "path": "mocked-uris/125800.json"
+    },
+    "matrix-asset://api-identifier/125801": {
+      "type": "file",
+      "path": "mocked-uris/125801.json"
+    },
+    "matrix-asset://api-identifier/28192": {
+      "type": "file",
+      "path": "mocked-uris/28192.json"
+    },
+    "matrix-asset://api-identifier/28205": {
+      "type": "file",
+      "path": "mocked-uris/28205.json"
+    }
+  },
   "previews": {
     "default": {
       "functionData": {
         "main": {
           "inputData": {
             "type": "file",
-            "path": "preview.data.json"
+            "path": "select.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "select": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "select.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "search": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "search.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
