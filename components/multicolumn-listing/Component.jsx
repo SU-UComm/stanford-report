@@ -4,7 +4,6 @@ import React from "react";
 import Card from "../../packages/card/Card";
 import { LinkedHeading } from "../../packages/headings/Heading";
 import { MultiColumnGrid } from "../../packages/grids/Grids";
-import { Avatar, PullQuote } from "../../packages/quotes/Quotes";
 
 /**
  * Featured content component
@@ -23,10 +22,9 @@ export default function MulticolumnListing({
   ctaText,
   ctaUrl,
   data,
-  alignment,
   displayThumbnails,
   displayDescriptions,
-  contentConfiguration: { source },
+  contentConfiguration: { source, searchMaxCards },
 }) {
   const cards = [];
 
@@ -36,34 +34,44 @@ export default function MulticolumnListing({
    * out so the component doesn't get angry
    */
   data = data.filter(Boolean);
+  const maxNumberOfCards = source === "Search" ? searchMaxCards : 3;
+  const numberOfCards =
+    data.length > maxNumberOfCards ? maxNumberOfCards : data.length;
+  const cardSizeMap = new Map();
+  cardSizeMap.set(3, "small");
+  cardSizeMap.set(2, "medium");
 
-  data.forEach((cardData) => {
-    if (source === "Search") {
-      cards.push(
-        <Card
-          data={cardData}
-          displayDescription={displayDescriptions}
-          displayThumbnail={displayThumbnails}
-          cardSize="medium"
-        />
-      );
-    } else if (source === "Select") {
-      cards.push(
-        <Card
-          data={cardData}
-          displayDescription={displayDescriptions}
-          displayThumbnail={displayThumbnails}
-          cardSize="medium"
-        />
-      );
+  data.forEach((cardData, i) => {
+    if (i < maxNumberOfCards) {
+      if (source === "Search") {
+        cards.push(
+          <Card
+            data={cardData}
+            displayDescription={displayDescriptions}
+            displayThumbnail={displayThumbnails}
+            cardSize={cardSizeMap.get(searchMaxCards)}
+          />
+        );
+      } else if (source === "Select") {
+        cards.push(
+          <Card
+            data={cardData}
+            displayDescription={displayDescriptions}
+            displayThumbnail={displayThumbnails}
+            cardSize={cardSizeMap.get(numberOfCards)}
+          />
+        );
+      }
     }
   });
 
-  return (
-    <>
-      <LinkedHeading title={title} ctaText={ctaText} ctaUrl={ctaUrl} />
+  const componentClassName = "component-multicolumn-listing";
+  const componentTitleStateClass = title ? "has-title" : "has-no-title";
 
-      <MultiColumnGrid alignment={alignment} items={cards} />
-    </>
+  return (
+    <div className={[componentClassName, componentTitleStateClass].join(" ")}>
+      <LinkedHeading title={title} ctaText={ctaText} ctaUrl={ctaUrl} />
+      <MultiColumnGrid separator items={cards} />
+    </div>
   );
 }

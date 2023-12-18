@@ -6,7 +6,7 @@
   },
   "contentConfiguration": {
     "source": "Search",
-    "searchQuery" : "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&log=false&query=!null"
+    "searchQuery": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&log=false&query=!null"
   },
   "displayConfiguration": {
     "displayThumbnails": true,

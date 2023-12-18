@@ -21,17 +21,14 @@ export default function formatCardDataFunnelback({
   date,
   liveUrl,
 }) {
+  const imageUrl = image;
+  const videoUrl = featuredVideo;
+
   const description = teaserPlain;
 
-  const imageUrl = image;
-
   const taxonomy = taxonomyContentMainTopicText;
-
   const taxonomyUrl = taxonomyContentMainTopicLandingPageUrl;
   const type = taxonomyContentTypeText ? taxonomyContentTypeText[0] : "";
-
-  // video
-  const videoUrl = featuredVideo;
 
   return {
     title,
