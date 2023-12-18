@@ -26,7 +26,8 @@ export default function FeaturedContent({
   const featuredCardData = data[0];
   if (
     contentConfiguration.featuredDescription !== "" &&
-    contentConfiguration.featuredDescription !== null
+    contentConfiguration.featuredDescription !== null &&
+    contentConfiguration.featuredDescription !== undefined
   ) {
     featuredCardData.description = contentConfiguration.featuredDescription;
   }
