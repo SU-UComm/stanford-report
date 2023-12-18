@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "header-component",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "Stanford university Header component.",
   "displayName": "Header",
@@ -38,9 +38,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "assetid"
-        ]
+        "required": ["assetid"]
       },
       "output": {
         "responseType": "html",
