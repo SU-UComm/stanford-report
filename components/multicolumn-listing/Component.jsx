@@ -18,9 +18,7 @@ import { MultiColumnGrid } from "../../packages/grids/Grids";
  */
 
 export default function MulticolumnListing({
-  title,
-  ctaText,
-  ctaUrl,
+  headingConfiguration: { title, ctaText, ctaUrl },
   data,
   displayThumbnails,
   displayDescriptions,
