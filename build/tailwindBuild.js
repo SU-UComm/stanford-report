@@ -1,9 +1,12 @@
 import { exec } from "child_process";
+import util from "util";
 import fs from "fs";
 import * as espree from "espree";
 import memoize from "memoizee";
 import path from "path";
 import { globSync } from "glob";
+
+const execPromise = util.promisify(exec);
 
 export function resolveImport(relativePath, filePath) {
   return (
@@ -68,18 +71,36 @@ export async function buildCSS(
   const watchFlag = watch ? "--watch" : "";
   // Check if we got any tailwind entry points
   if (tailwindEntryPoints.length > 0) {
+    // Define our output file
+    const output = path.join(componentPath, "dist", "main.css");
+
     // Get the content paths for tailwind for this component
     const contentFiles = memoizedGetContentFiles(
       entryPoints.map((entryPoint) => path.resolve(entryPoint))
     );
 
     // Spawn a new process and build the tailwind css with the config for this particular component
-    await exec(
-      `npx tailwind -i ${tailwindEntryPoints.join(" ")} -o ${path.join(
-        componentPath,
-        "dist",
-        "main.css"
-      )} --content ${contentFiles} ${watchFlag}`
+    await execPromise(
+      `npx tailwind -i ${tailwindEntryPoints.join(
+        " "
+      )} -o ${output} --content ${contentFiles} ${watchFlag}`
     );
+
+    // TODO: This needs to be updated to use PostCSS to work properly but this will do for now
+
+    // Read in the main.css file
+    let cssContents = fs.readFileSync(output, "utf-8");
+
+    // read the component name from the manifest
+    const { name: componentName } = JSON.parse(
+      fs.readFileSync(path.join(componentPath, "manifest.json"), "utf-8")
+    );
+
+    // Wrap the contents in our component data attribute
+    cssContents = `[data-hydration-component="${componentName}"] {
+  ${cssContents}
+      }`;
+
+    fs.writeFileSync(output, cssContents, "utf-8");
   }
 }
