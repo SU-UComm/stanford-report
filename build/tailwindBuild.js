@@ -103,4 +103,6 @@ export async function buildCSS(
 
     fs.writeFileSync(output, cssContents, "utf-8");
   }
+
+  return Promise.resolve();
 }
