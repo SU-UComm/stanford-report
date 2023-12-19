@@ -5,9 +5,15 @@
     "ctaUrl": "https://www.stanford.edu/"
   },
   "contentConfiguration": {
-    "source": "Search",
-    "searchQuery": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&log=false&query=!null",
-    "searchMaxCards": 2
+    "source": "Select",
+    "cards": [
+      {
+        "cardAsset": "matrix-asset://api-identifier/89422"
+      },
+      {
+        "cardAsset": "matrix-asset://api-identifier/89430"
+      }
+    ]
   },
   "displayConfiguration": {
     "displayThumbnails": true,

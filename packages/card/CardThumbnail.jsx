@@ -27,7 +27,7 @@ export default function CardThumbnail({
     "su-left-[13px] su-bottom-[13px] [&>svg]:su-w-[40px] [&>svg]:su-h-[40px]"
   );
 
-  return videoUrl ? (
+  return videoUrl && videoUrl.includes("http") ? (
     <button
       className="su-component-card-thumbnail su-block su-w-full su-h-full"
       type="button"

@@ -25,8 +25,8 @@ function titleSize(size) {
 
 function descriptionSize(size) {
   if (size === "featured")
-    return "[&>*]:su-text-[18px] [&>*]:md:su-text-[19px] [&>*]:su-leading-[22.5px] [&>*]:md:su-leading-[23.75px] [&>*]:su-mt-[4px] [&>*]:md:su-mt-[14px]";
-  return "[&>*]:su-text-[19px] [&>*]:su-leading-[23.75px]";
+    return "[&>*]:su-text-[18px] su-text-[18px] [&>*]:md:su-text-[19px] md:su-text-[19px] [&>*]:su-leading-[22.5px] su-leading-[22.5px] [&>*]:md:su-leading-[23.75px] md:su-leading-[23.75px] [&>*]:su-mt-[4px] [&>*]:md:su-mt-[14px]";
+  return "[&>*]:su-text-[19px] [&>*]:su-leading-[23.75px] su-text-[19px] su-leading-[23.75px]";
 }
 
 function gapSize(size) {
@@ -108,6 +108,7 @@ export default function VerticalCard({
   const SVGMap = new Map();
   SVGMap.set("news", <News />);
   SVGMap.set("q&amp;a", <QuestionAnswer />);
+  SVGMap.set("q&a", <QuestionAnswer />);
   SVGMap.set("video", <Video />);
   SVGMap.set("podcast", <Podcast />);
   SVGMap.set("book", <Book />);
@@ -123,7 +124,7 @@ export default function VerticalCard({
             imageUrl={imageUrl}
             alt={imageAlt}
             aspectRatio="card"
-            videoUrl={videoUrl}
+            videoUrl={type === "video" ? videoUrl : ""}
             size={cardSize}
           />
         </div>
