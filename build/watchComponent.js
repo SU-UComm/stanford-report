@@ -37,12 +37,6 @@ export async function watchComponent(componentPath) {
     );
   }
 
-  console.log(
-    `watching for changes to ${listFormatter.format(tailwindEntryPoints)}`
-  );
-  // Build the tailwind bundle for the component
-  await buildCSS(tailwindEntryPoints, clientEntryPoints, componentPath, true);
-
   const serverOptions = esbuildServerOptions(componentPath, serverEntryPoints);
   const serverCtx = await esbuild.context({
     ...serverOptions,
@@ -56,4 +50,10 @@ export async function watchComponent(componentPath) {
   console.log(
     `watching for changes to ${listFormatter.format(serverEntryPoints)}`
   );
+
+  console.log(
+    `watching for changes to ${listFormatter.format(tailwindEntryPoints)}`
+  );
+  // Build the tailwind bundle for the component
+  await buildCSS(tailwindEntryPoints, clientEntryPoints, componentPath, true);
 }
