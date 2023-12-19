@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // these are our specific templates for the component.
 import Card from "../../packages/card/Card";
@@ -23,6 +23,7 @@ export default function FeaturedContent({
   displayConfiguration,
   data,
 }) {
+  const [first, setfirst] = useState(null);
   const featuredCardData = data[0];
   if (
     contentConfiguration.featuredDescription !== "" &&
