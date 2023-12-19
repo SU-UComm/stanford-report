@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "featured-content",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "namespace": "stanford-components",
   "description": "",
   "displayName": "Featured content",
@@ -119,6 +119,7 @@
                     "featuredDescription": {
                       "type": "string",
                       "title": "Featured Content description",
+                      "format": "multi-line",
                       "description": "If filled out, it will replace the description of the featured card (first)."
                     }
                   }
