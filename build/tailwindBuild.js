@@ -71,6 +71,7 @@ export async function buildCSS(
   watch = false
 ) {
   const watchFlag = watch ? "--watch" : "";
+
   // Check if we got any tailwind entry points
   if (tailwindEntryPoints.length > 0) {
     // Define our output file
@@ -85,7 +86,7 @@ export async function buildCSS(
     const { stdout: tailwindOut } = await execPromise(
       `npx tailwind -i ${tailwindEntryPoints.join(
         " "
-      )} --content ${contentFiles} ${watchFlag}`
+      )} --content ${contentFiles}`
     );
 
     // read the component name from the manifest
@@ -112,6 +113,4 @@ export async function buildCSS(
     // Write the file
     fs.writeFileSync(output, scopedContents, "utf-8");
   }
-
-  return Promise.resolve();
 }
