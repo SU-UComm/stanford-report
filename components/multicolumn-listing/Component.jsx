@@ -18,11 +18,10 @@ import { MultiColumnGrid } from "../../packages/grids/Grids";
  */
 
 export default function MulticolumnListing({
-  headingConfiguration: { title, ctaText, ctaUrl },
+  contentConfiguration,
+  displayConfiguration,
   data,
-  displayThumbnails,
-  displayDescriptions,
-  contentConfiguration: { source, searchMaxCards },
+  headingData,
 }) {
   const cards = [];
 
@@ -32,7 +31,10 @@ export default function MulticolumnListing({
    * out so the component doesn't get angry
    */
   data = data.filter(Boolean);
-  const maxNumberOfCards = source === "Search" ? searchMaxCards : 3;
+  const maxNumberOfCards =
+    contentConfiguration.source === "Search"
+      ? contentConfiguration.searchMaxCards
+      : 3;
   const numberOfCards =
     data.length > maxNumberOfCards ? maxNumberOfCards : data.length;
   const cardSizeMap = new Map();
@@ -41,21 +43,21 @@ export default function MulticolumnListing({
 
   data.forEach((cardData, i) => {
     if (i < maxNumberOfCards) {
-      if (source === "Search") {
+      if (contentConfiguration.source === "Search") {
         cards.push(
           <Card
             data={cardData}
-            displayDescription={displayDescriptions}
-            displayThumbnail={displayThumbnails}
-            cardSize={cardSizeMap.get(searchMaxCards)}
+            displayDescription={displayConfiguration.displayDescriptions}
+            displayThumbnail={displayConfiguration.displayThumbnails}
+            cardSize={cardSizeMap.get(contentConfiguration.searchMaxCards)}
           />
         );
-      } else if (source === "Select") {
+      } else if (contentConfiguration.source === "Select") {
         cards.push(
           <Card
             data={cardData}
-            displayDescription={displayDescriptions}
-            displayThumbnail={displayThumbnails}
+            displayDescription={displayConfiguration.displayDescriptions}
+            displayThumbnail={displayConfiguration.displayThumbnails}
             cardSize={cardSizeMap.get(numberOfCards)}
           />
         );
@@ -64,11 +66,17 @@ export default function MulticolumnListing({
   });
 
   const componentClassName = "component-multicolumn-listing";
-  const componentTitleStateClass = title ? "has-title" : "has-no-title";
+  const componentTitleStateClass = headingData.title
+    ? "has-title"
+    : "has-no-title";
 
   return (
     <div className={[componentClassName, componentTitleStateClass].join(" ")}>
-      <LinkedHeading title={title} ctaText={ctaText} ctaUrl={ctaUrl} />
+      <LinkedHeading
+        title={headingData.title}
+        ctaText={headingData.ctaText}
+        ctaUrl={headingData.resolvedUrl}
+      />
       <MultiColumnGrid separator items={cards} />
     </div>
   );
