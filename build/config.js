@@ -16,6 +16,9 @@ export const esbuildServerOptions = (componentPath, entryPoints, minify) => ({
   format: "cjs",
   target: "node16",
   platform: "node",
+  outExtension: {
+    ".js": ".cjs",
+  },
 });
 
 export const esbuildClientOptions = (componentPath, entryPoints, minify) => ({
