@@ -17,10 +17,10 @@ import { FeaturedGrid } from "../../packages/grids/Grids";
  */
 
 export default function FeaturedContent({
-  headingConfiguration,
   contentConfiguration,
   displayConfiguration,
   data,
+  headingData,
 }) {
   const featuredCardData = data[0];
   if (
@@ -34,9 +34,9 @@ export default function FeaturedContent({
   return (
     <div data-component="featured-content">
       <LinkedHeading
-        title={headingConfiguration.title}
-        ctaText={headingConfiguration.ctaText}
-        ctaUrl={headingConfiguration.ctaUrl}
+        title={headingData.title}
+        ctaText={headingData.ctaText}
+        ctaUrl={headingData.resolvedUrl}
       />
 
       <FeaturedGrid
