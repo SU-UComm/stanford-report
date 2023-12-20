@@ -5,6 +5,8 @@ import * as espree from "espree";
 import memoize from "memoizee";
 import path from "path";
 import { globSync } from "glob";
+import postCSS from "postcss";
+import postCSSWrap from "postcss-wrap";
 
 const execPromise = util.promisify(exec);
 
@@ -86,22 +88,32 @@ export async function buildCSS(
       )} -o ${output} --content ${contentFiles} ${watchFlag}`
     );
 
-    // TODO: This needs to be updated to use PostCSS to work properly but this will do for now
-
     // Read in the main.css file
-    let cssContents = fs.readFileSync(output, "utf-8");
+    const cssContents = fs.readFileSync(output, "utf-8");
 
     // read the component name from the manifest
     const { name: componentName } = JSON.parse(
       fs.readFileSync(path.join(componentPath, "manifest.json"), "utf-8")
     );
 
-    // Wrap the contents in our component data attribute
-    cssContents = `[data-hydration-component="${componentName}"] {
-  ${cssContents}
-      }`;
+    // Scope the css from tailwind to the current component
+    const scopedContents = await postCSS([
+      postCSSWrap({
+        selector: `[data-hydration-component="${componentName}"]`,
+      }),
+    ])
+      .process(cssContents)
+      .then((result) => {
+        return result.css;
+      })
+      .catch((error) => {
+        throw new Error(
+          `Error scoping tailwind css from ${componentName}: ${error}`
+        );
+      });
 
-    fs.writeFileSync(output, cssContents, "utf-8");
+    // Write the file
+    fs.writeFileSync(output, scopedContents, "utf-8");
   }
 
   return Promise.resolve();
