@@ -94,7 +94,7 @@ export async function buildCSS(
     // Scope the css from tailwind to the current component
     const scopedContents = await postCSS([
       postCSSWrap({
-        selector: `[data-hydration-component="${componentName}"]`,
+        selector: `[data-component="${componentName}"]`,
       }),
     ])
       .process(tailwindOut, { from: output })
