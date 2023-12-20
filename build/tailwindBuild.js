@@ -82,14 +82,11 @@ export async function buildCSS(
     );
 
     // Spawn a new process and build the tailwind css with the config for this particular component
-    await execPromise(
+    const { stdout: tailwindOut } = await execPromise(
       `npx tailwind -i ${tailwindEntryPoints.join(
         " "
-      )} -o ${output} --content ${contentFiles} ${watchFlag}`
+      )} --content ${contentFiles} ${watchFlag}`
     );
-
-    // Read in the main.css file
-    const cssContents = fs.readFileSync(output, "utf-8");
 
     // read the component name from the manifest
     const { name: componentName } = JSON.parse(
@@ -102,7 +99,7 @@ export async function buildCSS(
         selector: `[data-hydration-component="${componentName}"]`,
       }),
     ])
-      .process(cssContents)
+      .process(tailwindOut, { from: output })
       .then((result) => {
         return result.css;
       })
