@@ -67,11 +67,8 @@ export const memoizedGetContentFiles = memoize(getContentFiles);
 export async function buildCSS(
   tailwindEntryPoints,
   entryPoints,
-  componentPath,
-  watch = false
+  componentPath
 ) {
-  const watchFlag = watch ? "--watch" : "";
-
   // Check if we got any tailwind entry points
   if (tailwindEntryPoints.length > 0) {
     // Define our output file

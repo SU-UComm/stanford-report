@@ -3,7 +3,7 @@ import { getEntryPoints } from "./getEntryPoints.js";
 import { esbuildClientOptions, esbuildServerOptions } from "./config.js";
 import { listFormatter } from "./listFormatter.js";
 import { reloadLogPlugin } from "./reloadLogPlugin.js";
-import { buildCSS } from "./tailwindBuild.js";
+import { tailwindWatchPlugin } from "./tailwindWatchPlugin.js";
 
 /**
  * Function that builds a component server and client files and watches for changes in these or their dependent files
@@ -38,19 +38,16 @@ export async function watchComponent(componentPath) {
     ...serverOptions,
     plugins: [
       ...(serverOptions?.plugins || []),
+      tailwindWatchPlugin(
+        tailwindEntryPoints,
+        clientEntryPoints,
+        componentPath
+      ),
       reloadLogPlugin(componentPath, "server"),
     ],
   });
 
-  // Build the tailwind bundle for the component
-  const CSSPromise = buildCSS(
-    tailwindEntryPoints,
-    clientEntryPoints,
-    componentPath,
-    true
-  );
-
-  const promises = [CSSPromise];
+  const promises = [];
 
   if (clientCtx && clientCtx.watch) {
     promises.push(clientCtx.watch());
