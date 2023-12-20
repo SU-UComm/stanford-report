@@ -32,7 +32,7 @@ export default function FeaturedContent({
   }
 
   return (
-    <>
+    <div data-component="featured-content">
       <LinkedHeading
         title={headingConfiguration.title}
         ctaText={headingConfiguration.ctaText}
@@ -57,6 +57,6 @@ export default function FeaturedContent({
           />,
         ]}
       />
-    </>
+    </div>
   );
 }
