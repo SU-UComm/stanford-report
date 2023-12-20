@@ -2,7 +2,7 @@
   "headingConfiguration": {
     "title": "Featured Content Grid",
     "ctaText": "View all",
-    "ctaUrl": "https://www.stanford.edu/"
+    "ctaUrl": "matrix-asset://api-identifier/89422"
   },
   "contentConfiguration": {
     "source": "Select",

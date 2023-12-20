@@ -1,8 +1,9 @@
-import { renderComponent } from "@squiz/xaccel-component-server-helpers";
+import renderComponent from "../../packages/utils/render-component";
 import Component from "./Component";
 import CardDataAdapter from "../../packages/utils/CardDataAdapter";
 import MatrixCardService from "../../packages/utils/MatrixCardService";
 import FunnelbackCardService from "../../packages/utils/FunnelbackCardService";
+import linkedHeadingService from "../../packages/utils/linkedHeadingService";
 
 export default async (args, info) => {
   // eslint-disable-next-line no-unused-vars
@@ -36,9 +37,16 @@ export default async (args, info) => {
     data = await adapter.getCards(cards);
   }
 
+  // Resolve the URI for the section heading link
+  const headingData = await linkedHeadingService(
+    ctx,
+    args.headingConfiguration
+  );
+
   const renderProps = {
     ...args,
     data,
+    headingData,
   };
 
   return renderComponent({

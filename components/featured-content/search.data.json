@@ -2,13 +2,14 @@
   "headingConfiguration": {
     "title": "Featured Content Grid",
     "ctaText": "View all",
-    "ctaUrl": "https://www.stanford.edu/"
+    "ctaUrl": "matrix-asset://api-identifier/89422"
   },
   "contentConfiguration": {
     "source": "Search",
     "searchQuery": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&log=false&query=!null"
   },
   "displayConfiguration": {
+    "alignment": "left",
     "displayThumbnails": true,
     "displayDescriptions": false
   }
