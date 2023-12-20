@@ -43,7 +43,7 @@ export default async (args, info) => {
 
   return renderComponent({
     Component,
-    componentName: "featured-content",
+    componentName: "multicolumn-listing",
     args: renderProps,
   });
 };

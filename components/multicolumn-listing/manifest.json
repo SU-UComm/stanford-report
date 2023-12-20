@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "multicolumn-listing",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "namespace": "stanford-components",
   "description": "",
   "displayName": "Multicolumn Listing",
@@ -31,7 +31,7 @@
         "type": "object",
         "required": [],
         "properties": {
-          "headingConfiguration" : {
+          "headingConfiguration": {
             "title": "Section Heading Configuration",
             "description": "The heading for the section, appearing before the grid of cards. If the title is empty, the heading and call to action link will be hidden.",
             "type": "object",
@@ -63,11 +63,6 @@
                 "default": "Search",
                 "enum": ["Search", "Select"],
                 "type": "string"
-              },
-              "searchQuery": {
-                "title": "Funnelback Query",
-                "default": "",
-                "type": "string"
               }
             },
             "allOf": [
@@ -86,7 +81,15 @@
                     "searchQuery": {
                       "type": "string",
                       "title": "The Funnelback search query",
+                      "description": "This query will fill the component with results from the query formatted as cards.",
                       "default": "?"
+                    },
+                    "searchMaxCards": {
+                      "title": "Number of cards",
+                      "description": "The maximum number of cards to display.",
+                      "default": 3,
+                      "enum": [2, 3],
+                      "type": "number"
                     }
                   }
                 }
@@ -107,7 +110,7 @@
                       "title": "Cards",
                       "description": "Select the assets that will be used for cards. The first card selected will be the featured card.",
                       "type": "array",
-                      "minItems": 3,
+                      "minItems": 2,
                       "maxItems": 3,
                       "items": {
                         "type": "object",
@@ -120,11 +123,6 @@
                         },
                         "required": ["cardAsset"]
                       }
-                    },
-                    "featuredDescription": {
-                      "type": "string",
-                      "title": "Featured Content description",
-                      "description": "If filled out, it will replace the description of the featured card (first)."
                     }
                   }
                 }
@@ -137,12 +135,12 @@
             "required": [],
             "properties": {
               "displayThumbnails": {
-                "title": "Display Supplementary Thumbnails",
+                "title": "Display Thumbnails",
                 "default": true,
                 "type": "boolean"
               },
               "displayDescriptions": {
-                "title": "Display Supplementary Descriptions",
+                "title": "Display Descriptions",
                 "default": true,
                 "type": "boolean"
               }
@@ -189,6 +187,30 @@
     "locationRoot": "./dist"
   },
   "mockedUris": {
+    "matrix-asset://api-identifier/124970": {
+      "type": "file",
+      "path": "mocked-uris/124970.json"
+    },
+    "matrix-asset://api-identifier/125002": {
+      "type": "file",
+      "path": "mocked-uris/125002.json"
+    },
+    "matrix-asset://api-identifier/124986": {
+      "type": "file",
+      "path": "mocked-uris/124986.json"
+    },
+    "matrix-asset://api-identifier/28406": {
+      "type": "file",
+      "path": "mocked-uris/28406.json"
+    },
+    "matrix-asset://api-identifier/28397": {
+      "type": "file",
+      "path": "mocked-uris/28397.json"
+    },
+    "matrix-asset://api-identifier/28401": {
+      "type": "file",
+      "path": "mocked-uris/28401.json"
+    },
     "matrix-asset://api-identifier/89422": {
       "type": "file",
       "path": "mocked-uris/89422.json"
@@ -242,6 +264,19 @@
           "inputData": {
             "type": "file",
             "path": "select.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "select-2-cols": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "select-2-cols.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
