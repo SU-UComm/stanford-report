@@ -22,6 +22,7 @@
         "properties": {
           "title": {
             "title": "Acknowledgement Title",
+            "description": "This title is read out for screen readers, to provide context and is not displayed visually.",
             "type": "string"
           },
           "content": {
@@ -29,7 +30,7 @@
             "type": "FormattedText"
           }
         },
-        "required": ["title"]
+        "required": ["content"]
       },
       "output": {
         "responseType": "html",
