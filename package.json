@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "node ./build/index.js",
+    "build": "npm-run-all -p build:*",
+    "build:components": "node ./build/index.js",
+    "build:tailwind": "tailwind -i ./global/css/_global.css -o ./global/build/global.css",
     "watch": "./load_dotenv.sh && npm-run-all -p watch:*",
     "watch:js": "node ./build/index.js --watch",
     "watch:unit": "jest --watch",

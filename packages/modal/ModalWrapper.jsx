@@ -32,7 +32,7 @@ export function ModalWrapper({
   mobileFullScreen,
 }) {
   return (
-    <OverlayContainer>
+    <OverlayContainer className="su-test su-w-full su-h-full su-bg-black-true su-top-0 su-left-0 su-fixed su-z-50">
       <div>
         <FocusScope contain restoreFocus autoFocus>
           <Modal titleId={titleId} title={title} onClose={onClose}>

@@ -1,0 +1,370 @@
+/** Source Sans Pro, Source Serif Pro, Roboto Slab, Roboto Mono (regular only) */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab:wght@300;400;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap");
+
+@font-face {
+  font-family: "Stanford";
+  src: url("https://www-media.stanford.edu/assets/fonts/stanford.woff")
+      format("woff"),
+    url("https://www-media.stanford.edu/assets/fonts/stanford.ttf")
+      format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+@tailwind base;
+
+/**
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins.
+ */
+@tailwind components;
+
+/**
+ * This injects Tailwind's utility classes and any utility classes registered
+ * by plugins.
+ */
+@tailwind utilities;
+
+/**
+ * Use this directive to control where Tailwind injects the responsive
+ * variations of each utility.
+ *
+ * If omitted, Tailwind will append these classes to the very end of
+ * your stylesheet by default.
+ */
+@tailwind variants;
+
+.su-bg-gradient {
+  @apply su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive;
+}
+
+.su-bg-gradient-report {
+  @apply su-bg-gradient-to-r su-from-cardinal-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive;
+}
+
+.su-bg-gradient-b {
+  @apply su-bg-gradient-to-b su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive;
+}
+
+.su-bg-gradient-light-red {
+  @apply su-bg-gradient-to-b su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive;
+}
+
+.su-bg-gradient-light-red-h {
+  @apply su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive;
+}
+
+.su-bg-gradient-header-1 {
+  background: linear-gradient(180deg, #1c4270 0%, rgba(0, 0, 0, 0) 53.4%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 64.92%, #fff 96.86%);
+}
+
+.su-bg-gradient-header-1-dark {
+  background: linear-gradient(180deg, #1c4270 0%, rgba(0, 0, 0, 0) 53.4%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 64.92%, #000 96.86%);
+}
+
+.su-clip-bottom {
+  clip-path: inset(-100vw -100vw 0 0);
+}
+
+.font-serif-4 {
+  font-family: "Source Serif 4", Georgia, Times, "Times New Roman", serif;
+}
+
+.su-stop-red {
+  stop-color: #b1040e;
+}
+
+.su-stop-plum {
+  stop-color: #620059;
+}
+
+.su-stop-teal {
+  stop-color: #017e7c;
+}
+
+.su-stop-green {
+  stop-color: #8f993e;
+}
+
+.su-featured-story-text {
+  @apply [&>p]:su-col-span-full sm:[&>p]:su-col-span-10 sm:[&>p]:su-col-start-2 [&>p]:su-col-end-11 lg:[&>p]:su-col-span-6 lg:[&>p]:su-col-start-4 [&>h2]:su-col-span-full sm:[&>h2]:su-col-span-10 sm:[&>h2]:su-col-start-2 [&>h2]:su-col-end-11 lg:[&>h2]:su-col-span-6 lg:[&>h2]:su-col-start-4;
+}
+
+.su-basic-story-text {
+  @apply [&>p]:su-col-span-full [&>h1]:su-col-span-full [&>h2]:su-col-span-full [&>h3]:su-col-span-full [&>h4]:su-col-span-full [&>p>a]:su-text-black dark:[&>p>a]:su-text-white [&>p>a]:su-font-normal [&>p>a]:su-underline;
+}
+
+.su-bg-gradient-header-dark {
+  background: linear-gradient(
+    180deg,
+    rgba(1, 50, 107, 0.9) 0.11%,
+    rgba(0, 0, 0, 0) 50%
+  );
+}
+
+.su-bg-gradient-header-white {
+  background: linear-gradient(180deg, #fff 0.11%, rgba(0, 0, 0, 0) 50%);
+}
+
+.su-story-first-letter {
+  @apply first-letter:su-font-bold first-letter:su-float-left first-letter:su-text-[72px] first-letter:su-mt-[14px] first-letter:su-leading-[35px] first-letter:su-p-0 first-letter:su-mr-[16px] first-letter:su-font-serif;
+}
+
+.tt-menu::before {
+  @apply su-text-[26px] su-font-bold su-mb-[19px] su-text-digital-red dark:su-text-dark-mode-red;
+}
+
+/*
+*   Global modal
+*/
+.su-modal {
+  @apply su-bg-black-true;
+}
+
+/*
+*   Search
+*/
+
+/* stylelint-disable color-function-notation */
+/* stylelint-disable string-quotes */
+/* stylelint-disable property-no-vendor-prefix */
+/* stylelint-disable selector-class-pattern */
+.block-scroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.search-bar input {
+  position: relative;
+  width: calc(100% - 115px);
+  height: 80%;
+  margin: 0 5px;
+  border: none;
+  border-radius: 50px 0 0 50px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  padding-left: 15px;
+}
+
+.search-filters {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  padding-bottom: 150px;
+}
+
+.facets fieldset li {
+  margin-top: 20px;
+}
+
+.facets fieldset li input {
+  margin-top: 0;
+}
+
+.facets fieldset li label {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.facets fieldset li:first-of-type {
+  margin-top: 12px;
+}
+
+.facets li {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.facets input[type="checkbox"] {
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+}
+
+.reset-list-styles li:last-of-type {
+  margin-bottom: 0.5em;
+}
+
+.facets label {
+  font-size: 18px;
+  margin-left: 8px;
+  line-height: 125%;
+}
+
+.pagination li a {
+  border: none;
+}
+
+.pagination li:hover a {
+  background: none;
+}
+
+.pagination li {
+  position: relative;
+  display: flex;
+}
+
+.pagination li:hover::after {
+  position: absolute;
+  bottom: 2px;
+  left: auto;
+  height: 2px;
+  width: 12px;
+  background: #b1040e;
+  content: "";
+}
+
+.pagination li.active {
+  background: #b1040e;
+  border-radius: 300px;
+  overflow: hidden;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 25%));
+}
+
+.pagination li:not(.pagination-btn__disabled) svg {
+  fill: #2e2d29; /* Your default SVG color */
+}
+
+.pagination-btn__disabled svg {
+  fill: #979694;
+}
+
+.pagination li.active a {
+  color: #fff;
+}
+
+.facets__toggle-rev svg {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .desktop-hidden {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.facets label.switch {
+  position: relative;
+  display: flex;
+  padding-left: 26px;
+  font-size: 18px;
+  margin-left: 2px;
+  font-weight: 400;
+}
+
+.facets label.switch:focus-within .slider {
+  outline: 2px solid #006cb8;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0%;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  width: 38px;
+  height: 18px;
+  position: absolute;
+  cursor: pointer;
+  top: 2px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border: 1px solid #d5d5d4;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 1px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #417865;
+  border: 1px solid #8ab8a7;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider::before {
+  -webkit-transform: translateX(19px);
+  -ms-transform: translateX(19px);
+  transform: translateX(19px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+audio::-webkit-media-controls-panel {
+  background: white;
+}
+
+.save-btn__active svg {
+  fill: #006cb8;
+}
+
+.save-btn__active span {
+  display: none;
+}
+
+/*
+*   Featured story
+*/
+.fact-wrapper:has(.fact-wrapper__decoration-top) {
+  margin-top: 162px;
+}
+
+.fact-wrapper:has(.fact-wrapper__decoration-bottom) {
+  margin-bottom: 162px;
+}
+
+.fact-wrapper__decoration-top {
+  top: 0;
+  flex-direction: column-reverse;
+  transform: translateY(-90px);
+}
+
+.fact-wrapper__decoration-bottom {
+  bottom: 0;
+  flex-direction: column;
+  transform: translateY(90px);
+}

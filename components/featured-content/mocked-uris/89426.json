@@ -2,7 +2,7 @@
   "id": "89426",
   "type": "page_standard",
   "type_name": "Standard Page",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "name": "Meet the robot that can sort your random stuff",
   "short_name": "Meet the robot that can sort your random stuff",
   "status": {
@@ -11,7 +11,7 @@
     "name": "Under Construction"
   },
   "created": { "date": "2023-12-04T00:34:38-08:00", "user_id": "32242" },
-  "updated": { "date": "2023-12-10T22:00:54-08:00", "user_id": "32325" },
+  "updated": { "date": "2023-12-20T17:54:53-08:00", "user_id": "32242" },
   "published": { "date": null, "user_id": null },
   "status_changed": { "date": "2023-12-04T00:34:38-08:00", "user_id": "32242" },
   "urls": [
@@ -31,11 +31,11 @@
     "csTaxonomyUrl": [
       "https://sug-web.matrix.squiz.cloud/_media/taxonomy/content-warehouse/front-end-taxonomy/content-topic/research-and-scholarship/science-and-engineering"
     ],
-    "csContentTypeName": ["News"],
+    "csContentTypeName": ["Video"],
     "srAudience": [],
     "srMessage": [],
     "srLandingPage": [],
-    "srContentType": ["28192"],
+    "srContentType": ["28207"],
     "srFeaturedUnit": [],
     "srContentCategory": ["28375"],
     "srContentMainTopic": ["28406"],
@@ -49,12 +49,12 @@
     "pageType": ["story"],
     "summary": [],
     "teaser": [
-      "<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>"
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate."
     ],
     "publishedDate": ["2023-01-01 00:00:00"],
     "modifiedDate": ["2023-01-01 00:00:00"],
     "featuredImage": ["125801"],
-    "featuredVideo": [],
+    "featuredVideo": ["dYdi0Aek664"],
     "bannerImg": [],
     "bannerCaption": [],
     "bannerImgType": ["normal"],
