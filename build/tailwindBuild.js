@@ -1,9 +1,14 @@
 import { exec } from "child_process";
+import util from "util";
 import fs from "fs";
 import * as espree from "espree";
 import memoize from "memoizee";
 import path from "path";
 import { globSync } from "glob";
+import postCSS from "postcss";
+import postCSSWrap from "postcss-wrap";
+
+const execPromise = util.promisify(exec);
 
 export function resolveImport(relativePath, filePath) {
   return (
@@ -62,24 +67,47 @@ export const memoizedGetContentFiles = memoize(getContentFiles);
 export async function buildCSS(
   tailwindEntryPoints,
   entryPoints,
-  componentPath,
-  watch = false
+  componentPath
 ) {
-  const watchFlag = watch ? "--watch" : "";
   // Check if we got any tailwind entry points
   if (tailwindEntryPoints.length > 0) {
+    // Define our output file
+    const output = path.join(componentPath, "dist", "main.css");
+
     // Get the content paths for tailwind for this component
     const contentFiles = memoizedGetContentFiles(
       entryPoints.map((entryPoint) => path.resolve(entryPoint))
     );
 
     // Spawn a new process and build the tailwind css with the config for this particular component
-    await exec(
-      `npx tailwind -i ${tailwindEntryPoints.join(" ")} -o ${path.join(
-        componentPath,
-        "dist",
-        "main.css"
-      )} --content ${contentFiles} ${watchFlag}`
+    const { stdout: tailwindOut } = await execPromise(
+      `npx tailwind -i ${tailwindEntryPoints.join(
+        " "
+      )} --content ${contentFiles}`
     );
+
+    // read the component name from the manifest
+    const { name: componentName } = JSON.parse(
+      fs.readFileSync(path.join(componentPath, "manifest.json"), "utf-8")
+    );
+
+    // Scope the css from tailwind to the current component
+    const scopedContents = await postCSS([
+      postCSSWrap({
+        selector: `[data-component="${componentName}"]`,
+      }),
+    ])
+      .process(tailwindOut, { from: output })
+      .then((result) => {
+        return result.css;
+      })
+      .catch((error) => {
+        throw new Error(
+          `Error scoping tailwind css from ${componentName}: ${error}`
+        );
+      });
+
+    // Write the file
+    fs.writeFileSync(output, scopedContents, "utf-8");
   }
 }

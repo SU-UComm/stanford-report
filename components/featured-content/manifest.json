@@ -1,18 +1,14 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "featured-content",
-  "version": "0.0.4",
+  "version": "0.0.8",
   "namespace": "stanford-components",
   "description": "",
   "displayName": "Featured content",
   "mainFunction": "main",
   "environment": [
     {
-      "name": "CONTENT_API",
-      "required": true
-    },
-    {
-      "name": "CONTENT_API_KEY",
+      "name": "API_IDENTIFIER",
       "required": true
     },
     {
@@ -30,7 +26,7 @@
   "functions": [
     {
       "name": "main",
-      "entry": "./dist/server.js",
+      "entry": "./dist/server.cjs",
       "input": {
         "type": "object",
         "required": [],
@@ -52,13 +48,14 @@
               },
               "ctaUrl": {
                 "title": "Link URL",
-                "type": "string"
+                "type": "string",
+                "format": "matrix-asset-uri"
               }
             }
           },
           "contentConfiguration": {
             "title": "Grid Content",
-            "description": "The cards to display in the grid area of the component. The featured card appears larger than the supplementary cards. When manually selecting cards, at least two must be selected for the grid to display.",
+            "description": "The cards to display in the grid area of the component. The featured card appears larger than the supplementary cards. When manually selecting cards, at least three must be selected for the grid to display.",
             "type": "object",
             "required": ["source"],
             "properties": {
@@ -80,13 +77,8 @@
                   }
                 },
                 "then": {
-                  "required": ["searchUrl", "searchQuery"],
+                  "required": ["searchQuery"],
                   "properties": {
-                    "searchUrl": {
-                      "type": "string",
-                      "title": "The Funnelback search JSON endpoint",
-                      "default": ""
-                    },
                     "searchQuery": {
                       "type": "string",
                       "title": "The Funnelback search query",
@@ -105,23 +97,31 @@
                   }
                 },
                 "then": {
-                  "required": ["featured", "supporting_01", "supporting_02"],
+                  "required": [],
                   "properties": {
-                    "featured": {
-                      "type": "string",
-                      "title": "Select Featured content <SquizLink>"
+                    "cards": {
+                      "title": "Cards",
+                      "description": "Select the assets that will be used for cards. The first card selected will be the featured card.",
+                      "type": "array",
+                      "minItems": 3,
+                      "maxItems": 3,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "cardAsset": {
+                            "type": "string",
+                            "format": "matrix-asset-uri",
+                            "title": "Card Asset"
+                          }
+                        },
+                        "required": ["cardAsset"]
+                      }
                     },
                     "featuredDescription": {
                       "type": "string",
-                      "title": "Featured Content description"
-                    },
-                    "supporting_01": {
-                      "type": "string",
-                      "title": "Select the first supporting feature <SquizLink>"
-                    },
-                    "supporting_02": {
-                      "type": "string",
-                      "title": "Select the second supporting feature <SquizLink>"
+                      "title": "Featured Content description",
+                      "format": "multi-line",
+                      "description": "If filled out, it will replace the description of the featured card (first)."
                     }
                   }
                 }
@@ -191,13 +191,101 @@
   "staticFiles": {
     "locationRoot": "./dist"
   },
+  "mockedUris": {
+    "matrix-asset://api-identifier/125002": {
+      "type": "file",
+      "path": "mocked-uris/125002.json"
+    },
+    "matrix-asset://api-identifier/28375": {
+      "type": "file",
+      "path": "mocked-uris/28375.json"
+    },
+    "matrix-asset://api-identifier/28401": {
+      "type": "file",
+      "path": "mocked-uris/28401.json"
+    },
+    "matrix-asset://api-identifier/28406": {
+      "type": "file",
+      "path": "mocked-uris/28406.json"
+    },
+    "matrix-asset://api-identifier/124970": {
+      "type": "file",
+      "path": "mocked-uris/124970.json"
+    },
+    "matrix-asset://api-identifier/124986": {
+      "type": "file",
+      "path": "mocked-uris/124986.json"
+    },
+    "matrix-asset://api-identifier/28397": {
+      "type": "file",
+      "path": "mocked-uris/28397.json"
+    },
+    "matrix-asset://api-identifier/89422": {
+      "type": "file",
+      "path": "mocked-uris/89422.json"
+    },
+    "matrix-asset://api-identifier/89430": {
+      "type": "file",
+      "path": "mocked-uris/89430.json"
+    },
+    "matrix-asset://api-identifier/89426": {
+      "type": "file",
+      "path": "mocked-uris/89426.json"
+    },
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/125800": {
+      "type": "file",
+      "path": "mocked-uris/125800.json"
+    },
+    "matrix-asset://api-identifier/125801": {
+      "type": "file",
+      "path": "mocked-uris/125801.json"
+    },
+    "matrix-asset://api-identifier/28192": {
+      "type": "file",
+      "path": "mocked-uris/28192.json"
+    },
+    "matrix-asset://api-identifier/28205": {
+      "type": "file",
+      "path": "mocked-uris/28205.json"
+    }
+  },
   "previews": {
     "default": {
       "functionData": {
         "main": {
           "inputData": {
             "type": "file",
-            "path": "preview.data.json"
+            "path": "select.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "select": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "select.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "search": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "search.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"

@@ -16,7 +16,7 @@ import { ChevronRight } from "../SVG-library/SVG";
  * @return {JSX.element}
  */
 export function LinkedHeading({ title, ctaText = "View all", ctaUrl }) {
-  return title !== "" ? (
+  return title !== "" && title !== undefined ? (
     <div className="su-component-line-heading su-flex su-flex-wrap su-items-center md:su-items-end su-gap-[5px] su-gap-x-[13px] md:su-gap-[13px]">
       <h2 className="su-text-[28px] su-font-serif su-text-black dark:su-text-white md:su-text-[35px] lg:su-text-[48px] su-w-full md:su-w-auto su-mb-0">
         {title}

@@ -4,7 +4,6 @@ import React from "react";
 import Card from "../../packages/card/Card";
 import { LinkedHeading } from "../../packages/headings/Heading";
 import { FeaturedGrid } from "../../packages/grids/Grids";
-import { Avatar, PullQuote } from "../../packages/quotes/Quotes";
 
 /**
  * Featured content component
@@ -13,26 +12,32 @@ import { Avatar, PullQuote } from "../../packages/quotes/Quotes";
  * @param {string} ctaText The cta text
  * @param {string} ctaUrl The cta url
  * @param {object} data JSON data for content
- * ... any other options needed
  * @returns {JSX.Element}
  * @constructor
  */
 
 export default function FeaturedContent({
-  headingConfiguration,
   contentConfiguration,
   displayConfiguration,
-  data
+  data,
+  headingData,
 }) {
-
   const featuredCardData = data[0];
-  if (contentConfiguration.featuredDescription !== "" && contentConfiguration.featuredDescription !== null) {
+  if (
+    contentConfiguration.featuredDescription !== "" &&
+    contentConfiguration.featuredDescription !== null &&
+    contentConfiguration.featuredDescription !== undefined
+  ) {
     featuredCardData.description = contentConfiguration.featuredDescription;
   }
 
   return (
-    <>
-      <LinkedHeading title={headingConfiguration.title} ctaText={headingConfiguration.ctaText} ctaUrl={headingConfiguration.ctaUrl} />
+    <div data-component="featured-content">
+      <LinkedHeading
+        title={headingData.title}
+        ctaText={headingData.ctaText}
+        ctaUrl={headingData.resolvedUrl}
+      />
 
       <FeaturedGrid
         alignment={displayConfiguration.alignment}
@@ -52,6 +57,6 @@ export default function FeaturedContent({
           />,
         ]}
       />
-    </>
+    </div>
   );
 }

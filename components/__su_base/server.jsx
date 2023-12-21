@@ -1,4 +1,4 @@
-import { renderComponent } from "@squiz/xaccel-component-server-helpers";
+import renderComponent from "../../packages/utils/render-component";
 import Component from "./Component";
 
 export default async (args) => {

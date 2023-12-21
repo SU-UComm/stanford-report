@@ -20,7 +20,6 @@ describe("Card", () => {
     render(<Card data={testData} cardType="horizontal" />);
 
     const verticalCardElement = screen.queryByTestId("vertical-card");
-
     expect(verticalCardElement).toBeNull();
   });
 
@@ -28,16 +27,13 @@ describe("Card", () => {
     render(<Card data={testData} cardType={undefined} />);
 
     const verticalCardElement = screen.getByTestId("vertical-card");
-
     expect(verticalCardElement).toBeInTheDocument();
   });
 
-  // data-testid="horizontal-card"
   test("When the card type is horizontal, the horizontal card should be shown", () => {
     render(<Card data={testData} cardType="horizontal" />);
 
     const horizontalCard = screen.getByTestId("horizontal-card");
-
     expect(horizontalCard).toBeInTheDocument();
   });
 });

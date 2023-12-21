@@ -1,12 +1,7 @@
 import React, { Fragment } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
-import {
-  News,
-  QuestionAnswer,
-  Video,
-  Podcast,
-  Book,
-} from "../SVG-library/SVG";
+import { News, QuestionAnswer, Video, Podcast, Book } from "../SVG-library/SVG";
+import CardThumbnail from "./CardThumbnail";
 
 /**
  * This function will return the appropriate heading font
@@ -24,14 +19,14 @@ function titleSize(size) {
   if (size === "featured")
     return "su-text-[35px] md:su-text-[40px] lg:su-text-[43px] su-leading-[42px] md:su-leading-[48px] lg:su-leading-[51.6px]";
   if (size === "medium")
-    return "su-text-[21px] lg:su-text-[24px] su-leading-[25.2px] lg:su-leading-[28.8px]";
+    return "su-text-[21px] lg:su-text-[33px] su-leading-[25.2px] lg:su-leading-[39.6px]";
   return "su-text-[21px] lg:su-text-[24px] su-leading-[25.2px] lg:su-leading-[28.8px]";
 }
 
 function descriptionSize(size) {
   if (size === "featured")
-    return "[&>*]:su-text-[18px] [&>*]:md:su-text-[19px] [&>*]:su-leading-[22.5px] [&>*]:md:su-leading-[23.75px] [&>*]:su-mt-[4px] [&>*]:md:su-mt-[14px]";
-  return "[&>*]:su-text-[19px] [&>*]:su-leading-[23.75px]";
+    return "[&>*]:su-text-[18px] su-text-[18px] [&>*]:md:su-text-[19px] md:su-text-[19px] [&>*]:su-leading-[22.5px] su-leading-[22.5px] [&>*]:md:su-leading-[23.75px] md:su-leading-[23.75px] [&>*]:su-mt-[4px] [&>*]:md:su-mt-[14px]";
+  return "[&>*]:su-text-[19px] [&>*]:su-leading-[23.75px] su-text-[19px] su-leading-[23.75px]";
 }
 
 function gapSize(size) {
@@ -44,6 +39,24 @@ function imageMargin(size) {
   if (size === "featured")
     return "su-mb-[15px] md:su-mb-[26px] lg:su-mb-[38px]";
   return "su-mb-[15px] md:su-mb-[18px] lg:su-mb-[19px]";
+}
+
+function taxonomySize(size) {
+  if (size === "featured")
+    return "su-text-[20px] md:su-text-[20px] su-leading-[26px]";
+  if (size === "medium")
+    return "su-text-[16px] md:su-text-[16px] md:su-text-[20px] su-leading-[20.8px] md:su-leading-[26px]";
+
+  return "su-text-[18px] su-leading-[23.4px]";
+}
+
+function typeSize(size) {
+  if (size === "featured")
+    return "su-text-[18px] su-leading-[23.4px] md:su-text-[20px] md:su-leading-[26px] lg:su-text-[20px] lg:su-leading-[26px]";
+  if (size === "medium")
+    return "su-text-[16px] su-leading-[20.8px] lg:su-text-[18px] lg:su-leading-[23.4px]";
+
+  return "su-text-[16px] su-leading-[20.8px]";
 }
 
 /**
@@ -86,15 +99,16 @@ export default function VerticalCard({
     taxonomy,
     taxonomyUrl,
     type,
+    videoUrl,
   },
   cardSize = "small",
   displayDescription = true,
   displayThumbnail = true,
 }) {
-
   const SVGMap = new Map();
   SVGMap.set("news", <News />);
   SVGMap.set("q&amp;a", <QuestionAnswer />);
+  SVGMap.set("q&a", <QuestionAnswer />);
   SVGMap.set("video", <Video />);
   SVGMap.set("podcast", <Podcast />);
   SVGMap.set("book", <Book />);
@@ -105,14 +119,13 @@ export default function VerticalCard({
       data-testid="vertical-card"
     >
       {displayThumbnail && imageUrl && (
-        <div
-          className={`su-relative su-block su-aspect-[50/33] ${imageMargin(cardSize)}`}
-          data-testid="vertical-card-image-wrapper"
-        >
-          <img
-            className="su-absolute su-object-cover su-object-center su-w-full su-h-full"
-            src={imageUrl}
+        <div className={`${imageMargin(cardSize)}`}>
+          <CardThumbnail
+            imageUrl={imageUrl}
             alt={imageAlt}
+            aspectRatio="card"
+            videoUrl={type === "video" ? videoUrl : ""}
+            size={cardSize}
           />
         </div>
       )}
@@ -120,7 +133,9 @@ export default function VerticalCard({
       {taxonomy && (
         <p
           data-testid="vertical-card-taxonomy"
-          className="su-relative su-z-10 su-text-[16px] lg:su-text-[18px] su-leading-[20.8px] lg:su-leading-[23.4px] su-mb-[13px] su-font-semibold"
+          className={`su-relative su-z-10 su-mb-[13px] su-font-semibold ${taxonomySize(
+            cardSize
+          )}`} // size
         >
           <XssSafeContent
             className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
@@ -133,9 +148,7 @@ export default function VerticalCard({
 
       <div className={`su-flex su-flex-wrap ${gapSize(cardSize)}`}>
         <h2
-          className={`su-w-full ${titleSize(
-            cardSize
-          )} su-leading-[25.2px] lg:su-leading-[28.8px] su-font-serif su-my-0`}
+          className={`su-w-full ${titleSize(cardSize)} su-font-serif su-my-0`}
         >
           <a
             href={liveUrl}
@@ -148,7 +161,9 @@ export default function VerticalCard({
         {type && (
           <p
             data-testid="vertical-card-type"
-            className="su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-[6px] su-flex-nowrap su-items-center su-text-[16px] su-leading-[20.8px]"
+            className={`su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-[6px] su-flex-nowrap su-items-center ${typeSize(
+              cardSize
+            )}`}
           >
             {SVGMap.get(type.toLowerCase()) || Fragment}
             <XssSafeContent content={type} elementType="span" />

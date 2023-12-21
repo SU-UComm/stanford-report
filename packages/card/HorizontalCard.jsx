@@ -1,12 +1,7 @@
 import React, { Fragment } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
-import {
-  News,
-  QuestionAnswer,
-  Video,
-  Podcast,
-  Book,
-} from "../SVG-library/SVG";
+import CardThumbnail from "./CardThumbnail";
+import { News, QuestionAnswer, Video, Podcast, Book } from "../SVG-library/SVG";
 
 import EventStartEndDate from "./EventStartEndDate";
 
@@ -22,6 +17,11 @@ function cardTitleFont(size) {
   if (size === "large") return "su-font-serif";
 
   return "";
+}
+
+function mediaContainerSize(size) {
+  if (size === "large")
+    return "listing-item__media su-w-[103px] su-h-[69px] md:su-w-[169px] md:su-h-[113px] lg:su-w-[292px] lg:su-h-[193px]";
 }
 
 /**
@@ -68,8 +68,9 @@ export default function HorizontalCard({
     type,
     date,
     endDate,
+    videoUrl,
   },
-  cardSize,
+  cardSize = "small",
 }) {
   const SVGMap = new Map();
   SVGMap.set("news", <News />);
@@ -88,18 +89,46 @@ export default function HorizontalCard({
   contentGap.set("large", "su-gap-[9px] lg:su-gap-[12px]");
   contentGap.set("small", "su-gap-[6px]");
 
+  // gap for the <div> node that holds info, like description & title
+  const titleSize = new Map();
+  titleSize.set(
+    "large",
+    "su-text-[18px] md:su-text-[21px] lg:su-text-[23px] su-font-bold su-leading-[21.6px] md:su-leading-[25.2px] lg:su-leading-[27.6px]"
+  );
+  titleSize.set(
+    "small",
+    "su-text-[18px] su-font-semibold su-leading-[21.495px]"
+  );
+
   return (
     <article
       className={`listing-item su-flex ${cardGap.get(cardSize)}`}
       data-testid="horizontal-card"
     >
-      <CardThumbnail size={cardSize} imageUrl={imageUrl} imageAlt={imageAlt}>
-        <img
-          className="su-object-cover su-object-center su-absolute su-w-full su-h-full"
-          src={imageUrl}
-          alt={imageAlt}
-        />
-      </CardThumbnail>
+      {cardSize === "large" && (
+        <div className="su-shrink-0 su-w-[103px] su-h-[69px] md:su-w-[169px] md:su-h-[113px] lg:su-w-[292px] lg:su-h-[193px]">
+          <CardThumbnail
+            imageUrl={imageUrl}
+            alt={imageAlt}
+            videoUrl={videoUrl}
+            mediaType="image"
+            aspectRatio="card"
+            size={cardSize}
+          />
+        </div>
+      )}
+
+      {cardSize === "small" && (
+        <div className="su-shrink-0 su-w-[73px] su-h-[73px]">
+          <CardThumbnail
+            imageUrl={imageUrl}
+            alt={imageAlt}
+            mediaType="image"
+            aspectRatio="square"
+            size={cardSize}
+          />
+        </div>
+      )}
 
       <div className={`su-flex su-flex-col ${contentGap.get(cardSize)}`}>
         {cardSize === "small" && taxonomy && (
@@ -117,11 +146,9 @@ export default function HorizontalCard({
         )}
 
         <h2
-          className={`${cardTitleFont(
+          className={`${cardTitleFont(cardSize)} ${titleSize.get(
             cardSize
-          )} su-text-[18px] md:su-text-[21px] lg:su-text-[23px] su-font-bold su-leading-[21.6px] md:su-leading-[25.2px] lg:su-leading-[27.6px] ${cardTitleFont(
-            cardSize
-          )} su-my-0`}
+          )} ${cardTitleFont(cardSize)} su-my-0`}
         >
           <a
             className="focus:su-outline-0 hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red"
@@ -141,17 +168,21 @@ export default function HorizontalCard({
         {cardSize === "large" && type && (
           <p
             data-testid="horizontal-card-type"
-            className="su-flex su-font-bold su-text-black-70 dark:su-text-black-60 su-text-[14px] su-leading-[18.2px]"
+            className="su-text-black-70 dark:su-text-black-30 su-w-full su-text-[14px] lg:su-text-[16px] su-mt-[9px] md:su-mt-[12px] su-mb-0 su-flex su-gap-[6px] su-items-center su-justify-start"
           >
             {SVGMap.get(type.toLowerCase()) || Fragment}
-            <XssSafeContent content={type} elementType="span" />
+            <XssSafeContent
+              className="su-font-semibold su-text-[14px] md:su-text-[16px] su-leading-4"
+              content={type}
+              elementType="span"
+            />
           </p>
         )}
 
         {cardSize === "large" && (
           <div
             data-testid="horizontal-card-description"
-            className="su-hidden lg:su-block lg:su-text-[18px]"
+            className="su-hidden md:su-block su-text-[16px] lg:su-text-[18px] su-mt-[9px] md:su-mt-[12px] su-mb-0"
           >
             <XssSafeContent
               className={["su-mb-0 su-w-full [&>*:last-child]:su-mb-0"].join(
@@ -163,35 +194,5 @@ export default function HorizontalCard({
         )}
       </div>
     </article>
-  );
-}
-
-/**
- * CardThumbnail renders out the card's thumbnail image
- * container
- *
- * @param {string} size
- * The size of the card, which dictates the image container
- * constraints, "large" or "small"
- *
- * @param {array} children
- * Child nodes to the card thumbnail
- *
- * @returns {JSX.Element}
- */
-function CardThumbnail({ size, children }) {
-  if (size === "large") {
-    return (
-      <div className="listing-item__media su-w-[103px] su-h-[69px] md:su-w-[169px] md:su-h-[113px] lg:su-w-[292px] lg:su-h-[193px] su-relative su-overflow-hidden su-shrink-0">
-        {children}
-      </div>
-    );
-  }
-
-  // small card tumbnail
-  return (
-    <div className="listing-item__media su-w-[73px] su-h-[73px] su-relative su-overflow-hidden su-shrink-0">
-      {children}
-    </div>
   );
 }
