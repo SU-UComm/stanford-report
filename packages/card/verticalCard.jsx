@@ -124,7 +124,7 @@ export default function VerticalCard({
             imageUrl={imageUrl}
             alt={imageAlt}
             aspectRatio="card"
-            videoUrl={type === "video" ? videoUrl : ""}
+            videoUrl={type === "Video" ? videoUrl : ""}
             size={cardSize}
           />
         </div>

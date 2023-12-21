@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "node ./build/index.js",
+    "build": "npm-run-all -p build:*",
+    "build:components": "node ./build/index.js",
+    "build:tailwind": "tailwind -i ./global/css/_global.css -o ./global/build/global.css",
     "watch": "./load_dotenv.sh && npm-run-all -p watch:*",
     "watch:js": "node ./build/index.js --watch",
     "watch:unit": "jest --watch",
@@ -47,12 +49,19 @@
     "tailwindcss": "^3.3.5"
   },
   "dependencies": {
+    "@react-aria/button": "^3.9.0",
+    "@react-aria/dialog": "^3.5.8",
+    "@react-aria/focus": "^3.15.0",
+    "@react-aria/overlays": "^3.19.0",
     "@squiz/xaccel-component-client-helpers": "^1.11.0-alpha.9",
     "@squiz/xaccel-component-server-helpers": "^1.11.0-alpha.9",
     "@squiz/xaccel-xss-safe-content": "^1.11.0-alpha.9",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
+    "ally.js": "^1.4.1",
+    "focus-trap": "^7.5.4",
     "object-hash": "^3.0.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

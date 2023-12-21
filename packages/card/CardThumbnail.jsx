@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import VideoPlay from "../SVG-library/VideoPlay";
 import MediaRatio from "../media/MediaRatio";
+import Modal from "../modal/ModalWrapper";
+import EmbedVideo from "../media/EmbedVideo";
 
 export default function CardThumbnail({
   imageUrl,
@@ -27,33 +29,58 @@ export default function CardThumbnail({
     "su-left-[13px] su-bottom-[13px] [&>svg]:su-w-[40px] [&>svg]:su-h-[40px]"
   );
 
-  return videoUrl && videoUrl.includes("http") ? (
-    <button
-      className="su-component-card-thumbnail su-block su-w-full su-h-full"
-      type="button"
-    >
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  return videoUrl ? (
+    <>
+      <button
+        className="su-component-card-thumbnail su-block su-relative su-z-10 su-w-full su-h-full"
+        type="button"
+        aria-haspopup="dialog"
+        onClick={() => handleClick()}
+      >
+        <MediaRatio
+          imageUrl={imageUrl}
+          imageAlt={alt}
+          aspectRatio={aspectRatio}
+        >
+          {videoUrl && (
+            <div className={`su-absolute ${videoPlayClasses.get(size)}`}>
+              <VideoPlay />
+            </div>
+          )}
+        </MediaRatio>
+      </button>
+      {isModalOpen && (
+        <Modal
+          titleId="image-gallery-modal"
+          title="Modal"
+          onClose={handleCloseModal}
+        >
+          <div>
+            <button onClick={handleCloseModal} type="button">
+              Close
+            </button>
+            <EmbedVideo videoId={videoUrl} />
+          </div>
+        </Modal>
+      )}
+    </>
+  ) : (
+    <div className="su-component-card-thumbnail">
       <MediaRatio
         imageUrl={imageUrl}
         imageAlt={alt}
         aspectRatio={aspectRatio}
-        videoUrl={videoUrl}
-      >
-        {videoUrl && (
-          <div className={`su-absolute ${videoPlayClasses.get(size)}`}>
-            <VideoPlay />
-          </div>
-        )}
-      </MediaRatio>
-    </button>
-  ) : (
-    <div className="su-component-card-thumbnail">
-      <MediaRatio imageUrl={imageUrl} imageAlt={alt} aspectRatio={aspectRatio}>
-        {videoUrl && (
-          <div className={`su-absolute ${videoPlayClasses.get(size)}`}>
-            <VideoPlay />
-          </div>
-        )}
-      </MediaRatio>
+      />
     </div>
   );
 }
