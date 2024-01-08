@@ -3,6 +3,7 @@ import { OverlayContainer } from "@react-aria/overlays";
 import { FocusScope } from "@react-aria/focus";
 // import styles from "./modal.module.scss";
 import Modal from "./ModalContent";
+import { CloseButton } from "./CloseButton";
 
 /**
  * React implementation of the Plug and Play Modal, uses the Adobe @react-aria package
@@ -32,14 +33,18 @@ export function ModalWrapper({
   mobileFullScreen,
 }) {
   return (
-    <OverlayContainer className="su-test su-w-full su-h-full su-bg-black-true su-top-0 su-left-0 su-fixed su-z-50">
-      <div>
-        <FocusScope contain restoreFocus autoFocus>
-          <Modal titleId={titleId} title={title} onClose={onClose}>
-            {children}
-          </Modal>
-        </FocusScope>
-      </div>
+    <OverlayContainer className="su-modal">
+      <FocusScope contain restoreFocus autoFocus>
+        <CloseButton clickHandler={onClose} />
+        <Modal
+          titleId={titleId}
+          title={title}
+          onClose={onClose}
+          class="su-modal-content-wrap"
+        >
+          {children}
+        </Modal>
+      </FocusScope>
     </OverlayContainer>
   );
 }
