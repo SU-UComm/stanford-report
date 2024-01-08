@@ -2,6 +2,7 @@ import React, { useEffect, useRef, ReactNode } from "react";
 import { useDialog } from "@react-aria/dialog";
 import { useOverlay, usePreventScroll, useModal } from "@react-aria/overlays";
 import { useFocusManager } from "@react-aria/focus";
+import { CloseButton } from "./CloseButton";
 
 /**
  * React implementation of the Plug and Play Modal, uses the Adobe @react-aria package
@@ -79,7 +80,7 @@ function ModalContent({ titleId, title, onClose, children }) {
         tabIndex={-1}
       >
         {titleId ? "" : <h2 {...titleProps}>{title}</h2>}
-        {children}
+        <div className="su-modal-content">{children}</div>
       </div>
     </div>
   );

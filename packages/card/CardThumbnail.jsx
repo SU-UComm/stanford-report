@@ -65,12 +65,7 @@ export default function CardThumbnail({
           title="Modal"
           onClose={handleCloseModal}
         >
-          <div>
-            <button onClick={handleCloseModal} type="button">
-              Close
-            </button>
-            <EmbedVideo videoId={videoUrl} />
-          </div>
+          <EmbedVideo videoId={videoUrl} />
         </Modal>
       )}
     </>
