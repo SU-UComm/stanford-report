@@ -2,7 +2,7 @@ import React, { useEffect, useRef, ReactNode } from "react";
 import { useDialog } from "@react-aria/dialog";
 import { useOverlay, usePreventScroll, useModal } from "@react-aria/overlays";
 import { useFocusManager } from "@react-aria/focus";
-import { CloseButton } from "./CloseButton";
+import useEscapeKey from "./useEscapeKey";
 
 /**
  * React implementation of the Plug and Play Modal, uses the Adobe @react-aria package
@@ -59,6 +59,11 @@ function ModalContent({ titleId, title, onClose, children }) {
         Provides the behavior and accessibility implementation for a dialog component.
     */
   const { dialogProps, titleProps } = useDialog(settings, modalContentRef);
+
+  /*
+        Close the modal when the escape key is hit
+    */
+  useEscapeKey(onClose);
 
   /*
         Remove the hidden attribute as soon as its drawn to the DOM so it transitions open like
