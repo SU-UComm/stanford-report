@@ -424,6 +424,10 @@ audio::-webkit-media-controls-panel {
   @apply su-mb-[34px] md:su-mb-[45px] lg:su-mb-[76px];
 }
 
+.su-component-line-heading {
+  @apply su-mb-[45px] md:su-mb-[40px] lg:su-mb-[51px];
+}
+
 [data-component="multicolumn-listing"],
 [data-component="featured-content"] {
   @apply su-mb-[100px] lg:su-mb-[130px];

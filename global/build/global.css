@@ -1707,6 +1707,22 @@ audio::-webkit-media-controls-panel {
   }
 }
 
+.su-component-line-heading{
+  margin-bottom: 45px;
+}
+
+@media (min-width: 768px){
+  .su-component-line-heading{
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 992px){
+  .su-component-line-heading{
+    margin-bottom: 51px;
+  }
+}
+
 [data-component="multicolumn-listing"],
 [data-component="featured-content"]{
   margin-bottom: 100px;
