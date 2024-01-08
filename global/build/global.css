@@ -1691,41 +1691,59 @@ audio::-webkit-media-controls-panel {
 * Contextual styles
 */
 
-[data-component]{
+main [data-component]{
   margin-bottom: 34px;
 }
 
 @media (min-width: 768px){
-  [data-component]{
+  main [data-component]{
     margin-bottom: 45px;
   }
 }
 
 @media (min-width: 992px){
-  [data-component]{
+  main [data-component]{
     margin-bottom: 76px;
   }
 }
 
-[data-component="multicolumn-listing"],
-[data-component="featured-content"]{
+main .su-component-line-heading{
+  margin-bottom: 45px;
+}
+
+@media (min-width: 768px){
+  main .su-component-line-heading{
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 992px){
+  main .su-component-line-heading{
+    margin-bottom: 51px;
+  }
+}
+
+main [data-component="multicolumn-listing"],
+main [data-component="featured-content"]{
   margin-bottom: 100px;
 }
 
 @media (min-width: 992px){
-  [data-component="multicolumn-listing"],
-[data-component="featured-content"]{
+  main [data-component="multicolumn-listing"],
+main [data-component="featured-content"]{
     margin-bottom: 130px;
   }
 }
 
-[data-component="featured-content"]
+main
+  [data-component="featured-content"]
   + [data-component="multicolumn-listing"]
   .component-multicolumn-listing.has-no-title{
   margin-top: -66px;
 }
 
 @media (min-width: 768px){
+  main
   [data-component="featured-content"]
   + [data-component="multicolumn-listing"]
   .component-multicolumn-listing.has-no-title{
@@ -1734,6 +1752,7 @@ audio::-webkit-media-controls-panel {
 }
 
 @media (min-width: 992px){
+  main
   [data-component="featured-content"]
   + [data-component="multicolumn-listing"]
   .component-multicolumn-listing.has-no-title{
@@ -1741,7 +1760,8 @@ audio::-webkit-media-controls-panel {
   }
 }
 
-[data-component="featured-content"]
+main
+  [data-component="featured-content"]
   + [data-component="multicolumn-listing"]
   .component-multicolumn-listing.has-no-title:before{
   margin-top: 34px;
@@ -1754,6 +1774,7 @@ audio::-webkit-media-controls-panel {
 }
 
 @media (min-width: 768px){
+  main
   [data-component="featured-content"]
   + [data-component="multicolumn-listing"]
   .component-multicolumn-listing.has-no-title:before{
@@ -1762,7 +1783,8 @@ audio::-webkit-media-controls-panel {
   }
 }
 
-[data-component="featured-content"]
+main
+  [data-component="featured-content"]
   + [data-component="multicolumn-listing"]
   .component-multicolumn-listing.has-no-title:before {
   content: "";

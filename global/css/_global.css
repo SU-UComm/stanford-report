@@ -420,22 +420,28 @@ audio::-webkit-media-controls-panel {
 /*
 * Contextual styles
 */
-[data-component] {
+main [data-component] {
   @apply su-mb-[34px] md:su-mb-[45px] lg:su-mb-[76px];
 }
 
-[data-component="multicolumn-listing"],
-[data-component="featured-content"] {
+main .su-component-line-heading {
+  @apply su-mb-[45px] md:su-mb-[40px] lg:su-mb-[51px];
+}
+
+main [data-component="multicolumn-listing"],
+main [data-component="featured-content"] {
   @apply su-mb-[100px] lg:su-mb-[130px];
 }
 
-[data-component="featured-content"]
+main
+  [data-component="featured-content"]
   + [data-component="multicolumn-listing"]
   .component-multicolumn-listing.has-no-title {
   @apply su-mt-[-66px] md:su-mb-[-55px] lg:su-mb-[-55px];
 }
 
-[data-component="featured-content"]
+main
+  [data-component="featured-content"]
   + [data-component="multicolumn-listing"]
   .component-multicolumn-listing.has-no-title:before {
   @apply su-block su-w-full su-h-[1px] su-bg-black-30 su-my-[34px] md:su-my-[45px] md:su-my-[76px];
