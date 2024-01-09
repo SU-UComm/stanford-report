@@ -10,10 +10,10 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="lg:su-h-[992px] su-bg-black-10">
+    <footer className="su-bg-black-10">
       <div className="dark:su-bg-black-true dark:su-text-white su-flex lg:su-items-center lg:su-justify-center su-bg-white">
         <section className="pre-footer su-pl-[20px] su-pr-[20px] md:su-pl-[50px] md:su-pr-[50px] su-max-w-[1412px]">
-          <div className="su-flex su-flex-col lg:su-flex-row su-pt-[70px] lg:su-pt-[181px]">
+          <div className="su-flex su-flex-col lg:su-flex-row">
             <a
               href="link"
               className="pre-footer-logo dark:pre-footer-logo-dark su-mr-[44px] su-max-w-[231px] lg:su-max-w-[296px] lg:su-mt-[6px] su-flex-shrink-0"
