@@ -12,7 +12,7 @@ export default function MediaRatio({
   aspectRatioMap.set("square", "su-aspect-[1/1]");
 
   return (
-    <div
+    <span
       className={`su-component-media-ratio su-overflow-hidden su-relative su-w-full su-block ${aspectRatioMap.get(
         aspectRatio
       )}`}
@@ -33,6 +33,6 @@ export default function MediaRatio({
         />
       )}
       {children}
-    </div>
+    </span>
   );
 }

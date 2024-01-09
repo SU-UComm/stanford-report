@@ -53,9 +53,9 @@ export default function CardThumbnail({
           aspectRatio={aspectRatio}
         >
           {videoUrl && (
-            <div className={`su-absolute ${videoPlayClasses.get(size)}`}>
+            <span className={`su-absolute ${videoPlayClasses.get(size)}`}>
               <VideoPlay />
-            </div>
+            </span>
           )}
         </MediaRatio>
       </button>
