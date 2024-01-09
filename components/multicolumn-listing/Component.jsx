@@ -25,12 +25,6 @@ export default function MulticolumnListing({
 }) {
   const cards = [];
 
-  /**
-   * some data coming through might have empty values
-   * in the case of "Select", in that case, filter those
-   * out so the component doesn't get angry
-   */
-  data = data.filter(Boolean);
   const maxNumberOfCards =
     contentConfiguration.source === "Search"
       ? contentConfiguration.searchMaxCards

@@ -12,7 +12,7 @@ export default async function linkedHeadingService(
   let resolvedUrl;
 
   // Resolve the CTA URL if one is supplied
-  if (ctaUrl !== "") {
+  if (ctaUrl !== "" && ctaUrl !== null && ctaUrl !== undefined) {
     const linkedPageData = await basicAssetUri(ctx, ctaUrl);
     resolvedUrl = linkedPageData.url;
   }

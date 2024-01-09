@@ -15,6 +15,29 @@
   font-display: swap;
 }
 
+svg {
+  fill: currentColor;
+}
+
+.su-dark body{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 /**
  * This injects Tailwind's base styles and any base styles registered by
  * plugins.
@@ -1137,7 +1160,9 @@ table thead + tbody{
   --tw-gradient-to: #8F993E var(--tw-gradient-to-position);
 }
 
-.su-bg-gradient-light-red{
+.su-bg-gradient-light-red,
+.report-header__pref-toggle::before,
+.report-header__pref-toggle::after{
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   --tw-gradient-from: #E50808 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(229 8 8 / 0) var(--tw-gradient-to-position);
@@ -1145,7 +1170,9 @@ table thead + tbody{
   --tw-gradient-to: #820000 var(--tw-gradient-to-position);
 }
 
-:is(.su-dark .su-bg-gradient-light-red){
+:is(.su-dark .su-bg-gradient-light-red),:is(.su-dark 
+.report-header__pref-toggle)::before,:is(.su-dark 
+.report-header__pref-toggle)::after{
   --tw-gradient-from: #279989 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(39 153 137 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);

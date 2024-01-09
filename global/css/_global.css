@@ -11,6 +11,18 @@
   font-display: swap;
 }
 
+svg {
+  fill: currentColor;
+}
+
+.su-dark body {
+  @apply su-bg-black-true su-text-white;
+}
+
+.sr-only {
+  @apply su-sr-only;
+}
+
 /**
  * This injects Tailwind's base styles and any base styles registered by
  * plugins.
@@ -50,7 +62,9 @@
   @apply su-bg-gradient-to-b su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive;
 }
 
-.su-bg-gradient-light-red {
+.su-bg-gradient-light-red,
+.report-header__pref-toggle::before,
+.report-header__pref-toggle::after {
   @apply su-bg-gradient-to-b su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive;
 }
 
