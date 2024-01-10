@@ -431,6 +431,10 @@ audio::-webkit-media-controls-panel {
   @apply su-w-full su-overflow-hidden;
 }
 
+.su-page:not(.su-page-has-sidebar) .su-page-content > *:not([data-component]) {
+  @apply su-max-w-[732px] su-mx-auto su-px-[20px] md:su-px-[50px];
+}
+
 .su-page-content > *:first-child {
   @apply su-mt-[38px] md:su-mt-[47px] lg:su-mt-[90px];
 }
