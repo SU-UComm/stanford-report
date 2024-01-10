@@ -10,7 +10,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="su-bg-black-10">
+    <footer className="su-shadow-[0px_-3px_6px_0px_rgba(0,0,0,0.1)] su-pt-[70px] lg:su-pt-[175px]">
       <div className="dark:su-bg-black-true dark:su-text-white su-flex lg:su-items-center lg:su-justify-center su-bg-white">
         <section className="pre-footer su-pl-[20px] su-pr-[20px] md:su-pl-[50px] md:su-pr-[50px] su-max-w-[1412px]">
           <div className="su-flex su-flex-col lg:su-flex-row">
