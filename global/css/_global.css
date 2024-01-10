@@ -427,8 +427,47 @@ audio::-webkit-media-controls-panel {
 /*
 * Main page wrapper
 */
-.su-page-wrap {
-  @apply su-max-w-[1287px] su-w-full su-overflow-x-hidden su-pt-[32px] md:su-pt-[90px] su-px-[20px] md:su-px-[50px] su-pb-[200px] lg:su-px-[100px] su-mx-auto;
+.su-page {
+  @apply su-w-full su-overflow-hidden;
+}
+
+.su-page-has-sidebar .su-page-wrap {
+  @apply su-max-w-[1312px] su-mx-auto su-flex su-flex-wrap lg:su-flex-nowrap su-justify-between lg:su-gap-[50px];
+}
+
+.su-page-has-sidebar .su-page-content {
+  @apply su-mx-[20px] md:su-mx-[50px] lg:su-mx-0 md:su-px-[7.65%] lg:su-ml-[16.66%] lg:su-w-[50%] lg:su-flex-grow lg:su-px-0;
+}
+
+.su-page-has-sidebar .su-page-content .su-container-px {
+  @apply su-px-0 md:su-px-0 lg:su-px-0;
+}
+
+.su-page-has-sidebar .su-page-sidebar {
+  @apply su-mx-[20px] md:su-mx-[50px] lg:su-mx-0 md:su-px-[7.65%] lg:su-px-0 lg:su-ml-auto lg:su-w-[25%] lg:su-mr-[8.33%] su-w-full lg:su-max-w-[298px];
+}
+
+/*
+* Containers
+*/
+.su-container-narrow {
+  @apply su-max-w-[832px];
+}
+
+.su-container-content {
+  @apply su-max-w-[1287px];
+}
+
+.su-container-wide {
+  @apply su-max-w-[1512px];
+}
+
+.su-container-full {
+  @apply su-max-w-none;
+}
+
+.su-container-px {
+  @apply su-px-[20px] md:su-px-[50px] lg:su-px-[100px];
 }
 
 /*
@@ -436,6 +475,11 @@ audio::-webkit-media-controls-panel {
 */
 main [data-component] {
   @apply su-mb-[34px] md:su-mb-[45px] lg:su-mb-[76px];
+}
+
+main [data-component="header-component"]:last-child,
+main [data-component="footer-component"]:last-child {
+  @apply su-mb-0;
 }
 
 main .su-component-line-heading {

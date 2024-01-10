@@ -4,6 +4,7 @@ import React from "react";
 import Card from "../../packages/card/Card";
 import { LinkedHeading } from "../../packages/headings/Heading";
 import { MultiColumnGrid } from "../../packages/grids/Grids";
+import { Container } from "../../packages/grids/Container";
 
 /**
  * Featured content component
@@ -66,12 +67,14 @@ export default function MulticolumnListing({
 
   return (
     <div className={[componentClassName, componentTitleStateClass].join(" ")}>
-      <LinkedHeading
-        title={headingData.title}
-        ctaText={headingData.ctaText}
-        ctaUrl={headingData.resolvedUrl}
-      />
-      <MultiColumnGrid separator items={cards} />
+      <Container>
+        <LinkedHeading
+          title={headingData.title}
+          ctaText={headingData.ctaText}
+          ctaUrl={headingData.resolvedUrl}
+        />
+        <MultiColumnGrid separator items={cards} />
+      </Container>
     </div>
   );
 }
