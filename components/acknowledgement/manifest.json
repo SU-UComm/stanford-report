@@ -79,7 +79,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "../../packages/__globalPreview/basicstory.html"
           }
         }
       }
