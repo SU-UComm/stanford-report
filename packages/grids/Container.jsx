@@ -22,7 +22,7 @@ export function Container({ children, width = "content", paddingX = true }) {
   return hasChildren ? (
     <div
       className={[
-        "su-w-full su-mx-auto su-component-container",
+        "su-mx-auto su-component-container",
         widthClasses.get(width),
         paddingX ? "su-container-px" : "",
       ].join(" ")}
