@@ -3,7 +3,7 @@
   "name": "in-brief",
   "version": "0.0.1",
   "namespace": "stanford-components",
-  "description": "A WYSIWYG to add a bullet point summary at the top of a basic story.",
+  "description": "Summary of main points in a bulletted list.",
   "displayName": "In Brief",
   "mainFunction": "main",
   "icon": {
@@ -19,19 +19,26 @@
       "entry": "./dist/server.cjs",
       "input": {
         "type": "object",
+        "required": ["points"],
         "properties": {
           "title": {
             "title": "Title",
-            "description": "This title is displayed above the bullet points.",
+            "description": "This title is displayed above the list.",
             "type": "string",
             "default": "In Brief"
           },
-          "content": {
-            "title": "Summary",
-            "type": "FormattedText"
+          "points": {
+            "title": "Summary Points",
+            "description": "These points will be displayed as a bullet list.",
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 5,
+            "items": {
+              "type": "string",
+              "title": "Summary Point"
+            }
           }
-        },
-        "required": ["content"]
+        }
       },
       "output": {
         "responseType": "html",
