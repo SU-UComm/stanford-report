@@ -6,12 +6,20 @@
       href="https://sug-web.matrix.squiz.cloud/__data/assets/git_bridge/0026/127547/global/build/global.css?v=1.0.4"
       rel="stylesheet"
     />
-
     [component://static-header]
   </head>
   <body class="dark:su-bg-black-true dark:su-text-white">
-    <main role="main" class="su-page-wrap">
-      <div class="su-page-content">[component://output]</div>
+    <main role="main" class="su-page su-page-has-sidebar">
+      <article>
+        <header class="su-page-hero"></header>
+        <div class="su-page-wrap">
+          <div class="su-page-content">
+            [component://output]
+            <footer></footer>
+          </div>
+          <aside class="su-page-sidebar">Sidebar contents</aside>
+        </div>
+      </article>
     </main>
     [component://static-footer]
   </body>

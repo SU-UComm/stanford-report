@@ -4,6 +4,7 @@ import React from "react";
 import Card from "../../packages/card/Card";
 import { LinkedHeading } from "../../packages/headings/Heading";
 import { FeaturedGrid } from "../../packages/grids/Grids";
+import { Container } from "../../packages/grids/Container";
 
 /**
  * Featured content component
@@ -32,7 +33,7 @@ export default function FeaturedContent({
   }
 
   return (
-    <div data-component="featured-content">
+    <Container width="content" data-component="featured-content">
       <LinkedHeading
         title={headingData.title}
         ctaText={headingData.ctaText}
@@ -57,6 +58,6 @@ export default function FeaturedContent({
           />,
         ]}
       />
-    </div>
+    </Container>
   );
 }

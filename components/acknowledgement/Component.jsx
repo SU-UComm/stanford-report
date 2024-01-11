@@ -1,5 +1,6 @@
 import React from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
+import { Container } from "../../packages/grids/Container";
 
 /**
  * Renders out the acknowledgement component
@@ -15,7 +16,7 @@ import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 export default function Acknowledgement({ title, content }) {
   const hasContent = !!(content !== "" && content !== undefined);
   return hasContent ? (
-    <>
+    <Container width="narrow">
       <hr
         aria-hidden="true"
         className="su-mb-[36px] su-border-none su-w-[100px] su-h-[5px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive"
@@ -30,7 +31,7 @@ export default function Acknowledgement({ title, content }) {
         ].join(" ")}
         content={content}
       />
-    </>
+    </Container>
   ) : (
     ""
   );
