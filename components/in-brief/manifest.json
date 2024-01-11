@@ -21,12 +21,6 @@
         "type": "object",
         "required": ["points"],
         "properties": {
-          "title": {
-            "title": "Title",
-            "description": "This title is displayed above the list.",
-            "type": "string",
-            "default": "In Brief"
-          },
           "points": {
             "title": "Summary Points",
             "description": "These points will be displayed as a bullet list.",

@@ -14,19 +14,17 @@ import { Container } from "../../packages/grids/Container";
  *
  * @returns {JSX.Element}
  */
-export default function InBrief({ title, points }) {
+export default function InBrief({ points }) {
   const hasPoints = points.length > 0;
   return hasPoints ? (
     <Container width="narrow">
       <div className="su-border-b-[1px] su-border-black-20">
-        {title && (
-          <div className="su-relative su-overflow-hidden">
-            <h2 className="su-font-serif su-inline su-bg-white dark:su-bg-black-true !su-text-[23px] su-pr-[10px] su-m-0">
-              {title}
-            </h2>
-            <span className="su-w-full su-bg-black-20 su-h-[1px] su-absolute su-bottom-[4px]" />
-          </div>
-        )}
+        <div className="su-relative su-overflow-hidden">
+          <h2 className="su-font-serif su-inline su-bg-white dark:su-bg-black-true !su-text-[23px] su-pr-[10px] su-m-0">
+            In Brief
+          </h2>
+          <span className="su-w-full su-bg-black-20 su-h-[1px] su-absolute su-bottom-[4px]" />
+        </div>
         <div className="su-wysiwyg-content">
           <ul className="su-basefont-19 su-flex su-flex-col su-gap-[18px] su-pt-[34px] su-pb-[27px] [&>li]:su-m-0">
             {points.map((item) => {

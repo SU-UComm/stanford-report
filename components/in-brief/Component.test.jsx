@@ -3,18 +3,16 @@ import React from "react";
 import InBrief from "./Component";
 
 const testData = {
-  title: "In Brief",
   points: ["Lorem ipsum dolor sit amet", "Test Two", "Test Three"],
 };
 
 const testDataNoPoints = {
-  title: "In Brief",
   points: [],
 };
 
 describe("In Brief", () => {
   it("should render the component", () => {
-    render(<InBrief title={testData.title} points={testData.points} />);
+    render(<InBrief points={testData.points} />);
     const element = document.querySelector('[data-component="in-brief"]');
     expect(element).toBeNull();
   });
