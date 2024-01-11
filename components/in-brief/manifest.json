@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "in-brief",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "namespace": "stanford-components",
   "description": "Summary of main points in a bulleted list.",
   "displayName": "In Brief",
@@ -19,7 +19,7 @@
       "entry": "./dist/server.cjs",
       "input": {
         "type": "object",
-        "required": ["points"],
+        "required": [],
         "properties": {
           "points": {
             "title": "Summary Points",
@@ -29,7 +29,8 @@
             "maxItems": 5,
             "items": {
               "type": "string",
-              "title": "Summary Point"
+              "title": "Summary Point",
+              "format": "multi-line"
             }
           }
         }
