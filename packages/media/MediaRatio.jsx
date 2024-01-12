@@ -4,11 +4,14 @@ export default function MediaRatio({
   children,
   imageUrl,
   imageAlt,
-  aspectRatio = "card",
+  aspectRatio = "card-small",
   videoUrl,
 }) {
   const aspectRatioMap = new Map();
-  aspectRatioMap.set("card", "su-aspect-[50/33]");
+  aspectRatioMap.set("card-small", "su-aspect-[3/2]");
+  aspectRatioMap.set("card-medium", "su-aspect-[3/2]");
+  aspectRatioMap.set("card-large", "su-aspect-[3/2]");
+  aspectRatioMap.set("card-featured", "su-aspect-[16/9]");
   aspectRatioMap.set("square", "su-aspect-[1/1]");
 
   return (

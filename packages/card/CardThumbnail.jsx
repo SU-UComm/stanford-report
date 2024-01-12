@@ -14,7 +14,7 @@ export default function CardThumbnail({
   const videoPlayClasses = new Map();
   videoPlayClasses.set(
     "featured",
-    "su-left-[27px] su-bottom-[27px] [&>svg]:su-w-[60px] [&>svg]:su-h-[60px]"
+    "su-left-[27px] su-bottom-[27px] [&>svg]:su-w-[40px] [&>svg]:su-h-[40px] [&>svg]:md:su-w-[60px] [&>svg]:md:su-h-[60px]"
   );
   videoPlayClasses.set(
     "large",
@@ -22,7 +22,7 @@ export default function CardThumbnail({
   );
   videoPlayClasses.set(
     "medium",
-    "su-left-[27px] su-bottom-[27px] [&>svg]:su-w-[60px] [&>svg]:su-h-[60px]"
+    "su-left-[27px] su-bottom-[27px] [&>svg]:su-w-[40px] [&>svg]:su-h-[40px] [&>svg]:md:su-w-[60px] [&>svg]:md:su-h-[60px]"
   );
   videoPlayClasses.set(
     "small",
