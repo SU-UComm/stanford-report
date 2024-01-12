@@ -107,6 +107,7 @@ export default function VerticalCard({
 }) {
   const SVGMap = new Map();
   SVGMap.set("news", <News />);
+  SVGMap.set("news", <News />);
   SVGMap.set("q&amp;a", <QuestionAnswer />);
   SVGMap.set("q&a", <QuestionAnswer />);
   SVGMap.set("video", <Video />);
@@ -123,7 +124,7 @@ export default function VerticalCard({
           <CardThumbnail
             imageUrl={imageUrl}
             alt={imageAlt}
-            aspectRatio="card"
+            aspectRatio={`card-${cardSize}`}
             videoUrl={type === "Video" ? videoUrl : ""}
             size={cardSize}
           />
