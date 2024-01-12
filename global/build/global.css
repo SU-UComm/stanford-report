@@ -1826,6 +1826,7 @@ audio::-webkit-media-controls-panel {
 .su-page-has-sidebar .su-page-content{
   margin-left: 20px;
   margin-right: 20px;
+  width: 100%;
 }
 
 @media (min-width: 768px){
@@ -1941,6 +1942,11 @@ audio::-webkit-media-controls-panel {
   .su-container-narrow{
     width: 84.75%;
   }
+}
+
+.su-page-has-sidebar .su-page-content > .container .su-container-narrow,
+.su-page-has-sidebar .su-page-content .su-container-narrow{
+  width: 100%;
 }
 
 .su-container-content{

@@ -25,6 +25,7 @@ export default function Acknowledgement({ title, content }) {
       <XssSafeContent
         data-test="acknowledgement"
         className={[
+          "su-wysiwyg-content",
           "[&>*]:su-basefont-19 [&>*]:su-text-[16px] [&>*]:md:su-text-[19px] [&>*]:lg:su-text-[19px]",
           "[&>*]:su-leading-[24px] [&>*]:md:su-leading-[28.5px] [&>*]:lg:su-leading-[28.5px]",
           "su-mb-[36px] [&>*:last-child]:su-mb-0",
