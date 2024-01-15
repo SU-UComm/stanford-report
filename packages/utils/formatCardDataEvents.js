@@ -56,7 +56,7 @@ export default function formatCardDataEvents({
   const imageUrl = photo_url;
 
   // taxonomy
-  const taxonomy = filters.event_types[0].name;
+  const taxonomy = filters.event_types ? filters.event_types[0].name : "";
   const taxonomyUrl = null;
 
   // type
