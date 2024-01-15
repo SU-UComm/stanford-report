@@ -7,18 +7,24 @@ import { HorizontalCardGrid } from "../../packages/grids/Grids";
 import { Container } from "../../packages/grids/Container";
 
 /**
- * Base component
+ * events section component
  *
- * @param {string} title The component title
- * ... any other options needed
+ * @param {object} headingData
+ * data that feeds into the linked heading package
+ *
+ * @param {object} displayConfiguration
+ * contains info such as how many event items to
+ * display
+ *
+ * @param {object} data
+ * the individual card's data
+ *
  * @returns {JSX.Element}
  * @constructor
  */
 export default function Base({ headingData, displayConfiguration, data }) {
   const noOfCards = Number(displayConfiguration.numberOfEvents);
   const cards = [];
-
-  console.log(noOfCards);
 
   data.forEach((card, i) => {
     if (i + 1 <= noOfCards)
@@ -32,7 +38,7 @@ export default function Base({ headingData, displayConfiguration, data }) {
         ctaText={headingData.ctaText}
         ctaUrl={headingData.ctaUrl}
       />
-      <HorizontalCardGrid items={cards} />
+      <HorizontalCardGrid items={cards} maximumItems={noOfCards} />
     </Container>
   );
 }
