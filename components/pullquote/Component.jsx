@@ -1,7 +1,7 @@
 import React from "react";
 
 // import specific templates for the component
-import { PullQuote } from "../../packages/quotes/Quote";
+import { PullQuote } from "../../packages/quotes/Quotes";
 import { Container } from "../../packages/grids/Grids";
 
 /**
@@ -12,11 +12,22 @@ import { Container } from "../../packages/grids/Grids";
  * @returns {JSX.Element}
  * @constructor
  */
+export default function PullQuoteStory({ displayConfiguration, data }) {
+  const { quote, name, title, width } = displayConfiguration;
+  const { imageUrl } = data[0];
 
-export default function PullQuote({ title }) {
+  const widthMap = new Map();
+
+  widthMap.set("content", "narrow");
+  widthMap.set("container", "wide");
+
+  const widthSetting = widthMap.get(width)
+    ? widthMap.get(width)
+    : widthMap.get("content");
+
   return (
-    <Container>
-      <PullQuote />
+    <Container paddingX={false} width={widthSetting}>
+      <PullQuote quote={quote} name={name} title={title} avatar={imageUrl} />
     </Container>
   );
 }
