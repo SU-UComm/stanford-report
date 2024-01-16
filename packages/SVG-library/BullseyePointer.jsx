@@ -80,6 +80,8 @@ export default function BullseyePointer({ variant = DEFAULT_VARIANT }) {
     </svg>
   );
 
+  console.log(variant);
+
   if (variantsMap.get(variant) !== null) return variantsMap.get(variant);
 
   return variantsMap.get(DEFAULT_VARIANT);

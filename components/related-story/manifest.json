@@ -39,7 +39,8 @@
             "properties": {
               "story": {
                 "title": "Related story",
-                "type": "string"
+                "type": "string",
+                "format": "matrix-asset-uri"
               }
             }
           }

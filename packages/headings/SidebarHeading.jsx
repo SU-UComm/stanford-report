@@ -1,5 +1,9 @@
 import React from "react";
-import { Announcement, EventsCalendar } from "../SVG-library/SVG";
+import {
+  Announcement,
+  EventsCalendar,
+  BullseyePointer,
+} from "../SVG-library/SVG";
 
 /**
  * Renders out the icon heading
@@ -25,20 +29,18 @@ export function SidebarHeading({
   color = "grey",
 }) {
   const iconMap = new Map();
-  iconMap.set(
-    "announcement",
-    {
-      light: <Announcement variant="light" />,
-      dark: <Announcement variant="dark" />,
-    }
-  );
-  iconMap.set(
-    "eventscalendar",
-    {
-      light: <EventsCalendar variant="light" />,
-      dark: <EventsCalendar variant="dark" />,
-    }
-  );
+  iconMap.set("announcement", {
+    light: <Announcement variant="light" />,
+    dark: <Announcement variant="dark" />,
+  });
+  iconMap.set("eventscalendar", {
+    light: <EventsCalendar variant="light" />,
+    dark: <EventsCalendar variant="dark" />,
+  });
+  iconMap.set("bullseyePointer", {
+    light: <BullseyePointer variant="light" />,
+    dark: <BullseyePointer variant="dark" />,
+  });
 
   const colorClassMap = new Map();
   colorClassMap.set(
@@ -47,7 +49,7 @@ export function SidebarHeading({
   );
   colorClassMap.set(
     "black",
-    "su-text-black dark:su-text-white su-font-bold su-text-[16px] md:su-text-[18px] su-items-start"
+    "su-text-black dark:su-text-white su-font-bold su-text-[20px] md:su-text-[28px] su-items-start"
   );
 
   const Tag = headingSize;
@@ -58,16 +60,18 @@ export function SidebarHeading({
         colorClassMap.get(color),
       ].join(" ")}
     >
-      {iconMap.get(icon) && "light" in iconMap.get(icon) && "dark" in iconMap.get(icon) && (
-        <>
-          <span data-test="icon" className="dark:su-hidden">
-            {iconMap.get(icon).light}
-          </span>
-          <span data-test="icon" className="su-hidden dark:su-block">
-            {iconMap.get(icon).dark}
-          </span>
-        </>
-      )}
+      {iconMap.get(icon) &&
+        "light" in iconMap.get(icon) &&
+        "dark" in iconMap.get(icon) && (
+          <>
+            <span data-test="icon" className="dark:su-hidden">
+              {iconMap.get(icon).light}
+            </span>
+            <span data-test="icon" className="su-hidden dark:su-block">
+              {iconMap.get(icon).dark}
+            </span>
+          </>
+        )}
       <span>{title}</span>
     </Tag>
   ) : (
