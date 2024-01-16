@@ -1,0 +1,118 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "fact-callout",
+  "version": "0.0.1",
+  "namespace": "stanford-components",
+  "description": "Display a fact on featured story pages",
+  "displayName": "Fact callout",
+  "mainFunction": "main",
+  "icon": {
+    "id": "foundation",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "displayConfiguration": {
+            "title": "Fact callout display configuration",
+            "description": "Settings for the fact callout.",
+            "required": [],
+            "properties": {
+              "icon": {
+                "title": "Fact icon",
+                "enum": [ "pie chart", "bar graph" ],
+                "type": "string"
+              },
+              "factText": {
+                "title": "Fact text",
+                "type": "string"
+              },
+              "indicatorPosition": {
+                "title": "Indicator position",
+                "enum": [ "top", "bottom" ],
+                "type": "string"
+              },
+              "width": {
+                "title": "Fact width",
+                "enum": [ "content", "container" ],
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "basic": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/basicstory.html"
+          }
+        }
+      }
+    }
+  }
+}
