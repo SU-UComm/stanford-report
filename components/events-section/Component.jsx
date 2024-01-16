@@ -22,13 +22,16 @@ import { Container } from "../../packages/grids/Container";
  * @returns {JSX.Element}
  * @constructor
  */
-export default function Base({ headingData, displayConfiguration, data }) {
+export default function EventsSection({
+  headingData,
+  displayConfiguration,
+  data,
+}) {
   const noOfCards = Number(displayConfiguration.numberOfEvents);
   const cards = [];
 
-  data.forEach((card, i) => {
-    if (i + 1 <= noOfCards)
-      cards.push(<Card data={card} cardType="horizontal" />);
+  data.forEach((card) => {
+    cards.push(<Card data={card} cardType="horizontal" />);
   });
 
   return (

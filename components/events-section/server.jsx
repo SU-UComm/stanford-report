@@ -1,6 +1,5 @@
 import renderComponent from "../../packages/utils/render-component";
 import Component from "./Component";
-import linkedHeadingService from "../../packages/utils/linkedHeadingService";
 import CardDataAdapter from "../../packages/utils/CardDataAdapter";
 import EventCardService from "../../packages/utils/EventCardService";
 
