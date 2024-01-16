@@ -7,16 +7,21 @@ import { HorizontalCardGridContent } from "./HorizontalCardGridContent";
  *
  * @param {string} items The elements to display in the grid
  * @param {string} orientation The orientation of the grid items, vertical or horizontal
+ * @param {integer} maximumItems The maximum of items to display in the grid
  * @returns {JSX.Element}
  * @constructor
  */
 
-export function HorizontalCardGrid({ items, orientation = "horizontal" }) {
-  const MAXIMUM_ITEMS = 6;
+export function HorizontalCardGrid({
+  items,
+  orientation = "horizontal",
+  maximumItems = 6,
+}) {
+  const MAXIMUM_ITEMS = maximumItems;
   const MINIMUM_ITEMS = 1;
 
   const gridItems =
-    items.length > MAXIMUM_ITEMS ? items.slice(0, MAXIMUM_ITEMS - 1) : items;
+    items.length > MAXIMUM_ITEMS ? items.slice(0, MAXIMUM_ITEMS) : items;
 
   const orientationClassMap = new Map();
   orientationClassMap.set(
