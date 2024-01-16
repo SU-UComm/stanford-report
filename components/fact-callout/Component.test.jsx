@@ -21,9 +21,7 @@ describe("FactCallout", () => {
 
     expect(element).toBeInTheDocument();
   });
-});
 
-describe("FactCallout", () => {
   it("Should display a 'fact-wrapper__decoration-bottom' node in the DOM if the indicator is set to 'bottom'", () => {
     testData.displayConfiguration = {
       ...testData.displayConfiguration,
@@ -35,6 +33,31 @@ describe("FactCallout", () => {
     );
 
     const element = document.querySelector(".fact-wrapper__decoration-bottom");
+
+    expect(element).toBeInTheDocument();
+  });
+
+  it("Should show the piechart SVG when the pie chart is selected", () => {
+    render(
+      <FactCallout displayConfiguration={testData.displayConfiguration} />
+    );
+
+    const element = document.querySelector(`[data-testid="pie-chart-svg"]`);
+
+    expect(element).toBeInTheDocument();
+  });
+
+  it("Should show the bargraph SVG when the bar graph is selected", () => {
+    testData.displayConfiguration = {
+      ...testData.displayConfiguration,
+      icon: "bar graph",
+    };
+
+    render(
+      <FactCallout displayConfiguration={testData.displayConfiguration} />
+    );
+
+    const element = document.querySelector(`[data-testid="bar-graph-svg"]`);
 
     expect(element).toBeInTheDocument();
   });
