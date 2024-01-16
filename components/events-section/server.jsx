@@ -3,17 +3,10 @@ import Component from "./Component";
 import CardDataAdapter from "../../packages/utils/CardDataAdapter";
 import EventCardService from "../../packages/utils/EventCardService";
 
-export default async (args, info) => {
-  // const { ctx } = info;
+export default async (args) => {
   const adapter = new CardDataAdapter();
   const eventAPI = args.contentConfiguration.eventsUrl;
   let data = null;
-
-  // Resolve the URI for the section heading link
-  // const headingData = await linkedHeadingService(
-  //   ctx,
-  //   args.headingConfiguration
-  // );
 
   const headingData = {
     title: args.headingConfiguration.title,
