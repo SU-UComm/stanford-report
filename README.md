@@ -1,2 +1,3 @@
-# EntComms
-Enterprise Communications project built on top of Squiz matrix
+# Stanford Report
+
+This repo contains the scaffolding and components necessary to deploy Stanford Report on the Squiz Matrix platform.
