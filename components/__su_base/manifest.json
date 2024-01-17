@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "base-component",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "namespace": "stanford-components",
   "description": "Stanford university Base component.",
   "displayName": "Base component",
@@ -21,10 +21,13 @@
         "type": "object",
         "properties": {
           "title": {
-            "type": "string"
+            "title": "Heading",
+            "description": "The heading text",
+            "type": "string",
+            "default": "Lorem ipsum dolor"
           }
         },
-        "required": ["title"]
+        "required": []
       },
       "output": {
         "responseType": "html",

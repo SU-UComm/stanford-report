@@ -1,0 +1,126 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "events-section",
+  "version": "0.0.1",
+  "namespace": "stanford-components",
+  "description": "Stanford Events Section is a grid featuring 9 events",
+  "displayName": "Events Section",
+  "mainFunction": "main",
+  "icon": {
+    "id": "foundation",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "headingConfiguration": {
+            "title": "Section Heading Configuration",
+            "description": "The heading for the section, appearing before the grid of cards. If the title is empty, the heading and call to action link will be hidden.",
+            "type": "object",
+            "required": [],
+            "properties": {
+              "title": {
+                "title": "Heading",
+                "type": "string"
+              },
+              "ctaText": {
+                "title": "Link text",
+                "type": "string",
+                "default": "View all"
+              },
+              "ctaUrl": {
+                "title": "Link URL",
+                "type": "string",
+                "default": "https://events.stanford.edu"
+              }
+            }
+          },
+          "contentConfiguration": {
+            "title": "Grid Content",
+            "description": "The cards to display in the grid area of the component. The featured card appears larger than the supplementary cards. When manually selecting cards, at least three must be selected for the grid to display.",
+            "type": "object",
+            "required": [],
+            "properties": {
+              "eventsUrl": {
+                "title": "Events API Endpiont",
+                "type": "string"
+              }
+            }
+          },
+          "displayConfiguration": {
+            "title": "Grid Display Configuration",
+            "type": "object",
+            "required": [],
+            "properties": {
+              "numberOfEvents": {
+                "title": "Number of Events",
+                "default": 9,
+                "enum": [ 3, 4, 5, 6, 7, 8, 9 ],
+                "type": "integer"
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}
