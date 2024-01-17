@@ -1,6 +1,7 @@
 import React from "react";
 
 // import specific templates for the component
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../../packages/grids/Container";
 
 /**
@@ -33,7 +34,16 @@ export default function TextCallout({ displayConfiguration }) {
           </div>
         </div>
 
-        <p>{content}</p>
+        <XssSafeContent
+          data-test="acknowledgement"
+          className={[
+            "su-wysiwyg-content",
+            "[&>*]:su-basefont-19 [&>*]:su-text-[16px] [&>*]:md:su-text-[19px] [&>*]:lg:su-text-[19px]",
+            "[&>*]:su-leading-[24px] [&>*]:md:su-leading-[28.5px] [&>*]:lg:su-leading-[28.5px]",
+            "su-mb-[36px] [&>*:last-child]:su-mb-0",
+          ].join(" ")}
+          content={content}
+        />
       </section>
     </Container>
   );
