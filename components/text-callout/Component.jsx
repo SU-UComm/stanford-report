@@ -40,6 +40,7 @@ export default function TextCallout({ displayConfiguration }) {
             "su-wysiwyg-content",
             "[&>*]:su-basefont-19 [&>*]:su-text-[16px] [&>*]:md:su-text-[19px] [&>*]:lg:su-text-[19px]",
             "[&>*]:su-leading-[24px] [&>*]:md:su-leading-[28.5px] [&>*]:lg:su-leading-[28.5px]",
+            "[&>*:last-child]:su-mb-0",
           ].join(" ")}
           content={content}
         />
