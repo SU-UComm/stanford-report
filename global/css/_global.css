@@ -50,7 +50,9 @@ svg {
  */
 @tailwind variants;
 
-.su-bg-gradient {
+.su-bg-gradient,
+.su-bg-gradient-before:before,
+.su-bg-gradient-after:after {
   @apply su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive;
 }
 
