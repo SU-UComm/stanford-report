@@ -562,3 +562,18 @@ audio::-webkit-media-controls-panel {
   @apply su-block su-w-full su-h-[1px] su-bg-black-30 su-my-[34px] md:su-my-[45px] md:su-my-[76px];
   content: "";
 }
+
+/*
+WYSIWYG formatting styles
+*/
+.bold {
+  font-weight: 800;
+}
+
+.italics {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
