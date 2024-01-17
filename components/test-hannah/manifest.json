@@ -1,0 +1,106 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "test-hannah",
+  "version": "0.0.1",
+  "namespace": "stanford-components",
+  "description": "Test description.",
+  "displayName": "Test - Hannah",
+  "mainFunction": "main",
+  "icon": {
+    "id": "foundation",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {
+          "image": {
+            "title": "Image",
+            "description": "The image appears in the background",
+            "type": "string"
+          },
+          "quote": {
+            "title": "Quote",
+            "type": "string",
+            "default": "Lorem ipsum dolor"
+          },
+          "attribution": {
+            "title": "Attribution",
+            "description": "The attribution appears below the quote",
+            "type": "string",
+            "default": "Lorem ipsum dolor"
+          },
+          "yearLabel": {
+            "title": "Year Label",
+            "type": "string",
+            "default": "Lorem ipsum dolor"
+          },
+          "textPosition": {
+            "title": "Text Position",
+            "type": "string",
+            "default": "left",
+            "enum": ["left", "right"]
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}
