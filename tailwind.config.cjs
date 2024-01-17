@@ -3,8 +3,11 @@ const path = require("path");
 const plugin = require("tailwindcss/plugin");
 
 const dir = path.resolve(__dirname, "./global/css/plugins");
+// const decanter = require("decanter");
 
 module.exports = {
+  presets: [require("decanter")],
+
   // Our own prefix.
   darkMode: "class",
   prefix: "su-",
@@ -15,23 +18,24 @@ module.exports = {
   // https://tailwindcss.com/docs/configuration/#theme
   theme: {
     // Overrides.
-    borderRadius: require(`${dir}/theme/borderRadius.js`)(),
-    borderWidth: require(`${dir}/theme/borderWidth.js`)(),
-    colors: require(`${dir}/theme/colors.js`)(),
-    fontFamily: require(`${dir}/theme/fontFamily.js`)(),
-    fontSize: require(`${dir}/theme/fontSize.js`)(),
-    gap: require(`${dir}/theme/gap.js`)(),
-    lineHeight: require(`${dir}/theme/lineHeight.js`)(),
-    maxWidth: require(`${dir}/theme/maxWidth.js`)(),
-    screens: require(`${dir}/theme/screens.js`)(),
-    spacing: require(`${dir}/theme/spacing.js`)(),
+
     // Decanter Custom.
-    decanter: require(`${dir}/theme/decanter.js`)(),
+    // decanter: require(`${dir}/theme/decanter.js`)(),
     // Decanter's extension of Tailwind's default theme.
     extend: {
-      fontWeight: require(`${dir}/theme/fontWeight.js`)(),
-      lineClamp: require(`${dir}/theme/lineClamp.js`)(),
-      transitionDuration: require(`${dir}/theme/transitionDuration.js`)(),
+      // borderRadius: require(`${dir}/theme/borderRadius.js`)(),
+      // borderWidth: require(`${dir}/theme/borderWidth.js`)(),
+      colors: require(`${dir}/theme/colors.js`)(),
+      // fontFamily: require(`${dir}/theme/fontFamily.js`)(),
+      // fontSize: require(`${dir}/theme/fontSize.js`)(),
+      // gap: require(`${dir}/theme/gap.js`)(),
+      // lineHeight: require(`${dir}/theme/lineHeight.js`)(),
+      // maxWidth: require(`${dir}/theme/maxWidth.js`)(),
+      // screens: require(`${dir}/theme/screens.js`)(),
+      // spacing: require(`${dir}/theme/spacing.js`)(),
+      // fontWeight: require(`${dir}/theme/fontWeight.js`)(),
+      // lineClamp: require(`${dir}/theme/lineClamp.js`)(),
+      // transitionDuration: require(`${dir}/theme/transitionDuration.js`)(),
     },
   },
 
@@ -64,9 +68,10 @@ module.exports = {
     // require('@tailwindcss/line-clamp'),
 
     // @tailwind base;
-    require(`${dir}/base/base.js`)(),
+    // require(`${dir}/base/base.js`)(),
 
     // @tailwind components;
+    /*
     require(`${dir}/components/form/input.js`)(),
     require(`${dir}/components/form/buttons.js`)(),
     require(`${dir}/components/form/form-elements.js`)(),
@@ -91,6 +96,6 @@ module.exports = {
     require(`${dir}/utilities/link/link-underline.js`)(),
     require(`${dir}/utilities/link/link-fontweight.js`)(),
     require(`${dir}/utilities/typography/break-words.js`)(),
-    require(`${dir}/utilities/typography/writing-mode.js`)(),
+    require(`${dir}/utilities/typography/writing-mode.js`)(), */
   ],
 };
