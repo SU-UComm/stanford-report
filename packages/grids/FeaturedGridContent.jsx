@@ -13,16 +13,11 @@ export function FeaturedGridContent({
   children,
   placement,
   alignment = "left",
+  nested = false,
 }) {
   const alignClasses = new Map();
-  alignClasses.set(
-    "right",
-    "md:su-order-2"
-  );
-  alignClasses.set(
-    "left",
-    ""
-  );
+  alignClasses.set("right", "md:su-order-2");
+  alignClasses.set("left", "");
   // Featured placement
   if (placement === 1) {
     return (
@@ -42,7 +37,14 @@ export function FeaturedGridContent({
   }
   // Catch all for all additional supplementary items (3+)
   return (
-    <div className="su-relative su-w-full before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[1px] before:su-left-0 before:su-top-[-40px] md:before:su-top-[-36px] lg:before:su-top-[-38px]">
+    <div
+      className={[
+        "su-relative su-w-full before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[1px]",
+        nested
+          ? "md:before:su-w-full lg:before:su-w-[1px] lg:before:su-h-full before:su-left-0 lg:before:su-left-[-38px] before:su-top-[-40px] md:before:su-top-[-36px] lg:before:su-top-0"
+          : "before:su-left-0 before:su-top-[-40px] md:before:su-top-[-36px] lg:before:su-top-[-38px]",
+      ].join(" ")}
+    >
       {children}
     </div>
   );

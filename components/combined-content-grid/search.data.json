@@ -1,0 +1,15 @@
+{
+  "headingConfiguration": {
+    "title": "Featured Content Grid",
+    "ctaText": "View all",
+    "ctaUrl": "matrix-asset://api-identifier/89422"
+  },
+  "contentConfiguration": {
+    "source": "Search",
+    "searchQuery": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&log=false&query=!null"
+  },
+  "displayConfiguration": {
+    "displayThumbnails": true,
+    "displayDescriptions": false
+  }
+}
