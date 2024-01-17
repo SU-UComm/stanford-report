@@ -137,9 +137,9 @@ export default function VerticalCard({
   SVGMap.set("analysis & insights", <AnalysisAndInsights />);
   SVGMap.set("analysis &amp; insights", <AnalysisAndInsights />);
   SVGMap.set("analysis&nbsp;&amp;&nbsp;insights", <AnalysisAndInsights />);
-  SVGMap.set("case study ", <CaseStudy />);
-  SVGMap.set("case&nbsp;study ", <CaseStudy />);
-  SVGMap.set("casestudy ", <CaseStudy />);
+  SVGMap.set("case study", <CaseStudy />);
+  SVGMap.set("case&nbsp;study", <CaseStudy />);
+  SVGMap.set("casestudy", <CaseStudy />);
   SVGMap.set("event", <Event />);
   SVGMap.set("event&nbsp;highlights", <EventHighlights />);
   SVGMap.set("event highlights", <EventHighlights />);
@@ -170,6 +170,8 @@ export default function VerticalCard({
   SVGMap.set("news", <News />);
   SVGMap.set("q&amp;a", <QuestionAnswer />);
   SVGMap.set("q&a", <QuestionAnswer />);
+  SVGMap.set("q & a", <QuestionAnswer />);
+  SVGMap.set("q&nbsp;&amp;&nbsp;a", <QuestionAnswer />);
   SVGMap.set("video", <Video />);
   SVGMap.set("podcast", <Podcast />);
   SVGMap.set("book", <Book />);
