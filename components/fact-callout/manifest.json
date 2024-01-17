@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "fact-callout",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "Display a fact on featured story pages",
   "displayName": "Fact callout",
@@ -22,14 +22,15 @@
         "required": [],
         "properties": {
           "displayConfiguration": {
-            "title": "Fact callout display configuration",
-            "description": "Settings for the fact callout.",
+            "title": "Fact callout configuration",
+            "description": "These settings will determine what is displayed on the front-end.",
             "required": [],
             "properties": {
               "icon": {
                 "title": "Fact icon",
                 "enum": [ "pie chart", "bar graph" ],
-                "type": "string"
+                "type": "string",
+                "default": "pie chart"
               },
               "factText": {
                 "title": "Fact text",
@@ -38,12 +39,14 @@
               "indicatorPosition": {
                 "title": "Indicator position",
                 "enum": [ "top", "bottom" ],
-                "type": "string"
+                "type": "string",
+                "default": "top"
               },
               "width": {
                 "title": "Fact width",
                 "enum": [ "content", "container" ],
-                "type": "string"
+                "type": "string",
+                "default": "content"
               }
             }
           }
