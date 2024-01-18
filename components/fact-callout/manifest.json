@@ -1,10 +1,10 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "events-section",
-  "version": "0.0.1",
+  "name": "fact-callout",
+  "version": "0.0.4",
   "namespace": "stanford-components",
-  "description": "Stanford Events Section is a grid featuring 9 events",
-  "displayName": "Events Section",
+  "description": "Display a fact on featured story pages",
+  "displayName": "Fact callout",
   "mainFunction": "main",
   "icon": {
     "id": "foundation",
@@ -21,50 +21,33 @@
         "type": "object",
         "required": [],
         "properties": {
-          "headingConfiguration": {
-            "title": "Section Heading Configuration",
-            "description": "The heading for the section, appearing before the grid of cards. If the title is empty, the heading and call to action link will be hidden.",
-            "type": "object",
-            "required": [],
-            "properties": {
-              "title": {
-                "title": "Heading",
-                "type": "string"
-              },
-              "ctaText": {
-                "title": "Link text",
-                "type": "string",
-                "default": "View all"
-              },
-              "ctaUrl": {
-                "title": "Link URL",
-                "type": "string",
-                "default": "https://events.stanford.edu"
-              }
-            }
-          },
-          "contentConfiguration": {
-            "title": "Events section core configuration",
-            "description": "The main purpose for these settings is to source the events API for the component.",
-            "type": "object",
-            "required": [],
-            "properties": {
-              "eventsUrl": {
-                "title": "Events API Endpiont",
-                "type": "string"
-              }
-            }
-          },
           "displayConfiguration": {
-            "title": "Grid Display Configuration",
-            "type": "object",
+            "title": "Fact callout configuration",
+            "description": "These settings will determine what is displayed on the front-end.",
             "required": [],
             "properties": {
-              "numberOfEvents": {
-                "title": "Number of Events",
-                "default": 9,
-                "enum": [ 3, 4, 5, 6, 7, 8, 9 ],
-                "type": "integer"
+              "icon": {
+                "title": "Fact icon",
+                "enum": [ "pie chart", "bar graph" ],
+                "type": "string",
+                "default": "pie chart"
+              },
+              "factText": {
+                "title": "Fact text",
+                "type": "string",
+                "format": "multi-line"
+              },
+              "indicatorPosition": {
+                "title": "Indicator position",
+                "enum": [ "top", "bottom" ],
+                "type": "string",
+                "default": "top"
+              },
+              "width": {
+                "title": "Fact width",
+                "enum": [ "Large", "Narrow" ],
+                "type": "string",
+                "default": "content"
               }
             }
           }
@@ -118,6 +101,19 @@
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "basic": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/basicstory.html"
           }
         }
       }

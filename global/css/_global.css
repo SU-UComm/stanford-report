@@ -501,7 +501,7 @@ audio::-webkit-media-controls-panel {
   @apply su-w-full;
 }
 
-.su-container-content {
+.su-container-large {
   @apply su-w-full su-max-w-[1287px];
 }
 
