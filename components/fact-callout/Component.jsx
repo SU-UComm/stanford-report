@@ -32,7 +32,7 @@ export default function FactCallout({ displayConfiguration }) {
     : "fact-wrapper__decoration-top";
 
   return (
-    <Container width={widthMap.get(width)}>
+    <Container width={width}>
       <section className="fact-wrapper su-col-span-full su-my-[121px] su-w-full su-relative su-h-auto su-p-[3px] su-bg-gradient decoration-top">
         <div
           className={`${indicator} su-absolute su-left-1/2 su-right-1/2 su-flex su-items-center su-justify-start su-w-[24px] su-h-[90px]`}
@@ -42,7 +42,7 @@ export default function FactCallout({ displayConfiguration }) {
             <div className="su-w-[18px] su-h-[18px] su-rounded-full su-bg-white dark:su-bg-black" />
           </div>
         </div>
-        <div className="su-px-[121px] su-py-[61px] su-w-full su-h-full su-bg-white dark:su-bg-black su-flex su-flex-col su-items-center su-justify-center su-gap-[10px] lg:su-flex-row lg:su-gap-[38px] su-items-center">
+        <div className="su-px-[121px] su-py-[38px] su-w-full su-h-full su-bg-white dark:su-bg-black su-flex su-flex-col su-items-center su-justify-center su-gap-[10px] lg:su-flex-row lg:su-gap-[38px] su-items-center">
           <div className="su-flex-shrink-0">
             {svgMap.get(icon) ? svgMap.get(icon) : ""}
           </div>

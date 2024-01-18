@@ -45,7 +45,7 @@
               },
               "width": {
                 "title": "Fact width",
-                "enum": [ "content", "container" ],
+                "enum": [ "large", "narrow" ],
                 "type": "string",
                 "default": "content"
               }
