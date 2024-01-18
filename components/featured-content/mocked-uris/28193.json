@@ -3,8 +3,8 @@
   "type": "data_record",
   "type_name": "Data Record",
   "version": "0.0.1",
-  "name": "Research&nbsp;",
-  "short_name": "Research&nbsp;",
+  "name": "Case Study",
+  "short_name": "Case Study",
   "status": {
     "id": 2,
     "code": "under_construction",
@@ -18,7 +18,7 @@
     "https://sug-web.matrix.squiz.cloud/_media/taxonomy/content-warehouse/front-end-taxonomy/content-type/research"
   ],
   "url": "https://sug-web.matrix.squiz.cloud/_media/taxonomy/content-warehouse/front-end-taxonomy/content-type/research",
-  "attributes": { "name": "Research&nbsp;" },
+  "attributes": { "name": "Case Study" },
   "metadata": {
     "slug": [],
     "description": [],
