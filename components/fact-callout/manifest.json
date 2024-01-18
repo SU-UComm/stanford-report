@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "fact-callout",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "namespace": "stanford-components",
   "description": "Display a fact on featured story pages",
   "displayName": "Fact callout",
@@ -45,7 +45,7 @@
               },
               "width": {
                 "title": "Fact width",
-                "enum": [ "large", "narrow" ],
+                "enum": [ "Large", "Narrow" ],
                 "type": "string",
                 "default": "content"
               }
