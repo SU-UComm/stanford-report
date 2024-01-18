@@ -44,8 +44,8 @@
             }
           },
           "contentConfiguration": {
-            "title": "Grid Content",
-            "description": "The cards to display in the grid area of the component. The featured card appears larger than the supplementary cards. When manually selecting cards, at least three must be selected for the grid to display.",
+            "title": "Events section core configuration",
+            "description": "The main purpose for these settins is to source the events API for the component.",
             "type": "object",
             "required": [],
             "properties": {
