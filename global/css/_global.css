@@ -559,7 +559,7 @@ audio::-webkit-media-controls-panel {
   + [data-component="multicolumn-listing"]
   .component-multicolumn-listing.has-no-title
   > .su-component-container:before {
-  @apply su-block su-w-full su-h-[1px] su-bg-black-30 su-my-[34px] md:su-my-[45px] md:su-my-[76px];
+  @apply su-block su-w-full su-h-[1px] su-bg-black-30 dark:su-bg-black su-my-[34px] md:su-my-[45px] md:su-my-[76px];
   content: "";
 }
 
