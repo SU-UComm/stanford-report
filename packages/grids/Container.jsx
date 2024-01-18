@@ -23,7 +23,7 @@ export function Container({ children, width = "large", paddingX = true }) {
     <div
       className={[
         "su-mx-auto su-component-container",
-        widthClasses.get(width),
+        widthClasses.get(width.toLowerCase()),
         paddingX ? "su-container-px" : "",
       ].join(" ")}
     >
