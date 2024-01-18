@@ -35,7 +35,7 @@ export default function EventsSection({
   });
 
   return (
-    <Container width="content" data-component="events-section">
+    <Container width="large" data-component="events-section">
       <LinkedHeading
         title={headingData.title}
         ctaText={headingData.ctaText}
