@@ -45,7 +45,7 @@
           },
           "contentConfiguration": {
             "title": "Events section core configuration",
-            "description": "The main purpose for these settins is to source the events API for the component.",
+            "description": "The main purpose for these settings is to source the events API for the component.",
             "type": "object",
             "required": [],
             "properties": {

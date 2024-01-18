@@ -150,8 +150,9 @@ export default function HorizontalCard({
             cardSize
           )} ${cardTitleFont(cardSize)} su-my-0`}
         >
+          {/* focus-within:su-outline su-outline-2 su-outline-digital-red */}
           <a
-            className="focus:su-outline-0 hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red"
+            className="focus-visible:su-outline su-outline-2 su-outline-digital-red focus:outline-0 hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red"
             href={liveUrl}
           >
             {title}
