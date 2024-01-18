@@ -9,13 +9,13 @@ import React from "react";
  * @returns {JSX.Element}
  * @constructor
  */
-export function Container({ children, width = "content", paddingX = true }) {
+export function Container({ children, width = "large", paddingX = true }) {
   const hasChildren = children !== undefined;
 
   // CSS for these is defined in global.css to allow for override on basic story
   const widthClasses = new Map();
   widthClasses.set("narrow", "su-container-narrow");
-  widthClasses.set("content", "su-container-content");
+  widthClasses.set("large", "su-container-large");
   widthClasses.set("wide", "su-container-wide");
   widthClasses.set("full", "su-container-full");
 
