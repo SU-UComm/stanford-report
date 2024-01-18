@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "fact-callout",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "namespace": "stanford-components",
   "description": "Display a fact on featured story pages",
   "displayName": "Fact callout",
@@ -34,7 +34,8 @@
               },
               "factText": {
                 "title": "Fact text",
-                "type": "string"
+                "type": "string",
+                "format": "multi-line"
               },
               "indicatorPosition": {
                 "title": "Indicator position",
