@@ -2121,3 +2121,58 @@ audio::-webkit-media-controls-panel {
   > .su-component-container:before {
   content: "";
 }
+
+/*
+WYSIWYG formatting styles
+*/
+
+.container > span .bold,
+.container > span strong,
+.su-wysiwyg-content .bold,
+.su-wysiwyg-content strong,
+.su-page-content > div:not([data-component]) .bold,
+.su-page-content > div:not([data-component]) strong{
+  font-weight: 700;
+}
+
+.container > span .italics,
+.container > span em,
+.su-wysiwyg-content .italics,
+.su-wysiwyg-content em,
+.su-page-content > div:not([data-component]) .italics,
+.su-page-content > div:not([data-component]) em{
+  font-style: italic;
+}
+
+.container > span .underline,
+.container > span u,
+.su-wysiwyg-content .underline,
+.su-wysiwyg-content u,
+.su-page-content > div:not([data-component]) .underline,
+.su-page-content > div:not([data-component]) u{
+  text-decoration-line: underline;
+}
+
+.container > span .justify,
+.su-wysiwyg-content .justify,
+.su-page-content > div:not([data-component]) .justify{
+  text-align: justify;
+}
+
+.container > span .left,
+.su-wysiwyg-content .left,
+.su-page-content > div:not([data-component]) .left{
+  text-align: left;
+}
+
+.container > span .right,
+.su-wysiwyg-content .right,
+.su-page-content > div:not([data-component]) .right{
+  text-align: right;
+}
+
+.container > span .center,
+.su-wysiwyg-content .center,
+.su-page-content > div:not([data-component]) .center{
+  text-align: center;
+}
