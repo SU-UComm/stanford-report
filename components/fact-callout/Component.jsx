@@ -32,7 +32,7 @@ export default function FactCallout({ displayConfiguration }) {
     : "fact-wrapper__decoration-top";
 
   return (
-    <Container width={widthMap.get(width)} paddingX={false}>
+    <Container width={widthMap.get(width)}>
       <section className="fact-wrapper su-col-span-full su-my-[121px] su-w-full su-relative su-h-auto su-p-[3px] su-bg-gradient decoration-top">
         <div
           className={`${indicator} su-absolute su-left-1/2 su-right-1/2 su-flex su-items-center su-justify-start su-w-[24px] su-h-[90px]`}
