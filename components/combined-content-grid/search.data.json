@@ -11,5 +11,17 @@
   "displayConfiguration": {
     "displayThumbnails": true,
     "displayDescriptions": false
+  },
+  "eventsConfiguration": {
+    "heading": "Upcoming Events",
+    "endPoint": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&log=false&query=!null",
+    "numberOfItems": 4,
+    "linkUrl": "matrix-asset://api-identifier/89422"
+  },
+  "announcementsConfiguration": {
+    "heading": "Announcements",
+    "endPoint": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&log=false&query=!null",
+    "numberOfItems": 3,
+    "linkUrl": "matrix-asset://api-identifier/89422"
   }
 }

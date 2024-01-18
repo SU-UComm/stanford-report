@@ -13,7 +13,7 @@ export function FeaturedGridContent({
   children,
   placement,
   alignment = "left",
-  nested = false,
+  isNested = false,
 }) {
   const alignClasses = new Map();
   alignClasses.set("right", "md:su-order-2");
@@ -40,7 +40,7 @@ export function FeaturedGridContent({
     <div
       className={[
         "su-relative su-w-full before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[1px]",
-        nested
+        isNested
           ? "md:before:su-w-full lg:before:su-w-[1px] lg:before:su-h-full before:su-left-0 lg:before:su-left-[-38px] before:su-top-[-40px] md:before:su-top-[-36px] lg:before:su-top-0"
           : "before:su-left-0 before:su-top-[-40px] md:before:su-top-[-36px] lg:before:su-top-[-38px]",
       ].join(" ")}

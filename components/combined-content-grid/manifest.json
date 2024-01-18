@@ -33,7 +33,7 @@
         "properties": {
           "headingConfiguration": {
             "title": "Section Heading Configuration",
-            "description": "The heading for the section, appearing before the grid of cards. If the title is empty, the heading and call to action link will be hidden.",
+            "description": "The heading for the section, appearing before the grid. If the title is empty, the heading and call to action link will be hidden.",
             "type": "object",
             "required": [],
             "properties": {
@@ -142,6 +142,63 @@
                 "title": "Display Supplementary Descriptions",
                 "default": false,
                 "type": "boolean"
+              }
+            }
+          },
+          "eventsConfiguration": {
+            "title": "Events Configuration",
+            "type": "object",
+            "required": ["endPoint"],
+            "properties": {
+              "heading": {
+                "title": "Heading",
+                "default": "Upcoming events",
+                "type": "string"
+              },
+              "endPoint": {
+                "title": "Events Endpoint",
+                "description": "The localist JSON endpoint to fetch events from",
+                "type": "string"
+              },
+              "numberOfItems": {
+                "title": "Number of Events",
+                "description": "The number of events to display",
+                "type": "number",
+                "minimum": 3,
+                "maximum": 6
+              },
+              "linkUrl": {
+                "title": "Events Link",
+                "type": "string"
+              }
+            }
+          },
+          "announcementsConfiguration": {
+            "title": "Announcements Configuration",
+            "type": "object",
+            "required": ["endPoint"],
+            "properties": {
+              "heading": {
+                "title": "Heading",
+                "default": "Announcements",
+                "type": "string"
+              },
+              "endPoint": {
+                "title": "Announcements Endpoint",
+                "description": "The Funnelback endpoint to fetch announcements from",
+                "type": "string"
+              },
+              "numberOfItems": {
+                "title": "Number of Announcements",
+                "description": "The number of announcements to display",
+                "type": "number",
+                "minimum": 3,
+                "maximum": 6
+              },
+              "linkUrl": {
+                "title": "Announcements Link",
+                "type": "string",
+                "format": "matrix-asset-uri"
               }
             }
           }
