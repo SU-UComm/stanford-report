@@ -2091,6 +2091,21 @@ audio::-webkit-media-controls-panel {
   background-color: rgb(192 192 191 / var(--tw-bg-opacity));
 }
 
+:is(.su-dark .su-page-content
+  > [data-component="featured-content"]
+  + [data-component="multicolumn-listing"]
+  .component-multicolumn-listing.has-no-title
+  > .su-component-container):before,:is(.su-dark 
+.su-page-content
+  > .container
+  > [data-component="featured-content"]
+  + [data-component="multicolumn-listing"]
+  .component-multicolumn-listing.has-no-title
+  > .su-component-container):before{
+  --tw-bg-opacity: 1;
+  background-color: rgb(46 45 41 / var(--tw-bg-opacity));
+}
+
 @media (min-width: 768px){
   .su-page-content
   > [data-component="featured-content"]
