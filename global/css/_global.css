@@ -566,14 +566,29 @@ audio::-webkit-media-controls-panel {
 /*
 WYSIWYG formatting styles
 */
-.bold {
-  font-weight: 800;
+.container > span .bold,
+.container > span strong,
+.su-wysiwyg-content .bold,
+.su-wysiwyg-content strong,
+.su-page-content > div:not([data-component]) .bold,
+.su-page-content > div:not([data-component]) strong {
+  @apply su-font-bold;
 }
 
-.italics {
-  font-style: italic;
+.container > span .italics,
+.container > span em,
+.su-wysiwyg-content .italics,
+.su-wysiwyg-content em,
+.su-page-content > div:not([data-component]) .italics,
+.su-page-content > div:not([data-component]) em {
+  @apply su-italic;
 }
 
-.underline {
-  text-decoration: underline;
+.container > span .underline,
+.container > span u,
+.su-wysiwyg-content .underline,
+.su-wysiwyg-content u,
+.su-page-content > div:not([data-component]) .underline,
+.su-page-content > div:not([data-component]) u {
+  @apply su-underline;
 }
