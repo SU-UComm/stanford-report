@@ -1,10 +1,10 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "acknowledgement",
-  "version": "0.0.6",
+  "name": "text-callout",
+  "version": "0.0.4",
   "namespace": "stanford-components",
-  "description": "A basic WYSIWYG to place an acknowledgement.",
-  "displayName": "Acknowledgement",
+  "description": "This component is intended for displaying extra text content with a background colour applied",
+  "displayName": "Text Callout",
   "mainFunction": "main",
   "icon": {
     "id": "foundation",
@@ -19,19 +19,26 @@
       "entry": "./dist/server.cjs",
       "input": {
         "type": "object",
+        "required": [],
         "properties": {
-          "title": {
-            "title": "Acknowledgement Title",
-            "default": "Article details",
-            "description": "This title is read out for screen readers, to provide context and is not displayed visually.",
-            "type": "string"
-          },
-          "content": {
-            "title": "Acknowledgement",
-            "type": "FormattedText"
+          "displayConfiguration": {
+            "title": "Text callout display configuration",
+            "description": "These fields will make up the content displayed on the front-end.",
+            "required": [],
+            "properties": {
+              "title": {
+                "title": "Heading",
+                "description": "The heading text",
+                "type": "string"
+              },
+              "content": {
+                "title": "Content",
+                "description": "The text content for this component",
+                "type": "FormattedText"
+              }
+            }
           }
-        },
-        "required": ["content"]
+        }
       },
       "output": {
         "responseType": "html",
@@ -80,7 +87,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/basicstory.html"
+            "path": "../../packages/__globalPreview/preview.html"
           }
         }
       }

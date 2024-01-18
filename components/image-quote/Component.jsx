@@ -12,7 +12,7 @@ import { Container } from "../../packages/grids/Container";
  * @constructor
  */
 
-export default function ImageQuote({ displayConfiguration }) {
+export default function ImageQuote({ displayConfiguration, data }) {
   const { image, imageCaption, imageCredit, quote, name, title } =
     displayConfiguration;
 
@@ -21,7 +21,7 @@ export default function ImageQuote({ displayConfiguration }) {
       <section className="story__quote su-col-span-full !su-my-[100px] md:!su-my-[171px] su-flex su-flex-col xl:su-flex-row sm:su-col-span-11 sm:su-col-start-2">
         <figure className="su-flex su-flex-col su-gap-[23px] su-w-5/6 sm:su-w-[483px] lg:su-w-[524px]">
           <img
-            src={image.url}
+            src={data.url}
             className="su-z-10 su-w-full su-h-auto su-object-center su-object-cover"
             alt=""
           />
