@@ -2152,3 +2152,27 @@ WYSIWYG formatting styles
 .su-page-content > div:not([data-component]) u{
   text-decoration-line: underline;
 }
+
+.container > span .justify,
+.su-wysiwyg-content .justify,
+.su-page-content > div:not([data-component]) .justify{
+  text-align: justify;
+}
+
+.container > span .left,
+.su-wysiwyg-content .left,
+.su-page-content > div:not([data-component]) .left{
+  text-align: left;
+}
+
+.container > span .right,
+.su-wysiwyg-content .right,
+.su-page-content > div:not([data-component]) .right{
+  text-align: right;
+}
+
+.container > span .center,
+.su-wysiwyg-content .center,
+.su-page-content > div:not([data-component]) .center{
+  text-align: center;
+}
