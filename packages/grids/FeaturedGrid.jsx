@@ -11,7 +11,6 @@ import { FeaturedGridContent } from "./FeaturedGridContent";
  * @constructor
  */
 export function FeaturedGrid({ items, alignment = "left" }) {
-
   const alignClasses = new Map();
   alignClasses.set(
     "left",
@@ -32,7 +31,7 @@ export function FeaturedGrid({ items, alignment = "left" }) {
         )}
         <div
           className={[
-            "su-relative su-flex su-flex-wrap md:su-items-center md:su-content-center su-gap-[80px] md:su-gap-[72px] lg:su-gap-[76px] md:su-basis-[39.5%] lg:su-basis-[30%] su-flex-grow before:su-w-full before:md:su-w-[1px] before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[1px] before:md:su-h-full",
+            "su-relative su-flex su-flex-wrap md:su-items-start md:su-content-start su-gap-[80px] md:su-gap-[72px] lg:su-gap-[76px] md:su-basis-[39.5%] lg:su-basis-[30%] su-flex-grow before:su-w-full before:md:su-w-[1px] before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[1px] before:md:su-h-full",
             alignClasses.get(alignment),
           ].join(" ")}
         >
