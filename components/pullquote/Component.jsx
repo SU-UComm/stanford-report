@@ -21,8 +21,6 @@ export default function PullQuoteStory({ displayConfiguration, data }) {
     imageUrl = data.metadata.csFeaturedImageUrl[0];
   else if (data.type === "image") imageUrl = data.url;
 
-  // console.log(data.metadata.featuredImage);
-
   return (
     <Container paddingX={false} width={width}>
       <PullQuote quote={quote} name={name} title={title} avatar={imageUrl} />
