@@ -16,17 +16,8 @@ export default function PullQuoteStory({ displayConfiguration, data }) {
   const { quote, name, title, width } = displayConfiguration;
   const { imageUrl } = data[0];
 
-  const widthMap = new Map();
-
-  widthMap.set("content", "narrow");
-  widthMap.set("container", "wide");
-
-  const widthSetting = widthMap.get(width)
-    ? widthMap.get(width)
-    : widthMap.get("content");
-
   return (
-    <Container paddingX={false} width={widthSetting}>
+    <Container paddingX={false} width={width}>
       <PullQuote quote={quote} name={name} title={title} avatar={imageUrl} />
     </Container>
   );

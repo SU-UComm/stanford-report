@@ -1949,7 +1949,7 @@ audio::-webkit-media-controls-panel {
   width: 100%;
 }
 
-.su-container-content{
+.su-container-large{
   width: 100%;
   max-width: 1287px;
 }
@@ -2091,6 +2091,21 @@ audio::-webkit-media-controls-panel {
   background-color: rgb(192 192 191 / var(--tw-bg-opacity));
 }
 
+:is(.su-dark .su-page-content
+  > [data-component="featured-content"]
+  + [data-component="multicolumn-listing"]
+  .component-multicolumn-listing.has-no-title
+  > .su-component-container):before,:is(.su-dark 
+.su-page-content
+  > .container
+  > [data-component="featured-content"]
+  + [data-component="multicolumn-listing"]
+  .component-multicolumn-listing.has-no-title
+  > .su-component-container):before{
+  --tw-bg-opacity: 1;
+  background-color: rgb(46 45 41 / var(--tw-bg-opacity));
+}
+
 @media (min-width: 768px){
   .su-page-content
   > [data-component="featured-content"]
@@ -2120,4 +2135,59 @@ audio::-webkit-media-controls-panel {
   .component-multicolumn-listing.has-no-title
   > .su-component-container:before {
   content: "";
+}
+
+/*
+WYSIWYG formatting styles
+*/
+
+.container > span .bold,
+.container > span strong,
+.su-wysiwyg-content .bold,
+.su-wysiwyg-content strong,
+.su-page-content > div:not([data-component]) .bold,
+.su-page-content > div:not([data-component]) strong{
+  font-weight: 700;
+}
+
+.container > span .italics,
+.container > span em,
+.su-wysiwyg-content .italics,
+.su-wysiwyg-content em,
+.su-page-content > div:not([data-component]) .italics,
+.su-page-content > div:not([data-component]) em{
+  font-style: italic;
+}
+
+.container > span .underline,
+.container > span u,
+.su-wysiwyg-content .underline,
+.su-wysiwyg-content u,
+.su-page-content > div:not([data-component]) .underline,
+.su-page-content > div:not([data-component]) u{
+  text-decoration-line: underline;
+}
+
+.container > span .justify,
+.su-wysiwyg-content .justify,
+.su-page-content > div:not([data-component]) .justify{
+  text-align: justify;
+}
+
+.container > span .left,
+.su-wysiwyg-content .left,
+.su-page-content > div:not([data-component]) .left{
+  text-align: left;
+}
+
+.container > span .right,
+.su-wysiwyg-content .right,
+.su-page-content > div:not([data-component]) .right{
+  text-align: right;
+}
+
+.container > span .center,
+.su-wysiwyg-content .center,
+.su-page-content > div:not([data-component]) .center{
+  text-align: center;
 }
