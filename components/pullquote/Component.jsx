@@ -14,7 +14,12 @@ import { Container } from "../../packages/grids/Grids";
  */
 export default function PullQuoteStory({ displayConfiguration, data }) {
   const { quote, name, title, width } = displayConfiguration;
-  const { imageUrl } = data[0];
+
+  let imageUrl = "";
+
+  if (data.type === "page_standard")
+    imageUrl = data.metadata.csFeaturedImageUrl[0];
+  else if (data.type === "image") imageUrl = data.url;
 
   return (
     <Container paddingX={false} width={width}>
