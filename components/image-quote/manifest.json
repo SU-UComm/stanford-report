@@ -1,11 +1,17 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "text-callout",
-  "version": "0.0.5",
+  "name": "image-quote",
+  "version": "0.0.2",
   "namespace": "stanford-components",
-  "description": "This component is intended for displaying extra text content with a background colour applied",
-  "displayName": "Text Callout",
+  "description": "Stanford university Base component.",
+  "displayName": "Image quote",
   "mainFunction": "main",
+  "environment": [
+    {
+      "name": "API_IDENTIFIER",
+      "required": true
+    }
+  ],
   "icon": {
     "id": "foundation",
     "color": {
@@ -22,19 +28,40 @@
         "required": [],
         "properties": {
           "displayConfiguration": {
-            "title": "Text callout display configuration",
-            "description": "These fields will make up the content displayed on the front-end.",
+            "title": "",
+            "description": "",
             "required": [],
             "properties": {
-              "title": {
-                "title": "Heading",
-                "description": "The heading text",
+              "image": {
+                "title": "Image Asset",
+                "description": "A Matrix image asset",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              },
+              "imageCaption": {
+                "title": "Image caption",
+                "description": "A caption for the image",
                 "type": "string"
               },
-              "content": {
-                "title": "Content",
-                "description": "The text content for this component",
-                "type": "FormattedText"
+              "imageCredit": {
+                "title": "Image credit",
+                "description": "A credit for the image",
+                "type": "string"
+              },
+              "quote": {
+                "title": "Quote",
+                "type": "string",
+                "format": "multi-line"
+              },
+              "name": {
+                "title": "Name",
+                "description": "The name of the quotee",
+                "type": "string"
+              },
+              "title": {
+                "title": "Title",
+                "description": "The title/role of the quotee",
+                "type": "string"
               }
             }
           }
@@ -77,6 +104,12 @@
   ],
   "staticFiles": {
     "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/127837": {
+      "type": "file",
+      "path": "mocked-uris/127837.json"
+    }
   },
   "previews": {
     "default": {

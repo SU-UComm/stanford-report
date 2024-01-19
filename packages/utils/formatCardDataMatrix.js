@@ -31,9 +31,7 @@ export default function formatCardDataMatrix({ attributes, metadata, url }) {
   const description = dataChecker(metadata.teaser);
   const imageUrl = dataChecker(metadata.featuredImage).url;
   const imageAlt = dataChecker(metadata.featuredImage)?.attributes?.alt;
-  const taxonomy = dataStringChecker(
-    metadata.srContentMainTopic[0]?.short_name
-  );
+  const taxonomy = dataStringChecker(metadata.srContentMainTopic[0].short_name);
   const taxonomyUrl = dataStringChecker(metadata.taxonomyPageData[0]?.url);
   const type = dataChecker(metadata.srContentType)?.name;
   const videoUrl = dataChecker(metadata.featuredVideo);
