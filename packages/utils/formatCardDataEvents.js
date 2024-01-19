@@ -34,7 +34,7 @@ export default function formatCardDataEvents({
     // eslint-disable-next-line camelcase
     event_instances,
     // eslint-disable-next-line camelcase
-    url,
+    localist_url,
     // eslint-disable-next-line camelcase
     photo_url,
     filters,
@@ -48,7 +48,7 @@ export default function formatCardDataEvents({
 
   // liveUrl
   // eslint-disable-next-line camelcase
-  const liveUrl = url;
+  const liveUrl = localist_url;
 
   // image
   const imageAlt = title;
