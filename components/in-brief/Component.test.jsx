@@ -13,13 +13,13 @@ const testDataNoPoints = {
 describe("In Brief", () => {
   it("should render the component", () => {
     render(<InBrief points={testData.points} />);
-    const element = document.querySelector('[data-component="in-brief"]');
-    expect(element).toBeNull();
+    const element = document.querySelector('[data-test="in-brief"]');
+    expect(element).toBeInTheDocument();
   });
 
   it("should not render the component, when no content is supplied", () => {
     render(<InBrief points={testDataNoPoints.points} />);
-    const element = document.querySelector('[data-component="in-brief"]');
+    const element = document.querySelector('[data-test="in-brief"]');
     expect(element).toBeNull();
   });
 });
