@@ -1,13 +1,13 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "story-lead",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "namespace": "stanford-components",
   "description": "Introduction to a story, with a decorative first letter.",
-  "displayName": "In Brief",
+  "displayName": "Story Lead",
   "mainFunction": "main",
   "icon": {
-    "id": "summarize",
+    "id": "text_fields",
     "color": {
       "type": "enum",
       "value": "gray"
@@ -22,9 +22,8 @@
         "required": [],
         "properties": {
           "content": {
-            "title": "Paragraph",
-            "type": "string",
-            "format": "multi-line"
+            "title": "Lead",
+            "type": "FormattedText"
           },
           "variant": {
             "title": "Variant",

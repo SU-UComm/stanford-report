@@ -2,5 +2,5 @@
 @tailwind utilities;
 
 .su-story-first-letter {
-  @apply first-letter:su-font-bold first-letter:su-float-left first-letter:su-text-[72px] md:first-letter:su-text-[85px] first-letter:su-mt-[10px] md:first-letter:su-mt-[10px] lg:first-letter:su-mt-[18px] first-letter:su-leading-[35px] first-letter:su-p-0 first-letter:su-mr-[9px] first-letter:su-font-serif;
+  @apply first-letter:su-font-bold first-letter:su-float-left first-letter:su-text-[72px] md:first-letter:su-text-[85px] first-letter:su-mt-[2px] md:first-letter:su-mt-[10px] lg:first-letter:su-mt-[16px] first-letter:su-leading-[35px] first-letter:su-p-0 first-letter:su-mr-[9px] first-letter:su-font-serif;
 }
