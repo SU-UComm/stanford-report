@@ -503,7 +503,7 @@ audio::-webkit-media-controls-panel {
   @apply su-w-full;
 }
 
-.su-container-content {
+.su-container-large {
   @apply su-w-full su-max-w-[1287px];
 }
 
@@ -561,6 +561,60 @@ audio::-webkit-media-controls-panel {
   + [data-component="multicolumn-listing"]
   .component-multicolumn-listing.has-no-title
   > .su-component-container:before {
-  @apply su-block su-w-full su-h-[1px] su-bg-black-30 su-my-[34px] md:su-my-[45px] md:su-my-[76px];
+  @apply su-block su-w-full su-h-[1px] su-bg-black-30 dark:su-bg-black su-my-[34px] md:su-my-[45px] md:su-my-[76px];
   content: "";
+}
+
+/*
+WYSIWYG formatting styles
+*/
+.container > span .bold,
+.container > span strong,
+.su-wysiwyg-content .bold,
+.su-wysiwyg-content strong,
+.su-page-content > div:not([data-component]) .bold,
+.su-page-content > div:not([data-component]) strong {
+  @apply su-font-bold;
+}
+
+.container > span .italics,
+.container > span em,
+.su-wysiwyg-content .italics,
+.su-wysiwyg-content em,
+.su-page-content > div:not([data-component]) .italics,
+.su-page-content > div:not([data-component]) em {
+  @apply su-italic;
+}
+
+.container > span .underline,
+.container > span u,
+.su-wysiwyg-content .underline,
+.su-wysiwyg-content u,
+.su-page-content > div:not([data-component]) .underline,
+.su-page-content > div:not([data-component]) u {
+  @apply su-underline;
+}
+
+.container > span .justify,
+.su-wysiwyg-content .justify,
+.su-page-content > div:not([data-component]) .justify {
+  @apply su-text-justify;
+}
+
+.container > span .left,
+.su-wysiwyg-content .left,
+.su-page-content > div:not([data-component]) .left {
+  @apply su-text-left;
+}
+
+.container > span .right,
+.su-wysiwyg-content .right,
+.su-page-content > div:not([data-component]) .right {
+  @apply su-text-right;
+}
+
+.container > span .center,
+.su-wysiwyg-content .center,
+.su-page-content > div:not([data-component]) .center {
+  @apply su-text-center;
 }
