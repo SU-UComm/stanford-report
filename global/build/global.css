@@ -1115,7 +1115,9 @@ table thead + tbody{
  * your stylesheet by default.
  */
 
-.su-bg-gradient{
+.su-bg-gradient,
+.su-bg-gradient-before:before,
+.su-bg-gradient-after:after{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
   --tw-gradient-from: #B1040E var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(177 4 14 / 0) var(--tw-gradient-to-position);
@@ -1123,7 +1125,9 @@ table thead + tbody{
   --tw-gradient-to: #620059 var(--tw-gradient-to-position);
 }
 
-:is(.su-dark .su-bg-gradient){
+:is(.su-dark .su-bg-gradient),:is(.su-dark 
+.su-bg-gradient-before):before,:is(.su-dark 
+.su-bg-gradient-after):after{
   --tw-gradient-from: #279989 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(39 153 137 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
