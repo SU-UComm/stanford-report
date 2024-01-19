@@ -30,7 +30,7 @@ export default function TextCallout({ displayConfiguration }) {
             <h3 className="su-font-serif su-inline su-bg-fog-light dark:su-bg-black !su-text-[23px] su-pr-[10px] su-m-0">
               {title}
             </h3>
-            <span className="su-w-full su-bg-black dark:su-bg-black-70 su-h-[1px] su-absolute su-bottom-[4px]" />
+            <span className="su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-[1px] su-absolute su-bottom-[4px]" />
           </div>
         </div>
 
