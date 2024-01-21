@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "combined-content-grid",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "namespace": "stanford-components",
   "description": "A featured content grid combined with announcements and events",
   "displayName": "Combined content grid",
@@ -169,7 +169,8 @@
               },
               "linkUrl": {
                 "title": "Events Link",
-                "type": "string"
+                "type": "string",
+                "default": "https://events.stanford.edu"
               }
             }
           },
