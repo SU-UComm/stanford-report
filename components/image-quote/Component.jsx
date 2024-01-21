@@ -13,12 +13,12 @@ import { Container } from "../../packages/grids/Container";
  */
 
 export default function ImageQuote({ displayConfiguration, data }) {
-  const { image, imageCaption, imageCredit, quote, name, title } =
+  const { imageCaption, imageCredit, quote, name, title } =
     displayConfiguration;
 
   return (
     <Container width="wide">
-      <section className="story__quote su-col-span-full !su-my-[100px] md:!su-my-[171px] su-flex su-flex-col xl:su-flex-row sm:su-col-span-11 sm:su-col-start-2">
+      <section className="story__quote su-col-span-full !su-my-[100px] md:!su-my-[171px] su-flex su-flex-col xl:su-flex-row sm:su-col-span-11 sm:su-col-start-2 su-justify-center">
         <figure className="su-flex su-flex-col su-gap-[23px] su-w-5/6 sm:su-w-[483px] lg:su-w-[524px]">
           <img
             src={data.url}
