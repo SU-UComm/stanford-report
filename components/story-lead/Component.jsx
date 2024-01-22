@@ -46,7 +46,7 @@ export default function StoryLead({ content, variant }) {
   const variantClasses = new Map();
   variantClasses.set(
     "Featured Story",
-    "[&>*]:su-text-[20px] md:[&>*]:su-text-[25px] lg:[&>*]:su-text-[26px]"
+    "[&>*]:su-text-[20px] md:[&>*]:su-text-[25px] lg:[&>*]:su-text-[26px] su-font-serif su-font-medium"
   );
   variantClasses.set(
     "Basic Story",
