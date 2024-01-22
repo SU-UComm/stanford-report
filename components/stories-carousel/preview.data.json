@@ -1,0 +1,21 @@
+{
+  "headingConfiguration": {
+    "title": "Carousel",
+    "ctaText": "View all",
+    "ctaUrl": "matrix-asset://api-identifier/89422"
+  },
+  "contentConfiguration": {
+    "source": "Select",
+    "cards": [
+      {
+        "cardAsset": "matrix-asset://api-identifier/89422"
+      },
+      {
+        "cardAsset": "matrix-asset://api-identifier/89430"
+      },
+      {
+        "cardAsset": "matrix-asset://api-identifier/89426"
+      }
+    ]
+  }
+}
