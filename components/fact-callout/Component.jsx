@@ -15,7 +15,6 @@ import { Container } from "../../packages/grids/Container";
 export default function FactCallout({ displayConfiguration }) {
   const { icon, factText, indicatorPosition, width } = displayConfiguration;
   const svgMap = new Map();
-  const widthMap = new Map();
   const indicatorMap = new Map();
 
   svgMap.set("pie chart", <PieChart />);
