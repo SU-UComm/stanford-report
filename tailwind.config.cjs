@@ -40,28 +40,6 @@ module.exports = {
   // styles, or custom variants.
   // https://tailwindcss.com/docs/configuration/#plugins
   plugins: [
-    // Add our own variants for convenience
-    plugin(({ addVariant }) => {
-      addVariant("hocus", ["&:hover", "&:focus"]);
-      addVariant("hocus-visible", ["&:hover", "&:focus-visible"]);
-      addVariant("group-hocus", [
-        ":merge(.group):focus &",
-        ":merge(.group):hover &",
-      ]);
-      addVariant("group-hocus-visible", [
-        ":merge(.group):focus-visible &",
-        ":merge(.group):hover &",
-      ]);
-      addVariant("children", "& > *");
-      addVariant("children-hover", "& > *:hover");
-      addVariant("children-focus", "& > *:focus");
-      addVariant("children-focus-visible", "& > *:focus-visible");
-    }),
-
-    // 3rd Party Plugins;
-    require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/forms"),
-
     // @tailwind components;
     require(`${dir}/components/form/input.js`)(),
     require(`${dir}/components/form/buttons.js`)(),
