@@ -1,0 +1,129 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "image-quote",
+  "version": "0.0.4",
+  "namespace": "stanford-components",
+  "description": "Stanford university Base component.",
+  "displayName": "Image quote",
+  "mainFunction": "main",
+  "environment": [
+    {
+      "name": "API_IDENTIFIER",
+      "required": true
+    }
+  ],
+  "icon": {
+    "id": "foundation",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "displayConfiguration": {
+            "title": "",
+            "description": "",
+            "required": [],
+            "properties": {
+              "image": {
+                "title": "Image Asset",
+                "description": "A Matrix image asset",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              },
+              "imageCaption": {
+                "title": "Image caption",
+                "description": "A caption for the image",
+                "type": "string"
+              },
+              "imageCredit": {
+                "title": "Image credit",
+                "description": "A credit for the image",
+                "type": "string"
+              },
+              "quote": {
+                "title": "Quote",
+                "type": "string",
+                "format": "multi-line"
+              },
+              "name": {
+                "title": "Name",
+                "description": "The name of the quotee",
+                "type": "string"
+              },
+              "title": {
+                "title": "Title",
+                "description": "The title/role of the quotee",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/127837": {
+      "type": "file",
+      "path": "mocked-uris/127837.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}

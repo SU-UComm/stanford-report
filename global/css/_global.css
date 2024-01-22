@@ -1,5 +1,5 @@
-/** Source Sans Pro, Source Serif Pro, Roboto Slab, Roboto Mono (regular only) */
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab:wght@300;400;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap");
+/** Source Sans 3, Source Serif 4, Roboto Slab, Roboto Mono (regular only) */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab:wght@300;400;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap");
 
 @font-face {
   font-family: "Stanford";
@@ -50,7 +50,9 @@ svg {
  */
 @tailwind variants;
 
-.su-bg-gradient {
+.su-bg-gradient,
+.su-bg-gradient-before:before,
+.su-bg-gradient-after:after {
   @apply su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive;
 }
 
@@ -106,14 +108,6 @@ svg {
   stop-color: #8f993e;
 }
 
-.su-featured-story-text {
-  @apply [&>p]:su-col-span-full sm:[&>p]:su-col-span-10 sm:[&>p]:su-col-start-2 [&>p]:su-col-end-11 lg:[&>p]:su-col-span-6 lg:[&>p]:su-col-start-4 [&>h2]:su-col-span-full sm:[&>h2]:su-col-span-10 sm:[&>h2]:su-col-start-2 [&>h2]:su-col-end-11 lg:[&>h2]:su-col-span-6 lg:[&>h2]:su-col-start-4;
-}
-
-.su-basic-story-text {
-  @apply [&>p]:su-col-span-full [&>h1]:su-col-span-full [&>h2]:su-col-span-full [&>h3]:su-col-span-full [&>h4]:su-col-span-full [&>p>a]:su-text-black dark:[&>p>a]:su-text-white [&>p>a]:su-font-normal [&>p>a]:su-underline;
-}
-
 .su-bg-gradient-header-dark {
   background: linear-gradient(
     180deg,
@@ -124,10 +118,6 @@ svg {
 
 .su-bg-gradient-header-white {
   background: linear-gradient(180deg, #fff 0.11%, rgba(0, 0, 0, 0) 50%);
-}
-
-.su-story-first-letter {
-  @apply first-letter:su-font-bold first-letter:su-float-left first-letter:su-text-[72px] first-letter:su-mt-[14px] first-letter:su-leading-[35px] first-letter:su-p-0 first-letter:su-mr-[16px] first-letter:su-font-serif;
 }
 
 .tt-menu::before {
@@ -501,7 +491,7 @@ audio::-webkit-media-controls-panel {
   @apply su-w-full;
 }
 
-.su-container-content {
+.su-container-large {
   @apply su-w-full su-max-w-[1287px];
 }
 
@@ -559,6 +549,60 @@ audio::-webkit-media-controls-panel {
   + [data-component="multicolumn-listing"]
   .component-multicolumn-listing.has-no-title
   > .su-component-container:before {
-  @apply su-block su-w-full su-h-[1px] su-bg-black-30 su-my-[34px] md:su-my-[45px] md:su-my-[76px];
+  @apply su-block su-w-full su-h-[1px] su-bg-black-30 dark:su-bg-black su-my-[34px] md:su-my-[45px] md:su-my-[76px];
   content: "";
+}
+
+/*
+WYSIWYG formatting styles
+*/
+.container > span .bold,
+.container > span strong,
+.su-wysiwyg-content .bold,
+.su-wysiwyg-content strong,
+.su-page-content > div:not([data-component]) .bold,
+.su-page-content > div:not([data-component]) strong {
+  @apply su-font-bold;
+}
+
+.container > span .italics,
+.container > span em,
+.su-wysiwyg-content .italics,
+.su-wysiwyg-content em,
+.su-page-content > div:not([data-component]) .italics,
+.su-page-content > div:not([data-component]) em {
+  @apply su-italic;
+}
+
+.container > span .underline,
+.container > span u,
+.su-wysiwyg-content .underline,
+.su-wysiwyg-content u,
+.su-page-content > div:not([data-component]) .underline,
+.su-page-content > div:not([data-component]) u {
+  @apply su-underline;
+}
+
+.container > span .justify,
+.su-wysiwyg-content .justify,
+.su-page-content > div:not([data-component]) .justify {
+  @apply su-text-justify;
+}
+
+.container > span .left,
+.su-wysiwyg-content .left,
+.su-page-content > div:not([data-component]) .left {
+  @apply su-text-left;
+}
+
+.container > span .right,
+.su-wysiwyg-content .right,
+.su-page-content > div:not([data-component]) .right {
+  @apply su-text-right;
+}
+
+.container > span .center,
+.su-wysiwyg-content .center,
+.su-page-content > div:not([data-component]) .center {
+  @apply su-text-center;
 }
