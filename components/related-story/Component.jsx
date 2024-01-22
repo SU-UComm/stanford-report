@@ -19,7 +19,7 @@ export default function RelatedStory({ data }) {
 
   return (
     <Container width="narrow">
-      <section className="su-px-[20px] su-py-[32px] story__related-story su-col-span-full sm:su-col-span-10 sm:su-col-start-2 lg:su-col-span-6 lg:su-col-start-4 su-mx-auto !su-my-[90px]">
+      <section className="su-py-[32px] story__related-story su-col-span-full sm:su-col-span-10 sm:su-col-start-2 lg:su-col-span-6 lg:su-col-start-4 su-mx-auto !su-my-[90px]">
         <SidebarHeading
           title="Related story"
           icon="bullseyePointer"
