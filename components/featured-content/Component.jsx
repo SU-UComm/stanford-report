@@ -33,7 +33,7 @@ export default function FeaturedContent({
   }
 
   return (
-    <Container width="content" data-component="featured-content">
+    <Container width="large" data-component="featured-content">
       <LinkedHeading
         title={headingData.title}
         ctaText={headingData.ctaText}

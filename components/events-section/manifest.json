@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "events-section",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "namespace": "stanford-components",
   "description": "Stanford Events Section is a grid featuring 9 events",
   "displayName": "Events Section",
@@ -44,8 +44,8 @@
             }
           },
           "contentConfiguration": {
-            "title": "Grid Content",
-            "description": "The cards to display in the grid area of the component. The featured card appears larger than the supplementary cards. When manually selecting cards, at least three must be selected for the grid to display.",
+            "title": "Events section core configuration",
+            "description": "The main purpose for these settings is to source the events API for the component.",
             "type": "object",
             "required": [],
             "properties": {
