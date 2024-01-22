@@ -55,5 +55,6 @@ export { default as TipsAndTakeaways } from "./TipsAndTakeaways";
 export { default as Video } from "./Video";
 export { default as ChevronRight } from "./ChevronRight";
 export { default as Close } from "./Close";
+export { default as BullseyePointer } from "./BullseyePointer";
 export { default as PieChart } from "./PieChart";
 export { default as BarGraph } from "./BarGraph";
