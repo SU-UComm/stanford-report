@@ -13,7 +13,7 @@ import { Container } from "../../packages/grids/Container";
  * @constructor
  */
 export default function CampaignCta({ displayConfiguration, data, linkData }) {
-  const { title, description, linkUrl, linkText } = displayConfiguration;
+  const { title, description, linkText } = displayConfiguration;
 
   return (
     <Container width="full" paddingX={false}>
@@ -34,7 +34,7 @@ export default function CampaignCta({ displayConfiguration, data, linkData }) {
           </div>
 
           <a
-            href={linkData.url}
+            href={linkData && linkData.url ? linkData.url : ""}
             className="su-mt-[50px] su-inline-block su-px-[30px] su-py-[10px] su-bg-digital-red su-mr-auto su-text-white su-no-underline hover:su-bg-black su-transition lg:su-mt-auto su-shrink-0"
           >
             {linkText}
@@ -44,7 +44,8 @@ export default function CampaignCta({ displayConfiguration, data, linkData }) {
         <img
           className="su-absolute su-object-cover su-w-full su-h-full su-z-[1]"
           // src="https://picsum.photos/1200"
-          src={data.url}
+          src={data && data.url ? data.url : ""}
+          alt={data && data.attributes.alt ? data.attributes.alt : ""}
         />
 
         <div className="su-campaign-cta-gradient su-z-[1]" />

@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "campaign-cta",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "namespace": "stanford-components",
   "description": "This component serves as a preview & to promote campaign pages.",
   "displayName": "Campaign CTA",
@@ -45,8 +45,8 @@
                 "format": "multi-line"
               },
               "linkurl": {
-                "title": "Link URL",
-                "description": "The CTA URL",
+                "title": "CTA Destination",
+                "description": "The CTA link destination",
                 "type": "string",
                 "format": "matrix-asset-uri"
               },
@@ -99,10 +99,6 @@
     "locationRoot": "./dist"
   },
   "mockedUris": {
-    "matrix-asset://api-identifier/127837": {
-      "type": "file",
-      "path": "mocked-uris/127837.json"
-    },
     "matrix-asset://api-identifier/28207": {
       "type": "file",
       "path": "mocked-uris/28207.json"
