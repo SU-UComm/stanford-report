@@ -43,7 +43,7 @@ svg {
  * plugins.
  */
 
-/*! tailwindcss v3.3.6 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -75,9 +75,11 @@ svg {
 4. Use the user's configured `sans` font-family by default.
 5. Use the user's configured `sans` font-feature-settings by default.
 6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
 */
 
-html {
+html,
+:host {
   line-height: 1.5;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -93,6 +95,8 @@ html {
   /* 5 */
   font-variation-settings: normal;
   /* 6 */
+  -webkit-tap-highlight-color: transparent;
+  /* 7 */
 }
 
 /*
@@ -1624,7 +1628,7 @@ audio::-webkit-media-controls-panel {
   > *:not([data-component]){
   margin-left: auto;
   margin-right: auto;
-  max-width: 832px;
+  max-width: 732px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -1640,19 +1644,6 @@ audio::-webkit-media-controls-panel {
     width: 84.75%;
     padding-left: 50px;
     padding-right: 50px;
-  }
-}
-
-@media (min-width: 992px){
-  .su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > *:not([data-component], .container),
-.su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > .container
-  > *:not([data-component]){
-    padding-left: 100px;
-    padding-right: 100px;
   }
 }
 
@@ -1858,7 +1849,7 @@ audio::-webkit-media-controls-panel {
 
 .su-container-narrow{
   width: 100%;
-  max-width: 832px;
+  max-width: 732px;
 }
 
 @media (min-width: 768px){
@@ -1874,12 +1865,12 @@ audio::-webkit-media-controls-panel {
 
 .su-container-large{
   width: 100%;
-  max-width: 1287px;
+  max-width: 1186px;
 }
 
 .su-container-wide{
   width: 100%;
-  max-width: 1512px;
+  max-width: 1412px;
 }
 
 .su-container-full{
@@ -1896,13 +1887,6 @@ audio::-webkit-media-controls-panel {
   .su-container-px{
     padding-left: 50px;
     padding-right: 50px;
-  }
-}
-
-@media (min-width: 992px){
-  .su-container-px{
-    padding-left: 100px;
-    padding-right: 100px;
   }
 }
 
