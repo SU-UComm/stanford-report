@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "image-quote",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "namespace": "stanford-components",
   "description": "Stanford university Base component.",
   "displayName": "Image quote",
