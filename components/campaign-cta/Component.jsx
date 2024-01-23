@@ -12,7 +12,7 @@ import { Container } from "../../packages/grids/Container";
  * @returns {JSX.Element}
  * @constructor
  */
-export default function CampaignCta({ displayConfiguration, data }) {
+export default function CampaignCta({ displayConfiguration, data, linkData }) {
   const { title, description, linkUrl, linkText } = displayConfiguration;
 
   return (
@@ -34,7 +34,7 @@ export default function CampaignCta({ displayConfiguration, data }) {
           </div>
 
           <a
-            href={linkUrl}
+            href={linkData.url}
             className="su-mt-[50px] su-inline-block su-px-[30px] su-py-[10px] su-bg-digital-red su-mr-auto su-text-white su-no-underline hover:su-bg-black su-transition lg:su-mt-auto su-shrink-0"
           >
             {linkText}
