@@ -21,8 +21,7 @@ export default function ImageQuote({ displayConfiguration, data }) {
       <section className="story__quote su-col-span-full !su-my-[100px] md:!su-my-[171px] su-flex su-flex-col xl:su-flex-row sm:su-col-span-11 sm:su-col-start-2 su-justify-center su-pr-[20px] lg:su-pr-0">
         <figure className="su-flex su-flex-col su-gap-[8px] su-w-5/6 sm:su-w-[483px] lg:su-w-[524px]">
           <img
-            // src={data.url}
-            src="https://picsum.photos/500"
+            src={data.url}
             className="su-z-10 su-w-full su-h-auto su-object-center su-object-cover"
             alt=""
           />
