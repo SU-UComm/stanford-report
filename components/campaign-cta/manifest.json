@@ -19,15 +19,44 @@
       "entry": "./dist/server.cjs",
       "input": {
         "type": "object",
+        "required": [],
         "properties": {
-          "title": {
-            "title": "Heading",
-            "description": "The heading text",
-            "type": "string",
-            "default": "Lorem ipsum dolor"
+          "displayConfiguration": {
+            "title": "Campaign CTA configuration",
+            "description": "These options will output to the frontend of the Campaign CTA component",
+            "required": ["image"],
+            "properties": {
+              "image": {
+                "title": "Image asset",
+                "description": "A Matrix image asset",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              },
+              "title": {
+                "title": "Title",
+                "description": "The campaign title",
+                "type": "string",
+                "default": ""
+              },
+              "description": {
+                "title": "Description",
+                "description": "The campaign text content",
+                "type": "string",
+                "format": "multi-line"
+              },
+              "linkurl": {
+                "title": "Link URL",
+                "description": "The CTA URL",
+                "type": "string"
+              },
+              "linkText": {
+                "title": "Link title",
+                "description": "The CTA title",
+                "type": "string"
+              }
+            }
           }
-        },
-        "required": []
+        }
       },
       "output": {
         "responseType": "html",
@@ -66,6 +95,12 @@
   ],
   "staticFiles": {
     "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/127837": {
+      "type": "file",
+      "path": "mocked-uris/127837.json"
+    }
   },
   "previews": {
     "default": {

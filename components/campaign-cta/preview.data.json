@@ -1,3 +1,9 @@
 {
-    "title": "Welcome to Stanford University!"
+    "displayConfiguration": {
+        "image": "matrix-asset://api-identifier/127837",
+        "title": "The Next Great Discovery",
+        "description": "Many of today's greatest innovations are built on the shoulders of fundamental research conducted decades ago.",
+        "linkUrl": "#",
+        "linkText": "Learn more"
+    }
 }
