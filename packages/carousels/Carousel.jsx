@@ -9,8 +9,23 @@ import { register } from "swiper/element/bundle";
  * @returns {JSX.Element}
  * @constructor
  */
-export function Carousel({ slides }) {
+export function Carousel({ slides, breakpoint = "single" }) {
   const hasSlides = slides.length > 0;
+
+  const breakPoints = new Map();
+  breakPoints.set("cards", {
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+      },
+    },
+    slidesPerView: 1,
+  });
+  breakPoints.set("single", {
+    768: {
+      slidesPerView: 3,
+    },
+  });
 
   const widthClasses = new Map();
   widthClasses.set("narrow", "su-container-narrow");
@@ -27,7 +42,10 @@ export function Carousel({ slides }) {
         // widthClasses.get(width.toLowerCase()),
       ].join(" ")}
     >
-      <swiper-container>
+      <swiper-container
+        slides-per-view={Number(breakPoints.get(breakpoint).slidesPerView)}
+        breakpoints={breakPoints.get(breakpoint).breakpoints}
+      >
         {slides.map((item) => {
           return <swiper-slide key={hash.MD5(item.props)}>{item}</swiper-slide>;
         })}

@@ -24,6 +24,7 @@ export default function StoriesCarousel({
     <Container>
       <LinkedHeading title={headingConfiguration.title} />
       <Carousel
+        breakpoint="cards"
         slides={[
           <Card data={data[0]} />,
           <Card data={data[1]} />,
