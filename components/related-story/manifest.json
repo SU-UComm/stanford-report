@@ -1,0 +1,168 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "related-story",
+  "version": "0.0.3",
+  "namespace": "stanford-components",
+  "description": "Displays a related story on a featured story",
+  "displayName": "Related story",
+  "mainFunction": "main",
+  "environment": [
+    {
+      "name": "API_IDENTIFIER",
+      "required": true
+    },
+    {
+      "name": "FB_JSON_URL",
+      "required": true
+    }
+  ],
+  "icon": {
+    "id": "foundation",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "contentConfiguration": {
+            "title": "Related story content",
+            "description": "Select an asset ID to be featured as a related story.",
+            "type": "object",
+            "required": [],
+            "properties": {
+              "story": {
+                "title": "Related story",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/28207": {
+      "type": "file",
+      "path": "mocked-uris/28207.json"
+    },
+    "matrix-asset://api-identifier/125002": {
+      "type": "file",
+      "path": "mocked-uris/125002.json"
+    },
+    "matrix-asset://api-identifier/28375": {
+      "type": "file",
+      "path": "mocked-uris/28375.json"
+    },
+    "matrix-asset://api-identifier/28401": {
+      "type": "file",
+      "path": "mocked-uris/28401.json"
+    },
+    "matrix-asset://api-identifier/28406": {
+      "type": "file",
+      "path": "mocked-uris/28406.json"
+    },
+    "matrix-asset://api-identifier/124970": {
+      "type": "file",
+      "path": "mocked-uris/124970.json"
+    },
+    "matrix-asset://api-identifier/124986": {
+      "type": "file",
+      "path": "mocked-uris/124986.json"
+    },
+    "matrix-asset://api-identifier/28397": {
+      "type": "file",
+      "path": "mocked-uris/28397.json"
+    },
+    "matrix-asset://api-identifier/89422": {
+      "type": "file",
+      "path": "mocked-uris/89422.json"
+    },
+    "matrix-asset://api-identifier/89430": {
+      "type": "file",
+      "path": "mocked-uris/89430.json"
+    },
+    "matrix-asset://api-identifier/89426": {
+      "type": "file",
+      "path": "mocked-uris/89426.json"
+    },
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/125800": {
+      "type": "file",
+      "path": "mocked-uris/125800.json"
+    },
+    "matrix-asset://api-identifier/125801": {
+      "type": "file",
+      "path": "mocked-uris/125801.json"
+    },
+    "matrix-asset://api-identifier/28192": {
+      "type": "file",
+      "path": "mocked-uris/28192.json"
+    },
+    "matrix-asset://api-identifier/28205": {
+      "type": "file",
+      "path": "mocked-uris/28205.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/basicstory.html"
+          }
+        }
+      }
+    }
+  }
+}

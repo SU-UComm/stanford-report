@@ -1,0 +1,365 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "combined-content-grid",
+  "version": "0.0.3",
+  "namespace": "stanford-components",
+  "description": "A featured content grid combined with announcements and events",
+  "displayName": "Combined content grid",
+  "mainFunction": "main",
+  "environment": [
+    {
+      "name": "API_IDENTIFIER",
+      "required": true
+    },
+    {
+      "name": "FB_JSON_URL",
+      "required": true
+    }
+  ],
+  "icon": {
+    "id": "auto_awesome_mosaic",
+    "color": {
+      "type": "enum",
+      "value": "blue"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "headingConfiguration": {
+            "title": "Section Heading Configuration",
+            "description": "The heading for the section, appearing before the grid. If the title is empty, the heading and call to action link will be hidden.",
+            "type": "object",
+            "required": [],
+            "properties": {
+              "title": {
+                "title": "Heading",
+                "type": "string"
+              },
+              "ctaText": {
+                "title": "Link text",
+                "type": "string",
+                "default": "View all"
+              },
+              "ctaUrl": {
+                "title": "Link URL",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              }
+            }
+          },
+          "contentConfiguration": {
+            "title": "Grid Content",
+            "description": "The cards to display in the grid area of the component. The featured card appears larger than the supplementary cards. When manually selecting cards, at least three must be selected for the grid to display.",
+            "type": "object",
+            "required": ["source"],
+            "properties": {
+              "source": {
+                "title": "Content source",
+                "default": "Search",
+                "enum": ["Search", "Select"],
+                "type": "string"
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "required": [],
+                  "properties": {
+                    "source": {
+                      "const": "Search"
+                    }
+                  }
+                },
+                "then": {
+                  "required": ["searchQuery"],
+                  "properties": {
+                    "searchQuery": {
+                      "type": "string",
+                      "title": "The Funnelback search query",
+                      "default": "?"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "required": [],
+                  "properties": {
+                    "source": {
+                      "const": "Select"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [],
+                  "properties": {
+                    "cards": {
+                      "title": "Cards",
+                      "description": "Select the assets that will be used for cards. The first card selected will be the featured card.",
+                      "type": "array",
+                      "minItems": 3,
+                      "maxItems": 3,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "cardAsset": {
+                            "type": "string",
+                            "format": "matrix-asset-uri",
+                            "title": "Card Asset"
+                          }
+                        },
+                        "required": ["cardAsset"]
+                      }
+                    },
+                    "featuredDescription": {
+                      "type": "string",
+                      "title": "Featured Content description",
+                      "format": "multi-line",
+                      "description": "If filled out, it will replace the description of the featured card (first)."
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "displayConfiguration": {
+            "title": "Grid Display Configuration",
+            "type": "object",
+            "required": [],
+            "properties": {
+              "displayThumbnails": {
+                "title": "Display Supplementary Thumbnails",
+                "default": true,
+                "type": "boolean"
+              },
+              "displayDescriptions": {
+                "title": "Display Supplementary Descriptions",
+                "default": false,
+                "type": "boolean"
+              }
+            }
+          },
+          "eventsConfiguration": {
+            "title": "Events Configuration",
+            "type": "object",
+            "required": ["endPoint"],
+            "properties": {
+              "heading": {
+                "title": "Heading",
+                "default": "Upcoming events",
+                "type": "string"
+              },
+              "endPoint": {
+                "title": "Events Endpoint",
+                "description": "The localist JSON endpoint to fetch events from",
+                "type": "string"
+              },
+              "numberOfItems": {
+                "title": "Number of Events",
+                "description": "The number of events to display",
+                "type": "number",
+                "minimum": 3,
+                "maximum": 6
+              },
+              "linkUrl": {
+                "title": "Events Link",
+                "type": "string",
+                "default": "https://events.stanford.edu"
+              }
+            }
+          },
+          "announcementsConfiguration": {
+            "title": "Announcements Configuration",
+            "type": "object",
+            "required": ["endPoint"],
+            "properties": {
+              "heading": {
+                "title": "Heading",
+                "default": "Announcements",
+                "type": "string"
+              },
+              "endPoint": {
+                "title": "Announcements Endpoint",
+                "description": "The Funnelback endpoint to fetch announcements from",
+                "type": "string"
+              },
+              "numberOfItems": {
+                "title": "Number of Announcements",
+                "description": "The number of announcements to display",
+                "type": "number",
+                "minimum": 3,
+                "maximum": 6
+              },
+              "linkUrl": {
+                "title": "Announcements Link",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/28207": {
+      "type": "file",
+      "path": "mocked-uris/28207.json"
+    },
+    "matrix-asset://api-identifier/125002": {
+      "type": "file",
+      "path": "mocked-uris/125002.json"
+    },
+    "matrix-asset://api-identifier/28375": {
+      "type": "file",
+      "path": "mocked-uris/28375.json"
+    },
+    "matrix-asset://api-identifier/28401": {
+      "type": "file",
+      "path": "mocked-uris/28401.json"
+    },
+    "matrix-asset://api-identifier/28406": {
+      "type": "file",
+      "path": "mocked-uris/28406.json"
+    },
+    "matrix-asset://api-identifier/124970": {
+      "type": "file",
+      "path": "mocked-uris/124970.json"
+    },
+    "matrix-asset://api-identifier/124986": {
+      "type": "file",
+      "path": "mocked-uris/124986.json"
+    },
+    "matrix-asset://api-identifier/28397": {
+      "type": "file",
+      "path": "mocked-uris/28397.json"
+    },
+    "matrix-asset://api-identifier/89422": {
+      "type": "file",
+      "path": "mocked-uris/89422.json"
+    },
+    "matrix-asset://api-identifier/89430": {
+      "type": "file",
+      "path": "mocked-uris/89430.json"
+    },
+    "matrix-asset://api-identifier/89426": {
+      "type": "file",
+      "path": "mocked-uris/89426.json"
+    },
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/125800": {
+      "type": "file",
+      "path": "mocked-uris/125800.json"
+    },
+    "matrix-asset://api-identifier/125801": {
+      "type": "file",
+      "path": "mocked-uris/125801.json"
+    },
+    "matrix-asset://api-identifier/28192": {
+      "type": "file",
+      "path": "mocked-uris/28192.json"
+    },
+    "matrix-asset://api-identifier/28205": {
+      "type": "file",
+      "path": "mocked-uris/28205.json"
+    },
+    "matrix-asset://api-identifier/127834": {
+      "type": "file",
+      "path": "mocked-uris/127834.json"
+    },
+    "matrix-asset://api-identifier/28193": {
+      "type": "file",
+      "path": "mocked-uris/28193.json"
+    },
+    "matrix-asset://api-identifier/127837": {
+      "type": "file",
+      "path": "mocked-uris/127837.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "select.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "select": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "select.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "search": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "search.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}

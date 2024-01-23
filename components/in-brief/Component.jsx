@@ -18,7 +18,10 @@ export default function InBrief({ points }) {
   const hasPoints = points.length > 0;
   return hasPoints ? (
     <Container width="narrow">
-      <div className="su-border-b-[1px] su-border-black-20">
+      <div
+        data-test="in-brief"
+        className="su-border-b-[1px] su-border-black-20"
+      >
         <div className="su-relative su-overflow-hidden">
           <h2 className="su-font-serif su-inline su-bg-white dark:su-bg-black-true !su-text-[23px] su-pr-[10px] su-m-0">
             In Brief
