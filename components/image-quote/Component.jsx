@@ -18,7 +18,7 @@ export default function ImageQuote({ displayConfiguration, data }) {
 
   return (
     <Container width="wide">
-      <section className="story__quote su-col-span-full !su-my-[100px] md:!su-my-[171px] su-flex su-flex-col xl:su-flex-row sm:su-col-span-11 sm:su-col-start-2 su-justify-center su-pr-[20px] lg:su-pr-0">
+      <section className="story__quote su-col-span-full !su-my-[100px] md:!su-my-[171px] su-flex su-flex-col xl:su-flex-row sm:su-col-span-11 sm:su-col-start-2 su-justify-center">
         <figure className="su-flex su-flex-col su-gap-[8px] su-w-5/6 sm:su-w-[483px] lg:su-w-[524px]">
           <img
             src={data.url}
