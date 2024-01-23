@@ -22,7 +22,7 @@ export default function PullQuoteStory({ displayConfiguration, data }) {
   else if (data.type === "image") imageUrl = data.url;
 
   return (
-    <Container paddingX={false} width={width}>
+    <Container width={width}>
       <PullQuote quote={quote} name={name} title={title} avatar={imageUrl} />
     </Container>
   );
