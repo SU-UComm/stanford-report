@@ -1,0 +1,120 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "campaign-cta",
+  "version": "0.0.1",
+  "namespace": "stanford-components",
+  "description": "This component serves as a preview & to promote campaign pages.",
+  "displayName": "Campaign CTA",
+  "mainFunction": "main",
+  "icon": {
+    "id": "foundation",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "displayConfiguration": {
+            "title": "Campaign CTA configuration",
+            "description": "These options will output to the frontend of the Campaign CTA component",
+            "required": ["image"],
+            "properties": {
+              "image": {
+                "title": "Image asset",
+                "description": "A Matrix image asset",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              },
+              "title": {
+                "title": "Title",
+                "description": "The campaign title",
+                "type": "string",
+                "default": ""
+              },
+              "description": {
+                "title": "Description",
+                "description": "The campaign text content",
+                "type": "string",
+                "format": "multi-line"
+              },
+              "linkurl": {
+                "title": "Link URL",
+                "description": "The CTA URL",
+                "type": "string"
+              },
+              "linkText": {
+                "title": "Link title",
+                "description": "The CTA title",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/127837": {
+      "type": "file",
+      "path": "mocked-uris/127837.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}
