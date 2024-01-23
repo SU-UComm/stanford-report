@@ -33,12 +33,14 @@ export default function CampaignCta({ displayConfiguration, data, linkData }) {
             />
           </div>
 
-          <a
-            href={linkData && linkData.url ? linkData.url : ""}
-            className="su-mt-[50px] su-inline-block su-px-[30px] su-py-[10px] su-bg-digital-red su-mr-auto su-text-white su-no-underline hover:su-bg-black su-transition lg:su-mt-auto su-shrink-0"
-          >
-            {linkText}
-          </a>
+          {linkData && linkData.url && (
+            <a
+              href={linkData.url}
+              className="su-mt-[50px] su-inline-block su-px-[30px] su-py-[10px] su-bg-digital-red su-mr-auto su-text-white su-no-underline hover:su-bg-black su-transition lg:su-mt-auto su-shrink-0"
+            >
+              {linkText}
+            </a>
+          )}
         </div>
 
         <img
