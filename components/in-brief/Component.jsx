@@ -33,7 +33,7 @@ export default function InBrief({ points }) {
                   elementType="li"
                   key={hash.MD5(item)}
                   className={[
-                    "su-basefont-19 su-text-[16px] md:su-text-[19px] lg:su-text-[19px]",
+                    "su-basefont-19 su-leading-[125%] su-text-[16px] md:su-text-[19px] lg:su-text-[19px] [&>*]:su-text-[16px] md:[&>*]:su-text-[19px] [&>*]:su-leading-[125%]",
                   ].join(" ")}
                   content={item}
                 />

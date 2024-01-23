@@ -1,2 +1,14 @@
 @tailwind components;
 @tailwind utilities;
+
+.su-wysiwyg-content ul {
+  @apply su-list-none su-pl-0;
+}
+
+.su-wysiwyg-content ul > li {
+  @apply su-relative su-pl-[30px] before:su-absolute before:su-top-[.52em] before:su-w-[4.5px] before:su-h-[4.5px] before:su-left-[12px] before:su-rounded-full;
+}
+
+.su-wysiwyg-content ul > li::before {
+  background-color: currentColor;
+}
