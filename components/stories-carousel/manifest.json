@@ -137,6 +137,13 @@
           {
             "location": "header",
             "file": {
+              "type": "css",
+              "filepath": "client.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
               "type": "js",
               "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
             }

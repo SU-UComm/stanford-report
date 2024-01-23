@@ -1,6 +1,12 @@
-import React from "react";
-import hash from "object-hash";
-import { register } from "swiper/element/bundle";
+import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+// import required modules
+import { Pagination } from "swiper/modules";
 
 /**
  * Carousel package
@@ -15,42 +21,49 @@ export function Carousel({ slides, breakpoint = "single" }) {
   const breakPoints = new Map();
   breakPoints.set("cards", {
     breakpoints: {
+      0: {
+        slidesPerView: 1.5,
+        spaceBetween: 40,
+      },
       768: {
         slidesPerView: 3,
+        spaceBetween: 72,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 102,
+      },
+    },
+    slidesPerView: 1.5,
+    spaceBetween: 40,
+    variantClassName: "component-slider-cards",
+  });
+  breakPoints.set("single", {
+    breakpoints: {
+      768: {
+        slidesPerView: 1,
       },
     },
     slidesPerView: 1,
+    variantClassName: "component-slider-single",
   });
-  breakPoints.set("single", {
-    768: {
-      slidesPerView: 3,
-    },
-  });
-
-  const widthClasses = new Map();
-  widthClasses.set("narrow", "su-container-narrow");
-  widthClasses.set("large", "su-container-large");
-  widthClasses.set("wide", "su-container-wide");
-  widthClasses.set("full", "su-container-full");
-
-  register();
 
   return hasSlides ? (
-    <div
-      className={[
-        "su-mx-auto su-component-container",
-        // widthClasses.get(width.toLowerCase()),
-      ].join(" ")}
+    <Swiper
+      centeredSlides
+      pagination={{
+        clickable: true,
+      }}
+      navigation
+      loop
+      breakpoints={breakPoints.get(breakpoint).breakpoints}
+      modules={[Pagination]}
+      className={[breakPoints.get(breakpoint).variantClassName].join(" ")}
     >
-      <swiper-container
-        slides-per-view={Number(breakPoints.get(breakpoint).slidesPerView)}
-        breakpoints={breakPoints.get(breakpoint).breakpoints}
-      >
-        {slides.map((item) => {
-          return <swiper-slide key={hash.MD5(item.props)}>{item}</swiper-slide>;
-        })}
-      </swiper-container>
-    </div>
+      {slides.map((slide) => (
+        <SwiperSlide key={slide}>{slide}</SwiperSlide>
+      ))}
+    </Swiper>
   ) : (
     ""
   );

@@ -26,9 +26,15 @@ export default function StoriesCarousel({
       <Carousel
         breakpoint="cards"
         slides={[
-          <Card data={data[0]} />,
-          <Card data={data[1]} />,
-          <Card data={data[2]} />,
+          <Card data={data[0]} displayDescription={false} />,
+          <Card data={data[1]} displayDescription={false} />,
+          <Card data={data[2]} displayDescription={false} />,
+          <Card data={data[0]} displayDescription={false} />,
+          <Card data={data[1]} displayDescription={false} />,
+          <Card data={data[2]} displayDescription={false} />,
+          <Card data={data[0]} displayDescription={false} />,
+          <Card data={data[1]} displayDescription={false} />,
+          <Card data={data[2]} displayDescription={false} />,
         ]}
       />
     </Container>
