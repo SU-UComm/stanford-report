@@ -504,7 +504,7 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-container-px {
-  @apply su-px-[20px] md:su-px-[50px] lg:su-px-[100px];
+  @apply su-px-[20px] md:su-px-[50px];
 }
 
 /*
