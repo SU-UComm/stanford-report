@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "campaign-cta",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "namespace": "stanford-components",
   "description": "This component serves as a preview & to promote campaign pages.",
   "displayName": "Campaign CTA",
@@ -51,7 +51,7 @@
                 "format": "matrix-asset-uri"
               },
               "linkText": {
-                "title": "Link title",
+                "title": "CTA text",
                 "description": "The CTA title",
                 "type": "string",
                 "default": "Learn more"

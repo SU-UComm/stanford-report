@@ -19,8 +19,8 @@ export default function CampaignCta({ displayConfiguration, data, linkData }) {
     <Container width="full" paddingX={false}>
       <section className="su-relative su-flex su-items-center su-justify-center su-flex-col">
         <div className="su-pt-[126px] su-pb-[108px] su-relative su-z-[2] su-text-white su-p-[20px] su-flex su-flex-col lg:su-flex-row">
-          <div className="su-relative before:content-[''] lg:before:su-absolute lg:before:su-h-full lg:before:su-w-[1px] lg:before:su-bg-black-30 lg:before:su-right-0 lg:before:su-ml-[25px] lg:su-mr-[25px] su-max-w-[655px]">
-            <h2 className="su-font-serif su-text-[50px] md:su-text-[72px] su-m-0">
+          <div className="su-relative lg:su-border-r-black-30 lg:su-border-r lg:su-border-r-solid lg:su-mr-[25px] su-max-w-[655px] lg:su-pr-[25px]">
+            <h2 className="su-font-serif su-text-[55px] md:su-text-[72px] su-m-0 su-leading-[100%] su-font-bold">
               {title}
             </h2>
 
@@ -28,7 +28,7 @@ export default function CampaignCta({ displayConfiguration, data, linkData }) {
               content={description}
               elementType="div"
               className={[
-                "su-mt-[34px] su-font-serif su-text-[20px] md:su-text-[24px] su-mb-0 lg:su-mb-[59px]",
+                "su-mt-[34px] su-font-serif su-text-[20px] md:su-text-[24px] su-mb-0 lg:su-mb-[59px] su-text-semibold",
               ].join(" ")}
             />
           </div>
