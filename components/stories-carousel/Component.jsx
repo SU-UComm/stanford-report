@@ -15,28 +15,21 @@ import Card from "../../packages/card/Card";
  * @constructor
  */
 
-export default function StoriesCarousel({
-  headingConfiguration,
-  contentConfiguration,
-  data,
-}) {
+export default function StoriesCarousel({ data, headingData }) {
+  const cards = [];
+
+  data.forEach((card) => {
+    cards.push(<Card data={card} displayDescription={false} />);
+  });
+
   return (
     <Container>
-      <LinkedHeading title={headingConfiguration.title} />
-      <Carousel
-        breakpoint="cards"
-        slides={[
-          <Card data={data[0]} displayDescription={false} />,
-          <Card data={data[1]} displayDescription={false} />,
-          <Card data={data[2]} displayDescription={false} />,
-          <Card data={data[0]} displayDescription={false} />,
-          <Card data={data[1]} displayDescription={false} />,
-          <Card data={data[2]} displayDescription={false} />,
-          <Card data={data[0]} displayDescription={false} />,
-          <Card data={data[1]} displayDescription={false} />,
-          <Card data={data[2]} displayDescription={false} />,
-        ]}
+      <LinkedHeading
+        title={headingData.title}
+        ctaText={headingData.ctaText}
+        ctaUrl={headingData.resolvedUrl}
       />
+      <Carousel variant="cards" slides={cards} />
     </Container>
   );
 }

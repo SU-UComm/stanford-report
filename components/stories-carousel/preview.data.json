@@ -5,17 +5,6 @@
     "ctaUrl": "matrix-asset://api-identifier/89422"
   },
   "contentConfiguration": {
-    "source": "Select",
-    "cards": [
-      {
-        "cardAsset": "matrix-asset://api-identifier/89422"
-      },
-      {
-        "cardAsset": "matrix-asset://api-identifier/89430"
-      },
-      {
-        "cardAsset": "matrix-asset://api-identifier/89426"
-      }
-    ]
+    "searchQuery": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&log=false&query=!null"
   }
 }

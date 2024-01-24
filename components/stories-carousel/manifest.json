@@ -38,7 +38,8 @@
             "properties": {
               "title": {
                 "title": "Heading",
-                "type": "string"
+                "type": "string",
+                "default": "Recent Stories"
               },
               "ctaText": {
                 "title": "Link text",
@@ -56,70 +57,14 @@
             "title": "Grid Content",
             "description": "The cards to display in the carousel area of the component.",
             "type": "object",
-            "required": ["source"],
+            "required": ["searchQuery"],
             "properties": {
-              "source": {
-                "title": "Content source",
-                "default": "Search",
-                "enum": ["Search", "Select"],
-                "type": "string"
+              "searchQuery": {
+                "type": "string",
+                "title": "The Funnelback search query",
+                "default": "?"
               }
-            },
-            "allOf": [
-              {
-                "if": {
-                  "required": [],
-                  "properties": {
-                    "source": {
-                      "const": "Search"
-                    }
-                  }
-                },
-                "then": {
-                  "required": ["searchQuery"],
-                  "properties": {
-                    "searchQuery": {
-                      "type": "string",
-                      "title": "The Funnelback search query",
-                      "default": "?"
-                    }
-                  }
-                }
-              },
-              {
-                "if": {
-                  "required": [],
-                  "properties": {
-                    "source": {
-                      "const": "Select"
-                    }
-                  }
-                },
-                "then": {
-                  "required": [],
-                  "properties": {
-                    "cards": {
-                      "title": "Cards",
-                      "description": "Select the assets that will be used for cards.",
-                      "type": "array",
-                      "minItems": 3,
-                      "maxItems": 10,
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "cardAsset": {
-                            "type": "string",
-                            "format": "matrix-asset-uri",
-                            "title": "Card Asset"
-                          }
-                        },
-                        "required": ["cardAsset"]
-                      }
-                    }
-                  }
-                }
-              }
-            ]
+            }
           }
         },
         "required": []
