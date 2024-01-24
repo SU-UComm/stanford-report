@@ -43,7 +43,7 @@ svg {
  * plugins.
  */
 
-/*! tailwindcss v3.3.6 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -75,9 +75,11 @@ svg {
 4. Use the user's configured `sans` font-family by default.
 5. Use the user's configured `sans` font-feature-settings by default.
 6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
 */
 
-html {
+html,
+:host {
   line-height: 1.5;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -93,6 +95,8 @@ html {
   /* 5 */
   font-variation-settings: normal;
   /* 6 */
+  -webkit-tap-highlight-color: transparent;
+  /* 7 */
 }
 
 /*
@@ -1256,6 +1260,157 @@ table thead + tbody{
 :is(.su-dark .tt-menu)::before{
   --tw-text-opacity: 1;
   color: rgb(236 9 9 / var(--tw-text-opacity));
+}
+
+/*
+* Global slider/swiper styles
+*/
+
+.component-slider-cards .swiper-slide{
+  position: relative;
+  height: auto;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+.component-slider-cards .swiper-slide::before{
+  position: absolute;
+  top: 0;
+  left: -20px;
+  height: 100%;
+  width: 2px;
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(192 192 191 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 768px){
+  .component-slider-cards .swiper-slide::before{
+    content: var(--tw-content);
+    left: -36px;
+  }
+}
+
+@media (min-width: 992px){
+  .component-slider-cards .swiper-slide::before{
+    content: var(--tw-content);
+    left: -50px;
+  }
+}
+
+.component-slider .swiper-slide:not(.swiper-slide-visible){
+  pointer-events: none;
+}
+
+.component-slider-cards{
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+@media (min-width: 768px){
+  .component-slider-cards{
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.component-slider .swiper-slide > *{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+.component-slider-peek .swiper-slide-prev > *,
+.component-slider-peek .swiper-slide-next > *{
+  pointer-events: none;
+  opacity: .27;
+}
+
+@media (min-width: 768px){
+  .component-slider-peek .swiper-slide-prev > *,
+.component-slider-peek .swiper-slide-next > *{
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+.component-slider .component-slider-pagination{
+  position: static;
+  display: flex;
+  gap: 10px;
+  text-align: left;
+}
+
+.component-slider .swiper-pagination-bullet{
+  margin-left: 0;
+  margin-right: 0;
+  height: 20px;
+  width: 20px;
+  border-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(192 192 191 / var(--tw-border-opacity));
+  background-color: transparent;
+  opacity: 1;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+.component-slider
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  --swiper-pagination-bullet-horizontal-gap: 0;
+  margin: 0 !important;
+}
+
+.component-slider .swiper-pagination-bullet:hover,
+.component-slider .swiper-pagination-bullet:active{
+  --tw-border-opacity: 1;
+  border-color: rgb(177 4 14 / var(--tw-border-opacity));
+}
+
+.component-slider .swiper-pagination-bullet.swiper-pagination-bullet-active{
+  --tw-border-opacity: 1;
+  border-color: rgb(177 4 14 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(177 4 14 / var(--tw-bg-opacity));
+}
+
+.component-slider .component-slider-controls{
+  gap: 20px;
+}
+
+@media (min-width: 768px){
+  .component-slider .component-slider-controls{
+    gap: 27px;
+  }
+}
+
+.component-slider .component-slider-prev svg{
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.component-slider .component-slider-btn{
+  position: relative;
+  top: auto;
+  bottom: 0;
+  height: 37px;
+  min-width: 37px;
+  max-width: 37px;
+  border-radius: 9999px;
+  border-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(177 4 14 / var(--tw-border-opacity));
 }
 
 /*
