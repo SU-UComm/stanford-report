@@ -1,6 +1,7 @@
 import React from "react";
 
 // import specific templates for the component
+import Card from "../../packages/card/Card";
 import { Container } from "../../packages/grids/Container";
 import { LinkedHeading } from "../../packages/headings/Heading";
 
@@ -34,6 +35,10 @@ export default function SingleFeaturedContent({
         ctaText={headingData.ctaText}
         ctaUrl={headingData.resolvedUrl}
       />
+
+      <div className="su-single-featured-content">
+        <Card data={data[0]} cardSize="featured" />
+      </div>
     </Container>
   );
 }
