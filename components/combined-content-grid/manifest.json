@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "combined-content-grid",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "namespace": "stanford-components",
   "description": "A featured content grid combined with announcements and events",
   "displayName": "Combined content grid",
@@ -148,7 +148,7 @@
           "eventsConfiguration": {
             "title": "Events Configuration",
             "type": "object",
-            "required": ["endPoint"],
+            "required": ["endPoint", "numberOfItems"],
             "properties": {
               "heading": {
                 "title": "Heading",
@@ -164,8 +164,8 @@
                 "title": "Number of Events",
                 "description": "The number of events to display",
                 "type": "number",
-                "minimum": 3,
-                "maximum": 6
+                "default": 3,
+                "enum": [3, 4, 5, 6]
               },
               "linkUrl": {
                 "title": "Events Link",
@@ -177,7 +177,7 @@
           "announcementsConfiguration": {
             "title": "Announcements Configuration",
             "type": "object",
-            "required": ["endPoint"],
+            "required": ["endPoint", "numberOfItems"],
             "properties": {
               "heading": {
                 "title": "Heading",
@@ -193,8 +193,8 @@
                 "title": "Number of Announcements",
                 "description": "The number of announcements to display",
                 "type": "number",
-                "minimum": 3,
-                "maximum": 6
+                "default": 3,
+                "enum": [3, 4, 5, 6]
               },
               "linkUrl": {
                 "title": "Announcements Link",
