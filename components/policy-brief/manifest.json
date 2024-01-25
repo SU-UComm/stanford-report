@@ -1,0 +1,129 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "policy-brief",
+  "version": "0.0.1",
+  "namespace": "stanford-components",
+  "description": "This component allows a content manager to create a policy brief that can be externally linked to a policy brief or case study.",
+  "displayName": "Policy brief",
+  "mainFunction": "main",
+  "environment": [
+    {
+      "name": "API_IDENTIFIER",
+      "required": true
+    }
+  ],
+  "icon": {
+    "id": "foundation",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "contentConfiguration": {
+            "title": "Policy brief content",
+            "description": "These options will output to the frontend of the policy brief component.",
+            "required": [],
+            "properties": {
+              "image": {
+                "title": "Image",
+                "format": "matrix-asset-uri",
+                "type": "string"
+              },
+              "type": {
+                "title": "Type",
+                "enum": ["Policy Brief", "Case Study"],
+                "default": "Policy Brief",
+                "type": "string"
+              },
+              "title": {
+                "title": "Heading",
+                "description": "The heading text",
+                "type": "string",
+                "default": "Lorem ipsum dolor"
+              },
+              "summary": {
+                "title": "Summary",
+                "type": "string",
+                "format": "multi-line"
+              },
+              "linkUrl": {
+                "title": "Link URL",
+                "type": "string"
+              },
+              "linkText": {
+                "title": "Link text",
+                "type": "string",
+                "default": "Read the full breif"
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/127837": {
+      "type": "file",
+      "path": "mocked-uris/127837.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}
