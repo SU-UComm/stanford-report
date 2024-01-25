@@ -636,15 +636,3 @@ WYSIWYG formatting styles
   height: 100%;
   position: absolute;
 }
-
-/* single featured content */
-@media screen and (min-width: 768px) {
-  .su-single-featured-content {
-    text-align: center;
-  }
-
-  .su-single-featured-content * {
-    align-items: center;
-    justify-content: center;
-  }
-}
