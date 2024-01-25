@@ -89,7 +89,7 @@ html,
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: "Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -683,7 +683,7 @@ select{
 }
 
 html{
-  font-family: "Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #2E2D29;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -996,6 +996,89 @@ table thead tr:first-of-type, table tbody tr:first-of-type{
 
 table thead + tbody{
   border-top: 1px solid #D5D5D4;
+}
+
+html{
+  color: #2E2D29;
+}
+
+body{
+  font-size: 1.8rem;
+}
+
+@media (min-width: 768px){
+  body{
+    font-size: 2.1rem;
+  }
+}
+
+@media (min-width: 1500px){
+  body{
+    font-size: 2.3rem;
+  }
+}
+
+a{
+  color: #2E2D29;
+  transition: color 0.25s ease-in-out;
+}
+
+a:hover, a:focus{
+  color: #B1040E;
+}
+
+h1{
+  font-family: "Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roman",serif;
+}
+
+h2{
+  font-family: "Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roman",serif;
+}
+
+h3{
+  font-family: "Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roman",serif;
+}
+
+h4{
+  font-family: "Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roman",serif;
+}
+
+h5{
+  font-family: "Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roman",serif;
+}
+
+h6{
+  font-family: "Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roman",serif;
+}
+
+p{
+  margin-bottom: 36px;
+}
+
+@media (min-width: 768px){
+  p{
+    margin-bottom: 40px;
+  }
+}
+
+ol{
+  margin-bottom: 36px;
+}
+
+@media (min-width: 768px){
+  ol{
+    margin-bottom: 40px;
+  }
+}
+
+ul{
+  margin-bottom: 36px;
+}
+
+@media (min-width: 768px){
+  ul{
+    margin-bottom: 40px;
+  }
 }
 
 *, ::before, ::after{
@@ -2067,6 +2150,44 @@ audio::-webkit-media-controls-panel {
 /*
 WYSIWYG formatting styles
 */
+
+.su-wysiwyg-content ul,
+.container > span ul,
+.su-page-content > div:not([data-component]) ul,
+.su-page-content > ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.su-wysiwyg-content ol,
+.container > span ol,
+.su-page-content > div:not([data-component]) ol,
+.su-page-content > ol{
+  position: relative;
+  padding-left: 30px;
+}
+
+.su-wysiwyg-content ul > li,
+.container > span ul > li,
+.su-page-content > div:not([data-component]) ul > li,
+.su-page-content > ul > li{
+  position: relative;
+  padding-left: 30px;
+}
+
+.su-wysiwyg-content ul > li::before,
+.container > span ul > li::before,
+.su-page-content > div:not([data-component]) ul > li::before,
+.su-page-content > ul > li::before{
+  position: absolute;
+  top: .6em;
+  left: 12px;
+  height: 4.5px;
+  width: 4.5px;
+  content: var(--tw-content);
+  border-radius: 9999px;
+  background-color: currentColor;
+}
 
 .container > span .bold,
 .container > span strong,
