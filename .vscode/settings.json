@@ -6,8 +6,8 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.fixAll.sortJSON": false
+    "source.fixAll": "explicit",
+    "source.fixAll.sortJSON": "never"
   },
   // Set Prettier as the default formatter
   "editor.defaultFormatter": "esbenp.prettier-vscode",

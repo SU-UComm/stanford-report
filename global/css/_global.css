@@ -639,6 +639,34 @@ audio::-webkit-media-controls-panel {
 /*
 WYSIWYG formatting styles
 */
+.su-wysiwyg-content ul,
+.container > span ul,
+.su-page-content > div:not([data-component]) ul,
+.su-page-content > ul {
+  @apply su-list-none su-pl-0;
+}
+
+.su-wysiwyg-content ol,
+.container > span ol,
+.su-page-content > div:not([data-component]) ol,
+.su-page-content > ol {
+  @apply su-relative su-pl-[30px];
+}
+
+.su-wysiwyg-content ul > li,
+.container > span ul > li,
+.su-page-content > div:not([data-component]) ul > li,
+.su-page-content > ul > li {
+  @apply su-relative su-pl-[30px] before:su-absolute before:su-top-[.6em] before:su-w-[4.5px] before:su-h-[4.5px] before:su-left-[12px] before:su-rounded-full;
+}
+
+.su-wysiwyg-content ul > li::before,
+.container > span ul > li::before,
+.su-page-content > div:not([data-component]) ul > li::before,
+.su-page-content > ul > li::before {
+  background-color: currentColor;
+}
+
 .container > span .bold,
 .container > span strong,
 .su-wysiwyg-content .bold,
