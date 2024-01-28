@@ -57,7 +57,7 @@
               "width": {
                 "title": "Width",
                 "description": "The width of the pullquote, this option will only take effect on featured story pages, not basic story pages.",
-                "enum": [ "Narrow", "Large", "Wide" ],
+                "enum": [ "Narrow", "Large" ],
                 "type": "string",
                 "default": "Narrow"
               }
