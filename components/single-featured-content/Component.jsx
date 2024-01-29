@@ -36,7 +36,7 @@ export default function SingleFeaturedContent({
         ctaUrl={headingData.resolvedUrl}
       />
 
-      <div className="su-single-featured-content">
+      <div className="su-single-featured-content md:su-px-[64px] lg:su-px-[122.5px]">
         <Card data={data[0]} cardSize="featured" />
       </div>
     </Container>
