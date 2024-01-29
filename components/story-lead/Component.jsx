@@ -116,10 +116,9 @@ export default function StoryLead({ content, variant }) {
         </span>
       )}
       <XssSafeContent
-        className={[
-          "su-wysiwyg-content su-mt-[45px]",
-          variantClasses.get(variant),
-        ].join(" ")}
+        className={["su-wysiwyg-content", variantClasses.get(variant)].join(
+          " "
+        )}
         elementType="div"
         data-test="component-story-lead"
         content={formattedContent}
