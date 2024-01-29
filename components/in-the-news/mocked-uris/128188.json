@@ -1,0 +1,48 @@
+{
+   "id":"128188",
+   "type":"data_record",
+   "type_name":"Data Record",
+   "version":"0.0.2",
+   "name":"Arnie Schwartz",
+   "short_name":"Arnie Schwartz",
+   "status":{
+      "id":2,
+      "code":"under_construction",
+      "name":"Under Construction"
+   },
+   "created":{
+      "date":"2024-01-18T18:24:29-08:00",
+      "user_id":"127812"
+   },
+   "updated":{
+      "date":"2024-01-18T18:29:00-08:00",
+      "user_id":"127812"
+   },
+   "published":{
+      "date":null,
+      "user_id":null
+   },
+   "status_changed":{
+      "date":"2024-01-18T18:24:29-08:00",
+      "user_id":"127812"
+   },
+   "urls":[
+      "https://sug-web.matrix.squiz.cloud/_media/person-assets/uat/pono/arnie-schwartz"
+   ],
+   "url":"https://sug-web.matrix.squiz.cloud/_media/person-assets/uat/pono/arnie-schwartz",
+   "attributes":{
+      "name":"Arnie Schwartz"
+   },
+   "metadata":{
+      "personEmail":[
+         "aponomarenko@squiz.net"
+      ],
+      "personHeadshot":[
+         "128101"
+      ]
+   },
+   "contents":"",
+   "additional":{
+      
+   }
+}

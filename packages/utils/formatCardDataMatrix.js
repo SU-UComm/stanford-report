@@ -25,17 +25,25 @@ function dataStringChecker(str) {
  * @param {object} thumbnail Matrix asset thumbnail object
  * @returns {object}
  */
-export default function formatCardDataMatrix({ attributes, metadata, url }) {
+export default function formatCardDataMatrix(props) {
+  const { attributes, metadata, url } = props;
   const title = attributes.name;
   const liveUrl = url;
   const description = dataChecker(metadata.teaser);
   const imageUrl = dataChecker(metadata.featuredImage)?.url;
   const imageAlt = dataChecker(metadata.featuredImage)?.attributes?.alt;
-  const taxonomy = dataStringChecker(metadata.srContentMainTopic[0].short_name);
+  const taxonomy = dataStringChecker(
+    metadata.srContentMainTopic[0]?.short_name
+  );
   const taxonomyUrl = dataStringChecker(metadata.taxonomyPageData[0]?.url);
   const type = dataChecker(metadata.srContentType)?.name;
   const videoUrl = dataChecker(metadata.featuredVideo);
   const date = dataChecker(metadata.publishedDate);
+  const source = dataChecker(metadata.storySource);
+  const sourceUrl = dataChecker(metadata.storySourceUrl);
+  const authors = dataChecker(metadata.contributorsAuthors);
+
+  // console.log(JSON.stringify(authors));
 
   return {
     title,
@@ -48,5 +56,8 @@ export default function formatCardDataMatrix({ attributes, metadata, url }) {
     type,
     videoUrl,
     date,
+    source,
+    sourceUrl,
+    authors,
   };
 }
