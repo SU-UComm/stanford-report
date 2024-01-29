@@ -34,6 +34,7 @@ export default function ImageQuote({ displayConfiguration, data }) {
           <blockquote className="story__quote-target xl:su-ml-0 su-relative su-pl-[40px] md:su-pl-[51px] lg:su-pl-[63px] su-flex su-m-0 su-items-start su-gap-[6px] su-text-black dark:su-text-white su-font-semibold su-font-semibold su-text-[24px] md:su-text-[36px] font-serif-4 xl:su-max-w-[457px] before:su-text-[73px] before:su-leading-[109.5px] lg:before:su-leading-[139.5px] lg:before:su-text-[93px] before:su-font-semibold before:su-mt-[-25px] lg:before:su-mt-[-38px] before:su-content-['“'] before:su-text-serif before:su-text-black dark:su-text-white before:su-absolute before:su-right-full lg:before:su-right-full before:su-mr-[6px] lg:before:su-mr-[13px] dark:before:su-text-white before:su-left-0 xl:before:su-left-[-18px]">
             {quote}
           </blockquote>
+
           <figcaption className="su-relative su-text-black su-pl-[40px] md:su-pl-[50px] su-basefont-21 su-mt-0 su-flex su-flex-col dark:su-text-white su-text-[16px] md:su-text-[21px] su-font-normal xl:su-flex su-flex-col xl:su-ml-[0] lg:su-pl-[63px] su-gap-[5px] md:su-gap-[6px]">
             <strong>{name}</strong> <span>{title}</span>
           </figcaption>
