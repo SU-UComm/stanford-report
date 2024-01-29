@@ -23,8 +23,8 @@ export default function InBrief({ points }) {
         className="su-border-b-[1px] su-border-black-20"
       >
         <div className="su-relative su-overflow-hidden">
-          <h2 className="su-font-serif su-inline su-bg-white dark:su-bg-black-true !su-text-[23px] su-pr-[10px] su-m-0">
-            In Brief
+          <h2 className="su-font-serif su-font-black su-inline su-bg-white dark:su-bg-black-true !su-text-[23px] su-pr-[10px] su-m-0">
+            In brief
           </h2>
           <span className="su-w-full su-bg-black-20 su-h-[1px] su-absolute su-bottom-[4px]" />
         </div>
