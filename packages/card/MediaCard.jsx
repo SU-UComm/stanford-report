@@ -26,7 +26,6 @@ import { ExternalLink } from "../links/ExternalLink";
 export default function MediaCard({
   data: { type, title, taxonomy, imageUrl, imageAlt, description, liveUrl },
 }) {
-  console.log(imageUrl);
   return title ? (
     <article
       data-test="media-card"
