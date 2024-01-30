@@ -1,8 +1,17 @@
 {
     "headingConfiguration": {
-        "title": "In the news"
+        "title": "In the news",
+        "ctaText": "View all",
+        "ctaUrl": "matrix-asset://api-identifier/89422"
     },
     "featuredContent": {
-        "featuredTeaser": "matrix-asset://api-identifier/128522"
+        "featuredTeaser": "matrix-asset://api-identifier/128603",
+        "featuredQuote": "A sanctuary, it’s a forever thing. And so we want to know not only what’s here now, but how it’s changing over time.”"
+    },
+    "supplementaryTeaserOne": {
+        "teaserOne": "matrix-asset://api-identifier/128604"
+    },
+    "supplementaryTeaserTwo": {
+        "teaserTwo": "matrix-asset://api-identifier/128605"
     }
 }

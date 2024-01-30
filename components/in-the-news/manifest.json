@@ -45,6 +45,20 @@
                   "title": "Featured teaser",
                   "format": "matrix-asset-uri",
                   "type": "string"
+              },
+              "featuredQuote": {
+                "title": "Featured Quote",
+                "type": "string"
+              }
+            }
+          },
+          "supplementaryTeaserOne": {
+            "required": [],
+            "properties": {
+              "teaserOne": {
+                "title": "Teaser One",
+                "format": "matrix-asset-uri",
+                "type": "string"
               }
             }
           }
@@ -89,9 +103,9 @@
     "locationRoot": "./dist"
   },
   "mockedUris": {
-    "matrix-asset://api-identifier/128522": {
+    "matrix-asset://api-identifier/128603": {
       "type": "file",
-      "path": "mocked-uris/128522.json"
+      "path": "mocked-uris/128603.json"
     },
     "matrix-asset://api-identifier/28216": {
       "type": "file",
@@ -101,9 +115,61 @@
       "type": "file",
       "path": "mocked-uris/127752.json"
     },
-    "matrix-asset://api-identifier/128188": {
+    "matrix-asset://api-identifier/128101": {
       "type": "file",
-      "path": "mocked-uris/128188.json"
+      "path": "mocked-uris/128101.json"
+    },
+    "matrix-asset://api-identifier/28192": {
+      "type": "file",
+      "path": "mocked-uris/28192.json"
+    },
+    "matrix-asset://api-identifier/127837": {
+      "type": "file",
+      "path": "mocked-uris/127837.json"
+    },
+    "matrix-asset://api-identifier/28394": {
+      "type": "file",
+      "path": "mocked-uris/28394.json"
+    },
+    "matrix-asset://api-identifier/124958": {
+      "type": "file",
+      "path": "mocked-uris/124958.json"
+    },
+    "matrix-asset://api-identifier/89422": {
+      "type": "file",
+      "path": "mocked-uris/89422.json"
+    },
+    "matrix-asset://api-identifier/128604": {
+      "type": "file",
+      "path": "mocked-uris/128604.json"
+    },
+    "matrix-asset://api-identifier/28207": {
+      "type": "file",
+      "path": "mocked-uris/28207.json"
+    },
+    "matrix-asset://api-identifier/28395": {
+      "type": "file",
+      "path": "mocked-uris/28395.json"
+    },
+    "matrix-asset://api-identifier/124962": {
+      "type": "file",
+      "path": "mocked-uris/124962.json"
+    },
+    "matrix-asset://api-identifier/128605": {
+      "type": "file",
+      "path": "mocked-uris/128605.json"
+    },
+    "matrix-asset://api-identifier/28193": {
+      "type": "file",
+      "path": "mocked-uris/28193.json"
+    },
+    "matrix-asset://api-identifier/28396": {
+      "type": "file",
+      "path": "mocked-uris/28396.json"
+    },
+    "matrix-asset://api-identifier/124966": {
+      "type": "file",
+      "path": "mocked-uris/124966.json"
     }
   },
   "previews": {

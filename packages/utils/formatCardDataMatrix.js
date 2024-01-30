@@ -40,12 +40,8 @@ export default function formatCardDataMatrix(props) {
   const videoUrl = dataChecker(metadata.featuredVideo);
   const date = dataChecker(metadata.publishedDate);
   const source = dataChecker(metadata.storySource);
-  const sourceUrl = dataChecker(metadata.storySourceUrl);
-  const authors = dataChecker(metadata.contributorsAuthors);
-
-  // console.log(JSON.stringify(authors));
-
-  return {
+  const author = dataChecker(metadata.contributorsAuthors);
+  const returnData = {
     title,
     liveUrl,
     description,
@@ -57,7 +53,24 @@ export default function formatCardDataMatrix(props) {
     videoUrl,
     date,
     source,
-    sourceUrl,
-    authors,
+    authorName: null,
+    authorEmail: null,
   };
+
+  if (author) {
+    const avatar = dataChecker(author?.metadata?.personHeadshot?.url);
+    const avatarAlt = dataChecker(
+      author?.metadata?.personHeadshot[0]?.attributes?.alt
+    );
+    const name = dataStringChecker(author?.name);
+
+    const email = dataStringChecker(author?.metadata?.personEmail);
+
+    returnData.imageUrl = avatar || imageUrl;
+    returnData.imageAl = avatarAlt || imageAlt;
+    returnData.authorName = name;
+    returnData.authorEmail = email;
+  }
+
+  return returnData;
 }

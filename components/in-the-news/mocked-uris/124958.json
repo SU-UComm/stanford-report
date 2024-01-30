@@ -1,0 +1,50 @@
+{
+    "id": "124958",
+    "type": "page_standard",
+    "type_name": "Standard Page",
+    "version": "0.0.1",
+    "name": "Awards, Honors & Appointments",
+    "short_name": "Awards, Honors & Appointments",
+    "status": {
+        "id": 2,
+        "code": "under_construction",
+        "name": "Under Construction"
+    },
+    "created": {
+        "date": "2023-12-10T15:22:49-08:00",
+        "user_id": "32242"
+    },
+    "updated": {
+        "date": "2023-12-10T15:22:50-08:00",
+        "user_id": "32242"
+    },
+    "published": {
+        "date": null,
+        "user_id": null
+    },
+    "status_changed": {
+        "date": "2023-12-10T15:22:49-08:00",
+        "user_id": "32242"
+    },
+    "attributes": {
+        "short_name": "Awards, Honors & Appointments",
+        "name": "Awards, Honors & Appointments"
+    },
+    "metadata": {
+        "seoTitle": [
+            "Awards, Honors &amp; Appointments"
+        ],
+        "canonicalUrl": [],
+        "seoDescription": [],
+        "seoKeywords": [],
+        "robots": [
+            "max-image-preview:large"
+        ],
+        "publishedDate": [
+            "2024-01-01 00:00:00"
+        ],
+        "modifiedDate": [
+            "2024-01-01 00:00:00"
+        ]
+    }
+}

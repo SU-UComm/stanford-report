@@ -38,7 +38,21 @@ export default async function resolveAssetUri({
       ? await resolveIDArray(taxonomyPageIds, ctx, API_IDENTIFIER)
       : false;
 
-  // console.log(JSON.stringify(promises));
+  /// ///////////////////////////////////
+  // author avatar
+
+  // do we have an author?
+  const hasAuthors = contributorsAuthors
+    ? await resolveIDArray(contributorsAuthors, ctx, API_IDENTIFIER)
+    : false;
+
+  // get the author's avatar id
+  const avatarId = hasAuthors && hasAuthors.at(0)?.metadata?.personHeadshot;
+
+  // resolve the avatar id into an acutal object
+  const avatar = avatarId
+    ? await resolveIDArray(avatarId, ctx, API_IDENTIFIER)
+    : false;
 
   // Wait for our data to be returned
   const [imageData, contentTypeData, authors] = await Promise.all(promises);
@@ -49,6 +63,11 @@ export default async function resolveAssetUri({
   assetData.metadata.srContentMainTopic = taxonomies;
   assetData.metadata.taxonomyPageData = topicpages;
   assetData.metadata.contributorsAuthors = authors;
+
+  // apply the author's avatar
+  if (assetData.metadata.contributorsAuthors && avatar) {
+    authors.at(0).metadata.personHeadshot = avatar;
+  }
 
   return assetData;
 }

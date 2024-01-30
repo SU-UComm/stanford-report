@@ -1,0 +1,139 @@
+{
+    "id": "128604",
+    "type": "link",
+    "type_name": "Link",
+    "version": "0.0.10",
+    "name": "Stanford professor on his twin diet study",
+    "short_name": "Stanford professor on his twin diet study",
+    "status": {
+        "id": 2,
+        "code": "under_construction",
+        "name": "Under Construction"
+    },
+    "created": {
+        "date": "2024-01-29T17:08:21-08:00",
+        "user_id": "32242"
+    },
+    "updated": {
+        "date": "2024-01-29T17:18:11-08:00",
+        "user_id": "32242"
+    },
+    "published": {
+        "date": null,
+        "user_id": null
+    },
+    "status_changed": {
+        "date": "2024-01-29T17:08:21-08:00",
+        "user_id": "32242"
+    },
+    "urls": [
+        "https://sug-web.matrix.squiz.cloud/report/stories/test-stories/stanford-professor-on-his-twin-diet-study2"
+    ],
+    "url": "https://sug-web.matrix.squiz.cloud/report/stories/test-stories/stanford-professor-on-his-twin-diet-study2",
+    "attributes": {
+        "link_url": "https://www.nbcbayarea.com/video/stanford-professor-on-his-twin-diet-study-2/3426023/",
+        "name": "Stanford professor on his twin diet study",
+        "link_asset_id": "",
+        "link_relation": ""
+    },
+    "metadata": {
+        "csFeaturedImageUrl": [
+            "https://sug-web.matrix.squiz.cloud/__data/assets/image/0028/127837/60-850x560.jpg"
+        ],
+        "csFeaturedImageAlt": [
+            "Top don view of a desktop with a MAC computer"
+        ],
+        "csTaxonomyName": [
+            "Campus &amp; facilities"
+        ],
+        "csTaxonomyUrl": [
+            "https://sug-web.matrix.squiz.cloud/_media/taxonomy/content-warehouse/front-end-taxonomy/content-topic/university-news2/campus-and-facilities"
+        ],
+        "csContentTypeName": [
+            "Video"
+        ],
+        "seoTitle": [
+            "Stanford professor on his twin diet study"
+        ],
+        "canonicalUrl": [],
+        "seoDescription": [],
+        "seoKeywords": [],
+        "robots": [
+            "max-image-preview:large"
+        ],
+        "publishedDate": [
+            "2024-01-21 00:00:00"
+        ],
+        "modifiedDate": [
+            "2024-01-01 00:00:00"
+        ],
+        "srAudience": [],
+        "srMessage": [],
+        "srContentType": [
+            "28207"
+        ],
+        "srFeaturedUnit": [],
+        "srContentCategory": [],
+        "srContentMainTopic": [
+            "28395"
+        ],
+        "srContentTopic": [],
+        "srContentSubtopic": [],
+        "pageType": [
+            "story"
+        ],
+        "teaser": [
+            "<p>Interview with Christopher Gardner, professor of medicine, discussing a new Netflix series about his research about eating, and enlisting the help of twins.</p>"
+        ],
+        "featuredImage": [
+            "127837"
+        ],
+        "featuredVideo": [
+            "V1lrrIIk04w"
+        ],
+        "mediaContacts": [],
+        "storySource": [
+            "NBC Bay Area"
+        ],
+        "contributorsAuthors": [
+            "127752"
+        ],
+        "contributorsProducers": [],
+        "contributorsWriters": [],
+        "contributorsEditors": [],
+        "contributorsVideographers": [],
+        "contributorsPhotographyDirector": [],
+        "contributorsMediaContacts": [],
+        "bylineAuthor": [],
+        "bylineText": [],
+        "bylineUrl": [],
+        "ogLocale": [
+            "en_US"
+        ],
+        "ogType": [
+            "article"
+        ],
+        "twitterCard": [
+            "summary_large_image"
+        ],
+        "authorId": [],
+        "authorName": [],
+        "srcOrigin": [],
+        "srcOriginType": [],
+        "srcContentSource": [],
+        "srcTitle": [],
+        "srcSummary": [],
+        "srcPublishedDate": [
+            "2023-01-01 00:00:00"
+        ],
+        "srcFeaturedImage": [],
+        "slug": [],
+        "srcKeywords": [],
+        "srcPostId": [],
+        "srcUrl": [],
+        "srcStatus": [],
+        "debugFeedUrl": [],
+        "debugPushTs": [],
+        "debugBlueprintId": []
+    }
+}
