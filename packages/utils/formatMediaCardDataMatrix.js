@@ -1,6 +1,6 @@
 export default function formatCardDataMatrix(cardData) {
   const { title } = cardData;
-  const liveUrl = cardData.linkUrl?.url;
+  const liveUrl = cardData.linkUrl;
   const description = cardData.teaserText;
   const imageUrl = cardData.image?.url;
   const imageAlt = cardData.image?.attributes?.alt;

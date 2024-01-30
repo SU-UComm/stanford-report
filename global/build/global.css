@@ -1402,6 +1402,10 @@ table thead + tbody{
   border-color: rgb(118 118 116 / var(--tw-border-opacity));
 }
 
+.component-slider .swiper-pagination-lock{
+  pointer-events: none;
+}
+
 .component-slider
   .swiper-pagination-horizontal.swiper-pagination-bullets
   .swiper-pagination-bullet {
@@ -1443,6 +1447,18 @@ table thead + tbody{
   .component-slider .component-slider-controls{
     gap: 27px;
   }
+}
+
+.component-slider .swiper-pagination-lock .component-slider-btn,
+.component-slider .component-slider-btn svg{
+  --tw-border-opacity: 1;
+  border-color: rgb(192 192 191 / var(--tw-border-opacity));
+}
+
+:is(.su-dark .component-slider .swiper-pagination-lock .component-slider-btn),:is(.su-dark 
+.component-slider .component-slider-btn svg){
+  --tw-border-opacity: 1;
+  border-color: rgb(118 118 116 / var(--tw-border-opacity));
 }
 
 .component-slider .component-slider-prev svg{

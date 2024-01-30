@@ -166,6 +166,10 @@ svg {
   @apply su-mx-0 su-transition su-opacity-100 su-w-[20px] su-h-[20px] su-bg-transparent su-border-solid su-border-2 su-border-black-30 dark:su-border-black-60;
 }
 
+.component-slider .swiper-pagination-lock {
+  @apply su-pointer-events-none;
+}
+
 .component-slider
   .swiper-pagination-horizontal.swiper-pagination-bullets
   .swiper-pagination-bullet {
@@ -184,6 +188,11 @@ svg {
 
 .component-slider .component-slider-controls {
   @apply su-gap-[20px] md:su-gap-[27px];
+}
+
+.component-slider .swiper-pagination-lock .component-slider-btn,
+.component-slider .component-slider-btn svg {
+  @apply su-border-black-30 dark:su-border-black-60;
 }
 
 .component-slider .component-slider-prev svg {

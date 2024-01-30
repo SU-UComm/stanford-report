@@ -8,14 +8,12 @@ export default async function resolveMediaCardAssetUri({ ctx, cardData }) {
 
   // Resolve the image
   promises.push(await basicAssetUri(ctx, cardData.image));
-  promises.push(await basicAssetUri(ctx, cardData.linkUrl));
 
   // Wait for our data to be returned
-  const [imageData, linkUrlData] = await Promise.all(promises);
+  const [imageData] = await Promise.all(promises);
 
   // Assign our data
   newData.image = imageData;
-  newData.linkUrl = linkUrlData;
 
   return newData;
 }

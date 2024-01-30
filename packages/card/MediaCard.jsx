@@ -67,15 +67,22 @@ export default function MediaCard({
         )}
         {title && (
           <h2 className="su-text-[35px] su-mb-[5px] su-leading[110%] md:su-text-[40px] lg:su-text-[43px]">
-            <a
-              href={liveUrl}
-              className="su-text-black su-transition dark:su-text-white hocus:su-text-digital-red dark:hocus:su-text-dark-mode-red"
-            >
-              {title}
-              <span className="su-inline-block [&>*]:su-inline-block [&>*]:su-w-[42px] [&>*]:su-h-[42px] su-ml-[-42px] su-translate-x-[42px]">
-                <ExternalArrow />
+            {liveUrl && (
+              <a
+                href={liveUrl}
+                className="su-text-black su-transition dark:su-text-white hocus:su-text-digital-red dark:hocus:su-text-dark-mode-red"
+              >
+                {title}
+                <span className="su-inline-block [&>*]:su-inline-block [&>*]:su-w-[42px] [&>*]:su-h-[42px] su-ml-[-42px] su-translate-x-[42px]">
+                  <ExternalArrow />
+                </span>
+              </a>
+            )}
+            {(liveUrl === "" || liveUrl === undefined || liveUrl === null) && (
+              <span className="su-text-black su-transition dark:su-text-white">
+                {title}
               </span>
-            </a>
+            )}
           </h2>
         )}
         {author && <div className="su-mb-[15px] md:su-mb-[19px]">{author}</div>}
