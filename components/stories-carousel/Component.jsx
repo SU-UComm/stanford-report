@@ -1,10 +1,9 @@
+/* eslint-disable no-console */
 import React from "react";
 
 // import specific templates for the component
 import { Container } from "../../packages/grids/Container";
 import { LinkedHeading } from "../../packages/headings/Heading";
-import { Carousel } from "../../packages/carousels/Carousel";
-import Card from "../../packages/card/Card";
 
 /**
  * Base component
@@ -15,13 +14,7 @@ import Card from "../../packages/card/Card";
  * @constructor
  */
 
-export default function StoriesCarousel({ data, headingData }) {
-  const cards = [];
-
-  data.forEach((card) => {
-    cards.push(<Card data={card} displayDescription={false} />);
-  });
-
+export default function StoriesCarousel({ headingData }) {
   return (
     <Container>
       <LinkedHeading
@@ -29,7 +22,9 @@ export default function StoriesCarousel({ data, headingData }) {
         ctaText={headingData.ctaText}
         ctaUrl={headingData.resolvedUrl}
       />
-      <Carousel variant="cards" slides={cards} />
+      <div id="FB-CHANGE-ME">
+        <p>LOADING</p>
+      </div>
     </Container>
   );
 }
