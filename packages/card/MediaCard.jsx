@@ -85,7 +85,14 @@ export default function MediaCard({
             )}
           </h2>
         )}
-        {author && <div className="su-mb-[15px] md:su-mb-[19px]">{author}</div>}
+        {author && (
+          <div
+            data-test="mediacard-author"
+            className="su-mb-[15px] md:su-mb-[19px]"
+          >
+            {author}
+          </div>
+        )}
         {type && (
           <div className="su-text-[18px] md:su-text-[16px] su-mb-[15px] md:su-mb-[19px] su-gap-[6px] su-text-black-70 dark:su-text-black-50 su-flex su-nowrap">
             <span
