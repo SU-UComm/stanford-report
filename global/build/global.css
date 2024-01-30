@@ -1422,6 +1422,39 @@ ul{
   }
 }
 
+.component-slider-single.component-slider-peek{
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+@media (min-width: 768px){
+  .component-slider-single.component-slider-peek{
+    margin-left: -50px;
+    margin-right: -50px;
+  }
+}
+
+@media (min-width: 992px){
+  .component-slider-single.component-slider-peek{
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.component-slider-single.component-slider-peek .swiper-slide-prev > *,
+.component-slider-single.component-slider-peek .swiper-slide-next > *{
+  pointer-events: none;
+  opacity: .27;
+}
+
+@media (min-width: 768px){
+  .component-slider-single.component-slider-peek .swiper-slide-prev > *,
+.component-slider-single.component-slider-peek .swiper-slide-next > *{
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
 .component-slider .component-slider-pagination{
   position: static;
   display: flex;
@@ -1447,6 +1480,15 @@ ul{
   transition-duration: 250ms;
 }
 
+:is(.su-dark .component-slider .swiper-pagination-bullet){
+  --tw-border-opacity: 1;
+  border-color: rgb(118 118 116 / var(--tw-border-opacity));
+}
+
+.component-slider .swiper-pagination-lock{
+  pointer-events: none;
+}
+
 .component-slider
   .swiper-pagination-horizontal.swiper-pagination-bullets
   .swiper-pagination-bullet {
@@ -1460,11 +1502,24 @@ ul{
   border-color: rgb(177 4 14 / var(--tw-border-opacity));
 }
 
+:is(.su-dark .component-slider .swiper-pagination-bullet:hover),:is(.su-dark 
+.component-slider .swiper-pagination-bullet:active){
+  --tw-border-opacity: 1;
+  border-color: rgb(236 9 9 / var(--tw-border-opacity));
+}
+
 .component-slider .swiper-pagination-bullet.swiper-pagination-bullet-active{
   --tw-border-opacity: 1;
   border-color: rgb(177 4 14 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(177 4 14 / var(--tw-bg-opacity));
+}
+
+:is(.su-dark .component-slider .swiper-pagination-bullet.swiper-pagination-bullet-active){
+  --tw-border-opacity: 1;
+  border-color: rgb(236 9 9 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 9 9 / var(--tw-bg-opacity));
 }
 
 .component-slider .component-slider-controls{
@@ -1475,6 +1530,18 @@ ul{
   .component-slider .component-slider-controls{
     gap: 27px;
   }
+}
+
+.component-slider .swiper-pagination-lock .component-slider-btn,
+.component-slider .component-slider-btn svg{
+  --tw-border-opacity: 1;
+  border-color: rgb(192 192 191 / var(--tw-border-opacity));
+}
+
+:is(.su-dark .component-slider .swiper-pagination-lock .component-slider-btn),:is(.su-dark 
+.component-slider .component-slider-btn svg){
+  --tw-border-opacity: 1;
+  border-color: rgb(118 118 116 / var(--tw-border-opacity));
 }
 
 .component-slider .component-slider-prev svg{
@@ -1494,6 +1561,44 @@ ul{
   border-style: solid;
   --tw-border-opacity: 1;
   border-color: rgb(177 4 14 / var(--tw-border-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+.component-slider .component-slider-btn:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(177 4 14 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.component-slider .component-slider-btn:focus{
+  --tw-bg-opacity: 1;
+  background-color: rgb(177 4 14 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+:is(.su-dark .component-slider .component-slider-btn){
+  --tw-border-opacity: 1;
+  border-color: rgb(236 9 9 / var(--tw-border-opacity));
+}
+
+:is(.su-dark .component-slider .component-slider-btn:hover){
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 9 9 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+:is(.su-dark .component-slider .component-slider-btn:focus){
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 9 9 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 /*
