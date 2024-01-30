@@ -55,7 +55,7 @@
     "@react-aria/overlays": "^3.19.0",
     "@squiz/xaccel-component-client-helpers": "^1.11.0-alpha.9",
     "@squiz/xaccel-component-server-helpers": "^1.11.0-alpha.9",
-    "@squiz/xaccel-xss-safe-content": "1.12.1-alpha.1",
+    "@squiz/xaccel-xss-safe-content": "1.13.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
     "ally.js": "^1.4.1",

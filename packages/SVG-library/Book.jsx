@@ -5,10 +5,14 @@ import React from "react";
  *
  * @return {JSX.Element}
  */
-export default function Book() {
-  return (
+const DEFAULT_VARIANT = "solid";
+export default function Book({ variant = DEFAULT_VARIANT }) {
+  const variantsMap = new Map();
+  variantsMap.set(
+    "solid",
     <svg
-      data-testid="svg-book"
+      aria-hidden="true"
+      data-testid="svg-book-solid"
       xmlns="http://www.w3.org/2000/svg"
       width="20"
       height="20"
@@ -24,4 +28,28 @@ export default function Book() {
       />
     </svg>
   );
+  variantsMap.set(
+    "outline",
+    <svg
+      aria-hidden="true"
+      data-testid="svg-book-outline"
+      xmlns="http://www.w3.org/2000/svg"
+      width="21"
+      height="21"
+      viewBox="0 0 21 21"
+      fill="none"
+    >
+      <path
+        d="M10.8916 5.27152V16.1049M10.8916 5.27152C9.91836 4.62493 8.59701 4.22754 7.1416 4.22754C5.68619 4.22754 4.36485 4.62493 3.3916 5.27152V16.1049C4.36485 15.4583 5.68619 15.0609 7.1416 15.0609C8.59701 15.0609 9.91836 15.4583 10.8916 16.1049M10.8916 5.27152C11.8648 4.62493 13.1862 4.22754 14.6416 4.22754C16.097 4.22754 17.4184 4.62493 18.3916 5.27152V16.1049C17.4184 15.4583 16.097 15.0609 14.6416 15.0609C13.1862 15.0609 11.8648 15.4583 10.8916 16.1049"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
+  if (variantsMap.get(variant) !== null) {
+    return variantsMap.get(variant);
+  }
+  return variantsMap.get(DEFAULT_VARIANT);
 }

@@ -8,6 +8,7 @@ export default function formatCardDataMatrix(cardData) {
     cardData.cardType === "Book" ? "Featured reading" : "Featured audio";
   const taxonomyUrl = undefined;
   const type = cardData.cardType;
+  const { author } = cardData;
   const videoUrl = undefined;
   const date = undefined;
 
@@ -20,6 +21,7 @@ export default function formatCardDataMatrix(cardData) {
     taxonomy,
     taxonomyUrl,
     type,
+    author,
     videoUrl,
     date,
   };

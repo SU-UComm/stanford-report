@@ -10,15 +10,15 @@
     },
     {
       "cardType": "Book",
-      "image": "matrix-asset://api-identifier/125801",
+      "image": "matrix-asset://api-identifier/128610",
       "title": "Example Two",
       "author": "Susannah Young-ah Gottlieb",
       "teaserText": "Lorem ipsum dolor sit amet this is a slightly shorter teaser to test how this visually displays.",
       "linkUrl": "matrix-asset://api-identifier/89422"
     },
     {
-      "cardType": "Book",
-      "image": "matrix-asset://api-identifier/125801",
+      "cardType": "Podcast",
+      "image": "matrix-asset://api-identifier/128610",
       "title": "Example Three",
       "author": "Susannah Young-ah Gottlieb",
       "teaserText": "Concentrating on W. H. Auden's work from the late 1930s, when he seeks to understand the poet's responsibility in the face of a triumphant fascism, to the late 1950s, when he discerns an irreconcilable \"divorce\" between poetry...",

@@ -44,19 +44,19 @@ export function Carousel({ slides, variant = "single" }) {
   variants.set("media", {
     breakpoints: {
       0: {
-        slidesPerView: 1.5,
-        spaceBetween: 38,
+        slidesPerView: 1.4,
+        spaceBetween: 25,
       },
       768: {
-        slidesPerView: 1.5,
-        spaceBetween: 44,
+        slidesPerView: 1.1,
+        spaceBetween: 0,
       },
       992: {
         slidesPerView: 1,
         spaceBetween: 0,
       },
     },
-    slidesPerView: 1.5,
+    slidesPerView: 1.4,
     variantClassName: "component-slider-single component-slider-peek",
   });
   variants.set("single", {

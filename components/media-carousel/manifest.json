@@ -187,6 +187,10 @@
     "matrix-asset://api-identifier/127837": {
       "type": "file",
       "path": "mocked-uris/127837.json"
+    },
+    "matrix-asset://api-identifier/128610": {
+      "type": "file",
+      "path": "mocked-uris/128610.json"
     }
   },
   "previews": {

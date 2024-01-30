@@ -11,7 +11,7 @@ export default function FeaturedReading({ variant = DEFAULT_VARIANT }) {
   variantsMap.set(
     "light",
     <svg
-      data-testid="svg-eventscalendar-light"
+      data-testid="svg-featuredreading-light"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       width="29"
@@ -41,7 +41,7 @@ export default function FeaturedReading({ variant = DEFAULT_VARIANT }) {
   variantsMap.set(
     "dark",
     <svg
-      data-testid="svg-eventscalendar-dark"
+      data-testid="svg-featuredreading-dark"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       width="29"

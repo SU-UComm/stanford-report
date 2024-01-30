@@ -34,6 +34,8 @@ export { default as Book } from "./Book";
 export { default as Event } from "./Event";
 export { default as EventsCalendar } from "./EventsCalendar";
 export { default as Feature } from "./Feature";
+export { default as FeaturedReading } from "./FeaturedReading";
+export { default as FeaturedAudio } from "./FeaturedAudio";
 export { default as EventHighlights } from "./EventHighlights";
 export { default as ExternalArrow } from "./ExternalArrow";
 export { default as Infographic } from "./Infographic";

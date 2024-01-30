@@ -24,7 +24,7 @@ export default function StoriesCarousel({ data }) {
   });
 
   return (
-    <Container>
+    <Container width="large">
       <Carousel variant="media" slides={cards} />
     </Container>
   );
