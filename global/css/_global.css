@@ -11,6 +11,10 @@
   font-display: swap;
 }
 
+.su-dark a {
+  @apply su-text-white hocus:su-text-dark-mode-red;
+}
+
 svg {
   fill: currentColor;
 }

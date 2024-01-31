@@ -1,0 +1,108 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "content-carousel",
+  "version": "0.0.3",
+  "namespace": "stanford-components",
+  "description": "A carousel of slides that contain WYSIWYG content.",
+  "displayName": "Content Carousel",
+  "mainFunction": "main",
+  "icon": {
+    "id": "feed",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "title": "Heading",
+            "description": "The heading text",
+            "type": "string"
+          },
+          "slides": {
+            "title": "Slides",
+            "description": "The content to appear in the carousel.",
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 5,
+            "items": {
+              "required": ["content"],
+              "type": "object",
+              "properties": {
+                "content": {
+                  "title": "Content",
+                  "type": "FormattedText"
+                }
+              }
+            }
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "client.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}
