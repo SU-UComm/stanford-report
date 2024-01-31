@@ -17,7 +17,13 @@ export default async (args, info) => {
     }
 
     images.forEach((image) => {
-      if (image.imageCaption) imageCaptions.push(image.imageCaption);
+      if (image.imageCaption) {
+        imageCaptions.push(image.imageCaption);
+
+        return;
+      }
+
+      imageCaptions.push("");
     });
 
     data = imageData;

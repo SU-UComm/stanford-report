@@ -1,6 +1,7 @@
 import React from "react";
 
 // import specific templates for the component
+import hash from "object-hash";
 import { Container } from "../../packages/grids/Container";
 
 /**
@@ -13,11 +14,14 @@ import { Container } from "../../packages/grids/Container";
  */
 
 export default function MulticolumnImage({ data, imageCaptions }) {
+  const numberOfCaptions = imageCaptions.filter(Boolean).length;
+
   const images = data.map((image, i) => (
     <Image
       src={image.url}
       caption={imageCaptions[i]}
-      numberOfCaptions={imageCaptions.length}
+      numberOfCaptions={numberOfCaptions}
+      key={hash.MD5(image)}
     />
   ));
 
@@ -26,7 +30,7 @@ export default function MulticolumnImage({ data, imageCaptions }) {
       <section className="su-flex su-flex-col su-gap-[8px] su-py-[50px] md:su-gap-[9px] md:su-py-[72px] lg:su-py-[121px]">
         <div className="su-flex su-gap-[20px] lg:su-gap-[48px]">{images}</div>
 
-        {imageCaptions.length === 1 && (
+        {numberOfCaptions === 1 && (
           <p className="su-text-[14px] su-text-black-70 dark:su-text-black-30 su-font-normal su-leading-[119.415%] su-text-center md:su-text-[16px]">
             {imageCaptions[0]}
           </p>
@@ -38,7 +42,7 @@ export default function MulticolumnImage({ data, imageCaptions }) {
 
 function Image({ src, caption, numberOfCaptions }) {
   return (
-    <div className="su-relative su-flex su-flex-col su-gap-[8px]">
+    <div className="su-relative su-flex su-flex-col su-gap-[8px] su-flex-1">
       <img
         src="https://picsum.photos/1200"
         className="su-h-full su-object-cover"
