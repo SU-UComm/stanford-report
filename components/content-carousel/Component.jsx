@@ -22,7 +22,7 @@ export default function ContentCarousel({ title, slides }) {
       <XssSafeContent
         data-test="content-carousel-content"
         className={[
-          "su-wysiwyg-content su-w-full su-mt-[38px]",
+          "su-wysiwyg-content su-w-full",
           "[&>*]:su-mb-[6px] [&>*]:su-text-[16px] [&>*]:su-leading-[125%] [&>*]:md:su-text-[19px] [&>*]:lg:su-text-[19px] [&>*:last-child]:su-mb-0 [&>*]:su-card-paragraph",
         ].join(" ")}
         content={slide.content}
@@ -33,10 +33,12 @@ export default function ContentCarousel({ title, slides }) {
   return (
     <Container>
       <div className="su-bg-fog-light dark:su-bg-black su-p-[20px] md:su-pt-[36px] md:su-px-[36px] md:su-pb-[26px]">
-        <div className="su-relative su-overflow-hidden">
-          <h3 className="su-relative su-text-[23px] su-leading-[119.415%] su-z-20 su-font-black su-mb-0 su-inline su-bg-fog-light dark:su-bg-black su-pr-[10px] su-m-0">
-            {title}
-          </h3>
+        <div className="su-relative su-mb-[38px] su-overflow-hidden">
+          {title && (
+            <h3 className="su-relative su-text-[23px] su-leading-[119.415%] su-z-20 su-font-black su-mb-0 su-inline su-bg-fog-light dark:su-bg-black su-pr-[10px] su-m-0">
+              {title}
+            </h3>
+          )}
           <span className="su-w-full su-bg-black-20 su-h-[1px] su-absolute su-bottom-[4px]" />
         </div>
         <Carousel variant="content" slides={cards} />
