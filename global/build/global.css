@@ -15,6 +15,21 @@
   font-display: swap;
 }
 
+.su-dark a{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.su-dark a:hover{
+  --tw-text-opacity: 1;
+  color: rgb(236 9 9 / var(--tw-text-opacity));
+}
+
+.su-dark a:focus{
+  --tw-text-opacity: 1;
+  color: rgb(236 9 9 / var(--tw-text-opacity));
+}
+
 svg {
   fill: currentColor;
 }
