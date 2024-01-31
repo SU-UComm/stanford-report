@@ -1,10 +1,10 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "base-component",
+  "name": "media-feature",
   "version": "0.0.1",
   "namespace": "stanford-components",
-  "description": "Stanford university Base component.",
-  "displayName": "Base component",
+  "description": "THe media feature component is used to feature a singluar podcast or book.",
+  "displayName": "Media Feature",
   "mainFunction": "main",
   "icon": {
     "id": "foundation",
@@ -18,16 +18,44 @@
       "name": "main",
       "entry": "./dist/server.cjs",
       "input": {
+        "required": [],
         "type": "object",
         "properties": {
-          "title": {
-            "title": "Heading",
-            "description": "The heading text",
-            "type": "string",
-            "default": "Lorem ipsum dolor"
+          "contentConfiguration": {
+            "title": "The media feature component's content.",
+            "required": [],
+            "properties": {
+              "backgroundImage": {
+                "title": "Background image",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              },
+              "image": {
+                "title": "Image",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              },
+              "title": {
+                "title": "Title",
+                "type": "string"
+              },
+              "mediaType": {
+                "title": "Media type",
+                "enum": ["Podcast", "Book"],
+                "type": "string"
+              },
+              "teaserText": {
+                "title": "Teaser text",
+                "type": "string",
+                "format": "multi-line"
+              },
+              "linkUrl": {
+                "title": "Link URL",
+                "type": "string"
+              }
+            }
           }
-        },
-        "required": []
+        }
       },
       "output": {
         "responseType": "html",
@@ -66,6 +94,20 @@
   ],
   "staticFiles": {
     "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/125800": {
+      "type": "file",
+      "path": "mocked-uris/125800.json"
+    },
+    "matrix-asset://api-identifier/125801": {
+      "type": "file",
+      "path": "mocked-uris/125801.json"
+    }
   },
   "previews": {
     "default": {
