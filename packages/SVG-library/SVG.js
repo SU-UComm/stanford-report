@@ -58,3 +58,4 @@ export { default as Close } from "./Close";
 export { default as BullseyePointer } from "./BullseyePointer";
 export { default as PieChart } from "./PieChart";
 export { default as BarGraph } from "./BarGraph";
+export { default as ShareLink } from "./ShareLink";
