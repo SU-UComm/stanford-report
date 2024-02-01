@@ -2,6 +2,7 @@ import React from "react";
 
 // import specific templates for the component
 import hash from "object-hash";
+import { number } from "prop-types";
 import { Container } from "../../packages/grids/Container";
 
 /**
@@ -15,6 +16,8 @@ import { Container } from "../../packages/grids/Container";
 
 export default function MulticolumnImage({ data, imageCaptions }) {
   const numberOfCaptions = imageCaptions.filter(Boolean).length;
+
+  console.log(numberOfCaptions);
 
   const images = data.map((image, i) => (
     <Image
@@ -32,7 +35,7 @@ export default function MulticolumnImage({ data, imageCaptions }) {
 
         {numberOfCaptions === 1 && (
           <p className="su-text-[14px] su-text-black-70 dark:su-text-black-30 su-font-normal su-leading-[119.415%] su-text-center md:su-text-[16px]">
-            {imageCaptions[0]}
+            {imageCaptions.filter(Boolean)[0]}
           </p>
         )}
       </section>
@@ -44,8 +47,9 @@ function Image({ src, caption, numberOfCaptions }) {
   return (
     <div className="su-relative su-flex su-flex-col su-gap-[8px] su-flex-1">
       <img
-        src="https://picsum.photos/1200"
-        className="su-h-full su-object-cover"
+        // src="https://picsum.photos/1200"
+        src={src}
+        className="su-object-cover"
         alt=""
       />
 
