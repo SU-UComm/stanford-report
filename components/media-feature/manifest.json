@@ -1,0 +1,127 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "media-feature",
+  "version": "0.0.1",
+  "namespace": "stanford-components",
+  "description": "THe media feature component is used to feature a singluar podcast or book.",
+  "displayName": "Media Feature",
+  "mainFunction": "main",
+  "icon": {
+    "id": "foundation",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "required": [],
+        "type": "object",
+        "properties": {
+          "contentConfiguration": {
+            "title": "The media feature component's content.",
+            "required": [],
+            "properties": {
+              "backgroundImage": {
+                "title": "Background image",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              },
+              "image": {
+                "title": "Image",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              },
+              "title": {
+                "title": "Title",
+                "type": "string"
+              },
+              "mediaType": {
+                "title": "Media type",
+                "enum": ["Podcast", "Book"],
+                "type": "string"
+              },
+              "teaserText": {
+                "title": "Teaser text",
+                "type": "string",
+                "format": "multi-line"
+              },
+              "linkUrl": {
+                "title": "Link URL",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/125800": {
+      "type": "file",
+      "path": "mocked-uris/125800.json"
+    },
+    "matrix-asset://api-identifier/125801": {
+      "type": "file",
+      "path": "mocked-uris/125801.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}
