@@ -3,6 +3,8 @@ import {
   Announcement,
   EventsCalendar,
   BullseyePointer,
+  FeaturedReading,
+  FeaturedAudio,
 } from "../SVG-library/SVG";
 
 /**
@@ -41,6 +43,14 @@ export function SidebarHeading({
     light: <BullseyePointer variant="light" />,
     dark: <BullseyePointer variant="dark" />,
   });
+  iconMap.set("Featured reading", {
+    light: <FeaturedReading variant="light" />,
+    dark: <FeaturedReading variant="dark" />,
+  });
+  iconMap.set("Featured audio", {
+    light: <FeaturedAudio variant="light" />,
+    dark: <FeaturedAudio variant="dark" />,
+  });
 
   const colorClassMap = new Map();
   colorClassMap.set(
@@ -50,6 +60,10 @@ export function SidebarHeading({
   colorClassMap.set(
     "black",
     "su-text-black dark:su-text-white su-font-bold su-text-[20px] md:su-text-[28px] su-items-start"
+  );
+  colorClassMap.set(
+    "media",
+    "su-text-black-90 dark:su-text-black-20 su-font-semibold su-text-[18px] su-items-center"
   );
 
   const Tag = headingSize;
