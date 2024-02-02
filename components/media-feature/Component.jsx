@@ -30,12 +30,14 @@ export default function MediaFeature({
     <Container width="full" paddingX={false}>
       <section className="su-py-[45px] su-px-[20px] su-flex su-justify-center su-relative md:su-py-[72px] md:su-px-[50px]">
         <div className="su-max-w-[1086px] su-flex su-flex-col su-items-center su-z-[2] su-relative su-p-[38px] before:su-content-[''] before:su-bg-foggy-light before:su-w-full before:su-h-full before:su-opacity-[0.9] before:su-absolute before:su-z-[-1] before:su-top-0 before:su-left-0 md:su-flex-row md:su-gap-[20px] md:su-items-start lg:su-p-[48px]">
-          <img
-            // src="https://picsum.photos/600/"
-            src={imageData.url}
-            alt={imageData.attributes.alt}
-            className="su-w-[224px] su-object-cover su-h-[224px] su-rounded-[8px] su-relative su-z-[2] su-flex-1 su-shadow-[0px_4px_7px_0px_rgba(0,0,0,0.15)] md:su-w-[182px] md:su-h-[182px] lg:su-w-[292px] lg:su-h-[292px]"
-          />
+          <div className="su-h-[224px] su-w-[224px] su-relative su-shrink-0 md:su-w-[182px] md:su-h-[182px] lg:su-w-[292px] lg:su-h-[292px]">
+            <img
+              // src="https://picsum.photos/600/250"
+              src={imageData.url}
+              alt={imageData.attributes.alt}
+              className="su-absolute su-object-cover su-rounded-[8px] su-z-[2] su-flex-1 su-w-full su-h-full su-shadow-[0px_4px_7px_0px_rgba(0,0,0,0.15)]"
+            />
+          </div>
 
           <div>
             <div className="su-py-[20px] su-w-full md:su-pb-[27px] md:su-pt-0">
