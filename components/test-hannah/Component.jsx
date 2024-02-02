@@ -18,12 +18,13 @@ export default function TestHannah({
   attribution,
   yearLabel,
   textPosition,
+  imageUrl,
 }) {
   return (
     <section
       className="su-relative su-bg-cover su-bg-no-repeat su-py-[100px] su-text-white before:su-bg-black-true before:su-w-full before:su-h-full before:su-top-0 before:su-left-0 before:su-absolute before:su-opacity-25 before:su-z-10"
       style={{
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url(${imageUrl})`,
       }}
     >
       <Container>

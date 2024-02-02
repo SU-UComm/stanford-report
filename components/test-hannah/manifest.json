@@ -23,7 +23,8 @@
           "image": {
             "title": "Image",
             "description": "The image appears in the background",
-            "type": "string"
+            "type": "string",
+            "format": "matrix-asset-uri"
           },
           "quote": {
             "title": "Quote",
@@ -87,6 +88,12 @@
   ],
   "staticFiles": {
     "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    }
   },
   "previews": {
     "default": {
