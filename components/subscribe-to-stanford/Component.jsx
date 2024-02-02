@@ -53,9 +53,9 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
         action={actionLink.url}
         onSubmit={submitSubscription}
       >
-        <p className="su-m-0 su-font-bold su-text-[18px] su-leading-[21.6px] dark:su-text-[white]">
+        <h2 className="su-m-0 su-font-bold su-text-[18px] su-leading-[21.6px] dark:su-text-[white] su-font-sans">
           {title}
-        </p>
+        </h2>
 
         <p className="su-m-0 su-font-normal su-text-[16px] su-leading-[20px] dark:su-text-[white]">
           {summary}
