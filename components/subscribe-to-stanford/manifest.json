@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "subscribe-to-stanford-report",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "namespace": "stanford-components",
   "description": "Allows users to be able to subscribe to Stanford Report newsletters",
   "displayName": "Subscribe to Stanford Report",
@@ -25,6 +25,17 @@
             "title": "Subscribe to Stanford Report component configuration",
             "required": [],
             "properties": {
+              "title": {
+                "title": "Title",
+                "description": "The subscription form title",
+                "type": "string"
+              },
+              "summary": {
+                "title": "Summary",
+                "description": "The summary that presents on the subscription form",
+                "type": "string",
+                "format": "multi-line"
+              },
               "actionLink": {
                 "title": "Form action",
                 "description": "Where the subscription function executes.",
