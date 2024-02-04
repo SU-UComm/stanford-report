@@ -1,6 +1,8 @@
 import cdpSetConsent from "../../packages/utils/cdpSetConsent";
 import cdpSetPersona from "../../packages/utils/cdpSetPersona";
 
+console.log("Header clientside");
+
 const staffPersona = document.getElementById("preference-faculty");
 const studentPersona = document.getElementById("preference-student");
 const revokeConsent = document.getElementById("preference-reset");
