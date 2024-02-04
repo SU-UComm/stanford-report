@@ -2184,9 +2184,9 @@ audio::-webkit-media-controls-panel {
 
 @media (min-width: 992px){
   .su-page-has-sidebar [data-component="campaign-cta"]{
-    margin-left: -20px;
-    margin-right: -20px;
-    width: auto;
+    margin-left: -60px;
+    margin-right: -60px;
+    width: calc(100% + 120px);
   }
 }
 
@@ -2212,8 +2212,8 @@ audio::-webkit-media-controls-panel {
   .su-page-has-sidebar
   [data-component="campaign-cta"]
   .su-component-campaigncta-wrap{
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
 }
 
