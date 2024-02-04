@@ -2296,6 +2296,32 @@ audio::-webkit-media-controls-panel {
   }
 }
 
+/* Image quote contextual spacing */
+
+.su-page-content > * + [data-component="image-quote"],
+.su-page-content > .container > * + [data-component="image-quote"]{
+  margin-top: 70px;
+}
+
+@media (min-width: 992px){
+  .su-page-content > * + [data-component="image-quote"],
+.su-page-content > .container > * + [data-component="image-quote"]{
+    margin-top: 171px;
+  }
+}
+
+.su-page-content > [data-component="image-quote"] + *,
+.su-page-content > .container > [data-component="image-quote"] + *{
+  margin-top: 70px;
+}
+
+@media (min-width: 992px){
+  .su-page-content > [data-component="image-quote"] + *,
+.su-page-content > .container > [data-component="image-quote"] + *{
+    margin-top: 121px;
+  }
+}
+
 .su-page-content
   > [data-component="featured-content"]
   + [data-component="multicolumn-listing"]
