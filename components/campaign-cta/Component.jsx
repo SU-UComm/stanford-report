@@ -29,7 +29,7 @@ export default function CampaignCta({ displayConfiguration, data, linkData }) {
               elementType="div"
               className={[
                 "su-mt-[34px] su-font-serif su-text-[20px] md:su-text-[24px] su-mb-0 md:su-mb-[59px] su-text-semibold md:su-mt-[61px]",
-                "su-font-semibold su-leading-[130.245%] lg:su-leading-[100%]",
+                "su-font-semibold su-leading-[130.245%]",
               ].join(" ")}
             />
           </div>
