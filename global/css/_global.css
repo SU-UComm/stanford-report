@@ -613,13 +613,13 @@ audio::-webkit-media-controls-panel {
 
 /* Campaign CTA on basic story pages */
 .su-page-has-sidebar [data-component="campaign-cta"] {
-  @apply su-mx-[-20px] md:su-mx-[calc(-7.65%+50px)] lg:su-mx-[-20px] md:su-w-[calc(121.5%+100px)] md:su-ml-[calc(calc(-10.75%-50px))] lg:su-w-auto;
+  @apply su-mx-[-20px] md:su-mx-[calc(-7.65%+50px)] lg:su-mx-[-60px] md:su-w-[calc(121.5%+100px)] md:su-ml-[calc(calc(-10.75%-50px))] lg:su-w-[calc(100%+120px)];
 }
 
 .su-page-has-sidebar
   [data-component="campaign-cta"]
   .su-component-campaigncta-wrap {
-  @apply su-w-full su-px-[20px] md:su-px-[50px] lg:su-px-[20px] md:su-flex-col;
+  @apply su-w-full su-px-[20px] md:su-px-[50px] lg:su-px-[60px] md:su-flex-col;
 }
 
 .su-page-has-sidebar
