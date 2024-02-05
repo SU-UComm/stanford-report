@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import smaller header components
 import TopBar from "./Components/TopBar";
 import MobileNav from "./Components/MobileNav";
@@ -22,10 +22,11 @@ import CloseIcon from "../../packages/SVG-library/Close";
  */
 
 export default function Header({ site, navigation, search }) {
+  const [audience, setAudience] = useState("anonymous");
   return (
     <header className="report-header su-pb-[139px] md:su-pb-[166px] lg:su-pb-[189px]">
       <div className="su-shadow su-fixed su-top-0 su-left-0 su-w-full su-bg-white dark:su-bg-black-true su-z-50">
-        <TopBar url={site.url} logo={site.logo} />
+        <TopBar url={site.url} logo={site.logoTopBar} />
 
         <div className="su-w-full su-max-w-[1412px] su-px-[20px] md:su-px-[49px] su-mx-auto">
           <div className="report-header__main su-flex su-items-center su-justify-between su-gap-[20px]">
