@@ -602,13 +602,52 @@ audio::-webkit-media-controls-panel {
   @apply su-mb-[45px] md:su-mb-[40px] lg:su-mb-[51px];
 }
 
+/* Campaign CTA */
+.su-page-content > [data-component="campaign-cta"]:first-child {
+  @apply su-mt-0;
+}
+
+.su-page-content > [data-component="campaign-cta"]:last-child {
+  @apply su-mb-0;
+}
+
+/* Campaign CTA on basic story pages */
+.su-page-has-sidebar [data-component="campaign-cta"] {
+  @apply su-mx-[-20px] md:su-mx-[calc(-7.65%+50px)] lg:su-mx-[-60px] md:su-w-[calc(121.5%+100px)] md:su-ml-[calc(calc(-10.75%-50px))] lg:su-w-[calc(100%+120px)];
+}
+
+.su-page-has-sidebar
+  [data-component="campaign-cta"]
+  .su-component-campaigncta-wrap {
+  @apply su-w-full su-px-[20px] md:su-px-[50px] lg:su-px-[60px] md:su-flex-col;
+}
+
+.su-page-has-sidebar
+  [data-component="campaign-cta"]
+  .su-component-campaigncta-content {
+  @apply md:su-border-none md:su-mr-0;
+}
+
 .su-page-content > * + [data-component="featured-content"],
 .su-page-content > * + [data-component="multicolumn-listing"],
 .su-page-content > * + [data-component="combined-content-grid"],
+.su-page-content > * + [data-component="campaign-cta"],
 .su-page-content > .container > * + [data-component="featured-content"],
 .su-page-content > .container > * + [data-component="multicolumn-listing"],
-.su-page-content > .container > * + [data-component="combined-content-grid"] {
+.su-page-content > .container > * + [data-component="combined-content-grid"],
+.su-page-content > .container > * + [data-component="campaign-cta"] {
   @apply su-mt-[100px] lg:su-mt-[130px];
+}
+
+/* Image quote contextual spacing */
+.su-page-content > * + [data-component="image-quote"],
+.su-page-content > .container > * + [data-component="image-quote"] {
+  @apply su-mt-[70px] lg:su-mt-[171px];
+}
+
+.su-page-content > [data-component="image-quote"] + *,
+.su-page-content > .container > [data-component="image-quote"] + * {
+  @apply su-mt-[70px] lg:su-mt-[121px];
 }
 
 .su-page-content
