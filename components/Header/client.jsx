@@ -1,26 +1,14 @@
-/* import cdpSetConsent from "../../packages/utils/cdpSetConsent";
-import cdpSetPersona from "../../packages/utils/cdpSetPersona";
+import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
+
+import Component from "./Component";
+
+import _preferencesSettings from "./scripts/preferenceSettings";
+import ReportHeader from "./scripts/reportHeader";
 
 console.log("Header clientside");
 
-const staffPersona = document.getElementById("preference-faculty");
-const studentPersona = document.getElementById("preference-student");
-const revokeConsent = document.getElementById("preference-reset");
+const headerDom = document.querySelector(".report-header");
+const initHeader = new ReportHeader(headerDom);
+_preferencesSettings();
 
-async function setPersona(value) {
-  await cdpSetConsent(1);
-  await cdpSetPersona("persona-selector", value);
-}
-
-staffPersona.addEventListener("click", () => {
-  setPersona("staff");
-});
-
-studentPersona.addEventListener("click", () => {
-  setPersona("student");
-});
-
-revokeConsent.addEventListener("click", () => {
-  cdpSetConsent(0);
-});
-*/
+hydrateComponent({ Component, componentName: "header-component" });

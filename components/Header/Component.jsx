@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import smaller header components
 import TopBar from "./Components/TopBar";
 import MobileNav from "./Components/MobileNav";
@@ -6,6 +6,7 @@ import PreferencesTray from "./Components/PreferencesTray";
 import Search from "./Components/Search";
 import MainNav from "./Components/MainNav";
 import SiteLogo from "./Components/SiteLogo";
+import getCookie from "../../packages/utils/cookieGet";
 
 // SVG icons
 import BurgerBar from "../../packages/SVG-library/BurgerBar";
@@ -22,7 +23,19 @@ import CloseIcon from "../../packages/SVG-library/Close";
  */
 
 export default function Header({ site, navigation, search }) {
-  const [audience, setAudience] = useState("anonymous");
+  const [audience, setAudience] = useState(null);
+
+  const audienceCookie = getCookie("preferences_personalisation");
+
+  useEffect(
+    () => {
+      setAudience(audienceCookie);
+    },
+    [
+      /* Dependency array */
+    ]
+  );
+
   return (
     <header className="report-header su-pb-[139px] md:su-pb-[166px] lg:su-pb-[189px]">
       <div className="su-shadow su-fixed su-top-0 su-left-0 su-w-full su-bg-white dark:su-bg-black-true su-z-50">
@@ -53,7 +66,12 @@ export default function Header({ site, navigation, search }) {
                 </span>
               </button>
 
-              <MobileNav site={site} navigation={navigation} search={search} />
+              <MobileNav
+                site={site}
+                navigation={navigation}
+                search={search}
+                audience={audience}
+              />
 
               <button
                 type="button"

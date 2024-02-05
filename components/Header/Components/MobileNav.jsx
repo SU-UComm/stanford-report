@@ -1,4 +1,142 @@
 import React from "react";
+import { decode } from "html-entities";
+
+/**
+ * MajorLinks
+ * @returns {JSX.Element}
+ */
+function MajorLinks({ items }) {
+  return (
+    items &&
+    items.length > 0 && (
+      <ul className="su-w-full su-order-2 su-list-none su-flex su-flex-wrap su-gap-[1px] md:su-gap-[19px] su-pl-0 su-ml-0">
+        {items.map((item) => {
+          const title = decode(item.asset_name);
+          return (
+            <li className="su-mb-0 su-w-full" key={item.asset_assetid}>
+              <a
+                className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[20px] md:su-text-[26px] su-leading-[31px] focus:su-text-digital-red hover:su-text-digital-red su-font-bold su-no-underline su-transition"
+                href={item.asset_url}
+              >
+                {title}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    )
+  );
+}
+/**
+ * MinorLinks
+ * @returns {JSX.Element}
+ */
+function MinorLinks({ items }) {
+  return (
+    items &&
+    items.length > 0 && (
+      <ul className="su-w-full su-order-2 su-list-none su-pl-0 su-ml-0">
+        {items.map((item, index, arr) => {
+          const title = decode(item.asset_name);
+          return (
+            <li
+              className={`${
+                arr.length - 1 === index ? "su-mb-0" : "su-mb-[6px]"
+              } su-w-full su-leading-[21px]`}
+              key={item.asset_assetid}
+            >
+              <a
+                className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[16px] md:su-text-[18px] focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
+                href={item.asset_url}
+              >
+                {title}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    )
+  );
+}
+/**
+ * ContactLinks
+ * @returns {JSX.Element}
+ */
+function ContactLinks({ items }) {
+  return (
+    items &&
+    items.length > 0 && (
+      <ul className="su-w-full su-order-2 su-list-none su-pl-0 su-ml-0">
+        {items.map((item, index, arr) => {
+          const title = decode(item.asset_name);
+          return (
+            <li
+              className={`${
+                arr.length - 1 === index ? "su-mb-0" : "su-mb-[6px]"
+              } su-w-full su-leading-[16px]`}
+              key={item.asset_assetid}
+            >
+              <a
+                className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[14px] focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
+                href={item.asset_url}
+              >
+                {title}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    )
+  );
+}
+/**
+ * ExternalLinks
+ * @returns {JSX.Element}
+ */
+function ExternalLinks({ items }) {
+  return (
+    items &&
+    items.length > 0 && (
+      <ul className="su-w-full su-order-2 su-list-none su-pl-0 su-ml-0">
+        {items.map((item, index, arr) => {
+          const title = decode(item.asset_name);
+          return (
+            <li
+              className={`${
+                arr.length - 1 === index ? "su-mb-0" : "su-mb-[3px]"
+              } su-w-full su-leading-[16px]`}
+              key={item.asset_assetid}
+            >
+              <a
+                target="_blank"
+                className="su-flex su-items-center su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[14px] focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
+                href={item.asset_url}
+                rel="noreferrer"
+              >
+                <span className="su-mr-2">{title}</span>
+                <svg
+                  className="su-stroke-digital-red dark:su-stroke-dark-mode-red"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="23"
+                  height="23"
+                  viewBox="0 0 23 23"
+                  fill="none"
+                >
+                  <path
+                    d="M8.95664 7.07109L15.5563 7.07109M15.5563 7.07109L15.5563 13.6708M15.5563 7.07109L7.07102 15.5564"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    )
+  );
+}
 
 /**
  * Mobile Nav
@@ -6,102 +144,21 @@ import React from "react";
  * @returns {JSX.Element}
  * @constructor
  */
-
-const generateMajorLinks = (items) => {
-  return items.map((item) => {
-    return (
-      <li className="su-mb-0 su-w-full" key={item.asset_assetid}>
-        <a
-          className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[20px] md:su-text-[26px] su-leading-[31px] focus:su-text-digital-red hover:su-text-digital-red su-font-bold su-no-underline su-transition"
-          href={item.asset_url}
-        >
-          {item.asset_name}
-        </a>
-      </li>
-    );
-  });
-};
-
-const generateMinorLinks = (items) => {
-  return items.map((item, index, arr) => {
-    return (
-      <li
-        className={`${
-          arr.length - 1 === index ? "su-mb-0" : "su-mb-[6px]"
-        } su-w-full su-leading-[21px]`}
-        key={item.asset_assetid}
-      >
-        <a
-          className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[16px] md:su-text-[18px] focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
-          href={item.asset_url}
-        >
-          {item.asset_name}
-        </a>
-      </li>
-    );
-  });
-};
-
-const generateContactLinks = (items) => {
-  return items.map((item, index, arr) => {
-    return (
-      <li
-        className={`${
-          arr.length - 1 === index ? "su-mb-0" : "su-mb-[6px]"
-        } su-w-full su-leading-[16px]`}
-        key={item.asset_assetid}
-      >
-        <a
-          className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[14px] focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
-          href={item.asset_url}
-        >
-          {item.asset_name}
-        </a>
-      </li>
-    );
-  });
-};
-
-const generateExternalLinks = (items) => {
-  return items.map((item, index, arr) => {
-    return (
-      <li
-        className={`${
-          arr.length - 1 === index ? "su-mb-0" : "su-mb-[3px]"
-        } su-w-full su-leading-[16px]`}
-        key={item.asset_assetid}
-      >
-        <a
-          target="_blank"
-          className="su-flex su-items-center su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[14px] focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
-          href={item.asset_url}
-          rel="noreferrer"
-        >
-          <span className="su-mr-2">{item.asset_name}</span>
-          <svg
-            className="su-stroke-digital-red dark:su-stroke-dark-mode-red"
-            xmlns="http://www.w3.org/2000/svg"
-            width="23"
-            height="23"
-            viewBox="0 0 23 23"
-            fill="none"
-          >
-            <path
-              d="M8.95664 7.07109L15.5563 7.07109M15.5563 7.07109L15.5563 13.6708M15.5563 7.07109L7.07102 15.5564"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </a>
-      </li>
-    );
-  });
-};
-
-export default function MobileNav({ navigation, search }) {
+export default function MobileNav({ navigation, search, audience }) {
   const { major, minor, contacts, external } = navigation;
   const { endpoint, collection, profile } = search;
+
+  let externalData = [];
+  switch (audience) {
+    case "faculty":
+      externalData = external.staff;
+      break;
+    case "student":
+      externalData = external.student;
+      break;
+    default:
+      externalData = external.anonymous;
+  }
 
   return (
     <nav
@@ -165,36 +222,28 @@ export default function MobileNav({ navigation, search }) {
           />
         </form>
 
-        <ul className="su-w-full su-order-2 su-list-none su-flex su-flex-wrap su-gap-[1px] md:su-gap-[19px] su-pl-0 su-ml-0">
-          {generateMajorLinks(major)}
-        </ul>
+        <MajorLinks items={major} />
 
         <hr
           aria-hidden="true"
           className="su-block su-order-2 su-my-[15px] md:su-my-[27px] su-w-full su-bg-gradient-light-red-h su-h-[4px] su-border-none md:su-h-[3px]"
         />
 
-        <ul className="su-w-full su-order-2 su-list-none su-pl-0 su-ml-0">
-          {generateMinorLinks(minor)}
-        </ul>
+        <MinorLinks items={minor} />
 
         <hr
           aria-hidden="true"
           className="su-block su-order-2 su-my-[15px] md:su-my-[27px] su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-[2px] md:su-h-[3px]"
         />
 
-        <ul className="su-w-full su-order-2 su-list-none su-pl-0 su-ml-0">
-          {generateContactLinks(contacts)}
-        </ul>
+        <ContactLinks items={contacts} />
 
         <hr
           aria-hidden="true"
           className="su-block su-order-2 su-my-[15px] md:su-my-[27px] su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-[2px] md:su-h-[3px]"
         />
 
-        <ul className="su-w-full su-order-2 su-list-none su-pl-0 su-ml-0">
-          {generateExternalLinks(external.anonymous)}
-        </ul>
+        <ExternalLinks items={externalData} />
 
         <button
           type="button"
