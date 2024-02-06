@@ -1,5 +1,3 @@
-import React from "react";
-// import { hydrate } from "react-dom";
 import { hydrateRoot } from "react-dom/client";
 /**
  * Function to hydrate a component on the client
