@@ -25,6 +25,6 @@ export default async function setPersona(id, val) {
     throw new Error(error);
   });
 
-  const resp = await call.json();
+  const resp = await call.text();
   return resp;
 }

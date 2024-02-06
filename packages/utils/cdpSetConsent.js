@@ -21,6 +21,6 @@ export default async function setConsent(consented) {
     throw new Error(error);
   });
 
-  const resp = await call.json();
+  const resp = await call.text();
   return resp;
 }
