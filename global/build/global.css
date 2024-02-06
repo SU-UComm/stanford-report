@@ -1963,8 +1963,9 @@ audio::-webkit-media-controls-panel {
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > .container
-  > *:first-child{
-  margin-top: 38px;
+  > *:first-child,
+.su-page.su-page-has-sidebar .su-page-wrap{
+  margin-top: 4.5rem;
 }
 
 @media (min-width: 768px){
@@ -1974,54 +1975,50 @@ audio::-webkit-media-controls-panel {
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > .container
-  > *:first-child{
-    margin-top: 47px;
+  > *:first-child,
+.su-page.su-page-has-sidebar .su-page-wrap{
+    margin-top: 9rem;
   }
 }
 
-@media (min-width: 992px){
+@media (min-width: 1500px){
   .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > *:not(.container):first-child,
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > .container
-  > *:first-child{
-    margin-top: 90px;
+  > *:first-child,
+.su-page.su-page-has-sidebar .su-page-wrap{
+    margin-top: 9.5rem;
   }
 }
 
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > *:not(.container):last-child,
-.su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > .container
-  > *:last-child{
-  margin-bottom: 100px;
+.su-page:not(.su-page-has-sidebar) .su-page-content > .container > *:last-child,
+.su-page.su-page-has-sidebar .su-page-wrap{
+  margin-bottom: 7rem;
 }
 
 @media (min-width: 768px){
   .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > *:not(.container):last-child,
-.su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > .container
-  > *:last-child{
-    margin-bottom: 110px;
+.su-page:not(.su-page-has-sidebar) .su-page-content > .container > *:last-child,
+.su-page.su-page-has-sidebar .su-page-wrap{
+    margin-bottom: 16.2rem;
   }
 }
 
-@media (min-width: 992px){
+@media (min-width: 1500px){
   .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > *:not(.container):last-child,
-.su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > .container
-  > *:last-child{
-    margin-bottom: 130px;
+.su-page:not(.su-page-has-sidebar) .su-page-content > .container > *:last-child,
+.su-page.su-page-has-sidebar .su-page-wrap{
+    margin-bottom: 17.1rem;
   }
 }
 
@@ -2038,22 +2035,6 @@ audio::-webkit-media-controls-panel {
 @media (min-width: 992px){
   .su-page-has-sidebar .su-page-hero{
     padding-top: 90px;
-  }
-}
-
-.su-page-has-sidebar > *:last-child{
-  margin-bottom: 100px;
-}
-
-@media (min-width: 768px){
-  .su-page-has-sidebar > *:last-child{
-    margin-bottom: 110px;
-  }
-}
-
-@media (min-width: 992px){
-  .su-page-has-sidebar > *:last-child{
-    margin-bottom: 130px;
   }
 }
 
