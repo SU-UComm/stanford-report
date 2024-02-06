@@ -329,7 +329,7 @@ export default function PreferencesTray() {
                 </legend>
                 <input
                   className="su-opacity-0 su-absolute su-peer/light"
-                  checked
+                  defaultChecked
                   type="radio"
                   name="ui-theme"
                   id="light-theme"

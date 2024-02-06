@@ -32,7 +32,7 @@ export default function Search({ endpoint, collection, profile }) {
             type="search"
             className="su-w-full su-h-[50px] dark:su-text-black su-rounded-full su-text-[20px] su-leading-[26px] su-py-[10px] su-pl-[15px] su-pr-[120px] su-bg-white su-border-2 su-border-black-30 hover:su-border-black-40 focus:su-border-digital-blue"
             name="query"
-            value=""
+            defaultValue=""
             placeholder="Search"
             id="desktop_search_query"
             required

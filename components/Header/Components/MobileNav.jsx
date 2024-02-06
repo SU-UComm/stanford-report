@@ -184,7 +184,7 @@ export default function MobileNav({ navigation, search, audience }) {
             type="search"
             className="su-w-full su-h-[50px] su-rounded-full dark:su-text-black su-text-[20px] su-leading-[26px] su-py-[10px] su-pl-[15px] su-pr-[120px] su-bg-white su-border-2 su-border-black-30 hover:su-border-black-40 focus:su-border-digital-blue"
             name="query"
-            value=""
+            defaultValue=""
             placeholder="Search"
             id="mobile_search_query"
             required

@@ -33,7 +33,7 @@ export default function MainNav({ major }) {
       aria-label="Secondary"
       className="report-header__nav su-hidden md:su-block su-w-full before:su-h-[2px] before:su-block before:su-w-full before:su-bg-black-10 before:su-mx-auto before:su-w-full dark:before:su-bg-black lg:before:su-max-w-[858px]"
     >
-      <ul className="su-list-none su-pl-0 su-ml-0 su-flex su-justify-center su-gap-[60px]">
+      <ul className="su-list-none su-pl-0 su-ml-0 su-flex su-justify-center su-gap-[60px] su-mb-0">
         {generateItems(major)}
       </ul>
     </nav>

@@ -1,5 +1,4 @@
-import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
-
+import hydrateComponent from "../../packages/utils/hydrate-component";
 import Component from "./Component";
 
 import _preferencesSettings from "./scripts/preferenceSettings";
