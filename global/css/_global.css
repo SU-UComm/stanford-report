@@ -602,6 +602,15 @@ audio::-webkit-media-controls-panel {
   @apply su-mb-[45px] md:su-mb-[40px] lg:su-mb-[51px];
 }
 
+/* Content carousel */
+.su-page:not(.su-page-has-sidebar)
+  .su-page-content
+  [data-component="content-carousel"]
+  .su-component-container
+  > .su-bg-fog-light {
+  @apply md:su-mx-[-61px] md:su-px-[61px];
+}
+
 /* Campaign CTA */
 .su-page-content > [data-component="campaign-cta"]:first-child {
   @apply su-mt-0;

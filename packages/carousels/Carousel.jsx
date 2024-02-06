@@ -105,41 +105,43 @@ export function Carousel({ slides, variant = "single" }) {
         loop
         breakpoints={variants.get(variant).breakpoints}
         modules={[Pagination]}
-        className={[variants.get(variant).variantClassName].join(" ")}
+        className={["", variants.get(variant).variantClassName].join(" ")}
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide}>{slide}</SwiperSlide>
         ))}
       </Swiper>
-      <div className="component-slider-controls su-flex su-mt-[45px] lg:su-mt-[48px] su-items-center su-content-center">
-        <div className="component-slider-pagination su-mr-full" />
-        <button
-          className="component-slider-btn component-slider-prev"
-          type="button"
-          onClick={() => swiperRef.current?.slidePrev()}
-        >
-          <span className="sr-only">Previous</span>
-          <span
-            aria-hidden="true"
-            className="su-absolute su-top-[50%] su-left-[50%] su-translate-y-[-50%] su-translate-x-[-50%] su-inline-block"
+      {slides.length > 1 && (
+        <div className="component-slider-controls su-flex su-mt-[45px] lg:su-mt-[48px] su-items-center su-content-center">
+          <div className="component-slider-pagination su-mr-full" />
+          <button
+            className="component-slider-btn component-slider-prev"
+            type="button"
+            onClick={() => swiperRef.current?.slidePrev()}
           >
-            <ChevronRight />
-          </span>
-        </button>
-        <button
-          className="component-slider-btn component-slider-next"
-          type="button"
-          onClick={() => swiperRef.current?.slideNext()}
-        >
-          <span className="sr-only">Next</span>
-          <span
-            aria-hidden="true"
-            className="su-absolute su-top-[50%] su-left-[50%] su-translate-y-[-50%] su-translate-x-[-50%] su-inline-block"
+            <span className="sr-only">Previous</span>
+            <span
+              aria-hidden="true"
+              className="su-absolute su-top-[50%] su-left-[50%] su-translate-y-[-50%] su-translate-x-[-50%] su-inline-block"
+            >
+              <ChevronRight />
+            </span>
+          </button>
+          <button
+            className="component-slider-btn component-slider-next"
+            type="button"
+            onClick={() => swiperRef.current?.slideNext()}
           >
-            <ChevronRight />
-          </span>
-        </button>
-      </div>
+            <span className="sr-only">Next</span>
+            <span
+              aria-hidden="true"
+              className="su-absolute su-top-[50%] su-left-[50%] su-translate-y-[-50%] su-translate-x-[-50%] su-inline-block"
+            >
+              <ChevronRight />
+            </span>
+          </button>
+        </div>
+      )}
     </div>
   ) : (
     ""
