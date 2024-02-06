@@ -1,6 +1,6 @@
 import React from "react";
-import { hydrate } from "react-dom";
-
+// import { hydrate } from "react-dom";
+import { hydrateRoot } from "react-dom/client";
 /**
  * Function to hydrate a component on the client
  * @param {{ Component: (any) => JSX.Element, componentName: string }} param0 - The component to hydrate and the name of the component
@@ -60,12 +60,11 @@ export default function hydrateComponent(_ref) {
       // Get the props from the data attribute
       const props = JSON.parse(element.dataset.hydrationProps);
 
-      // Hydrate the component
-      hydrate(
-        /* #__PURE__ */ _jsx(Component, {
+      hydrateRoot(
+        element,
+        _jsx(Component, {
           ...props,
-        }),
-        element
+        })
       );
 
       // Remove the data attribute (so that the component is not hydrated multiple times)

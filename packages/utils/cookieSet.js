@@ -27,7 +27,6 @@ export default function setCookie(
   path = "/",
   win = _win
 ) {
-  console.log("setCookie", value);
   if (!hasDocument(win)) {
     return;
   }
@@ -45,7 +44,7 @@ export default function setCookie(
     expires = `; expires=${date.toUTCString()}`;
   }
 
-  if (secure == true) {
+  if (secure === true) {
     document.cookie = `${name}=${value}${expires}; path=${path}; domain=${hostname}; secure=${secure};`;
   } else {
     document.cookie = `${name}=${value}${expires}; path=${path}; domain=${hostname};`;

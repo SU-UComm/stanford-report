@@ -5,10 +5,7 @@ import FetchAdapter from "../../packages/utils/fetchAdapter";
 export default async (args, info) => {
   let siteData = null;
   const adapter = new FetchAdapter();
-  // adapter.url =
-  // "https://sug-web.matrix.squiz.cloud/_designs/component-service/data/header.json";
-  adapter.url =
-    "https://sug-web.matrix.squiz.cloud/__data/assets/js_file/0021/128910/temp-header.js";
+  adapter.url = args.dataUrl;
 
   siteData = await adapter.fetch();
   const headerArgs = {
