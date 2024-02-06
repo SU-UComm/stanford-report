@@ -7,6 +7,7 @@ import Search from "./Components/Search";
 import MainNav from "./Components/MainNav";
 import SiteLogo from "./Components/SiteLogo";
 import getCookie from "../../packages/utils/cookieGet";
+import CurrentStoryHeadline from "./Components/currentStoryHeadline";
 
 // SVG icons
 import BurgerBar from "../../packages/SVG-library/BurgerBar";
@@ -24,20 +25,31 @@ import CloseIcon from "../../packages/SVG-library/Close";
 
 export default function Header({ site, navigation, search }) {
   const [audience, setAudience] = useState(null);
+  const [pageControls, setPageControls] = useState(null);
 
   const audienceCookie = getCookie("preferences_personalisation");
+  const isClient = typeof window !== "undefined";
 
-  useEffect(
-    () => {
+  const pageData =
+    isClient && typeof window.pageController !== "undefined"
+      ? window.pageController
+      : null;
+
+  useEffect(() => {
+    if (audienceCookie) {
       setAudience(audienceCookie);
-    },
-    [
-      /* Dependency array */
-    ]
-  );
-
+    }
+    if (pageData) {
+      setPageControls(pageData);
+    }
+  }, [audience, pageControls]);
+  // report-header--story
   return (
-    <header className="report-header su-pb-[139px] md:su-pb-[166px] lg:su-pb-[189px]">
+    <header
+      className={`${
+        pageControls?.isStory ? "report-header--story" : ""
+      } report-header su-pb-[139px] md:su-pb-[166px] lg:su-pb-[189px]`}
+    >
       <div className="su-shadow su-fixed su-top-0 su-left-0 su-w-full su-bg-white dark:su-bg-black-true su-z-50">
         <TopBar url={site.url} logo={site.logoTopBar} />
 
@@ -115,9 +127,18 @@ export default function Header({ site, navigation, search }) {
               logoLight={site.logoLight}
             />
 
+            {pageControls?.isStory ? (
+              <CurrentStoryHeadline title={pageControls.title} />
+            ) : (
+              ""
+            )}
+
             <PreferencesTray />
           </div>
-          <MainNav major={navigation.major} />
+          <MainNav
+            major={navigation.major}
+            currentPage={pageControls?.id ? pageControls.id : null}
+          />
         </div>
       </div>
     </header>
