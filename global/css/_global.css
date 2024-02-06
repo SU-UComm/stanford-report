@@ -506,26 +506,21 @@ audio::-webkit-media-controls-panel {
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > .container
-  > *:first-child {
-  @apply su-mt-[38px] md:su-mt-[47px] lg:su-mt-[90px];
+  > *:first-child,
+.su-page.su-page-has-sidebar .su-page-wrap {
+  @apply su-rs-mt-6;
 }
 
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > *:not(.container):last-child,
-.su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > .container
-  > *:last-child {
-  @apply su-mb-[100px] md:su-mb-[110px] lg:su-mb-[130px];
+.su-page:not(.su-page-has-sidebar) .su-page-content > .container > *:last-child,
+.su-page.su-page-has-sidebar .su-page-wrap {
+  @apply su-rs-mb-9;
 }
 
 .su-page-has-sidebar .su-page-hero {
   @apply su-pt-[32px] md:su-pt-[45px] lg:su-pt-[90px];
-}
-
-.su-page-has-sidebar > *:last-child {
-  @apply su-mb-[100px] md:su-mb-[110px] lg:su-mb-[130px];
 }
 
 .su-page-has-sidebar .su-page-wrap {
