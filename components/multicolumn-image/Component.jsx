@@ -17,8 +17,6 @@ import { Container } from "../../packages/grids/Container";
 export default function MulticolumnImage({ data, imageCaptions }) {
   const numberOfCaptions = imageCaptions.filter(Boolean).length;
 
-  console.log(numberOfCaptions);
-
   const images = data.map((image, i) => (
     <Image
       src={image.url}
