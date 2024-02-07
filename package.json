@@ -60,6 +60,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
     "ally.js": "^1.4.1",
+    "cnbuilder": "^3.1.0",
     "focus-trap": "^7.5.4",
     "html-entities": "^2.4.0",
     "object-hash": "^3.0.0",
