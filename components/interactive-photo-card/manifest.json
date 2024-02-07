@@ -33,6 +33,7 @@
           },
           "content": {
             "title": "Content",
+            "description": "This is the text that goes on the flip side of the content card.",
             "type": "FormattedText"
           },
           "image": {
