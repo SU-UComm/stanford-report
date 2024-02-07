@@ -110,7 +110,7 @@ function ExternalLinks({ items }) {
               <a
                 target="_blank"
                 className="su-flex su-items-center su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[14px] focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
-                href={item.asset_url}
+                href={item.asset_attribute_redirect_url}
                 rel="noreferrer"
               >
                 <span className="su-mr-2">{title}</span>
@@ -243,7 +243,7 @@ export default function MobileNav({ navigation, search, audience }) {
           className="su-block su-order-2 su-my-[15px] md:su-my-[27px] su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-[2px] md:su-h-[3px]"
         />
 
-        <ExternalLinks items={externalData} />
+        <ExternalLinks items={externalData} audience={audience} />
 
         <button
           type="button"
