@@ -75,10 +75,6 @@ export function Carousel({ slides, variant = "single" }) {
     variantClassName: "component-slider-single",
   });
 
-  // if (variants.get(variant).slidesPerView > 1 && slides.length < 3) {
-  //   slides.map((slide) => slides.push(slide));
-  // }
-
   return hasSlides ? (
     <div className="component-slider">
       <Swiper
