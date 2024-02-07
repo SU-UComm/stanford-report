@@ -20,7 +20,7 @@ export default function MetadataFields({ data }) {
     // switch ("Featured") {
     case "Basic":
       return (
-        <Container width="large" data-component="metadata-fields">
+        <Container width="narrow" data-component="metadata-fields">
           <BasicMetadata data={data} />
         </Container>
       );
