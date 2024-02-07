@@ -43,10 +43,10 @@ export default function MediaCard({
   return title ? (
     <article
       data-test="media-card"
-      className="su-component-card-media md:su-min-h-[384px] su-relative su-w-full su-pl-0 su-flex su-flex-wrap su-justify-center su-gap-[20px] md:su-gap-[36px] md:su-gap-[48px] md:su-flex-nowrap su-items-center su-justify-center"
+      className="su-component-card-media md:su-min-h-[384px] su-relative su-w-full su-px-[12.5px] md:su-px-0 su-flex su-flex-wrap su-justify-center su-gap-[20px] md:su-gap-[36px] md:su-gap-[48px] md:su-flex-nowrap su-items-center su-justify-center"
     >
       {imageUrl && (
-        <div className="su-relative su-px-[20px] md:su-px-0 su-h-[342px] lg:su-h-[373px] lg:su-h-[572px] lg:su-py-[30px] su-min-w-[249px] md:su-min-w-[249px] lg:su-min-w-[382px] su-flex su-items-center su-justify-center">
+        <div className="su-relative su-px-[20px] md:su-px-0 su-h-[342px] lg:su-h-[373px] lg:su-h-[572px] lg:su-py-[30px] su-min-w-[249px] md:su-min-w-[249px] lg:su-min-w-[382px] lg:su-max-w-[382px] su-flex su-items-center su-justify-center">
           <img
             className="su-media-card-thumb su-w-full su-h-full su-object-scale-down su-object-center"
             src={imageUrl}
