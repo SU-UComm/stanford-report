@@ -2057,13 +2057,14 @@ audio::-webkit-media-controls-panel {
 .su-page-has-sidebar .su-page-content{
   margin-left: 20px;
   margin-right: 20px;
-  width: 100%;
+  width: calc(100% - 40px);
 }
 
 @media (min-width: 768px){
   .su-page-has-sidebar .su-page-content{
     margin-left: 50px;
     margin-right: 50px;
+    width: calc(100% - 100px);
     padding-left: 7.65%;
     padding-right: 7.65%;
   }
@@ -2247,6 +2248,31 @@ audio::-webkit-media-controls-panel {
   .su-component-line-heading{
     margin-bottom: 7.6rem;
   }
+}
+
+/* Content carousel */
+
+@media (min-width: 768px){
+  .su-page:not(.su-page-has-sidebar)
+  .su-page-content
+  [data-component="content-carousel"]
+  .su-component-container
+  > .su-bg-fog-light{
+    margin-left: -61px;
+    margin-right: -61px;
+    padding-left: 61px;
+    padding-right: 61px;
+  }
+}
+
+/* Campaign CTA */
+
+.su-page-content > [data-component="campaign-cta"]:first-child{
+  margin-top: 0;
+}
+
+.su-page-content > [data-component="campaign-cta"]:last-child{
+  margin-bottom: 0;
 }
 
 /* Campaign CTA on basic story pages */

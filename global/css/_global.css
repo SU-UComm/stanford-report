@@ -528,7 +528,7 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-page-has-sidebar .su-page-content {
-  @apply su-w-full su-mx-[20px] md:su-mx-[50px] lg:su-mx-0 md:su-px-[7.65%] lg:su-ml-[16.66%] lg:su-w-[50%] lg:su-flex-grow lg:su-px-0;
+  @apply su-w-[calc(100%-40px)] su-mx-[20px] md:su-mx-[50px] md:su-w-[calc(100%-100px)] lg:su-mx-0 md:su-px-[7.65%] lg:su-ml-[16.66%] lg:su-w-[50%] lg:su-flex-grow lg:su-px-0;
 }
 
 .su-page-has-sidebar .su-page-content > *:first-child {
@@ -584,6 +584,24 @@ audio::-webkit-media-controls-panel {
 
 .su-component-line-heading {
   @apply su-rs-mb-5;
+}
+
+/* Content carousel */
+.su-page:not(.su-page-has-sidebar)
+  .su-page-content
+  [data-component="content-carousel"]
+  .su-component-container
+  > .su-bg-fog-light {
+  @apply md:su-mx-[-61px] md:su-px-[61px];
+}
+
+/* Campaign CTA */
+.su-page-content > [data-component="campaign-cta"]:first-child {
+  @apply su-mt-0;
+}
+
+.su-page-content > [data-component="campaign-cta"]:last-child {
+  @apply su-mb-0;
 }
 
 /* Campaign CTA on basic story pages */

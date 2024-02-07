@@ -107,7 +107,7 @@ export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
         loop
         breakpoints={variants.get(variant).breakpoints}
         modules={[Pagination]}
-        className={[variants.get(variant).variantClassName].join(" ")}
+        className={["", variants.get(variant).variantClassName].join(" ")}
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide}>{slide}</SwiperSlide>
