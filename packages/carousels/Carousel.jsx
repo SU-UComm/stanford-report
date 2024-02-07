@@ -17,7 +17,7 @@ import "swiper/css/pagination";
  * @returns {JSX.Element}
  * @constructor
  */
-export function Carousel({ slides, variant = "single" }) {
+export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
   const swiperRef = useRef();
   const hasSlides = slides.length > 0;
 
@@ -82,7 +82,7 @@ export function Carousel({ slides, variant = "single" }) {
         loopAdditionalSlides={4}
         slidesPerGroup={1}
         pagination={{
-          el: ".component-slider-pagination",
+          el: `.component-slider-pagination-${uniqueClass}`,
           clickable: true,
           bulletElement: "button",
         }}
@@ -115,7 +115,9 @@ export function Carousel({ slides, variant = "single" }) {
       </Swiper>
       {slides.length > 1 && (
         <div className="component-slider-controls su-flex su-mt-[45px] lg:su-mt-[48px] su-items-center su-content-center">
-          <div className="component-slider-pagination su-mr-full" />
+          <div
+            className={`component-slider-pagination component-slider-pagination-${uniqueClass} su-mr-full`}
+          />
           <button
             className="component-slider-btn component-slider-prev"
             type="button"
