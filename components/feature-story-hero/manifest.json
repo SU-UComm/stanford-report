@@ -1,25 +1,11 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "header-component",
-  "version": "0.0.10",
+  "name": "feature-story-hero",
+  "version": "0.0.1",
   "namespace": "stanford-components",
-  "description": "Stanford university Header component.",
-  "displayName": "Header",
+  "description": "Stanford university Base component.",
+  "displayName": "Feature story hero",
   "mainFunction": "main",
-  "environment": [
-    {
-      "name": "CONTENT_API",
-      "required": true
-    },
-    {
-      "name": "CONTENT_API_KEY",
-      "required": true
-    },
-    {
-      "name": "FB_JSON_URL",
-      "required": true
-    }
-  ],
   "icon": {
     "id": "foundation",
     "color": {
@@ -34,13 +20,14 @@
       "input": {
         "type": "object",
         "properties": {
-          "dataUrl": {
-            "type": "string"
+          "title": {
+            "title": "Heading",
+            "description": "The heading text",
+            "type": "string",
+            "default": "Lorem ipsum dolor"
           }
         },
-        "required": [
-          "dataUrl"
-        ]
+        "required": []
       },
       "output": {
         "responseType": "html",
@@ -89,7 +76,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/outerlayout.html"
+            "path": "../../packages/__globalPreview/preview.html"
           }
         }
       }

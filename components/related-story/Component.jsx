@@ -19,7 +19,7 @@ export default function RelatedStory({ data }) {
 
   return (
     <Container width="narrow">
-      <section className="story__related-story su-col-span-full sm:su-col-span-10 sm:su-col-start-2 lg:su-col-span-6 lg:su-col-start-4 su-mx-auto su-py-[60px] md:su-py-[81px] lg:su-py-[86px]">
+      <section className="story__related-story su-col-span-full sm:su-col-span-10 sm:su-col-start-2 lg:su-col-span-6 lg:su-col-start-4 su-mx-auto">
         <SidebarHeading
           title="Related story"
           icon="bullseyePointer"
@@ -41,7 +41,7 @@ export default function RelatedStory({ data }) {
               </h4>
 
               <XssSafeContent
-                className="su-text-[16px] sm:su-text-[18px] su-leading-[125%] !su-m-0 su-font-normal dark:su-text-white"
+                className="su-wysiwyg-content su-text-[16px] sm:su-text-[18px] su-leading-[125%] !su-m-0 su-font-normal dark:su-text-white"
                 content={description}
               />
             </div>
