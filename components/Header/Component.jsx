@@ -8,6 +8,7 @@ import MainNav from "./Components/MainNav";
 import SiteLogo from "./Components/SiteLogo";
 import getCookie from "../../packages/utils/cookieGet";
 import CurrentStoryHeadline from "./Components/currentStoryHeadline";
+import relatedStoryData from "./scripts/relatedStory";
 
 // SVG icons
 import BurgerBar from "../../packages/SVG-library/BurgerBar";
@@ -26,6 +27,7 @@ import CloseIcon from "../../packages/SVG-library/Close";
 export default function Header({ site, navigation, search }) {
   const [audience, setAudience] = useState(null);
   const [pageControls, setPageControls] = useState(null);
+  const [relatedStory, setRelatedStory] = useState(null);
 
   const audienceCookie = getCookie("preferences_personalisation");
   const isClient = typeof window !== "undefined";
@@ -35,15 +37,19 @@ export default function Header({ site, navigation, search }) {
       ? window.pageController
       : null;
 
+  const getFb = async () => {
+    const data = await relatedStoryData(pageData, search, audience);
+    setRelatedStory(data);
+  };
+
   useEffect(() => {
     if (audienceCookie) {
       setAudience(audienceCookie);
     }
-    if (pageData) {
-      setPageControls(pageData);
-    }
+    setPageControls(pageData);
+    getFb();
   }, [audience, pageControls]);
-  // report-header--story
+
   return (
     <header
       className={`${
@@ -128,7 +134,10 @@ export default function Header({ site, navigation, search }) {
             />
 
             {pageControls?.isStory ? (
-              <CurrentStoryHeadline title={pageControls.title} />
+              <CurrentStoryHeadline
+                title={pageControls.title}
+                story={relatedStory}
+              />
             ) : (
               ""
             )}
