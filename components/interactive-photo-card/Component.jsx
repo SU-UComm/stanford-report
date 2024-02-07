@@ -1,4 +1,5 @@
 import React from "react";
+import { cnb } from "cnbuilder";
 
 import { Container } from "../../packages/grids/Container";
 
@@ -20,8 +21,15 @@ export default function InteractivePhotoCard({
 }) {
   return (
     <Container>
-      <article className="su-relative su-grid lg:su-grid-cols-2 su-gap-20">
-        <div>
+      <article
+        className={cnb(
+          "su-relative su-flex su-gap-20",
+          imageAlignment === "right"
+            ? "su-flex-col lg:su-flex-row"
+            : "su-flex-col-reverse lg:su-flex-row-reverse"
+        )}
+      >
+        <div className="su-basis-1/2">
           <div className="su-rounded-[8px] su-bg-white">
             {eyebrow && (
               <div className="su-type-1 su-text-black-60 su-font-semibold su-rs-mb-1">
@@ -34,7 +42,7 @@ export default function InteractivePhotoCard({
           </div>
           <paragraph className="su-big-paragraph">{content}</paragraph>
         </div>
-        <div className="su-rounded-[8px] su-overflow-hidden">
+        <div className="su-rounded-[8px] su-overflow-hidden su-basis-1/2">
           <img src={imageUrl} alt="" className="su-object-cover su-size-full" />
         </div>
       </article>
