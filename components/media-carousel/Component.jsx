@@ -1,6 +1,7 @@
 import React from "react";
 
 // import specific templates for the component
+import hash from "object-hash";
 import { Container } from "../../packages/grids/Container";
 import { Carousel } from "../../packages/carousels/Carousel";
 import Card from "../../packages/card/Card";
@@ -16,6 +17,7 @@ import Card from "../../packages/card/Card";
 
 export default function StoriesCarousel({ data }) {
   const cards = [];
+  const uniqueClass = hash.MD5(JSON.stringify(data));
 
   data.forEach((card) => {
     cards.push(
@@ -25,7 +27,7 @@ export default function StoriesCarousel({ data }) {
 
   return (
     <Container width="large">
-      <Carousel variant="media" slides={cards} />
+      <Carousel variant="media" slides={cards} uniqueClass={uniqueClass} />
     </Container>
   );
 }

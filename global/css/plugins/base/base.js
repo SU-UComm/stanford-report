@@ -39,24 +39,6 @@ module.exports = function () {
       h6: {
         fontFamily: [config("theme.fontFamily.serif")],
       },
-      p: {
-        marginBottom: config("theme.gap.lg"),
-        "@screen md": {
-          marginBottom: config("theme.gap.xl"),
-        },
-      },
-      ol: {
-        marginBottom: config("theme.gap.lg"),
-        "@screen md": {
-          marginBottom: config("theme.gap.xl"),
-        },
-      },
-      ul: {
-        marginBottom: config("theme.gap.lg"),
-        "@screen md": {
-          marginBottom: config("theme.gap.xl"),
-        },
-      },
     });
   };
 };
