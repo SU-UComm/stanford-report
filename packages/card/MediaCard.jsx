@@ -54,7 +54,7 @@ export default function MediaCard({
           />
         </div>
       )}
-      <div className="su-media-card-text su-grow">
+      <div className="su-media-card-text su-grow su-w-full md:su-w-auto">
         {taxonomy && (
           <div className="su-mb-[20px] md:su-mb-[27px]">
             <SidebarHeading
