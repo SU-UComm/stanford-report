@@ -719,13 +719,52 @@ audio::-webkit-media-controls-panel {
 /*
 WYSIWYG formatting styles
 */
-/* Generic element spacing inside WYSIWYG, uses same as default component spacing */
-.su-wysiwyg-content > *,
-.container > span > *,
-.su-page-content > *:not([data-component], .container) > * {
-  @apply su-rs-mb-2;
+/* Use decanter styles for WYSIWYG elements */
+.su-wysiwyg-content,
+.container > span,
+.su-page-content > *:not([data-component], .container) {
+  @apply su-wysiwyg;
 }
 
+/* Set specfic spacing for paragraphs */
+.su-wysiwyg-content p,
+.container > span p,
+.su-page-content > *:not([data-component], .container) p {
+  @apply su-mb-[2rem] md:su-mb-[2.6rem] xl:su-mb-[27px];
+}
+
+.su-wysiwyg-content ul ul,
+.su-wysiwyg-content ul ol,
+.su-wysiwyg-content ol ol,
+.su-wysiwyg-content ol ul,
+.container > span ul ul,
+.container > span ul ol,
+.container > span ol ol,
+.container > span ol ul,
+.su-page-content > *:not([data-component], .container) ul ul,
+.su-page-content > *:not([data-component], .container) ul ol,
+.su-page-content > *:not([data-component], .container) ol ol,
+.su-page-content > *:not([data-component], .container) ol ul {
+  @apply su-mb-0;
+}
+
+/* Set responsive table (div wrapper) to overflow on smaller screens */
+.su-responsive-table {
+  @apply su-max-w-full su-overflow-auto lg:su-overflow-visible;
+}
+
+.su-responsive-table td {
+  @apply su-min-w-[10em] lg:su-min-w-[auto];
+}
+
+/* Set HR margins to match paragraphs etc */
+.su-wysiwyg-content hr,
+.container > span hr,
+.su-page-content > *:not([data-component], .container) hr {
+  margin-bottom: 1.6em;
+}
+
+/* Custom styles for the disc */
 .su-wysiwyg-content ul,
 .container > span ul,
 .su-page-content > div:not([data-component]) ul,
