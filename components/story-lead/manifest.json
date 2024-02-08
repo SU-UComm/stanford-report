@@ -1,0 +1,89 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "story-lead",
+  "version": "0.0.9",
+  "namespace": "stanford-components",
+  "description": "Introduction to a story, with a decorative first letter.",
+  "displayName": "Story Lead",
+  "mainFunction": "main",
+  "icon": {
+    "id": "text_fields",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "content": {
+            "title": "Lead",
+            "type": "FormattedText"
+          },
+          "variant": {
+            "title": "Variant",
+            "type": "string",
+            "default": "Basic Story",
+            "enum": ["Basic Story", "Featured Story"]
+          }
+        }
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}

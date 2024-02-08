@@ -1,0 +1,30 @@
+name: CI/CD runner
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feature/github-actions
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint test
+        run: npm run test:eslint
+
+      - name: Unit test
+        run: npm run test:unit

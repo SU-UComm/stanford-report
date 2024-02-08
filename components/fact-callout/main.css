@@ -1,0 +1,22 @@
+@tailwind components;
+@tailwind utilities;
+
+.decoration-top {
+  @apply su-pt-[90px];
+}
+
+.decoration-bottom {
+  @apply su-pb-[90px];
+}
+
+.fact-wrapper__decoration-top {
+  top: 0;
+  flex-direction: column-reverse;
+  transform: translateY(-90px);
+}
+
+.fact-wrapper__decoration-bottom {
+  bottom: 0;
+  flex-direction: column;
+  transform: translateY(90px);
+}

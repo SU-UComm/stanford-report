@@ -1,0 +1,210 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "media-carousel",
+  "version": "0.0.8",
+  "namespace": "stanford-components",
+  "description": "Links to media, displayed as cards in a carousel.",
+  "displayName": "Media carousel",
+  "mainFunction": "main",
+  "environment": [],
+  "icon": {
+    "id": "auto_stories",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {
+          "cards": {
+            "title": "Cards",
+            "description": "Select the assets that will be used for cards. The first card selected will be the featured card.",
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 5,
+            "items": {
+              "type": "object",
+              "properties": {
+                "cardType": {
+                  "type": "string",
+                  "title": "Type",
+                  "default": "Book",
+                  "enum": ["Book", "Podcast"]
+                },
+                "image": {
+                  "type": "string",
+                  "title": "Image",
+                  "format": "matrix-asset-uri"
+                },
+                "title": {
+                  "type": "string",
+                  "title": "Title"
+                },
+                "author": {
+                  "type": "string",
+                  "title": "Author"
+                },
+                "teaserText": {
+                  "type": "string",
+                  "title": "Teaser Text",
+                  "format": "multi-line"
+                },
+                "linkUrl": {
+                  "type": "string",
+                  "title": "Link Url"
+                }
+              },
+              "required": ["cardType", "image", "title"]
+            }
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "client.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/28207": {
+      "type": "file",
+      "path": "mocked-uris/28207.json"
+    },
+    "matrix-asset://api-identifier/125002": {
+      "type": "file",
+      "path": "mocked-uris/125002.json"
+    },
+    "matrix-asset://api-identifier/28375": {
+      "type": "file",
+      "path": "mocked-uris/28375.json"
+    },
+    "matrix-asset://api-identifier/28401": {
+      "type": "file",
+      "path": "mocked-uris/28401.json"
+    },
+    "matrix-asset://api-identifier/28406": {
+      "type": "file",
+      "path": "mocked-uris/28406.json"
+    },
+    "matrix-asset://api-identifier/124970": {
+      "type": "file",
+      "path": "mocked-uris/124970.json"
+    },
+    "matrix-asset://api-identifier/124986": {
+      "type": "file",
+      "path": "mocked-uris/124986.json"
+    },
+    "matrix-asset://api-identifier/28397": {
+      "type": "file",
+      "path": "mocked-uris/28397.json"
+    },
+    "matrix-asset://api-identifier/89422": {
+      "type": "file",
+      "path": "mocked-uris/89422.json"
+    },
+    "matrix-asset://api-identifier/89430": {
+      "type": "file",
+      "path": "mocked-uris/89430.json"
+    },
+    "matrix-asset://api-identifier/89426": {
+      "type": "file",
+      "path": "mocked-uris/89426.json"
+    },
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/125800": {
+      "type": "file",
+      "path": "mocked-uris/125800.json"
+    },
+    "matrix-asset://api-identifier/125801": {
+      "type": "file",
+      "path": "mocked-uris/125801.json"
+    },
+    "matrix-asset://api-identifier/28192": {
+      "type": "file",
+      "path": "mocked-uris/28192.json"
+    },
+    "matrix-asset://api-identifier/28205": {
+      "type": "file",
+      "path": "mocked-uris/28205.json"
+    },
+    "matrix-asset://api-identifier/127834": {
+      "type": "file",
+      "path": "mocked-uris/127834.json"
+    },
+    "matrix-asset://api-identifier/28193": {
+      "type": "file",
+      "path": "mocked-uris/28193.json"
+    },
+    "matrix-asset://api-identifier/127837": {
+      "type": "file",
+      "path": "mocked-uris/127837.json"
+    },
+    "matrix-asset://api-identifier/128610": {
+      "type": "file",
+      "path": "mocked-uris/128610.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "multicolumn-image",
+  "version": "0.0.4",
+  "namespace": "stanford-components",
+  "description": "The multicolumn image is a way to display a series of images in 2 to 3 columns.",
+  "displayName": "Multicolumn Image",
+  "mainFunction": "main",
+  "environment": [
+    {
+      "name": "API_IDENTIFIER",
+      "required": true
+    }
+  ],
+  "icon": {
+    "id": "view_column",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "contentConfiguration": {
+            "required": [],
+            "properties": {
+              "images": {
+                "title": "Images",
+                "description": "Select a minimum of 2 or a maximum of 3 images",
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 3,
+                "items": {
+                  "required": [],
+                  "type": "object",
+                  "properties": {
+                    "imageAsset": {
+                      "title": "Image asset",
+                      "type": "string",
+                      "format": "matrix-asset-uri"
+                    },
+                    "imageCaption": {
+                      "title": "Image caption",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/125800": {
+      "type": "file",
+      "path": "mocked-uris/125800.json"
+    },
+    "matrix-asset://api-identifier/125801": {
+      "type": "file",
+      "path": "mocked-uris/125801.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}
