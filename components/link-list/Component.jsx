@@ -31,19 +31,10 @@ export default function LinkList({ search }) {
 
   // get FB data
   const getFB = async () => {
-    const data = await relatedStory(search, pageData, personalisation);
+    const data = await relatedStory(search, pageData, audienceCookie);
 
     setRelatedStoryData(data);
   };
-
-  // effects
-  useEffect(() => {
-    if (audienceCookie) setPersonalisation(audienceCookie);
-
-    if (relatedStoryData) setLinkItems(links);
-
-    getFB();
-  }, [personalisation, relatedStoryData]);
 
   // generate the links
   if (relatedStoryData) {
@@ -51,6 +42,17 @@ export default function LinkList({ search }) {
       links.push(<LinkListItem title={link.title} url={link.indexUrl} />);
     });
   }
+
+  // effects
+  useEffect(() => {
+    if (audienceCookie) setPersonalisation(audienceCookie);
+
+    if (relatedStoryData && !linkItems.length) setLinkItems(links);
+
+    if (!relatedStoryData) {
+      getFB();
+    }
+  }, [personalisation, relatedStoryData]);
 
   return (
     <div
