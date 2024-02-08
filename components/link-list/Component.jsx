@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { SidebarHeading } from "../../packages/headings/Heading";
 import ChevronRight from "../../packages/SVG-library/ChevronRight";
 import relatedStory from "./scripts/relatedStory";
+import getCookie from "../../packages/utils/cookieGet";
+import LinkListItem from "./components/LinkListItem";
 
 /**
  * Base component
@@ -19,19 +21,36 @@ export default function LinkList({ search }) {
     isClient && typeof window.pageController !== "undefined"
       ? window.pageController
       : null;
+  const audienceCookie = getCookie("preferences_personalisation");
+  const links = [];
 
   // state
   const [relatedStoryData, setRelatedStoryData] = useState(null);
+  const [personalisation, setPersonalisation] = useState(null);
+  const [linkItems, setLinkItems] = useState([]);
 
+  // get FB data
   const getFB = async () => {
-    const data = await relatedStory(search, pageData);
+    const data = await relatedStory(search, pageData, personalisation);
 
-    setRelatedStory(data);
+    setRelatedStoryData(data);
   };
 
+  // effects
   useEffect(() => {
+    if (audienceCookie) setPersonalisation(audienceCookie);
+
+    if (relatedStoryData) setLinkItems(links);
+
     getFB();
-  });
+  }, [personalisation, relatedStoryData]);
+
+  // generate the links
+  if (relatedStoryData) {
+    relatedStoryData.forEach((link) => {
+      links.push(<LinkListItem title={link.title} url={link.indexUrl} />);
+    });
+  }
 
   return (
     <div
@@ -58,30 +77,21 @@ export default function LinkList({ search }) {
         id="link-drawer"
         data-role="link-drawer"
       >
-        <article className="su-border-solid su-border-b-[1px] su-border-b-black-20 su-pb-[15px] su-mt-[23.65px]">
-          <a href="#" className="su-no-underline">
-            <h3 className="su-text-[16px] su-font-bold su-m-0 lg:su-text-[24px] lg:su-leading-[28.8px]">
-              Are you ready for the "longevity economy?"
-            </h3>
-          </a>
-        </article>
+        {linkItems[0] && (
+          <article className="su-border-solid su-border-b-[1px] su-border-b-black-20 su-pb-[15px] su-mt-[23.65px]">
+            {linkItems[0]}
+          </article>
+        )}
 
-        <article className="su-border-solid su-border-b-[1px] su-border-b-black-20 su-py-[15px]">
-          <a href="#" className="su-no-underline">
-            <h3 className="su-text-[16px] su-font-bold su-m-0 lg:su-text-[24px] lg:su-leading-[28.8px]">
-              Board Special Committee provides update
-            </h3>
-          </a>
-        </article>
+        {linkItems[1] && (
+          <article className="su-border-solid su-border-b-[1px] su-border-b-black-20 su-py-[15px]">
+            {linkItems[1]}
+          </article>
+        )}
 
-        <article className="su-pt-[15px]">
-          <a href="#" className="su-no-underline">
-            <h3 className="su-text-[16px] su-font-bold su-m-0 lg:su-text-[24px] lg:su-leading-[28.8px]">
-              Report of the president: Academic Council Professoriate
-              appointments
-            </h3>
-          </a>
-        </article>
+        {linkItems[2] && (
+          <article className="su-pt-[15px]">{linkItems[2]}</article>
+        )}
       </div>
     </div>
   );
