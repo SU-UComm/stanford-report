@@ -39,21 +39,14 @@ export default function InteractivePhotoCard({
 
   return (
     <div className="su-cc">
-      <article
-        className={cnb(
-          "su-relative su-flex su-gap-20 [perspective:100rem] su-transition-transform",
-          imageAlignment === "right"
-            ? "su-flex-col xl:su-flex-row"
-            : "su-flex-col-reverse xl:su-flex-row-reverse"
-        )}
-      >
+      <article className="su-relative su-grid xl:su-grid-cols-2 su-gap-20 [perspective:100rem] su-transition-transform">
         <div
           ref={cardInnerRef}
           className="su-flex su-relative su-basis-1/2 [transform-style:preserve-3d] su-duration-1000"
         >
           {/* Front of the content card */}
           <div
-            className="su-group/front su-relative su-size-full su-bg-white su-backface-hidden su-rounded-[8px] su-shadow-lg"
+            className="su-group/front su-bg-white su-backface-hidden su-rounded-[8px] su-shadow-lg su-min-w-full"
             aria-hidden={isFlipped}
           >
             <div className="su-rs-px-5 su-rs-pt-6 su-rs-pb-4">
@@ -77,7 +70,7 @@ export default function InteractivePhotoCard({
           </div>
           {/* Back of the content card */}
           <div
-            className="su-group/back su-rounded-[8px] su-rs-px-5 su-rs-pt-6 su-rs-pb-4 su-bg-digital-red-dark su-text-white su-absolute su-size-full su-top-0 su-left-0 [transform:rotateY(180deg)] su-backface-hidden su-transition-transform su-shadow-lg"
+            className="su-group/back su-rounded-[8px] su-rs-px-5 su-rs-pt-6 su-rs-pb-4 su-bg-digital-red-dark su-text-white [transform:rotateY(180deg)_translate(100%,0)] su-backface-hidden su-transition-transform su-shadow-lg su-min-w-full"
             aria-hidden={!isFlipped}
           >
             <XssSafeContent
