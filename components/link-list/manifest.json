@@ -1,25 +1,11 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "header-component",
-  "version": "0.0.11",
+  "name": "link-list",
+  "version": "0.0.2",
   "namespace": "stanford-components",
-  "description": "Stanford university Header component.",
-  "displayName": "Header",
+  "description": "Recommended stories are shown in this component as a vertical list.",
+  "displayName": "Link List",
   "mainFunction": "main",
-  "environment": [
-    {
-      "name": "CONTENT_API",
-      "required": true
-    },
-    {
-      "name": "CONTENT_API_KEY",
-      "required": true
-    },
-    {
-      "name": "FB_JSON_URL",
-      "required": true
-    }
-  ],
   "icon": {
     "id": "foundation",
     "color": {
@@ -35,12 +21,11 @@
         "type": "object",
         "properties": {
           "dataUrl": {
+            "title": "dataUrl",
             "type": "string"
           }
         },
-        "required": [
-          "dataUrl"
-        ]
+        "required": []
       },
       "output": {
         "responseType": "html",
@@ -89,7 +74,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/outerlayout.html"
+            "path": "../../packages/__globalPreview/basicstory.html"
           }
         }
       }

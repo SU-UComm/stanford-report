@@ -23,7 +23,7 @@ export default function TextCallout({ displayConfiguration }) {
   const { title, content } = displayConfiguration;
 
   return (
-    <Container width="narrow" paddingX={false}>
+    <Container width="narrow">
       <section className="su-flex su-flex-col su-gap-[12px] su-p-[20px] md:su-p-[36px] su-flex-col su-justify-start su-items-start su-bg-fog-light lg:su-mx-auto dark:su-bg-black [&>p]:su-m-0 [&>p]:!su-mb-0 [&>p]:su-text-[16px] md:[&>p]:!su-text-[19px] last-of-type:[&>p]:!su-mb-0">
         <div className="su-relative su-justify-start su-items-center su-w-full su-gap-3 su-flex su-overflow-hidden su-mb-[12px]">
           <div>
