@@ -46,45 +46,49 @@ export default function InteractivePhotoCard({
         >
           {/* Front of the content card */}
           <div
-            className="su-group/front su-bg-white su-backface-hidden su-rounded-[8px] su-shadow-lg su-min-w-full"
+            className="su-group/front su-relative su-bg-white su-backface-hidden su-rounded-[8px] su-shadow-lg su-min-w-full"
             aria-hidden={isFlipped}
           >
-            <div className="su-rs-px-5 su-rs-pt-6 su-rs-pb-4">
+            <div className="su-flex su-flex-col su-h-full su-rs-px-5 su-rs-pt-6 su-rs-pb-4">
               {eyebrow && (
                 <div className="su-type-1 su-text-black-60 su-font-semibold su-rs-mb-1">
                   {eyebrow}
                 </div>
               )}
-              <h3 className="su-type-4 su-font-bold su-font-sans su-type su-rs-mb-0">
+              <h3 className="su-grow su-type-4 su-font-bold su-font-sans su-type su-rs-mb-0">
                 {title}
               </h3>
               <button
                 type="button"
+                aria-hidden={isFlipped}
+                tabIndex={isFlipped ? -1 : undefined}
                 onClick={() => flipCard(180)}
                 aria-label={`Read more about ${title}`}
-                className="su-block su-ml-auto su-mr-0 su-bg-black su-text-white su-rounded-full su-p-10 su-stretched-link group-aria-hidden/front:su-invisible"
+                className="su-block su-ml-auto su-mr-0 su-bg-black su-text-white group-hover/front:su-bg-digital-red group-focus-within/front:su-bg-digital-red su-rounded-full su-p-10 su-stretched-link su-transition-all su-opacity-100 group-aria-hidden/front:su-opacity-0"
               >
-                <Plus className="su-size-50 su-fill-none" />
+                <Plus className="su-size-30 md:su-size-50 su-fill-none group-hover/front:su-scale-110 group-focus-within/front:su-scale-110" />
               </button>
             </div>
           </div>
           {/* Back of the content card */}
           <div
-            className="su-group/back su-rounded-[8px] su-rs-px-5 su-rs-pt-6 su-rs-pb-4 su-bg-digital-red-dark su-text-white [transform:rotateY(180deg)_translate(100%,0)] su-backface-hidden su-transition-transform su-shadow-lg su-min-w-full"
+            className="su-group/back su-relative su-flex su-flex-col su-h-full su-min-w-full su-rounded-[8px] su-rs-px-5 su-rs-pt-6 su-rs-pb-4 su-bg-digital-red-dark su-text-white [transform:rotateY(180deg)_translate(100%,0)] su-backface-hidden su-transition-transform su-shadow-lg"
             aria-hidden={!isFlipped}
           >
             <XssSafeContent
               data-test="interactive-photo-card-content"
-              className="su-big-paragraph"
+              className="su-big-paragraph su-grow"
               content={content}
             />
             <button
               type="button"
+              aria-hidden={!isFlipped}
+              tabIndex={isFlipped ? undefined : -1}
               onClick={() => flipCard(0)}
               aria-label="Dismiss content"
-              className="su-block su-ml-auto su-mr-0 su-border-3 su-border-white su-rounded-full su-text-white su-p-19 su-stretched-link"
+              className="su-block su-ml-auto su-mr-0 su-border-3 su-border-white su-rounded-full su-text-white su-p-10 lg:su-p-19 su-stretched-link"
             >
-              <Flip className="su-size-36 su-fill-none group-aria-hidden/back:invisible" />
+              <Flip className="su-size-30 lg:su-size-36 su-fill-none group-aria-hidden/back:invisible" />
             </button>
           </div>
         </div>
