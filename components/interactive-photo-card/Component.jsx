@@ -39,17 +39,13 @@ export default function InteractivePhotoCard({
 
   return (
     <div className="su-cc">
-      <article
-        className={cnb(
-          "su-relative su-flex su-flex-col su-gap-20 [perspective:100rem] su-transition-transform",
-          imageAlignment === "right"
-            ? "xl:su-flex-row"
-            : "xl:su-flex-row-reverse"
-        )}
-      >
+      <article className="su-relative su-grid xl:su-grid-cols-2 su-gap-20 [perspective:100rem] su-transition-transform">
         <div
           ref={cardInnerRef}
-          className="su-flex su-relative su-basis-1/2 [transform-style:preserve-3d] su-duration-1000"
+          className={cnb(
+            "su-flex su-relative [transform-style:preserve-3d] su-duration-1000",
+            imageAlignment === "left" && "xl:su-order-2"
+          )}
         >
           {/* Front of the content card */}
           <div
@@ -100,7 +96,12 @@ export default function InteractivePhotoCard({
           </div>
         </div>
         {/* Image card */}
-        <div className="su-rounded-[8px] su-overflow-hidden su-basis-1/2 su-shadow-lg">
+        <div
+          className={cnb(
+            "su-rounded-[8px] su-overflow-hidden su-shadow-lg",
+            imageAlignment === "left" && "xl:su-order-first"
+          )}
+        >
           <img src={imageUrl} alt="" className="su-object-cover su-size-full" />
         </div>
       </article>
