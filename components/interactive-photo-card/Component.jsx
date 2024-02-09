@@ -66,7 +66,7 @@ export default function InteractivePhotoCard({
                 aria-hidden={isFlipped}
                 tabIndex={isFlipped ? -1 : undefined}
                 onClick={() => flipCard(180)}
-                aria-label={`Read more about ${title}`}
+                aria-label="See additional information"
                 className="su-block su-ml-auto su-mr-0 su-bg-black su-text-white group-hover/front:su-bg-digital-red group-focus-within/front:su-bg-digital-red su-rounded-full su-p-10 su-stretched-link su-transition-all su-opacity-100 group-aria-hidden/front:su-opacity-0"
               >
                 <Plus className="su-size-30 md:su-size-50 su-fill-none group-hover/front:su-scale-110 group-focus-within/front:su-scale-110" />
