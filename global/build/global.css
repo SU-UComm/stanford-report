@@ -2801,7 +2801,7 @@ WYSIWYG formatting styles
   .su-wysiwyg-content p,
 .container > span p,
 .su-page-content > *:not([data-component], .container) p{
-    margin-bottom: 27px;
+    margin-bottom: 2.7rem;
   }
 }
 
