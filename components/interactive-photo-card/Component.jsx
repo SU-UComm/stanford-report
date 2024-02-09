@@ -9,6 +9,10 @@ import Plus from "../../packages/SVG-library/Plus";
  *
  * @param {string} title The title of the text card
  * @param {string} eyebrow The eyebrow/superheading of the text card
+ * @param {string} content The content on the flip side of the text card
+ * @param {string} imageUrl The URL of the image to display
+ * @param {string} imageAlignment The image card can be on the left or right on desktop
+ *
  * @returns {JSX.Element}
  * @constructor
  */
