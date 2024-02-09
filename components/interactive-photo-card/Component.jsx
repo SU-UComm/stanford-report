@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
 import { cnb } from "cnbuilder";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
-import { Container } from "../../packages/grids/Container";
-import Flip from "../../packages/SVG-library/Flip";
+import ArrowsRotate from "../../packages/SVG-library/ArrowsRotate";
 import Plus from "../../packages/SVG-library/Plus";
 
 /**
@@ -89,9 +88,9 @@ export default function InteractivePhotoCard({
               tabIndex={isFlipped ? undefined : -1}
               onClick={() => flipCard(0)}
               aria-label="Dismiss content"
-              className="su-block su-ml-auto su-mr-0 su-border-3 su-border-white su-rounded-full su-text-white su-p-10 lg:su-p-19 su-stretched-link"
+              className="su-block su-ml-auto su-mr-0 su-border-3 su-border-white su-rounded-full su-text-white su-p-7 lg:su-p-14 su-stretched-link"
             >
-              <Flip className="su-size-30 lg:su-size-36 su-fill-none group-aria-hidden/back:invisible" />
+              <ArrowsRotate className="su-size-30 lg:su-size-36 su-fill-none group-aria-hidden/back:invisible" />
             </button>
           </div>
         </div>

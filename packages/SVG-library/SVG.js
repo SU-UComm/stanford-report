@@ -38,7 +38,7 @@ export { default as FeaturedReading } from "./FeaturedReading";
 export { default as FeaturedAudio } from "./FeaturedAudio";
 export { default as EventHighlights } from "./EventHighlights";
 export { default as ExternalArrow } from "./ExternalArrow";
-export { default as Flip } from "./Flip";
+export { default as ArrowsRotate } from "./ArrowsRotate";
 export { default as Infographic } from "./Infographic";
 export { default as InTheNews } from "./InTheNews";
 export { default as LeadershipMessages } from "./LeadershipMessages";
