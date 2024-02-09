@@ -49,11 +49,11 @@ export default function InteractivePhotoCard({
       >
         <div
           ref={cardInnerRef}
-          className="su-flex su-relative su-overflow-hidden su-basis-1/2 su-shadow-lg su-rounded-[8px] [transform-style:preserve-3d] su-transform-gpu su-duration-1000"
+          className="su-flex su-relative su-basis-1/2 [transform-style:preserve-3d] su-duration-1000"
         >
           {/* Front of the content card */}
           <div
-            className="su-group/front su-relative su-size-full su-bg-white"
+            className="su-group/front su-relative su-size-full su-bg-white su-backface-hidden su-rounded-[8px] su-shadow-lg"
             aria-hidden={isFlipped}
           >
             <div className="su-rs-px-5 su-rs-pt-6 su-rs-pb-4">
@@ -77,7 +77,7 @@ export default function InteractivePhotoCard({
           </div>
           {/* Back of the content card */}
           <div
-            className="su-group/back su-rs-px-5 su-rs-pt-6 su-rs-pb-4 su-bg-digital-red-dark su-text-white su-absolute su-size-full su-top-0 su-left-0 [transform:rotateY(180deg)] aria-hidden:opacity-0 aria-hidden:su-backface-hidden su-transition-transform"
+            className="su-group/back su-rounded-[8px] su-rs-px-5 su-rs-pt-6 su-rs-pb-4 su-bg-digital-red-dark su-text-white su-absolute su-size-full su-top-0 su-left-0 [transform:rotateY(180deg)] su-backface-hidden su-transition-transform su-shadow-lg"
             aria-hidden={!isFlipped}
           >
             <XssSafeContent
