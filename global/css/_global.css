@@ -727,9 +727,7 @@ WYSIWYG formatting styles
 }
 
 /* Set specfic spacing for paragraphs */
-.su-wysiwyg-content p,
-.container > span p,
-.su-page-content > *:not([data-component], .container) p {
+[data-component="text-callout"] .su-wysiwyg-content p {
   @apply su-mb-[2rem] md:su-mb-[2.6rem] xl:su-mb-[2.7rem];
 }
 
