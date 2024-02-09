@@ -8,8 +8,6 @@ export default async function relatedStory(
 ) {
   const adapter = new FetchAdapter();
 
-  personalisation = "";
-
   if (pageData && search) {
     const fbUrl = `
       ${search.endpoint?.replace(/\.html/g, ".json")}
