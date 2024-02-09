@@ -20,6 +20,11 @@
       "input": {
         "type": "object",
         "properties": {
+          "backgroundImage": {
+            "title": "Background image",
+            "type": "string",
+            "format": "matrix-asset-uri"
+          },
           "title": {
             "title": "Heading",
             "description": "The heading text",
@@ -33,7 +38,8 @@
             "default": "Lorem ipsum dolor"
           },
           "quote": {
-            "title": "Quote",
+            "title": "Quote Text",
+            "description": "The quoted text. Do not include quotation marks, they will display automatically",
             "type": "string",
             "format": "multi-line"
           },
@@ -44,7 +50,12 @@
           },
           "extra": {
             "title": "Extra",
-            "description": "Extra text for attribution, if needed.",
+            "description": "Extra text for attribution, if needed. Could be a job title or descriptive information.",
+            "type": "string"
+          },
+          "quoteLink": {
+            "title": "Quote Link",
+            "description": "Link for quote name attribution, if needed.",
             "type": "string"
           }
         },
