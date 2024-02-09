@@ -39,7 +39,14 @@ export default function InteractivePhotoCard({
 
   return (
     <div className="su-cc">
-      <article className="su-relative su-grid xl:su-grid-cols-2 su-gap-20 [perspective:100rem] su-transition-transform">
+      <article
+        className={cnb(
+          "su-relative su-flex su-flex-col su-gap-20 [perspective:100rem] su-transition-transform",
+          imageAlignment === "right"
+            ? "xl:su-flex-row"
+            : "xl:su-flex-row-reverse"
+        )}
+      >
         <div
           ref={cardInnerRef}
           className="su-flex su-relative su-basis-1/2 [transform-style:preserve-3d] su-duration-1000"
