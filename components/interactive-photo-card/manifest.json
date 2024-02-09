@@ -7,7 +7,7 @@
   "displayName": "Interactive Photo Card",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "cached",
     "color": {
       "type": "enum",
       "value": "gray"
