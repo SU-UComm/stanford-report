@@ -40,7 +40,7 @@ export default function MediaFeature({
           </div>
 
           <div>
-            <div className="su-py-[20px] su-w-full md:su-pb-[27px] md:su-pt-0">
+            <div className="su-py-[20px] su-w-full md:su-pb-[27px] md:su-pt-0 [&>*]:dark:su-text-black">
               <FeaturedHeading type={mediaType} />
             </div>
 
