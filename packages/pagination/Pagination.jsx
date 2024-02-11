@@ -58,6 +58,8 @@ export default function Pagination({
           onClick={({ currentTarget }) =>
             onPageChange(currentTarget.dataset.offset)
           }
+          aria-label="Previous page"
+          title="Previous page"
         >
           <ChevronLeft />
         </button>
@@ -78,6 +80,8 @@ export default function Pagination({
           onClick={({ currentTarget }) =>
             onPageChange(currentTarget.dataset.offset)
           }
+          aria-label="Next page"
+          title="Next page"
         >
           <ChevronRight />
         </button>

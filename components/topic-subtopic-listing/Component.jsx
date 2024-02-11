@@ -73,7 +73,11 @@ export default function TopicSubtopicListing({
 
   return (
     <Container>
-      <HorizontalCardGrid orientation="vertical" items={cards} />
+      <HorizontalCardGrid
+        orientation="vertical"
+        items={cards}
+        maximumItems={10}
+      />
       <Pagination
         pageNumber={Number(pageNo)}
         allResults={resultsSummary.totalMatching}
