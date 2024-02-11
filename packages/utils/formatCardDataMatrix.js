@@ -25,7 +25,8 @@ function dataStringChecker(str) {
  * @param {object} thumbnail Matrix asset thumbnail object
  * @returns {object}
  */
-export default function formatCardDataMatrix({ attributes, metadata, url }) {
+export default function formatCardDataMatrix(props) {
+  const { attributes, metadata, url } = props;
   const title = attributes.name;
   const liveUrl = url;
   const description = dataChecker(metadata.teaser);
@@ -38,8 +39,9 @@ export default function formatCardDataMatrix({ attributes, metadata, url }) {
   const type = dataChecker(metadata.srContentType)?.name;
   const videoUrl = dataChecker(metadata.featuredVideo);
   const date = dataChecker(metadata.publishedDate);
-
-  return {
+  const source = dataChecker(metadata.storySource);
+  const author = dataChecker(metadata.contributorsAuthors);
+  const returnData = {
     title,
     liveUrl,
     description,
@@ -50,5 +52,25 @@ export default function formatCardDataMatrix({ attributes, metadata, url }) {
     type,
     videoUrl,
     date,
+    source,
+    authorName: null,
+    authorEmail: null,
   };
+
+  if (author) {
+    const avatar = dataChecker(author?.metadata?.personHeadshot?.url);
+    const avatarAlt = dataChecker(
+      author?.metadata?.personHeadshot[0]?.attributes?.alt
+    );
+    const name = dataStringChecker(author?.name);
+
+    const email = dataStringChecker(author?.metadata?.personEmail);
+
+    returnData.imageUrl = avatar || imageUrl;
+    returnData.imageAl = avatarAlt || imageAlt;
+    returnData.authorName = name;
+    returnData.authorEmail = email;
+  }
+
+  return returnData;
 }

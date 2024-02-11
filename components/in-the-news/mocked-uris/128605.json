@@ -1,0 +1,137 @@
+{
+    "id": "128605",
+    "type": "link",
+    "type_name": "Link",
+    "version": "0.0.6",
+    "name": "Six reasons drug prices are so high in the U.S.",
+    "short_name": "Six reasons drug prices are so high in the U.S.",
+    "status": {
+        "id": 2,
+        "code": "under_construction",
+        "name": "Under Construction"
+    },
+    "created": {
+        "date": "2024-01-29T17:12:16-08:00",
+        "user_id": "32242"
+    },
+    "updated": {
+        "date": "2024-01-29T17:17:17-08:00",
+        "user_id": "32242"
+    },
+    "published": {
+        "date": null,
+        "user_id": null
+    },
+    "status_changed": {
+        "date": "2024-01-29T17:12:16-08:00",
+        "user_id": "32242"
+    },
+    "urls": [
+        "https://sug-web.matrix.squiz.cloud/report/stories/test-stories/six-reasons-drug-prices-are-so-high-in-the-u.s."
+    ],
+    "url": "https://sug-web.matrix.squiz.cloud/report/stories/test-stories/six-reasons-drug-prices-are-so-high-in-the-u.s.",
+    "attributes": {
+        "link_url": "https://www.nytimes.com/2024/01/17/health/us-drug-prices.html",
+        "name": "Six reasons drug prices are so high in the U.S.",
+        "link_asset_id": "",
+        "link_relation": ""
+    },
+    "metadata": {
+        "csFeaturedImageUrl": [
+            "https://sug-web.matrix.squiz.cloud/__data/assets/image/0028/127837/60-850x560.jpg"
+        ],
+        "csFeaturedImageAlt": [
+            "Top don view of a desktop with a MAC computer"
+        ],
+        "csTaxonomyName": [
+            "Institutional news"
+        ],
+        "csTaxonomyUrl": [
+            "https://sug-web.matrix.squiz.cloud/_media/taxonomy/content-warehouse/front-end-taxonomy/content-topic/university-news2/institutional-news"
+        ],
+        "csContentTypeName": [
+            "Research"
+        ],
+        "seoTitle": [
+            "Six reasons drug prices are so high in the U.S."
+        ],
+        "canonicalUrl": [],
+        "seoDescription": [],
+        "seoKeywords": [],
+        "robots": [
+            "max-image-preview:large"
+        ],
+        "publishedDate": [
+            "2024-01-19 00:00:00"
+        ],
+        "modifiedDate": [
+            "2024-01-01 00:00:00"
+        ],
+        "srAudience": [],
+        "srMessage": [],
+        "srContentType": [
+            "28193"
+        ],
+        "srFeaturedUnit": [],
+        "srContentCategory": [],
+        "srContentMainTopic": [
+            "28396"
+        ],
+        "srContentTopic": [],
+        "srContentSubtopic": [],
+        "pageType": [
+            "story"
+        ],
+        "teaser": [
+            "<p>Article quotes Michelle Mello, professor of law and of health policy, on the lack of legal restrictions on drug prices.</p>"
+        ],
+        "featuredImage": [
+            "127837"
+        ],
+        "featuredVideo": [],
+        "mediaContacts": [],
+        "storySource": [
+            "New York Times"
+        ],
+        "contributorsAuthors": [
+            "127752"
+        ],
+        "contributorsProducers": [],
+        "contributorsWriters": [],
+        "contributorsEditors": [],
+        "contributorsVideographers": [],
+        "contributorsPhotographyDirector": [],
+        "contributorsMediaContacts": [],
+        "bylineAuthor": [],
+        "bylineText": [],
+        "bylineUrl": [],
+        "ogLocale": [
+            "en_US"
+        ],
+        "ogType": [
+            "article"
+        ],
+        "twitterCard": [
+            "summary_large_image"
+        ],
+        "authorId": [],
+        "authorName": [],
+        "srcOrigin": [],
+        "srcOriginType": [],
+        "srcContentSource": [],
+        "srcTitle": [],
+        "srcSummary": [],
+        "srcPublishedDate": [
+            "2023-01-01 00:00:00"
+        ],
+        "srcFeaturedImage": [],
+        "slug": [],
+        "srcKeywords": [],
+        "srcPostId": [],
+        "srcUrl": [],
+        "srcStatus": [],
+        "debugFeedUrl": [],
+        "debugPushTs": [],
+        "debugBlueprintId": []
+    }
+}
