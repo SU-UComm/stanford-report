@@ -3,26 +3,14 @@ import Component from "./Component";
 import FetchAdapter from "../../packages/utils/fetchAdapter";
 
 export default async (args, info) => {
-  const { CONTENT_API, CONTENT_API_KEY } = info.set.environment;
-  let data = null;
-  // get our data from the Content API
-  const adapter = new FetchAdapter(CONTENT_API, "MX");
+  let siteData = null;
+  const adapter = new FetchAdapter();
+  adapter.url = args.dataUrl;
 
-  adapter
-    .assets(args.assetid)
-    .data("contents")
-    .request({
-      headers: {
-        Authorization: `Bearer ${CONTENT_API_KEY}`,
-      },
-    });
-
-  data = await adapter.fetch();
-  const element = data[0].contents;
-
+  siteData = await adapter.fetch();
   const headerArgs = {
     ...args,
-    data: element,
+    ...siteData,
   };
 
   return renderComponent({

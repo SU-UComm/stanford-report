@@ -1,9 +1,9 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "image-quote",
-  "version": "0.0.6",
+  "version": "0.0.10",
   "namespace": "stanford-components",
-  "description": "Stanford university Base component.",
+  "description": "An image with an associated quote.",
   "displayName": "Image quote",
   "mainFunction": "main",
   "environment": [
@@ -13,7 +13,7 @@
     }
   ],
   "icon": {
-    "id": "foundation",
+    "id": "format_quote",
     "color": {
       "type": "enum",
       "value": "gray"
@@ -109,6 +109,14 @@
     "matrix-asset://api-identifier/127837": {
       "type": "file",
       "path": "mocked-uris/127837.json"
+    },
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/128612": {
+      "type": "file",
+      "path": "mocked-uris/128612.json"
     }
   },
   "previews": {

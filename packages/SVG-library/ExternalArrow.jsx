@@ -5,8 +5,12 @@ import React from "react";
  *
  * @return {JSX.Element}
  */
-export default function ExternalArrow() {
-  return (
+const ARROW_SIZE = "small";
+export default function ExternalArrow({ size = ARROW_SIZE }) {
+  const sizeMap = new Map();
+
+  sizeMap.set(
+    "small",
     <svg
       data-testid="svg-externalarrow"
       aria-hidden="true"
@@ -25,4 +29,27 @@ export default function ExternalArrow() {
       />
     </svg>
   );
+
+  sizeMap.set(
+    "large",
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="46"
+      height="46"
+      viewBox="0 0 46 46"
+      fill="none"
+    >
+      <path
+        d="M17.9134 14.1422L31.1127 14.1422M31.1127 14.1422L31.1127 27.3415M31.1127 14.1422L14.1422 31.1127"
+        stroke="#B1040E"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
+  if (size && sizeMap.get(size)) return sizeMap.get(size);
+
+  return sizeMap.get("small");
 }

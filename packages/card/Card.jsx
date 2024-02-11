@@ -3,7 +3,11 @@ import React from "react";
 import VerticalCard from "./verticalCard";
 import PullQuoteCard from "./PullQuoteCard";
 import HorizontalCard from "./HorizontalCard";
+<<<<<<< HEAD
 import TeaserCard from "./TeaserCard";
+=======
+import MediaCard from "./MediaCard";
+>>>>>>> develop
 
 /**
  * This component orchestrates the type of card
@@ -46,6 +50,8 @@ export default function Card({
       break;
     case "pullquote":
       return <PullQuoteCard data={data} />;
+    case "media":
+      return <MediaCard data={data} />;
     default:
       return (
         <VerticalCard
