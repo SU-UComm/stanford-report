@@ -5,12 +5,16 @@
   @apply su-pt-[21px] su-mt-[27px] su-border-t su-border-t-black-20 su-items-start su-content-start su-gap-[19px];
 }
 
-.component-slider .swiper-pagination-bullet {
+.component-slider
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
   @apply su-w-[13px] su-h-[13px] su-border-2 su-border-black dark:su-border-white hocus:su-border-digital-red dark:hocus:su-border-dark-mode-red;
 }
 
-.component-slider .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  @apply su-bg-black dark:su-bg-white hocus:su-border-black dark:hocus:su-border-white;
+.component-slider
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply su-bg-black dark:su-bg-white su-border-black dark:su-border-white hocus:su-border-black dark:hocus:su-border-white;
 }
 
 .component-slider .component-slider-btn {

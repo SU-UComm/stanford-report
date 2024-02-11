@@ -1,13 +1,13 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "campaign-cta",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "namespace": "stanford-components",
   "description": "This component serves as a preview & to promote campaign pages.",
   "displayName": "Campaign CTA",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "star",
     "color": {
       "type": "enum",
       "value": "gray"
