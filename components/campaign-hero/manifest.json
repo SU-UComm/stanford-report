@@ -20,10 +20,9 @@
       "input": {
         "type": "object",
         "properties": {
-          "backgroundImage": {
+          "bkgImage": {
             "title": "Background image",
-            "type": "string",
-            "format": "matrix-asset-uri"
+            "type": "string"
           },
           "title": {
             "title": "Heading",
@@ -56,6 +55,16 @@
           "quoteLink": {
             "title": "Quote Link",
             "description": "Link for quote name attribution, if needed.",
+            "type": "string"
+          },
+          "videoUrl": {
+            "title": "YouTube Video URL",
+            "description": "A video that will play in a modal.",
+            "type": "string"
+          },
+          "bkgVideo": {
+            "title": "Background Video",
+            "description": "Background looping video URL. We're using Vimeo for these.",
             "type": "string"
           }
         },
