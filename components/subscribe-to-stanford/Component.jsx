@@ -65,6 +65,8 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
           type="email"
           name="subsciption-email"
           placeholder="Email address"
+          title="Subscription Email"
+          aria-label="Subscription Email"
           className="su-rounded-[3px] su-p-[12px] su-text-[16px] su-leading-[20px]A su-text-black placeholder:su-text-black su-font-normal su-border-black-20 su-border-[1px] su-border-solid su-border-b-black-70 su-border-b-[2px] su-border-b-solid dark:su-bg-black-90 dark:su-text-[white] dark:placeholder:su-text-[white]"
           onKeyUp={emailInputEvent}
         />
