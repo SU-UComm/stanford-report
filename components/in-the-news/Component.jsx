@@ -21,6 +21,9 @@ export default function InTheNews({
   teaserOneData,
   teaserTwoData,
   headingData,
+  featuredLoadTime,
+  teaserOneLoadTime,
+  teaserTwoLoadTime,
 }) {
   const { featuredQuote } = featuredContent;
   const data = [];
@@ -29,6 +32,10 @@ export default function InTheNews({
     ...featuredData[0],
     quote: featuredQuote,
   };
+
+  console.log(featuredLoadTime);
+  console.log(teaserOneLoadTime);
+  console.log(teaserTwoLoadTime);
 
   if (Object.keys(featured).length) {
     data.push(<Card cardType="pullquote" data={featured} />);
