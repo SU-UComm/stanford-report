@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "in-the-news",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "This component contains one featured quote and two supplementary teasers.",
   "displayName": "In the news",
@@ -34,11 +34,23 @@
                 "title": "Heading",
                 "description": "The heading text",
                 "type": "string",
-                "default": "Lorem ipsum dolor"
+                "default": "In the news"
+              },
+              "ctaText": {
+                "title": "Link text",
+                "type": "string",
+                "default": "View all"
+              },
+              "ctaUrl": {
+                "title": "Link URL",
+                "type": "string",
+                "format": "matrix-asset-uri"
               }
             }
           },
           "featuredContent": {
+            "title": "Featured Content",
+            "description": "The main featured item in the component",
             "required": [],
             "properties": {
               "featuredTeaser": {
@@ -57,6 +69,16 @@
             "properties": {
               "teaserOne": {
                 "title": "Teaser One",
+                "format": "matrix-asset-uri",
+                "type": "string"
+              }
+            }
+          },
+          "supplementaryTeaserTwo": {
+            "required": [],
+            "properties": {
+              "teaserOne": {
+                "title": "Teaser Two",
                 "format": "matrix-asset-uri",
                 "type": "string"
               }
