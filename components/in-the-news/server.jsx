@@ -18,37 +18,59 @@ export default async (args, info) => {
   let teaserOneData = null;
   let teaserTwoData = null;
 
+  let featuredLoadTime = "";
+  let teaserOneLoadTime = "";
+  let teaserTwoLoadTime = "";
+
   if (featuredTeaser) {
     // Create our service
     const service = new MatrixCardService({ ctx, API_IDENTIFIER });
+    const start = performance.now();
+    let end = null;
 
     // Set our card service
     adapter.setCardService(service);
 
     // get the cards data
     featuredData = await adapter.getCards([{ cardAsset: featuredTeaser }]);
+
+    if (featuredData) end = performance.now();
+
+    featuredLoadTime = `Featured loaded in: ${end - start} milliseconds`;
   }
 
   if (teaserOne) {
     // Create our service
     const teaserOneService = new MatrixCardService({ ctx, API_IDENTIFIER });
+    const start = performance.now();
+    let end = null;
 
     // Set our card service
     adapter.setCardService(teaserOneService);
 
     // get the cards data
     teaserOneData = await adapter.getCards([{ cardAsset: teaserOne }]);
+
+    if (teaserOneData) end = performance.now();
+
+    teaserOneLoadTime = `Teaser one loaded in: ${end - start} milliseconds`;
   }
 
   if (teaserTwo) {
     // Create our service
     const teaserTwoService = new MatrixCardService({ ctx, API_IDENTIFIER });
+    const start = performance.now();
+    let end = null;
 
     // Set our card service
     adapter.setCardService(teaserTwoService);
 
     // get the cards data
     teaserTwoData = await adapter.getCards([{ cardAsset: teaserTwo }]);
+
+    if (teaserTwoData) end = performance.now();
+
+    teaserTwoLoadTime = `Teaser one loaded in: ${end - start} milliseconds`;
   }
 
   const headingData = await linkedHeadingService(
@@ -62,6 +84,9 @@ export default async (args, info) => {
     headingData,
     teaserOneData,
     teaserTwoData,
+    featuredLoadTime,
+    teaserOneLoadTime,
+    teaserTwoLoadTime,
   };
 
   return renderComponent({
