@@ -23,11 +23,24 @@ export default function InTheNews({
   headingData,
 }) {
   const { featuredQuote } = featuredContent;
+  const data = [];
 
   const featured = {
     ...featuredData[0],
     quote: featuredQuote,
   };
+
+  if (Object.keys(featured).length) {
+    data.push(<Card cardType="pullquote" data={featured} />);
+  }
+
+  if (teaserOneData.length) {
+    data.push(<Card cardType="teaser" data={teaserOneData[0]} />);
+  }
+
+  if (teaserTwoData.length) {
+    data.push(<Card cardType="teaser" data={teaserTwoData[0]} />);
+  }
 
   return (
     <Container>
@@ -37,13 +50,7 @@ export default function InTheNews({
         ctaUrl={headingData.resolvedUrl}
       />
 
-      <FeaturedGrid
-        items={[
-          <Card cardType="pullquote" data={featured} />,
-          <Card cardType="teaser" data={teaserOneData[0]} />,
-          <Card cardType="teaser" data={teaserTwoData[0]} />,
-        ]}
-      />
+      <FeaturedGrid items={data} />
     </Container>
   );
 }
