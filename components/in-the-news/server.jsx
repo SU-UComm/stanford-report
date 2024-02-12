@@ -25,7 +25,7 @@ export default async (args, info) => {
   if (featuredTeaser) {
     // Create our service
     const service = new MatrixCardService({ ctx, API_IDENTIFIER });
-    const start = performance.now();
+    const start = Date.now();
     let end = null;
 
     // Set our card service
@@ -34,7 +34,7 @@ export default async (args, info) => {
     // get the cards data
     featuredData = await adapter.getCards([{ cardAsset: featuredTeaser }]);
 
-    if (featuredData) end = performance.now();
+    if (featuredData) end = Date.now();
 
     featuredLoadTime = `Featured loaded in: ${end - start} milliseconds`;
   }
@@ -42,7 +42,7 @@ export default async (args, info) => {
   if (teaserOne) {
     // Create our service
     const teaserOneService = new MatrixCardService({ ctx, API_IDENTIFIER });
-    const start = performance.now();
+    const start = Date.now();
     let end = null;
 
     // Set our card service
@@ -51,7 +51,7 @@ export default async (args, info) => {
     // get the cards data
     teaserOneData = await adapter.getCards([{ cardAsset: teaserOne }]);
 
-    if (teaserOneData) end = performance.now();
+    if (teaserOneData) end = Date.now();
 
     teaserOneLoadTime = `Teaser one loaded in: ${end - start} milliseconds`;
   }
@@ -59,7 +59,7 @@ export default async (args, info) => {
   if (teaserTwo) {
     // Create our service
     const teaserTwoService = new MatrixCardService({ ctx, API_IDENTIFIER });
-    const start = performance.now();
+    const start = Date.now();
     let end = null;
 
     // Set our card service
@@ -68,7 +68,7 @@ export default async (args, info) => {
     // get the cards data
     teaserTwoData = await adapter.getCards([{ cardAsset: teaserTwo }]);
 
-    if (teaserTwoData) end = performance.now();
+    if (teaserTwoData) end = Date.now();
 
     teaserTwoLoadTime = `Teaser one loaded in: ${end - start} milliseconds`;
   }
