@@ -35,6 +35,16 @@
                 "description": "The heading text",
                 "type": "string",
                 "default": "In the news"
+              },
+              "ctaText": {
+                "title": "Link text",
+                "type": "string",
+                "default": "View all"
+              },
+              "ctaUrl": {
+                "title": "Link URL",
+                "type": "string",
+                "format": "matrix-asset-uri"
               }
             }
           },
