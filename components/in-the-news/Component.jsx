@@ -16,38 +16,44 @@ import { FeaturedGrid } from "../../packages/grids/Grids";
  */
 
 export default function InTheNews({
+  data,
   featuredContent,
-  featuredData,
-  teaserOneData,
-  teaserTwoData,
+  // featuredData,
+  // teaserOneData,
+  // teaserTwoData,
   headingData,
-  featuredLoadTime,
-  teaserOneLoadTime,
-  teaserTwoLoadTime,
 }) {
   const { featuredQuote } = featuredContent;
-  const data = [];
+  const cardData = [];
 
-  const featured = {
-    ...featuredData[0],
-    quote: featuredQuote,
-  };
+  if (data.length) {
+    const featured = {
+      ...data[0],
+      quote: featuredQuote,
+    };
 
-  console.log(featuredLoadTime);
-  console.log(teaserOneLoadTime);
-  console.log(teaserTwoLoadTime);
+    data.forEach((card, i) => {
+      if (i === 0) {
+        cardData.push(<Card cardType="pullquote" data={featured} />);
 
-  if (Object.keys(featured).length) {
-    data.push(<Card cardType="pullquote" data={featured} />);
+        return;
+      }
+
+      cardData.push(<Card cardType="teaser" data={card} />);
+    });
   }
 
-  if (teaserOneData.length) {
-    data.push(<Card cardType="teaser" data={teaserOneData[0]} />);
-  }
+  // if (Object.keys(featured).length) {
+  //   cardData.push(<Card cardType="pullquote" data={featured} />);
+  // }
 
-  if (teaserTwoData.length) {
-    data.push(<Card cardType="teaser" data={teaserTwoData[0]} />);
-  }
+  // if (teaserOneData.length) {
+  //   cardData.push(<Card cardType="teaser" data={teaserOneData[0]} />);
+  // }
+
+  // if (teaserTwoData.length) {
+  //   cardData.push(<Card cardType="teaser" data={teaserTwoData[0]} />);
+  // }
 
   return (
     <Container>
@@ -57,7 +63,7 @@ export default function InTheNews({
         ctaUrl={headingData.resolvedUrl}
       />
 
-      <FeaturedGrid items={data} />
+      <FeaturedGrid items={cardData} />
     </Container>
   );
 }
