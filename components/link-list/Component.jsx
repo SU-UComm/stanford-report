@@ -57,7 +57,7 @@ export default function LinkList({ search }) {
   return (
     <div
       data-role="link-list-wrapper"
-      className="su-fixed su-opacity-[0] su-bottom-[-100px] su-left-0 su-left-[50%] su-right-[50%] su-translate-x-[-50%] su-max-w-[482px] su-w-full su-p-[20px] su-bg-[white] su-rounded-tl-[8px] su-rounded-tr-[8px] su-transition su-z-[9999] lg:su-relative lg:su-bottom-0 lg:su-opacity-[1]"
+      className="su-fixed su-opacity-[0] su-bottom-[-100px] su-left-0 su-left-[50%] su-right-[50%] su-translate-x-[-50%] su-max-w-[482px] su-w-full su-p-[20px] su-bg-[white] su-rounded-tl-[8px] su-rounded-tr-[8px] su-transition su-z-[9999] lg:su-z-[1] lg:su-relative lg:su-bottom-0 lg:su-opacity-[1]"
     >
       <div className="su-flex">
         <SidebarHeading title="Stories for you" icon="bullseyePointer" />
@@ -80,19 +80,21 @@ export default function LinkList({ search }) {
         data-role="link-drawer"
       >
         {linkItems[0] && (
-          <article className="su-border-solid su-border-b-[1px] su-border-b-black-20 su-pb-[15px] su-mt-[23.65px]">
+          <article className="su-border-solid su-border-b-[1px] su-border-b-black-20 su-pb-[15px] su-mt-[23.65px] lg:su-pb-[36px]">
             {linkItems[0]}
           </article>
         )}
 
         {linkItems[1] && (
-          <article className="su-border-solid su-border-b-[1px] su-border-b-black-20 su-py-[15px]">
+          <article className="su-border-solid su-border-b-[1px] su-border-b-black-20 su-py-[15px] lg:su-py-[36px]">
             {linkItems[1]}
           </article>
         )}
 
         {linkItems[2] && (
-          <article className="su-pt-[15px]">{linkItems[2]}</article>
+          <article className="su-pt-[15px] lg:su-pt-[36px]">
+            {linkItems[2]}
+          </article>
         )}
       </div>
     </div>
