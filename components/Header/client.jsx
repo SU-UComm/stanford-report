@@ -4,8 +4,9 @@ import _preferencesSettings from "./scripts/preferenceSettings";
 import ReportHeader from "./scripts/reportHeader";
 
 (function () {
+  const componentName = "header-component";
   const target = document.querySelector(
-    `[data-hydration-component="header-component"]`
+    `[data-hydration-component="${componentName}"]`
   );
 
   if (!target) return;
@@ -13,6 +14,5 @@ import ReportHeader from "./scripts/reportHeader";
   const headerDom = document.querySelector(".report-header");
   const initHeader = new ReportHeader(headerDom);
   _preferencesSettings();
-
-  hydrateComponent({ Component, componentName: "header-component" });
+  hydrateComponent({ Component, componentName });
 })();
