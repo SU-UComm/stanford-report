@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "acknowledgement",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "namespace": "stanford-components",
   "description": "A basic WYSIWYG to place an acknowledgement.",
   "displayName": "Acknowledgement",
