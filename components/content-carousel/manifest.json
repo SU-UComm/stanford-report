@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "content-carousel",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "namespace": "stanford-components",
   "description": "A carousel of slides that contain WYSIWYG content.",
   "displayName": "Content Carousel",
@@ -99,7 +99,20 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "../../packages/__globalPreview/basicstory.html"
+          }
+        }
+      }
+    },
+    "story": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/basicstory.html"
           }
         }
       }

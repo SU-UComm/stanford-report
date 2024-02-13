@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "media-carousel",
-  "version": "0.0.3",
+  "version": "0.0.11",
   "namespace": "stanford-components",
   "description": "Links to media, displayed as cards in a carousel.",
   "displayName": "Media carousel",
@@ -23,7 +23,7 @@
         "properties": {
           "cards": {
             "title": "Cards",
-            "description": "Select the assets that will be used for cards. The first card selected will be the featured card.",
+            "description": "Enter the details for each card.",
             "type": "array",
             "minItems": 1,
             "maxItems": 5,
@@ -190,6 +190,10 @@
     "matrix-asset://api-identifier/128610": {
       "type": "file",
       "path": "mocked-uris/128610.json"
+    },
+    "matrix-asset://api-identifier/128612": {
+      "type": "file",
+      "path": "mocked-uris/128612.json"
     }
   },
   "previews": {

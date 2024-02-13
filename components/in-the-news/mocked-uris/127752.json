@@ -1,0 +1,48 @@
+{
+   "id":"127752",
+   "type":"data_record",
+   "type_name":"Data Record",
+   "version":"0.0.4",
+   "name":"Jane Doe",
+   "short_name":"Jane Doe",
+   "status":{
+      "id":2,
+      "code":"under_construction",
+      "name":"Under Construction"
+   },
+   "created":{
+      "date":"2024-01-09T23:09:59-08:00",
+      "user_id":"32242"
+   },
+   "updated":{
+      "date":"2024-01-16T19:37:15-08:00",
+      "user_id":"32242"
+   },
+   "published":{
+      "date":null,
+      "user_id":null
+   },
+   "status_changed":{
+      "date":"2024-01-09T23:09:59-08:00",
+      "user_id":"32242"
+   },
+   "urls":[
+      "https://sug-web.matrix.squiz.cloud/_media/person-assets/uat/jchoi/john-doe"
+   ],
+   "url":"https://sug-web.matrix.squiz.cloud/_media/person-assets/uat/jchoi/john-doe",
+   "attributes":{
+      "name":"Jane Doe"
+   },
+   "metadata":{
+      "personEmail":[
+         "jane.doe@stanford.edu.au"
+      ],
+      "personHeadshot":[
+         "128101"
+      ]
+   },
+   "contents":"",
+   "additional":{
+      
+   }
+}
