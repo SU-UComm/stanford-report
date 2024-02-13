@@ -40,14 +40,17 @@ export default function BasicMetadata({ data }) {
       {authors && authors.length && (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title={`Author${authors.length > 1 ? "s" : ""}`}>
-            {authors.map((item) => (
-              <p
-                className="su-m-0 su-text-[21px] su-leading-[26.25px]"
-                key={item.asset_assetid}
-              >
-                {item.asset_name}
-              </p>
-            ))}
+            {authors.map(
+              (item) =>
+                item && (
+                  <p
+                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    key={item.asset_assetid}
+                  >
+                    {item.asset_name}
+                  </p>
+                )
+            )}
           </BasicFields>
         </div>
       )}
@@ -55,14 +58,17 @@ export default function BasicMetadata({ data }) {
       {producers && producers.length && (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title={`Producer${producers.length > 1 ? "s" : ""}`}>
-            {producers.map((item) => (
-              <p
-                className="su-m-0 su-text-[21px] su-leading-[26.25px]"
-                key={item.asset_assetid}
-              >
-                {item.asset_name}
-              </p>
-            ))}
+            {producers.map(
+              (item) =>
+                item && (
+                  <p
+                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    key={item.asset_assetid}
+                  >
+                    {item.asset_name}
+                  </p>
+                )
+            )}
           </BasicFields>
         </div>
       )}
@@ -70,14 +76,17 @@ export default function BasicMetadata({ data }) {
       {writers && writers.length && (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title={`Writer${writers.length > 1 ? "s" : ""}`}>
-            {writers.map((item) => (
-              <p
-                className="su-m-0 su-text-[21px] su-leading-[26.25px]"
-                key={item.asset_assetid}
-              >
-                {item.asset_name}
-              </p>
-            ))}
+            {writers.map(
+              (item) =>
+                item && (
+                  <p
+                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    key={item.asset_assetid}
+                  >
+                    {item.asset_name}
+                  </p>
+                )
+            )}
           </BasicFields>
         </div>
       )}
@@ -85,14 +94,17 @@ export default function BasicMetadata({ data }) {
       {editors && editors.length && (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title={`Editor${editors.length > 1 ? "s" : ""}`}>
-            {editors.map((item) => (
-              <p
-                className="su-m-0 su-text-[21px] su-leading-[26.25px]"
-                key={item.asset_assetid}
-              >
-                {item.asset_name}
-              </p>
-            ))}
+            {editors.map(
+              (item) =>
+                item && (
+                  <p
+                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    key={item.asset_assetid}
+                  >
+                    {item.asset_name}
+                  </p>
+                )
+            )}
           </BasicFields>
         </div>
       )}
@@ -102,14 +114,17 @@ export default function BasicMetadata({ data }) {
           <BasicFields
             title={`Videographer${videographers.length > 1 ? "s" : ""}`}
           >
-            {videographers.map((item) => (
-              <p
-                className="su-m-0 su-text-[21px] su-leading-[26.25px]"
-                key={item.asset_assetid}
-              >
-                {item.asset_name}
-              </p>
-            ))}
+            {videographers.map(
+              (item) =>
+                item && (
+                  <p
+                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    key={item.asset_assetid}
+                  >
+                    {item.asset_name}
+                  </p>
+                )
+            )}
           </BasicFields>
         </div>
       )}
@@ -119,14 +134,17 @@ export default function BasicMetadata({ data }) {
           <BasicFields
             title={`Photography director${photography.length > 1 ? "s" : ""}`}
           >
-            {photography.map((item) => (
-              <p
-                className="su-m-0 su-text-[21px] su-leading-[26.25px]"
-                key={item.asset_assetid}
-              >
-                {item.asset_name}
-              </p>
-            ))}
+            {photography.map(
+              (item) =>
+                item && (
+                  <p
+                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    key={item.asset_assetid}
+                  >
+                    {item.asset_name}
+                  </p>
+                )
+            )}
           </BasicFields>
         </div>
       )}
@@ -134,23 +152,26 @@ export default function BasicMetadata({ data }) {
       {media && media.length && (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title={`Media contact${media.length > 1 ? "s" : ""}`}>
-            {media.map((item) => (
-              <div className="" key={item.asset_assetid}>
-                {item.asset_name}
-                {item.asset_metadata_personEmail &&
-                  item.asset_metadata_personEmail.length > 0 && (
-                    <>
-                      <br />
-                      <a
-                        href={`mailto:${item.asset_metadata_personEmail}`}
-                        className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[18px] su-leading-[26.25px]"
-                      >
-                        {item.asset_metadata_personEmail}
-                      </a>
-                    </>
-                  )}
-              </div>
-            ))}
+            {media.map(
+              (item) =>
+                item && (
+                  <div className="" key={item.asset_assetid}>
+                    {item.asset_name}
+                    {item.asset_metadata_personEmail &&
+                      item.asset_metadata_personEmail.length > 0 && (
+                        <>
+                          <br />
+                          <a
+                            href={`mailto:${item.asset_metadata_personEmail}`}
+                            className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[18px] su-leading-[26.25px]"
+                          >
+                            {item.asset_metadata_personEmail}
+                          </a>
+                        </>
+                      )}
+                  </div>
+                )
+            )}
           </BasicFields>
         </div>
       )}
@@ -171,16 +192,19 @@ export default function BasicMetadata({ data }) {
       {related && related.length && (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title="Related topics">
-            {related.map((item) => (
-              <div className="" key={item.asset_assetid}>
-                <a
-                  href={item.asset_url}
-                  className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[18px] su-leading-[26.25px]"
-                >
-                  {item.asset_name}
-                </a>
-              </div>
-            ))}
+            {related.map(
+              (item) =>
+                item && (
+                  <div className="" key={item.asset_assetid}>
+                    <a
+                      href={item.asset_url}
+                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[18px] su-leading-[26.25px]"
+                    >
+                      {item.asset_name}
+                    </a>
+                  </div>
+                )
+            )}
           </BasicFields>
         </div>
       )}

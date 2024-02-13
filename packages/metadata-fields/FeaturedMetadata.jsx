@@ -109,14 +109,17 @@ export default function FeaturedMetadata({ data }) {
               <div className="su-w-full md:su-w-auto md:su-min-w-[170px]">
                 <FeaturedField title={meta.name} alignment="center">
                   {meta.name !== "Campus unit" ? (
-                    meta.items.map((item) => (
-                      <p
-                        className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal md:su-text-[21px] md:su-leading-[26.25px]"
-                        key={item.asset_assetid}
-                      >
-                        {item.asset_name}
-                      </p>
-                    ))
+                    meta.items.map(
+                      (item) =>
+                        item && (
+                          <p
+                            className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal md:su-text-[21px] md:su-leading-[26.25px]"
+                            key={item.asset_assetid}
+                          >
+                            {item.asset_name}
+                          </p>
+                        )
+                    )
                   ) : (
                     <a
                       href={meta.items.asset_url}
@@ -150,14 +153,17 @@ export default function FeaturedMetadata({ data }) {
               <div className="su-w-full md:su-w-auto md:su-min-w-[170px]">
                 <FeaturedField title={meta.name} alignment="center">
                   {meta.name !== "Campus unit" ? (
-                    meta.items.map((item) => (
-                      <p
-                        className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal md:su-text-[21px] md:su-leading-[26.25px]"
-                        key={item.asset_assetid}
-                      >
-                        {item.asset_name}
-                      </p>
-                    ))
+                    meta.items.map(
+                      (item) =>
+                        item && (
+                          <p
+                            className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal md:su-text-[21px] md:su-leading-[26.25px]"
+                            key={item.asset_assetid}
+                          >
+                            {item.asset_name}
+                          </p>
+                        )
+                    )
                   ) : (
                     <a
                       href={meta.items.asset_url}
@@ -204,26 +210,29 @@ export default function FeaturedMetadata({ data }) {
                       : "su-flex su-gap-[10px] su-flex-col md:su-gap-[20px]"
                   }`}
                 >
-                  {media.map((item) => (
-                    <div
-                      className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal su-flex su-flex-col su-gap-[10px] md:su-text-[21px] md:su-leading-[26.25px]"
-                      key={item.asset_assetid}
-                    >
-                      {item.asset_name}
-                      {item.asset_metadata_personEmail &&
-                        item.asset_metadata_personEmail.length > 0 && (
-                          <>
-                            <br />
-                            <a
-                              href={`mailto:${item.asset_metadata_personEmail}`}
-                              className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-semibold su-mt-[13px] md:su-text-[21px] md:su-leading-[23.75px]"
-                            >
-                              {item.asset_metadata_personEmail}
-                            </a>
-                          </>
-                        )}
-                    </div>
-                  ))}
+                  {media.map(
+                    (item) =>
+                      item && (
+                        <div
+                          className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal su-flex su-flex-col su-gap-[10px] md:su-text-[21px] md:su-leading-[26.25px]"
+                          key={item.asset_assetid}
+                        >
+                          {item.asset_name}
+                          {item.asset_metadata_personEmail &&
+                            item.asset_metadata_personEmail.length > 0 && (
+                              <>
+                                <br />
+                                <a
+                                  href={`mailto:${item.asset_metadata_personEmail}`}
+                                  className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-semibold su-mt-[13px] md:su-text-[21px] md:su-leading-[23.75px]"
+                                >
+                                  {item.asset_metadata_personEmail}
+                                </a>
+                              </>
+                            )}
+                        </div>
+                      )
+                  )}
                 </div>
               </FeaturedField>
             </div>
@@ -252,16 +261,19 @@ export default function FeaturedMetadata({ data }) {
           </h3>
 
           <div className="su-flex su-gap-[20px] su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-[12px] md:su-flex-row md:su-flex-wrap md:su-justify-center">
-            {related.map((item) => (
-              <div key={item.asset_assetid}>
-                <a
-                  href={item.asset_url}
-                  className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[19px] su-font-semibold"
-                >
-                  {item.asset_name}
-                </a>
-              </div>
-            ))}
+            {related.map(
+              (item) =>
+                item && (
+                  <div key={item.asset_assetid}>
+                    <a
+                      href={item.asset_url}
+                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[19px] su-font-semibold"
+                    >
+                      {item.asset_name}
+                    </a>
+                  </div>
+                )
+            )}
           </div>
         </div>
       )}
