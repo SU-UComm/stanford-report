@@ -57,7 +57,7 @@ export default function LinkList({ search }) {
   return (
     <div
       data-role="link-list-wrapper"
-      className="su-fixed su-opacity-[0] su-bottom-[-100px] su-left-0 su-left-[50%] su-right-[50%] su-translate-x-[-50%] su-max-w-[482px] su-w-full su-p-[20px] su-bg-[white] su-rounded-tl-[8px] su-rounded-tr-[8px] su-transition su-z-[9999] lg:su-z-[1] lg:su-relative lg:su-bottom-0 lg:su-opacity-[1]"
+      className="su-fixed su-opacity-[0] su-bottom-[-100px] su-left-0 su-left-[50%] su-right-[50%] su-translate-x-[-50%] su-max-w-[482px] su-w-full su-p-[20px] su-bg-[white] su-rounded-tl-[8px] su-rounded-tr-[8px] su-transition su-z-[9999] lg:su-z-[1] lg:su-relative lg:su-bottom-0 lg:su-opacity-[1] lg:su-p-0"
     >
       <div className="su-flex">
         <SidebarHeading title="Stories for you" icon="bullseyePointer" />
