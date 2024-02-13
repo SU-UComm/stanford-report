@@ -1,61 +1,68 @@
 {
-  "id": "128610",
+  "id": "128612",
   "type": "image",
   "type_name": "Image",
   "version": "0.1.0",
-  "name": "auden-book.png",
-  "short_name": "Book Cover 1",
+  "name": "think-faster-book.jpeg",
+  "short_name": "Book Cover 2",
   "status": {
     "id": 16,
     "code": "live",
     "name": "Live"
   },
   "created": {
-    "date": "2024-01-29T18:47:51-08:00",
+    "date": "2024-01-29T22:02:31-08:00",
     "user_id": "32325"
   },
   "updated": {
-    "date": "2024-01-29T18:48:06-08:00",
+    "date": "2024-01-29T22:02:45-08:00",
     "user_id": "32325"
   },
   "published": {
-    "date": "2024-01-29T18:48:06-08:00",
+    "date": "2024-01-29T22:02:43-08:00",
     "user_id": "32325"
   },
   "status_changed": {
-    "date": "2024-01-29T18:48:06-08:00",
+    "date": "2024-01-29T22:02:43-08:00",
     "user_id": "32325"
   },
   "urls": [
-    "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/auden-book.png"
+    "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/think-faster-book.jpeg"
   ],
-  "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/auden-book.png",
+  "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/think-faster-book.jpeg",
   "attributes": {
-    "title": "Book Cover 1",
+    "title": "Book Cover 2",
     "allow_unrestricted": true,
     "variety_count": 19,
-    "size": 97942,
-    "height": 495,
-    "width": 330,
+    "size": 71655,
+    "height": 1500,
+    "width": 993,
     "caption": "",
-    "alt": "This is a cover of a book",
-    "name": "auden-book.png"
+    "alt": "Example of another book cover",
+    "name": "think-faster-book.jpeg"
   },
-  "metadata": null,
-  "contents": "<img src=\"https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/auden-book.png\" width=\"330\" height=\"495\" alt=\"This is a cover of a book\" title=\"Book Cover 1\" />",
+  "metadata": {
+    "mediaPublished": ["2024-01-01 00:00:00"],
+    "mediaModified": ["2024-01-01 00:00:00"],
+    "mediaDescription": [],
+    "mediaCredit": [],
+    "mediaId": [],
+    "fileFeed": []
+  },
+  "contents": "<img src=\"https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/think-faster-book.jpeg\" width=\"993\" height=\"1500\" alt=\"Example of another book cover\" title=\"Book Cover 2\" />",
   "additional": {
     "file_info": {
-      "file_name": "auden-book.png",
-      "size_readable": "95.6 KB",
-      "size_bytes": 97942,
-      "width": 330,
-      "height": 495,
-      "modified_readable": "Jan 29, 2024 6:47 PM",
-      "modified_unix": 1706582871
+      "file_name": "think-faster-book.jpeg",
+      "size_readable": "70.0 KB",
+      "size_bytes": 71655,
+      "width": 993,
+      "height": 1500,
+      "modified_readable": "Jan 29, 2024 10:02 PM",
+      "modified_unix": 1706594552
     },
     "varieties": [
       {
-        "id": "128610:v1",
+        "id": "128612:v1",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -83,19 +90,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/100w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/100w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/100w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/100w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "100w.png",
+          "filename": "100w.jpeg",
           "name": "100w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 11557,
+          "variety_size": 3711,
           "variety_height": 100,
           "variety_width": 100,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 100,
           "height": 0,
@@ -107,7 +114,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v2",
+        "id": "128612:v2",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -135,19 +142,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/150w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/150w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/150w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/150w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "150w.png",
+          "filename": "150w.jpeg",
           "name": "150w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 21965,
+          "variety_size": 5840,
           "variety_height": 150,
           "variety_width": 150,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 150,
           "height": 0,
@@ -159,7 +166,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v3",
+        "id": "128612:v3",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -187,19 +194,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/200w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/200w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/200w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/200w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "200w.png",
+          "filename": "200w.jpeg",
           "name": "200w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 48225,
-          "variety_height": 300,
+          "variety_size": 12519,
+          "variety_height": 302,
           "variety_width": 200,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 200,
@@ -211,7 +218,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v4",
+        "id": "128612:v4",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -239,19 +246,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/300w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/300w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/300w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/300w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "300w.png",
+          "filename": "300w.jpeg",
           "name": "300w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 48225,
-          "variety_height": 300,
+          "variety_size": 12519,
+          "variety_height": 302,
           "variety_width": 200,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 300,
@@ -263,7 +270,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v5",
+        "id": "128612:v5",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -291,19 +298,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/345w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/345w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/345w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/345w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "345w.png",
+          "filename": "345w.jpeg",
           "name": "345w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 118459,
-          "variety_height": 518,
+          "variety_size": 26306,
+          "variety_height": 521,
           "variety_width": 345,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 555,
@@ -315,7 +322,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v6",
+        "id": "128612:v6",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -343,19 +350,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/375w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/375w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/375w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/375w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "375w.png",
+          "filename": "375w.jpeg",
           "name": "375w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 135213,
-          "variety_height": 563,
+          "variety_size": 28893,
+          "variety_height": 566,
           "variety_width": 375,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 200,
@@ -367,7 +374,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v7",
+        "id": "128612:v7",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -395,19 +402,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/400w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/400w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/400w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/400w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "400w.png",
+          "filename": "400w.jpeg",
           "name": "400w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 154682,
-          "variety_height": 600,
+          "variety_size": 30588,
+          "variety_height": 604,
           "variety_width": 400,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 100,
@@ -419,7 +426,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v8",
+        "id": "128612:v8",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -447,19 +454,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/555w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/555w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/555w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/555w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "555w.png",
+          "filename": "555w.jpeg",
           "name": "555w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 247367,
-          "variety_height": 833,
+          "variety_size": 45320,
+          "variety_height": 838,
           "variety_width": 555,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 0,
@@ -471,7 +478,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v9",
+        "id": "128612:v9",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -499,19 +506,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/600w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/600w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/600w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/600w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "600w.png",
+          "filename": "600w.jpeg",
           "name": "600w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 258526,
-          "variety_height": 900,
+          "variety_size": 50018,
+          "variety_height": 906,
           "variety_width": 600,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 0,
@@ -523,7 +530,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v10",
+        "id": "128612:v10",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -551,19 +558,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/690w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/690w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/690w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/690w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "690w.png",
+          "filename": "690w.jpeg",
           "name": "690w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 298587,
-          "variety_height": 1035,
+          "variety_size": 59681,
+          "variety_height": 1042,
           "variety_width": 690,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 0,
@@ -575,7 +582,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v11",
+        "id": "128612:v11",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -603,19 +610,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/705w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/705w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/705w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/705w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "705w.png",
+          "filename": "705w.jpeg",
           "name": "705w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 319317,
-          "variety_height": 1058,
+          "variety_size": 62278,
+          "variety_height": 1065,
           "variety_width": 705,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 0,
@@ -627,7 +634,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v12",
+        "id": "128612:v12",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -655,19 +662,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/750w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/750w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/750w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/750w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "750w.png",
+          "filename": "750w.jpeg",
           "name": "750w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 312296,
-          "variety_height": 1125,
+          "variety_size": 66814,
+          "variety_height": 1133,
           "variety_width": 750,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 0,
@@ -679,7 +686,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v13",
+        "id": "128612:v13",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -707,19 +714,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/795w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/795w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/795w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/795w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "795w.png",
+          "filename": "795w.jpeg",
           "name": "795w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 364179,
-          "variety_height": 1193,
+          "variety_size": 70693,
+          "variety_height": 1201,
           "variety_width": 795,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 0,
@@ -731,7 +738,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v14",
+        "id": "128612:v14",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -759,19 +766,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/960w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/960w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/960w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/960w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "960w.png",
+          "filename": "960w.jpeg",
           "name": "960w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 265831,
-          "variety_height": 1440,
+          "variety_size": 93661,
+          "variety_height": 1450,
           "variety_width": 960,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 0,
@@ -783,7 +790,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v15",
+        "id": "128612:v15",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -811,19 +818,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/1024w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/1024w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/1024w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/1024w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "1024w.png",
+          "filename": "1024w.jpeg",
           "name": "1024w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 283805,
-          "variety_height": 1536,
+          "variety_size": 102147,
+          "variety_height": 1547,
           "variety_width": 1024,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 0,
@@ -835,7 +842,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v16",
+        "id": "128612:v16",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -863,19 +870,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/1110w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/1110w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/1110w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/1110w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "1110w.png",
+          "filename": "1110w.jpeg",
           "name": "1110w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 436011,
-          "variety_height": 1665,
+          "variety_size": 113172,
+          "variety_height": 1677,
           "variety_width": 1110,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 0,
@@ -887,7 +894,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v17",
+        "id": "128612:v17",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -915,19 +922,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/1410w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/1410w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/1410w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/1410w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "1410w.png",
+          "filename": "1410w.jpeg",
           "name": "1410w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 483997,
-          "variety_height": 2115,
+          "variety_size": 165156,
+          "variety_height": 2130,
           "variety_width": 1410,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 0,
@@ -939,7 +946,7 @@
         "additional": {}
       },
       {
-        "id": "128610:v18",
+        "id": "128612:v18",
         "type": "image_variety",
         "type_name": "Image Variety",
         "version": "",
@@ -967,19 +974,19 @@
           "user_id": null
         },
         "urls": [
-          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/1500w.png"
+          "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/1500w.jpeg"
         ],
-        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0018/128610/varieties/1500w.png",
+        "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0020/128612/varieties/1500w.jpeg",
         "attributes": {
           "variety_type": "resize",
-          "filename": "1500w.png",
+          "filename": "1500w.jpeg",
           "name": "1500w",
-          "title": "Book Cover 1",
+          "title": "Book Cover 2",
           "caption": "",
-          "variety_size": 581363,
-          "variety_height": 2250,
+          "variety_size": 180032,
+          "variety_height": 2266,
           "variety_width": 1500,
-          "alt": "This is a cover of a book",
+          "alt": "Example of another book cover",
           "dimension_min": 0,
           "dimension": 0,
           "height": 0,
@@ -993,15 +1000,11 @@
     ],
     "exif": {
       "image": {
-        "ImageHeight": 495,
-        "ImageWidth": 330
-      },
-      "thumbnail": {
-        "Compression": 0
-      },
-      "exif": {
-        "ExifImageHeight": 495,
-        "ExifImageWidth": 330
+        "ImageHeight": 1500,
+        "ImageWidth": 993,
+        "ResolutionUnit": 0,
+        "XResolution": 1,
+        "YResolution": 1
       }
     }
   }
