@@ -2,11 +2,11 @@
 @tailwind utilities;
 
 .su-component-container .component-slider {
-  @apply su-mx-[-20px] md:su-mx-[-50px] lg:su-mx-auto;
+  @apply lg:su-mx-auto;
 }
 
 .su-component-container .component-slider-controls {
-  @apply su-px-[10%] md:su-px-[50px] lg:su-px-0;
+  /* @apply su-px-[10%] md:su-px-[50px] lg:su-px-0; */
 }
 
 .swiper-slide-active .su-component-card-media {
