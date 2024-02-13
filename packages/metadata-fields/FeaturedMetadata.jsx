@@ -252,16 +252,19 @@ export default function FeaturedMetadata({ data }) {
           </h3>
 
           <div className="su-flex su-gap-[20px] su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-[12px] md:su-flex-row md:su-flex-wrap md:su-justify-center">
-            {related.map((item) => (
-              <div key={item.asset_assetid}>
-                <a
-                  href={item.asset_url}
-                  className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[19px] su-font-semibold"
-                >
-                  {item.asset_name}
-                </a>
-              </div>
-            ))}
+            {related.map(
+              (item) =>
+                item && (
+                  <div key={item.asset_assetid}>
+                    <a
+                      href={item.asset_url}
+                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[19px] su-font-semibold"
+                    >
+                      {item.asset_name}
+                    </a>
+                  </div>
+                )
+            )}
           </div>
         </div>
       )}

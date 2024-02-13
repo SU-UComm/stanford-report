@@ -171,16 +171,19 @@ export default function BasicMetadata({ data }) {
       {related && related.length && (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title="Related topics">
-            {related.map((item) => (
-              <div className="" key={item.asset_assetid}>
-                <a
-                  href={item.asset_url}
-                  className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[18px] su-leading-[26.25px]"
-                >
-                  {item.asset_name}
-                </a>
-              </div>
-            ))}
+            {related.map(
+              (item) =>
+                item && (
+                  <div className="" key={item.asset_assetid}>
+                    <a
+                      href={item.asset_url}
+                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[18px] su-leading-[26.25px]"
+                    >
+                      {item.asset_name}
+                    </a>
+                  </div>
+                )
+            )}
           </BasicFields>
         </div>
       )}
