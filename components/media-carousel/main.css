@@ -5,8 +5,16 @@
   @apply lg:su-mx-auto;
 }
 
-.su-component-container .component-slider-controls {
-  /* @apply su-px-[10%] md:su-px-[50px] lg:su-px-0; */
+.swiper-slide-visible .su-media-card-thumb {
+  @apply su-transition;
+}
+
+.swiper-slide-prev.swiper-slide-visible .su-media-card-thumb {
+  @apply su-object-[right_center] lg:su-object-center;
+}
+
+.swiper-slide-next.swiper-slide-visible .su-media-card-thumb {
+  @apply su-object-[left_center] lg:su-object-center;
 }
 
 .swiper-slide-active .su-component-card-media {
