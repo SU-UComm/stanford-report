@@ -15,14 +15,7 @@ import { FeaturedGrid } from "../../packages/grids/Grids";
  * @constructor
  */
 
-export default function InTheNews({
-  data,
-  featuredContent,
-  // featuredData,
-  // teaserOneData,
-  // teaserTwoData,
-  headingData,
-}) {
+export default function InTheNews({ data, featuredContent, headingData }) {
   const { featuredQuote } = featuredContent;
   const cardData = [];
 
@@ -42,18 +35,6 @@ export default function InTheNews({
       cardData.push(<Card cardType="teaser" data={card} />);
     });
   }
-
-  // if (Object.keys(featured).length) {
-  //   cardData.push(<Card cardType="pullquote" data={featured} />);
-  // }
-
-  // if (teaserOneData.length) {
-  //   cardData.push(<Card cardType="teaser" data={teaserOneData[0]} />);
-  // }
-
-  // if (teaserTwoData.length) {
-  //   cardData.push(<Card cardType="teaser" data={teaserTwoData[0]} />);
-  // }
 
   return (
     <Container>

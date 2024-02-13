@@ -15,47 +15,20 @@ export default async (args, info) => {
   const adapter = new CardDataAdapter();
   const cards = [];
 
-  const featuredData = null;
-  const teaserOneData = null;
-  const teaserTwoData = null;
   let data = null;
 
   const service = new MatrixCardService({ ctx, API_IDENTIFIER });
 
   if (featuredTeaser) {
     cards.push({ cardAsset: featuredTeaser });
-    // Create our service
-    // const service = new MatrixCardService({ ctx, API_IDENTIFIER });
-
-    // Set our card service
-    // adapter.setCardService(service);
-
-    // get the cards data
-    // featuredData = await adapter.getCards([{ cardAsset: featuredTeaser }]);
   }
 
   if (teaserOne) {
     cards.push({ cardAsset: teaserOne });
-    // Create our service
-    // const teaserOneService = new MatrixCardService({ ctx, API_IDENTIFIER });
-
-    // Set our card service
-    // adapter.setCardService(teaserOneService);
-
-    // get the cards data
-    // teaserOneData = await adapter.getCards([{ cardAsset: teaserOne }]);
   }
 
   if (teaserTwo) {
     cards.push({ cardAsset: teaserTwo });
-    // Create our service
-    // const teaserTwoService = new MatrixCardService({ ctx, API_IDENTIFIER });
-
-    // Set our card service
-    // adapter.setCardService(teaserTwoService);
-
-    // get the cards data
-    // teaserTwoData = await adapter.getCards([{ cardAsset: teaserTwo }]);
   }
 
   adapter.setCardService(service);
@@ -72,10 +45,7 @@ export default async (args, info) => {
   const renderProps = {
     ...args,
     data,
-    // featuredData,
     headingData,
-    // teaserOneData,
-    // teaserTwoData,
   };
 
   return renderComponent({
