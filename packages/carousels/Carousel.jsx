@@ -85,6 +85,13 @@ export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
           el: `.component-slider-pagination-${uniqueClass}`,
           clickable: true,
           bulletElement: "button",
+          renderBullet: (index, className) => {
+            return `<button ${
+              index === 0 ? 'aria-current="true"' : ""
+            } class="${className}"><span class="sr-only">Slide ${
+              index + 1
+            }</span></button>`;
+          },
         }}
         onSlideChange={(swiper) => {
           // Prevent tab focus on out of view slides
@@ -99,6 +106,18 @@ export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
               slide.setAttribute("inert", "true");
             }
           });
+
+          if (swiper.pagination.bullets.length > 0) {
+            swiper.pagination.bullets.forEach((bullet) => {
+              if (
+                bullet.classList.contains("swiper-pagination-bullet-active")
+              ) {
+                bullet.setAttribute("aria-current", "true");
+              } else {
+                bullet.removeAttribute("aria-current");
+              }
+            });
+          }
         }}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
@@ -116,6 +135,7 @@ export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
       {slides.length > 1 && (
         <div className="component-slider-controls su-flex su-mt-[45px] lg:su-mt-[48px] su-items-center su-content-center">
           <div
+            aria-label="Slide Navigation"
             className={`component-slider-pagination component-slider-pagination-${uniqueClass} su-mr-full`}
           />
           <button
