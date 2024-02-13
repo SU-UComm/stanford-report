@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "in-the-news",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "namespace": "stanford-components",
   "description": "This component contains one featured quote and two supplementary teasers.",
   "displayName": "In the news",
@@ -13,7 +13,7 @@
     }
   ],
   "icon": {
-    "id": "foundation",
+    "id": "newspaper",
     "color": {
       "type": "enum",
       "value": "gray"
@@ -54,9 +54,9 @@
             "required": [],
             "properties": {
               "featuredTeaser": {
-                  "title": "Featured teaser",
-                  "format": "matrix-asset-uri",
-                  "type": "string"
+                "title": "Featured teaser",
+                "format": "matrix-asset-uri",
+                "type": "string"
               },
               "featuredQuote": {
                 "title": "Featured Quote",
@@ -77,7 +77,7 @@
           "supplementaryTeaserTwo": {
             "required": [],
             "properties": {
-              "teaserOne": {
+              "teaserTwo": {
                 "title": "Teaser Two",
                 "format": "matrix-asset-uri",
                 "type": "string"
