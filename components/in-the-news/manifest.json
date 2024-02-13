@@ -1,0 +1,212 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "in-the-news",
+  "version": "0.0.7",
+  "namespace": "stanford-components",
+  "description": "This component contains one featured quote and two supplementary teasers.",
+  "displayName": "In the news",
+  "mainFunction": "main",
+  "environment": [
+    {
+      "name": "API_IDENTIFIER",
+      "required": true
+    }
+  ],
+  "icon": {
+    "id": "foundation",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "headingConfiguration": {
+            "required": [],
+            "properties": {
+              "title": {
+                "title": "Heading",
+                "description": "The heading text",
+                "type": "string",
+                "default": "In the news"
+              },
+              "ctaText": {
+                "title": "Link text",
+                "type": "string",
+                "default": "View all"
+              },
+              "ctaUrl": {
+                "title": "Link URL",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              }
+            }
+          },
+          "featuredContent": {
+            "title": "Featured Content",
+            "description": "The main featured item in the component",
+            "required": [],
+            "properties": {
+              "featuredTeaser": {
+                  "title": "Featured teaser",
+                  "format": "matrix-asset-uri",
+                  "type": "string"
+              },
+              "featuredQuote": {
+                "title": "Featured Quote",
+                "type": "string"
+              }
+            }
+          },
+          "supplementaryTeaserOne": {
+            "required": [],
+            "properties": {
+              "teaserOne": {
+                "title": "Teaser One",
+                "format": "matrix-asset-uri",
+                "type": "string"
+              }
+            }
+          },
+          "supplementaryTeaserTwo": {
+            "required": [],
+            "properties": {
+              "teaserOne": {
+                "title": "Teaser Two",
+                "format": "matrix-asset-uri",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/128603": {
+      "type": "file",
+      "path": "mocked-uris/128603.json"
+    },
+    "matrix-asset://api-identifier/28216": {
+      "type": "file",
+      "path": "mocked-uris/28216.json"
+    },
+    "matrix-asset://api-identifier/127752": {
+      "type": "file",
+      "path": "mocked-uris/127752.json"
+    },
+    "matrix-asset://api-identifier/128101": {
+      "type": "file",
+      "path": "mocked-uris/128101.json"
+    },
+    "matrix-asset://api-identifier/28192": {
+      "type": "file",
+      "path": "mocked-uris/28192.json"
+    },
+    "matrix-asset://api-identifier/127837": {
+      "type": "file",
+      "path": "mocked-uris/127837.json"
+    },
+    "matrix-asset://api-identifier/28394": {
+      "type": "file",
+      "path": "mocked-uris/28394.json"
+    },
+    "matrix-asset://api-identifier/124958": {
+      "type": "file",
+      "path": "mocked-uris/124958.json"
+    },
+    "matrix-asset://api-identifier/89422": {
+      "type": "file",
+      "path": "mocked-uris/89422.json"
+    },
+    "matrix-asset://api-identifier/128604": {
+      "type": "file",
+      "path": "mocked-uris/128604.json"
+    },
+    "matrix-asset://api-identifier/28207": {
+      "type": "file",
+      "path": "mocked-uris/28207.json"
+    },
+    "matrix-asset://api-identifier/28395": {
+      "type": "file",
+      "path": "mocked-uris/28395.json"
+    },
+    "matrix-asset://api-identifier/124962": {
+      "type": "file",
+      "path": "mocked-uris/124962.json"
+    },
+    "matrix-asset://api-identifier/128605": {
+      "type": "file",
+      "path": "mocked-uris/128605.json"
+    },
+    "matrix-asset://api-identifier/28193": {
+      "type": "file",
+      "path": "mocked-uris/28193.json"
+    },
+    "matrix-asset://api-identifier/28396": {
+      "type": "file",
+      "path": "mocked-uris/28396.json"
+    },
+    "matrix-asset://api-identifier/124966": {
+      "type": "file",
+      "path": "mocked-uris/124966.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}

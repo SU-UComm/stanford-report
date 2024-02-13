@@ -56,16 +56,18 @@
     "@react-aria/overlays": "^3.19.0",
     "@squiz/xaccel-component-client-helpers": "^1.11.0-alpha.9",
     "@squiz/xaccel-component-server-helpers": "^1.11.0-alpha.9",
-    "@squiz/xaccel-xss-safe-content": "1.12.1-alpha.1",
+    "@squiz/xaccel-xss-safe-content": "1.13.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
     "ally.js": "^1.4.1",
+    "cnbuilder": "^3.1.0",
     "focus-trap": "^7.5.4",
+    "html-entities": "^2.4.0",
     "object-hash": "^3.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "swiper": "^10.0.0"
+    "swiper": "^8.4.6"
   },
   "volta": {
     "node": "18.18.2"

@@ -1,49 +1,71 @@
-import React from "react";
-import { renderToString } from "react-dom/server";
-
+import { hydrateRoot } from "react-dom/client";
 /**
- * Function to render a component on the server
- * @param {{Component: (any) => JSX.Element, componentName: string, args: object}} param0 - The component to render, the name of the component, and the props to pass to the component
- * @returns {string} - The rendered component as a string
+ * Function to hydrate a component on the client
+ * @param {{ Component: (any) => JSX.Element, componentName: string }} param0 - The component to hydrate and the name of the component
  */
 import { jsx as _jsx } from "react/jsx-runtime";
 
-export default async function renderComponent(_ref) {
-  const { Component, componentName, args } = _ref;
-  // Check that we got a component
-  if (!Component) {
-    throw new Error("renderComponent requires a component");
-  }
-
-  // Check that we got a component name
-  if (!componentName) {
-    throw new Error("renderComponent requires a component name");
+export default function hydrateComponent(_ref) {
+  const { Component, componentName } = _ref;
+  // Check that we got the correct arguments
+  if (!Component || !componentName) {
+    throw new Error(
+      "hydrateComponent requires a component and a component name"
+    );
   }
 
   // Check that the component is a valid React component
-  if (
-    !(/* #__PURE__ */ React.isValidElement(/* #__PURE__ */ _jsx(Component, {})))
-  ) {
-    throw new Error("renderComponent requires a valid React component");
+  if (typeof Component !== "function") {
+    throw new Error("hydrateComponent requires a valid React component");
   }
 
   // Check that the component name is a string
   if (typeof componentName !== "string") {
-    throw new Error("renderComponent requires a string for the component name");
+    throw new Error(
+      "hydrateComponent requires a string for the component name"
+    );
   }
 
-  // Check that the args are an object
-  if (typeof args !== "object") {
-    throw new Error("renderComponent requires an object for the args");
+  // Confirm that the component is on the page
+  if (
+    !document.querySelector(`[data-hydration-component="${componentName}"]`)
+  ) {
+    throw new Error(
+      `hydrateComponent could not find a component with the name ${componentName}`
+    );
   }
-  return renderToString(
-    /* #__PURE__ */ _jsx("div", {
-      "data-component": componentName,
-      "data-hydration-component": componentName,
-      "data-hydration-props": JSON.stringify(args),
-      children: /* #__PURE__ */ _jsx(Component, {
-        ...args,
-      }),
-    })
-  );
+
+  // Hydrate the component
+  document
+    .querySelectorAll(`[data-hydration-component="${componentName}"]`)
+    .forEach((element) => {
+      // Check that the element has the props attribute
+      if (!element.dataset.hydrationProps) {
+        throw new Error(
+          `hydrateComponent could not find the props for the component ${componentName}`
+        );
+      }
+
+      // Check that the props are valid JSON
+      try {
+        JSON.parse(element.dataset.hydrationProps);
+      } catch (error) {
+        throw new Error(
+          `hydrateComponent could not parse the props for the component ${componentName}`
+        );
+      }
+
+      // Get the props from the data attribute
+      const props = JSON.parse(element.dataset.hydrationProps);
+
+      hydrateRoot(
+        element,
+        _jsx(Component, {
+          ...props,
+        })
+      );
+
+      // Remove the data attribute (so that the component is not hydrated multiple times)
+      element.removeAttribute("data-hydration-component");
+    });
 }

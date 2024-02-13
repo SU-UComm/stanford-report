@@ -1,0 +1,54 @@
+{
+    "id": "124962",
+    "type": "page_standard",
+    "type_name": "Standard Page",
+    "version": "0.0.1",
+    "name": "Campus & Facilities",
+    "short_name": "Campus & Facilities",
+    "status": {
+        "id": 2,
+        "code": "under_construction",
+        "name": "Under Construction"
+    },
+    "created": {
+        "date": "2023-12-10T15:23:04-08:00",
+        "user_id": "32242"
+    },
+    "updated": {
+        "date": "2023-12-10T15:23:05-08:00",
+        "user_id": "32242"
+    },
+    "published": {
+        "date": null,
+        "user_id": null
+    },
+    "status_changed": {
+        "date": "2023-12-10T15:23:04-08:00",
+        "user_id": "32242"
+    },
+    "urls": [
+        "https://sug-web.matrix.squiz.cloud/report/university-news/campus-and-facilities"
+    ],
+    "url": "https://sug-web.matrix.squiz.cloud/report/university-news/campus-and-facilities",
+    "attributes": {
+        "short_name": "Campus & Facilities",
+        "name": "Campus & Facilities"
+    },
+    "metadata": {
+        "seoTitle": [
+            "Campus &amp; Facilities"
+        ],
+        "canonicalUrl": [],
+        "seoDescription": [],
+        "seoKeywords": [],
+        "robots": [
+            "max-image-preview:large"
+        ],
+        "publishedDate": [
+            "2024-01-01 00:00:00"
+        ],
+        "modifiedDate": [
+            "2024-01-01 00:00:00"
+        ]
+    }
+}
