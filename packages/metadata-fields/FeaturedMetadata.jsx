@@ -266,18 +266,24 @@ export default function FeaturedMetadata({ data }) {
         </div>
       )}
 
-      <button
-        onClick={copyLink}
-        type="button"
-        data-role="copy-link"
-        className="su-text-digital-blue su-text-[21px] su-font-semibold su-mx-auto su-mt-[58px]"
-      >
-        {copyLinkTitle}
+      <div className="su-text-center su-mt-[34px] md:su-mt-[58px] lg:su-mt-[61px] su-flex su-flex-col su-gap-[20px] md:su-gap-[26px]">
+        <h3 className="su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans su-m-0">
+          Share this story
+        </h3>
 
-        <span className="[&>*]:su-inline-block [&>*]:su-ml-[8px]">
-          <ShareLink />
-        </span>
-      </button>
+        <button
+          onClick={copyLink}
+          type="button"
+          data-role="copy-link"
+          className="su-text-digital-blue su-text-[21px] su-font-semibold su-mx-auto"
+        >
+          {copyLinkTitle}
+
+          <span className="[&>*]:su-inline-block [&>*]:su-ml-[8px]">
+            <ShareLink />
+          </span>
+        </button>
+      </div>
     </section>
   );
 }
