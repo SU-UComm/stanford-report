@@ -23,7 +23,7 @@
         "properties": {
           "cards": {
             "title": "Cards",
-            "description": "Select the assets that will be used for cards. The first card selected will be the featured card.",
+            "description": "Enter the details for each card.",
             "type": "array",
             "minItems": 1,
             "maxItems": 5,
