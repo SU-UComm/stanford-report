@@ -39,10 +39,10 @@ export default function CampaignHero({
   return (
     <Container width="full" paddingX={false}>
       <section className="su-relative">
-        <div className="su-cc su-grid su-grid-cols-12 su-grid-gap su-relative su-z-[2]">
+        <div className="su-cc su-grid su-grid-cols-6 md:su-grid-cols-12 su-grid-gap su-relative su-z-[2]">
           {quote ? (
             <>
-              <div className="su-mt-[55vh] su-col-start-4 su-col-span-6 su-text-white su-text-center">
+              <div className="su-mt-[55vh] su-col-span-6 md:su-col-start-1 md:su-col-span-12 lg:su-col-start-4 lg:su-col-span-6 su-text-white su-text-center">
                 <h1 className="su-type-6">{title}</h1>
                 <p className="su-type-3 su-leading-[1.3]">{intro}</p>
                 <span className="su-inline-block hocus:su-animate-pulse hocus:su-scale-110 su-transition-all">
@@ -103,13 +103,12 @@ export default function CampaignHero({
           )}
         </div>
 
+        {/* Background video or photo */}
         {bkgVideo ? (
-          <div className="su-absolute su-w-full su-h-full su-left-0 su-top-0 su-z-[0]">
-            <iframe
-              src={bkgVideo}
-              className="su-min-w-full su-w-[177.77vw] su-min-h-full su-h-[56.25vh] su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
-              title="video"
-            />
+          <div className="su-absolute su-w-full su-h-full su-left-0 su-top-0 su-z-[0] su-pb-[56.25%]">
+            <div className="su-min-w-full su-w-[177.77vw] su-min-h-full su-h-[56.25vh] su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2">
+              <iframe src={bkgVideo} title="video" width="100%" height="100%" />
+            </div>
           </div>
         ) : (
           <img
