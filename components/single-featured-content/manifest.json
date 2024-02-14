@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "single-featured-content",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "namespace": "stanford-components",
   "description": "Stanford university single featured content component",
   "displayName": "Single featured content",
@@ -13,10 +13,10 @@
     }
   ],
   "icon": {
-    "id": "foundation",
+    "id": "star",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "yellow"
     }
   },
   "functions": [

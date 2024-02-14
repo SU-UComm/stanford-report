@@ -13,10 +13,10 @@
     }
   ],
   "icon": {
-    "id": "foundation",
+    "id": "edit_note",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "yellow"
     }
   },
   "functions": [

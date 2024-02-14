@@ -10,7 +10,7 @@
     "id": "text_fields",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "green"
     }
   },
   "functions": [

@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "topic-subtopic-listing",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "namespace": "stanford-components",
   "description": "Stanford university Base component.",
   "displayName": "Topic / subtopic listing",
@@ -13,10 +13,10 @@
     }
   ],
   "icon": {
-    "id": "foundation",
+    "id": "clear_all",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "yellow"
     }
   },
   "functions": [

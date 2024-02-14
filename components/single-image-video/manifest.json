@@ -7,10 +7,10 @@
   "displayName": "Single image or video",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "perm_media",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "purple"
     }
   },
   "functions": [

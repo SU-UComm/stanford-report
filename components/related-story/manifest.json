@@ -20,7 +20,7 @@
     "id": "ads_click",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "pink"
     }
   },
   "functions": [
