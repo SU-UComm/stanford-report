@@ -22,7 +22,7 @@
         "image": "matrix-asset://api-identifier/125801"
       }
     ],
-    "caption": "This is an optional caption"
+    "caption": "This is an optional caption for the whole gallery"
   },
   "displayConfiguration": {
     "displayIconHeading": true,

@@ -6,6 +6,12 @@
   "description": "An image gallery that opens in a modal.",
   "displayName": "Image gallery with modal",
   "mainFunction": "main",
+  "environment": [
+    {
+      "name": "API_IDENTIFIER",
+      "required": true
+    }
+  ],
   "icon": {
     "id": "foundation",
     "color": {
@@ -73,6 +79,12 @@
   ],
   "staticFiles": {
     "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/125801": {
+      "type": "file",
+      "path": "mocked-uris/125801.json"
+    }
   },
   "previews": {
     "default": {
