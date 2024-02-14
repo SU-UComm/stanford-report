@@ -20,41 +20,49 @@ function readingTime(text) {
 export default function basicStoryHero(props) {
   const { title, media, summary, pubDateFormatted, topic } = props;
   return (
-    <div>
-      <div className="su-px-0 md:su-px-[113px]">
-        <div className="su-flex su-justify-between su-flex-wrap">
-          <span className="su-flex su-items-center su-justify-center su-text-[16px] md:su-basefont-23">
-            <time className="su-m-0 su-mr-[4px] su-font-semibold">
-              {pubDateFormatted}
-            </time>
-            <span className="su-reading-time su-reading-time-separator" />
-          </span>
-          <span className="su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-text-[16px] sm:su-text-[21px] md:su-text-[24px]">
-            {topic}
-          </span>
-        </div>
-        <h1 className="su-mt-[32px] sm:su-mt-[45px] xl:su-mt-[58px] su-font-serif">
-          {title}
-        </h1>
-        <p className="su-font-serif su-intro-text su-text-[21px] sm:su-text-[28px] su-leading-[130%] su-m-0 su-mt-[32px]">
-          {summary}
-        </p>
-      </div>
-      <div className="swiper basic-story__header-slider su-overflow-visible su-mt-[32px] md:su-mt-[72px]">
-        <figure className="basic-story__header-image su-flex su-flex-col su-gap-[6px] su-col-span-full su-relative su-translate-y-[-110px] sm:su-translate-y-[-130px] lg:su-translate-y-[-200px] xl:su-translate-y-[-220px] su-z-0 md:su-gap-[18px] lg:su-gap-[15px]">
-          <div className="su-relative">
-            <img
-              src={media.featureImage.url}
-              alt={media.featureImage.alt}
-              className="su-relative su-w-full su-h-[300px] sm:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
-            />
-            <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover" />
+    <Container>
+      <div>
+        <div className="su-px-0 md:su-px-[114px]">
+          <div className="su-flex su-justify-between su-flex-wrap">
+            <span className="su-flex su-items-center su-justify-center su-text-[16px] su-leading-[20px] md:su-text-[21px] md:su-leading-[26.25px] md:su-basefont-23 lg:su-text-[23px] lg:su-text-[28.75px]">
+              <time className="su-m-0 su-mr-[4px] su-font-semibold">
+                {pubDateFormatted}
+              </time>
+              <span className="su-reading-time su-reading-time-separator" />
+            </span>
+
+            <span className="su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-leading-[19.11px] su-text-[16px] md:su-leading-[25.08px] md:su-text-[21px] md:su-text-[24px] lg:su-text-[24px] lg:su-leading-[28.66px]">
+              {topic}
+            </span>
           </div>
-          <figcaption className="su-text-[14px] su-w-3/4 su-mx-auto su-text-center su-m-0 su-leading-[16.72px] md:su-text-[16px] md:su-leading-[19.11px]">
-            {media.caption} | {media.credit}
-          </figcaption>
-        </figure>
+
+          <h1 className="su-text-[39px] su-leading-[46.57px] su-font-bold su-mt-[32px] md:su-text-[54px] md:su-mt-[45px] md:su-leading-[64.8px] lg:su-text-[64px] lg:su-mt-[58px] lg:su-leading-[76.43px] su-font-serif">
+            {title}
+          </h1>
+
+          <p className="su-font-serif su-intro-text su-text-[21px] su-leading-[27.35px] su-m-0 su-mt-[32px] md:su-mt-[38px] md:su-text-[28px] md:su-leading-[36.47px]">
+            {summary}
+          </p>
+        </div>
+
+        <div className="swiper basic-story__header-slider su-overflow-visible su-mt-[32px] md:su-mt-[58px] lg:su-mt-[72px]">
+          <figure className="basic-story__header-image su-flex su-flex-col su-gap-[6px] su-col-span-full su-relative su-z-0 md:su-gap-[18px] lg:su-gap-[15px]">
+            <div className="su-relative">
+              <img
+                src={media.featureImage.url}
+                alt={media.featureImage.alt}
+                className="su-relative su-w-full su-h-[300px] md:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
+              />
+
+              <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover" />
+            </div>
+
+            <figcaption className="su-text-[16px] su-text-black su-m-0 su-leading-[19.11px] su-mt-[12px] md:su-text-[16px] md:su-leading-[19.11px]">
+              {media.caption} | {media.credit}
+            </figcaption>
+          </figure>
+        </div>
       </div>
-    </div>
+    </Container>
   );
 }
