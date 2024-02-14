@@ -3,6 +3,7 @@ import React from "react";
 import VerticalCard from "./verticalCard";
 import PullQuoteCard from "./PullQuoteCard";
 import HorizontalCard from "./HorizontalCard";
+import TeaserCard from "./TeaserCard";
 import MediaCard from "./MediaCard";
 
 /**
@@ -41,7 +42,7 @@ export default function Card({
     case "horizontal":
       return <HorizontalCard data={data} cardSize={cardSize} />;
     case "teaser":
-      break;
+      return <TeaserCard data={data} />;
     case "avatar":
       break;
     case "pullquote":
