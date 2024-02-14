@@ -117,7 +117,7 @@ export default function SingleImageVideo({
             {captionCredit}
           </p>
 
-          {youtubeid && (
+          {youtubeid && vimeoid && autoplay && (
             <button
               data-role="video-control"
               type="button"
@@ -168,5 +168,11 @@ function Video({ autoplay, id, thumbnail, handleIframeLoad }) {
     );
   }
 
-  return <img src={thumbnail.url} alt={thumbnail.attributes.alt} />;
+  return (
+    <img
+      src={thumbnail.url}
+      alt={thumbnail.attributes.alt}
+      className="su-w-full su-h-full"
+    />
+  );
 }

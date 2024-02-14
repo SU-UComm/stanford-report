@@ -5,7 +5,7 @@
     "width": "Wide",
     "video": {
         "thumbnail": "matrix-asset://api-identifier/99100",
-        "autoplay": true,
+        "autoplay": false,
         "vimeoid": "908030173",
         "youtubeid": "dYdi0Aek664"
     }
