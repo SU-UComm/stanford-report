@@ -7,10 +7,10 @@
   "displayName": "Feature story hero",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "flag",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "purple"
     }
   },
   "functions": [

@@ -7,10 +7,10 @@
   "displayName": "Subscribe to Stanford Report",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "mail",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "pink"
     }
   },
   "functions": [
