@@ -14,6 +14,7 @@ export default function ArrowsRotate({ className }) {
       viewBox="0 0 36 36"
       fill="none"
       className={className}
+      aria-hidden
     >
       <path
         fillRule="evenodd"

@@ -14,6 +14,7 @@ export default function Flip({ className }) {
       viewBox="0 0 50 50"
       fill="none"
       className={className}
+      aria-hidden
     >
       <path
         fillRule="evenodd"
