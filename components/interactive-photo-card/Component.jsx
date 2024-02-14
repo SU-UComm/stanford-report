@@ -61,18 +61,18 @@ export default function InteractivePhotoCard({
                   {eyebrow}
                 </div>
               )}
-              <h3 className="su-grow su-type-4 su-font-bold su-font-sans su-type su-rs-mb-0">
+              <h2 className="su-grow su-type-4 su-font-bold su-font-sans su-type su-rs-mb-0">
                 {title}
-              </h3>
+              </h2>
               <button
                 type="button"
                 aria-hidden={isFlipped}
                 tabIndex={isFlipped ? -1 : undefined}
                 onClick={() => flipCard(180)}
                 aria-label="See additional information"
-                className="su-block su-ml-auto su-mr-0 su-bg-black su-text-white group-hover/front:su-bg-digital-red group-focus-within/front:su-bg-digital-red su-rounded-full su-p-10 su-stretched-link su-transition-all su-opacity-100 group-aria-hidden/front:su-opacity-0"
+                className="su-block su-ml-auto su-mr-0 su-bg-black su-text-white group-hover/front:su-bg-digital-red focus:su-bg-digital-red su-rounded-full su-p-10 su-stretched-link su-transition-all su-opacity-100 group-aria-hidden/front:su-opacity-0"
               >
-                <Plus className="su-size-30 md:su-size-50 su-fill-none group-hover/front:su-scale-110 group-focus-within/front:su-scale-110" />
+                <Plus className="su-size-30 md:su-size-50 su-fill-none group-hover/front:su-scale-110 group-focus-within/front:su-scale-110 su-transition-transform" />
               </button>
             </div>
           </div>
@@ -92,9 +92,9 @@ export default function InteractivePhotoCard({
               tabIndex={isFlipped ? undefined : -1}
               onClick={() => flipCard(0)}
               aria-label="Dismiss content"
-              className="su-block su-ml-auto su-mr-0 su-border-3 su-border-white su-rounded-full su-text-white su-p-7 lg:su-p-14 su-stretched-link"
+              className="su-block su-ml-auto su-mr-0 su-border-3 su-border-white su-rounded-full su-text-white focus:su-bg-black group-hover/back:su-bg-black su-p-7 lg:su-p-14 su-stretched-link su-transition-colors"
             >
-              <ArrowsRotate className="su-size-30 lg:su-size-36 su-fill-none group-aria-hidden/back:invisible" />
+              <ArrowsRotate className="su-size-30 lg:su-size-36 su-fill-none group-aria-hidden/back:invisible group-hover/back:su-rotate-45 su-transition-transform" />
             </button>
           </div>
         </div>
