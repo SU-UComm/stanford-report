@@ -1,4 +1,6 @@
-import hydrateComponent from "../../packages/utils/hydrate-component";
+import React from "react";
+import { createRoot } from "react-dom/client";
+
 import Component from "./Component";
 
 (function () {
@@ -6,8 +8,10 @@ import Component from "./Component";
   const target = document.querySelector(
     `[data-hydration-component="${componentName}"]`
   );
+  const props = JSON.parse(target.dataset.hydrationProps);
 
   if (!target) return;
 
-  hydrateComponent({ Component, componentName });
+  const root = createRoot(target);
+  root.render(<Component data={props} />);
 })();
