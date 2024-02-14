@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "../../packages/grids/Container";
+import Modal from "../../packages/modal/ModalWrapper";
+import EmbedVideo from "../../packages/media/EmbedVideo";
+import VideoPlay from "../../packages/SVG-library/VideoPlay";
 
 /**
  * Base component
@@ -19,6 +22,9 @@ function readingTime(text) {
 
 export default function basicStoryHero(props) {
   const { title, media, summary, pubDateFormatted, topic } = props;
+
+  console.log(props);
+
   return (
     <Container>
       <div>
@@ -48,21 +54,67 @@ export default function basicStoryHero(props) {
         <div className="swiper basic-story__header-slider su-overflow-visible su-mt-[32px] md:su-mt-[58px] lg:su-mt-[72px]">
           <figure className="basic-story__header-image su-flex su-flex-col su-gap-[6px] su-col-span-full su-relative su-z-0 md:su-gap-[18px] lg:su-gap-[15px]">
             <div className="su-relative">
-              <img
-                src={media.featureImage.url}
+              <Thumbnail
+                url={media.featureImage.url}
                 alt={media.featureImage.alt}
-                className="su-relative su-w-full su-h-[300px] md:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
+                video={media.featureVideo.id}
               />
 
-              <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover" />
+              <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" />
             </div>
 
-            <figcaption className="su-text-[16px] su-text-black su-m-0 su-leading-[19.11px] su-mt-[12px] md:su-text-[16px] md:su-leading-[19.11px]">
+            <figcaption className="su-text-[16px] su-text-black su-m-0 su-leading-[19.11px] su-mt-[12px] dark:su-text-[white] md:su-text-[16px] md:su-leading-[19.11px]">
               {media.caption} | {media.credit}
             </figcaption>
           </figure>
         </div>
       </div>
     </Container>
+  );
+}
+
+function Thumbnail({ url, alt, video }) {
+  // state
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // events
+  const handleClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  if (!video) {
+    return (
+      <img
+        src={url}
+        alt={alt}
+        className="su-relative su-w-full su-h-[300px] md:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
+      />
+    );
+  }
+
+  return (
+    <>
+      <button type="button" aria-haspopup="dialog" onClick={handleClick}>
+        <img
+          src={url}
+          alt={alt}
+          className="su-relative su-w-full su-h-[300px] md:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
+        />
+
+        <span className="su-absolute su-bottom-[20px] su-left-[20px]">
+          <VideoPlay />
+        </span>
+      </button>
+
+      {isModalOpen && (
+        <Modal onClose={handleCloseModal}>
+          <EmbedVideo videoId={video} />
+        </Modal>
+      )}
+    </>
   );
 }
