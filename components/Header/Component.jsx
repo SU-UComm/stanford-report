@@ -29,20 +29,19 @@ export default function Header({ site, navigation, search }) {
   const [pageControls, setPageControls] = useState(null);
   const [relatedStory, setRelatedStory] = useState(null);
 
-  const audienceCookie = getCookie("preferences_personalisation");
-  const isClient = typeof window !== "undefined";
-
-  const pageData =
-    isClient && typeof window.pageController !== "undefined"
-      ? window.pageController
-      : null;
-
-  const getFb = async () => {
-    const data = await relatedStoryData(pageData, search, audience);
-    setRelatedStory(data);
-  };
-
   useEffect(() => {
+    const audienceCookie = getCookie("preferences_personalisation");
+    const isClient = typeof window !== "undefined";
+
+    const pageData =
+      isClient && typeof window.pageController !== "undefined"
+        ? window.pageController
+        : null;
+
+    const getFb = async () => {
+      const data = await relatedStoryData(pageData, search, audience);
+      setRelatedStory(data);
+    };
     if (audienceCookie) {
       setAudience(audienceCookie);
     }
@@ -142,7 +141,7 @@ export default function Header({ site, navigation, search }) {
               ""
             )}
 
-            <PreferencesTray />
+            <PreferencesTray audience={audience} />
           </div>
           <MainNav
             major={navigation.major}

@@ -57,7 +57,9 @@
             "title": "Grid Content",
             "description": "The cards to display in the carousel area of the component.",
             "type": "object",
-            "required": ["searchQuery"],
+            "required": [
+              "searchQuery"
+            ],
             "properties": {
               "searchQuery": {
                 "type": "string",

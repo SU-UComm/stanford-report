@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "single-image-video",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "namespace": "stanford-components",
   "description": "Stanford university Base component.",
   "displayName": "Single image or video",
@@ -37,6 +37,7 @@
           "width": {
             "title": "Width",
             "enum": ["Wide", "Narrow"],
+            "default": "Wide",
             "type": "string"
           },
           "video": {
@@ -44,16 +45,22 @@
             "properties": {
               "thumbnail": {
                 "title": "Video Thumbnail",
-                "type": "string"
+                "type": "string",
+                "format": "matrix-asset-uri"
               },
               "autoplay": {
                 "title": "Autoplay",
                 "description": "This will enable the video auto play once scrolled into view",
                 "type": "boolean"
               },
-              "id": {
-                "title": "Video ID",
-                "description": "Provide the Vimeo video id here",
+              "vimeoid": {
+                "title": "Vimeo video ID",
+                "description": "Provide the Vimeo autoplay video id here, this is the muted looped video that appears in the component.",
+                "type": "string"
+              },
+              "youtubeid": {
+                "title": "Youtube video ID",
+                "description": "Provide the YouTube video ID for the modal video",
                 "type": "string"
               }
             }

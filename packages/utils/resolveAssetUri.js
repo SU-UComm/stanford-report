@@ -27,7 +27,11 @@ export default async function resolveAssetUri({
   promises.push(await resolveIDArray(contentTypeIds, ctx, API_IDENTIFIER));
 
   const contributorsAuthors = assetData?.metadata?.contributorsAuthors;
-  promises.push(await resolveIDArray(contributorsAuthors, ctx, API_IDENTIFIER));
+  if (!["", undefined, null].includes(contributorsAuthors)) {
+    promises.push(
+      await resolveIDArray(contributorsAuthors, ctx, API_IDENTIFIER)
+    );
+  }
 
   const taxonomyIds = assetData?.metadata?.srContentMainTopic;
   const taxonomies = await resolveIDArray(taxonomyIds, ctx, API_IDENTIFIER);
@@ -38,7 +42,6 @@ export default async function resolveAssetUri({
       ? await resolveIDArray(taxonomyPageIds, ctx, API_IDENTIFIER)
       : false;
 
-  /// ///////////////////////////////////
   // author avatar
 
   // do we have an author?
@@ -65,7 +68,7 @@ export default async function resolveAssetUri({
   assetData.metadata.contributorsAuthors = authors;
 
   // apply the author's avatar
-  if (assetData.metadata.contributorsAuthors && avatar) {
+  if (assetData.metadata?.contributorsAuthors && avatar) {
     authors.at(0).metadata.personHeadshot = avatar;
   }
 
