@@ -1,0 +1,57 @@
+{
+   "id":"28216",
+   "type":"data_record",
+   "type_name":"Data Record",
+   "version":"0.1.0",
+   "name":"In the news",
+   "short_name":"In the news",
+   "status":{
+      "id":16,
+      "code":"live",
+      "name":"Live"
+   },
+   "created":{
+      "date":"2023-08-25T06:10:32-07:00",
+      "user_id":"57"
+   },
+   "updated":{
+      "date":"2024-01-15T00:38:41-08:00",
+      "user_id":"57"
+   },
+   "published":{
+      "date":"2024-01-15T00:38:41-08:00",
+      "user_id":"57"
+   },
+   "status_changed":{
+      "date":"2024-01-15T00:38:41-08:00",
+      "user_id":"57"
+   },
+   "urls":[
+      "https://sug-web.matrix.squiz.cloud/_media/taxonomy/content-warehouse/front-end-taxonomy/content-type/in-the-news"
+   ],
+   "url":"https://sug-web.matrix.squiz.cloud/_media/taxonomy/content-warehouse/front-end-taxonomy/content-type/in-the-news",
+   "attributes":{
+      "name":"In the news"
+   },
+   "metadata":{
+      "slug":[
+         
+      ],
+      "description":[
+         
+      ],
+      "itemId":[
+         
+      ],
+      "parentSection":[
+         
+      ],
+      "featured":[
+         
+      ]
+   },
+   "contents":"",
+   "additional":{
+      
+   }
+}

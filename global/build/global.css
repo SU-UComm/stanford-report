@@ -2783,25 +2783,19 @@ WYSIWYG formatting styles
 
 /* Set specfic spacing for paragraphs */
 
-.su-wysiwyg-content p,
-.container > span p,
-.su-page-content > *:not([data-component], .container) p{
+[data-component="text-callout"] .su-wysiwyg-content p{
   margin-bottom: 2rem;
 }
 
 @media (min-width: 768px){
-  .su-wysiwyg-content p,
-.container > span p,
-.su-page-content > *:not([data-component], .container) p{
+  [data-component="text-callout"] .su-wysiwyg-content p{
     margin-bottom: 2.6rem;
   }
 }
 
 @media (min-width: 1200px){
-  .su-wysiwyg-content p,
-.container > span p,
-.su-page-content > *:not([data-component], .container) p{
-    margin-bottom: 27px;
+  [data-component="text-callout"] .su-wysiwyg-content p{
+    margin-bottom: 2.7rem;
   }
 }
 

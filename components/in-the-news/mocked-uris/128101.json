@@ -1,0 +1,44 @@
+{
+    "id": "128101",
+    "type": "image",
+    "type_name": "Image",
+    "version": "0.1.1",
+    "name": "test-headshot-200x200.png",
+    "short_name": "test-headshot-200x200.png",
+    "status": {
+        "id": 16,
+        "code": "live",
+        "name": "Live"
+    },
+    "created": {
+        "date": "2024-01-16T19:35:32-08:00",
+        "user_id": "32242"
+    },
+    "updated": {
+        "date": "2024-01-16T19:36:10-08:00",
+        "user_id": "32242"
+    },
+    "published": {
+        "date": "2024-01-16T19:35:44-08:00",
+        "user_id": "32242"
+    },
+    "status_changed": {
+        "date": "2024-01-16T19:35:44-08:00",
+        "user_id": "32242"
+    },
+    "urls": [
+        "https://sug-web.matrix.squiz.cloud/__data/assets/image/0013/128101/test-headshot-200x200.png"
+    ],
+    "url": "https://sug-web.matrix.squiz.cloud/__data/assets/image/0013/128101/test-headshot-200x200.png",
+    "attributes": {
+        "alt": "An image of jane doe",
+        "variety_count": 19,
+        "size": 64144,
+        "height": 200,
+        "width": 200,
+        "name": "test-headshot-200x200.png",
+        "title": "test-headshot-200x200.png",
+        "allow_unrestricted": true,
+        "caption": ""
+    }
+}

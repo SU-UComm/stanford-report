@@ -112,7 +112,7 @@ export default function HorizontalCard({
             alt={imageAlt}
             videoUrl={videoUrl}
             mediaType="image"
-            aspectRatio="card"
+            aspectRatio="card-large"
             size={cardSize}
           />
         </div>
@@ -124,7 +124,7 @@ export default function HorizontalCard({
             imageUrl={imageUrl}
             alt={imageAlt}
             mediaType="image"
-            aspectRatio="square"
+            aspectRatio="card-small"
             size={cardSize}
           />
         </div>
