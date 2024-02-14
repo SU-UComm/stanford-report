@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "single-image-video",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "Stanford university Base component.",
   "displayName": "Single image or video",
@@ -44,7 +44,8 @@
             "properties": {
               "thumbnail": {
                 "title": "Video Thumbnail",
-                "type": "string"
+                "type": "string",
+                "format": "matrix-asset-uri"
               },
               "autoplay": {
                 "title": "Autoplay",
