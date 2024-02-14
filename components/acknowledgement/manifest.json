@@ -7,10 +7,10 @@
   "displayName": "Acknowledgement",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "menu_book",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "red"
     }
   },
   "functions": [

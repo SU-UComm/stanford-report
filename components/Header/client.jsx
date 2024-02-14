@@ -4,10 +4,16 @@ import Component from "./Component";
 import _preferencesSettings from "./scripts/preferenceSettings";
 import ReportHeader from "./scripts/reportHeader";
 
-console.log("Header clientside");
+(function () {
+  _preferencesSettings();
 
-const headerDom = document.querySelector(".report-header");
-const initHeader = new ReportHeader(headerDom);
-_preferencesSettings();
+  const headerDom = document.querySelector(".report-header");
+  const initHeader = new ReportHeader(headerDom);
+  const componentName = "header-component";
+  const target = document.querySelector(
+    `[data-hydration-component="${componentName}"]`
+  );
 
-hydrateComponent({ Component, componentName: "header-component" });
+  if (!target) return;
+  hydrateComponent({ Component, componentName });
+})();
