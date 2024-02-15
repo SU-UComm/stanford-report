@@ -28,7 +28,7 @@
   }
 
   .su-single-featured-content h2 {
-    @apply su-text-[40px] su-leading-[120%];
+    @apply su-text-[40px] su-leading-display;
   }
 
   .su-single-featured-content [data-testid="vertical-card-taxonomy"] {

@@ -36,7 +36,7 @@ export default function RelatedStory({ data }) {
             />
 
             <div className="">
-              <h4 className="su-text-20 dark:su-text-white sm:su-text-24 su-font-serif !su-font-bold su-leading-[120%] su-mb-[9px] su-text-20 sm:su-text-24">
+              <h4 className="su-text-20 dark:su-text-white sm:su-text-24 su-font-serif !su-font-bold su-leading-display su-mb-[9px] su-text-20 sm:su-text-24">
                 {title}
               </h4>
 

@@ -45,7 +45,7 @@ export default function MediaFeature({
             </div>
 
             <a href={linkUrl} className="su-no-underline">
-              <h3 className="su-text-[35px] su-font-bold su-leading-[110%] su-m-0 su-pb-[8px] su-text-black su-text-black md:su-pb-[19px] md:su-text-[40px] lg:su-text-[43px]">
+              <h3 className="su-text-[35px] su-font-bold su-leading-tight su-m-0 su-pb-[8px] su-text-black su-text-black md:su-pb-[19px] md:su-text-[40px] lg:su-text-[43px]">
                 {title}
                 <span className="su-hidden lg:su-inline-block su-relative su-top-[12px]">
                   <ExternalArrow size="large" />
@@ -53,7 +53,7 @@ export default function MediaFeature({
               </h3>
             </a>
 
-            <div className="su-w-full su-flex su-text-18 su-text-black-70 su-font-semibold su-items-center su-pb-[15px] su-leading-[130%] md:su-pb-[19px] md:su-text-16">
+            <div className="su-w-full su-flex su-text-18 su-text-black-70 su-font-semibold su-items-center su-pb-[15px] su-leading-snug md:su-pb-[19px] md:su-text-16">
               <MediaType type={mediaType} />
             </div>
 

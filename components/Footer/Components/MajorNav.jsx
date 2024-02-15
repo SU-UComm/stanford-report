@@ -36,7 +36,7 @@ function MajorLinksSubs({ subs }) {
       {subs.map((item) => {
         const title = decode(item.asset_name);
         return (
-          <li className="su-mb-0 su-leading-[120%]" key={item.asset_assetid}>
+          <li className="su-mb-0 su-leading-display" key={item.asset_assetid}>
             <a
               href={item.asset_url}
               className="su-text-black dark:su-text-white su-font-normal dark:hover:su-text-dark-mode-red su-text-14 md:su-text-16 focus:su-text-digital-red hover:su-text-digital-red su-no-underline hover:su-underline su-transition"
