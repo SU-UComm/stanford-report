@@ -1,16 +1,16 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "media-feature",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "namespace": "stanford-components",
   "description": "THe media feature component is used to feature a singluar podcast or book.",
   "displayName": "Media Feature",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "radio",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "teal"
     }
   },
   "functions": [
