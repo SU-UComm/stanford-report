@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "stories-carousel",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "namespace": "stanford-components",
   "description": "Links to stories displayed as cards in a carousel.",
   "displayName": "Stories carousel",
@@ -57,14 +57,12 @@
             "title": "Grid Content",
             "description": "The cards to display in the carousel area of the component.",
             "type": "object",
-            "required": [
-              "searchQuery"
-            ],
+            "required": ["searchQuery"],
             "properties": {
               "searchQuery": {
                 "type": "string",
                 "title": "The Funnelback search query",
-                "default": "?"
+                "default": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search&log=false&query=!null&sort=date&meta_isTeaser=&num_ranks=6"
               }
             }
           }
@@ -204,6 +202,19 @@
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "frontend": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/frontend.html"
           }
         }
       }
