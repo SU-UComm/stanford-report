@@ -26,7 +26,7 @@ export default function basicStoryHero(props) {
 
   return (
     <Container>
-      <div>
+      <div className="su-pt-[40px] md:su-pt-[32px] lg:su-pt-[89px]">
         <div className="su-px-0 md:su-px-[114px]">
           <div className="su-flex su-justify-between su-flex-wrap">
             <span className="su-flex su-items-center su-justify-center su-text-[16px] su-leading-[20px] md:su-text-[21px] md:su-leading-[26.25px] md:su-basefont-23 lg:su-text-[23px] lg:su-text-[28.75px]">
