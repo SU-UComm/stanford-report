@@ -1,0 +1,179 @@
+{
+  "headingConfiguration": {
+    "title": "Messages from Leadership",
+    "ctaText": "View all",
+    "ctaUrl": "matrix-asset://api-identifier/89422"
+  },
+  "contentConfiguration": {
+    "searchQuery": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&log=false&query=!null"
+  },
+  "data": [
+    {
+      "title": "New Teaser Test",
+      "description": [
+        "This is some teaser text for the testing of this teaser. This is some text that should be an announcement."
+      ],
+      "liveUrl": "https://sug-web.matrix.squiz.cloud/report/stories/uat/hmalcolm/new-teaser-test",
+      "imageUrl": [
+        "https://sug-web.matrix.squiz.cloud/__data/assets/image/0028/127837/60-850x560.jpg"
+      ],
+      "imageAlt": [
+        "Top down view of a desktop with a MAC computer"
+      ],
+      "type": "Announcement",
+      "date": 1707091200000
+    },
+    {
+      "title": "Brooklynn Test Page",
+      "description": [
+        "Test teaser for a basic story page test."
+      ],
+      "liveUrl": "https://sug-web.matrix.squiz.cloud/report/stories/uat/bmoor/brooklynn-test-page",
+      "imageUrl": [
+        "https://sug-web.matrix.squiz.cloud/__data/assets/image/0028/127837/60-850x560.jpg"
+      ],
+      "imageAlt": [
+        "Top down view of a desktop with a MAC computer"
+      ],
+      "taxonomy": [
+        "Athletics"
+      ],
+      "taxonomyUrl": [
+        "https://sug-web.matrix.squiz.cloud/report/on-campus/athletics"
+      ],
+      "type": "News",
+      "date": 1706572800000
+    },
+    {
+      "title": "DC Test News 1",
+      "description": [
+        "Jason Test News 1 teaser text"
+      ],
+      "liveUrl": "https://sug-web.matrix.squiz.cloud/report/stories/uat/dcousins/dc-test-news-1",
+      "imageUrl": [
+        "https://sug-web.matrix.squiz.cloud/__data/assets/image/0028/127837/60-850x560.jpg"
+      ],
+      "imageAlt": [
+        "Top down view of a desktop with a MAC computer"
+      ],
+      "taxonomy": [
+        "Awards, honors, &amp; appointments"
+      ],
+      "taxonomyUrl": [
+        "https://sug-web.matrix.squiz.cloud/report/university-news/awards-honors-and-appointments"
+      ],
+      "type": "Video",
+      "videoUrl": [
+        "V1lrrIIk04w"
+      ],
+      "date": 1706572800000
+    },
+    {
+      "title": "Jason Test News 1",
+      "description": [
+        "Jason Test News 1 teaser text"
+      ],
+      "liveUrl": "https://sug-web.matrix.squiz.cloud/report/stories/uat/jchoi/jason-test-news-1",
+      "imageUrl": [
+        "https://sug-web.matrix.squiz.cloud/__data/assets/image/0028/127837/60-850x560.jpg"
+      ],
+      "imageAlt": [
+        "Top down view of a desktop with a MAC computer"
+      ],
+      "taxonomy": [
+        "Campus &amp; facilities"
+      ],
+      "taxonomyUrl": [
+        "https://sug-web.matrix.squiz.cloud/report/university-news/campus-and-facilities"
+      ],
+      "type": "Video",
+      "videoUrl": [
+        "V1lrrIIk04w"
+      ],
+      "date": 1706572800000
+    },
+    {
+      "title": "Jason Test News 2",
+      "description": [
+        "Jason Test News 2 teaser text."
+      ],
+      "liveUrl": "https://sug-web.matrix.squiz.cloud/report/stories/uat/jchoi/jason-test-news-2",
+      "imageUrl": [
+        "https://sug-web.matrix.squiz.cloud/__data/assets/image/0028/127837/60-850x560.jpg"
+      ],
+      "imageAlt": [
+        "Top down view of a desktop with a MAC computer"
+      ],
+      "taxonomy": [
+        "Campus &amp; facilities"
+      ],
+      "taxonomyUrl": [
+        "https://sug-web.matrix.squiz.cloud/report/university-news/campus-and-facilities"
+      ],
+      "type": "Video",
+      "videoUrl": [
+        "V1lrrIIk04w"
+      ],
+      "date": 1706572800000
+    },
+    {
+      "title": "DC Announcements Teaser #1",
+      "description": [
+        "DC Announcement #1 This is the&nbsp;&nbsp;teaser information for an announcement for students. This is the&nbsp;&nbsp;teaser information for an announcement for students. This is the&nbsp;&nbsp;teaser information for an announcement for students."
+      ],
+      "liveUrl": "https://sug-web.matrix.squiz.cloud/report/stories/uat/dcousins/dc-announcements-teaser-1",
+      "type": "Announcement",
+      "date": 1707091200000
+    },
+    {
+      "title": "JBC - Basic story 01",
+      "description": [
+        "Kitty pounce, trip, faceplant you didn't see that no you didn't definitely didn't lick, lick, lick, and preen away the embarrassment love you, then bite you."
+      ],
+      "liveUrl": "https://sug-web.matrix.squiz.cloud/report/stories/uat/jchrsty/basic-story",
+      "imageUrl": [
+        "https://sug-web.matrix.squiz.cloud/_media/images/news/2023/11/joburg-map-scaled.jpg.jpeg/705w.jpeg"
+      ],
+      "taxonomy": [
+        "Institutional news"
+      ],
+      "taxonomyUrl": [
+        "https://sug-web.matrix.squiz.cloud/report/university-news/institutional-news"
+      ],
+      "type": "Announcement",
+      "date": 1704067200000
+    },
+    {
+      "title": "Announcement Test 2",
+      "description": [
+        "FestiFall runs through Oct. 5 in White Plaza. The annual festival is your chance to check out more than 300 student organizations. Come and get involved!"
+      ],
+      "liveUrl": "https://sug-web.matrix.squiz.cloud/report/stories/uat/jchoi/announcement-test-2",
+      "type": "Announcement",
+      "date": 1704067200000
+    },
+    {
+      "title": "Announcement Test 1",
+      "description": [
+        "Be prepared, not scared: During an emergency, staying informed and knowing how to respond are key to keeping yourself safe. Here is a quick look at what you need to know about emergency preparedness at Stanford."
+      ],
+      "liveUrl": "https://sug-web.matrix.squiz.cloud/report/stories/uat/jchoi/announcement-test-1",
+      "type": "Announcement",
+      "date": 1704067200000
+    },
+    {
+      "title": "Announcement Test 3",
+      "description": [
+        "Get your flu on Wednesday, Oct. 4, between 9 a.m. and 1:30 p.m. on the lawn near Y2E2, Engineering Quad."
+      ],
+      "liveUrl": "https://sug-web.matrix.squiz.cloud/report/stories/uat/jchoi/announcement-test-3",
+      "type": "Announcement",
+      "date": 1704067200000
+    }
+  ],
+  "headingData": {
+    "title": "Messages from Leadership",
+    "ctaText": "View all",
+    "resolvedUrl": "https://sug-web.matrix.squiz.cloud/report/stories/give-and-go-program-finds-new-purpose-for-tons-of-unwanted-items"
+  }
+}
