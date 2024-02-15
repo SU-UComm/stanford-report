@@ -1,16 +1,16 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "feature-story-hero",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "Stanford university Base component.",
   "displayName": "Feature story hero",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "flag",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "purple"
     }
   },
   "functions": [
