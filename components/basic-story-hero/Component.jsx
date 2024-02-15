@@ -3,6 +3,7 @@ import { Container } from "../../packages/grids/Container";
 import Modal from "../../packages/modal/ModalWrapper";
 import EmbedVideo from "../../packages/media/EmbedVideo";
 import VideoPlay from "../../packages/SVG-library/VideoPlay";
+import { Carousel } from "../../packages/carousels/Carousels";
 
 /**
  * Base component
@@ -21,7 +22,7 @@ function readingTime(text) {
 }
 
 export default function basicStoryHero(props) {
-  const { title, media, summary, pubDateFormatted, topic } = props;
+  const { title, media, summary, pubDateFormatted, topic, mediaType } = props;
 
   console.log(props);
 
@@ -38,7 +39,7 @@ export default function basicStoryHero(props) {
             </span>
 
             <span className="su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-leading-[19.11px] su-text-[16px] md:su-leading-[25.08px] md:su-text-[21px] md:su-text-[24px] lg:su-text-[24px] lg:su-leading-[28.66px]">
-              {topic}
+              {topic.asset_name}
             </span>
           </div>
 
@@ -58,6 +59,8 @@ export default function basicStoryHero(props) {
                 url={media.featureImage.url}
                 alt={media.featureImage.alt}
                 video={media.featureVideo.id}
+                type={mediaType}
+                carousel={media.carousel}
               />
 
               <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" />
@@ -73,9 +76,10 @@ export default function basicStoryHero(props) {
   );
 }
 
-function Thumbnail({ url, alt, video }) {
+function Thumbnail({ url, alt, video, type, carousel }) {
   // state
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const slides = [];
 
   // events
   const handleClick = () => {
@@ -86,7 +90,7 @@ function Thumbnail({ url, alt, video }) {
     setIsModalOpen(false);
   };
 
-  if (!video) {
+  if (type === "image") {
     return (
       <img
         src={url}
@@ -96,9 +100,29 @@ function Thumbnail({ url, alt, video }) {
     );
   }
 
+  if (type === "carousel") {
+    carousel.forEach((slide) => {
+      slides.push(
+        <img
+          // src="https://picsum.photos/700"
+          src={slide.asset_url}
+          alt={slide.asset_attribute_alt}
+          className="su-relative su-w-full su-h-[300px] md:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
+        />
+      );
+    });
+
+    return <Carousel slides={slides} variant="media" />;
+  }
+
   return (
     <>
-      <button type="button" aria-haspopup="dialog" onClick={handleClick}>
+      <button
+        type="button"
+        aria-haspopup="dialog"
+        className="su-w-full"
+        onClick={handleClick}
+      >
         <img
           src={url}
           alt={alt}
