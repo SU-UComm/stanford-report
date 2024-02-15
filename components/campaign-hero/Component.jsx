@@ -130,7 +130,6 @@ export default function CampaignHero({
     // </Container>
 
     <Container width="full" paddingX={false}>
-      <div className="su-h-[100px]" />
       <section>
         {/* Background video or photo */}
         <div className="su-sticky su-h-[100vh] su-top-0">
@@ -142,14 +141,14 @@ export default function CampaignHero({
             />
 
             {/* Gradient overlay */}
-            {/* <div
+            <div
               className="su-absolute su-block su-w-full su-h-full su-top-0 su-bg-gradient-to-t su-from-black-true su-z-[1]"
               aria-hidden="true"
-            /> */}
+            />
           </div>
         </div>
 
-        <div className="su-cc su-grid su-grid-cols-6 md:su-grid-cols-12 su-grid-gap su-relative su-z-[2]">
+        <div className="su-cc su-grid su-grid-cols-6 md:su-grid-cols-12 su-grid-gap su-relative su-z-[2] -su-mt-500">
           <div className="su-col-span-6 md:su-col-start-1 md:su-col-span-12 lg:su-col-start-4 lg:su-col-span-6 su-text-white su-text-center">
             <h1 className="su-type-6">{title}</h1>
             <p className="su-type-3 su-leading-[1.3]">{intro}</p>
