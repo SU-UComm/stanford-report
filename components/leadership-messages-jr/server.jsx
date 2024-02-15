@@ -40,6 +40,8 @@ export default async (args, info) => {
     headingData,
   };
 
+  console.log(JSON.stringify(renderProps));
+
   return renderComponent({
     Component,
     componentName: "leadership-messages-jr",
