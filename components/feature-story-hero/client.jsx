@@ -3,4 +3,12 @@ import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
 // import { createRoot } from "react-dom/client";
 import Component from "./Component";
 
-hydrateComponent({ Component, componentName: "feature-story-hero" });
+(function () {
+  const componentName = "feature-story-hero";
+  const target = document.querySelector(
+    `[data-hydration-component="${componentName}"]`
+  );
+
+  if (!target) return;
+  hydrateComponent({ Component, componentName });
+})();

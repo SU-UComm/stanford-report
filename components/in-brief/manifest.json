@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "in-brief",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "namespace": "stanford-components",
   "description": "Summary of main points in a bulleted list.",
   "displayName": "In Brief",
@@ -10,7 +10,7 @@
     "id": "summarize",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "pink"
     }
   },
   "functions": [

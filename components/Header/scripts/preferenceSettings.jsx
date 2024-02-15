@@ -78,13 +78,13 @@ export default function _preferencesSettings() {
     const currentPersonalisation = getCookie("preferences_personalisation");
     if (currentPersonalisation == "student") {
       htmlTag.classList.add("su-persona--student");
-      preferenceStudent.setAttribute("aria-pressed", "true");
+      // preferenceStudent.setAttribute("aria-pressed", "true");
     } else if (currentPersonalisation == "faculty") {
       htmlTag.classList.add("su-persona--faculty");
-      preferenceFaculty.setAttribute("aria-pressed", "true");
+      // preferenceFaculty.setAttribute("aria-pressed", "true");
     } else {
       htmlTag.classList.add("su-persona--none");
-      preferenceReset.setAttribute("aria-pressed", "true");
+      // preferenceReset.setAttribute("aria-pressed", "true");
     }
 
     /* Set as no persona */

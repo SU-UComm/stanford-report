@@ -20,7 +20,7 @@
     "id": "view_carousel",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "red"
     }
   },
   "functions": [

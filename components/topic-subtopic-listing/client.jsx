@@ -3,4 +3,12 @@
 import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
 import Component from "./Component";
 
-hydrateComponent({ Component, componentName: "topic-subtopic-listing" });
+(function () {
+  const componentName = "topic-subtopic-listing";
+  const target = document.querySelector(
+    `[data-hydration-component="${componentName}"]`
+  );
+
+  if (!target) return;
+  hydrateComponent({ Component, componentName });
+})();
