@@ -51,8 +51,8 @@ import getCookie from "../../packages/utils/cookieGet";
       props.data = data;
       element.setAttribute("data-hydration-props", JSON.stringify(props));
     }
-
-    // Hydrate the component
-    hydrateComponent({ Component, componentName: "stories-carousel" });
   }
+
+  // Hydrate the component
+  hydrateComponent({ Component, componentName: "stories-carousel" });
 })();

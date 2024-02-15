@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "stories-carousel",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "namespace": "stanford-components",
   "description": "Links to stories displayed as cards in a carousel.",
   "displayName": "Stories carousel",
@@ -202,6 +202,19 @@
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "frontend": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/frontend.html"
           }
         }
       }

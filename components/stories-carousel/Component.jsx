@@ -18,7 +18,9 @@ import Card from "../../packages/card/Card";
 
 export default function StoriesCarousel({ data, headingData }) {
   const cards = [];
-  const uniqueClass = hash.MD5(JSON.stringify(data));
+  const uniqueClass = hash.MD5(
+    JSON.stringify(data) + hash.MD5(JSON.stringify(headingData))
+  );
 
   if (data !== null && data !== undefined) {
     data.forEach((card) => {
