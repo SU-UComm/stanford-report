@@ -39,9 +39,9 @@ export function FeaturedGridContent({
   return (
     <div
       className={[
-        "su-relative su-w-full before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[1px]",
+        "su-relative su-w-full before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px",
         isNested
-          ? "md:before:su-w-full lg:before:su-w-[1px] lg:before:su-h-full before:su-left-0 lg:before:su-left-[-38px] before:su-top-[-40px] md:before:su-top-[-36px] lg:before:su-top-0"
+          ? "md:before:su-w-full lg:before:su-w-px lg:before:su-h-full before:su-left-0 lg:before:su-left-[-38px] before:su-top-[-40px] md:before:su-top-[-36px] lg:before:su-top-0"
           : "before:su-left-0 before:su-top-[-40px] md:before:su-top-[-36px] lg:before:su-top-[-38px]",
       ].join(" ")}
     >

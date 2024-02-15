@@ -2,7 +2,7 @@
 @tailwind utilities;
 
 .component-slider .component-slider-controls {
-  @apply su-pt-[21px] su-mt-[27px] su-border-t su-border-t-black-20 su-items-start su-content-start su-gap-[19px];
+  @apply su-pt-[21px] su-mt-[27px] su-border-t su-border-t-black-20 su-items-start su-content-start su-gap-19;
 }
 
 .component-slider

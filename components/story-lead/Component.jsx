@@ -46,11 +46,11 @@ export default function StoryLead({ content, variant }) {
   const variantClasses = new Map();
   variantClasses.set(
     "Featured Story",
-    "[&>*]:su-text-20 md:[&>*]:su-text-25 lg:[&>*]:su-text-26 su-font-serif su-font-medium"
+    "*:su-text-20 md:*:su-text-25 lg:*:su-text-26 su-font-serif su-font-medium"
   );
   variantClasses.set(
     "Basic Story",
-    "su-story-first-letter [&>*]:su-text-18 md:[&>*]:su-text-23"
+    "su-story-first-letter *:su-text-18 md:*:su-text-23"
   );
 
   const letterSvgs = new Map();
@@ -110,7 +110,7 @@ export default function StoryLead({ content, variant }) {
       {variant === "Featured Story" && (
         <span
           data-test="component-story-lead-letter"
-          className="su-float-left [&>svg]:su-mt-[3px] md:[&>svg]:su-mt-[-2px] lg:[&>svg]:su-mt-[4px] [&>svg]:su-w-[41px] [&>svg]:su-h-[43px] md:[&>svg]:su-w-[97px] md:[&>svg]:su-h-[102px] su-mr-[8px] lg:su-mr-[19px]"
+          className="su-float-left [&>svg]:su-mt-3 md:[&>svg]:su-mt-[-2px] lg:[&>svg]:su-mt-4 [&>svg]:su-w-[41px] [&>svg]:su-h-[43px] md:[&>svg]:su-w-[97px] md:[&>svg]:su-h-[102px] su-mr-8 lg:su-mr-19"
         >
           {selectedSvg}
         </span>

@@ -37,7 +37,7 @@ export default function PullQuoteCard({
   return quote ? (
     <article
       data-test="pullquote-card"
-      className="su-component-card-pullquote su-relative su-w-full su-pl-0 lg:su-pl-[52px] su-flex su-flex-wrap su-justify-center su-gap-[27px]"
+      className="su-component-card-pullquote su-relative su-w-full su-pl-0 lg:su-pl-[52px] su-flex su-flex-wrap su-justify-center su-gap-27"
     >
       {quote && (
         <PullQuote
@@ -54,7 +54,7 @@ export default function PullQuoteCard({
             authorName ? `<strong>${authorName}</strong>,` : ""
           } ${description.replace(/<p>|<\/p>/g, "")}</p>`}
           elementType="div"
-          className="[&>*]:su-my-0 [&>*]:su-text-18 [&>*]:dark:su-text-white [&>*]:su-font-sans [&>*]:su-w-full"
+          className="*:su-my-0 *:su-text-18 *:dark:su-text-white *:su-font-sans *:su-w-full"
         />
       )}
       <ExternalLink size="large" ctaText={ctaText} liveUrl={liveUrl} />

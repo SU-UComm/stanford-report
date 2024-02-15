@@ -18,7 +18,7 @@
 }
 
 .swiper-slide-active .su-component-card-media {
-  @apply md:su-px-[44px] lg:su-px-[38px];
+  @apply md:su-px-[44px] lg:su-px-38;
 }
 
 .swiper-slide-prev .su-media-card-text,

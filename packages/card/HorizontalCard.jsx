@@ -81,13 +81,13 @@ export default function HorizontalCard({
 
   // gap for the card <article> element
   const cardGap = new Map();
-  cardGap.set("large", "su-gap-[20px] lg:su-gap-[48px]");
-  cardGap.set("small", "su-gap-[19px]");
+  cardGap.set("large", "su-gap-20 lg:su-gap-48");
+  cardGap.set("small", "su-gap-19");
 
   // gap for the <div> node that holds info, like description & title
   const contentGap = new Map();
-  contentGap.set("large", "su-gap-[9px] lg:su-gap-[12px]");
-  contentGap.set("small", "su-gap-[6px]");
+  contentGap.set("large", "su-gap-[9px] lg:su-gap-12");
+  contentGap.set("small", "su-gap-6");
 
   // gap for the <div> node that holds info, like description & title
   const titleSize = new Map();
@@ -165,7 +165,7 @@ export default function HorizontalCard({
         {cardSize === "large" && type && (
           <p
             data-testid="horizontal-card-type"
-            className="su-text-black-70 dark:su-text-black-30 su-w-full su-text-14 lg:su-text-16 su-mt-[9px] md:su-mt-[12px] su-mb-0 su-flex su-gap-[6px] su-items-center su-justify-start"
+            className="su-text-black-70 dark:su-text-black-30 su-w-full su-text-14 lg:su-text-16 su-mt-[9px] md:su-mt-12 su-mb-0 su-flex su-gap-6 su-items-center su-justify-start"
           >
             {SVGMap.get(type.toLowerCase()) || Fragment}
             <XssSafeContent
@@ -179,7 +179,7 @@ export default function HorizontalCard({
         {cardSize === "large" && (
           <div
             data-testid="horizontal-card-description"
-            className="su-hidden md:su-block su-text-16 lg:su-text-18 su-mt-[9px] md:su-mt-[12px] su-mb-0"
+            className="su-hidden md:su-block su-text-16 lg:su-text-18 su-mt-[9px] md:su-mt-12 su-mb-0"
           >
             <XssSafeContent
               className={["su-mb-0 su-w-full [&>*:last-child]:su-mb-0"].join(

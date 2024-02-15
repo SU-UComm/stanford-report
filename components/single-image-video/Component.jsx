@@ -71,7 +71,7 @@ export default function SingleImageVideo({
 
   return (
     <Container width={width}>
-      <section className="su-flex su-flex-col su-items-center su-gap-[8px] su-gap-[15px]">
+      <section className="su-flex su-flex-col su-items-center su-gap-8 su-gap-15">
         <div
           className={`su-relative${
             !vimeoid || !youtubeid
@@ -103,7 +103,7 @@ export default function SingleImageVideo({
                 handleIframeLoad={handleIframeLoad}
               />
 
-              <div className="su-absolute su-bottom-[21.26px] su-left-[21.26px] su-hidden md:su-block [&>*]:md:su-w-[55.95px] [&>*]:md:su-h-[55.95px] [&>*]:lg:su-w-[100px] [&>*]:lg:su-h-[100px] lg:su-bottom-[38px] lg:su-left-[38px]">
+              <div className="su-absolute su-bottom-[21.26px] su-left-[21.26px] su-hidden md:su-block *:md:su-w-[55.95px] *:md:su-h-[55.95px] *:lg:su-w-100 *:lg:su-h-100 lg:su-bottom-38 lg:su-left-38">
                 <VideoPlay />
               </div>
             </button>
@@ -112,7 +112,7 @@ export default function SingleImageVideo({
 
         {/* background=1 */}
 
-        <div className="su-flex su-flex-col su-gap-[8px] su-items-center md:su-gap-[22px] su-w-full su-relative">
+        <div className="su-flex su-flex-col su-gap-8 su-items-center md:su-gap-22 su-w-full su-relative">
           <p className="su-m-0 su-text-14 su-max-w-[633px] su-leading-[16.72px] su-font-normal su-text-black-70 md:su-text-16 su-leading-[19.11px] md:su-text-left">
             {captionCredit}
           </p>
@@ -132,7 +132,7 @@ export default function SingleImageVideo({
                 setVideoPlaying("pause");
               }}
             >
-              <span className="[&>*]:su-fill-black-70 [&>*]:su-w-[25px] [&>*]:su-h-[25px] su-text-black-70 su-flex su-gap-[6px] su-items-center su-text-16 [&>*]:lg:su-h-[30px] [&>*]:lg:su-w-[30px] lg:su-absolute lg:su-top-0 lg:su-right-0">
+              <span className="*:su-fill-black-70 *:su-w-[25px] *:su-h-[25px] su-text-black-70 su-flex su-gap-6 su-items-center su-text-16 *:lg:su-h-30 *:lg:su-w-30 lg:su-absolute lg:su-top-0 lg:su-right-0">
                 {videoPlaying === "pause" ? <Play /> : <Pause />}
                 {pausePlayTitle}
               </span>

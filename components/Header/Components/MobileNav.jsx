@@ -9,13 +9,13 @@ function MajorLinks({ items }) {
   return (
     items &&
     items.length > 0 && (
-      <ul className="su-w-full su-order-2 su-list-none su-flex su-flex-wrap su-gap-[1px] md:su-gap-[19px] su-pl-0 su-ml-0">
+      <ul className="su-w-full su-order-2 su-list-none su-flex su-flex-wrap su-gap-px md:su-gap-19 su-pl-0 su-ml-0">
         {items.map((item) => {
           const title = decode(item.asset_name);
           return (
             <li className="su-mb-0 su-w-full" key={item.asset_assetid}>
               <a
-                className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-20 md:su-text-26 su-leading-[31px] focus:su-text-digital-red hover:su-text-digital-red su-font-bold su-no-underline su-transition"
+                className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-20 md:su-text-26 su-leading-[3.1rem] focus:su-text-digital-red hover:su-text-digital-red su-font-bold su-no-underline su-transition"
                 href={item.asset_url}
               >
                 {title}
@@ -41,7 +41,7 @@ function MinorLinks({ items }) {
           return (
             <li
               className={`${
-                arr.length - 1 === index ? "su-mb-0" : "su-mb-[6px]"
+                arr.length - 1 === index ? "su-mb-0" : "su-mb-6"
               } su-w-full su-leading-[21px]`}
               key={item.asset_assetid}
             >
@@ -72,8 +72,8 @@ function ContactLinks({ items }) {
           return (
             <li
               className={`${
-                arr.length - 1 === index ? "su-mb-0" : "su-mb-[6px]"
-              } su-w-full su-leading-[16px]`}
+                arr.length - 1 === index ? "su-mb-0" : "su-mb-6"
+              } su-w-full su-leading-[1.6rem]`}
               key={item.asset_assetid}
             >
               <a
@@ -103,7 +103,7 @@ function ExternalLinks({ items }) {
           return (
             <li
               className={`${
-                arr.length - 1 === index ? "su-mb-0" : "su-mb-[3px]"
+                arr.length - 1 === index ? "su-mb-0" : "su-mb-3"
               } su-w-full su-leading-[16px]`}
               key={item.asset_assetid}
             >
@@ -168,12 +168,12 @@ export default function MobileNav({ navigation, search, audience }) {
       className="report-header__menu-tray su-shadow su-z-50 su-fixed su-left-0 su-top-0 su-size-full"
     >
       <div className="report-header__overlay su-bg-black su-opacity-25 su-size-full" />
-      <div className="report-header__primary-nav su-bg-white dark:su-bg-black-true dark:su-text-white su-h-screen su-absolute su-top-0 su-left-0 su-w-full md:su-w-[390px] su-flex su-flex-wrap su-overflow-y-auto su-pb-[32px] md:su-pb-[64px] su-pt-[115px] md:su-pt-[167px] su-px-[38px]">
+      <div className="report-header__primary-nav su-bg-white dark:su-bg-black-true dark:su-text-white su-h-screen su-absolute su-top-0 su-left-0 su-w-full md:su-w-[390px] su-flex su-flex-wrap su-overflow-y-auto su-pb-32 md:su-pb-[64px] su-pt-[115px] md:su-pt-[167px] su-px-38">
         <form
           action={endpoint}
           method="get"
           role="search"
-          className="su-mb-[32px] su-mx-[-18px] md:su-hidden su-grow su-flex su-flex-wrap su-order-1 su-relative"
+          className="su-mb-32 su--mx-18 md:su-hidden su-grow su-flex su-flex-wrap su-order-1 su-relative"
         >
           <label className="sr-only" htmlFor="mobile_search_query">
             Search query
@@ -182,7 +182,7 @@ export default function MobileNav({ navigation, search, audience }) {
           <input type="hidden" value={profile} name="profile" />
           <input
             type="search"
-            className="su-w-full su-h-[50px] su-rounded-full dark:su-text-black su-text-20 su-leading-[26px] su-py-[10px] su-pl-[15px] su-pr-[120px] su-bg-white su-border-2 su-border-black-30 hover:su-border-black-40 focus:su-border-digital-blue"
+            className="su-w-full su-h-50 su-rounded-full dark:su-text-black su-text-20 su-leading-[2.6rem] su-py-10 su-pl-15 su-pr-120 su-bg-white su-border-2 su-border-black-30 hover:su-border-black-40 focus:su-border-digital-blue"
             name="query"
             defaultValue=""
             placeholder="Search"
@@ -191,21 +191,21 @@ export default function MobileNav({ navigation, search, audience }) {
           />
           <button
             type="reset"
-            className="report-header__clear su-h-[48px] su-absolute su-top-[2px] su-right-[70px] su-text-digital-blue su-text-20"
+            className="report-header__clear su-h-48 su-absolute su-top-2 su-right-70 su-text-digital-blue su-text-20"
           >
             Clear <span className="sr-only">Search</span>
           </button>
           <hr
-            className="su-absolute su-right-[60px] su-w-[2px] su-h-[32px] su-top-[10px] su-border-none su-bg-black-30"
+            className="su-absolute su-right-60 su-w-2 su-h-32 su-top-10 su-border-none su-bg-black-30"
             aria-hidden="true"
           />
           <button
-            className="su-absolute su-size-40 su-right-[10px] su-top-[5px]"
+            className="su-absolute su-size-40 su-right-10 su-top-5"
             type="submit"
           >
             <svg
               aria-hidden="true"
-              className="su-size-30 su-mt-[2px] su-ml-[4px] su-text-digital-red"
+              className="su-size-30 su-mt-2 su-ml-4 su-text-digital-red"
               xmlns="http://www.w3.org/2000/svg"
               width="30"
               height="30"
@@ -218,7 +218,7 @@ export default function MobileNav({ navigation, search, audience }) {
           </button>
           <hr
             aria-hidden="true"
-            className="su-block su-mt-[32px] su-border-none su-grow su-bg-black-10 dark:su-bg-black su-w-full su-h-[2px] md:su-h-[3px]"
+            className="su-block su-mt-32 su-border-none su-grow su-bg-black-10 dark:su-bg-black su-w-full su-h-2 md:su-h-3"
           />
         </form>
 
@@ -226,33 +226,33 @@ export default function MobileNav({ navigation, search, audience }) {
 
         <hr
           aria-hidden="true"
-          className="su-block su-order-2 su-my-[15px] md:su-my-[27px] su-w-full su-bg-gradient-light-red-h su-h-[4px] su-border-none md:su-h-[3px]"
+          className="su-block su-order-2 su-my-15 md:su-my-27 su-w-full su-bg-gradient-light-red-h su-h-4 su-border-none md:su-h-3"
         />
 
         <MinorLinks items={minor} />
 
         <hr
           aria-hidden="true"
-          className="su-block su-order-2 su-my-[15px] md:su-my-[27px] su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-[2px] md:su-h-[3px]"
+          className="su-block su-order-2 su-my-15 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2 md:su-h-3"
         />
 
         <ContactLinks items={contacts} />
 
         <hr
           aria-hidden="true"
-          className="su-block su-order-2 su-my-[15px] md:su-my-[27px] su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-[2px] md:su-h-[3px]"
+          className="su-block su-order-2 su-my-15 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2 md:su-h-3"
         />
 
         <ExternalLinks items={externalData} audience={audience} />
 
         <button
           type="button"
-          className="report-header__menu-close su-absolute su-right-[20px] md:su-right-[48px] su-top-[43px] md:su-top-[75px] su-w-[32px] su-flex su-flex-wrap su-gap-[3px] su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
+          className="report-header__menu-close su-absolute su-right-20 md:su-right-48 su-top-[43px] md:su-top-[75px] su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
           aria-expanded="true"
           aria-controls="menu"
           aria-labelledby="close-menu"
         >
-          <span className="su-relative su-h-[32px] su-w-[32px]">
+          <span className="su-relative su-h-32 su-w-32">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"

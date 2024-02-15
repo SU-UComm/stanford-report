@@ -28,8 +28,8 @@ export default function MulticolumnImage({ data, imageCaptions }) {
 
   return (
     <Container width="wide">
-      <section className="su-flex su-flex-col su-gap-[8px] md:su-gap-[9px]">
-        <div className="su-flex su-gap-[20px] lg:su-gap-[48px]">{images}</div>
+      <section className="su-flex su-flex-col su-gap-8 md:su-gap-[9px]">
+        <div className="su-flex su-gap-20 lg:su-gap-48">{images}</div>
 
         {numberOfCaptions === 1 && (
           <p className="su-text-14 su-text-black-70 dark:su-text-black-30 su-font-normal su-leading-[119.415%] su-text-center md:su-text-16 su-mb-0">
@@ -43,7 +43,7 @@ export default function MulticolumnImage({ data, imageCaptions }) {
 
 function Image({ src, caption, numberOfCaptions }) {
   return (
-    <div className="su-relative su-flex su-flex-col su-gap-[8px] su-flex-1">
+    <div className="su-relative su-flex su-flex-col su-gap-8 su-flex-1">
       <img src={src} className="su-object-cover" alt="" />
 
       {caption && numberOfCaptions > 1 && (

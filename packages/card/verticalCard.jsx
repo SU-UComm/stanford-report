@@ -52,20 +52,18 @@ function titleSize(size) {
 
 function descriptionSize(size) {
   if (size === "featured")
-    return "[&>*]:su-text-18 su-text-18 [&>*]:md:su-text-19 md:su-text-19 [&>*]:su-leading-[22.5px] su-leading-[22.5px] [&>*]:md:su-leading-[23.75px] md:su-leading-[23.75px] [&>*]:su-mt-[4px] [&>*]:md:su-mt-[14px]";
-  return "[&>*]:su-text-19 [&>*]:su-leading-[23.75px] su-text-19 su-leading-[23.75px]";
+    return "*:su-text-18 su-text-18 *:md:su-text-19 md:su-text-19 *:su-leading-[22.5px] su-leading-[22.5px] *:md:su-leading-[23.75px] md:su-leading-[23.75px] *:su-mt-4 *:md:su-mt-14";
+  return "*:su-text-19 *:su-leading-[23.75px] su-text-19 su-leading-[23.75px]";
 }
 
 function gapSize(size) {
-  if (size === "featured")
-    return "su-gap-[11px] md:su-gap-[13px] lg:su-gap-[13px]";
-  return "su-gap-[11px] md:su-gap-[12px] lg:su-gap-[9px]";
+  if (size === "featured") return "su-gap-11 md:su-gap-13 lg:su-gap-13";
+  return "su-gap-11 md:su-gap-12 lg:su-gap-[9px]";
 }
 
 function imageMargin(size) {
-  if (size === "featured")
-    return "su-mb-[15px] md:su-mb-[26px] lg:su-mb-[38px]";
-  return "su-mb-[15px] md:su-mb-[18px] lg:su-mb-[19px]";
+  if (size === "featured") return "su-mb-15 md:su-mb-26 lg:su-mb-38";
+  return "su-mb-15 md:su-mb-18 lg:su-mb-19";
 }
 
 function taxonomySize(size) {
@@ -195,7 +193,7 @@ export default function VerticalCard({
       {taxonomy && (
         <p
           data-testid="vertical-card-taxonomy"
-          className={`su-relative su-z-10 su-mb-[13px] su-font-semibold ${taxonomySize(
+          className={`su-relative su-z-10 su-mb-13 su-font-semibold ${taxonomySize(
             cardSize
           )}`} // size
         >
@@ -223,7 +221,7 @@ export default function VerticalCard({
         {type && (
           <p
             data-testid="vertical-card-type"
-            className={`su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-[6px] su-flex-nowrap su-items-center ${typeSize(
+            className={`su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-6 su-flex-nowrap su-items-center ${typeSize(
               cardSize
             )}`}
           >

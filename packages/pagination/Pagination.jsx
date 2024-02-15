@@ -31,7 +31,7 @@ export default function Pagination({
       buttons.push(
         <button
           data-offset={offsetNum}
-          className={`su-w-[24px] su-h-[24px] su-font-serif su-flex su-items-center su-justify-center su-text-18 dark:su-text-[white] ${
+          className={`su-size-24 su-font-serif su-flex su-items-center su-justify-center su-text-18 dark:su-text-white ${
             offsetNum === pageNumber ? activeClass : nonActiveClass
           }`}
           disabled={offsetNum === pageNumber}
@@ -50,7 +50,7 @@ export default function Pagination({
       <div className="su-flex su-gap-[9px] su-items-center su-justify-center">
         <button
           type="button"
-          className={`su-w-[24px] su-h-[24px] su-font-serif su-flex su-items-center su-justify-center dark:su-text-[white] ${
+          className={`su-size-24 su-font-serif su-flex su-items-center su-justify-center dark:su-text-white ${
             prevPage < 1 ? finalPageClass : ""
           }`}
           disabled={prevPage < 1}
@@ -68,7 +68,7 @@ export default function Pagination({
 
         <button
           type="button"
-          className={`su-w-[24px] su-h-[24px] su-font-serif su-flex su-items-center su-justify-center dark:su-text-[white] ${
+          className={`su-size-24 su-font-serif su-flex su-items-center su-justify-center dark:su-text-white ${
             nextPage > offsets[offsets.length - 1] ? finalPageClass : ""
           }`}
           disabled={nextPage > offsets[offsets.length - 1]}

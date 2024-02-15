@@ -11,8 +11,8 @@ export default function ContactNav({ navigation }) {
   return (
     navigation &&
     navigation.length > 0 && (
-      <div className="lg:su-mb-[27px] su-mb-[32px] md:su-mb-[30px] lg:su-ml-auto">
-        <ul className="su-list-none su-flex lg:su-justify-end su-pl-0 su-gap-y-[11px] su-gap-x-[20px] lg:su-gap-x-[27px]">
+      <div className="lg:su-mb-27 su-mb-32 md:su-mb-30 lg:su-ml-auto">
+        <ul className="su-list-none su-flex lg:su-justify-end su-pl-0 su-gap-y-11 su-gap-x-20 lg:su-gap-x-27">
           {navigation.map((item) => {
             const title = decode(item.asset_name);
             return (

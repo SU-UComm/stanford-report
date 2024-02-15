@@ -38,14 +38,14 @@ export function PullQuote({
   return quote ? (
     <Tag
       className={[
-        "su-component-pullquote su-mx-auto su-relative su-mt-0 su-flex su-flex-wrap su-gap-[27px] su-justify-center su-mt-0 su-pr-0 su-py-0",
+        "su-component-pullquote su-mx-auto su-relative su-mt-0 su-flex su-flex-wrap su-gap-27 su-justify-center su-pr-0 su-py-0",
       ].join(" ")}
     >
       <Avatar image={avatar} avatarSize={avatarSize} />
       <blockquote
         className={[
-          "su-w-full su-pl-[39px] dark:su-text-white dark:before:su-text-white su-font-serif su-text-black",
-          avatarSize === "large" ? "lg:su-pl-[52px]" : "lg:su-pl-0",
+          "su-w-full su-pl-39 dark:su-text-white dark:before:su-text-white su-font-serif su-text-black",
+          avatarSize === "large" ? "lg:su-pl-[5.2rem]" : "lg:su-pl-0",
         ].join(" ")}
       >
         <XssSafeContent
@@ -54,12 +54,12 @@ export function PullQuote({
           className={[
             "su-font-semibold su-font-serif-0 su-text-24 md:su-text-36 su-leading md:su-leading-[130.245%]",
             "[&>*:last-child]:su-mb-0 [&>*:last-child]:after:su-content-['”']",
-            "su-relative before:su-text-[73px] before:su-leading-[109.5px] lg:before:su-leading-[139.5px] lg:before:su-text-[93px] before:su-font-semibold before:su-mt-[-25px] lg:before:su-mt-[-38px] before:su-content-['“'] before:su-text-serif before:su-text-black dark:su-text-white before:su-absolute before:su-right-full lg:before:su-right-full before:su-mr-[6px] lg:before:su-mr-[13px] dark:before:su-text-white",
+            "su-relative before:su-text-[73px] before:su-leading-[109.5px] lg:before:su-leading-[139.5px] lg:before:su-text-[93px] before:su-font-semibold before:su--mt-25 lg:before:su--mt-38 before:su-content-['“'] before:su-text-serif before:su-text-black dark:su-text-white before:su-absolute before:su-right-full lg:before:su-right-full before:su-mr-6 lg:before:su-mr-13 dark:before:su-text-white",
             "su-leading-[33.6px] md:su-leading-[46.89px]",
           ].join(" ")}
         />
         {name && (
-          <cite className="su-mt-[15px] md:su-mt-[26px] lg:su-mt-[29px] su-font-sans su-text-21 su-leading-[25.2px] su-flex su-flex-col su-gap-[6px] md:su-gap-[10px] lg:su-gap-[6px]">
+          <cite className="su-mt-15 md:su-mt-26 lg:su-mt-29 su-font-sans su-text-21 su-leading-[25.2px] su-flex su-flex-col su-gap-6 md:su-gap-10 lg:su-gap-6">
             <span className="su-font-bold su-block su-leading-[25.2px]">
               {name}
             </span>

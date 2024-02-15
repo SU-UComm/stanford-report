@@ -36,7 +36,7 @@ export default function BasicMetadata({ data }) {
   };
 
   return (
-    <section className="su-border-b-[1px] su-border-solid su-border-b-black-20 su-pt-[32px] su-mb-[32px] md:su-pt-36 lg:su-border-b-transparent lg:su-mb-[104px]">
+    <section className="su-border-b-[1px] su-border-solid su-border-b-black-20 su-pt-32 su-mb-32 md:su-pt-36 lg:su-border-b-transparent lg:su-mb-[104px]">
       {authors && authors.length && (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title={`Author${authors.length > 1 ? "s" : ""}`}>
@@ -219,7 +219,7 @@ export default function BasicMetadata({ data }) {
           >
             {copyLinkTitle}
 
-            <span className="[&>*]:su-inline-block [&>*]:su-ml-[8px]">
+            <span className="*:su-inline-block *:su-ml-8">
               <ShareLink />
             </span>
           </button>

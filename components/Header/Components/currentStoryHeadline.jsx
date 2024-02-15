@@ -13,7 +13,7 @@ export default function CurrentStoryHeadline({ title, story }) {
         {title}
       </h1>
       {story && (
-        <div className="report-header__next su-text-12 lg:su-text-14 su-font-bold su-border-l-2 su-border-black-10 su-pl-[13px] lg:su-pl-[27px] su-ml-[13px] lg:su-ml-36 su-min-w-[160px] xl:su-min-w-[359px] su-max-w-[160px] lg:su-max-w-[359px] su-opacity-0">
+        <div className="report-header__next su-text-12 lg:su-text-14 su-font-bold su-border-l-2 su-border-black-10 su-pl-13 lg:su-pl-27 su-ml-13 lg:su-ml-36 su-min-w-[160px] xl:su-min-w-[359px] su-max-w-[160px] lg:su-max-w-[359px] su-opacity-0">
           <h2 className="su-m-0 su-text-digital-red dark:su-text-dark-mode-red su-text-12 lg:su-text-14">
             Read next:
           </h2>

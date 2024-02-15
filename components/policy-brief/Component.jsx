@@ -29,7 +29,7 @@ export default function PolicyBriefComponent({ data, contentConfiguration }) {
 
   return (
     <Container width="wide" paddingX={false}>
-      <section className="su-relative su-flex su-flex-col su-gap-[20px] su-py-[30px] su-px-[20px] su-bg-foggy-light md:su-mx-[50px] md:su-flex-row md:su-gap-[18px] lg:su-gap-[48px] md:su-p-36 lg:su-py-[61px] lg:su-px-[65px] dark:su-bg-transparent dark:before:su-bg-black dark:before:su-opacity-[0.5] dark:before:su-content-[''] dark:before:su-absolute dark:before:su-w-full dark:before:su-h-full dark:before:su-top-0 dark:before:su-left-0 dark:before:su-z-1">
+      <section className="su-relative su-flex su-flex-col su-gap-20 su-py-30 su-px-20 su-bg-foggy-light md:su-mx-50 md:su-flex-row md:su-gap-18 lg:su-gap-48 md:su-p-36 lg:su-py-[61px] lg:su-px-[65px] dark:su-bg-transparent dark:before:su-bg-black dark:before:su-opacity-[0.5] dark:before:su-content-[''] dark:before:su-absolute dark:before:su-w-full dark:before:su-h-full dark:before:su-top-0 dark:before:su-left-0 dark:before:su-z-1">
         <div className="su-relative su-w-full su-h-[233px] md:su-h-auto md:su-min-w-[257px] lg:su-h-[378.331px] lg:su-flex-1 su-z-2">
           <img
             // src="https://picsum.photos/800"
@@ -40,7 +40,7 @@ export default function PolicyBriefComponent({ data, contentConfiguration }) {
         </div>
 
         <div className="lg:su-flex-1 su-relative su-z-2">
-          <div className="su-flex su-gap-[6px] su-items-center su-text-18 su-font-semibold su-pb-[20px] md:su-pb-[27px]">
+          <div className="su-flex su-gap-6 su-items-center su-text-18 su-font-semibold su-pb-20 md:su-pb-27">
             {SVGMap.get(type) && (
               <>
                 <span className="dark:su-hidden">{SVGMap.get(type).light}</span>
@@ -53,18 +53,18 @@ export default function PolicyBriefComponent({ data, contentConfiguration }) {
             <span>{type}</span>
           </div>
 
-          <h2 className="su-text-[33px] su-font-bold su-leading-[125%] su-font-serif su-pb-[19px] su-m-0">
+          <h2 className="su-text-[33px] su-font-bold su-leading-[125%] su-font-serif su-pb-19 su-m-0">
             {title}
           </h2>
 
-          <p className="su-text-19 su-font-normal su-leading-[125%] su-pb-[20px] md:su-pb-[27px] su-m-0">
+          <p className="su-text-19 su-font-normal su-leading-[125%] su-pb-20 md:su-pb-27 su-m-0">
             {summary}
           </p>
 
           {linkUrl && (
             <a
               href={linkUrl}
-              className="su-flex su-gap-[2px] su-text-19 su-font-semibold su-leading-[125%] su-text-digital-red su-no-underline"
+              className="su-flex su-gap-2 su-text-19 su-font-semibold su-leading-[125%] su-text-digital-red su-no-underline"
             >
               {linkText}
               <svg

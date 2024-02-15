@@ -58,17 +58,17 @@ export default function Header({ site, navigation, search }) {
       <div className="su-shadow su-fixed su-top-0 su-left-0 su-w-full su-bg-white dark:su-bg-black-true su-z-50">
         <TopBar url={site.url} logo={site.logoTopBar} />
 
-        <div className="su-w-full su-max-w-[1412px] su-px-[20px] md:su-px-[49px] su-mx-auto">
-          <div className="report-header__main su-flex su-items-center su-justify-between su-gap-[20px]">
-            <div className="su-flex su-items-center su-gap-[20px] lg:su-gap-[27px] su-w-[32px] md:su-w-[85px] lg:su-w-[91px]">
+        <div className="su-w-full su-max-w-[1412px] su-px-20 md:su-px-[49px] su-mx-auto">
+          <div className="report-header__main su-flex su-items-center su-justify-between su-gap-20">
+            <div className="su-flex su-items-center su-gap-20 lg:su-gap-27 su-w-32 md:su-w-[85px] lg:su-w-[91px]">
               <button
-                className="su-w-[32px] su-flex su-flex-wrap su-gap-[3px] su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
+                className="su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
                 aria-controls="menu"
                 aria-expanded="false"
                 aria-labelledby="toggle-menu"
                 type="button"
               >
-                <span className="su-relative su-h-[32px] su-w-[32px]">
+                <span className="su-relative su-h-32 su-w-32">
                   <BurgerBar />
                   <MobileBurgerBar />
                 </span>
@@ -92,15 +92,15 @@ export default function Header({ site, navigation, search }) {
 
               <button
                 type="button"
-                className="su-hidden su-relative su-z-40 su-order-3 su-w-[32px] md:su-flex su-flex-wrap su-gap-[3px] su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
+                className="su-hidden su-relative su-z-40 su-order-3 su-w-32 md:su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
                 aria-controls="search"
                 aria-expanded="false"
                 aria-labelledby="toggle-search"
               >
-                <span className="icon-search su-relative su-h-[32px] su-w-[32px]">
+                <span className="icon-search su-relative su-h-32 su-w-32">
                   <SearchIcon />
                 </span>
-                <span className="icon-close su-hidden su-relative su-h-[32px] su-w-[32px]">
+                <span className="icon-close su-hidden su-relative su-h-32 su-w-32">
                   <CloseIcon />
                 </span>
                 <span id="toggle-search" hidden>

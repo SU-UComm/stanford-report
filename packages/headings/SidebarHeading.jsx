@@ -70,7 +70,7 @@ export function SidebarHeading({
   return title !== "" ? (
     <Tag
       className={[
-        "su-component-sidebar-heading su-w-full su-flex su-flex-wrap su-gap-[6px] su-my-0 su-font-sans",
+        "su-component-sidebar-heading su-w-full su-flex su-flex-wrap su-gap-6 su-my-0 su-font-sans",
         colorClassMap.get(color),
       ].join(" ")}
     >

@@ -8,13 +8,13 @@ export default function TeaserCard({ credit, data }) {
     <article>
       <a
         href={liveUrl}
-        className="su-no-underline su-flex su-flex-col su-gap-[11px] md:su-gap-[0px]"
+        className="su-no-underline su-flex su-flex-col su-gap-11 md:su-gap-0"
       >
-        <div className="su-text-18 su-leading-snug su-font-semibold md:su-pb-[13px]">
+        <div className="su-text-18 su-leading-snug su-font-semibold md:su-pb-13">
           {source}
         </div>
 
-        <h2 className="su-font-bold su-leading-display su-text-24 su-m-0 md:su-pb-[9px]">
+        <h2 className="su-font-bold su-leading-display su-text-24 su-m-0 md:su-pb-9">
           {title}
         </h2>
 
@@ -34,7 +34,7 @@ export default function TeaserCard({ credit, data }) {
                     : ""
                 } ${description.replace(/<p>|<\/p>/g, "")}</p>`}
                 elementType="div"
-                className="[&>*]:su-my-0 [&>*]:dark:su-text-white [&>*]:su-font-sans [&>*]:su-w-full [&>*]:su-font-normal [&>*]:su-leading-snug"
+                className="*:su-my-0 *:dark:su-text-white *:su-font-sans *:su-w-full *:su-font-normal *:su-leading-snug"
               />
             )}
           </div>

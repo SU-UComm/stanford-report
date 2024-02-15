@@ -9,9 +9,9 @@ import { decode } from "html-entities";
  */
 export default function ExternalNav({ navigation, audience }) {
   return (
-    <div className="su-pb-[60px] lg:su-pb-[95px]">
+    <div className="su-pb-60 lg:su-pb-[95px]">
       {navigation && navigation.length > 0 && (
-        <ul className="su-list-none su-flex su-flex-wrap su-pl-0 su-gap-y-[6px] su-gap-x-[20px] lg:su-gap-x-[27px] pre-footer-bottom-third">
+        <ul className="su-list-none su-flex su-flex-wrap su-pl-0 su-gap-y-6 su-gap-x-20 lg:su-gap-x-27 pre-footer-bottom-third">
           {navigation.map((item) => {
             const title = decode(item.asset_name);
             return (

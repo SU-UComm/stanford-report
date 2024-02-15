@@ -47,7 +47,7 @@ export default function FeaturedContent({
   const announcementCards = [];
   announcementData.forEach((card, i) => {
     announcementCards.push(
-      <article className="su-relative su-mt-0 su-gap-[6px] su-flex su-flex-wrap">
+      <article className="su-relative su-mt-0 su-gap-6 su-flex su-flex-wrap">
         <p
           className="su-w-full su-text-black dark:su-text-white su-mb-0 su-text-18 su-leading-[22.5px] su-font-sans"
           id={`aria-announcement-${i}`}
@@ -57,7 +57,7 @@ export default function FeaturedContent({
         <a
           href={card.liveUrl}
           aria-labelledby={`aria-announcement-${i}`}
-          className="su-transition dark:su-text-digital-blue-vivid su-flex su-flex-nowrap su-gap-[2px] su-items-center su-leading-[20px] su-text-16 su-font-bold su-no-underline before:su-w-full before:su-h-full before:su-top-0 before:su-left-0 before:su-absolute [&>svg]:su-w-[16px] [&>svg]:su-h-[16px]"
+          className="su-transition dark:su-text-digital-blue-vivid su-flex su-flex-nowrap su-gap-2 su-items-center su-leading-[20px] su-text-16 su-font-bold su-no-underline before:su-w-full before:su-h-full before:su-top-0 before:su-left-0 before:su-absolute [&>svg]:su-w-16 [&>svg]:su-h-16"
         >
           <span>Read more</span>
           <ChevronRight />
@@ -76,7 +76,7 @@ export default function FeaturedContent({
 
       <div className="su-w-full su-component-featured-grid">
         <div className="su-flex su-flex-wrap lg:su-flex-nowrap su-gap-[68px] md:su-gap-[72px] lg:su-gap-[160px]">
-          <div className="su-relative su-flex su-flex-wrap md:su-flex-nowrap lg:su-flex-wrap lg:su-order-2 md:su-items-start md:su-content-start su-gap-[80px] md:su-gap-[72px] lg:su-gap-[76px] md:su-basis-[39.5%] lg:su-basis-[30%] su-grow before:su-w-full before:md:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[1px] before:lg:su-h-full before:su-left-0 before:su-bottom-[-35px] before:lg:su-bottom-auto before:lg:su-top-0 before:md:su-left-[0] lg:before:su-w-[1px] before:lg:su-left-[-80px]">
+          <div className="su-relative su-flex su-flex-wrap md:su-flex-nowrap lg:su-flex-wrap lg:su-order-2 md:su-items-start md:su-content-start su-gap-80 md:su-gap-[72px] lg:su-gap-[76px] md:su-basis-[39.5%] lg:su-basis-[30%] su-grow before:su-w-full before:md:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px before:lg:su-h-full before:su-left-0 before:su-bottom-[-35px] before:lg:su-bottom-auto before:lg:su-top-0 before:md:su-left-[0] lg:before:su-w-px before:lg:su-left-[-80px]">
             <div className="su-relative su-w-full md:su-h-full lg:su-h-auto">
               <SidebarList
                 title={eventsConfiguration.heading}
@@ -92,7 +92,7 @@ export default function FeaturedContent({
                 />
               </SidebarList>
             </div>
-            <div className="su-relative su-w-full md:su-h-full lg:su-h-auto before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[1px] md:before:su-h-full md:before:su-w-[1px] before:su-left-0 md:before:su-left-[-38px] before:su-top-[-40px] md:before:su-top-[0] lg:before:su-top-[-38px] lg:before:su-left-0 lg:before:su-w-full lg:before:su-h-[1px]">
+            <div className="su-relative su-w-full md:su-h-full lg:su-h-auto before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px md:before:su-h-full md:before:su-w-px before:su-left-0 md:before:su-left-[-38px] before:su-top-[-40px] md:before:su-top-[0] lg:before:su-top-[-38px] lg:before:su-left-0 lg:before:su-w-full lg:before:su-h-px">
               <SidebarList
                 title={announcementsConfiguration.heading}
                 icon="announcement"

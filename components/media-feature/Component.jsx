@@ -28,8 +28,8 @@ export default function MediaFeature({
 
   return (
     <Container width="full" paddingX={false}>
-      <section className="su-py-[45px] su-px-[20px] su-flex su-justify-center su-relative md:su-py-[72px] md:su-px-[50px]">
-        <div className="su-max-w-[1086px] su-flex su-flex-col su-items-center su-z-[2] su-relative su-p-[38px] before:su-content-[''] before:su-bg-foggy-light before:su-w-full before:su-h-full before:su-opacity-[0.9] before:su-absolute before:su-z-[-1] before:su-top-0 before:su-left-0 md:su-flex-row md:su-gap-[20px] md:su-items-start lg:su-p-[48px]">
+      <section className="su-py-45 su-px-20 su-flex su-justify-center su-relative md:su-py-[72px] md:su-px-50">
+        <div className="su-max-w-[1086px] su-flex su-flex-col su-items-center su-z-[2] su-relative su-p-38 before:su-content-[''] before:su-bg-foggy-light before:su-w-full before:su-h-full before:su-opacity-[0.9] before:su-absolute before:su-z-[-1] before:su-top-0 before:su-left-0 md:su-flex-row md:su-gap-20 md:su-items-start lg:su-p-48">
           <div className="su-h-[224px] su-w-[224px] su-relative su-shrink-0 md:su-w-[182px] md:su-h-[182px] lg:su-w-[292px] lg:su-h-[292px]">
             <img
               // src="https://picsum.photos/600/250"
@@ -40,20 +40,20 @@ export default function MediaFeature({
           </div>
 
           <div>
-            <div className="su-py-[20px] su-w-full md:su-pb-[27px] md:su-pt-0 [&>*]:dark:su-text-black">
+            <div className="su-py-20 su-w-full md:su-pb-27 md:su-pt-0 *:dark:su-text-black">
               <FeaturedHeading type={mediaType} />
             </div>
 
             <a href={linkUrl} className="su-no-underline">
-              <h3 className="su-text-[35px] su-font-bold su-leading-tight su-m-0 su-pb-[8px] su-text-black su-text-black md:su-pb-[19px] md:su-text-[40px] lg:su-text-[43px]">
+              <h3 className="su-text-[35px] su-font-bold su-leading-tight su-m-0 su-pb-8 su-text-black su-text-black md:su-pb-19 md:su-text-[40px] lg:su-text-[43px]">
                 {title}
-                <span className="su-hidden lg:su-inline-block su-relative su-top-[12px]">
+                <span className="su-hidden lg:su-inline-block su-relative su-top-12">
                   <ExternalArrow size="large" />
                 </span>
               </h3>
             </a>
 
-            <div className="su-w-full su-flex su-text-18 su-text-black-70 su-font-semibold su-items-center su-pb-[15px] su-leading-snug md:su-pb-[19px] md:su-text-16">
+            <div className="su-w-full su-flex su-text-18 su-text-black-70 su-font-semibold su-items-center su-pb-15 su-leading-snug md:su-pb-19 md:su-text-16">
               <MediaType type={mediaType} />
             </div>
 
@@ -81,9 +81,7 @@ function MediaType({ type }) {
 
   return (
     <>
-      <span className="[&>*]:su-h-[20px] [&>*]:su-w-[20px]">
-        {iconMap.get(type)}
-      </span>
+      <span className="*:su-h-20 *:su-w-20">{iconMap.get(type)}</span>
       {type}
     </>
   );

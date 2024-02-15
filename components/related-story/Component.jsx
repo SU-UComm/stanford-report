@@ -28,7 +28,7 @@ export default function RelatedStory({ data }) {
         />
 
         <a className="su-text-black su-no-underline" href={liveUrl}>
-          <div className="su-flex su-gap-[20px] sm:su-gap-[40px] su-mt-[30px] lg:su-mt-36 lg:su-mt-[38px]">
+          <div className="su-flex su-gap-20 sm:su-gap-40 su-mt-30 lg:su-mt-36 lg:su-mt-38">
             <img
               className="su-object-cover su-h-auto su-max-h-[103px] su-max-w-[103px] md:su-max-h-[168px] md:su-max-w-[168px] lg:su-max-h-[185px] lg:su-max-w-[185px] su-object-center su-object-cover"
               src={imageUrl}

@@ -8,7 +8,7 @@ export default function BasicFields({ title, children, alignment = "left" }) {
 
   return (
     <div
-      className={`su-flex su-flex-col su-gap-[27px] su-pt-[32px] su-pb-[22px] md:su-pt-[45px] md:su-pt-36 ${alignMap.get(
+      className={`su-flex su-flex-col su-gap-27 su-pt-32 su-pb-22 md:su-pt-45 md:su-pt-36 ${alignMap.get(
         alignment
       )}`}
     >
@@ -16,9 +16,7 @@ export default function BasicFields({ title, children, alignment = "left" }) {
         {title}
       </h3>
 
-      <div className="su-flex su-flex-col su-gap-[6px] su-text-21">
-        {children}
-      </div>
+      <div className="su-flex su-flex-col su-gap-6 su-text-21">{children}</div>
     </div>
   );
 }
