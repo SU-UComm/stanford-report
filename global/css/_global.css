@@ -167,7 +167,7 @@ svg {
 }
 
 .component-slider .swiper-pagination-bullet {
-  @apply su-mx-0 su-transition su-opacity-100 su-w-20 su-h-20 su-bg-transparent su-border-solid su-border-2 su-border-black-30 dark:su-border-black-60;
+  @apply su-mx-0 su-transition su-opacity-100 su-w-20 su-h-20 su-bg-transparent su-border-2 su-border-black-30 dark:su-border-black-60;
 }
 
 .component-slider .swiper-pagination-lock {
@@ -204,7 +204,7 @@ svg {
 }
 
 .component-slider .component-slider-btn {
-  @apply su-transition hocus:su-bg-digital-red hocus:su-text-white dark:hocus:su-bg-dark-mode-red dark:hocus:su-text-white su-relative su-min-w-[37px] su-max-w-[37px] su-h-[37px] su-top-auto su-bottom-0 su-border-solid su-border-2 su-border-digital-red dark:su-border-dark-mode-red su-rounded-full;
+  @apply su-transition hocus:su-bg-digital-red hocus:su-text-white dark:hocus:su-bg-dark-mode-red dark:hocus:su-text-white su-relative su-min-w-[37px] su-max-w-[37px] su-h-[37px] su-top-auto su-bottom-0 su-border-2 su-border-digital-red dark:su-border-dark-mode-red su-rounded-full;
 }
 
 /*

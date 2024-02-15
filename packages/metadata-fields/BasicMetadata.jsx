@@ -78,7 +78,7 @@ export default function BasicMetadata({ data }) {
       )}
 
       {writers && writers.length ? (
-        <div className="su-border-t-[1px] su-border-solid border-t-black-20">
+        <div className="su-border-t border-t-black-20">
           <BasicFields title={`Writer${writers.length > 1 ? "s" : ""}`}>
             {writers.map(
               (item) =>
@@ -98,7 +98,7 @@ export default function BasicMetadata({ data }) {
       )}
 
       {editors && editors.length ? (
-        <div className="su-border-t-[1px] su-border-solid border-t-black-20">
+        <div className="su-border-t border-t-black-20">
           <BasicFields title={`Editor${editors.length > 1 ? "s" : ""}`}>
             {editors.map(
               (item) =>
@@ -118,7 +118,7 @@ export default function BasicMetadata({ data }) {
       )}
 
       {videographers && videographers.length ? (
-        <div className="su-border-t-[1px] su-border-solid border-t-black-20">
+        <div className="su-border-t border-t-black-20">
           <BasicFields
             title={`Videographer${videographers.length > 1 ? "s" : ""}`}
           >
@@ -140,7 +140,7 @@ export default function BasicMetadata({ data }) {
       )}
 
       {photography && photography.length ? (
-        <div className="su-border-t-[1px] su-border-solid border-t-black-20">
+        <div className="su-border-t border-t-black-20">
           <BasicFields
             title={`Photography director${photography.length > 1 ? "s" : ""}`}
           >
@@ -162,7 +162,7 @@ export default function BasicMetadata({ data }) {
       )}
 
       {media && media.length ? (
-        <div className="su-border-t-[1px] su-border-solid border-t-black-20">
+        <div className="su-border-t border-t-black-20">
           <BasicFields title={`Media contact${media.length > 1 ? "s" : ""}`}>
             {media.map(
               (item) =>
@@ -191,7 +191,7 @@ export default function BasicMetadata({ data }) {
       )}
 
       {campus && typeof campus.asset_assetid !== "undefined" ? (
-        <div className="su-border-t-[1px] su-border-solid border-t-black-20">
+        <div className="su-border-t border-t-black-20">
           <BasicFields title="Campus unit">
             <a
               href={campus.asset_url}
@@ -206,7 +206,7 @@ export default function BasicMetadata({ data }) {
       )}
 
       {related && related.length ? (
-        <div className="su-border-t-[1px] su-border-solid border-t-black-20">
+        <div className="su-border-t border-t-black-20">
           <BasicFields title="Related topics">
             {related.map(
               (item) =>
@@ -227,7 +227,7 @@ export default function BasicMetadata({ data }) {
         ""
       )}
 
-      <div className="su-border-t-[1px] su-border-solid border-t-black-20">
+      <div className="su-border-t border-t-black-20">
         <BasicFields title="Share this story">
           <button
             onClick={copyLink}

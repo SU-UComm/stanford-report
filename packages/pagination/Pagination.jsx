@@ -47,7 +47,7 @@ export default function Pagination({
 
   return (
     <Container>
-      <div className="su-flex su-gap-[9px] su-items-center su-justify-center">
+      <div className="su-flex su-gap-9 su-items-center su-justify-center">
         <button
           type="button"
           className={`su-size-24 su-font-serif su-flex su-items-center su-justify-center dark:su-text-white ${

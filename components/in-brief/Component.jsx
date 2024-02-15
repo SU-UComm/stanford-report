@@ -20,7 +20,7 @@ export default function InBrief({ points }) {
     <Container width="narrow">
       <div
         data-test="in-brief"
-        className="su-border-b-[1px] su-border-black-20"
+        className="su-border-b su-border-black-20"
       >
         <div className="su-relative su-overflow-hidden">
           <h2 className="su-font-serif su-font-black su-inline su-bg-white dark:su-bg-black-true !su-text-23 su-pr-10 su-m-0">
