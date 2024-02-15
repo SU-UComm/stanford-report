@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "policy-brief",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "namespace": "stanford-components",
   "description": "This component allows a content manager to create a policy brief that can be externally linked to a policy brief or case study.",
   "displayName": "Policy brief",
