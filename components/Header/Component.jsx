@@ -76,7 +76,7 @@ export default function Header({ site, navigation, search }) {
                   Menu
                 </span>
                 <span
-                  className="su-text-[12px] su-hidden md:su-block"
+                  className="su-text-12 su-hidden md:su-block"
                   aria-hidden="true"
                 >
                   Menu
@@ -107,13 +107,13 @@ export default function Header({ site, navigation, search }) {
                   Toggle Search
                 </span>
                 <span
-                  className="text-search su-text-[12px] su-hidden md:su-block"
+                  className="text-search su-text-12 su-hidden md:su-block"
                   aria-hidden="true"
                 >
                   Search
                 </span>
                 <span
-                  className="text-close su-text-[12px] su-hidden"
+                  className="text-close su-text-12 su-hidden"
                   aria-hidden="true"
                 >
                   Close

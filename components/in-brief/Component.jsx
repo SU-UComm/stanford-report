@@ -23,7 +23,7 @@ export default function InBrief({ points }) {
         className="su-border-b-[1px] su-border-black-20"
       >
         <div className="su-relative su-overflow-hidden">
-          <h2 className="su-font-serif su-font-black su-inline su-bg-white dark:su-bg-black-true !su-text-[23px] su-pr-[10px] su-m-0">
+          <h2 className="su-font-serif su-font-black su-inline su-bg-white dark:su-bg-black-true !su-text-23 su-pr-[10px] su-m-0">
             In brief
           </h2>
           <span className="su-w-full su-bg-black-20 su-h-[1px] su-absolute su-bottom-[4px]" />
@@ -36,7 +36,7 @@ export default function InBrief({ points }) {
                   elementType="li"
                   key={hash.MD5(item)}
                   className={[
-                    "su-basefont-19 su-leading-[125%] su-text-[16px] md:su-text-[19px] lg:su-text-[19px] [&>*]:su-text-[16px] md:[&>*]:su-text-[19px] [&>*]:su-leading-[125%]",
+                    "su-basefont-19 su-leading-[125%] su-text-16 md:su-text-19 lg:su-text-19 [&>*]:su-text-16 md:[&>*]:su-text-19 [&>*]:su-leading-[125%]",
                   ].join(" ")}
                   content={item}
                 />

@@ -85,7 +85,7 @@ export default function SingleImageVideo({
               src={imageData.url}
               alt={imageData.attributes.alt}
               className="su-w-full su-object-cover"
-              // className="su-w-full su-h-full su-absolute su-object-cover su-top-[50%] su-translate-y-[-50%]"
+              // className="su-size-full su-absolute su-object-cover su-top-[50%] su-translate-y-[-50%]"
             />
           ) : (
             <button
@@ -93,7 +93,7 @@ export default function SingleImageVideo({
               type="button"
               aria-label="Watch video"
               title="Watch video"
-              className="su-cursor-pointer su-absolute su-top-0 su-left-0 su-w-full su-h-full"
+              className="su-cursor-pointer su-absolute su-top-0 su-left-0 su-size-full"
               onClick={() => handleClick()}
             >
               <Video
@@ -113,7 +113,7 @@ export default function SingleImageVideo({
         {/* background=1 */}
 
         <div className="su-flex su-flex-col su-gap-[8px] su-items-center md:su-gap-[22px] su-w-full su-relative">
-          <p className="su-m-0 su-text-[14px] su-max-w-[633px] su-leading-[16.72px] su-font-normal su-text-black-70 md:su-text-[16px] su-leading-[19.11px] md:su-text-left">
+          <p className="su-m-0 su-text-14 su-max-w-[633px] su-leading-[16.72px] su-font-normal su-text-black-70 md:su-text-16 su-leading-[19.11px] md:su-text-left">
             {captionCredit}
           </p>
 
@@ -132,7 +132,7 @@ export default function SingleImageVideo({
                 setVideoPlaying("pause");
               }}
             >
-              <span className="[&>*]:su-fill-black-70 [&>*]:su-w-[25px] [&>*]:su-h-[25px] su-text-black-70 su-flex su-gap-[6px] su-items-center su-text-[16px] [&>*]:lg:su-h-[30px] [&>*]:lg:su-w-[30px] lg:su-absolute lg:su-top-0 lg:su-right-0">
+              <span className="[&>*]:su-fill-black-70 [&>*]:su-w-[25px] [&>*]:su-h-[25px] su-text-black-70 su-flex su-gap-[6px] su-items-center su-text-16 [&>*]:lg:su-h-[30px] [&>*]:lg:su-w-[30px] lg:su-absolute lg:su-top-0 lg:su-right-0">
                 {videoPlaying === "pause" ? <Play /> : <Pause />}
                 {pausePlayTitle}
               </span>
@@ -159,7 +159,7 @@ function Video({ autoplay, id, thumbnail, handleIframeLoad }) {
     return (
       <iframe
         src={`https://player.vimeo.com/video/${id}?autoplay=1&loop=1&autopause=0&background=1`}
-        className="su-w-full su-h-full su-absolute su-top-0 su-left-0 su-pointer-events-none"
+        className="su-size-full su-absolute su-top-0 su-left-0 su-pointer-events-none"
         allow="autoplay; fullscreen"
         data-role="video-player"
         onLoad={handleIframeLoad}
@@ -172,7 +172,7 @@ function Video({ autoplay, id, thumbnail, handleIframeLoad }) {
     <img
       src={thumbnail.url}
       alt={thumbnail.attributes.alt}
-      className="su-w-full su-h-full"
+      className="su-size-full"
     />
   );
 }

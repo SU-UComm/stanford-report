@@ -83,10 +83,10 @@ export default function BottomBar({ site, navigation }) {
           </div>
 
           <div className="su-flex lg:su-flex-col footer-links-wrapper su-flex-wrap lg:su-grow">
-            <div className="footer-top-links su-font-sans su-font-semibold su-text-[14px] md:su-text-[18px] lg:su-text-[17px] lg:su-mt-[31px] su-mx-auto md:su-mb-[11px] lg:su-mb-[8px] lg:su-ml-0 lg:su-mr-0">
+            <div className="footer-top-links su-font-sans su-font-semibold su-text-14 md:su-text-18 lg:su-text-17 lg:su-mt-[31px] su-mx-auto md:su-mb-[11px] lg:su-mb-[8px] lg:su-ml-0 lg:su-mr-0">
               <PrimaryLinks navigation={footerPrimary} />
             </div>
-            <div className="footer-bottom-links su-mx-auto lg:su-ml-0 lg:su-mr-0 su-font-normal su-text-[14px] md:su-text-[16px] md:su-mb-[10px] lg:su-mb-[9px] lg:su-text-[15px]">
+            <div className="footer-bottom-links su-mx-auto lg:su-ml-0 lg:su-mr-0 su-font-normal su-text-14 md:su-text-16 md:su-mb-[10px] lg:su-mb-[9px] lg:su-text-15">
               <SecondaryLinks navigation={footerSecondary} />
             </div>
             <div className="footer-bottom-copyright su-w-full su-text-white su-font-source-sans-pro su-text-15 su-font-normal su-tracking-normal su-mt-17 lg:su-mt-0 su-mx-auto lg:su-mx-0">

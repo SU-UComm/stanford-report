@@ -17,7 +17,7 @@ export default function ExternalNav({ navigation, audience }) {
             return (
               <li key={item.asset_assetid}>
                 <a
-                  className="su-flex hover:su-underline su-leading-[26px] su-items-center su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[14px] md:su-text-[16px] focus:su-text-digital-red hover:su-text-digital-red su-font-normal su-no-underline su-transition"
+                  className="su-flex hover:su-underline su-leading-[26px] su-items-center su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-14 md:su-text-16 focus:su-text-digital-red hover:su-text-digital-red su-font-normal su-no-underline su-transition"
                   href={item.asset_attribute_redirect_url}
                 >
                   <span className="su-mr-2">{title}</span>

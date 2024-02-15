@@ -55,7 +55,7 @@ export default function ImageQuote({ displayConfiguration, data }) {
             className="su-z-10 su-w-full su-h-auto su-object-center su-object-cover"
             alt=""
           />
-          <figcaption className="dark:su-text-white su-text-[14px] su-font-normal su-mt-[8px] md:su-text-[16px]">
+          <figcaption className="dark:su-text-white su-text-14 su-font-normal su-mt-[8px] md:su-text-16">
             {imageCaption}|{imageCredit}
           </figcaption>
         </figure>
@@ -68,11 +68,11 @@ export default function ImageQuote({ displayConfiguration, data }) {
             "after:su-hidden lg:after:su-block after:su-absolute after:su-w-[3px] after:su-z-[-10] after:su-top-[45px] lg:after:su-top-0 after:su-right-0 lg:after:su-h-full after:su-bg-plum dark:after:su-bg-palo-verde",
           ].join(" ")}
         >
-          <blockquote className="story__quote-target su-relative su-pl-0 su-flex su-m-0 su-items-start su-gap-[6px] su-text-black dark:su-text-white su-font-semibold su-text-[24px] md:su-text-[36px] font-serif-4 before:su-text-[59px] md:before:su-text-[73px] before:su-leading-[109.5px] lg:before:su-leading-[139.5px] lg:before:su-text-[93px] before:su-font-regular before:su-mt-[-30px] md:before:su-mt-[-25px] lg:before:su-mt-[-32px] before:su-content-['“'] before:su-text-serif before:su-text-black dark:su-text-white before:su-absolute before:su-right-full before:su-mr-[6px] md:before:su-mr-[13px] dark:before:su-text-white before:su-font-regular">
+          <blockquote className="story__quote-target su-relative su-pl-0 su-flex su-m-0 su-items-start su-gap-[6px] su-text-black dark:su-text-white su-font-semibold su-text-24 md:su-text-36 font-serif-4 before:su-text-[59px] md:before:su-text-[73px] before:su-leading-[109.5px] lg:before:su-leading-[139.5px] lg:before:su-text-[93px] before:su-font-regular before:su-mt-[-30px] md:before:su-mt-[-25px] lg:before:su-mt-[-32px] before:su-content-['“'] before:su-text-serif before:su-text-black dark:su-text-white before:su-absolute before:su-right-full before:su-mr-[6px] md:before:su-mr-[13px] dark:before:su-text-white before:su-font-regular">
             {quote}
           </blockquote>
 
-          <figcaption className="su-relative su-text-black su-basefont-21 su-mt-0 su-flex su-flex-col dark:su-text-white su-text-[16px] md:su-text-[21px] su-font-normal lg:su-flex su-flex-col su-gap-[5px] md:su-gap-[6px] after:su-h-[calc(100%+32px)] after:su-hidden lg:after:su-block after:su-w-[5px] after:su-bg-white dark:after:su-bg-black-true after:su-absolute after:su-left-full after:su-top-[-32px] after:su-translate-x-[72px] after:su-ml-[-4px]">
+          <figcaption className="su-relative su-text-black su-basefont-21 su-mt-0 su-flex su-flex-col dark:su-text-white su-text-16 md:su-text-21 su-font-normal lg:su-flex su-flex-col su-gap-[5px] md:su-gap-[6px] after:su-h-[calc(100%+32px)] after:su-hidden lg:after:su-block after:su-w-[5px] after:su-bg-white dark:after:su-bg-black-true after:su-absolute after:su-left-full after:su-top-[-32px] after:su-translate-x-[72px] after:su-ml-[-4px]">
             <strong>{name}</strong> <span>{title}</span>
           </figcaption>
         </figure>

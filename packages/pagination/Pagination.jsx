@@ -31,7 +31,7 @@ export default function Pagination({
       buttons.push(
         <button
           data-offset={offsetNum}
-          className={`su-w-[24px] su-h-[24px] su-font-serif su-flex su-items-center su-justify-center su-text-[18px] dark:su-text-[white] ${
+          className={`su-w-[24px] su-h-[24px] su-font-serif su-flex su-items-center su-justify-center su-text-18 dark:su-text-[white] ${
             offsetNum === pageNumber ? activeClass : nonActiveClass
           }`}
           disabled={offsetNum === pageNumber}

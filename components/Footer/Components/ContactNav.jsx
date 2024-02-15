@@ -18,7 +18,7 @@ export default function ContactNav({ navigation }) {
             return (
               <li className="su-leading-[17px]" key={item.asset_assetid}>
                 <a
-                  className="su-font-semibold su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[14px] md:su-text-[16px] focus:su-text-digital-red hover:su-text-digital-red su-no-underline hover:su-underline su-transition"
+                  className="su-font-semibold su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-14 md:su-text-16 focus:su-text-digital-red hover:su-text-digital-red su-no-underline hover:su-underline su-transition"
                   href={item.asset_url}
                 >
                   {title}

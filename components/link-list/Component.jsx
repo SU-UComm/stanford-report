@@ -80,19 +80,19 @@ export default function LinkList({ search }) {
         data-role="link-drawer"
       >
         {linkItems[0] && (
-          <article className="su-border-solid su-border-b-[1px] su-border-b-black-20 su-pb-[15px] su-mt-[23.65px] lg:su-pb-[36px]">
+          <article className="su-border-solid su-border-b-[1px] su-border-b-black-20 su-pb-[15px] su-mt-[23.65px] lg:su-pb-36">
             {linkItems[0]}
           </article>
         )}
 
         {linkItems[1] && (
-          <article className="su-border-solid su-border-b-[1px] su-border-b-black-20 su-py-[15px] lg:su-py-[36px]">
+          <article className="su-border-solid su-border-b-[1px] su-border-b-black-20 su-py-[15px] lg:su-py-36">
             {linkItems[1]}
           </article>
         )}
 
         {linkItems[2] && (
-          <article className="su-pt-[15px] lg:su-pt-[36px]">
+          <article className="su-pt-[15px] lg:su-pt-36">
             {linkItems[2]}
           </article>
         )}

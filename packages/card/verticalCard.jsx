@@ -46,14 +46,14 @@ function titleSize(size) {
   if (size === "featured")
     return "su-text-[35px] md:su-text-[40px] lg:su-text-[43px] su-leading-[42px] md:su-leading-[48px] lg:su-leading-[51.6px]";
   if (size === "medium")
-    return "su-text-[21px] lg:su-text-[33px] su-leading-[25.2px] lg:su-leading-[39.6px]";
-  return "su-text-[21px] lg:su-text-[24px] su-leading-[25.2px] lg:su-leading-[28.8px]";
+    return "su-text-21 lg:su-text-[33px] su-leading-[25.2px] lg:su-leading-[39.6px]";
+  return "su-text-21 lg:su-text-24 su-leading-[25.2px] lg:su-leading-[28.8px]";
 }
 
 function descriptionSize(size) {
   if (size === "featured")
-    return "[&>*]:su-text-[18px] su-text-[18px] [&>*]:md:su-text-[19px] md:su-text-[19px] [&>*]:su-leading-[22.5px] su-leading-[22.5px] [&>*]:md:su-leading-[23.75px] md:su-leading-[23.75px] [&>*]:su-mt-[4px] [&>*]:md:su-mt-[14px]";
-  return "[&>*]:su-text-[19px] [&>*]:su-leading-[23.75px] su-text-[19px] su-leading-[23.75px]";
+    return "[&>*]:su-text-18 su-text-18 [&>*]:md:su-text-19 md:su-text-19 [&>*]:su-leading-[22.5px] su-leading-[22.5px] [&>*]:md:su-leading-[23.75px] md:su-leading-[23.75px] [&>*]:su-mt-[4px] [&>*]:md:su-mt-[14px]";
+  return "[&>*]:su-text-19 [&>*]:su-leading-[23.75px] su-text-19 su-leading-[23.75px]";
 }
 
 function gapSize(size) {
@@ -69,21 +69,20 @@ function imageMargin(size) {
 }
 
 function taxonomySize(size) {
-  if (size === "featured")
-    return "su-text-[20px] md:su-text-[20px] su-leading-[26px]";
+  if (size === "featured") return "su-text-20 md:su-text-20 su-leading-[26px]";
   if (size === "medium")
-    return "su-text-[16px] md:su-text-[16px] md:su-text-[20px] su-leading-[20.8px] md:su-leading-[26px]";
+    return "su-text-16 md:su-text-16 md:su-text-20 su-leading-[20.8px] md:su-leading-[26px]";
 
-  return "su-text-[18px] su-leading-[23.4px]";
+  return "su-text-18 su-leading-[23.4px]";
 }
 
 function typeSize(size) {
   if (size === "featured")
-    return "su-text-[18px] su-leading-[23.4px] md:su-text-[20px] md:su-leading-[26px] lg:su-text-[20px] lg:su-leading-[26px]";
+    return "su-text-18 su-leading-[23.4px] md:su-text-20 md:su-leading-[26px] lg:su-text-20 lg:su-leading-[26px]";
   if (size === "medium")
-    return "su-text-[16px] su-leading-[20.8px] lg:su-text-[18px] lg:su-leading-[23.4px]";
+    return "su-text-16 su-leading-[20.8px] lg:su-text-18 lg:su-leading-[23.4px]";
 
-  return "su-text-[16px] su-leading-[20.8px]";
+  return "su-text-16 su-leading-[20.8px]";
 }
 
 /**

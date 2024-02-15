@@ -32,7 +32,7 @@ export default function MulticolumnImage({ data, imageCaptions }) {
         <div className="su-flex su-gap-[20px] lg:su-gap-[48px]">{images}</div>
 
         {numberOfCaptions === 1 && (
-          <p className="su-text-[14px] su-text-black-70 dark:su-text-black-30 su-font-normal su-leading-[119.415%] su-text-center md:su-text-[16px] su-mb-0">
+          <p className="su-text-14 su-text-black-70 dark:su-text-black-30 su-font-normal su-leading-[119.415%] su-text-center md:su-text-16 su-mb-0">
             {imageCaptions.filter(Boolean)[0]}
           </p>
         )}
@@ -47,7 +47,7 @@ function Image({ src, caption, numberOfCaptions }) {
       <img src={src} className="su-object-cover" alt="" />
 
       {caption && numberOfCaptions > 1 && (
-        <p className="su-text-[14px] su-text-black-70 dark:su-text-black-30 su-font-normal su-leading-[119.415%] su-text-center su-m-0  md:su-text-[16px]">
+        <p className="su-text-14 su-text-black-70 dark:su-text-black-30 su-font-normal su-leading-[119.415%] su-text-center su-m-0  md:su-text-16">
           {caption}
         </p>
       )}

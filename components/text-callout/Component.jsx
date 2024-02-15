@@ -24,10 +24,10 @@ export default function TextCallout({ displayConfiguration }) {
 
   return (
     <Container width="narrow">
-      <section className="su-flex su-flex-col su-gap-[12px] su-p-[20px] md:su-p-[36px] su-flex-col su-justify-start su-items-start su-bg-fog-light lg:su-mx-auto dark:su-bg-black [&>p]:su-m-0 [&>p]:!su-mb-0 [&>p]:su-text-[16px] md:[&>p]:!su-text-[19px] last-of-type:[&>p]:!su-mb-0">
+      <section className="su-flex su-flex-col su-gap-[12px] su-p-[20px] md:su-p-36 su-flex-col su-justify-start su-items-start su-bg-fog-light lg:su-mx-auto dark:su-bg-black [&>p]:su-m-0 [&>p]:!su-mb-0 [&>p]:su-text-16 md:[&>p]:!su-text-19 last-of-type:[&>p]:!su-mb-0">
         <div className="su-relative su-justify-start su-items-center su-w-full su-gap-3 su-flex su-overflow-hidden su-mb-[12px]">
           <div>
-            <h3 className="su-font-serif su-inline su-bg-fog-light dark:su-bg-black !su-text-[23px] su-pr-[10px] su-m-0">
+            <h3 className="su-font-serif su-inline su-bg-fog-light dark:su-bg-black !su-text-23 su-pr-[10px] su-m-0">
               {title}
             </h3>
             <span className="su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-[1px] su-absolute su-bottom-[4px]" />
@@ -38,7 +38,7 @@ export default function TextCallout({ displayConfiguration }) {
           data-test="acknowledgement"
           className={[
             "su-wysiwyg-content",
-            "[&>*]:su-basefont-19 [&>*]:su-text-[16px] [&>*]:md:su-text-[19px] [&>*]:lg:su-text-[19px]",
+            "[&>*]:su-basefont-19 [&>*]:su-text-16 [&>*]:md:su-text-19 [&>*]:lg:su-text-19",
             "[&>*]:su-leading-[24px] [&>*]:md:su-leading-[28.5px] [&>*]:lg:su-leading-[28.5px]",
             "[&>*:last-child]:su-mb-0",
           ].join(" ")}

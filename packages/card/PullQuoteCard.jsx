@@ -54,7 +54,7 @@ export default function PullQuoteCard({
             authorName ? `<strong>${authorName}</strong>,` : ""
           } ${description.replace(/<p>|<\/p>/g, "")}</p>`}
           elementType="div"
-          className="[&>*]:su-my-0 [&>*]:su-text-[18px] [&>*]:dark:su-text-white [&>*]:su-font-sans [&>*]:su-w-full"
+          className="[&>*]:su-my-0 [&>*]:su-text-18 [&>*]:dark:su-text-white [&>*]:su-font-sans [&>*]:su-w-full"
         />
       )}
       <ExternalLink size="large" ctaText={ctaText} liveUrl={liveUrl} />

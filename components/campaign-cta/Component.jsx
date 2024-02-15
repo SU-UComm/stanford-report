@@ -28,7 +28,7 @@ export default function CampaignCta({ displayConfiguration, data, linkData }) {
               content={description}
               elementType="div"
               className={[
-                "su-mt-[34px] su-font-serif su-text-[20px] md:su-text-[24px] su-mb-0 md:su-mb-[59px] su-text-semibold md:su-mt-[61px]",
+                "su-mt-[34px] su-font-serif su-text-20 md:su-text-24 su-mb-0 md:su-mb-[59px] su-text-semibold md:su-mt-[61px]",
                 "su-font-semibold su-leading-[130.245%]",
               ].join(" ")}
             />
@@ -37,7 +37,7 @@ export default function CampaignCta({ displayConfiguration, data, linkData }) {
           {linkData && linkData.url && (
             <a
               href={linkData.url}
-              className="su-text-[18px] su-mt-[50px] su-font-normal su-leading-[120%] su-inline-block su-px-[30px] su-pt-[10px] su-pb-[12px] su-bg-digital-red su-mr-auto su-text-white su-no-underline hover:su-bg-black su-transition md:su-px-[35px] md:su-pt-[14px] md:su-pb-[16px] md:su-text-[24px] md:su-leading-[119.415%] md:su-mt-auto su-shrink-0"
+              className="su-text-18 su-mt-[50px] su-font-normal su-leading-[120%] su-inline-block su-px-[30px] su-pt-[10px] su-pb-[12px] su-bg-digital-red su-mr-auto su-text-white su-no-underline hover:su-bg-black su-transition md:su-px-[35px] md:su-pt-[14px] md:su-pb-[16px] md:su-text-24 md:su-leading-[119.415%] md:su-mt-auto su-shrink-0"
             >
               {linkText}
             </a>
@@ -45,7 +45,7 @@ export default function CampaignCta({ displayConfiguration, data, linkData }) {
         </div>
 
         <img
-          className="su-absolute su-object-cover su-w-full su-h-full su-z-[1]"
+          className="su-absolute su-object-cover su-size-full su-z-[1]"
           // src="https://picsum.photos/1200"
           src={data && data.url ? data.url : ""}
           alt={data && data.attributes.alt ? data.attributes.alt : ""}

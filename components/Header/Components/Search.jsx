@@ -15,12 +15,12 @@ export default function Search({ endpoint, collection, profile }) {
       aria-hidden="true"
       className="report-header__search-tray su-z-30 su-fixed su-left-0 su-top-0 su-w-full su-h-screen"
     >
-      <div className="report-header__overlay su-bg-black su-opacity-25 su-w-full su-h-full" />
+      <div className="report-header__overlay su-bg-black su-opacity-25 su-size-full" />
       <form
         action={endpoint}
         method="get"
         role="search"
-        className="report-header__search su-bg-white dark:su-bg-black-true su-shadow su-shadow-[#767674]/50 su-absolute su-top-0 su-left-0 su-w-full su-px-[50px] su-pt-[249px] su-pb-[171px]"
+        className="report-header__search su-bg-white dark:su-bg-black-true su-shadow su-shadow-black-60/50 su-absolute su-top-0 su-left-0 su-w-full su-px-[50px] su-pt-[249px] su-pb-[171px]"
       >
         <div className="su-max-w-[1026px] su-mx-auto su-relative">
           <label className="sr-only" htmlFor="desktop_search_query">
@@ -30,7 +30,7 @@ export default function Search({ endpoint, collection, profile }) {
           <input type="hidden" value={profile} name="profile" />
           <input
             type="search"
-            className="su-w-full su-h-[50px] dark:su-text-black su-rounded-full su-text-[20px] su-leading-[26px] su-py-[10px] su-pl-[15px] su-pr-[120px] su-bg-white su-border-2 su-border-black-30 hover:su-border-black-40 focus:su-border-digital-blue"
+            className="su-w-full su-h-[50px] dark:su-text-black su-rounded-full su-text-20 su-leading-[26px] su-py-[10px] su-pl-[15px] su-pr-[120px] su-bg-white su-border-2 su-border-black-30 hover:su-border-black-40 focus:su-border-digital-blue"
             name="query"
             defaultValue=""
             placeholder="Search"
@@ -39,7 +39,7 @@ export default function Search({ endpoint, collection, profile }) {
           />
           <button
             type="submit"
-            className="report-header__clear su-h-[48px] su-absolute su-top-[2px] su-right-[70px] su-text-digital-blue su-text-[20px]"
+            className="report-header__clear su-h-[48px] su-absolute su-top-[2px] su-right-[70px] su-text-digital-blue su-text-20"
           >
             Clear <span className="sr-only">Search</span>
           </button>
@@ -48,12 +48,12 @@ export default function Search({ endpoint, collection, profile }) {
             aria-hidden="true"
           />
           <button
-            className="su-absolute su-w-[40px] su-h-[40px] su-right-[10px] su-top-[5px]"
+            className="su-absolute su-size-40 su-right-[10px] su-top-[5px]"
             type="submit"
           >
             <svg
               aria-hidden="true"
-              className="su-w-[30px] su-h-[30px] su-mt-[2px] su-ml-[4px] su-text-digital-red"
+              className="su-size-30 su-mt-[2px] su-ml-[4px] su-text-digital-red"
               xmlns="http://www.w3.org/2000/svg"
               width="30"
               height="30"

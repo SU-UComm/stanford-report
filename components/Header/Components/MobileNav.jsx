@@ -15,7 +15,7 @@ function MajorLinks({ items }) {
           return (
             <li className="su-mb-0 su-w-full" key={item.asset_assetid}>
               <a
-                className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[20px] md:su-text-[26px] su-leading-[31px] focus:su-text-digital-red hover:su-text-digital-red su-font-bold su-no-underline su-transition"
+                className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-20 md:su-text-26 su-leading-[31px] focus:su-text-digital-red hover:su-text-digital-red su-font-bold su-no-underline su-transition"
                 href={item.asset_url}
               >
                 {title}
@@ -46,7 +46,7 @@ function MinorLinks({ items }) {
               key={item.asset_assetid}
             >
               <a
-                className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[16px] md:su-text-[18px] focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
+                className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-16 md:su-text-18 focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
                 href={item.asset_url}
               >
                 {title}
@@ -77,7 +77,7 @@ function ContactLinks({ items }) {
               key={item.asset_assetid}
             >
               <a
-                className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[14px] focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
+                className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-14 focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
                 href={item.asset_url}
               >
                 {title}
@@ -109,7 +109,7 @@ function ExternalLinks({ items }) {
             >
               <a
                 target="_blank"
-                className="su-flex su-items-center su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[14px] focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
+                className="su-flex su-items-center su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-14 focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
                 href={item.asset_attribute_redirect_url}
                 rel="noreferrer"
               >
@@ -165,9 +165,9 @@ export default function MobileNav({ navigation, search, audience }) {
       id="menu"
       aria-label="Primary"
       aria-hidden="true"
-      className="report-header__menu-tray su-shadow su-z-50 su-fixed su-left-0 su-top-0 su-w-full su-h-full"
+      className="report-header__menu-tray su-shadow su-z-50 su-fixed su-left-0 su-top-0 su-size-full"
     >
-      <div className="report-header__overlay su-bg-black su-opacity-25 su-w-full su-h-full" />
+      <div className="report-header__overlay su-bg-black su-opacity-25 su-size-full" />
       <div className="report-header__primary-nav su-bg-white dark:su-bg-black-true dark:su-text-white su-h-screen su-absolute su-top-0 su-left-0 su-w-full md:su-w-[390px] su-flex su-flex-wrap su-overflow-y-auto su-pb-[32px] md:su-pb-[64px] su-pt-[115px] md:su-pt-[167px] su-px-[38px]">
         <form
           action={endpoint}
@@ -182,7 +182,7 @@ export default function MobileNav({ navigation, search, audience }) {
           <input type="hidden" value={profile} name="profile" />
           <input
             type="search"
-            className="su-w-full su-h-[50px] su-rounded-full dark:su-text-black su-text-[20px] su-leading-[26px] su-py-[10px] su-pl-[15px] su-pr-[120px] su-bg-white su-border-2 su-border-black-30 hover:su-border-black-40 focus:su-border-digital-blue"
+            className="su-w-full su-h-[50px] su-rounded-full dark:su-text-black su-text-20 su-leading-[26px] su-py-[10px] su-pl-[15px] su-pr-[120px] su-bg-white su-border-2 su-border-black-30 hover:su-border-black-40 focus:su-border-digital-blue"
             name="query"
             defaultValue=""
             placeholder="Search"
@@ -191,7 +191,7 @@ export default function MobileNav({ navigation, search, audience }) {
           />
           <button
             type="reset"
-            className="report-header__clear su-h-[48px] su-absolute su-top-[2px] su-right-[70px] su-text-digital-blue su-text-[20px]"
+            className="report-header__clear su-h-[48px] su-absolute su-top-[2px] su-right-[70px] su-text-digital-blue su-text-20"
           >
             Clear <span className="sr-only">Search</span>
           </button>
@@ -200,12 +200,12 @@ export default function MobileNav({ navigation, search, audience }) {
             aria-hidden="true"
           />
           <button
-            className="su-absolute su-w-[40px] su-h-[40px] su-right-[10px] su-top-[5px]"
+            className="su-absolute su-size-40 su-right-[10px] su-top-[5px]"
             type="submit"
           >
             <svg
               aria-hidden="true"
-              className="su-w-[30px] su-h-[30px] su-mt-[2px] su-ml-[4px] su-text-digital-red"
+              className="su-size-30 su-mt-[2px] su-ml-[4px] su-text-digital-red"
               xmlns="http://www.w3.org/2000/svg"
               width="30"
               height="30"
@@ -270,7 +270,7 @@ export default function MobileNav({ navigation, search, audience }) {
           <span id="close-menu" hidden>
             Close menu
           </span>
-          <span className="su-text-[12px] su-block" aria-hidden="true">
+          <span className="su-text-12 su-block" aria-hidden="true">
             Close
           </span>
         </button>

@@ -29,8 +29,8 @@ export default function VerticalHero({ data }) {
 
             <figcaption
               className={[
-                "su-text-[14px] su-font-normal su-text-center su-leading-[16.72px] su-pb-[49px] su-m-0",
-                "sm:su-w-3/4 sm:su-text-[16px] sm:su-leading-[19.11px] sm:su-pb-[121px]",
+                "su-text-14 su-font-normal su-text-center su-leading-[16.72px] su-pb-[49px] su-m-0",
+                "sm:su-w-3/4 sm:su-text-16 sm:su-leading-[19.11px] sm:su-pb-[121px]",
                 "lg:su-pb-[184px]",
               ].join(" ")}
             >
@@ -40,7 +40,7 @@ export default function VerticalHero({ data }) {
 
           <p
             className={[
-              "su-w-full su-h-min su-mx-auto su-font-semibold su-text-center font-serif-4 su-text-[21px] su-leading-[28.79px] su-pb-[50px] su-m-0",
+              "su-w-full su-h-min su-mx-auto su-font-semibold su-text-center font-serif-4 su-text-21 su-leading-[28.79px] su-pb-[50px] su-m-0",
               "sm:su-text-[22.5px] sm:su-leading-[27px] sm:su-pb-[72px]",
               "md:su-w-4/5",
               "lg:su-text-[32px] lg:su-leading-[41.68px] lg:su-pb-[76px]",
@@ -51,8 +51,8 @@ export default function VerticalHero({ data }) {
 
           <span
             className={[
-              "su-w-full su-flex su-items-center su-justify-center su-text-[18px] su-leading-[27px] su-gap-[7px]",
-              "sm:su-text-[23px] sm:su-leading-[28.75px]",
+              "su-w-full su-flex su-items-center su-justify-center su-text-18 su-leading-[27px] su-gap-[7px]",
+              "sm:su-text-23 sm:su-leading-[28.75px]",
               "md:su-basefont-23 md:su-flex-row",
             ].join(" ")}
           >

@@ -125,7 +125,7 @@ svg {
 }
 
 .tt-menu::before {
-  @apply su-text-[26px] su-font-bold su-mb-[19px] su-text-digital-red dark:su-text-dark-mode-red;
+  @apply su-text-26 su-font-bold su-mb-[19px] su-text-digital-red dark:su-text-dark-mode-red;
 }
 
 /*
@@ -221,7 +221,7 @@ svg {
 }
 
 .su-modal {
-  @apply su-w-full su-h-full su-bg-black-true su-top-0 su-left-0 su-fixed su-z-50 su-text-white su-px-[20px] su-py-[90px] md:su-py-[50px] md:su-px-[100px];
+  @apply su-size-full su-bg-black-true su-top-0 su-left-0 su-fixed su-z-50 su-text-white su-px-[20px] su-py-[90px] md:su-py-[50px] md:su-px-[100px];
   animation: fadeIn 0.35s;
   opacity: 0;
   animation-fill-mode: forwards;
@@ -240,7 +240,7 @@ svg {
 }
 
 .su-modal-content iframe {
-  @apply su-absolute su-top-0 su-left-0 su-w-full su-h-full su-object-contain su-object-center;
+  @apply su-absolute su-top-0 su-left-0 su-size-full su-object-contain su-object-center;
 }
 
 .su-component-close {
@@ -248,11 +248,11 @@ svg {
 }
 
 .su-component-close svg {
-  @apply su-w-[30px] su-h-[30px] su-fill-current;
+  @apply su-size-30 su-fill-current;
 }
 
 .su-component-close span {
-  @apply su-text-[12px] su-font-[600] su-leading-[119.415%];
+  @apply su-text-12 su-font-[600] su-leading-[119.415%];
 }
 
 /*

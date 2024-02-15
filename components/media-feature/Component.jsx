@@ -35,7 +35,7 @@ export default function MediaFeature({
               // src="https://picsum.photos/600/250"
               src={imageData.url}
               alt={imageData.attributes.alt}
-              className="su-absolute su-object-cover su-rounded-[8px] su-z-[2] su-flex-1 su-w-full su-h-full su-shadow-[0px_4px_7px_0px_rgba(0,0,0,0.15)]"
+              className="su-absolute su-object-cover su-rounded-[8px] su-z-[2] su-flex-1 su-size-full su-shadow-[0px_4px_7px_0px_rgba(0,0,0,0.15)]"
             />
           </div>
 
@@ -53,11 +53,11 @@ export default function MediaFeature({
               </h3>
             </a>
 
-            <div className="su-w-full su-flex su-text-[18px] su-text-black-70 su-font-semibold su-items-center su-pb-[15px] su-leading-[130%] md:su-pb-[19px] md:su-text-[16px]">
+            <div className="su-w-full su-flex su-text-18 su-text-black-70 su-font-semibold su-items-center su-pb-[15px] su-leading-[130%] md:su-pb-[19px] md:su-text-16">
               <MediaType type={mediaType} />
             </div>
 
-            <p className="su-text-[18px] su-w-full su-m-0 su-leading-[125%] su-text-black su-font-normal md:su-text-[19px] lg:su-text-[21px]">
+            <p className="su-text-18 su-w-full su-m-0 su-leading-[125%] su-text-black su-font-normal md:su-text-19 lg:su-text-21">
               {teaserText}
             </p>
           </div>
@@ -66,7 +66,7 @@ export default function MediaFeature({
         <img
           // src="https://picsum.photos/1300/"
           src={bgImageData.url}
-          className="su-absolute su-w-full su-h-full su-object-cover su-left-0 su-top-0 su-z-[1]"
+          className="su-absolute su-size-full su-object-cover su-left-0 su-top-0 su-z-[1]"
         />
       </section>
     </Container>

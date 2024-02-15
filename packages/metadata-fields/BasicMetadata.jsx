@@ -36,7 +36,7 @@ export default function BasicMetadata({ data }) {
   };
 
   return (
-    <section className="su-border-b-[1px] su-border-solid su-border-b-black-20 su-pt-[32px] su-mb-[32px] md:su-pt-[36px] lg:su-border-b-transparent lg:su-mb-[104px]">
+    <section className="su-border-b-[1px] su-border-solid su-border-b-black-20 su-pt-[32px] su-mb-[32px] md:su-pt-36 lg:su-border-b-transparent lg:su-mb-[104px]">
       {authors && authors.length && (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title={`Author${authors.length > 1 ? "s" : ""}`}>
@@ -44,7 +44,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="su-m-0 su-text-21 su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -62,7 +62,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="su-m-0 su-text-21 su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -80,7 +80,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="su-m-0 su-text-21 su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -98,7 +98,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="su-m-0 su-text-21 su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -118,7 +118,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="su-m-0 su-text-21 su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -138,7 +138,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="su-m-0 su-text-21 su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -163,7 +163,7 @@ export default function BasicMetadata({ data }) {
                           <br />
                           <a
                             href={`mailto:${item.asset_metadata_personEmail}`}
-                            className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[18px] su-leading-[26.25px]"
+                            className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18 su-leading-[26.25px]"
                           >
                             {item.asset_metadata_personEmail}
                           </a>
@@ -181,7 +181,7 @@ export default function BasicMetadata({ data }) {
           <BasicFields title="Campus unit">
             <a
               href={campus.asset_url}
-              className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[18px] su-leading-[26.25px]"
+              className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18 su-leading-[26.25px]"
             >
               {campus.asset_name}
             </a>
@@ -198,7 +198,7 @@ export default function BasicMetadata({ data }) {
                   <div className="" key={item.asset_assetid}>
                     <a
                       href={item.asset_url}
-                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[18px] su-leading-[26.25px]"
+                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18 su-leading-[26.25px]"
                     >
                       {item.asset_name}
                     </a>
@@ -215,7 +215,7 @@ export default function BasicMetadata({ data }) {
             onClick={copyLink}
             data-role="copy-link"
             type="button"
-            className="su-text-digital-blue su-text-[21px] su-font-semibold su-mr-auto su-leading-[26.25px]"
+            className="su-text-digital-blue su-text-21 su-font-semibold su-mr-auto su-leading-[26.25px]"
           >
             {copyLinkTitle}
 

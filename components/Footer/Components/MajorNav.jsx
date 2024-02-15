@@ -16,7 +16,7 @@ function MajorLinks({ items }) {
           <div className="pre-footer-links-inner before:su-bg-gradient-b pre-footer-vert-gradient">
             <h2 className="su-text-black dark:su-text-white su-mb-[11px] md:su-mb-[11px]">
               <a
-                className="su-text-black dark:su-text-white hover:su-underline hover:su-text-digital-red dark:hover:su-text-dark-mode-red su-transition su-text-[16px] md:su-text-[18px] su-font-semibold"
+                className="su-text-black dark:su-text-white hover:su-underline hover:su-text-digital-red dark:hover:su-text-dark-mode-red su-transition su-text-16 md:su-text-18 su-font-semibold"
                 href={item.asset_url}
               >
                 {title}
@@ -39,7 +39,7 @@ function MajorLinksSubs({ subs }) {
           <li className="su-mb-0 su-leading-[120%]" key={item.asset_assetid}>
             <a
               href={item.asset_url}
-              className="su-text-black dark:su-text-white su-font-normal dark:hover:su-text-dark-mode-red su-text-[14px] md:su-text-[16px] focus:su-text-digital-red hover:su-text-digital-red su-no-underline hover:su-underline su-transition"
+              className="su-text-black dark:su-text-white su-font-normal dark:hover:su-text-dark-mode-red su-text-14 md:su-text-16 focus:su-text-digital-red hover:su-text-digital-red su-no-underline hover:su-underline su-transition"
             >
               {title}
             </a>

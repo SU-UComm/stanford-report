@@ -70,7 +70,7 @@ export function SidebarList({
           data-test="cta"
           href={ctaUrl}
           className={[
-            "su-transition su-justify-center md:su-justify-start su-w-full su-flex su-text-digital-red dark:su-text-dark-mode-red su-flex-nowrap su-gap-[2px] su-leading-[26.25px] su-text-[21px] su-font-semibold su-no-underline",
+            "su-transition su-justify-center md:su-justify-start su-w-full su-flex su-text-digital-red dark:su-text-dark-mode-red su-flex-nowrap su-gap-[2px] su-leading-[26.25px] su-text-21 su-font-semibold su-no-underline",
             iconAlignments.get(icon),
           ].join(" ")}
         >

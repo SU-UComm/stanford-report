@@ -35,7 +35,7 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
     if (!email || !email.match(/\w+@\w+\.\w+/)) {
       setSubscriptionError(
         () =>
-          `<span class="su-block su-text-[16px] su-font-normal su-text-digital-red">Please enter a valid email address.</span>`
+          `<span class="su-block su-text-16 su-font-normal su-text-digital-red">Please enter a valid email address.</span>`
       );
 
       return;
@@ -52,11 +52,11 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
       action={actionLink.url}
       onSubmit={submitSubscription}
     >
-      <h2 className="su-m-0 su-font-bold su-text-[18px] su-leading-[21.6px] dark:su-text-[white] su-font-sans">
+      <h2 className="su-m-0 su-font-bold su-text-18 su-leading-[21.6px] dark:su-text-[white] su-font-sans">
         {title}
       </h2>
 
-      <p className="su-m-0 su-font-normal su-text-[16px] su-leading-[20px] dark:su-text-[white]">
+      <p className="su-m-0 su-font-normal su-text-16 su-leading-[20px] dark:su-text-[white]">
         {summary}
       </p>
 
@@ -66,13 +66,13 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
         placeholder="Email address"
         title="Subscription Email"
         aria-label="Subscription Email"
-        className="su-rounded-[3px] su-p-[12px] su-text-[16px] su-leading-[20px]A su-text-black placeholder:su-text-black su-font-normal su-border-black-20 su-border-[1px] su-border-solid su-border-b-black-70 su-border-b-[2px] su-border-b-solid dark:su-bg-black-90 dark:su-text-[white] dark:placeholder:su-text-[white]"
+        className="su-rounded-[3px] su-p-[12px] su-text-16 su-leading-[20px]A su-text-black placeholder:su-text-black su-font-normal su-border-black-20 su-border-[1px] su-border-solid su-border-b-black-70 su-border-b-[2px] su-border-b-solid dark:su-bg-black-90 dark:su-text-[white] dark:placeholder:su-text-[white]"
         onKeyUp={emailInputEvent}
       />
 
       <button
         type="submit"
-        className="su-mr-auto su-text-white su-bg-digital-red su-text-[16px] su-font-normal su-px-[22px] su-pt-[9px] su-pb-[11px] hover:su-bg-black su-transition"
+        className="su-mr-auto su-text-white su-bg-digital-red su-text-16 su-font-normal su-px-[22px] su-pt-[9px] su-pb-[11px] hover:su-bg-black su-transition"
       >
         Sign up
       </button>

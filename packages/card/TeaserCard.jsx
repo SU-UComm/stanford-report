@@ -10,15 +10,15 @@ export default function TeaserCard({ credit, data }) {
         href={liveUrl}
         className="su-no-underline su-flex su-flex-col su-gap-[11px] md:su-gap-[0px]"
       >
-        <div className="su-text-[18px] su-leading-[130%] su-font-semibold md:su-pb-[13px]">
+        <div className="su-text-18 su-leading-[130%] su-font-semibold md:su-pb-[13px]">
           {source}
         </div>
 
-        <h2 className="su-font-bold su-leading-[120%] su-text-[24px] su-m-0 md:su-pb-[9px]">
+        <h2 className="su-font-bold su-leading-[120%] su-text-24 su-m-0 md:su-pb-[9px]">
           {title}
         </h2>
 
-        <div className="su-flex su-flex-col su-text-[16px] su-text-black-70">
+        <div className="su-flex su-flex-col su-text-16 su-text-black-70">
           <div>
             <strong>Featured scholar:</strong>
             {credit}

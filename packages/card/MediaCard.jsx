@@ -43,12 +43,12 @@ export default function MediaCard({
   return title ? (
     <article
       data-test="media-card"
-      className="su-component-card-media md:su-min-h-[384px] su-relative su-w-full md:su-px-0 su-flex su-flex-wrap su-justify-center su-gap-[20px] md:su-gap-[36px] md:su-gap-[48px] md:su-flex-nowrap su-items-center su-justify-center"
+      className="su-component-card-media md:su-min-h-[384px] su-relative su-w-full md:su-px-0 su-flex su-flex-wrap su-justify-center su-gap-[20px] md:su-gap-36 md:su-gap-[48px] md:su-flex-nowrap su-items-center su-justify-center"
     >
       {imageUrl && (
         <div className="su-relative su-w-full su-px-[20px] md:su-px-0 su-h-[342px] lg:su-h-[373px] lg:su-h-[572px] lg:su-py-[30px] su-min-w-[249px] md:su-min-w-[249px] lg:su-min-w-[382px] lg:su-max-w-[382px] su-flex su-items-center su-justify-center">
           <img
-            className="su-media-card-thumb su-w-full su-h-full su-object-scale-down su-object-center"
+            className="su-media-card-thumb su-size-full su-object-scale-down su-object-center"
             src={imageUrl}
             alt={imageAlt}
           />
@@ -94,7 +94,7 @@ export default function MediaCard({
           </div>
         )}
         {type && (
-          <div className="su-text-[18px] md:su-text-[16px] su-mb-[15px] md:su-mb-[19px] su-gap-[6px] su-text-black-70 dark:su-text-black-50 su-flex su-nowrap">
+          <div className="su-text-18 md:su-text-16 su-mb-[15px] md:su-mb-[19px] su-gap-[6px] su-text-black-70 dark:su-text-black-50 su-flex su-nowrap">
             <span
               className={[
                 type === "Book"
@@ -112,7 +112,7 @@ export default function MediaCard({
             data-test="mediacard-description"
             content={description}
             elementType="div"
-            className="[&>*]:su-my-0 [&>*]:su-leading-[125%] su-leading-[125%] [&>*]:su-text-[18px] su-text-[18px] md:[&>*]:su-text-[19px] md:su-text-[19px] lg:[&>*]:su-text-[21px] lg:su-text-[21px] dark:su-text-white su-font-sans su-w-full"
+            className="[&>*]:su-my-0 [&>*]:su-leading-[125%] su-leading-[125%] [&>*]:su-text-18 su-text-18 md:[&>*]:su-text-19 md:su-text-19 lg:[&>*]:su-text-21 lg:su-text-21 dark:su-text-white su-font-sans su-w-full"
           />
         )}
       </div>

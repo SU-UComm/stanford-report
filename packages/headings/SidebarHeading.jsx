@@ -55,15 +55,15 @@ export function SidebarHeading({
   const colorClassMap = new Map();
   colorClassMap.set(
     "grey",
-    "su-text-black-90 dark:su-text-white su-font-semibold su-text-[18px] su-items-end"
+    "su-text-black-90 dark:su-text-white su-font-semibold su-text-18 su-items-end"
   );
   colorClassMap.set(
     "black",
-    "su-text-black dark:su-text-white su-font-bold su-text-[20px] md:su-text-[28px] su-items-start"
+    "su-text-black dark:su-text-white su-font-bold su-text-20 md:su-text-28 su-items-start"
   );
   colorClassMap.set(
     "media",
-    "su-text-black-90 dark:su-text-black-20 su-font-semibold su-text-[18px] su-items-center"
+    "su-text-black-90 dark:su-text-black-20 su-font-semibold su-text-18 su-items-center"
   );
 
   const Tag = headingSize;

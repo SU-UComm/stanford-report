@@ -30,16 +30,16 @@ export default function HorizontalHero({ data }) {
             />
             <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover" />
           </div>
-          <figcaption className="su-text-[14px] su-w-3/4 su-mx-auto su-text-center su-m-0 su-leading-[16.72px] md:su-text-[16px] md:su-leading-[19.11px]">
+          <figcaption className="su-text-14 su-w-3/4 su-mx-auto su-text-center su-m-0 su-leading-[16.72px] md:su-text-16 md:su-leading-[19.11px]">
             {media.caption} | {media.credit}
           </figcaption>
         </figure>
 
-        <p className="su-col-span-5 su-col-start-2 sm:su-col-span-6 sm:su-col-start-3 su-pr-[40px] sm:su-pr-[20px] su-h-min su-mx-auto su-font-semibold su-text-left font-serif-4 su-text-[20px] su-leading-[23.88px] md:su-text-[23px] md:su-leading-[28.75px] lg:su-text-[32px] lg:su-leading-[41.68px]">
+        <p className="su-col-span-5 su-col-start-2 sm:su-col-span-6 sm:su-col-start-3 su-pr-[40px] sm:su-pr-[20px] su-h-min su-mx-auto su-font-semibold su-text-left font-serif-4 su-text-20 su-leading-[23.88px] md:su-text-23 md:su-leading-[28.75px] lg:su-text-[32px] lg:su-leading-[41.68px]">
           {summary}
         </p>
 
-        <span className="su-col-span-full su-pr-[40px] su-col-start-2 sm:su-col-span-4 sm:su-col-start-7 su-mt-[71px] su-flex su-items-start su-flex-row md:su-flex-row su-justify-end su-text-[16px] su-leading-[19.1px] md:su-text-[23px] md:su-leading-[28.75px] md:su-basefont-23">
+        <span className="su-col-span-full su-pr-[40px] su-col-start-2 sm:su-col-span-4 sm:su-col-start-7 su-mt-[71px] su-flex su-items-start su-flex-row md:su-flex-row su-justify-end su-text-16 su-leading-[19.1px] md:su-text-23 md:su-leading-[28.75px] md:su-basefont-23">
           <time className="su-m-0 md:su-mt-0 md:su-mr-[4px] su-font-semibold">
             {pubDateFormatted}
           </time>

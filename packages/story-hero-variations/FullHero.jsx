@@ -24,10 +24,10 @@ export default function FullHero({ data }) {
           </div>
           <div className="su-pl-[48px] sm:su-mr-[100px] su-mt-[53px] lg:su-mt-0 su-flex su-flex-col su-items-start su-justify-between su-relative">
             <div className="su-absolute su-bg-gradient-b su-h-full su-w-[3px] su-left-0 su-top-0" />
-            <p className="su-m-0 su-font-serif su-text-[20px] su-leading-[23.88px] su-pb-[80px] md:su-text-[21px] md:su-leading-[27.35px] md:su-pb-[72px] lg:su-text-[24px] lg:su-leading-[31.26px] su-font-semibold su-w-full md:su-w-[228px] lg:su-w-[292px] lg:su-pb-[228px]">
+            <p className="su-m-0 su-font-serif su-text-20 su-leading-[23.88px] su-pb-[80px] md:su-text-21 md:su-leading-[27.35px] md:su-pb-[72px] lg:su-text-24 lg:su-leading-[31.26px] su-font-semibold su-w-full md:su-w-[228px] lg:su-w-[292px] lg:su-pb-[228px]">
               {summary}
             </p>
-            <span className="su-w-auto su-text-[16px] su-leading-[19.1px] su-flex su-gap-[7px] md:su-basefont-23 md:su-text-[21px] md:su-leading-[26.25px]">
+            <span className="su-w-auto su-text-16 su-leading-[19.1px] su-flex su-gap-[7px] md:su-basefont-23 md:su-text-21 md:su-leading-[26.25px]">
               <time className="su-m-0 su-mt-[4px] md:su-mt-0 md:su-mr-[4px] su-font-semibold">
                 {pubDateFormatted}
               </time>
