@@ -42,7 +42,7 @@ export default async (args, info) => {
 
   return renderComponent({
     Component,
-    componentName: "leadership-messages-hannah",
+    componentName: "leadership-messages-jb",
     args: renderProps,
   });
 };
