@@ -24,8 +24,6 @@ function readingTime(text) {
 export default function basicStoryHero(props) {
   const { title, media, summary, pubDateFormatted, topic, mediaType } = props;
 
-  console.log(props);
-
   return (
     <Container>
       <div>
