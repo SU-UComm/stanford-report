@@ -9,6 +9,8 @@ import Component from "./Component";
     `[data-hydration-component="${componentName}"]`
   );
 
+  console.log(metadata);
+
   if (!metadata) return;
 
   hydrateComponent({ Component, componentName });
