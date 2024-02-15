@@ -29,7 +29,7 @@ export default function MediaFeature({
   return (
     <Container width="full" paddingX={false}>
       <section className="su-py-45 su-px-20 su-flex su-justify-center su-relative md:su-py-[72px] md:su-px-50">
-        <div className="su-max-w-[1086px] su-flex su-flex-col su-items-center su-z-[2] su-relative su-p-38 before:su-content-[''] before:su-bg-foggy-light before:su-w-full before:su-h-full before:su-opacity-[0.9] before:su-absolute before:su-z-[-1] before:su-top-0 before:su-left-0 md:su-flex-row md:su-gap-20 md:su-items-start lg:su-p-48">
+        <div className="su-max-w-[1086px] su-flex su-flex-col su-items-center su-z-[2] su-relative su-p-38 before:su-content-[''] before:su-bg-foggy-light before:su-w-full before:su-h-full before:su-opacity-90 before:su-absolute before:su-z-[-1] before:su-top-0 before:su-left-0 md:su-flex-row md:su-gap-20 md:su-items-start lg:su-p-48">
           <div className="su-h-[224px] su-w-[224px] su-relative su-shrink-0 md:su-w-[182px] md:su-h-[182px] lg:su-w-[292px] lg:su-h-[292px]">
             <img
               // src="https://picsum.photos/600/250"
@@ -45,7 +45,7 @@ export default function MediaFeature({
             </div>
 
             <a href={linkUrl} className="su-no-underline">
-              <h3 className="su-text-[35px] su-font-bold su-leading-tight su-m-0 su-pb-8 su-text-black su-text-black md:su-pb-19 md:su-text-[40px] lg:su-text-[43px]">
+              <h3 className="su-text-[35px] su-font-bold su-leading-tight su-m-0 su-pb-8 su-text-black md:su-pb-19 md:su-text-[40px] lg:su-text-[43px]">
                 {title}
                 <span className="su-hidden lg:su-inline-block su-relative su-top-12">
                   <ExternalArrow size="large" />

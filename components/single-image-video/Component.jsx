@@ -132,7 +132,7 @@ export default function SingleImageVideo({
                 setVideoPlaying("pause");
               }}
             >
-              <span className="*:su-fill-black-70 *:su-w-[25px] *:su-h-[25px] su-text-black-70 su-flex su-gap-6 su-items-center su-text-16 *:lg:su-h-30 *:lg:su-w-30 lg:su-absolute lg:su-top-0 lg:su-right-0">
+              <span className="*:su-fill-black-70 *:su-size-25 su-text-black-70 su-flex su-gap-6 su-items-center su-text-16 *:lg:su-h-30 *:lg:su-w-30 lg:su-absolute lg:su-top-0 lg:su-right-0">
                 {videoPlaying === "pause" ? <Play /> : <Pause />}
                 {pausePlayTitle}
               </span>

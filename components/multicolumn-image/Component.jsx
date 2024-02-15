@@ -28,7 +28,7 @@ export default function MulticolumnImage({ data, imageCaptions }) {
 
   return (
     <Container width="wide">
-      <section className="su-flex su-flex-col su-gap-8 md:su-gap-[9px]">
+      <section className="su-flex su-flex-col su-gap-8 md:su-gap-9">
         <div className="su-flex su-gap-20 lg:su-gap-48">{images}</div>
 
         {numberOfCaptions === 1 && (
