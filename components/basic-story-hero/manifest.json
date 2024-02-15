@@ -1,16 +1,16 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "metadata-fields",
-  "version": "0.0.7",
+  "name": "basic-story-hero",
+  "version": "0.0.1",
   "namespace": "stanford-components",
-  "description": "This is a global element that is designed to render client side based on page information.",
-  "displayName": "Metadata fields",
+  "description": "Stanford university Base component.",
+  "displayName": "basic story hero",
   "mainFunction": "main",
   "icon": {
-    "id": "auto_awesome_mosaic",
+    "id": "foundation",
     "color": {
       "type": "enum",
-      "value": "blue"
+      "value": "gray"
     }
   },
   "functions": [
@@ -19,8 +19,8 @@
       "entry": "./dist/server.cjs",
       "input": {
         "type": "object",
-        "required": [],
-        "properties": {}
+        "properties": {},
+        "required": []
       },
       "output": {
         "responseType": "html",
@@ -30,6 +30,13 @@
             "file": {
               "type": "css",
               "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "client.css"
             }
           },
           {
@@ -66,10 +73,10 @@
         "main": {
           "inputData": {
             "type": "file",
-            "path": "select.data.json"
+            "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "../../packages/__globalPreview/basicstory.html"
           }
         }
       }

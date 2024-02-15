@@ -13,13 +13,20 @@ export default async (args, info) => {
 
   // check what data source "Search" or "Select"
   // eslint-disable-next-line no-empty
-  // compose and fetch the FB search results
-  const query = args.contentConfiguration.searchQuery;
-  const service = new FunnelbackCardService({ FB_JSON_URL, query });
 
-  adapter.setCardService(service);
+  if (
+    args.contentConfiguration.searchQuery !== "" &&
+    args.contentConfiguration.searchQuery !== null &&
+    args.contentConfiguration.searchQuery !== "?"
+  ) {
+    // compose and fetch the FB search results
+    const query = args.contentConfiguration.searchQuery;
+    const service = new FunnelbackCardService({ FB_JSON_URL, query });
 
-  data = await adapter.getCards();
+    adapter.setCardService(service);
+
+    data = await adapter.getCards();
+  }
 
   // Resolve the URI for the section heading link
   const headingData = await linkedHeadingService(
