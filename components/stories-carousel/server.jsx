@@ -16,7 +16,8 @@ export default async (args, info) => {
 
   if (
     args.contentConfiguration.searchQuery !== "" &&
-    args.contentConfiguration.searchQuery !== null
+    args.contentConfiguration.searchQuery !== null &&
+    args.contentConfiguration.searchQuery !== "?"
   ) {
     // compose and fetch the FB search results
     const query = args.contentConfiguration.searchQuery;
