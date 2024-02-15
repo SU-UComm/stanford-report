@@ -44,7 +44,7 @@ export default function FactCallout({ displayConfiguration }) {
               width === "Wide" ? "md:su-px-[121px]" : ""
             } su-py-[38px] md:su-py-[61px] su-w-full su-h-full su-bg-white dark:su-bg-black su-flex su-flex-col su-items-center su-justify-center su-gap-[10px] lg:su-flex-row lg:su-gap-[38px] su-items-center`}
           >
-            <div className="su-flex-shrink-0">
+            <div className="su-shrink-0">
               {svgMap.get(icon) ? svgMap.get(icon) : ""}
             </div>
 

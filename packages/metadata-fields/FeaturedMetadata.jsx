@@ -99,7 +99,7 @@ export default function FeaturedMetadata({ data }) {
         <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center md:su-flex-row md:su-gap-[20px] lg:su-gap-[40px]">
           <hr
             aria-hidden="true"
-            className="su-border-none su-flex-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mb-[38px] md:su-mb-0"
+            className="su-border-none su-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mb-[38px] md:su-mb-0"
           />
 
           <div
@@ -135,7 +135,7 @@ export default function FeaturedMetadata({ data }) {
 
           <hr
             aria-hidden="true"
-            className="su-hidden su-flex-grow su-rotate-180 su-border-none su-w-[70px] su-w-auto su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-block md:su-h-[3px]"
+            className="su-hidden su-grow su-rotate-180 su-border-none su-w-[70px] su-w-auto su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-block md:su-h-[3px]"
           />
         </div>
       )}
@@ -143,7 +143,7 @@ export default function FeaturedMetadata({ data }) {
         <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center su-mt-[32px] md:su-mt-[61px] md:su-flex-row md:su-gap-[20px] lg:su-gap-[40px]">
           <hr
             aria-hidden="true"
-            className="su-border-none su-w-[70px] su-h-[2px] su-bg-transparent md:su-w-auto su-flex-grow md:su-h-[3px]"
+            className="su-border-none su-w-[70px] su-h-[2px] su-bg-transparent md:su-w-auto su-grow md:su-h-[3px]"
           />
 
           <div
@@ -178,7 +178,7 @@ export default function FeaturedMetadata({ data }) {
           </div>
           <hr
             aria-hidden="true"
-            className="su-hidden su-border-none su-w-[70px] su-h-[2px] su-bg-transparent md:su-w-auto su-flex-grow md:su-h-[3px] md:su-block"
+            className="su-hidden su-border-none su-w-[70px] su-h-[2px] su-bg-transparent md:su-w-auto su-grow md:su-h-[3px] md:su-block"
           />
         </div>
       )}
@@ -191,7 +191,7 @@ export default function FeaturedMetadata({ data }) {
         {firstRow.length === 0 && (
           <hr
             aria-hidden="true"
-            className="su-border-none su-flex-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mb-[38px] md:su-mb-0"
+            className="su-border-none su-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mb-[38px] md:su-mb-0"
           />
         )}
         <div
@@ -242,7 +242,7 @@ export default function FeaturedMetadata({ data }) {
         {firstRow.length === 0 && (
           <hr
             aria-hidden="true"
-            className="su-border-none su-flex-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mt-[38px] md:su-mt-0"
+            className="su-border-none su-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mt-[38px] md:su-mt-0"
           />
         )}
       </div>
@@ -250,7 +250,7 @@ export default function FeaturedMetadata({ data }) {
       {firstRow.length > 0 && (
         <hr
           aria-hidden="true"
-          className="su-border-none su-flex-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mt-[38px] md:su-mt-0"
+          className="su-border-none su-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mt-[38px] md:su-mt-0"
         />
       )}
 

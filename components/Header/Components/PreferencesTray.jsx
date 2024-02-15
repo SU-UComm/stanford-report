@@ -22,7 +22,7 @@ export default function PreferencesTray({ audience }) {
             <svg
               aria-hidden="true"
               focusable="false"
-              className="su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2"
+              className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
               width="22"
               height="22"
               viewBox="0 0 22 22"
@@ -45,7 +45,7 @@ export default function PreferencesTray({ audience }) {
         <span className="icon-faculty">
           <span className="su-relative su-h-[32px] su-w-[32px] su-block su-mx-auto">
             <svg
-              className="dark:su-hidden su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2"
+              className="dark:su-hidden su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
               xmlns="http://www.w3.org/2000/svg"
               width="18"
               height="19"
@@ -71,7 +71,7 @@ export default function PreferencesTray({ audience }) {
               </defs>
             </svg>
             <svg
-              className="su-hidden dark:su-block su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2"
+              className="su-hidden dark:su-block su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
               xmlns="http://www.w3.org/2000/svg"
               width="18"
               height="19"
@@ -107,7 +107,7 @@ export default function PreferencesTray({ audience }) {
         <span className="icon-student">
           <span className="su-relative su-h-[32px] su-w-[32px] su-block su-mx-auto">
             <svg
-              className="dark:su-hidden su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2"
+              className="dark:su-hidden su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
               xmlns="http://www.w3.org/2000/svg"
               width="18"
               height="19"
@@ -133,7 +133,7 @@ export default function PreferencesTray({ audience }) {
               </defs>
             </svg>
             <svg
-              className="su-hidden dark:su-block su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2"
+              className="su-hidden dark:su-block su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
               xmlns="http://www.w3.org/2000/svg"
               width="18"
               height="19"
@@ -191,7 +191,7 @@ export default function PreferencesTray({ audience }) {
                   >
                     <span className="icon-add su-block su-mx-auto su-relative su-w-[44px] su-h-[44px] su-text-digital-red dark:su-text-dark-mode-red">
                       <svg
-                        className="su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2 su-w-[44px] su-h-[44px] su-fill-none"
+                        className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2 su-w-[44px] su-h-[44px] su-fill-none"
                         xmlns="http://www.w3.org/2000/svg"
                         width="44"
                         height="44"
@@ -209,7 +209,7 @@ export default function PreferencesTray({ audience }) {
                     </span>
                     <span className="icon-remove su-block su-mx-auto su-relative su-w-[44px] su-h-[44px]">
                       <svg
-                        className="su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2 su-w-[44px] su-h-[44px] su-fill-none"
+                        className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2 su-w-[44px] su-h-[44px] su-fill-none"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -226,7 +226,7 @@ export default function PreferencesTray({ audience }) {
                     </span>
                     <span className="icon-detail su-block su-mb-[6px] su-mt-[18px] su-mx-auto su-relative su-w-[30px] su-h-[30px]">
                       <svg
-                        className="su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2"
+                        className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
                         height="21"
@@ -250,7 +250,7 @@ export default function PreferencesTray({ audience }) {
                   >
                     <span className="icon-add su-block su-mx-auto su-relative su-w-[44px] su-h-[44px] su-text-digital-red dark:su-text-dark-mode-red">
                       <svg
-                        className="su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2 su-w-[44px] su-h-[44px] su-fill-none"
+                        className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2 su-w-[44px] su-h-[44px] su-fill-none"
                         xmlns="http://www.w3.org/2000/svg"
                         width="44"
                         height="44"
@@ -268,7 +268,7 @@ export default function PreferencesTray({ audience }) {
                     </span>
                     <span className="icon-remove su-block su-mx-auto su-relative su-w-[44px] su-h-[44px]">
                       <svg
-                        className="su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2 su-w-[44px] su-h-[44px] su-fill-none"
+                        className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2 su-w-[44px] su-h-[44px] su-fill-none"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -285,7 +285,7 @@ export default function PreferencesTray({ audience }) {
                     </span>
                     <span className="icon-detail su-block su-mb-[6px] su-mt-[18px] su-mx-auto su-relative su-w-[30px] su-h-[30px]">
                       <svg
-                        className="su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2"
+                        className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
                         height="21"
@@ -344,7 +344,7 @@ export default function PreferencesTray({ audience }) {
                     className="su-inline-block su-align-middle su-relative su-w-[28px] su-h-[28px] peer-checked/light:su-hidden"
                   >
                     <svg
-                      className="su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2"
+                      className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
                       xmlns="http://www.w3.org/2000/svg"
                       width="28"
                       height="28"
@@ -495,7 +495,7 @@ export default function PreferencesTray({ audience }) {
                     className="su-hidden su-align-middle su-relative su-w-[28px] su-h-[28px] peer-checked/light:su-inline-block"
                   >
                     <svg
-                      className="su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2"
+                      className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
                       xmlns="http://www.w3.org/2000/svg"
                       width="28"
                       height="28"
@@ -530,7 +530,7 @@ export default function PreferencesTray({ audience }) {
                     className="su-inline-block su-align-middle su-relative su-w-[28px] su-h-[28px]"
                   >
                     <svg
-                      className="su-absolute su-fill-transparent su-stroke-current su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2"
+                      className="su-absolute su-fill-transparent su-stroke-current su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
                       xmlns="http://www.w3.org/2000/svg"
                       width="28"
                       height="28"

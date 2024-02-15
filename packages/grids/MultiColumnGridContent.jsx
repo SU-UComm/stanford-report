@@ -43,7 +43,7 @@ export function MultiColumnGridContent({
     <div
       data-test={`column-${placement}`}
       className={[
-        "su-relative su-flex-grow",
+        "su-relative su-grow",
         widthClasses.get(`${totalColumns}col`),
         HAS_SEPARATOR && NOT_FIRST_COLUMN
           ? separatorClasses.get(`${totalColumns}col`)

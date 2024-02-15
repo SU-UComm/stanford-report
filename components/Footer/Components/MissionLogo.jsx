@@ -12,7 +12,7 @@ export default function MissionLogo({ url, mission }) {
     <div className="su-flex su-flex-col lg:su-flex-row">
       <a
         href={url}
-        className="pre-footer-logo dark:pre-footer-logo-dark su-mr-[44px] su-max-w-[231px] lg:su-max-w-[296px] lg:su-mt-[6px] su-flex-shrink-0"
+        className="pre-footer-logo dark:pre-footer-logo-dark su-mr-[44px] su-max-w-[231px] lg:su-max-w-[296px] lg:su-mt-[6px] su-shrink-0"
       >
         <svg
           className="su-max-w-full su-h-[35px] lg:su-h-[45px] dark:su-text-white"

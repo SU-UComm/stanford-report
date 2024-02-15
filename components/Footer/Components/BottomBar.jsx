@@ -71,7 +71,7 @@ export default function BottomBar({ site, navigation }) {
   return (
     <div className="su-flex lg:su-items-center  su-text-white su-bg-digital-red">
       <div className="su-text-white su-flex su-pl-[20px] su-pr-[20px] md:su-pl-[50px] md:su-pr-[50px] su-mx-auto su-w-full su-max-w-[1412px]">
-        <div className="bottom-footer su-pb-[12px] md:su-pb-[25px] lg:su-pb-[32px] su-flex-grow su-flex su-flex-col lg:su-flex-row lg:su-gap-[42px]">
+        <div className="bottom-footer su-pb-[12px] md:su-pb-[25px] lg:su-pb-[32px] su-grow su-flex su-flex-col lg:su-flex-row lg:su-gap-[42px]">
           <div className="su-flex su-mx-auto">
             <a href={site.url}>
               <img
@@ -82,7 +82,7 @@ export default function BottomBar({ site, navigation }) {
             </a>
           </div>
 
-          <div className="su-flex lg:su-flex-col footer-links-wrapper su-flex-wrap lg:su-flex-grow">
+          <div className="su-flex lg:su-flex-col footer-links-wrapper su-flex-wrap lg:su-grow">
             <div className="footer-top-links su-font-sans su-font-semibold su-text-[14px] md:su-text-[18px] lg:su-text-[17px] lg:su-mt-[31px] su-mx-auto md:su-mb-[11px] lg:su-mb-[8px] lg:su-ml-0 lg:su-mr-0">
               <PrimaryLinks navigation={footerPrimary} />
             </div>

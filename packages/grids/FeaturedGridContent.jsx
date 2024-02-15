@@ -23,7 +23,7 @@ export function FeaturedGridContent({
     return (
       <div
         className={[
-          "md:su-basis-[58.333%] lg:su-basis-[64.5%] su-flex-grow",
+          "md:su-basis-[58.333%] lg:su-basis-[64.5%] su-grow",
           alignClasses.get(alignment),
         ].join(" ")}
       >

@@ -41,7 +41,7 @@ export function FeaturedGrid({
         )}
         <div
           className={[
-            "su-relative su-flex su-flex-wrap su-flex-grow before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black",
+            "su-relative su-flex su-flex-wrap su-grow before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black",
             "su-gap-[80px] md:su-gap-[72px] lg:su-gap-[76px]",
             "before:md:su-w-[1px] before:su-h-[1px] before:md:su-h-full",
             "md:su-basis-[39.5%] lg:su-basis-[30%]",

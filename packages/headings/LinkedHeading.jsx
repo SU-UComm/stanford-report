@@ -24,7 +24,7 @@ export function LinkedHeading({ title, ctaText = "View all", ctaUrl }) {
 
       <hr
         aria-hidden="true"
-        className="md:su-mb-[11px] lg:su-mb-[15px] su-flex-grow su-border-none su-bg-gradient-light-red-h su-h-[4px]"
+        className="md:su-mb-[11px] lg:su-mb-[15px] su-grow su-border-none su-bg-gradient-light-red-h su-h-[4px]"
       />
 
       {ctaUrl && (
