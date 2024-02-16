@@ -115,7 +115,7 @@ export default function SingleImageVideo({
             {captionCredit}
           </p>
 
-          {youtubeid && autoplay && (
+          {youtubeid && vimeoid && autoplay && (
             <button
               data-role="video-control"
               type="button"
@@ -153,7 +153,7 @@ export default function SingleImageVideo({
 }
 
 function Video({ autoplay, id, thumbnail, handleIframeLoad }) {
-  if (autoplay) {
+  if (autoplay && id) {
     return (
       <iframe
         src={`https://player.vimeo.com/video/${id}?autoplay=1&loop=1&autopause=0&background=1`}
