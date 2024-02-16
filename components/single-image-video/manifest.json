@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "single-image-video",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "namespace": "stanford-components",
   "description": "Stanford university Base component.",
   "displayName": "Single image or video",
@@ -43,11 +43,6 @@
           "video": {
             "required": [],
             "properties": {
-              "thumbnail": {
-                "title": "Video Thumbnail",
-                "type": "string",
-                "format": "matrix-asset-uri"
-              },
               "autoplay": {
                 "title": "Autoplay",
                 "description": "This will enable the video auto play once scrolled into view",
@@ -66,7 +61,7 @@
             }
           }
         },
-        "required": []
+        "required": ["image"]
       },
       "output": {
         "responseType": "html",
