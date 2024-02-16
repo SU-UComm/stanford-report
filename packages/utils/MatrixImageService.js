@@ -1,8 +1,8 @@
 import resolveAssetUri from "./resolveAssetUri";
+import resolveImageUri from "./resolveImageUri";
 // import formatCardDataMatrix from "./formatCardDataMatrix";
 
 function formatImageData(props) {
-  console.log(JSON.stringify(props));
   const { attributes, metadata, url } = props;
   const title = attributes.name;
   const liveUrl = url;
@@ -28,23 +28,19 @@ export default class MatrixImageService {
       // Get our current card
       const img = images[parseInt(index, 10)];
 
-      console.log(
-        JSON.stringify({
-          ctx: this.ctx,
-          assetUri: img.image,
-          API_IDENTIFIER: this.API_IDENTIFIER,
-        })
-      );
-
       // Reassign the card data as our current card
       imagesData[parseInt(index, 10)] = resolveAssetUri({
         ctx: this.ctx,
         assetUri: img.image,
         API_IDENTIFIER: this.API_IDENTIFIER,
       });
-    }
 
-    console.log(JSON.stringify(imagesData));
+      resolveImageUri({
+        ctx: this.ctx,
+        assetUri: img.image,
+        API_IDENTIFIER: this.API_IDENTIFIER,
+      });
+    }
 
     // return Promise.all(imagesData)
     //   .then((data) => data.map((imageData) => formatImageData(imagesData)))
