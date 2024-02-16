@@ -483,7 +483,7 @@ audio::-webkit-media-controls-panel {
 
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
-  > *:not([data-component], .container),
+  > *:not([data-component], .container, .su-lower-content),
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > .container
@@ -500,24 +500,13 @@ audio::-webkit-media-controls-panel {
   @apply su-mb-0;
 }
 
-/* .su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > *:not(.container):first-child,
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
-  > .container
-  > *:first-child,
-.su-page.su-page-has-sidebar .su-page-wrap {
-  @apply su-rs-mt-6;
-} */
-
-/* .su-page:not(.su-page-has-sidebar)
-  .su-page-content
   > *:not(.container):last-child,
-.su-page:not(.su-page-has-sidebar) .su-page-content > .container > *:last-child,
-.su-page.su-page-has-sidebar .su-page-wrap {
+.su-page:not(.su-page-has-sidebar) .su-page-wrap,
+.su-page-wrap:not(.su-page-wrap--no-btm-margin) {
   @apply su-rs-mb-9;
-} */
+}
 
 .su-upper-content > [data-component]:first-child {
   @apply su-rs-mt-6;
@@ -542,6 +531,14 @@ audio::-webkit-media-controls-panel {
   @apply su-rs-mb-3 lg:su-rs-mb-6 !important;
 }
 
+[data-component="feature-story-hero"] {
+  @apply su-rs-mb-8 !important;
+}
+
+.su-page-has-sidebar .su-lower-content > * {
+  @apply su-rs-mt-2;
+}
+
 .su-page-has-sidebar .su-sidebar-content-wrap {
   @apply su-max-w-[1312px] su-mx-auto su-flex su-flex-wrap lg:su-flex-nowrap su-justify-between lg:su-gap-[50px];
 }
@@ -554,7 +551,7 @@ audio::-webkit-media-controls-panel {
   @apply su-mt-0 md:su-mt-0 lg:su-mt-0;
 }
 
-.su-page-has-sidebar .su-page-content > *:last-child {
+.su-page-has-sidebar .su-page-content > *:not(.su-lower-content):last-child {
   @apply su-mb-0 md:su-mb-0 lg:su-mb-0;
 }
 
@@ -596,7 +593,9 @@ audio::-webkit-media-controls-panel {
 /*
 * Contextual styles
 */
-.su-page-content > *:not(.container) + *,
+.su-page-content
+  > *:not(.container, .su-lower-content)
+  + *:not(.container, .su-lower-content),
 .su-page-content > .container > * + * {
   @apply su-rs-mt-2;
 }
