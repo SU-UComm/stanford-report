@@ -65,56 +65,72 @@ export default function CampaignHero({
         </div>
 
         <div className="su-cc su-grid su-grid-cols-6 md:su-grid-cols-12 su-grid-gap su-relative su-z-[2] -su-mt-500">
-          <div className="su-col-span-6 md:su-col-start-1 md:su-col-span-12 lg:su-col-start-3 lg:su-col-span-8 su-text-white su-text-center">
-            <h1 className="su-type-6">{title}</h1>
-            <p className="su-type-3 su-leading-[1.3]">{intro}</p>
-            <span className="su-inline-block hocus:su-animate-pulse hocus:su-scale-110 su-transition-all">
-              <button
-                className="su-component-card-thumbnail su-block su-relative su-z-10 su-w-full su-h-full"
-                type="button"
-                aria-haspopup="dialog"
-                onClick={() => handleClick()}
-              >
-                <span className="su-hidden">Play video</span>
-                <VideoPlay />
-              </button>
-              {isModalOpen && (
-                <Modal
-                  titleId="video-modal"
-                  title="Modal"
-                  onClose={handleCloseModal}
-                >
-                  <EmbedVideo videoId={videoUrl} />
-                </Modal>
-              )}
-            </span>
-          </div>
-
-          <div className="su-rs-pt-2 su-rs-px-5 su-rs-pb-6 su-col-start-2 su-col-span-10 su-text-white su-flex su-items-center su-flex-col su-gap-2xl md:su-flex-row su-border-t su-border-black-30 su-relative su-z-[2]">
-            <blockquote cite="" className="su-type-1">
-              <p className="su-font-serif su-leading-display">“{quote}”</p>
-              <footer className="su-font-bold">
-                {quoteLink ? (
-                  <a
-                    href={quoteLink}
-                    className="su-font-bold su-text-white su-decoration-dark-mode-red su-underline-offset-[3px] su-decoration-[0.12em] hocus:su-no-underline hocus:su-text-dark-mode-red"
+          {quote ? (
+            <div className="su-col-span-6 md:su-col-start-1 md:su-col-span-12 lg:su-col-start-3 lg:su-col-span-8 su-text-white su-text-center">
+              <h1 className="su-type-6">{title}</h1>
+              <p className={cnb(quote ? "su-type-3 su-leading-[1.3]" : "")}>
+                {intro}
+              </p>
+              {videoUrl && (
+                <span className="su-inline-block hocus:su-animate-pulse hocus:su-scale-110 su-transition-all">
+                  <button
+                    className="su-component-card-thumbnail su-block su-relative su-z-10 su-w-full su-h-full"
+                    type="button"
+                    aria-haspopup="dialog"
+                    onClick={() => handleClick()}
                   >
-                    {name}
-                  </a>
-                ) : (
-                  <span>{name}</span>
-                )}
-                {extra && `, ${extra}`}
-              </footer>
-            </blockquote>
-            <div className="su-rounded-full su-w-[300px] su-h-[300px] su-grow su-shrink-0 su-basis-auto su-overflow-hidden">
-              <img
-                src="https://picsum.photos/seed/picsum/300/300"
-                alt="quote placeholder for local dev"
-                className="su-object-cover su-w-full su-h-full"
-              />
+                    <span className="su-hidden">Play video</span>
+                    <VideoPlay />
+                  </button>
+                  {isModalOpen && (
+                    <Modal
+                      titleId="video-modal"
+                      title="Modal"
+                      onClose={handleCloseModal}
+                    >
+                      <EmbedVideo videoId={videoUrl} />
+                    </Modal>
+                  )}
+                </span>
+              )}
             </div>
-          </div>
+          ) : (
+            <>
+              <h1 className="su-type-6 su-text-white su-text-center su-mb-450 su-col-span-6 md:su-col-start-1 md:su-col-span-12 lg:su-col-start-3 lg:su-col-span-8 ">
+                {title}
+              </h1>
+              <p className="su-type-3 su-col-span-8 su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-200 su-py-38 su-mb-0 su-ml-80">
+                {intro}
+              </p>
+            </>
+          )}
+          {quote && (
+            <div className="su-rs-pt-2 su-rs-px-5 su-rs-pb-6 su-col-start-2 su-col-span-10 su-text-white su-flex su-items-center su-flex-col su-gap-2xl md:su-flex-row su-border-t su-border-black-30 su-relative su-z-[2]">
+              <blockquote cite="" className="su-type-1">
+                <p className="su-font-serif su-leading-display">“{quote}”</p>
+                <footer className="su-font-bold">
+                  {quoteLink ? (
+                    <a
+                      href={quoteLink}
+                      className="su-font-bold su-text-white su-decoration-dark-mode-red su-underline-offset-[3px] su-decoration-[0.12em] hocus:su-no-underline hocus:su-text-dark-mode-red"
+                    >
+                      {name}
+                    </a>
+                  ) : (
+                    <span>{name}</span>
+                  )}
+                  {extra && `, ${extra}`}
+                </footer>
+              </blockquote>
+              <div className="su-rounded-full su-w-[300px] su-h-[300px] su-grow su-shrink-0 su-basis-auto su-overflow-hidden">
+                <img
+                  src="https://picsum.photos/seed/picsum/300/300"
+                  alt="quote placeholder for local dev"
+                  className="su-object-cover su-w-full su-h-full"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </Container>
