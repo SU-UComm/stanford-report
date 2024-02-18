@@ -37,9 +37,6 @@ export default function Base({
     setIsModalOpen(false);
   };
 
-  const modalImages = [];
-  const previewImages = [];
-
   const testImages = [
     {
       orientation: "v",
@@ -66,6 +63,9 @@ export default function Base({
     { orientation: "h", alt: "", url: "https://picsum.photos/730/450" },
     { orientation: "v", alt: "", url: "https://picsum.photos/900/1050" },
   ];
+
+  const modalImages = carouselImages(testImages);
+  const previewImages = [];
 
   // generate the preview images
   const previewData = mosaic(
@@ -154,7 +154,9 @@ export default function Base({
           onClose={handleCloseModal}
         >
           {/* use {data} instead of {testImages} here */}
-          <Carousel slides={carouselImages(testImages)} variant="media" />
+          <div>
+            <Carousel slides={modalImages} variant="media" />
+          </div>
         </Modal>
       )}
     </>
