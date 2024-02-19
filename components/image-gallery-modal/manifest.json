@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "image-gallery-modal",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "namespace": "stanford-components",
   "description": "An image gallery that opens in a modal.",
   "displayName": "Image gallery with modal",
@@ -13,7 +13,7 @@
     }
   ],
   "icon": {
-    "id": "foundation",
+    "id": "auto_awesome_mosaic",
     "color": {
       "type": "enum",
       "value": "gray"
@@ -96,7 +96,8 @@
               "backgroundColor": {
                 "title": "Background Color",
                 "enum": ["Grey", "Transparent"],
-                "type": "string"
+                "type": "string",
+                "default": "Grey"
               }
             }
           }

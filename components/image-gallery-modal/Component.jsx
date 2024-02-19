@@ -88,7 +88,7 @@ export default function Base({
       <div
         className={[
           displayConfiguration.backgroundColor === "Grey"
-            ? "su-bg-fog-light su-rs-pt-6 su-rs-pb-8"
+            ? "su-bg-fog-light su-rs-pt-6 su-rs-pb-8 dark:su-bg-black/[0.5]"
             : "",
         ].join(" ")}
       >
