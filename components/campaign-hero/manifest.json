@@ -20,55 +20,140 @@
       "input": {
         "type": "object",
         "properties": {
-          "bkgImage": {
-            "title": "Background image",
-            "type": "string"
+          "bkgConfig": {
+            "title": "Background",
+            "description": "Would you like to use an image or looping video as the background?",
+            "type": "object",
+            "required": ["type"],
+            "properties": {
+              "type": {
+                "title": "Background Type",
+                "default": "Image",
+                "enum": ["Image", "Video"],
+                "type": "string"
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "required": [],
+                  "properties": {
+                    "type": {
+                      "const": "Image"
+                    }
+                  }
+                },
+                "then": {
+                  "required": ["bkgImage"],
+                  "properties": {
+                    "bkgImage": {
+                      "title": "Background image",
+                      "description": "Choose a background image.",
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "required": [],
+                  "properties": {
+                    "type": {
+                      "const": "Video"
+                    }
+                  }
+                },
+                "then": {
+                  "required": ["bkgVideo"],
+                  "properties": {
+                    "bkgVideo": {
+                      "title": "Background video",
+                      "description": "The looping video URL – we're using Vimeo for these.",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            ]
           },
-          "title": {
-            "title": "Heading",
-            "description": "The heading text",
-            "type": "string",
-            "default": "Lorem ipsum dolor"
+          "textConfig": {
+            "title": "Title & Introduction",
+            "type": "object",
+            "required": ["title", "intro"],
+            "properties": {
+              "title": {
+                "title": "Heading",
+                "description": "The heading text",
+                "type": "string",
+                "default": "Lorem ipsum dolor"
+              },
+              "intro": {
+                "title": "Intro",
+                "description": "Introduction text that displays below the headline.",
+                "type": "string",
+                "default": "Lorem ipsum dolor"
+              }
+            }
           },
-          "intro": {
-            "title": "Intro",
-            "description": "Introduction text that displays below the headline.",
-            "type": "string",
-            "default": "Lorem ipsum dolor"
-          },
-          "quote": {
-            "title": "Quote Text",
-            "description": "The quoted text. Do not include quotation marks, they will display automatically",
-            "type": "string",
-            "format": "multi-line"
-          },
-          "name": {
-            "title": "Name",
-            "description": "The name of the quotee",
-            "type": "string"
-          },
-          "extra": {
-            "title": "Extra",
-            "description": "Extra text for attribution, if needed. Could be a job title or descriptive information.",
-            "type": "string"
-          },
-          "quoteLink": {
-            "title": "Quote Link",
-            "description": "Link for quote name attribution, if needed.",
-            "type": "string"
-          },
-          "videoUrl": {
-            "title": "YouTube Video URL",
-            "description": "A video that will play in a modal.",
-            "type": "string"
-          },
-          "bkgVideo": {
-            "title": "Background Video",
-            "description": "Background looping video URL. We're using Vimeo for these.",
-            "type": "string"
+          "quoteConfig": {
+            "title": "Quote",
+            "description": "",
+            "type": "object",
+            "required": ["include"],
+            "properties": {
+              "include": {
+                "title": "Would you like to include a quote?",
+                "default": "Yes",
+                "enum": ["Yes", "No"],
+                "type": "string"
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "required": [],
+                  "properties": {
+                    "include": {
+                      "const": "Yes"
+                    }
+                  }
+                },
+                "then": {
+                  "required": ["quote", "name"],
+                  "properties": {
+                    "quote": {
+                      "title": "Quote Text",
+                      "description": "The quoted text. Do not include quotation marks, they will display automatically",
+                      "type": "string",
+                      "format": "multi-line"
+                    },
+                    "name": {
+                      "title": "Name",
+                      "description": "The name of the quotee",
+                      "type": "string"
+                    },
+                    "extra": {
+                      "title": "Extra",
+                      "description": "Extra text for attribution, if needed. Could be a job title or descriptive information.",
+                      "type": "string"
+                    },
+                    "quoteLink": {
+                      "title": "Quote Link",
+                      "description": "Link for quote name attribution, if needed.",
+                      "type": "string"
+                    },
+                    "videoUrl": {
+                      "title": "YouTube Video URL",
+                      "description": "A video that will play in a modal.",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            ]
           }
         },
-        "required": []
+        "required": ["bkgConfig", "textConfig"]
       },
       "output": {
         "responseType": "html",
