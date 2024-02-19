@@ -8,7 +8,7 @@ import { Carousel } from "../../packages/carousels/Carousel";
 import Modal from "../../packages/modal/ModalWrapper";
 
 // sub components
-import Images from "./components/Images";
+import ImageMosaic, { mosaic } from "../../packages/media/ImageMosaic";
 import carouselImages from "./components/CarouselImages";
 
 /**
@@ -37,39 +37,41 @@ export default function Base({
     setIsModalOpen(false);
   };
 
-  const testImages = [
-    {
-      orientation: "v",
-      alt: "",
-      url: "https://picsum.photos/800/950",
-      caption:
-        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
-    },
-    { orientation: "h", alt: "", url: "https://picsum.photos/850/350" },
-    {
-      orientation: "h",
-      alt: "",
-      url: "https://picsum.photos/800/350",
-      caption:
-        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
-    },
-    {
-      orientation: "h",
-      alt: "",
-      url: "https://picsum.photos/700/450",
-      caption:
-        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
-    },
-    { orientation: "h", alt: "", url: "https://picsum.photos/730/450" },
-    { orientation: "v", alt: "", url: "https://picsum.photos/900/1050" },
-  ];
+  // testing data
+  // const testImages = [
+  //   {
+  //     orientation: "v",
+  //     alt: "",
+  //     url: "https://picsum.photos/800/950",
+  //     caption:
+  //       "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
+  //   },
+  //   { orientation: "h", alt: "", url: "https://picsum.photos/850/350" },
+  //   {
+  //     orientation: "h",
+  //     alt: "",
+  //     url: "https://picsum.photos/800/350",
+  //     caption:
+  //       "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
+  //   },
+  //   {
+  //     orientation: "h",
+  //     alt: "",
+  //     url: "https://picsum.photos/700/450",
+  //     caption:
+  //       "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
+  //   },
+  //   { orientation: "h", alt: "", url: "https://picsum.photos/730/450" },
+  //   { orientation: "v", alt: "", url: "https://picsum.photos/900/1050" },
+  // ];
 
-  const modalImages = carouselImages(testImages);
-  const previewImages = [];
+  // place testData in this param to debug
+  const modalImages = carouselImages(data);
 
   // generate the preview images
+  // replace first param with testImages to debug
   const previewData = mosaic(
-    testImages,
+    data,
     `
     {v:v}
     {h:h:h:h}
@@ -79,13 +81,13 @@ export default function Base({
   );
 
   // change {testImages} back to {data}
-  const leftOverImages = testImages.length - previewData.length;
+  const leftOverImages = data.length - data.length;
 
   return (
     <>
       <div
         className={[
-          displayConfiguration.backgroundColor === "grey"
+          displayConfiguration.backgroundColor === "Grey"
             ? "su-bg-fog-light su-rs-pt-6 su-rs-pb-8"
             : "",
         ].join(" ")}
@@ -105,7 +107,8 @@ export default function Base({
                   title="Media gallery"
                 />
               )}
-              {contentConfiguration.title && (
+
+              {contentConfiguration.layout === "Title & Content" && (
                 <h2
                   className={[
                     "su-text-[3.5rem] su-leading-[4.179rem] su-font-bold",
@@ -117,7 +120,8 @@ export default function Base({
                 </h2>
               )}
             </div>
-            {contentConfiguration.summary && (
+
+            {contentConfiguration.layout === "Title & Content" && (
               <XssSafeContent
                 className={[
                   "su-wysiwyg-content su-rs-mt-0 su-text-[1.8rem] su-leading-[2.25rem] su-mt-[1.5rem]",
@@ -142,7 +146,10 @@ export default function Base({
               "lg:su-gap-x-[2.589rem] lg:su-gap-y-[2.143rem]",
             ].join(" ")}
           >
-            <Images data={previewData} remainingImageCount={leftOverImages} />
+            <ImageMosaic
+              data={previewData}
+              remainingImageCount={leftOverImages}
+            />
           </button>
         </Container>
       </div>
@@ -161,55 +168,4 @@ export default function Base({
       )}
     </>
   );
-}
-
-/**
- * creates an image mosaic based on
- * specified pattern variations
- * 
- * @param {object} images 
- * the image data (determines the orientation)
- 
- * @param {string} pattern 
- * @returns 
- */
-function mosaic(images, pattern) {
-  const patterns = pattern.replace(/\n+|\t+| {2,}/gm, "");
-  const preview = [];
-
-  let complete = false;
-  let patternFormation = "{";
-
-  images.forEach((card) => {
-    if (complete) return;
-
-    const patRegEnd = new RegExp(
-      `${patternFormation}${card.orientation}}`,
-      "gm"
-    );
-    const patRegCurrent = new RegExp(
-      `${patternFormation}${card.orientation}:`,
-      "gm"
-    );
-
-    if (patterns.match(patRegEnd)) {
-      preview.push(card);
-      complete = true;
-      return;
-    }
-
-    if (!preview.length) {
-      preview.push(card);
-      patternFormation += `${card.orientation}:`;
-
-      return;
-    }
-
-    if (patterns.match(patRegCurrent)) {
-      preview.push(card);
-      patternFormation += `${card.orientation}:`;
-    }
-  });
-
-  return preview;
 }
