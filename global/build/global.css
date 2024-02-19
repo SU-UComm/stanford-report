@@ -1957,17 +1957,6 @@ audio::-webkit-media-controls-panel {
   margin-bottom: 0;
 }
 
-/* .su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > *:not(.container):first-child,
-.su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > .container
-  > *:first-child,
-.su-page.su-page-has-sidebar .su-page-wrap {
-  @apply su-rs-mt-6;
-} */
-
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > *:not(.container):last-child,
