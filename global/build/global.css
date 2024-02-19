@@ -1426,6 +1426,18 @@ h6{
   }
 }
 
+.component-slider-cards.component-slider-peek{
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+@media (min-width: 768px){
+  .component-slider-cards.component-slider-peek{
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .component-slider-single.component-slider-peek .swiper-slide-prev > *,
 .component-slider-single.component-slider-peek .swiper-slide-next > *{
   pointer-events: none;

@@ -157,6 +157,10 @@ svg {
   @apply su-mx-[-20px] md:su-mx-[-50px] lg:su-mx-0;
 }
 
+.component-slider-cards.component-slider-peek {
+  @apply su-mx-[-20px] md:su-mx-0;
+}
+
 .component-slider-single.component-slider-peek .swiper-slide-prev > *,
 .component-slider-single.component-slider-peek .swiper-slide-next > * {
   @apply su-opacity-[.27] md:su-opacity-100 su-pointer-events-none md:su-pointer-events-auto;
