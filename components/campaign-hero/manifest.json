@@ -119,7 +119,7 @@
                   }
                 },
                 "then": {
-                  "required": ["quote", "name"],
+                  "required": ["quote", "name", "image"],
                   "properties": {
                     "quote": {
                       "title": "Quote Text",
@@ -129,7 +129,7 @@
                     },
                     "name": {
                       "title": "Name",
-                      "description": "The name of the quotee",
+                      "description": "The name of the quotee.",
                       "type": "string"
                     },
                     "extra": {
@@ -140,6 +140,11 @@
                     "quoteLink": {
                       "title": "Quote Link",
                       "description": "Link for quote name attribution, if needed.",
+                      "type": "string"
+                    },
+                    "image": {
+                      "title": "Image",
+                      "description": "Typically an image of the person quoted.",
                       "type": "string"
                     },
                     "videoUrl": {

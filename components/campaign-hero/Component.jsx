@@ -44,7 +44,7 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
               src={bkgConfig.bkgImage}
               // src={bgImageData.url}
               className="su-object-cover su-size-full"
-              alt="placeholder for local dev"
+              alt=""
             />
           )}
           {/* Gradient overlay */}
@@ -120,7 +120,7 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
               </blockquote>
               <div className="su-rounded-full su-w-[300px] su-h-[300px] su-grow su-shrink-0 su-basis-auto su-overflow-hidden">
                 <img
-                  src="https://picsum.photos/seed/picsum/300/300"
+                  src={quoteConfig.image}
                   alt="quote placeholder for local dev"
                   className="su-object-cover su-w-full su-h-full"
                 />
