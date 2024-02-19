@@ -1,4 +1,5 @@
 import FetchAdapter from "../../../packages/utils/fetchAdapter";
+import translatePersonalisationProfile from "../../../packages/utils/translatePersonalisationProfile";
 
 export default async function relatedStoryData(
   pageData = null,

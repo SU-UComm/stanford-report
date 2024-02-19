@@ -24,4 +24,12 @@ import Component from "./Component";
 //   });
 // })();
 
-hydrateComponent({ Component, componentName: "single-image-video" });
+(function () {
+  const componentName = "single-image-video";
+  const target = document.querySelector(
+    `[data-hydration-component="${componentName}"]`
+  );
+
+  if (!target) return;
+  hydrateComponent({ Component, componentName });
+})();

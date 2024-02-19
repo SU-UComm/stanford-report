@@ -1,0 +1,11 @@
+@tailwind components;
+@tailwind utilities;
+
+.su-reading-time-separator:empty {
+  @apply su-hidden;
+}
+
+.su-reading-time-separator:not(:empty)::before {
+  content: "|";
+  @apply su-ml-1 su-mr-1;
+}

@@ -1,13 +1,18 @@
 import hydrateComponent from "../../packages/utils/hydrate-component";
 import Component from "./Component";
-
 import _preferencesSettings from "./scripts/preferenceSettings";
 import ReportHeader from "./scripts/reportHeader";
 
-console.log("Header clientside");
+(function () {
+  const componentName = "header-component";
+  const target = document.querySelector(
+    `[data-hydration-component="${componentName}"]`
+  );
 
-const headerDom = document.querySelector(".report-header");
-const initHeader = new ReportHeader(headerDom);
-_preferencesSettings();
+  if (!target) return;
 
-hydrateComponent({ Component, componentName: "header-component" });
+  const headerDom = document.querySelector(".report-header");
+  const initHeader = new ReportHeader(headerDom);
+  _preferencesSettings();
+  hydrateComponent({ Component, componentName });
+})();
