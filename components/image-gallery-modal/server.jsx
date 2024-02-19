@@ -1,7 +1,5 @@
 import renderComponent from "../../packages/utils/render-component";
 import Component from "./Component";
-import CardDataAdapter from "../../packages/utils/CardDataAdapter";
-// import MatrixImageService from "../../packages/utils/MatrixImageService";
 import basicAssetUri from "../../packages/utils/basicAssetUri";
 import formatCardDataImage from "../../packages/utils/formatCardDataImage";
 
