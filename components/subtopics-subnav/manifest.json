@@ -1,13 +1,13 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "subtopic-subnav-component",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "namespace": "stanford-components",
   "description": "Stanford university Subtopic Subnav component.",
   "displayName": "Subtopic Subnav",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "category",
     "color": {
       "type": "enum",
       "value": "gray"
@@ -19,12 +19,8 @@
       "entry": "./dist/server.cjs",
       "input": {
         "type": "object",
-        "properties": {
-          "dataUrl": {
-            "type": "string"
-          }
-        },
-        "required": ["dataUrl"]
+        "properties": {},
+        "required": []
       },
       "output": {
         "responseType": "html",

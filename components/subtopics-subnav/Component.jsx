@@ -8,7 +8,7 @@ function Subnav({ navigation }) {
   const aClass =
     "su-text-inherit su-text-black su-font-semi-bold su-text-[16px] lg:su-text-[18px] lg:su-leading-[21.6px] su-no-underline hover:su-underline dark:su-text-white hover:su-text-digital-red dark:hover:su-text-dark-mode-red";
   return (
-    <div className="scrollable-list su-w-[calc(100%+20px)] md:su-justify-center su-flex su-nowrap su-mb-[15px] md:su-mb-[25px] lg:su-mb-[41px]">
+    <div className="scrollable-list su-w-full md:su-justify-center su-flex su-nowrap su-mb-[15px] md:su-mb-[25px] lg:su-mb-[41px]">
       <ul className="scrollable-list__items su-w-[calc(100%+40px)] md:su-w-auto su-flex md:su-justify-center su-mb-0 su-whitespace-nowrap su-flex-nowrap md:su-flex-wrap su-overflow-x-scroll md:su-overflow-visible su-list-none su-mx-[-20px] md:su-mr-0 su-px-[20px] su-mb-0 su-pb-[12px] lg:su-pb-0">
         {navigation.map((item, i, row) => {
           const title = decode(item.asset_name);
