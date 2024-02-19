@@ -1957,58 +1957,39 @@ audio::-webkit-media-controls-panel {
   margin-bottom: 0;
 }
 
-/* .su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > *:not(.container):first-child,
-.su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > .container
-  > *:first-child,
-.su-page.su-page-has-sidebar .su-page-wrap {
-  @apply su-rs-mt-6;
-} */
-
-.su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > *:not(.container):last-child,
-.su-page:not(.su-page-has-sidebar) .su-page-wrap,
-.su-page-wrap:not(.su-page-wrap--no-btm-margin){
+.su-page:not(.su-page-wrap--no-btm-margin) .su-page-wrap{
   margin-bottom: 7rem;
 }
 
 @media (min-width: 768px){
-  .su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > *:not(.container):last-child,
-.su-page:not(.su-page-has-sidebar) .su-page-wrap,
-.su-page-wrap:not(.su-page-wrap--no-btm-margin){
+  .su-page:not(.su-page-wrap--no-btm-margin) .su-page-wrap{
     margin-bottom: 16.2rem;
   }
 }
 
 @media (min-width: 1500px){
-  .su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > *:not(.container):last-child,
-.su-page:not(.su-page-has-sidebar) .su-page-wrap,
-.su-page-wrap:not(.su-page-wrap--no-btm-margin){
+  .su-page:not(.su-page-wrap--no-btm-margin) .su-page-wrap{
     margin-bottom: 17.1rem;
   }
 }
 
-.su-upper-content > [data-component]:first-child{
-  margin-top: 4.5rem;
+.su-page.su-page--no-bottom-margin .su-page-wrap{
+  margin-bottom: 0 !important;
+}
+
+.su-page--top-margin .su-upper-content{
+  margin-top: 3.8rem;
 }
 
 @media (min-width: 768px){
-  .su-upper-content > [data-component]:first-child{
-    margin-top: 9rem;
+  .su-page--top-margin .su-upper-content{
+    margin-top: 7.2rem;
   }
 }
 
 @media (min-width: 1500px){
-  .su-upper-content > [data-component]:first-child{
-    margin-top: 9.5rem;
+  .su-page--top-margin .su-upper-content{
+    margin-top: 7.6rem;
   }
 }
 

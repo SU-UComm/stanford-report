@@ -500,16 +500,16 @@ audio::-webkit-media-controls-panel {
   @apply su-mb-0;
 }
 
-.su-page:not(.su-page-has-sidebar)
-  .su-page-content
-  > *:not(.container):last-child,
-.su-page:not(.su-page-has-sidebar) .su-page-wrap,
-.su-page-wrap:not(.su-page-wrap--no-btm-margin) {
+.su-page:not(.su-page-wrap--no-btm-margin) .su-page-wrap {
   @apply su-rs-mb-9;
 }
 
-.su-upper-content > [data-component]:first-child {
-  @apply su-rs-mt-6;
+.su-page.su-page--no-bottom-margin .su-page-wrap {
+  @apply su-mb-0 !important;
+}
+
+.su-page--top-margin .su-upper-content {
+  @apply su-rs-mt-5;
 }
 
 .su-upper-content > [data-component] + * {
