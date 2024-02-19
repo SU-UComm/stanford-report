@@ -5,12 +5,22 @@ export default function carouselImages(data) {
 
   data.forEach(({ url, alt, caption }) => {
     images.push(
-      <article className="su-flex">
-        <div>
+      <article
+        className={`c-carousel-image-slide ${
+          caption ? "has-caption" : "has-no-caption"
+        }`}
+      >
+        <div className="c-carousel-image">
           <img src={url} alt={alt} />
         </div>
 
-        {caption ? <p>{caption}</p> : ""}
+        {caption ? (
+          <div className="c-carousel-caption">
+            <p>{caption}</p>
+          </div>
+        ) : (
+          ""
+        )}
       </article>
     );
   });

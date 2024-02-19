@@ -155,7 +155,7 @@ export default function Base({
         >
           {/* use {data} instead of {testImages} here */}
           <div>
-            <Carousel slides={modalImages} variant="media" />
+            <Carousel slides={modalImages} variant="imagegallery" />
           </div>
         </Modal>
       )}
