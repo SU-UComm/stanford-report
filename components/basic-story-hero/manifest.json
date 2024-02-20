@@ -1,16 +1,16 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "basic-story-hero",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
-  "description": "Stanford university Base component.",
-  "displayName": "basic story hero",
+  "description": "The basic story hero appears on basic story pages",
+  "displayName": "Basic story hero",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "explore",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "pink"
     }
   },
   "functions": [
