@@ -26,18 +26,20 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+
   return (
     <Container width="full" paddingX={false}>
       <section>
         <div className="su-sticky su-h-[100vh] su-top-0">
           {/* Background video */}
           {bkgConfig.bkgVideo ? (
-            <div className="video-container su-relative su-w-full su-h-[100vh] su-overflow-hidden">
+            <div className="su-relative su-w-full su-h-[100vh] su-overflow-hidden">
               <iframe
-                src={bkgConfig.bkgVideo}
+                src={`${bkgConfig.bkgVideo}?background=1`}
                 title="video"
-                className="su-absolute su-box-border su-min-w-full su-min-h-full su-w-[177.77777778vh] su-h-[56.25vw] su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
+                className="bkg-loop su-absolute su-box-border su-min-w-full su-min-h-full su-w-[177.77777778vh] su-h-[56.25vw] su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
                 allow="autoplay; fullscreen"
+                allowFullScreen
               />
             </div>
           ) : (
@@ -56,7 +58,7 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
         </div>
 
         <div className="su-cc su-grid su-grid-cols-6 md:su-grid-cols-12 su-grid-gap su-relative su-z-[2] -su-mt-500">
-          {quoteConfig.quote ? (
+          {quoteConfig.include === true ? (
             <div className="su-col-span-6 md:su-col-start-1 md:su-col-span-12 lg:su-col-start-3 lg:su-col-span-8 su-text-white su-text-center">
               <h1 className="su-type-6">{textConfig.title}</h1>
               <p
@@ -99,7 +101,7 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
               </p>
             </>
           )}
-          {quoteConfig.quote && (
+          {quoteConfig.include === true && (
             <div className="su-rs-pt-2 su-rs-px-5 su-rs-pb-6 su-col-start-2 su-col-span-10 su-text-white su-flex su-items-center su-flex-col su-gap-2xl md:su-flex-row su-border-t su-border-black-30 su-relative su-z-[2]">
               <blockquote cite="" className="su-type-1">
                 <p className="su-font-serif su-leading-display">
