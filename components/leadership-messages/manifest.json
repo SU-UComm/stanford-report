@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "leadership-messages",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "namespace": "stanford-components",
   "description": "Links to leadership messages displayed in a grid.",
   "displayName": "Leadership messages",
@@ -34,7 +34,8 @@
             "properties": {
               "title": {
                 "title": "Heading",
-                "type": "string"
+                "type": "string",
+                "default": "Messages from Leadership"
               },
               "ctaText": {
                 "title": "Link text",
@@ -57,7 +58,7 @@
               "searchQuery": {
                 "type": "string",
                 "title": "The Funnelback search query",
-                "default": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search&log=false&query=!null&sort=date&num_ranks=6"
+                "default": "?f.Content+Type%7CtaxonomyContentTypeText=Leadership+messages&log=false&taxonomyContentTypeText=Leadership+Messages&profile=stanford-report-push-search_preview&query=%21null&collection=sug~sp-stanford-report-search&num_ranks=3"
               }
             }
           }
