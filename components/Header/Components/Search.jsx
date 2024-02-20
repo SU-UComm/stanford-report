@@ -13,7 +13,7 @@ export default function Search({ endpoint, collection, profile }) {
       id="search"
       aria-label="Search"
       aria-hidden="true"
-      className="report-header__search-tray su-z-30 su-fixed su-left-0 su-top-0 su-w-full su-h-screen"
+      className="su-hidden report-header__search-tray su-z-30 su-fixed su-left-0 su-top-0 su-w-full su-h-screen"
     >
       <div className="report-header__overlay su-bg-black su-opacity-25 su-w-full su-h-full" />
       <form
@@ -35,6 +35,7 @@ export default function Search({ endpoint, collection, profile }) {
             defaultValue=""
             placeholder="Search"
             id="desktop_search_query"
+            tabIndex="0"
             required
           />
           <button
@@ -50,6 +51,7 @@ export default function Search({ endpoint, collection, profile }) {
           <button
             className="su-absolute su-w-[40px] su-h-[40px] su-right-[10px] su-top-[5px]"
             type="submit"
+            data-location="submit-btn"
           >
             <svg
               aria-hidden="true"
@@ -64,6 +66,8 @@ export default function Search({ endpoint, collection, profile }) {
             </svg>
             <span className="sr-only">Submit search</span>
           </button>
+
+          <span tabIndex="0" data-tp-to="close-search" />
         </div>
       </form>
     </div>

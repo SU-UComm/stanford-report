@@ -96,6 +96,7 @@ export default function Header({ site, navigation, search }) {
                 aria-controls="search"
                 aria-expanded="false"
                 aria-labelledby="toggle-search"
+                data-location="close-search"
               >
                 <span className="icon-search su-relative su-h-[32px] su-w-[32px]">
                   <SearchIcon />

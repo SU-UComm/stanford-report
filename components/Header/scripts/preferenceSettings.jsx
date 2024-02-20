@@ -42,11 +42,23 @@ export default function _preferencesSettings() {
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       htmlTag.classList.add("su-dark");
-      darkToggle.setAttribute("checked", "checked");
-      lightToggle.removeAttribute("checked");
+      darkToggle.checked = true;
+      lightToggle.checked = false;
     } else {
       htmlTag.classList.add("su-light");
     }
+
+    lightToggle.addEventListener("keyup", ({ key }) => {
+      if ([" ", "Enter"].includes(key)) {
+        document.querySelector(`[data-theme="dark-theme"]`).click();
+      }
+    });
+
+    darkToggle.addEventListener("keyup", ({ key }) => {
+      if ([" ", "Enter"].includes(key)) {
+        document.querySelector(`[data-theme="light-theme"]`).click();
+      }
+    });
 
     /* Set as light theme preference */
     lightToggle.addEventListener("click", () => {

@@ -149,7 +149,7 @@
   display: block;
 }
 .report-header__pref-toggle {
-  @apply su-w-full su-h-full su-bg-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent dark:hover:su-text-black-true aria-pressed:dark:su-text-black-true aria-pressed:su-bg-transparent hover:su-bg-transparent dark:su-bg-black-true after:su-transition-none su-transition before:su-transition dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-py-[26px] su-px-[18px] su-bg-transparent su-text-center;
+  @apply su-w-full su-h-full su-bg-[white] dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent dark:hover:su-text-[white] aria-pressed:dark:su-text-black-true aria-pressed:su-bg-[white] hover:su-bg-transparent dark:su-bg-black-true after:su-transition-none su-transition before:su-transition dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-py-[26px] su-px-[18px] su-bg-[white] su-text-center;
   border-radius: 9px;
   background-clip: padding-box;
   border: 2px solid transparent;
@@ -158,8 +158,17 @@
 .report-header__pref-toggle::after {
   border-radius: inherit;
 }
-.su-dark .report-header__pref-toggle[aria-pressed="“true”"] {
-  @apply su-bg-transparent;
+.su-dark .report-header__pref-toggle {
+  @apply su-bg-[white];
+}
+/* .su-dark .report-header__pref-toggle:hover {
+  @apply su-text-[white]
+} */
+.su-dark .report-header__pref-toggle[aria-pressed="true"] {
+  @apply su-bg-transparent su-text-[white];
+}
+.su-dark .report-header__pref-toggle[aria-pressed="true"] svg {
+  @apply su-stroke-[white] su-fill-[white] su-text-[white];
 }
 .report-header__pref-toggle::before,
 .report-header__pref-toggle::after {
@@ -172,12 +181,18 @@
 }
 .report-header__pref-toggle:hover,
 .report-header__pref-toggle[aria-pressed="true"] {
-  background-color: transparent !important;
-  color: #fff !important;
+  background-color: white;
+  /* background-color: transparent !important;
+  color: #fff !important; */
 }
-.report-header__pref-toggle:hover svg,
-.report-header__pref-toggle[aria-pressed="true"] svg {
+.report-header__pref-toggle:hover svg {
   stroke: #fff !important;
+  color: #fff;
+}
+.report-header__pref-toggle[aria-pressed="true"]:hover svg,
+.report-header__pref-toggle[aria-pressed="true"] svg {
+  /* @apply su-stroke-digital-red; */
+  /* stroke: #fff !important; */
 }
 .report-header__pref-toggle:hover .icon-add,
 .report-header__pref-toggle[aria-pressed="true"] .icon-add,
