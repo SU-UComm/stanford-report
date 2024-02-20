@@ -186,7 +186,7 @@
   color: #fff !important; */
 }
 .report-header__pref-toggle:hover svg {
-  stroke: #fff !important;
+  /* stroke: #fff !important; */
   color: #fff;
 }
 .report-header__pref-toggle[aria-pressed="true"]:hover svg,
