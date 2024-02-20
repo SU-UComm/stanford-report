@@ -9,7 +9,7 @@
     "intro": "We meet the full financial need of every admitted undergraduate who qualifies for assistance."
   },
   "quoteConfig": {
-    "include": "Yes",
+    "include": true,
     "quote": "...it came with such a generous financial aid package, that made the decision really easy for me. I just figured, okay, if it’s the cheapest option and it’s Stanford, might as well take it.",
     "name": "Grayson Armour",
     "extra": "on his acceptance to Stanford",

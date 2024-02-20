@@ -103,9 +103,8 @@
             "properties": {
               "include": {
                 "title": "Would you like to include a quote?",
-                "default": "Yes",
-                "enum": ["Yes", "No"],
-                "type": "string"
+                "default": true,
+                "type": "boolean"
               }
             },
             "allOf": [
@@ -114,7 +113,7 @@
                   "required": [],
                   "properties": {
                     "include": {
-                      "const": "Yes"
+                      "const": true
                     }
                   }
                 },

@@ -37,6 +37,7 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
                 src={bkgConfig.bkgVideo}
                 title="video"
                 className="su-absolute su-box-border su-min-w-full su-min-h-full su-w-[177.77777778vh] su-h-[56.25vw] su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
+                allow="autoplay; fullscreen"
               />
             </div>
           ) : (
