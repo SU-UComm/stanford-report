@@ -24,7 +24,7 @@
     "credit": "Isaac Astley"
   },
   "displayConfiguration": {
-    "displayIconHeading": false,
+    "displayIconHeading": true,
     "backgroundColor": "Grey"
   }
 }
