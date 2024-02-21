@@ -314,7 +314,7 @@
   }
   .report-header--story.report-header--collapsed .report-header__story {
     transform: translateY(-50%);
-    top: 50%;
+    top: 57%;
     opacity: 1;
   }
   .report-header--story.report-header--collapsed .report-header__story > * {
