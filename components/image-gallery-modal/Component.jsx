@@ -87,7 +87,7 @@ export default function Base({
       : contentConfiguration.caption || contentConfiguration.credit;
 
   // change {testImages} back to {data}
-  const leftOverImages = data.length - data.length;
+  const leftOverImages = data.length - previewData.length;
 
   return (
     <>
