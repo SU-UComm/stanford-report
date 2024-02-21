@@ -83,7 +83,7 @@ export default class ReportHeader {
           );
 
           inputWrapper.value = "";
-          // inputWrapper.classList.remove("input-has-value");
+          inputWrapper.classList.remove("input-has-value");
         });
       });
     }
