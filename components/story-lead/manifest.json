@@ -44,20 +44,6 @@
             }
           },
           {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
-            }
-          },
-          {
             "location": "footer",
             "file": {
               "type": "js",
@@ -78,6 +64,19 @@
           "inputData": {
             "type": "file",
             "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/basicstory.html"
+          }
+        }
+      }
+    },
+    "featured": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "featured.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
