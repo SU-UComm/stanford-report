@@ -1,18 +1,50 @@
-import hydrateComponent from "../../packages/utils/hydrate-component";
+// import hydrateComponent from "../../packages/utils/hydrate-component";
+import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
 import Component from "./Component";
+import getCookie from "../../packages/utils/cookieGet";
+import relatedStoryData from "./scripts/relatedStory";
+
 import _preferencesSettings from "./scripts/preferenceSettings";
 import ReportHeader from "./scripts/reportHeader";
 
-(function () {
+(async function () {
   const componentName = "header-component";
-  const target = document.querySelector(
+  const element = document.querySelector(
     `[data-hydration-component="${componentName}"]`
   );
 
-  if (!target) return;
+  if (!element) return;
 
+  const props = JSON.parse(element.getAttribute("data-hydration-props"));
+
+  const pageData =
+    typeof window.pageController !== "undefined" ? window.pageController : null;
+  props.pageData = pageData;
+
+  const cdpConsentCookie = JSON.parse(getCookie("squiz.cdp.consent"));
+  props.consentData = cdpConsentCookie
+    ? !!Number(cdpConsentCookie?.CDPConsent)
+    : false;
+
+  const audienceData = getCookie("preferences_personalisation");
+  props.audienceData = audienceData;
+  if (audienceData === "null") {
+    props.audienceData = null;
+  }
+
+  const fbStoryData = await relatedStoryData(
+    pageData,
+    props.search,
+    audienceData
+  );
+  props.relatedStoryData = fbStoryData;
+
+  element.setAttribute("data-hydration-props", JSON.stringify(props));
+
+  console.log("props", props);
+
+  hydrateComponent({ Component, componentName });
   const headerDom = document.querySelector(".report-header");
   const initHeader = new ReportHeader(headerDom);
   _preferencesSettings();
-  hydrateComponent({ Component, componentName });
 })();
