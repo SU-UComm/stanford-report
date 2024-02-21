@@ -42,7 +42,7 @@ export default function Search({ endpoint, collection, profile }) {
           <button
             type="button"
             data-role="clear-search"
-            className="su-hidden su-h-[48px] su-absolute su-top-[2px] su-right-[70px] su-text-digital-blue su-text-[20px]"
+            className="report-header__clear su-hidden su-h-[48px] su-absolute su-top-[2px] su-right-[70px] su-text-digital-blue su-text-[20px]"
           >
             Clear <span className="sr-only">Search</span>
           </button>

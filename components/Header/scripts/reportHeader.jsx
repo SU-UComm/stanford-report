@@ -86,9 +86,12 @@ export default class ReportHeader {
             `[data-role="search-query"]`
           );
 
-          inputWrapper.value = "";
-          btn.classList.add("su-hidden");
-          inputWrapper.focus();
+          // inputWrapper.value = "";
+
+          setTimeout(() => {
+            btn.classList.add("su-hidden");
+            inputWrapper.focus();
+          }, 0);
         });
       });
     }
