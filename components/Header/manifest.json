@@ -38,9 +38,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "dataUrl"
-        ]
+        "required": ["dataUrl"]
       },
       "output": {
         "responseType": "html",
@@ -50,20 +48,6 @@
             "file": {
               "type": "css",
               "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
             }
           },
           {
