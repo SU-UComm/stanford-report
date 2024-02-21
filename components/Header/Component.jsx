@@ -90,6 +90,15 @@ export default function Header({ site, navigation, search }) {
                 audience={audience}
               />
 
+              <span>
+                <span
+                  data-tp-to="submit-btn"
+                  data-role="search-focus-trap"
+                  tabIndex="0"
+                  className="su-hidden"
+                />
+              </span>
+
               <button
                 type="button"
                 className="su-hidden su-relative su-z-40 su-order-3 su-w-[32px] md:su-flex su-flex-wrap su-gap-[3px] su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"

@@ -36,10 +36,11 @@ export default function Search({ endpoint, collection, profile }) {
             placeholder="Search"
             id="desktop_search_query"
             tabIndex="0"
+            data-role="search-query"
             required
           />
           <button
-            type="submit"
+            type="button"
             className="report-header__clear su-h-[48px] su-absolute su-top-[2px] su-right-[70px] su-text-digital-blue su-text-[20px]"
           >
             Clear <span className="sr-only">Search</span>

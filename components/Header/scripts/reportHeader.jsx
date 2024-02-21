@@ -78,9 +78,12 @@ export default class ReportHeader {
     if (searchClear.length) {
       searchClear.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-          const inputWrapper =
-            btn.parentElement.querySelector(".twitter-typeahead");
-          inputWrapper.classList.remove("input-has-value");
+          const inputWrapper = btn.parentNode.querySelector(
+            `[data-role="search-query"]`
+          );
+
+          inputWrapper.value = "";
+          // inputWrapper.classList.remove("input-has-value");
         });
       });
     }
@@ -138,6 +141,10 @@ export default class ReportHeader {
     /**
      * search menu
      */
+    const searchTrap = document.querySelector(
+      `[data-role="search-focus-trap"]`
+    );
+
     this.searchToggle.addEventListener("click", () => {
       const menu = this.parent.querySelector("#search");
       const isToggled = this.searchToggle.getAttribute("aria-expanded");
@@ -149,9 +156,13 @@ export default class ReportHeader {
         setTimeout(() => {
           menu.classList.add("su-hidden");
           menu.classList.remove("su-block");
+
+          searchTrap.classList.add("su-hidden");
+          searchTrap.classList.remove("su-block");
         }, 300);
       } else {
         menu.classList.remove("su-hidden");
+        searchTrap.classList.remove("su-hidden");
 
         setTimeout(() => {
           this.searchToggle.setAttribute("aria-expanded", "true");
@@ -171,6 +182,9 @@ export default class ReportHeader {
         setTimeout(() => {
           menu.classList.remove("su-block");
           menu.classList.add("su-hidden");
+
+          searchTrap.classList.remove("su-block");
+          searchTrap.classList.add("su-hidden");
         }, 300);
       });
     });
