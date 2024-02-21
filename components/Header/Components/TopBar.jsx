@@ -9,7 +9,7 @@ import React from "react";
 
 export default function TopBar({ url = "", logo = null }) {
   return (
-    <div className="report-header__utility su-w-full su-bg-digital-red su-pt-[30px] md:su-pt-0 su-relative su-z-40">
+    <div className="report-header__utility su-w-full su-bg-digital-red su-pt-[30px] su-relative su-z-40">
       <div className="su-max-w-[1412px] su-px-[20px] md:su-px-[49px] su-w-full su-mx-auto">
         <a
           href={url}
