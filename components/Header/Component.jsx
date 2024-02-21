@@ -90,7 +90,7 @@ export default function Header({ site, navigation, search }) {
                 audience={audience}
               />
 
-              <span>
+              <span className="su-absolute">
                 <span
                   data-tp-to="submit-btn"
                   data-role="search-focus-trap"

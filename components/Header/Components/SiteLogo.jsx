@@ -9,7 +9,7 @@ import React from "react";
 //
 export default function SiteLogo({ url = "", logo = null, logoLight = null }) {
   return (
-    <div className="report-header__logo su-py-[20px] lg:su-pt-[27px] lg:su-pb-[16px] su-z-40 su-relative">
+    <div className="report-header__logo lg:su-pt-[27px] lg:su-pb-[16px] su-z-40 su-relative">
       <a href={url} className="dark:su-hidden" data-ga-action="logo">
         <img
           className="img-responsive su-w-[226px] md:su-w-[278px] lg:su-w-[406px]"

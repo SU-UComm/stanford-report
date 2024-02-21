@@ -237,9 +237,11 @@ export default class ReportHeader {
       const header = this.parent;
       if (window.scrollY > 32) {
         header.classList.add("report-header--collapsed");
+        header.querySelector(".report-header__logo").classList.add("!su-p-0");
         return;
       }
       header.classList.remove("report-header--collapsed");
+      header.querySelector(".report-header__logo").classList.remove("!su-p-0");
     });
   }
 }
