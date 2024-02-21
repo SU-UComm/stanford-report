@@ -250,9 +250,9 @@
   box-shadow: none;
   outline-offset: 0;
 }
-/* .report-header .report-header__clear {
+.report-header .report-header__clear {
   display: none;
-} */
+}
 .report-header input:required:valid + .report-header__clear,
 .report-header .input-has-value + .report-header__clear {
   display: block;
