@@ -191,11 +191,13 @@ export default function MobileNav({ navigation, search, audience }) {
             defaultValue=""
             placeholder="Search"
             id="mobile_search_query"
+            data-role="search-query"
             required
           />
           <button
             type="reset"
             className="report-header__clear su-h-[48px] su-absolute su-top-[2px] su-right-[70px] su-text-digital-blue su-text-[20px]"
+            data-role="clear-search"
           >
             Clear <span className="sr-only">Search</span>
           </button>

@@ -58,32 +58,37 @@ export default class ReportHeader {
 
   // Add typeahead for
   handleSearchInputs() {
+    // const searchInputs = document.querySelectorAll(
+    //   '.twitter-typeahead input[name="query"]'
+    // );
     const searchInputs = document.querySelectorAll(
-      '.twitter-typeahead input[name="query"]'
+      `[data-role="search-query"]`
     );
+    const clearButton = document.querySelectorAll(`[data-role="clear-search"]`);
+
     if (searchInputs.length) {
-      searchInputs.forEach((input) => {
-        input.addEventListener("input", () => {
+      searchInputs.forEach((input, i) => {
+        input.addEventListener("keyup", () => {
           if (input.value !== "") {
-            input.parentElement.classList.add("input-has-value");
+            clearButton[i].classList.remove("su-hidden");
           } else {
-            input.parentElement.classList.remove("input-has-value");
+            clearButton[i].classList.add("su-hidden");
           }
         });
       });
     }
 
     // Clear the class on click
-    const searchClear = document.querySelectorAll(".report-header__clear");
-    if (searchClear.length) {
-      searchClear.forEach((btn) => {
+    if (clearButton.length) {
+      clearButton.forEach((btn) => {
         btn.addEventListener("click", (e) => {
           const inputWrapper = btn.parentNode.querySelector(
             `[data-role="search-query"]`
           );
 
           inputWrapper.value = "";
-          inputWrapper.classList.remove("input-has-value");
+          btn.classList.add("su-hidden");
+          inputWrapper.focus();
         });
       });
     }
