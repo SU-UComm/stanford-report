@@ -1,16 +1,16 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "basic-story-hero",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "namespace": "stanford-components",
-  "description": "Stanford university Base component.",
-  "displayName": "basic story hero",
+  "description": "The basic story hero appears on basic story pages",
+  "displayName": "Basic story hero",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "flag",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "pink"
     }
   },
   "functions": [
@@ -37,20 +37,6 @@
             "file": {
               "type": "css",
               "filepath": "client.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
             }
           },
           {

@@ -11,7 +11,7 @@ import React from "react";
  *
  * @return {JSX.element}
  */
-export function Avatar({ image, avatarSize = "small" }) {
+export function Avatar({ image, avatarSize = "small", alt = "" }) {
   const avatarWrapperClasses = new Map();
   avatarWrapperClasses.set(
     "small",
@@ -54,7 +54,7 @@ export function Avatar({ image, avatarSize = "small" }) {
           avatarImageClasses.get(avatarSize),
         ].join(" ")}
         src={image}
-        alt=""
+        alt={alt}
       />
     </div>
   ) : (

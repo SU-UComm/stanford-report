@@ -90,12 +90,22 @@ export default function Header({ site, navigation, search }) {
                 audience={audience}
               />
 
+              <span className="su-absolute">
+                <span
+                  data-tp-to="submit-btn"
+                  data-role="search-focus-trap"
+                  tabIndex="0"
+                  className="su-hidden"
+                />
+              </span>
+
               <button
                 type="button"
                 className="su-hidden su-relative su-z-40 su-order-3 su-w-[32px] md:su-flex su-flex-wrap su-gap-[3px] su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
                 aria-controls="search"
                 aria-expanded="false"
                 aria-labelledby="toggle-search"
+                data-location="close-search"
               >
                 <span className="icon-search su-relative su-h-[32px] su-w-[32px]">
                   <SearchIcon />

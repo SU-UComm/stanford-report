@@ -23,27 +23,35 @@ import { Avatar } from "../quotes/Avatar";
  */
 
 export default function AvatarCard({
-  data: { imageUrl, title, liveUrl, authorName },
+  data: { title, liveUrl, authorDisplayName, authorAvatar },
 }) {
   return title ? (
     <article
       data-test="avatar-card"
-      className="su-component-card-pullquote su-relative su-w-full su-pl-0 lg:su-pl-[52px] su-flex su-flex-wrap su-justify-center su-gap-[27px]"
+      className="su-component-card su-relative su-w-full md:su-basis-1/3 su-flex su-flex-wrap su-gap-[10px] lg:su-content-start lg:su-max-w-[293px]"
     >
-      {title && (
-        <h3 className="su-text-[21px] lg:su-text-[24px] su-leading-[25.2px] lg:su-leading-[28.8px] su-flex-grow su-my-0 su-font-serif su-w-full">
-          <a
-            href={liveUrl}
-            className="focus:su-outline-0 focus:su-ring su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-font-bold su-no-underline hover:su-text-digital-red dark:su-text-white dark:hover:su-text-dark-mode-red"
-          >
-            {title}
-          </a>
-        </h3>
-      )}
-      {authorName && (
-        <div className="su-flex su-self-end lg:su-self-start su-items-center su-gap-[10px] su-ml-[-3px] su-mb-[-3px] su-text-black dark:su-text-white su-text-[16px] su-leading-[19.106px]">
-          <Avatar image={imageUrl} avatarSize="small" />
-          <span>{authorName}</span>
+      <h3 className="su-text-[21px] lg:su-text-[24px] su-leading-[25.2px] lg:su-leading-[28.8px] su-flex-grow su-my-0 su-font-serif su-w-full">
+        <a
+          href={liveUrl}
+          className="focus:su-outline-0 focus:su-ring su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-font-bold su-no-underline hover:su-text-digital-red dark:su-text-white dark:hover:su-text-dark-mode-red"
+        >
+          {title}
+        </a>
+      </h3>
+      {authorDisplayName && (
+        <div
+          className={`su-flex su-w-full su-min-h-[56px] su-self-end lg:su-self-start su-items-center su-gap-[10px] ${
+            authorAvatar ? "su-ml-[-3px] su-mb-[-3px]" : ""
+          } su-text-black dark:su-text-white su-text-[16px] su-leading-[19.106px]`}
+        >
+          {authorAvatar && (
+            <Avatar
+              image={authorAvatar}
+              avatarSize="small"
+              alt={`Photo of ${authorDisplayName}`}
+            />
+          )}
+          <span>{authorDisplayName}</span>
         </div>
       )}
     </article>
