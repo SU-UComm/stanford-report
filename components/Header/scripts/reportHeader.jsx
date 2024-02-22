@@ -70,8 +70,10 @@ export default class ReportHeader {
       searchInputs.forEach((input, i) => {
         input.addEventListener("keyup", () => {
           if (input.value !== "") {
+            input.parentNode.classList.add("input-has-value");
             clearButton[i].classList.remove("su-hidden");
           } else {
+            input.parentNode.classList.remove("input-has-value");
             clearButton[i].classList.add("su-hidden");
           }
         });
@@ -82,13 +84,11 @@ export default class ReportHeader {
     if (clearButton.length) {
       clearButton.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-          const inputWrapper = btn.parentNode.querySelector(
-            `[data-role="search-query"]`
-          );
+          const inputWrapper = btn.parentNode.querySelector(`.input-has-value`);
 
-          inputWrapper.value = "";
+          inputWrapper.classList.remove("input-has-value");
+
           btn.classList.add("su-hidden");
-          inputWrapper.focus();
         });
       });
     }

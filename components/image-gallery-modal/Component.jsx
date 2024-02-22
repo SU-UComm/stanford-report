@@ -80,8 +80,14 @@ export default function Base({
   `
   );
 
+  // caption & credit
+  const captionCredit =
+    contentConfiguration.caption && contentConfiguration.credit
+      ? `${contentConfiguration.caption} | ${contentConfiguration.credit}`
+      : contentConfiguration.caption || contentConfiguration.credit;
+
   // change {testImages} back to {data}
-  const leftOverImages = data.length - data.length;
+  const leftOverImages = data.length - previewData.length;
 
   return (
     <>
@@ -141,7 +147,7 @@ export default function Base({
             aria-label="Open image gallery"
             type="button"
             className={[
-              "su-grid su-grid-cols-2 su-grid-rows-2 su-max-w-[1312px] su-gap-x-[0.691rem] su-gap-y-[0.572rem] su-mt-[3.2rem]",
+              "su-grid su-grid-cols-2 su-grid-rows-2 su-max-w-[1312px] su-gap-x-[0.691rem] su-gap-y-[0.572rem] su-mt-[3.2rem] su-pb-[1rem]",
               "md:su-mt-[4.8rem] md:su-gap-x-[1.448rem] md:su-gap-y-[1.199rem]",
               "lg:su-gap-x-[2.589rem] lg:su-gap-y-[2.143rem]",
             ].join(" ")}
@@ -151,6 +157,10 @@ export default function Base({
               remainingImageCount={leftOverImages}
             />
           </button>
+
+          <div className="su-text-[1.5rem] su-w-full su-text-center dark:su-text-[white]">
+            {captionCredit}
+          </div>
         </Container>
       </div>
 
