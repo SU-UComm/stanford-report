@@ -937,6 +937,16 @@ WYSIWYG formatting styles
   @apply su-h-[5px] !important;
 }
 
+.su-page-story-featured * + [data-component="acknowledgement"],
+.su-page-story-featured .su-lower-content [data-component="acknowledgement"] {
+  @apply su-rs-mt-5 xl:su-rs-mt-8 !important;
+}
+
+.su-page-story-basic * + [data-component="acknowledgement"],
+.su-page-story-basic .su-lower-content [data-component="acknowledgement"] {
+  @apply su-rs-mt-5 !important;
+}
+
 /* Metadata */
 .su-page:not(.su-page-has-sidebar)
   .su-lower-content
