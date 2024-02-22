@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "subscribe-to-stanford-report",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "namespace": "stanford-components",
   "description": "Allows users to be able to subscribe to Stanford Report newsletters",
   "displayName": "Subscribe to Stanford Report",
@@ -38,8 +38,8 @@
               },
               "actionLink": {
                 "title": "Form action",
-                "description": "Where the subscription function executes.",
-                "type": "SquizLink"
+                "description": "Subscription service endpoint",
+                "type": "string"
               }
             }
           }
