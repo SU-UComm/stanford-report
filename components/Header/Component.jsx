@@ -52,7 +52,7 @@ export default function Header({
       console.log("cookie consent accepted");
     } else {
       await cdpSetConsent(0);
-      setConsent(false);
+      setConsent(true);
       console.log("cookie consent NOT accepted");
       // set consent CDP = 0
     }
@@ -162,13 +162,11 @@ export default function Header({
                 logoLight={site.logoLight}
               />
 
-              {pageControls?.isStory && relatedStoryData ? (
+              {pageControls?.isStory && (
                 <CurrentStoryHeadline
                   title={pageControls.title}
                   story={relatedStory}
                 />
-              ) : (
-                ""
               )}
 
               <PreferencesTray
