@@ -928,3 +928,11 @@ WYSIWYG formatting styles
   height: 100%;
   position: absolute;
 }
+
+/* Acknowledgement */
+.su-page-story-basic
+  [data-component="acknowledgement"]
+  .su-component-container
+  > hr {
+  @apply su-h-[5px] !important;
+}
