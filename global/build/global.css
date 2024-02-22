@@ -3217,3 +3217,27 @@ WYSIWYG formatting styles
   > hr{
   height: 5px !important;
 }
+
+/* Metadata */
+
+.su-page:not(.su-page-has-sidebar)
+  .su-lower-content
+  [data-component="metadata-fields"]{
+  margin-top: 3.8rem !important;
+}
+
+@media (min-width: 768px){
+  .su-page:not(.su-page-has-sidebar)
+  .su-lower-content
+  [data-component="metadata-fields"]{
+    margin-top: 7.2rem !important;
+  }
+}
+
+@media (min-width: 1500px){
+  .su-page:not(.su-page-has-sidebar)
+  .su-lower-content
+  [data-component="metadata-fields"]{
+    margin-top: 7.6rem !important;
+  }
+}
