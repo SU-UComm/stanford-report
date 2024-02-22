@@ -936,3 +936,10 @@ WYSIWYG formatting styles
   > hr {
   @apply su-h-[5px] !important;
 }
+
+/* Metadata */
+.su-page:not(.su-page-has-sidebar)
+  .su-lower-content
+  [data-component="metadata-fields"] {
+  @apply su-rs-mt-5 !important;
+}
