@@ -58,7 +58,7 @@ export default function FeaturedContent({
         <a
           href={card.liveUrl}
           aria-labelledby={`aria-announcement-${i}`}
-          className="su-transition dark:su-text-digital-blue-vivid su-flex su-flex-nowrap su-gap-[2px] su-items-center su-leading-[20px] su-text-[16px] su-font-bold su-no-underline before:su-w-full before:su-h-full before:su-top-0 before:su-left-0 before:su-absolute [&>svg]:su-w-[16px] [&>svg]:su-h-[16px]"
+          className="su-transition dark:su-text-digital-blue-vivid su-text-digital-blue su-flex su-flex-nowrap su-gap-[2px] su-items-center su-leading-[20px] su-text-[16px] su-font-bold su-no-underline before:su-w-full before:su-h-full before:su-top-0 before:su-left-0 before:su-absolute [&>svg]:su-w-[16px] [&>svg]:su-h-[16px]"
         >
           <span>Read more</span>
           <ChevronRight />
