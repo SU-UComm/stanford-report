@@ -3218,6 +3218,65 @@ WYSIWYG formatting styles
   height: 5px !important;
 }
 
+.su-page-story-featured * + [data-component="acknowledgement"],
+.su-page-story-featured .su-lower-content [data-component="acknowledgement"]{
+  margin-top: 3.8rem !important;
+}
+
+@media (min-width: 768px){
+  .su-page-story-featured * + [data-component="acknowledgement"],
+.su-page-story-featured .su-lower-content [data-component="acknowledgement"]{
+    margin-top: 7.2rem !important;
+  }
+}
+
+@media (min-width: 1500px){
+  .su-page-story-featured * + [data-component="acknowledgement"],
+.su-page-story-featured .su-lower-content [data-component="acknowledgement"]{
+    margin-top: 7.6rem !important;
+  }
+}
+
+@media (min-width: 1200px){
+  .su-page-story-featured * + [data-component="acknowledgement"],
+.su-page-story-featured .su-lower-content [data-component="acknowledgement"]{
+    margin-top: 6rem !important;
+  }
+
+  @media (min-width: 768px){
+    .su-page-story-featured * + [data-component="acknowledgement"],
+.su-page-story-featured .su-lower-content [data-component="acknowledgement"]{
+      margin-top: 12.6rem !important;
+    }
+  }
+
+  @media (min-width: 1500px){
+    .su-page-story-featured * + [data-component="acknowledgement"],
+.su-page-story-featured .su-lower-content [data-component="acknowledgement"]{
+      margin-top: 13.3rem !important;
+    }
+  }
+}
+
+.su-page-story-basic * + [data-component="acknowledgement"],
+.su-page-story-basic .su-lower-content [data-component="acknowledgement"]{
+  margin-top: 3.8rem !important;
+}
+
+@media (min-width: 768px){
+  .su-page-story-basic * + [data-component="acknowledgement"],
+.su-page-story-basic .su-lower-content [data-component="acknowledgement"]{
+    margin-top: 7.2rem !important;
+  }
+}
+
+@media (min-width: 1500px){
+  .su-page-story-basic * + [data-component="acknowledgement"],
+.su-page-story-basic .su-lower-content [data-component="acknowledgement"]{
+    margin-top: 7.6rem !important;
+  }
+}
+
 /* Metadata */
 
 .su-page:not(.su-page-has-sidebar)
