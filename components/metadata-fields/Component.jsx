@@ -16,8 +16,10 @@ import FeaturedMetadata from "../../packages/metadata-fields/FeaturedMetadata";
 export default function MetadataFields(data) {
   const { type } = data;
 
+  console.log(data);
+
   switch (type) {
-    // switch ("Featured") {
+    // switch ("Basic") {
     case "Basic":
       return (
         <Container width="narrow" data-component="metadata-fields">
