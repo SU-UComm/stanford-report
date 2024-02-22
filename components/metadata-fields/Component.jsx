@@ -18,8 +18,8 @@ export default function MetadataFields(data) {
 
   console.log(data);
 
-  // switch (type) {
-  switch ("Basic") {
+  switch (type) {
+    // switch ("Basic") {
     case "Basic":
       return (
         <Container width="narrow" data-component="metadata-fields">
