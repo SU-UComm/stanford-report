@@ -116,7 +116,7 @@ export default function FeaturedMetadata({ data }) {
                       (item) =>
                         item && (
                           <p
-                            className="su-m-0 su-text-16 su-leading-[19.1px] su-font-normal md:su-text-21 md:su-leading-[26.25px]"
+                            className="!su-m-0 su-text-16 su-leading-[19.1px] su-font-normal md:su-text-21 md:su-leading-[26.25px]"
                             key={item.asset_assetid}
                           >
                             {item.asset_name}
@@ -162,7 +162,7 @@ export default function FeaturedMetadata({ data }) {
                       (item) =>
                         item && (
                           <p
-                            className="su-m-0 su-text-16 su-leading-[19.1px] su-font-normal md:su-text-21 md:su-leading-[26.25px]"
+                            className="!su-m-0 su-text-16 su-leading-[19.1px] su-font-normal md:su-text-21 md:su-leading-[26.25px]"
                             key={item.asset_assetid}
                           >
                             {item.asset_name}

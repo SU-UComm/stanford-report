@@ -1,6 +1,7 @@
 import React from "react";
 
 // these are our specific templates for the component.
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import Card from "../../packages/card/Card";
 import { LinkedHeading } from "../../packages/headings/Heading";
 import { FeaturedGrid, HorizontalCardGrid } from "../../packages/grids/Grids";
@@ -48,16 +49,16 @@ export default function FeaturedContent({
   announcementData.forEach((card, i) => {
     announcementCards.push(
       <article className="su-relative su-mt-0 su-gap-6 su-flex su-flex-wrap">
-        <p
-          className="su-w-full su-text-black dark:su-text-white su-mb-0 su-text-18 su-leading-[22.5px] su-font-sans"
+        <XssSafeContent
           id={`aria-announcement-${i}`}
-        >
-          {card.description}
-        </p>
+          className="su-wysiwyg-content su-w-full su-text-black dark:su-text-white su-mb-0 su-text-18 su-leading-[2.25rem] su-font-sans"
+          content={card.description}
+          elementType="p"
+        />
         <a
           href={card.liveUrl}
           aria-labelledby={`aria-announcement-${i}`}
-          className="su-transition dark:su-text-digital-blue-vivid su-flex su-flex-nowrap su-gap-2 su-items-center su-leading-[20px] su-text-16 su-font-bold su-no-underline before:su-w-full before:su-h-full before:su-top-0 before:su-left-0 before:su-absolute [&>svg]:su-w-16 [&>svg]:su-h-16"
+          className="su-transition dark:su-text-digital-blue-vivid su-text-digital-blue su-flex su-flex-nowrap su-gap-2 su-items-center su-leading-[125%] su-text-16 su-font-bold su-no-underline before:su-size-full before:su-top-0 before:su-left-0 before:su-absolute [&>svg]:su-size-16"
         >
           <span>Read more</span>
           <ChevronRight />

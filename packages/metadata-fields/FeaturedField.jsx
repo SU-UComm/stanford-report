@@ -12,7 +12,7 @@ export default function FeaturedField({ title, children, alignment = "left" }) {
         {title}
       </h3>
 
-      <div>{children}</div>
+      <div className="">{children}</div>
     </div>
   );
 }

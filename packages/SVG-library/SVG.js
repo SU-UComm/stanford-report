@@ -41,6 +41,7 @@ export { default as ExternalArrow } from "./ExternalArrow";
 export { default as Infographic } from "./Infographic";
 export { default as InTheNews } from "./InTheNews";
 export { default as LeadershipMessages } from "./LeadershipMessages";
+export { default as MediaGallery } from "./MediaGallery";
 export { default as Obituary } from "./Obituary";
 export { default as Opinion } from "./Opinion";
 export { default as Photo } from "./Photo";

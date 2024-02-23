@@ -19,15 +19,14 @@ export default function Acknowledgement({ title, content }) {
     <Container width="narrow">
       <hr
         aria-hidden="true"
-        className="su-mb-36 su-border-none su-w-100 su-h-5 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive"
+        className="su-mb-36 su-border-none su-w-100 su-h-6 lg:su-h-9 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive"
       />
       {title && <h2 className="sr-only">{title}</h2>}
       <XssSafeContent
         data-test="acknowledgement"
         className={[
           "su-wysiwyg-content",
-          "*:su-text-16 *:md:su-text-19",
-          "*:su-leading",
+          "*:su-basefont-19",
           "su-mb-36 [&>*:last-child]:su-mb-0",
         ].join(" ")}
         content={content}

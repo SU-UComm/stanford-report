@@ -18,11 +18,15 @@ export function MultiColumnGrid({ items, separator = false }) {
   const gapClasses = new Map();
   gapClasses.set(
     "2col",
-    "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[160px]"
+    separator
+      ? "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[160px]"
+      : "su-gap-[34px] md:su-gap-[72px] lg:su-gap-[160px]"
   );
   gapClasses.set(
     "3col",
-    "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[102px]"
+    separator
+      ? "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[102px]"
+      : "su-gap-[34px] md:su-gap-[72px] lg:su-gap-[160px]"
   );
 
   const gridItems =

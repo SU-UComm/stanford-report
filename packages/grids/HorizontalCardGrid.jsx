@@ -30,7 +30,7 @@ export function HorizontalCardGrid({
     "su-grid-cols-1 md:su-grid-cols-2 lg:su-grid-cols-3 su-gap-[34px] md:su-gap-36 lg:su-gap-48"
   );
 
-  return gridItems.length > MINIMUM_ITEMS ? (
+  return gridItems.length >= MINIMUM_ITEMS ? (
     <div
       className="su-w-full su-component-horizontal-card-grid"
       data-test={`orientation-${orientation}`}

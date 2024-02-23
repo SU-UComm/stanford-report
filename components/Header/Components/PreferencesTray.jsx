@@ -169,7 +169,7 @@ export default function PreferencesTray({ audience }) {
         id="preferences"
         aria-label="Preferences"
         aria-hidden="true"
-        className="report-header__preferences-tray su-shadow su-z-50 su-fixed su-right-0 su-top-0 su-size-full"
+        className="su-hidden report-header__preferences-tray su-shadow su-z-50 su-fixed su-right-0 su-top-0 su-size-full"
       >
         <div className="report-header__overlay su-bg-black su-opacity-25 su-size-full" />
         <div className="report-header__preferences su-h-screen su-bg-white dark:su-bg-black-true su-absolute su-top-0 su-right-0 su-w-full md:su-w-[398px] su-flex su-flex-wrap su-overflow-y-auto su-pb-32 md:su-pb-[64px] su-pt-[115px] md:su-pt-[167px] su-px-38">
@@ -180,11 +180,14 @@ export default function PreferencesTray({ audience }) {
               </h2>
               <ul className="su-flex su-list-none su-pl-0 su-gap-18 su-w-full">
                 <li className="su-mb-0 su-w-1/2">
+                  <span tabIndex="0" data-tp-to="close-prefs" />
+
                   <button
                     type="button"
                     id="preference-student"
                     aria-pressed={audience === "student" ? "true" : "false"}
-                    className="report-header__pref-toggle su-size-full group su-bg-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent dark:hover:su-text-black-true aria-pressed:dark:su-text-black-true aria-pressed:su-bg-transparent hover:su-bg-transparent dark:su-bg-black-true &[aria-pressed=“true”]:dark:su-bg-transparent before:su-rounded-inherit after:su-rounded-inherit before:su-bg-gradient-light-red after:su-transition-none su-transition before:su-transition after:su-bg-gradient-light-red dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-py-26 su-px-18 su-bg-transparent su-text-center"
+                    className="report-header__pref-toggle hover:su-text-white su-w-full su-h-full aria-pressed:su-text-white group su-bg-white dark:aria-pressed:su-text-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent aria-pressed:su-bg-transparent hover:su-bg-transparent dark:su-bg-black-true &[aria-pressed=“true”]:dark:su-bg-transparent before:su-rounded-inherit after:su-rounded-inherit before:su-bg-gradient-light-red after:su-transition-none su-transition before:su-transition after:su-bg-gradient-light-red dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-py-26 su-px-18 su-bg-transparent su-text-center"
+                    data-location="student-info"
                   >
                     <span className="icon-add su-block su-mx-auto su-relative su-w-[44px] su-h-[44px] su-text-digital-red dark:su-text-dark-mode-red">
                       <svg
@@ -243,7 +246,7 @@ export default function PreferencesTray({ audience }) {
                     type="button"
                     id="preference-faculty"
                     aria-pressed={audience === "faculty" ? "true" : "false"}
-                    className="report-header__pref-toggle su-size-full group su-bg-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent dark:hover:su-text-black-true aria-pressed:dark:su-text-black-true aria-pressed:su-bg-transparent hover:su-bg-transparent dark:su-bg-black-true &[aria-pressed=“true”]:dark:su-bg-transparent before:su-rounded-inherit after:su-rounded-inherit before:su-bg-gradient-light-red after:su-transition-none su-transition before:su-transition after:su-bg-gradient-light-red dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-py-26 su-px-18 su-bg-transparent su-text-center"
+                    className="report-header__pref-toggle hover:su-text-white su-w-full su-h-full aria-pressed:su-text-white group su-bg-white dark:aria-pressed:su-text-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent aria-pressed:su-bg-transparent hover:su-bg-transparent dark:su-bg-black-true &[aria-pressed=“true”]:dark:su-bg-transparent before:su-rounded-inherit after:su-rounded-inherit before:su-bg-gradient-light-red after:su-transition-none su-transition before:su-transition after:su-bg-gradient-light-red dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-py-26 su-px-18 su-bg-transparent su-text-center"
                   >
                     <span className="icon-add su-block su-mx-auto su-relative su-w-[44px] su-h-[44px] su-text-digital-red dark:su-text-dark-mode-red">
                       <svg
@@ -316,7 +319,7 @@ export default function PreferencesTray({ audience }) {
             </div>
 
             <hr className="su-h-2 su-bg-black-10 dark:su-bg-black su-w-full su-border-none su-my-38" />
-            <form className="su-gap-27 su-flex su-flex-wrap">
+            <form className="su-gap-27 su-flex su-flex-wrap su-pt-38 su-cursor-pointer">
               <fieldset
                 className="su-border-none su-p-0 su-whitespace-nowrap"
                 role="radiogroup"
@@ -332,8 +335,9 @@ export default function PreferencesTray({ audience }) {
                   id="light-theme"
                 />
                 <label
-                  className="su-inline-block su-leading-2 su-relative su-pr-50 su-z-20 after:su-border-palo-verde peer-checked/light:after:su-border-digital-red peer-checked/light:su-text-digital-red su-text-black-50 peer-checked/light:su-z-10 before:su-w-42 before:su-h-15 before:su-bg-gradient-light-red-h peer-checked/light:before:su-rotate-180 before:su-rounded-[12px] before:su-absolute before:su-right-0 before:su-top-6 after:su-transition after:su-top-2 after:su-shadow-sm after:su-bg-white after:su-border-2 after:su-bg-digital-red after:su-rounded-full after:su-w-24 after:su-h-24 after:su-translate-x-0 after:su-absolute after:su-right-0 peer-checked/light:after:su-translate-x-[-20px]"
+                  className="su-inline-block su-leading-2 su-relative su-pr-50 su-z-20 after:su-border-palo-verde peer-checked/light:after:su-border-digital-red peer-checked/light:su-text-digital-red su-text-black-50 peer-checked/light:su-z-10 before:su-w-42 before:su-h-15 su-bg-gradient-before before:su-bg-gradient-light-red-h peer-checked/light:before:su-rotate-180 before:su-rounded-[12px] before:su-absolute before:su-right-0 before:su-top-[6px] after:su-transition after:su-top-2 after:su-shadow-sm after:su-bg-white after:su-border-2 after:su-bg-digital-red after:su-rounded-full after:su-size-24 after:su-translate-x-0 after:su-absolute after:su-right-0 peer-checked/light:after:su-translate-x-[-2rem]"
                   htmlFor="light-theme"
+                  data-theme="light-theme"
                 >
                   <span className="su-inline-block su-align-middle">Light</span>
                   <span
@@ -521,6 +525,7 @@ export default function PreferencesTray({ audience }) {
                 <label
                   className="su-inline-block su-leading-2 su-relative su-align-middle su-z-20 peer-checked/dark:su-z-10 su-pl-50 su-ml-[-44px] peer-checked/dark:su-text-digital-red dark:peer-checked/dark:su-text-palo-verde su-text-black-50"
                   htmlFor="dark-theme"
+                  data-theme="dark-theme"
                 >
                   <span
                     aria-hidden="true"
@@ -554,6 +559,7 @@ export default function PreferencesTray({ audience }) {
             aria-expanded="true"
             aria-controls="menu"
             aria-labelledby="close-preferences"
+            data-location="close-prefs"
           >
             <span className="su-relative su-h-32 su-w-32">
               <svg
@@ -577,6 +583,8 @@ export default function PreferencesTray({ audience }) {
               Close
             </span>
           </button>
+
+          <span tabIndex="0" data-tp-to="student-info" />
         </div>
       </div>
     </div>

@@ -59,6 +59,24 @@ export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
     slidesPerView: 1.4,
     variantClassName: "component-slider-single component-slider-peek",
   });
+  variants.set("imagegallery", {
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      992: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+    },
+    slidesPerView: 1,
+    variantClassName: "component-slider-imagegallery",
+  });
   variants.set("content", {
     breakpoints: {
       0: {

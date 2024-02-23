@@ -13,7 +13,7 @@ export default function Search({ endpoint, collection, profile }) {
       id="search"
       aria-label="Search"
       aria-hidden="true"
-      className="report-header__search-tray su-z-30 su-fixed su-left-0 su-top-0 su-w-full su-h-screen"
+      className="su-hidden report-header__search-tray su-z-30 su-fixed su-left-0 su-top-0 su-w-full su-h-screen"
     >
       <div className="report-header__overlay su-bg-black su-opacity-25 su-size-full" />
       <form
@@ -30,16 +30,19 @@ export default function Search({ endpoint, collection, profile }) {
           <input type="hidden" value={profile} name="profile" />
           <input
             type="search"
-            className="su-w-full su-h-50 dark:su-text-black su-rounded-full su-text-20 su-leading-[26px] su-py-10 su-pl-15 su-pr-[120px] su-bg-white su-border-2 su-border-black-30 hover:su-border-black-40 focus:su-border-digital-blue"
+            className="su-w-full su-h-50 dark:su-text-black su-rounded-full su-text-20 su-leading-[26px] su-py-10 su-pl-15 su-pr-120 su-bg-white su-border-2 su-border-black-30 hover:su-border-black-40 focus:su-border-digital-blue"
             name="query"
             defaultValue=""
             placeholder="Search"
             id="desktop_search_query"
+            tabIndex="0"
+            data-role="search-query"
             required
           />
           <button
-            type="submit"
-            className="report-header__clear su-h-48 su-absolute su-top-2 su-right-70 su-text-digital-blue su-text-20"
+            type="button"
+            data-role="clear-search"
+            className="report-header__clear su-hidden su-h-48 su-absolute su-top-2 su-right-70 su-text-digital-blue su-text-20"
           >
             Clear <span className="sr-only">Search</span>
           </button>
@@ -50,6 +53,7 @@ export default function Search({ endpoint, collection, profile }) {
           <button
             className="su-absolute su-size-40 su-right-10 su-top-5"
             type="submit"
+            data-location="submit-btn"
           >
             <svg
               aria-hidden="true"
@@ -64,6 +68,8 @@ export default function Search({ endpoint, collection, profile }) {
             </svg>
             <span className="sr-only">Submit search</span>
           </button>
+
+          <span tabIndex="0" data-tp-to="close-search" />
         </div>
       </form>
     </div>

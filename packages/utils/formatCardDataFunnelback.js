@@ -17,10 +17,16 @@ export default function formatCardDataFunnelback({
     featuredVideo,
     taxonomyContentMainTopicLandingPageUrl,
     imageAlt,
+    authorName,
+    authorImage,
+    author,
   },
   date,
   liveUrl,
 }) {
+  const authorDisplayName = authorName !== undefined ? authorName : author;
+  const authorAvatar = authorImage !== "" ? authorImage : undefined;
+
   const imageUrl = image;
   const videoUrl = featuredVideo;
 
@@ -41,5 +47,7 @@ export default function formatCardDataFunnelback({
     type,
     videoUrl,
     date,
+    authorDisplayName,
+    authorAvatar,
   };
 }
