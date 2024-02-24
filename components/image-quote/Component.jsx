@@ -39,9 +39,9 @@ export default function ImageQuote({ displayConfiguration, data }) {
         className={[
           "story__quote su-relative",
           "su-flex su-flex-wrap lg:su-flex-nowrap lg:su-items-start",
-          "before:su-absolute before:su-top-45 lg:before:su-top-[72px] before:su-z-0 before:su-right-0 before:su-h-3 su-bg-gradient-before",
+          "before:su-absolute before:su-top-45 lg:before:su-top-72 before:su-z-0 before:su-right-0 before:su-h-3 su-bg-gradient-before",
           widthClasses.line,
-          "after:su-absolute after:su-w-3 after:su-z-[-10] after:su-top-45 lg:after:su-top-[72px] after:su-right-0 after:su-h-[calc(100%-45px)] lg:after:su-h-[calc(100%-72px)] after:su-bg-plum dark:after:su-bg-palo-verde lg:after:su-hidden",
+          "after:su-absolute after:su-w-3 after:su-z-[-10] after:su-top-45 lg:after:su-top-72 after:su-right-0 after:su-h-[calc(100%-45px)] lg:after:su-h-[calc(100%-72px)] after:su-bg-plum dark:after:su-bg-palo-verde lg:after:su-hidden",
         ].join(" ")}
       >
         <figure
@@ -62,7 +62,7 @@ export default function ImageQuote({ displayConfiguration, data }) {
         <figure
           className={[
             "su-ml-0 md:su-w-[83.32%]]",
-            "su-pl-32 su-pr-45 md:su-pr-0 md:su-pl-[51px] md:su-mx-[8.33%] lg:su-mx-0 lg:su-pl-[17.7%] lg:su-mt-[72px] su-flex su-flex-col su-pt-[49px] lg:su-pt-[91px] su-gap-6 md:su-gap-18 lg:su-gap-[29px] su-pr-0 lg:su-pr-[72px] su-relative",
+            "su-pl-32 su-pr-45 md:su-pr-0 md:su-pl-[51px] md:su-mx-[8.33%] lg:su-mx-0 lg:su-pl-[17.7%] lg:su-mt-72 su-flex su-flex-col su-pt-49 lg:su-pt-[91px] su-gap-6 md:su-gap-18 lg:su-gap-29 su-pr-0 lg:su-pr-72 su-relative",
             widthClasses.quote,
             "after:su-hidden lg:after:su-block after:su-absolute after:su-w-3 after:su-z-[-10] after:su-top-45 lg:after:su-top-0 after:su-right-0 lg:after:su-h-full after:su-bg-plum dark:after:su-bg-palo-verde",
           ].join(" ")}

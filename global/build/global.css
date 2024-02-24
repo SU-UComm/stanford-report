@@ -1277,8 +1277,8 @@ h6{
           clip-path: inset(-100vw -100vw 0 0);
 }
 
-.font-serif-4 {
-  font-family: "Source Serif 4", Georgia, Times, "Times New Roman", serif;
+.font-serif-4{
+  font-family: "Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif;
 }
 
 .su-stop-red {
@@ -1339,7 +1339,7 @@ h6{
 .component-slider-cards .swiper-slide::before{
   position: absolute;
   top: 0;
-  left: -20px;
+  left: -2rem;
   height: 100%;
   width: 0.2rem;
   content: var(--tw-content);
@@ -1350,14 +1350,14 @@ h6{
 @media (min-width: 768px){
   .component-slider-cards .swiper-slide::before{
     content: var(--tw-content);
-    left: -36px;
+    left: -3.6rem;
   }
 }
 
 @media (min-width: 992px){
   .component-slider-cards .swiper-slide::before{
     content: var(--tw-content);
-    left: -50px;
+    left: -5rem;
   }
 }
 
@@ -1366,8 +1366,8 @@ h6{
 }
 
 .component-slider-cards{
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -2rem;
+  margin-right: -2rem;
 }
 
 @media (min-width: 768px){
@@ -1400,14 +1400,14 @@ h6{
 }
 
 .component-slider-single.component-slider-peek{
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -2rem;
+  margin-right: -2rem;
 }
 
 @media (min-width: 768px){
   .component-slider-single.component-slider-peek{
-    margin-left: -50px;
-    margin-right: -50px;
+    margin-left: -5rem;
+    margin-right: -5rem;
   }
 }
 
@@ -1419,8 +1419,8 @@ h6{
 }
 
 .component-slider-cards.component-slider-peek{
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -2rem;
+  margin-right: -2rem;
 }
 
 @media (min-width: 768px){
@@ -1553,9 +1553,9 @@ h6{
   position: relative;
   top: auto;
   bottom: 0;
-  height: 37px;
-  min-width: 37px;
-  max-width: 37px;
+  height: 3.7rem;
+  min-width: 3.7rem;
+  max-width: 3.7rem;
   border-radius: 9999px;
   border-width: 2px;
   --tw-border-opacity: 1;
@@ -1717,7 +1717,7 @@ h6{
 
 @media (min-width: 992px){
   .su-modal-content .component-slider{
-    top: 50px;
+    top: 5rem;
   }
 }
 
@@ -2288,7 +2288,7 @@ audio::-webkit-media-controls-panel {
 @media (min-width: 992px){
   .su-page-has-sidebar .su-sidebar-content-wrap{
     flex-wrap: nowrap;
-    gap: 50px;
+    gap: 5rem;
   }
 }
 
@@ -2382,7 +2382,7 @@ audio::-webkit-media-controls-panel {
   .su-page-has-sidebar .su-page-sidebar{
     margin-left: 5rem;
     margin-right: 5rem;
-    margin-top: 110px;
+    margin-top: 11rem;
     padding-left: 7.65%;
     padding-right: 7.65%;
   }
@@ -2396,7 +2396,7 @@ audio::-webkit-media-controls-panel {
     margin-right: 8.33%;
     margin-top: 0;
     width: 25%;
-    max-width: 298px;
+    max-width: 29.8rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -2424,12 +2424,12 @@ audio::-webkit-media-controls-panel {
 
 .su-container-large{
   width: 100%;
-  max-width: 1186px;
+  max-width: 118.6rem;
 }
 
 .su-container-wide{
   width: 100%;
-  max-width: 1412px;
+  max-width: 141.2rem;
 }
 
 .su-container-full{
@@ -2502,10 +2502,10 @@ audio::-webkit-media-controls-panel {
   [data-component="content-carousel"]
   .su-component-container
   > .su-bg-fog-light{
-    margin-left: -61px;
-    margin-right: -61px;
-    padding-left: 61px;
-    padding-right: 61px;
+    margin-left: -6.1rem;
+    margin-right: -6.1rem;
+    padding-left: 6.1rem;
+    padding-right: 6.1rem;
   }
 }
 
@@ -2522,8 +2522,8 @@ audio::-webkit-media-controls-panel {
 /* Campaign CTA on basic story pages */
 
 .su-page-has-sidebar [data-component="campaign-cta"]{
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -2rem;
+  margin-right: -2rem;
 }
 
 @media (min-width: 768px){
@@ -2537,8 +2537,8 @@ audio::-webkit-media-controls-panel {
 
 @media (min-width: 992px){
   .su-page-has-sidebar [data-component="campaign-cta"]{
-    margin-left: -60px;
-    margin-right: -60px;
+    margin-left: -6rem;
+    margin-right: -6rem;
     width: calc(100% + 120px);
   }
 }
@@ -3122,8 +3122,8 @@ WYSIWYG formatting styles
   position: absolute;
   top: .6em;
   left: 1.2rem;
-  height: 4.5px;
-  width: 4.5px;
+  width: 0.45rem;
+  height: 0.45rem;
   content: var(--tw-content);
   border-radius: 9999px;
   background-color: currentColor;
@@ -3205,7 +3205,7 @@ WYSIWYG formatting styles
   [data-component="acknowledgement"]
   .su-component-container
   > hr{
-  height: 5px !important;
+  height: 0.5rem !important;
 }
 
 .su-page-story-featured * + [data-component="acknowledgement"],

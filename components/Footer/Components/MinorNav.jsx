@@ -11,7 +11,7 @@ export default function MinorNav({ navigation }) {
   return (
     navigation &&
     navigation.length > 0 && (
-      <div className="pre-footer-bottom-first su-mb-[37px] md:su-mb-30 lg:su-mb-27">
+      <div className="pre-footer-bottom-first su-mb-37 md:su-mb-30 lg:su-mb-27">
         <ul className="su-list-none su-flex su-pl-0 su-gap-y-11 su-gap-x-20 lg:su-gap-x-27">
           {navigation.map((item) => {
             const title = decode(item.asset_name);

@@ -12,7 +12,7 @@ function MajorLinks({ items }) {
     items.map((item) => {
       const title = decode(item.asset_name);
       return (
-        <div className="pre-footer-links su-mb-[58px]" key={item.asset_assetid}>
+        <div className="pre-footer-links su-mb-58" key={item.asset_assetid}>
           <div className="pre-footer-links-inner before:su-bg-gradient-b pre-footer-vert-gradient">
             <h2 className="su-text-black dark:su-text-white su-mb-11 md:su-mb-11">
               <a

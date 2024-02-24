@@ -28,7 +28,7 @@ export default function MediaFeature({
 
   return (
     <Container width="full" paddingX={false}>
-      <section className="su-py-45 su-px-20 su-flex su-justify-center su-relative md:su-py-[72px] md:su-px-50">
+      <section className="su-py-45 su-px-20 su-flex su-justify-center su-relative md:su-py-72 md:su-px-50">
         <div className="su-max-w-[1086px] su-flex su-flex-col su-items-center su-z-[2] su-relative su-p-38 before:su-content-[''] before:su-bg-foggy-light before:su-w-full before:su-h-full before:su-opacity-90 before:su-absolute before:su-z-[-1] before:su-top-0 before:su-left-0 md:su-flex-row md:su-gap-20 md:su-items-start lg:su-p-48">
           <div className="su-h-[224px] su-w-[224px] su-relative su-shrink-0 md:su-w-[182px] md:su-h-[182px] lg:su-w-[292px] lg:su-h-[292px]">
             <img

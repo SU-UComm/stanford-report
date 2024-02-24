@@ -58,7 +58,7 @@ function descriptionSize(size) {
 
 function gapSize(size) {
   if (size === "featured") return "su-gap-11 md:su-gap-13 lg:su-gap-13";
-  return "su-gap-11 md:su-gap-12 lg:su-gap-[9px]";
+  return "su-gap-11 md:su-gap-12 lg:su-gap-9";
 }
 
 function imageMargin(size) {

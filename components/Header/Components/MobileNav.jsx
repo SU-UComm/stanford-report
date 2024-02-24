@@ -253,13 +253,13 @@ export default function MobileNav({ navigation, search, audience }) {
 
         <button
           type="button"
-          className="report-header__menu-close su-absolute su-right-20 md:su-right-48 su-top-[43px] md:su-top-[75px] su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
+          className="report-header__menu-close su-absolute su-right-20 md:su-right-48 su-top-43 md:su-top-[75px] su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
           aria-expanded="true"
           aria-controls="menu"
           aria-labelledby="close-menu"
           data-location="close"
         >
-          <span className="su-relative su-h-32 su-w-32">
+          <span className="su-relative su-size-32">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"

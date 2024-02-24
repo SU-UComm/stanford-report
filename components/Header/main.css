@@ -168,7 +168,7 @@
   @apply su-bg-transparent su-text-white;
 }
 .su-dark .report-header__pref-toggle[aria-pressed="true"] svg {
-  @apply su-stroke-[white] su-fill-[white] su-text-white;
+  @apply su-stroke-white su-fill-white su-text-white;
 }
 .report-header__pref-toggle::before,
 .report-header__pref-toggle::after {

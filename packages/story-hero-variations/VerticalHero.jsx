@@ -41,7 +41,7 @@ export default function VerticalHero({ data }) {
           <p
             className={[
               "su-w-full su-h-min su-mx-auto su-font-semibold su-text-center font-serif-4 su-text-21 su-leading-[28.79px] su-pb-50 su-m-0",
-              "sm:su-text-[22.5px] sm:su-leading-[27px] sm:su-pb-[72px]",
+              "sm:su-text-[22.5px] sm:su-leading-[27px] sm:su-pb-72",
               "md:su-w-4/5",
               "lg:su-text-[32px] lg:su-leading-[41.68px] lg:su-pb-[76px]",
             ].join(" ")}

@@ -27,7 +27,7 @@ export function HorizontalCardGrid({
   orientationClassMap.set("vertical", "su-grid-cols-1 su-gap-36 md:su-gap-27");
   orientationClassMap.set(
     "horizontal",
-    "su-grid-cols-1 md:su-grid-cols-2 lg:su-grid-cols-3 su-gap-[34px] md:su-gap-36 lg:su-gap-48"
+    "su-grid-cols-1 md:su-grid-cols-2 lg:su-grid-cols-3 su-gap-34 md:su-gap-36 lg:su-gap-48"
   );
 
   return gridItems.length >= MINIMUM_ITEMS ? (

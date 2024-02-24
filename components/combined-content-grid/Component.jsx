@@ -76,8 +76,8 @@ export default function FeaturedContent({
       />
 
       <div className="su-w-full su-component-featured-grid">
-        <div className="su-flex su-flex-wrap lg:su-flex-nowrap su-gap-[68px] md:su-gap-[72px] lg:su-gap-[160px]">
-          <div className="su-relative su-flex su-flex-wrap md:su-flex-nowrap lg:su-flex-wrap lg:su-order-2 md:su-items-start md:su-content-start su-gap-80 md:su-gap-[72px] lg:su-gap-[76px] md:su-basis-[39.5%] lg:su-basis-[30%] su-grow before:su-w-full before:md:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px before:lg:su-h-full before:su-left-0 before:su-bottom-[-35px] before:lg:su-bottom-auto before:lg:su-top-0 before:md:su-left-[0] lg:before:su-w-px before:lg:su-left-[-80px]">
+        <div className="su-flex su-flex-wrap lg:su-flex-nowrap su-gap-[68px] md:su-gap-72 lg:su-gap-[160px]">
+          <div className="su-relative su-flex su-flex-wrap md:su-flex-nowrap lg:su-flex-wrap lg:su-order-2 md:su-items-start md:su-content-start su-gap-80 md:su-gap-72 lg:su-gap-[76px] md:su-basis-[39.5%] lg:su-basis-[30%] su-grow before:su-w-full before:md:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px before:lg:su-h-full before:su-left-0 before:su-bottom-[-35px] before:lg:su-bottom-auto before:lg:su-top-0 before:md:su-left-[0] lg:before:su-w-px before:lg:su-left-[-80px]">
             <div className="su-relative su-w-full md:su-h-full lg:su-h-auto">
               <SidebarList
                 title={eventsConfiguration.heading}

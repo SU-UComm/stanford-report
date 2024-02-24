@@ -12,13 +12,13 @@ export default function PreferencesTray({ audience }) {
     <div className="su-flex su-items-center su-justify-end su-w-32 md:su-w-[85px] lg:su-w-[91px]">
       <button
         type="button"
-        className="su-w-[58px] su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
+        className="su-w-58 su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
         aria-controls="preferences"
         aria-expanded="false"
         aria-labelledby="toggle-preferences"
       >
         <span className="icon-preferences">
-          <span className="su-relative su-h-32 su-w-32 su-block su-mx-auto">
+          <span className="su-relative su-size-32 su-block su-mx-auto">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -40,7 +40,7 @@ export default function PreferencesTray({ audience }) {
           </span>
         </span>
         <span className="icon-faculty">
-          <span className="su-relative su-h-32 su-w-32 su-block su-mx-auto">
+          <span className="su-relative su-size-32 su-block su-mx-auto">
             <svg
               className="dark:su-hidden su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
               xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +102,7 @@ export default function PreferencesTray({ audience }) {
           </span>
         </span>
         <span className="icon-student">
-          <span className="su-relative su-h-32 su-w-32 su-block su-mx-auto">
+          <span className="su-relative su-size-32 su-block su-mx-auto">
             <svg
               className="dark:su-hidden su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
               xmlns="http://www.w3.org/2000/svg"
@@ -189,9 +189,9 @@ export default function PreferencesTray({ audience }) {
                     className="report-header__pref-toggle hover:su-text-white su-w-full su-h-full aria-pressed:su-text-white group su-bg-white dark:aria-pressed:su-text-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent aria-pressed:su-bg-transparent hover:su-bg-transparent dark:su-bg-black-true &[aria-pressed=“true”]:dark:su-bg-transparent before:su-rounded-inherit after:su-rounded-inherit before:su-bg-gradient-light-red after:su-transition-none su-transition before:su-transition after:su-bg-gradient-light-red dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-py-26 su-px-18 su-bg-transparent su-text-center"
                     data-location="student-info"
                   >
-                    <span className="icon-add su-block su-mx-auto su-relative su-w-[44px] su-h-[44px] su-text-digital-red dark:su-text-dark-mode-red">
+                    <span className="icon-add su-block su-mx-auto su-relative su-w-44 su-h-44 su-text-digital-red dark:su-text-dark-mode-red">
                       <svg
-                        className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2 su-w-[44px] su-h-[44px] su-fill-none"
+                        className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2 su-w-44 su-h-44 su-fill-none"
                         xmlns="http://www.w3.org/2000/svg"
                         width="44"
                         height="44"
@@ -207,9 +207,9 @@ export default function PreferencesTray({ audience }) {
                         />
                       </svg>
                     </span>
-                    <span className="icon-remove su-block su-mx-auto su-relative su-w-[44px] su-h-[44px]">
+                    <span className="icon-remove su-block su-mx-auto su-relative su-w-44 su-h-44">
                       <svg
-                        className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2 su-w-[44px] su-h-[44px] su-fill-none"
+                        className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2 su-w-44 su-h-44 su-fill-none"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -248,9 +248,9 @@ export default function PreferencesTray({ audience }) {
                     aria-pressed={audience === "faculty" ? "true" : "false"}
                     className="report-header__pref-toggle hover:su-text-white su-w-full su-h-full aria-pressed:su-text-white group su-bg-white dark:aria-pressed:su-text-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent aria-pressed:su-bg-transparent hover:su-bg-transparent dark:su-bg-black-true &[aria-pressed=“true”]:dark:su-bg-transparent before:su-rounded-inherit after:su-rounded-inherit before:su-bg-gradient-light-red after:su-transition-none su-transition before:su-transition after:su-bg-gradient-light-red dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-py-26 su-px-18 su-bg-transparent su-text-center"
                   >
-                    <span className="icon-add su-block su-mx-auto su-relative su-w-[44px] su-h-[44px] su-text-digital-red dark:su-text-dark-mode-red">
+                    <span className="icon-add su-block su-mx-auto su-relative su-w-44 su-h-44 su-text-digital-red dark:su-text-dark-mode-red">
                       <svg
-                        className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2 su-w-[44px] su-h-[44px] su-fill-none"
+                        className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2 su-w-44 su-h-44 su-fill-none"
                         xmlns="http://www.w3.org/2000/svg"
                         width="44"
                         height="44"
@@ -266,9 +266,9 @@ export default function PreferencesTray({ audience }) {
                         />
                       </svg>
                     </span>
-                    <span className="icon-remove su-block su-mx-auto su-relative su-w-[44px] su-h-[44px]">
+                    <span className="icon-remove su-block su-mx-auto su-relative su-w-44 su-h-44">
                       <svg
-                        className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2 su-w-[44px] su-h-[44px] su-fill-none"
+                        className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2 su-w-44 su-h-44 su-fill-none"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -301,7 +301,7 @@ export default function PreferencesTray({ audience }) {
                   </button>
                 </li>
               </ul>
-              <div className="su-flex su-flex-wrap su-gap-[9px]">
+              <div className="su-flex su-flex-wrap su-gap-9">
                 <p className="su-mb-0 su-text-16 su-font-normal">
                   We want to provide announcements, events, leadership messages
                   and resources that are relevant to you. Your selection is
@@ -335,14 +335,14 @@ export default function PreferencesTray({ audience }) {
                   id="light-theme"
                 />
                 <label
-                  className="su-inline-block su-leading-2 su-relative su-pr-50 su-z-20 after:su-border-palo-verde peer-checked/light:after:su-border-digital-red peer-checked/light:su-text-digital-red su-text-black-50 peer-checked/light:su-z-10 before:su-w-42 before:su-h-15 su-bg-gradient-before before:su-bg-gradient-light-red-h peer-checked/light:before:su-rotate-180 before:su-rounded-[12px] before:su-absolute before:su-right-0 before:su-top-[6px] after:su-transition after:su-top-2 after:su-shadow-sm after:su-bg-white after:su-border-2 after:su-bg-digital-red after:su-rounded-full after:su-size-24 after:su-translate-x-0 after:su-absolute after:su-right-0 peer-checked/light:after:su-translate-x-[-2rem]"
+                  className="su-inline-block su-leading-2 su-relative su-pr-50 su-z-20 after:su-border-palo-verde peer-checked/light:after:su-border-digital-red peer-checked/light:su-text-digital-red su-text-black-50 peer-checked/light:su-z-10 before:su-w-42 before:su-h-15 su-bg-gradient-before before:su-bg-gradient-light-red-h peer-checked/light:before:su-rotate-180 before:su-rounded-[12px] before:su-absolute before:su-right-0 before:su-top-6 after:su-transition after:su-top-2 after:su-shadow-sm after:su-bg-white after:su-border-2 after:su-bg-digital-red after:su-rounded-full after:su-size-24 after:su-translate-x-0 after:su-absolute after:su-right-0 peer-checked/light:after:su-translate-x-[-2rem]"
                   htmlFor="light-theme"
                   data-theme="light-theme"
                 >
                   <span className="su-inline-block su-align-middle">Light</span>
                   <span
                     aria-hidden="true"
-                    className="su-inline-block su-align-middle su-relative su-w-[28px] su-h-[28px] peer-checked/light:su-hidden"
+                    className="su-inline-block su-align-middle su-relative su-w-28 su-h-28 peer-checked/light:su-hidden"
                   >
                     <svg
                       className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
@@ -493,7 +493,7 @@ export default function PreferencesTray({ audience }) {
                   </span>
                   <span
                     aria-hidden="true"
-                    className="su-hidden su-align-middle su-relative su-w-[28px] su-h-[28px] peer-checked/light:su-inline-block"
+                    className="su-hidden su-align-middle su-relative su-w-28 su-h-28 peer-checked/light:su-inline-block"
                   >
                     <svg
                       className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
@@ -529,7 +529,7 @@ export default function PreferencesTray({ audience }) {
                 >
                   <span
                     aria-hidden="true"
-                    className="su-inline-block su-align-middle su-relative su-w-[28px] su-h-[28px]"
+                    className="su-inline-block su-align-middle su-relative su-w-28 su-h-28"
                   >
                     <svg
                       className="su-absolute su-fill-transparent su-stroke-current su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
@@ -555,13 +555,13 @@ export default function PreferencesTray({ audience }) {
 
           <button
             type="button"
-            className="report-header__preferences-close su-absolute su-right-20 md:su-right-auto md:su-left-38 su-top-[43px] md:su-top-[72px] su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center dark:hover:su-text-dark-mode-red hover:su-text-digital-red"
+            className="report-header__preferences-close su-absolute su-right-20 md:su-right-auto md:su-left-38 su-top-43 md:su-top-72 su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center dark:hover:su-text-dark-mode-red hover:su-text-digital-red"
             aria-expanded="true"
             aria-controls="menu"
             aria-labelledby="close-preferences"
             data-location="close-prefs"
           >
-            <span className="su-relative su-h-32 su-w-32">
+            <span className="su-relative su-size-32">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"

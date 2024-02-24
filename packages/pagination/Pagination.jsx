@@ -14,7 +14,7 @@ export default function Pagination({
   const pages = Math.ceil(allResults / resultsPerPage);
   const forwardRangeNum = pageNumber + paginationRange * resultsPerPage;
   const backwardRangeNum = pageNumber - paginationRange * resultsPerPage;
-  const activeClass = "su-bg-digital-red su-rounded-[100px] su-text-[white]";
+  const activeClass = "su-bg-digital-red su-rounded-[100px] su-text-white";
   const nonActiveClass = "su-text-black ";
   const prevPage = pageNumber - resultsPerPage;
   const nextPage = pageNumber + resultsPerPage;

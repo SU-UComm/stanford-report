@@ -17,16 +17,16 @@ export default function LeadershipHero(props) {
   return (
     <Container>
       <div className="su-flex su-justify-between su-flex-wrap su-rs-mt-6">
-        <span className="su-flex su-items-center su-justify-center su-text-[16px] md:su-basefont-23">
-          <time className="su-m-0 su-mr-[4px] su-font-semibold">
+        <span className="su-flex su-items-center su-justify-center su-text-16 md:su-basefont-23">
+          <time className="su-m-0 su-mr-4 su-font-semibold">
             {pubDateFormatted}
           </time>
         </span>
-        <span className="su-ml-auto su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-text-[16px] sm:su-text-[21px] md:su-text-[24px]">
+        <span className="su-ml-auto su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-text-16 sm:su-text-21 md:su-text-24">
           {topic.asset_name}
         </span>
       </div>
-      <h1 className="su-mt-[32px] sm:su-mt-[45px] xl:su-mt-[58px] su-font-serif">
+      <h1 className="su-mt-32 sm:su-mt-45 xl:su-mt-58 su-font-serif">
         {title}
       </h1>
     </Container>

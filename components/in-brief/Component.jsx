@@ -29,7 +29,7 @@ export default function InBrief({ points }) {
           <span className="su-w-full su-bg-black-20 su-h-px su-absolute su-bottom-4" />
         </div>
         <div className="su-wysiwyg-content">
-          <ul className="su-basefont-19 su-flex su-flex-col su-mb-0 su-gap-18 su-pt-[34px] su-pb-27 [&>li]:su-m-0">
+          <ul className="su-basefont-19 su-flex su-flex-col su-mb-0 su-gap-18 su-pt-34 su-pb-27 [&>li]:su-m-0">
             {points.map((item) => {
               return (
                 <XssSafeContent
