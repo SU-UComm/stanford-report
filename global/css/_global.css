@@ -45,15 +45,6 @@ svg {
  */
 @tailwind utilities;
 
-/**
- * Use this directive to control where Tailwind injects the responsive
- * variations of each utility.
- *
- * If omitted, Tailwind will append these classes to the very end of
- * your stylesheet by default.
- */
-@tailwind variants;
-
 .su-bg-gradient,
 .su-bg-gradient-before:before,
 .su-bg-gradient-after:after {
