@@ -41,15 +41,10 @@
                 "title": "Heading",
                 "type": "string"
               },
-              "ctaText": {
-                "title": "Link text",
-                "type": "string",
+              "cta": {
+                "title": "Call to action link",
+                "type": "SquizLink",
                 "default": "View all"
-              },
-              "ctaUrl": {
-                "title": "Link URL",
-                "type": "string",
-                "format": "matrix-asset-uri"
               }
             }
           },

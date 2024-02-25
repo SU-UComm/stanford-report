@@ -1,9 +1,9 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "events-section",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "namespace": "stanford-components",
-  "description": "Stanford Events Section is a grid featuring 9 events",
+  "description": "Stanford Events Section is a grid featuring 3, 6, or 9 events",
   "displayName": "Events Section",
   "mainFunction": "main",
   "icon": {
@@ -25,23 +25,84 @@
             "title": "Section Heading Configuration",
             "description": "The heading for the section, appearing before the grid of cards. If the title is empty, the heading and call to action link will be hidden.",
             "type": "object",
-            "required": [],
+            "required": ["ctaSource"],
             "properties": {
               "title": {
                 "title": "Heading",
-                "type": "string"
-              },
-              "ctaText": {
-                "title": "Link text",
                 "type": "string",
-                "default": "View all"
+                "default": "Upcoming events"
               },
-              "ctaUrl": {
-                "title": "Link URL",
+              "ctaSource": {
+                "title": "Link Type",
                 "type": "string",
-                "default": "https://events.stanford.edu"
+                "enum": ["Matrix Asset", "Manual Link"],
+                "default": "Manual Link"
               }
-            }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "required": [],
+                  "properties": {
+                    "ctaSource": {
+                      "const": "Manual Link"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [],
+                  "properties": {
+                    "ctaUrl": {
+                      "title": "Link",
+                      "type": "string",
+                      "description": "Enter the full URL, including https://",
+                      "default": "https://events.stanford.edu"
+                    },
+                    "ctaText": {
+                      "title": "Link text",
+                      "type": "string",
+                      "default": "View all"
+                    },
+                    "ctaNewWindow": {
+                      "title": "Open link in a new window",
+                      "type": "boolean",
+                      "default": false
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "required": [],
+                  "properties": {
+                    "ctaSource": {
+                      "const": "Matrix Asset"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [],
+                  "properties": {
+                    "ctaAsset": {
+                      "title": "Link",
+                      "type": "string",
+                      "description": "Select an asset to link to",
+                      "format": "matrix-asset-uri"
+                    },
+                    "ctaText": {
+                      "title": "Link text",
+                      "type": "string",
+                      "default": "View all"
+                    },
+                    "ctaNewWindow": {
+                      "title": "Open link in a new window",
+                      "type": "boolean",
+                      "default": false
+                    }
+                  }
+                }
+              }
+            ]
           },
           "contentConfiguration": {
             "title": "Events section core configuration",
@@ -63,7 +124,7 @@
               "numberOfEvents": {
                 "title": "Number of Events",
                 "default": 9,
-                "enum": [3, 4, 5, 6, 7, 8, 9],
+                "enum": [3, 6, 9],
                 "type": "integer"
               }
             }
@@ -93,6 +154,84 @@
   ],
   "staticFiles": {
     "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/28207": {
+      "type": "file",
+      "path": "mocked-uris/28207.json"
+    },
+    "matrix-asset://api-identifier/125002": {
+      "type": "file",
+      "path": "mocked-uris/125002.json"
+    },
+    "matrix-asset://api-identifier/28375": {
+      "type": "file",
+      "path": "mocked-uris/28375.json"
+    },
+    "matrix-asset://api-identifier/28401": {
+      "type": "file",
+      "path": "mocked-uris/28401.json"
+    },
+    "matrix-asset://api-identifier/28406": {
+      "type": "file",
+      "path": "mocked-uris/28406.json"
+    },
+    "matrix-asset://api-identifier/124970": {
+      "type": "file",
+      "path": "mocked-uris/124970.json"
+    },
+    "matrix-asset://api-identifier/124986": {
+      "type": "file",
+      "path": "mocked-uris/124986.json"
+    },
+    "matrix-asset://api-identifier/28397": {
+      "type": "file",
+      "path": "mocked-uris/28397.json"
+    },
+    "matrix-asset://api-identifier/89422": {
+      "type": "file",
+      "path": "mocked-uris/89422.json"
+    },
+    "matrix-asset://api-identifier/89430": {
+      "type": "file",
+      "path": "mocked-uris/89430.json"
+    },
+    "matrix-asset://api-identifier/89426": {
+      "type": "file",
+      "path": "mocked-uris/89426.json"
+    },
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/125800": {
+      "type": "file",
+      "path": "mocked-uris/125800.json"
+    },
+    "matrix-asset://api-identifier/125801": {
+      "type": "file",
+      "path": "mocked-uris/125801.json"
+    },
+    "matrix-asset://api-identifier/28192": {
+      "type": "file",
+      "path": "mocked-uris/28192.json"
+    },
+    "matrix-asset://api-identifier/28205": {
+      "type": "file",
+      "path": "mocked-uris/28205.json"
+    },
+    "matrix-asset://api-identifier/127834": {
+      "type": "file",
+      "path": "mocked-uris/127834.json"
+    },
+    "matrix-asset://api-identifier/28193": {
+      "type": "file",
+      "path": "mocked-uris/28193.json"
+    },
+    "matrix-asset://api-identifier/127837": {
+      "type": "file",
+      "path": "mocked-uris/127837.json"
+    }
   },
   "previews": {
     "default": {

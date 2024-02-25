@@ -1,13 +1,16 @@
 {
-    "headingConfiguration" : {
-        "title": "Events Section Title",
-        "ctaText": "View all",
-        "ctaUrl": "https://events.stanford.edu"
-    },
-    "contentConfiguration": {
-        "eventsUrl": "https://events.stanford.edu/api/2/events?days=365&sponsored=true"
-    },
-    "displayConfiguration": {
-        "numberOfEvents": 9
-    }
+  "headingConfiguration": {
+    "title": "Events Section Title",
+    "ctaSource": "Manual Link",
+    "ctaText": "View all",
+    "ctaUrl": "https://events.stanford.edu",
+    "ctaAsset": "matrix-asset://api-identifier/28192",
+    "ctaNewWindow": true
+  },
+  "contentConfiguration": {
+    "eventsUrl": "https://events.stanford.edu/api/2/events?days=365&sponsored=true"
+  },
+  "displayConfiguration": {
+    "numberOfEvents": 6
+  }
 }

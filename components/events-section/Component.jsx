@@ -39,7 +39,8 @@ export default function EventsSection({
       <LinkedHeading
         title={headingData.title}
         ctaText={headingData.ctaText}
-        ctaUrl={headingData.ctaUrl}
+        ctaUrl={headingData.ctaLink}
+        ctaNewWindow={headingData.ctaNewWindow}
       />
       <HorizontalCardGrid items={cards} maximumItems={noOfCards} />
     </Container>

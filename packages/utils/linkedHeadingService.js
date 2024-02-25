@@ -7,19 +7,29 @@ import basicAssetUri from "./basicAssetUri";
  */
 export default async function linkedHeadingService(
   ctx,
-  { title, ctaText, ctaUrl }
+  { title, ctaSource, ctaText, ctaUrl, ctaAsset, ctaNewWindow }
 ) {
   let resolvedUrl;
 
   // Resolve the CTA URL if one is supplied
-  if (ctaUrl !== "" && ctaUrl !== null && ctaUrl !== undefined) {
-    const linkedPageData = await basicAssetUri(ctx, ctaUrl);
+  if (ctaAsset !== undefined && ctaAsset !== "" && ctaAsset !== null) {
+    const linkedPageData = await basicAssetUri(ctx, ctaAsset);
     resolvedUrl = linkedPageData.url;
+  }
+
+  let ctaLink = null;
+
+  if (ctaSource === "Matrix Asset") {
+    ctaLink = resolvedUrl;
+  } else {
+    ctaLink = ctaUrl;
   }
 
   return {
     title,
+    ctaSource,
     ctaText,
-    resolvedUrl,
+    ctaLink,
+    ctaNewWindow,
   };
 }
