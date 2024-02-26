@@ -43,7 +43,8 @@ export default function MulticolumnListing({
           <Card
             data={cardData}
             displayDescription={displayConfiguration.displayDescriptions}
-            displayThumbnail={displayConfiguration.displayThumbnails}
+            // displayThumbnail={displayConfiguration.displayThumbnails}
+            displayThumbnail={false}
             cardSize={cardSizeMap.get(contentConfiguration.searchMaxCards)}
           />
         );
@@ -52,7 +53,8 @@ export default function MulticolumnListing({
           <Card
             data={cardData}
             displayDescription={displayConfiguration.displayDescriptions}
-            displayThumbnail={displayConfiguration.displayThumbnails}
+            // displayThumbnail={displayConfiguration.displayThumbnails}
+            displayThumbnail={false}
             cardSize={cardSizeMap.get(numberOfCards)}
           />
         );

@@ -176,17 +176,17 @@ export default function VerticalCard({
   SVGMap.set("podcast", <Podcast />);
   SVGMap.set("book", <Book />);
 
-  imageUrl = imageUrl || "https://sug-web.matrix.squiz.cloud/?a=127837";
+  const cardThumb = imageUrl || "https://sug-web.matrix.squiz.cloud/?a=127837";
 
   return (
     <article
       className="su-component-card su-relative su-w-full"
       data-testid="vertical-card"
     >
-      {displayThumbnail && imageUrl && (
+      {displayThumbnail && (
         <div className={`${imageMargin(cardSize)}`}>
           <CardThumbnail
-            imageUrl={imageUrl}
+            imageUrl={cardThumb}
             alt={imageAlt}
             aspectRatio={`card-${cardSize}`}
             videoUrl={type === "Video" ? videoUrl : ""}
