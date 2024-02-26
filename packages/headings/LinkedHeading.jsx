@@ -15,7 +15,12 @@ import { ChevronRight } from "../SVG-library/SVG";
  *
  * @return {JSX.element}
  */
-export function LinkedHeading({ title, ctaText = "View all", ctaLink, ctaNewWindow }) {
+export function LinkedHeading({
+  title,
+  ctaText = "View all",
+  ctaLink,
+  ctaNewWindow,
+}) {
   return title !== "" && title !== undefined ? (
     <div className="su-component-line-heading su-flex su-flex-wrap su-items-center md:su-items-end su-gap-[5px] su-gap-x-[13px] md:su-gap-[13px]">
       <h2 className="su-text-[28px] su-font-serif su-text-black dark:su-text-white md:su-text-[35px] lg:su-text-[48px] su-w-full md:su-w-auto su-mb-0">
@@ -31,8 +36,9 @@ export function LinkedHeading({ title, ctaText = "View all", ctaLink, ctaNewWind
         <a
           data-test="cta"
           href={ctaLink}
-          ctaNewWindow ? target="blank" : ""
+          target={ctaNewWindow ? "_blank" : ""}
           className="su-flex su-no-underline hover:su-underline hover:su-text-digital-red dark:hover:su-text-dark-mode-red su-transition su-items-center md:su-items-end md:su-mb-[8px] lg:su-mb-[12px] su-text-black dark:su-text-white su-flex-nowrap su-gap-[20px] md:su-gap-[13px] su-align-baseline su-text-[19px]"
+          rel="noreferrer"
         >
           <span className="su-flex su-gap-[2px] su-items-center">
             <span>
