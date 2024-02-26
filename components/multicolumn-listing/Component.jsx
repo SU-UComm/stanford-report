@@ -71,7 +71,8 @@ export default function MulticolumnListing({
         <LinkedHeading
           title={headingData.title}
           ctaText={headingData.ctaText}
-          ctaUrl={headingData.resolvedUrl}
+          ctaLink={headingData.ctaLink}
+          ctaNewWindow={headingData.ctaNewWindow}
         />
         <MultiColumnGrid separator items={cards} />
       </Container>
