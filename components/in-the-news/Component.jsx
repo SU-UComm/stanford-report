@@ -15,24 +15,46 @@ import { FeaturedGrid } from "../../packages/grids/Grids";
  * @constructor
  */
 
-export default function InTheNews({ data, featuredContent, headingData }) {
+export default function InTheNews({
+  data,
+  featuredContent,
+  headingData,
+  supplementaryTeaserOne,
+  supplementaryTeaserTwo,
+}) {
   const { featuredQuote } = featuredContent;
   const cardData = [];
+
+  const { featuredTeaserDescription } = featuredContent;
+  const { teaserOneDescription } = supplementaryTeaserOne;
+  const { teaserTwoDescription } = supplementaryTeaserTwo;
+
+  const customDescriptions = [
+    featuredTeaserDescription,
+    teaserOneDescription,
+    teaserTwoDescription,
+  ];
 
   if (data.length) {
     const featured = {
       ...data[0],
       quote: featuredQuote,
+      description: featuredTeaserDescription,
     };
 
     data.forEach((card, i) => {
       if (i === 0) {
         cardData.push(<Card cardType="pullquote" data={featured} />);
-
         return;
       }
-
-      cardData.push(<Card cardType="teaser" data={card} />);
+      const standardCard = card;
+      if (
+        typeof customDescriptions[i] !== "undefined" &&
+        customDescriptions[i].length > 0
+      ) {
+        standardCard.description = customDescriptions[i];
+      }
+      cardData.push(<Card cardType="teaser" data={standardCard} />);
     });
   }
 
