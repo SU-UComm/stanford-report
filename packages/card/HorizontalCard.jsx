@@ -105,7 +105,7 @@ export default function HorizontalCard({
       className={`listing-item su-flex ${cardGap.get(cardSize)}`}
       data-testid="horizontal-card"
     >
-      {cardSize === "large" && (
+      {cardSize === "large" && imageUrl && (
         <div className="su-shrink-0 su-w-[103px] su-h-[69px] md:su-w-[169px] md:su-h-[113px] lg:su-w-[292px] lg:su-h-[193px]">
           <CardThumbnail
             imageUrl={imageUrl}
@@ -118,7 +118,7 @@ export default function HorizontalCard({
         </div>
       )}
 
-      {cardSize === "small" && (
+      {cardSize === "small" && imageUrl && (
         <div className="su-shrink-0 su-w-[73px] su-h-[73px]">
           <CardThumbnail
             imageUrl={imageUrl}
