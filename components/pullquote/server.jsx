@@ -4,21 +4,18 @@ import basicAssetUri from "../../packages/utils/basicAssetUri";
 
 export default async (args, info) => {
   const { ctx } = info;
-  // const matrixAsset = args.displayConfiguration;
-  let data = null;
+  const matrixAsset = args.displayConfiguration.asset;
+  let imageUrl = null;
 
-  console.log(JSON.stringify(args));
+  if (!["", "undefined", undefined, null].includes(matrixAsset)) {
+    const data = await basicAssetUri(ctx, matrixAsset);
 
-  data = [];
-
-  // if (!["", "undefined", undefined, null].includes(matrixAsset)) {
-  //   console.log("Here is my test");
-  //   data = await basicAssetUri(ctx, matrixAsset);
-  // }
+    imageUrl = data.url;
+  }
 
   const renderProps = {
     ...args,
-    data,
+    imageUrl,
   };
 
   return renderComponent({
