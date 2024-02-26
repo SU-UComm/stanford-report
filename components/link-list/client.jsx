@@ -9,6 +9,19 @@ import Component from "./Component";
 //   storyLayout: "Basic",
 // };
 
+// window.pageController = {
+//   id: 129627,
+//   title: "IA Basic Story Test",
+//   isStory: true,
+//   mainTopic: "",
+//   storyLayout: "Basic",
+//   search: {
+//     endpoint: "https://dxp-us-search.funnelback.squiz.cloud/s/search.html",
+//     collection: "sug~sp-stanford-report-search",
+//     profile: "stanford-report-push-search",
+//   },
+// };
+
 (function () {
   const linkListWrapper = document.querySelector(
     `[data-role="link-list-wrapper"]`
@@ -17,8 +30,15 @@ import Component from "./Component";
     `[data-role="link-drawer-toggle"]`
   );
   const linkList = document.querySelector(`[data-role="link-drawer"]`);
+  const noStories = document.querySelector(".no-stories");
 
   if (!linkListWrapper) return;
+
+  if (noStories) {
+    noStories.parentNode.remove();
+
+    return;
+  }
 
   linkListToggle.addEventListener("click", (e) => {
     const { currentTarget } = e;
