@@ -62,10 +62,16 @@ export default function LinkList({ search }) {
   return (
     <div
       data-role="link-list-wrapper"
-      className="su-fixed su-opacity-[0] su-bottom-[-100px] su-left-0 su-left-[50%] su-right-[50%] su-translate-x-[-50%] su-max-w-[482px] su-p-[20px] su-bg-foggy-light lg:dark:su-bg-[#000000] dark:su-bg-black su-linklist-mob-width su-rounded-tl-[8px] su-rounded-tr-[8px] su-transition su-z-[9999] su-px-[30px] su-linklist-mob-width lg:su-z-[1] lg:su-bg-[white] lg:su-relative lg:su-bottom-0 lg:su-opacity-[1] lg:su-p-0 lg:su-w-full"
+      className={`${
+        linkItems.length ? "" : "no-stories"
+      } su-fixed su-opacity-[0] su-bottom-[-100px] su-left-0 su-left-[50%] su-right-[50%] su-translate-x-[-50%] su-max-w-[482px] su-p-[20px] su-bg-foggy-light lg:dark:su-bg-[#000000] dark:su-bg-black su-linklist-mob-width su-rounded-tl-[8px] su-rounded-tr-[8px] su-transition su-z-[9999] su-px-[30px] su-linklist-mob-width lg:su-z-[1] lg:su-bg-[white] lg:su-relative lg:su-bottom-0 lg:su-opacity-[1] lg:su-p-0 lg:su-w-full`}
     >
       <div className="su-flex">
-        <SidebarHeading title="Stories for you" icon="bullseyePointer" />
+        {linkItems.length ? (
+          <SidebarHeading title="Stories for you" icon="bullseyePointer" />
+        ) : (
+          ""
+        )}
 
         <button
           className="su-text-digital-red su-rotate-[-90deg] lg:su-hidden"
