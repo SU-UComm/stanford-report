@@ -76,6 +76,10 @@
               "featuredTeaserDescription": {
                 "title": "Feature Teaser description",
                 "type": "string"
+              },
+              "featuredCtaText": {
+                "title": "Featured CTA text",
+                "type": "string"
               }
             }
           },

@@ -23,6 +23,7 @@ export default function InTheNews({
   supplementaryTeaserTwo,
 }) {
   const { featuredQuote } = featuredContent;
+  const { featuredCtaText } = featuredContent;
   const cardData = [];
 
   const { featuredTeaserDescription } = featuredContent;
@@ -40,6 +41,7 @@ export default function InTheNews({
       ...data[0],
       quote: featuredQuote,
       description: featuredTeaserDescription,
+      ctaText: featuredCtaText,
     };
 
     data.forEach((card, i) => {

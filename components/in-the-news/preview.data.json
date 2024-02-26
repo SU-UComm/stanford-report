@@ -6,6 +6,7 @@
     },
     "featuredContent": {
         "featuredTeaser": "matrix-asset://api-identifier/128603",
+        "featuredCtaText": "Read the story on NPR",
         "featuredTeaserDescription": "This is a custom feature desc",
         "featuredQuote": "A sanctuary, it’s a forever thing. And so we want to know not only what’s here now, but how it’s changing over time.”"
     },
