@@ -26,7 +26,7 @@ export default function CookieConsentBanner({
           <button
             type="button"
             id="accept-cdp-cookie"
-            className="su-text-white su-bg-digital-green-dark hover:su-bg-palo-alto-dark focus:su-bg-palo-alto-dark su-py-10 md:su-py-15 su-px-30 su-leading-[20px]"
+            className="su-text-white su-shadow-[0px_3px_6px_0px_rgba(0,0,0,0.1)] su-transition su-border su-border-digital-green-dark su-bg-digital-green-dark hocus:su-bg-digital-green-bright hocus:su-border-digital-green-bright su-py-10 md:su-py-15 su-px-30 su-leading-[20px]"
             onClick={() => consentClickHandler(1)}
           >
             Accept
@@ -34,10 +34,10 @@ export default function CookieConsentBanner({
           <button
             type="button"
             id="reject-cdp-cookie"
-            className="su-text-white su-bg-digital-red-light hover:su-bg-digital-red-dark focus:su-bg-digital-red-dark su-py-10 md:su-py-15 su-px-30 su-leading-[20px]"
+            className="su-transition su-border su-border-digital-red su-bg-transparent su-text-digital-red hocus:su-text-white hocus:su-border-digital-red hocus:su-bg-digital-red su-py-10 md:su-py-15 su-px-30 su-leading-[20px]"
             onClick={() => consentClickHandler(0)}
           >
-            Reject
+            Decline
           </button>
         </div>
       </div>
