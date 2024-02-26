@@ -1,5 +1,5 @@
-// import hydrateComponent from "../../packages/utils/hydrate-component";
 import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
+
 import Component from "./Component";
 import getCookie from "../../packages/utils/cookieGet";
 import relatedStoryData from "./scripts/relatedStory";
@@ -8,9 +8,9 @@ import _preferencesSettings from "./scripts/preferenceSettings";
 import ReportHeader from "./scripts/reportHeader";
 
 (async function () {
-  const componentName = "header-component";
+  const target = "header-component";
   const element = document.querySelector(
-    `[data-hydration-component="${componentName}"]`
+    `[data-hydration-component="${target}"]`
   );
 
   if (!element) return;
@@ -41,9 +41,9 @@ import ReportHeader from "./scripts/reportHeader";
 
   element.setAttribute("data-hydration-props", JSON.stringify(props));
 
-  console.log("props", props);
+  // Hydrate the component
+  hydrateComponent({ Component, componentName: target });
 
-  hydrateComponent({ Component, componentName });
   const headerDom = document.querySelector(".report-header");
   const initHeader = new ReportHeader(headerDom);
   _preferencesSettings();

@@ -43,7 +43,7 @@ export default function Header({
   // page specific data
   const [pageControls, setPageControls] = useState(pageData);
   // related story display
-  const [relatedStory, setRelatedStory] = useState(relatedStoryData);
+  const [relatedStory, setRelatedStoryData] = useState(relatedStoryData);
 
   const handleConsent = async (val) => {
     if (val) {
@@ -76,7 +76,7 @@ export default function Header({
         } report-header su-pb-[139px] md:su-pb-[166px] lg:su-pb-[189px]`}
       >
         <div className="su-shadow su-fixed su-top-0 su-left-0 su-w-full su-bg-white dark:su-bg-black-true su-z-50">
-          <TopBar url={site.url} logo={site.logoTopBar} />
+          <TopBar url={site?.url} logo={site?.logoTopBar} />
 
           <div className="su-w-full su-max-w-[1412px] su-px-[20px] md:su-px-[49px] su-mx-auto">
             <div className="report-header__main su-flex su-items-center su-justify-between su-gap-[20px]">
@@ -150,24 +150,22 @@ export default function Header({
                   </span>
                 </button>
                 <Search
-                  endpoint={search.endpoint}
-                  collection={search.collection}
-                  profile={search.profile}
+                  endpoint={search?.endpoint}
+                  collection={search?.collection}
+                  profile={search?.profile}
                 />
               </div>
 
               <SiteLogo
-                url={site.url}
-                logo={site.logo}
-                logoLight={site.logoLight}
+                url={site?.url}
+                logo={site?.logo}
+                logoLight={site?.logoLight}
               />
 
-              {pageControls?.isStory && (
-                <CurrentStoryHeadline
-                  title={pageControls.title}
-                  story={relatedStory}
-                />
-              )}
+              <CurrentStoryHeadline
+                title={pageControls?.title}
+                story={relatedStory}
+              />
 
               <PreferencesTray
                 audience={audience}
@@ -175,7 +173,7 @@ export default function Header({
               />
             </div>
             <MainNav
-              major={navigation.major}
+              major={navigation?.major}
               currentPage={pageControls?.id ? pageControls.id : null}
             />
           </div>
@@ -185,7 +183,7 @@ export default function Header({
       {!consent && (
         <CookieConsentBanner
           consentClickHandler={handleConsent}
-          statement={site.cookieStatement}
+          statement={site?.cookieStatement}
         />
       )}
     </>
