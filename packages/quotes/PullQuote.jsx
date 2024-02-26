@@ -49,7 +49,7 @@ export function PullQuote({
         ].join(" ")}
       >
         <XssSafeContent
-          content={quote}
+          content={`${quote}”`}
           elementType="div"
           className={[
             "su-font-semibold su-font-serif-0 su-text-[24px] md:su-text-[36px] su-leading-[150%] md:su-leading-[130.245%]",
@@ -59,7 +59,7 @@ export function PullQuote({
           ].join(" ")}
         />
         {name && (
-          <cite className="su-mt-[15px] md:su-mt-[26px] lg:su-mt-[29px] su-font-sans su-text-[21px] su-leading-[25.2px] su-flex su-flex-col su-gap-[6px] md:su-gap-[10px] lg:su-gap-[6px]">
+          <cite className="su-mt-[15px] md:su-mt-[26px] lg:su-mt-[29px] su-font-sans su-text-[21px] su-leading-[25.2px] su-flex su-flex-col">
             <span className="su-font-bold su-block su-leading-[25.2px]">
               {name}
             </span>

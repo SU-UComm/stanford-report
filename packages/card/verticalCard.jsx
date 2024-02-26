@@ -176,6 +176,8 @@ export default function VerticalCard({
   SVGMap.set("podcast", <Podcast />);
   SVGMap.set("book", <Book />);
 
+  imageUrl = imageUrl || "https://sug-web.matrix.squiz.cloud/?a=127837";
+
   return (
     <article
       className="su-component-card su-relative su-w-full"
