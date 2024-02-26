@@ -71,7 +71,6 @@ export default function formatCardDataMatrix(props) {
     returnData.authorName = name;
     returnData.authorEmail = email;
   }
-  console.log(JSON.stringify(returnData));
 
   return returnData;
 }
