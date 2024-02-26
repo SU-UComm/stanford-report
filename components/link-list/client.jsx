@@ -30,15 +30,8 @@ import Component from "./Component";
     `[data-role="link-drawer-toggle"]`
   );
   const linkList = document.querySelector(`[data-role="link-drawer"]`);
-  const noStories = document.querySelector(".no-stories");
 
   if (!linkListWrapper) return;
-
-  if (noStories) {
-    noStories.parentNode.remove();
-
-    return;
-  }
 
   linkListToggle.addEventListener("click", (e) => {
     const { currentTarget } = e;
