@@ -34,14 +34,17 @@ export default function EventsSection({
     cards.push(<Card data={card} cardType="horizontal" />);
   });
 
-  return (
+  return cards.length > 0 ? (
     <Container width="large" data-component="events-section">
       <LinkedHeading
         title={headingData.title}
         ctaText={headingData.ctaText}
-        ctaUrl={headingData.ctaUrl}
+        ctaLink={headingData.ctaLink}
+        ctaNewWindow={headingData.ctaNewWindow}
       />
       <HorizontalCardGrid items={cards} maximumItems={noOfCards} />
     </Container>
+  ) : (
+    ""
   );
 }

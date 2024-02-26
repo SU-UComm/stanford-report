@@ -72,7 +72,8 @@ export default function FeaturedContent({
       <LinkedHeading
         title={headingData.title}
         ctaText={headingData.ctaText}
-        ctaUrl={headingData.resolvedUrl}
+        ctaLink={headingData.ctaLink}
+        ctaNewWindow={headingData.ctaNewWindow}
       />
 
       <div className="su-w-full su-component-featured-grid">

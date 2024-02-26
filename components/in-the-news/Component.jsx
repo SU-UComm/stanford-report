@@ -41,7 +41,8 @@ export default function InTheNews({ data, featuredContent, headingData }) {
       <LinkedHeading
         title={headingData.title}
         ctaText={headingData.ctaText}
-        ctaUrl={headingData.resolvedUrl}
+        ctaLink={headingData.ctaLink}
+        ctaNewWindow={headingData.ctaNewWindow}
       />
 
       <FeaturedGrid items={cardData} />
