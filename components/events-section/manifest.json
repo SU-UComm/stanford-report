@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "events-section",
-  "version": "0.0.6",
+  "version": "0.0.12",
   "namespace": "stanford-components",
   "description": "Stanford Events Section is a grid featuring 3, 6, or 9 events",
   "displayName": "Events Section",
@@ -25,94 +25,47 @@
             "title": "Section Heading Configuration",
             "description": "The heading for the section, appearing before the grid of cards. If the title is empty, the heading and call to action link will be hidden.",
             "type": "object",
-            "required": ["ctaSource"],
+            "required": [],
             "properties": {
               "title": {
                 "title": "Heading",
                 "type": "string",
                 "default": "Upcoming events"
               },
-              "ctaSource": {
-                "title": "Link Type",
+              "ctaUrl": {
+                "title": "Matrix Asset Link",
                 "type": "string",
-                "enum": ["Matrix Asset", "Manual Link"],
-                "default": "Manual Link"
-              }
-            },
-            "allOf": [
-              {
-                "if": {
-                  "required": [],
-                  "properties": {
-                    "ctaSource": {
-                      "const": "Manual Link"
-                    }
-                  }
-                },
-                "then": {
-                  "required": [],
-                  "properties": {
-                    "ctaUrl": {
-                      "title": "Link",
-                      "type": "string",
-                      "description": "Enter the full URL, including https://",
-                      "default": "https://events.stanford.edu"
-                    },
-                    "ctaText": {
-                      "title": "Link text",
-                      "type": "string",
-                      "default": "View all"
-                    },
-                    "ctaNewWindow": {
-                      "title": "Open link in a new window",
-                      "type": "boolean",
-                      "default": false
-                    }
-                  }
-                }
+                "description": "Select an asset to link to. If this field is filled out, it will be used instead of the manual link",
+                "format": "matrix-asset-uri"
               },
-              {
-                "if": {
-                  "required": [],
-                  "properties": {
-                    "ctaSource": {
-                      "const": "Matrix Asset"
-                    }
-                  }
-                },
-                "then": {
-                  "required": [],
-                  "properties": {
-                    "ctaAsset": {
-                      "title": "Link",
-                      "type": "string",
-                      "description": "Select an asset to link to",
-                      "format": "matrix-asset-uri"
-                    },
-                    "ctaText": {
-                      "title": "Link text",
-                      "type": "string",
-                      "default": "View all"
-                    },
-                    "ctaNewWindow": {
-                      "title": "Open link in a new window",
-                      "type": "boolean",
-                      "default": false
-                    }
-                  }
-                }
+              "ctaManualUrl": {
+                "title": "Manual Link",
+                "type": "string",
+                "description": "Enter the full URL, including https://",
+                "default": "https://events.stanford.edu"
+              },
+              "ctaText": {
+                "title": "Link text",
+                "type": "string",
+                "default": "View all"
+              },
+              "ctaNewWindow": {
+                "title": "Open link in a new window",
+                "type": "boolean",
+                "default": false
               }
-            ]
+            }
           },
           "contentConfiguration": {
             "title": "Events section core configuration",
             "description": "The main purpose for these settings is to source the events API for the component.",
             "type": "object",
-            "required": [],
+            "required": ["eventsUrl"],
             "properties": {
               "eventsUrl": {
                 "title": "Events API Endpiont",
-                "type": "string"
+                "type": "string",
+                "default": "https://events.stanford.edu/api/2/events?days=365&sponsored=true"
               }
             }
           },
@@ -123,7 +76,7 @@
             "properties": {
               "numberOfEvents": {
                 "title": "Number of Events",
-                "default": 9,
+                "default": 6,
                 "enum": [3, 6, 9],
                 "type": "integer"
               }

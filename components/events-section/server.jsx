@@ -6,8 +6,8 @@ import linkedHeadingService from "../../packages/utils/linkedHeadingService";
 
 export default async (args, info) => {
   const adapter = new CardDataAdapter();
-  const eventAPI = args.contentConfiguration.eventsUrl;
-  let data = null;
+  const eventAPI = args.contentConfiguration?.eventsUrl;
+  let data = [];
   const { ctx } = info;
 
   // Resolve the URI for the section heading link
@@ -16,11 +16,9 @@ export default async (args, info) => {
     args.headingConfiguration
   );
 
-  if (eventAPI) {
+  if (eventAPI !== undefined && eventAPI !== "") {
     const service = new EventCardService({ api: eventAPI });
-
     adapter.setCardService(service);
-
     data = await adapter.getCards();
   }
 

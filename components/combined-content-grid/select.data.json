@@ -1,10 +1,7 @@
 {
   "headingConfiguration": {
-    "title": "Testing title",
-    "cta": {
-      "text": "View all",
-      "url": "https://events.stanford.edu"
-    }
+    "title": "Lorem ipsum dolor",
+    "ctaUrl": "matrix-asset://api-identifier/89422"
   },
   "contentConfiguration": {
     "source": "Select",
