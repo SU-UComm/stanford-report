@@ -717,6 +717,7 @@ audio::-webkit-media-controls-panel {
 * + [data-component="stories-carousel"],
 * + [data-component="media-feature"],
 * + [data-component="policy-brief"],
+* + [data-component="leadership-messages"],
 [data-component="image-quote"] + *,
 [data-component="media-feature"] + *,
 [data-component="campaign-cta"] + *,
