@@ -176,7 +176,7 @@ export default function VerticalCard({
   SVGMap.set("podcast", <Podcast />);
   SVGMap.set("book", <Book />);
 
-  const cardThumb = imageUrl || "https://sug-web.matrix.squiz.cloud/?a=127837";
+  const cardThumb = imageUrl || "https://sug-web.matrix.squiz.cloud/?a=130443";
 
   return (
     <article
