@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "campaign-cta",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "namespace": "stanford-components",
   "description": "This component serves as a preview & to promote campaign pages.",
   "displayName": "Campaign CTA",
@@ -172,6 +172,19 @@
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/basicstory.html"
+          }
+        }
+      }
+    },
+    "featuredstory": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
           }
         }
       }
