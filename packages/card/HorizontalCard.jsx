@@ -212,7 +212,7 @@ export default function HorizontalCard({
         <h2
           className={`${cardTitleFont(cardSize)} ${titleSize.get(
             cardSize
-          )} ${cardTitleFont(cardSize)} su-my-0`}
+          )} ${cardTitleFont(cardSize)} su-font-sans su-my-0`}
         >
           <a
             className="hocus:su-text-digital-red hocus:su-underline su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
