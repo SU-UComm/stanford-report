@@ -72,6 +72,14 @@
               "featuredQuote": {
                 "title": "Featured Quote",
                 "type": "string"
+              },
+              "featuredTeaserDescription": {
+                "title": "Feature Teaser description",
+                "type": "string"
+              },
+              "featuredCtaText": {
+                "title": "Featured CTA text",
+                "type": "string"
               }
             }
           },
@@ -82,6 +90,10 @@
                 "title": "Teaser One",
                 "format": "matrix-asset-uri",
                 "type": "string"
+              },
+              "teaserOneDescription": {
+                "title": "Teaser One description",
+                "type": "string"
               }
             }
           },
@@ -91,6 +103,10 @@
               "teaserTwo": {
                 "title": "Teaser Two",
                 "format": "matrix-asset-uri",
+                "type": "string"
+              },
+              "teaserTwoDescription": {
+                "title": "Teaser Two description",
                 "type": "string"
               }
             }

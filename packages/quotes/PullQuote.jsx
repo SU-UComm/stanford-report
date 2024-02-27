@@ -28,6 +28,7 @@ import { Avatar } from "./Avatar";
 export function PullQuote({
   quote,
   avatar,
+  imageAlt = "",
   name,
   title,
   avatarSize = "large",
@@ -41,7 +42,7 @@ export function PullQuote({
         "su-component-pullquote su-mx-auto su-relative su-mt-0 su-flex su-flex-wrap su-gap-[27px] su-justify-center su-mt-0 su-pr-0 su-py-0",
       ].join(" ")}
     >
-      <Avatar image={avatar} avatarSize={avatarSize} />
+      <Avatar image={avatar} avatarSize={avatarSize} alt={imageAlt} />
       <blockquote
         className={[
           "su-w-full su-pl-[39px] dark:su-text-white dark:before:su-text-white su-font-serif su-text-black",
