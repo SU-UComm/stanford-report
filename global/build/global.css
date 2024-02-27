@@ -2550,9 +2550,9 @@ audio::-webkit-media-controls-panel {
 
 @media (min-width: 992px){
   .su-page-has-sidebar [data-component="campaign-cta"]{
-    margin-left: -60px;
-    margin-right: -60px;
-    width: calc(100% + 120px);
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
 }
 
