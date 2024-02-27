@@ -1,2 +1,19 @@
 @tailwind components;
 @tailwind utilities;
+
+.su-linklist-mob-width {
+  width: calc(100% - 60px);
+}
+
+@media screen and (min-width: 768px) {
+  .su-linklist-mob-width {
+    width: calc(100% - 352px);
+  }
+}
+
+.su-link-list-no-stories {
+  display: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+}

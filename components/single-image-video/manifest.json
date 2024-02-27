@@ -1,16 +1,16 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "single-image-video",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "namespace": "stanford-components",
   "description": "Stanford university Base component.",
   "displayName": "Single image or video",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "perm_media",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "purple"
     }
   },
   "functions": [
@@ -43,11 +43,6 @@
           "video": {
             "required": [],
             "properties": {
-              "thumbnail": {
-                "title": "Video Thumbnail",
-                "type": "string",
-                "format": "matrix-asset-uri"
-              },
               "autoplay": {
                 "title": "Autoplay",
                 "description": "This will enable the video auto play once scrolled into view",
@@ -66,7 +61,7 @@
             }
           }
         },
-        "required": []
+        "required": ["image"]
       },
       "output": {
         "responseType": "html",
@@ -76,20 +71,6 @@
             "file": {
               "type": "css",
               "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
             }
           },
           {

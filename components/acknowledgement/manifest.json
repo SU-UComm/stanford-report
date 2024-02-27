@@ -1,16 +1,16 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "acknowledgement",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "namespace": "stanford-components",
   "description": "A basic WYSIWYG to place an acknowledgement.",
   "displayName": "Acknowledgement",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "menu_book",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "red"
     }
   },
   "functions": [
@@ -22,7 +22,7 @@
         "properties": {
           "title": {
             "title": "Acknowledgement Title",
-            "default": "Article details",
+            "default": "Story Acknowledgement",
             "description": "This title is read out for screen readers, to provide context and is not displayed visually.",
             "type": "string"
           },
@@ -31,7 +31,7 @@
             "type": "FormattedText"
           }
         },
-        "required": ["content"]
+        "required": ["content", "title"]
       },
       "output": {
         "responseType": "html",
@@ -41,20 +41,6 @@
             "file": {
               "type": "css",
               "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
             }
           },
           {

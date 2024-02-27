@@ -22,10 +22,10 @@ export default function SingleImageVideo({
   width,
   imageData,
   video,
-  videoThumbData,
+  // videoThumbData,
 }) {
   let captionCredit;
-  const { url, attributes } = imageData;
+  // const { url, attributes } = imageData;
   const { autoplay, vimeoid, youtubeid } = video;
 
   if (caption && credit) {
@@ -74,12 +74,10 @@ export default function SingleImageVideo({
       <section className="su-flex su-flex-col su-items-center su-gap-[8px] su-gap-[15px]">
         <div
           className={`su-relative${
-            !vimeoid || !youtubeid
-              ? " su-w-full"
-              : " su-w-full su-aspect-[16/9]"
+            !youtubeid ? " su-w-full" : " su-w-full su-aspect-[16/9]"
           }`}
         >
-          {!vimeoid || !youtubeid ? (
+          {!youtubeid ? (
             <img
               // src="https://picsum.photos/800"
               src={imageData.url}
@@ -99,7 +97,7 @@ export default function SingleImageVideo({
               <Video
                 autoplay={autoplay}
                 id={vimeoid}
-                thumbnail={videoThumbData}
+                thumbnail={imageData}
                 handleIframeLoad={handleIframeLoad}
               />
 
@@ -155,7 +153,7 @@ export default function SingleImageVideo({
 }
 
 function Video({ autoplay, id, thumbnail, handleIframeLoad }) {
-  if (autoplay) {
+  if (autoplay && id) {
     return (
       <iframe
         src={`https://player.vimeo.com/video/${id}?autoplay=1&loop=1&autopause=0&background=1`}
