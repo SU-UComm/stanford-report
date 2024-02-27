@@ -2568,7 +2568,6 @@ audio::-webkit-media-controls-panel {
   .su-page-has-sidebar
   [data-component="campaign-cta"]
   .su-component-campaigncta-wrap{
-    flex-direction: column;
     padding-left: 50px;
     padding-right: 50px;
   }
@@ -2578,12 +2577,11 @@ audio::-webkit-media-controls-panel {
   .su-page-has-sidebar
   [data-component="campaign-cta"]
   .su-component-campaigncta-wrap{
+    flex-direction: column;
     padding-left: 60px;
     padding-right: 60px;
   }
-}
 
-@media (min-width: 768px){
   .su-page-has-sidebar
   [data-component="campaign-cta"]
   .su-component-campaigncta-content{

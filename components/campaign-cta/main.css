@@ -1,6 +1,2 @@
 @tailwind components;
 @tailwind utilities;
-
-.su-page-has-sidebar [data-component="campaign-cta"] {
-  @apply su-px-[20px] md:su-px-[50px];
-}

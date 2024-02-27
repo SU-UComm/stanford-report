@@ -683,13 +683,13 @@ audio::-webkit-media-controls-panel {
 .su-page-has-sidebar
   [data-component="campaign-cta"]
   .su-component-campaigncta-wrap {
-  @apply su-w-full su-px-[20px] md:su-px-[50px] lg:su-px-[60px] md:su-flex-col;
+  @apply su-w-full su-px-[20px] md:su-px-[50px] lg:su-px-[60px] lg:su-flex-col;
 }
 
 .su-page-has-sidebar
   [data-component="campaign-cta"]
   .su-component-campaigncta-content {
-  @apply md:su-border-none md:su-mr-0;
+  @apply lg:su-border-none lg:su-mr-0;
 }
 
 /* Medium contextual spacing */
