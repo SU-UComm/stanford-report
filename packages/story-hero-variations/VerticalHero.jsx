@@ -27,15 +27,18 @@ export default function VerticalHero({ data }) {
               }`}
             />
 
-            <figcaption
-              className={[
-                "su-text-[14px] su-font-normal su-text-center su-leading-[16.72px] su-pb-[49px] su-m-0",
-                "sm:su-w-3/4 sm:su-text-[16px] sm:su-leading-[19.11px] sm:su-pb-[121px]",
-                "lg:su-pb-[184px]",
-              ].join(" ")}
-            >
-              {media.caption} | {media.credit}
-            </figcaption>
+            {(media.caption || media.credit) && (
+              <figcaption
+                className={[
+                  "su-text-[14px] su-font-normal su-text-center su-leading-[16.72px] su-pb-[49px] su-m-0",
+                  "sm:su-w-3/4 sm:su-text-[16px] sm:su-leading-[19.11px] sm:su-pb-[121px]",
+                  "lg:su-pb-[184px]",
+                ].join(" ")}
+              >
+                {media.caption} {media.caption && media.credit && ` | `}
+                {media.credit}
+              </figcaption>
+            )}
           </figure>
 
           <p
