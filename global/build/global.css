@@ -2095,7 +2095,8 @@ audio::-webkit-media-controls-panel {
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > .container
-  > *:not([data-component]){
+  > *:not([data-component]),
+.su-page:not(.su-page-has-sidebar) .su-page-content > span{
   margin-left: auto;
   margin-right: auto;
   max-width: 732px;
@@ -2110,7 +2111,8 @@ audio::-webkit-media-controls-panel {
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > .container
-  > *:not([data-component]){
+  > *:not([data-component]),
+.su-page:not(.su-page-has-sidebar) .su-page-content > span{
     width: 84.75%;
     padding-left: 50px;
     padding-right: 50px;
@@ -2686,20 +2688,25 @@ audio::-webkit-media-controls-panel {
 * + [data-component="featured-content"],
 * + [data-component="multicolumn-listing"],
 * + [data-component="combined-content-grid"],
+* + [data-component="events-section"],
 * + [data-component="campaign-cta"],
 * + [data-component="stories-carousel"],
 * + [data-component="media-feature"],
 * + [data-component="policy-brief"],
 * + [data-component="leadership-messages"],
+* + [data-component="single-featured-content"],
+* + [data-component="multicolumn-image"],
+[data-component="featured-content"] + *,
 [data-component="image-quote"] + *,
 [data-component="media-feature"] + *,
 [data-component="campaign-cta"] + *,
-* + [data-component="events-section"],
-* + [data-component="events-section"] + *,
-* + [data-component="single-featured-content"],
-* + [data-component="single-featured-content"] + *,
-* + [data-component="multicolumn-image"],
-* + [data-component="multicolumn-image"] + *{
+[data-component="combined-content-grid"] + *,
+[data-component="events-section"] + *,
+[data-component="single-featured-content"] + *,
+[data-component="multicolumn-image"] + *,
+[data-component="multicolumn-listing"] + *,
+[data-component="stories-carousel"] + *,
+[data-component="policy-brief"] + *{
   margin-top: 6rem !important;
 }
 
@@ -2707,20 +2714,25 @@ audio::-webkit-media-controls-panel {
   * + [data-component="featured-content"],
 * + [data-component="multicolumn-listing"],
 * + [data-component="combined-content-grid"],
+* + [data-component="events-section"],
 * + [data-component="campaign-cta"],
 * + [data-component="stories-carousel"],
 * + [data-component="media-feature"],
 * + [data-component="policy-brief"],
 * + [data-component="leadership-messages"],
+* + [data-component="single-featured-content"],
+* + [data-component="multicolumn-image"],
+[data-component="featured-content"] + *,
 [data-component="image-quote"] + *,
 [data-component="media-feature"] + *,
 [data-component="campaign-cta"] + *,
-* + [data-component="events-section"],
-* + [data-component="events-section"] + *,
-* + [data-component="single-featured-content"],
-* + [data-component="single-featured-content"] + *,
-* + [data-component="multicolumn-image"],
-* + [data-component="multicolumn-image"] + *{
+[data-component="combined-content-grid"] + *,
+[data-component="events-section"] + *,
+[data-component="single-featured-content"] + *,
+[data-component="multicolumn-image"] + *,
+[data-component="multicolumn-listing"] + *,
+[data-component="stories-carousel"] + *,
+[data-component="policy-brief"] + *{
     margin-top: 12.6rem !important;
   }
 }
@@ -2729,20 +2741,25 @@ audio::-webkit-media-controls-panel {
   * + [data-component="featured-content"],
 * + [data-component="multicolumn-listing"],
 * + [data-component="combined-content-grid"],
+* + [data-component="events-section"],
 * + [data-component="campaign-cta"],
 * + [data-component="stories-carousel"],
 * + [data-component="media-feature"],
 * + [data-component="policy-brief"],
 * + [data-component="leadership-messages"],
+* + [data-component="single-featured-content"],
+* + [data-component="multicolumn-image"],
+[data-component="featured-content"] + *,
 [data-component="image-quote"] + *,
 [data-component="media-feature"] + *,
 [data-component="campaign-cta"] + *,
-* + [data-component="events-section"],
-* + [data-component="events-section"] + *,
-* + [data-component="single-featured-content"],
-* + [data-component="single-featured-content"] + *,
-* + [data-component="multicolumn-image"],
-* + [data-component="multicolumn-image"] + *{
+[data-component="combined-content-grid"] + *,
+[data-component="events-section"] + *,
+[data-component="single-featured-content"] + *,
+[data-component="multicolumn-image"] + *,
+[data-component="multicolumn-listing"] + *,
+[data-component="stories-carousel"] + *,
+[data-component="policy-brief"] + *{
     margin-top: 13.3rem !important;
   }
 }
