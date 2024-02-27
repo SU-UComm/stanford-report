@@ -1,5 +1,4 @@
-import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
-
+import hydrateComponent from "../../packages/utils/hydrate-component";
 import Component from "./Component";
 import getCookie from "../../packages/utils/cookieGet";
 import relatedStoryData from "./scripts/relatedStory";
@@ -39,6 +38,7 @@ import ReportHeader from "./scripts/reportHeader";
   );
   props.relatedStoryData = fbStoryData;
 
+  // update the props
   element.setAttribute("data-hydration-props", JSON.stringify(props));
 
   // Hydrate the component

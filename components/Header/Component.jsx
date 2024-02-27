@@ -37,13 +37,13 @@ export default function Header({
   consentData = true,
 }) {
   // has the user given consent?
-  const [consent, setConsent] = useState(consentData);
+  const [consent, setConsent] = useState(true);
   // if any, what audience value is set
-  const [audience, setAudience] = useState(audienceData);
+  const [audience, setAudience] = useState(null);
   // page specific data
-  const [pageControls, setPageControls] = useState(pageData);
+  const [pageControls, setPageControls] = useState(null);
   // related story display
-  const [relatedStory, setRelatedStoryData] = useState(relatedStoryData);
+  const [relatedStory, setRelatedStoryData] = useState(null);
 
   const handleConsent = async (val) => {
     if (val) {
@@ -67,6 +67,13 @@ export default function Header({
     setCookie("preferences_personalisation", personaVal);
     setAudience(personaVal);
   };
+
+  useEffect(() => {
+    setRelatedStoryData(relatedStoryData);
+    setPageControls(pageData);
+    setAudience(audienceData);
+    setConsent(consentData);
+  }, []);
 
   return (
     <>
