@@ -35,7 +35,8 @@ export default function StoriesCarousel({ data, headingData }) {
           <LinkedHeading
             title={headingData.title}
             ctaText={headingData.ctaText}
-            ctaUrl={headingData.resolvedUrl}
+            ctaLink={headingData.ctaLink}
+            ctaNewWindow={headingData.ctaNewWindow}
           />
         )}
         <Carousel variant="cards" slides={cards} uniqueClass={uniqueClass} />

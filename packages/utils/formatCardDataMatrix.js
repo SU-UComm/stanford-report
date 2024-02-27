@@ -58,8 +58,8 @@ export default function formatCardDataMatrix(props) {
   };
 
   if (author) {
-    const avatar = dataChecker(author?.metadata?.personHeadshot?.url);
-    const avatarAlt = dataChecker(
+    const avatar = dataStringChecker(author?.metadata?.personHeadshot[0]?.url);
+    const avatarAlt = dataStringChecker(
       author?.metadata?.personHeadshot[0]?.attributes?.alt
     );
     const name = dataStringChecker(author?.name);
@@ -67,7 +67,7 @@ export default function formatCardDataMatrix(props) {
     const email = dataStringChecker(author?.metadata?.personEmail);
 
     returnData.imageUrl = avatar || imageUrl;
-    returnData.imageAl = avatarAlt || imageAlt;
+    returnData.imageAlt = avatarAlt || imageAlt;
     returnData.authorName = name;
     returnData.authorEmail = email;
   }

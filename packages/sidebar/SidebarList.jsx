@@ -35,25 +35,13 @@ export function SidebarList({
   ctaIcon = "chevronright",
 }) {
   const iconMap = new Map();
-  iconMap.set(
-    "chevronright",
-    <ChevronRight />
-  );
+  iconMap.set("chevronright", <ChevronRight />);
 
-  iconMap.set(
-    "externalarrow",
-    <ExternalArrow />
-  );
+  iconMap.set("externalarrow", <ExternalArrow />);
 
   const iconAlignments = new Map();
-  iconAlignments.set(
-    "chevronright",
-    "su-items-center"
-  );
-  iconAlignments.set(
-    "externalarrow",
-    "su-items-end"
-  );
+  iconAlignments.set("chevronright", "su-items-center");
+  iconAlignments.set("externalarrow", "su-items-end");
 
   const hasChildren = children !== undefined;
 
@@ -70,7 +58,7 @@ export function SidebarList({
           data-test="cta"
           href={ctaUrl}
           className={[
-            "su-transition su-justify-center md:su-justify-start su-w-full su-flex su-text-digital-red dark:su-text-dark-mode-red su-flex-nowrap su-gap-[2px] su-leading-[26.25px] su-text-[21px] su-font-semibold su-no-underline",
+            "su-transition su-justify-center su-items-center md:su-justify-start hover:su-underline focus:su-underline su-w-full su-flex su-text-digital-red dark:su-text-dark-mode-red su-flex-nowrap su-gap-[2px] su-leading-[26.25px] su-text-[21px] su-font-semibold su-no-underline",
             iconAlignments.get(icon),
           ].join(" ")}
         >
