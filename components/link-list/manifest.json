@@ -1,0 +1,69 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "link-list",
+  "version": "0.0.11",
+  "namespace": "stanford-components",
+  "description": "Recommended stories are shown in this component as a vertical list.",
+  "displayName": "Link List",
+  "mainFunction": "main",
+  "icon": {
+    "id": "list_alt",
+    "color": {
+      "type": "enum",
+      "value": "green"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {
+          "dataUrl": {
+            "title": "dataUrl",
+            "type": "string"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/sidebar.html"
+          }
+        }
+      }
+    }
+  }
+}

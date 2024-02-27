@@ -31,7 +31,7 @@ export default function ContentCarousel({ title, slides }) {
   });
 
   return (
-    <Container>
+    <Container width="narrow">
       <div className="su-bg-fog-light dark:su-bg-black su-p-[20px] md:su-pt-[36px] md:su-px-[36px] md:su-pb-[26px]">
         <div className="su-relative su-mb-[38px] su-overflow-hidden">
           {title && (

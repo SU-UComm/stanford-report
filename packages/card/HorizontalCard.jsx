@@ -1,7 +1,34 @@
 import React, { Fragment } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import CardThumbnail from "./CardThumbnail";
-import { News, QuestionAnswer, Video, Podcast, Book } from "../SVG-library/SVG";
+import {
+  Alert,
+  AnalysisAndInsights,
+  CaseStudy,
+  Event,
+  EventHighlights,
+  Feature,
+  Infographic,
+  InTheNews,
+  LeadershipMessages,
+  Obituary,
+  Opinion,
+  Photo,
+  PolicyBrief,
+  PollQuiz,
+  Profile,
+  Research,
+  Solutions,
+  Survey,
+  Timeline,
+  TipsAndTakeaways,
+  TypeAnnouncement,
+  News,
+  QuestionAnswer,
+  Video,
+  Podcast,
+  Book,
+} from "../SVG-library/SVG";
 
 import EventStartEndDate from "./EventStartEndDate";
 
@@ -73,8 +100,45 @@ export default function HorizontalCard({
   cardSize = "small",
 }) {
   const SVGMap = new Map();
+  SVGMap.set("alert", <Alert />);
+  SVGMap.set("analysis & insights", <AnalysisAndInsights />);
+  SVGMap.set("analysis &amp; insights", <AnalysisAndInsights />);
+  SVGMap.set("analysis&nbsp;&amp;&nbsp;insights", <AnalysisAndInsights />);
+  SVGMap.set("case study", <CaseStudy />);
+  SVGMap.set("case&nbsp;study", <CaseStudy />);
+  SVGMap.set("casestudy", <CaseStudy />);
+  SVGMap.set("event", <Event />);
+  SVGMap.set("event&nbsp;highlights", <EventHighlights />);
+  SVGMap.set("event highlights", <EventHighlights />);
+  SVGMap.set("feature", <Feature />);
+  SVGMap.set("infographic", <Infographic />);
+  SVGMap.set("in&nbsp;the&nbsp;news", <InTheNews />);
+  SVGMap.set("in the news", <InTheNews />);
+  SVGMap.set("inthenews", <InTheNews />);
+  SVGMap.set("leadership&nbsp;messages", <LeadershipMessages />);
+  SVGMap.set("leadership messages", <LeadershipMessages />);
+  SVGMap.set("obituary", <Obituary />);
+  SVGMap.set("opinion", <Opinion />);
+  SVGMap.set("photo", <Photo />);
+  SVGMap.set("policy&nbsp;brief", <PolicyBrief />);
+  SVGMap.set("policy brief", <PolicyBrief />);
+  SVGMap.set("poll/quiz", <PollQuiz />);
+  SVGMap.set("poll / quiz", <PollQuiz />);
+  SVGMap.set("poll&nbsp;/&nbsp;quiz", <PollQuiz />);
+  SVGMap.set("profile", <Profile />);
+  SVGMap.set("research", <Research />);
+  SVGMap.set("solutions", <Solutions />);
+  SVGMap.set("survey", <Survey />);
+  SVGMap.set("timeline", <Timeline />);
+  SVGMap.set("tips & takeaways", <TipsAndTakeaways />);
+  SVGMap.set("tips &amp; takeaways", <TipsAndTakeaways />);
+  SVGMap.set("tips&nbsp;&amp;&nbsp;takeaways", <TipsAndTakeaways />);
+  SVGMap.set("announcement", <TypeAnnouncement />);
   SVGMap.set("news", <News />);
   SVGMap.set("q&amp;a", <QuestionAnswer />);
+  SVGMap.set("q&a", <QuestionAnswer />);
+  SVGMap.set("q & a", <QuestionAnswer />);
+  SVGMap.set("q&nbsp;&amp;&nbsp;a", <QuestionAnswer />);
   SVGMap.set("video", <Video />);
   SVGMap.set("podcast", <Podcast />);
   SVGMap.set("book", <Book />);
@@ -105,26 +169,26 @@ export default function HorizontalCard({
       className={`listing-item su-flex ${cardGap.get(cardSize)}`}
       data-testid="horizontal-card"
     >
-      {cardSize === "large" && (
+      {cardSize === "large" && imageUrl && (
         <div className="su-shrink-0 su-w-[103px] su-h-[69px] md:su-w-[169px] md:su-h-[113px] lg:su-w-[292px] lg:su-h-[193px]">
           <CardThumbnail
             imageUrl={imageUrl}
             alt={imageAlt}
             videoUrl={videoUrl}
             mediaType="image"
-            aspectRatio="card"
+            aspectRatio="card-large"
             size={cardSize}
           />
         </div>
       )}
 
-      {cardSize === "small" && (
+      {cardSize === "small" && imageUrl && (
         <div className="su-shrink-0 su-w-[73px] su-h-[73px]">
           <CardThumbnail
             imageUrl={imageUrl}
             alt={imageAlt}
             mediaType="image"
-            aspectRatio="square"
+            aspectRatio="card-small"
             size={cardSize}
           />
         </div>
@@ -148,10 +212,10 @@ export default function HorizontalCard({
         <h2
           className={`${cardTitleFont(cardSize)} ${titleSize.get(
             cardSize
-          )} ${cardTitleFont(cardSize)} su-my-0`}
+          )} ${cardTitleFont(cardSize)} su-font-sans su-my-0`}
         >
           <a
-            className="hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red"
+            className="hocus:su-text-digital-red hocus:su-underline su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
             href={liveUrl}
           >
             {title}

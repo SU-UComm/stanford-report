@@ -1,9 +1,10 @@
 import FetchAdapter from "../../../packages/utils/fetchAdapter";
+import translatePersonalisationProfile from "../../../packages/utils/translatePersonalisationProfile";
 
 export default async function relatedStoryData(
   pageData = null,
   search = null,
-  audience = null
+  audience = ""
 ) {
   const adapter = new FetchAdapter();
 
@@ -15,9 +16,9 @@ export default async function relatedStoryData(
       search.collection
     }&meta_taxonomyContentMainTopicText=${
       pageData.mainTopic
-    }&meta_taxonomyAudienceText=${audience || ""}&num_ranks=1&meta_id_not=${
-      pageData.id
-    }`;
+    }&meta_taxonomyAudienceText=${translatePersonalisationProfile(
+      audience
+    )}&num_ranks=1&meta_id_not=${pageData.id}`;
     adapter.url = fbUrl;
 
     const storyResultData = await adapter.fetch();

@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "content-carousel",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "namespace": "stanford-components",
   "description": "A carousel of slides that contain WYSIWYG content.",
   "displayName": "Content Carousel",
@@ -63,20 +63,6 @@
             }
           },
           {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
-            }
-          },
-          {
             "location": "footer",
             "file": {
               "type": "js",
@@ -99,7 +85,20 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "../../packages/__globalPreview/basicstory.html"
+          }
+        }
+      }
+    },
+    "story": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/basicstory.html"
           }
         }
       }

@@ -1,0 +1,80 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "topic-subtopic-listing",
+  "version": "0.0.6",
+  "namespace": "stanford-components",
+  "description": "Stanford university Base component.",
+  "displayName": "Topic / subtopic listing",
+  "mainFunction": "main",
+  "environment": [
+    {
+      "name": "FB_JSON_URL",
+      "required": true
+    }
+  ],
+  "icon": {
+    "id": "clear_all",
+    "color": {
+      "type": "enum",
+      "value": "yellow"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "displayConfiguration": {
+            "required": [],
+            "properties": {
+              "searchQuery": {
+                "title": "Search query",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}

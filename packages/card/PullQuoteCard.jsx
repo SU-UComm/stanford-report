@@ -25,7 +25,15 @@ import { PullQuote } from "../quotes/PullQuote";
  */
 
 export default function PullQuoteCard({
-  data: { imageUrl, quote, description, liveUrl, ctaText = "Read the story" },
+  data: {
+    imageUrl,
+    imageAlt = "",
+    quote,
+    description,
+    liveUrl,
+    ctaText = "Read the story",
+    authorName,
+  },
 }) {
   return quote ? (
     <article
@@ -36,6 +44,7 @@ export default function PullQuoteCard({
         <PullQuote
           quote={quote}
           avatar={imageUrl}
+          imageAlt={imageAlt}
           avatarSize="medium"
           cardSize="featured"
         />
@@ -43,7 +52,9 @@ export default function PullQuoteCard({
       {description && (
         <XssSafeContent
           data-test="pullquote-description"
-          content={description}
+          content={`<p>${
+            authorName ? `<strong>${authorName}</strong>,` : ""
+          } ${description.replace(/<p>|<\/p>/g, "")}</p>`}
           elementType="div"
           className="[&>*]:su-my-0 [&>*]:su-text-[18px] [&>*]:dark:su-text-white [&>*]:su-font-sans [&>*]:su-w-full"
         />

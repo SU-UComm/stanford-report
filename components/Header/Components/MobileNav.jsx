@@ -9,7 +9,10 @@ function MajorLinks({ items }) {
   return (
     items &&
     items.length > 0 && (
-      <ul className="su-w-full su-order-2 su-list-none su-flex su-flex-wrap su-gap-[1px] md:su-gap-[19px] su-pl-0 su-ml-0">
+      <ul
+        className="su-w-full su-order-2 su-list-none su-flex su-flex-wrap su-gap-[1px] md:su-gap-[19px] su-pl-0 su-ml-0"
+        data-location="main-nav:a:0"
+      >
         {items.map((item) => {
           const title = decode(item.asset_name);
           return (
@@ -165,8 +168,9 @@ export default function MobileNav({ navigation, search, audience }) {
       id="menu"
       aria-label="Primary"
       aria-hidden="true"
-      className="report-header__menu-tray su-shadow su-z-50 su-fixed su-left-0 su-top-0 su-w-full su-h-full"
+      className="report-header__menu-tray su-hidden su-shadow su-z-50 su-fixed su-left-0 su-top-0 su-w-full su-h-full"
     >
+      <span tabIndex="0" data-tp-to="close" />
       <div className="report-header__overlay su-bg-black su-opacity-25 su-w-full su-h-full" />
       <div className="report-header__primary-nav su-bg-white dark:su-bg-black-true dark:su-text-white su-h-screen su-absolute su-top-0 su-left-0 su-w-full md:su-w-[390px] su-flex su-flex-wrap su-overflow-y-auto su-pb-[32px] md:su-pb-[64px] su-pt-[115px] md:su-pt-[167px] su-px-[38px]">
         <form
@@ -187,11 +191,13 @@ export default function MobileNav({ navigation, search, audience }) {
             defaultValue=""
             placeholder="Search"
             id="mobile_search_query"
+            data-role="search-query"
             required
           />
           <button
             type="reset"
             className="report-header__clear su-h-[48px] su-absolute su-top-[2px] su-right-[70px] su-text-digital-blue su-text-[20px]"
+            data-role="clear-search"
           >
             Clear <span className="sr-only">Search</span>
           </button>
@@ -251,6 +257,7 @@ export default function MobileNav({ navigation, search, audience }) {
           aria-expanded="true"
           aria-controls="menu"
           aria-labelledby="close-menu"
+          data-location="close"
         >
           <span className="su-relative su-h-[32px] su-w-[32px]">
             <svg
@@ -274,6 +281,8 @@ export default function MobileNav({ navigation, search, audience }) {
             Close
           </span>
         </button>
+
+        <span tabIndex="0" data-tp-to="main-nav:a:0" />
       </div>
     </nav>
   );

@@ -1,0 +1,71 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "basic-story-hero",
+  "version": "0.0.4",
+  "namespace": "stanford-components",
+  "description": "The basic story hero appears on basic story pages",
+  "displayName": "Basic story hero",
+  "mainFunction": "main",
+  "icon": {
+    "id": "flag",
+    "color": {
+      "type": "enum",
+      "value": "pink"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "client.css"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/basicstory.html"
+          }
+        }
+      }
+    }
+  }
+}

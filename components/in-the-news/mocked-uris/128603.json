@@ -1,0 +1,137 @@
+{
+    "id": "128603",
+    "type": "link",
+    "type_name": "Link",
+    "version": "0.0.8",
+    "name": "Nine ways to reset your relationship with social media",
+    "short_name": "Nine ways to reset your relationship with social media",
+    "status": {
+        "id": 2,
+        "code": "under_construction",
+        "name": "Under Construction"
+    },
+    "created": {
+        "date": "2024-01-29T17:03:31-08:00",
+        "user_id": "32242"
+    },
+    "updated": {
+        "date": "2024-01-29T17:07:38-08:00",
+        "user_id": "32242"
+    },
+    "published": {
+        "date": null,
+        "user_id": null
+    },
+    "status_changed": {
+        "date": "2024-01-29T17:03:31-08:00",
+        "user_id": "32242"
+    },
+    "urls": [
+        "https://sug-web.matrix.squiz.cloud/report/stories/test-stories/nine-ways-to-reset-your-relationship-with-social-media"
+    ],
+    "url": "https://sug-web.matrix.squiz.cloud/report/stories/test-stories/nine-ways-to-reset-your-relationship-with-social-media",
+    "attributes": {
+        "link_url": "https://time.com/6554322/how-to-use-social-media-less/",
+        "name": "Nine ways to reset your relationship with social media",
+        "link_asset_id": "",
+        "link_relation": ""
+    },
+    "metadata": {
+        "csFeaturedImageUrl": [
+            "https://sug-web.matrix.squiz.cloud/__data/assets/image/0028/127837/60-850x560.jpg"
+        ],
+        "csFeaturedImageAlt": [
+            "Top don view of a desktop with a MAC computer"
+        ],
+        "csTaxonomyName": [
+            "Awards, honors, &amp; appointments"
+        ],
+        "csTaxonomyUrl": [
+            "https://sug-web.matrix.squiz.cloud/_media/taxonomy/content-warehouse/front-end-taxonomy/content-topic/university-news2/awards,-honors,-and-appointments"
+        ],
+        "csContentTypeName": [
+            "News"
+        ],
+        "seoTitle": [
+            "Nine ways to reset your relationship with social media"
+        ],
+        "canonicalUrl": [],
+        "seoDescription": [],
+        "seoKeywords": [],
+        "robots": [
+            "max-image-preview:large"
+        ],
+        "publishedDate": [
+            "2024-01-22 00:00:00"
+        ],
+        "modifiedDate": [
+            "2024-01-01 00:00:00"
+        ],
+        "srAudience": [],
+        "srMessage": [],
+        "srContentType": [
+            "28192"
+        ],
+        "srFeaturedUnit": [],
+        "srContentCategory": [],
+        "srContentMainTopic": [
+            "28394"
+        ],
+        "srContentTopic": [],
+        "srContentSubtopic": [],
+        "pageType": [
+            "story"
+        ],
+        "teaser": [
+            "<p>Article quotes Nina Vasan, clinical assistant professor of psychiatry and behavioral sciences, on using social media tools to curate a feed that inspires rather than pulls you down.</p>"
+        ],
+        "featuredImage": [
+            "127837"
+        ],
+        "featuredVideo": [],
+        "mediaContacts": [],
+        "storySource": [
+            "Time"
+        ],
+        "contributorsAuthors": [
+            "127752"
+        ],
+        "contributorsProducers": [],
+        "contributorsWriters": [],
+        "contributorsEditors": [],
+        "contributorsVideographers": [],
+        "contributorsPhotographyDirector": [],
+        "contributorsMediaContacts": [],
+        "bylineAuthor": [],
+        "bylineText": [],
+        "bylineUrl": [],
+        "ogLocale": [
+            "en_US"
+        ],
+        "ogType": [
+            "article"
+        ],
+        "twitterCard": [
+            "summary_large_image"
+        ],
+        "authorId": [],
+        "authorName": [],
+        "srcOrigin": [],
+        "srcOriginType": [],
+        "srcContentSource": [],
+        "srcTitle": [],
+        "srcSummary": [],
+        "srcPublishedDate": [
+            "2023-01-01 00:00:00"
+        ],
+        "srcFeaturedImage": [],
+        "slug": [],
+        "srcKeywords": [],
+        "srcPostId": [],
+        "srcUrl": [],
+        "srcStatus": [],
+        "debugFeedUrl": [],
+        "debugPushTs": [],
+        "debugBlueprintId": []
+    }
+}

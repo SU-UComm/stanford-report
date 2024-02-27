@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "pullquote",
-  "version": "0.0.17",
+  "version": "0.0.19",
   "namespace": "stanford-components",
   "description": "Displays a quote for a story page along with details of the quote",
   "displayName": "Pullquote",
@@ -13,10 +13,10 @@
     }
   ],
   "icon": {
-    "id": "foundation",
+    "id": "format_quote",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "red"
     }
   },
   "functions": [
@@ -36,7 +36,7 @@
                 "format": "matrix-asset-uri",
                 "type": "string",
                 "title": "Asset",
-                "description": "The asset containing the quote thumbnail"
+                "description": "Select an image asset as the quotee's image"
               },
               "quote": {
                 "title": "Quote",
@@ -57,7 +57,7 @@
               "width": {
                 "title": "Width",
                 "description": "The width of the pullquote, this option will only take effect on featured story pages, not basic story pages.",
-                "enum": [ "Narrow", "Large" ],
+                "enum": ["Narrow", "Large"],
                 "type": "string",
                 "default": "Narrow"
               }
@@ -73,20 +73,6 @@
             "file": {
               "type": "css",
               "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
             }
           },
           {

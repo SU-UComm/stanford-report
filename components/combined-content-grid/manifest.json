@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "combined-content-grid",
-  "version": "0.0.4",
+  "version": "0.0.12",
   "namespace": "stanford-components",
   "description": "A featured content grid combined with announcements and events",
   "displayName": "Combined content grid",
@@ -41,15 +41,26 @@
                 "title": "Heading",
                 "type": "string"
               },
+              "ctaUrl": {
+                "title": "Matrix Asset Link",
+                "type": "string",
+                "description": "Select an asset to link to. If this field is filled out, it will be used instead of the manual link",
+                "format": "matrix-asset-uri"
+              },
+              "ctaManualUrl": {
+                "title": "Manual Link",
+                "type": "string",
+                "description": "Enter the full URL, including https://"
+              },
               "ctaText": {
                 "title": "Link text",
                 "type": "string",
                 "default": "View all"
               },
-              "ctaUrl": {
-                "title": "Link URL",
-                "type": "string",
-                "format": "matrix-asset-uri"
+              "ctaNewWindow": {
+                "title": "Open link in a new window",
+                "type": "boolean",
+                "default": false
               }
             }
           },
@@ -82,7 +93,7 @@
                     "searchQuery": {
                       "type": "string",
                       "title": "The Funnelback search query",
-                      "default": "?"
+                      "default": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search&log=false&&sort=date&meta_isTeaser=false&meta_taxonomyContentTypeText_not=Leadership Message&num_ranks=3"
                     }
                   }
                 }
@@ -97,7 +108,7 @@
                   }
                 },
                 "then": {
-                  "required": [],
+                  "required": ["cards"],
                   "properties": {
                     "cards": {
                       "title": "Cards",
@@ -158,7 +169,8 @@
               "endPoint": {
                 "title": "Events Endpoint",
                 "description": "The localist JSON endpoint to fetch events from",
-                "type": "string"
+                "type": "string",
+                "default": "https://events.stanford.edu/api/2/events?days=365&sponsored=true"
               },
               "numberOfItems": {
                 "title": "Number of Events",
@@ -187,7 +199,8 @@
               "endPoint": {
                 "title": "Announcements Endpoint",
                 "description": "The Funnelback endpoint to fetch announcements from",
-                "type": "string"
+                "type": "string",
+                "default": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search&log=false&&sort=date&meta_taxonomyAudienceText=External&meta_taxonomyContentTypeText=Announcement&num_ranks=3"
               },
               "numberOfItems": {
                 "title": "Number of Announcements",
@@ -213,20 +226,6 @@
             "file": {
               "type": "css",
               "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
             }
           },
           {

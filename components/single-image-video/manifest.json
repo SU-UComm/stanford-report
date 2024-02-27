@@ -1,0 +1,119 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "single-image-video",
+  "version": "0.0.6",
+  "namespace": "stanford-components",
+  "description": "Stanford university Base component.",
+  "displayName": "Single image or video",
+  "mainFunction": "main",
+  "icon": {
+    "id": "perm_media",
+    "color": {
+      "type": "enum",
+      "value": "purple"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {
+          "image": {
+            "title": "Image",
+            "description": "If a video is selected, the video will override the selected image.",
+            "type": "string",
+            "format": "matrix-asset-uri"
+          },
+          "caption": {
+            "title": "Caption",
+            "type": "string"
+          },
+          "credit": {
+            "title": "Credit",
+            "type": "string"
+          },
+          "width": {
+            "title": "Width",
+            "enum": ["Wide", "Narrow"],
+            "default": "Wide",
+            "type": "string"
+          },
+          "video": {
+            "required": [],
+            "properties": {
+              "autoplay": {
+                "title": "Autoplay",
+                "description": "This will enable the video auto play once scrolled into view",
+                "type": "boolean"
+              },
+              "vimeoid": {
+                "title": "Vimeo video ID",
+                "description": "Provide the Vimeo autoplay video id here, this is the muted looped video that appears in the component.",
+                "type": "string"
+              },
+              "youtubeid": {
+                "title": "Youtube video ID",
+                "description": "Provide the YouTube video ID for the modal video",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "required": ["image"]
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/125800": {
+      "type": "file",
+      "path": "mocked-uris/125800.json"
+    },
+    "matrix-asset://api-identifier/125801": {
+      "type": "file",
+      "path": "mocked-uris/125801.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}

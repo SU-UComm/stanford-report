@@ -1,0 +1,42 @@
+{
+    "id": "28394",
+    "type": "data_record",
+    "type_name": "Data Record",
+    "version": "0.1.0",
+    "name": "Awards, honors, & appointments",
+    "short_name": "Awards, honors, & appointments",
+    "status": {
+        "id": 16,
+        "code": "live",
+        "name": "Live"
+    },
+    "created": {
+        "date": "2023-08-31T05:30:32-07:00",
+        "user_id": "57"
+    },
+    "updated": {
+        "date": "2024-01-15T00:39:03-08:00",
+        "user_id": "57"
+    },
+    "published": {
+        "date": "2024-01-15T00:39:03-08:00",
+        "user_id": "57"
+    },
+    "status_changed": {
+        "date": "2024-01-15T00:39:03-08:00",
+        "user_id": "57"
+    },
+    "attributes": {
+        "name": "Awards, honors, & appointments"
+    },
+    "metadata": {
+        "landingPage": [
+            "124958"
+        ],
+        "slug": [],
+        "description": [],
+        "itemId": [],
+        "parentSection": [],
+        "featured": []
+    }
+}

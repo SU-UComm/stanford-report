@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "multicolumn-image",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "namespace": "stanford-components",
   "description": "The multicolumn image is a way to display a series of images in 2 to 3 columns.",
   "displayName": "Multicolumn Image",
@@ -16,7 +16,7 @@
     "id": "view_column",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "orange"
     }
   },
   "functions": [
@@ -28,6 +28,7 @@
         "required": [],
         "properties": {
           "contentConfiguration": {
+            "description": "For best results, the content editor should use images of the same dimensions in the deployed component.",
             "required": [],
             "properties": {
               "images": {
@@ -64,20 +65,6 @@
             "file": {
               "type": "css",
               "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
             }
           },
           {

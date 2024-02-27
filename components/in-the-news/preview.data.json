@@ -1,0 +1,21 @@
+{
+    "headingConfiguration": {
+        "title": "In the news",
+        "ctaText": "View all",
+        "ctaUrl": "matrix-asset://api-identifier/89422"
+    },
+    "featuredContent": {
+        "featuredTeaser": "matrix-asset://api-identifier/128603",
+        "featuredCtaText": "Read the story on NPR",
+        "featuredTeaserDescription": "This is a custom feature desc",
+        "featuredQuote": "A sanctuary, it’s a forever thing. And so we want to know not only what’s here now, but how it’s changing over time.”"
+    },
+    "supplementaryTeaserOne": {
+        "teaserOne": "matrix-asset://api-identifier/128604",
+        "teaserOneDescription": "Teaser 1 custom description"
+    },
+    "supplementaryTeaserTwo": {
+        "teaserTwo": "matrix-asset://api-identifier/128605",
+        "teaserTwoDescription": ""
+    }
+}

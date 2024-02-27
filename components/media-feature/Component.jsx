@@ -40,12 +40,12 @@ export default function MediaFeature({
           </div>
 
           <div>
-            <div className="su-py-[20px] su-w-full md:su-pb-[27px] md:su-pt-0">
+            <div className="su-py-[20px] su-w-full md:su-pb-[27px] md:su-pt-0 [&>*]:dark:su-text-black">
               <FeaturedHeading type={mediaType} />
             </div>
 
             <a href={linkUrl} className="su-no-underline">
-              <h3 className="su-text-[35px] su-font-bold su-leading-[110%] su-m-0 su-pb-[8px] md:su-pb-[19px] md:su-text-[40px] lg:su-text-[43px]">
+              <h3 className="su-text-[35px] su-font-bold su-leading-[110%] su-m-0 su-pb-[8px] su-text-black su-text-black md:su-pb-[19px] md:su-text-[40px] lg:su-text-[43px]">
                 {title}
                 <span className="su-hidden lg:su-inline-block su-relative su-top-[12px]">
                   <ExternalArrow size="large" />
@@ -53,11 +53,11 @@ export default function MediaFeature({
               </h3>
             </a>
 
-            <div className="su-w-full su-flex su-text-[18px] su-text-black-70 su-font-semibold su-items-center su-pb-[15px] su-leading-[130%] md:su-pb-[19px] md:su-text-[16px]">
+            <div className="su-w-full su-flex su-gap-[0.933rem] su-text-[18px] su-text-black-70 su-font-semibold su-items-center su-pb-[15px] su-leading-[130%] md:su-pb-[19px] md:su-text-[16px]">
               <MediaType type={mediaType} />
             </div>
 
-            <p className="su-text-[18px] su-w-full su-m-0 su-leading-[125%] su-font-normal md:su-text-[19px] lg:su-text-[21px]">
+            <p className="su-text-[18px] su-w-full su-m-0 su-leading-[125%] su-text-black su-font-normal md:su-text-[19px] lg:su-text-[21px]">
               {teaserText}
             </p>
           </div>
