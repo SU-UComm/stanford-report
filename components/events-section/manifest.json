@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "events-section",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "namespace": "stanford-components",
   "description": "Stanford Events Section is a grid featuring 3, 6, or 9 events",
   "displayName": "Events Section",
