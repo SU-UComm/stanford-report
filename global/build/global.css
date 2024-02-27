@@ -2445,6 +2445,13 @@ audio::-webkit-media-controls-panel {
   max-width: 1412px;
 }
 
+/* Site search same as container wide */
+
+.site-search{
+  width: 100% !important;
+  max-width: 1412px !important;
+}
+
 .su-container-full{
   width: 100%;
   max-width: none;
@@ -3080,10 +3087,10 @@ WYSIWYG formatting styles
 .container > span ul ol,
 .container > span ol ol,
 .container > span ol ul,
-.su-page-content > *:not([data-component], .container) ul ul,
-.su-page-content > *:not([data-component], .container) ul ol,
-.su-page-content > *:not([data-component], .container) ol ol,
-.su-page-content > *:not([data-component], .container) ol ul{
+.su-page-content > *:not([data-component], .container, .site-search) ul ul,
+.su-page-content > *:not([data-component], .container, .site-search) ul ol,
+.su-page-content > *:not([data-component], .container, .site-search) ol ol,
+.su-page-content > *:not([data-component], .container, .site-search) ol ul{
   margin-bottom: 0;
 }
 
@@ -3130,7 +3137,7 @@ WYSIWYG formatting styles
 
 .su-wysiwyg-content ol,
 .container > span ol,
-.su-page-content > div:not([data-component]) ol,
+.su-page-content > div:not([data-component], .site-search) ol,
 .su-page-content > ol{
   position: relative;
   padding-left: 30px;
@@ -3138,7 +3145,7 @@ WYSIWYG formatting styles
 
 .su-wysiwyg-content ul > li,
 .container > span ul > li,
-.su-page-content > div:not([data-component]) ul > li,
+.su-page-content > div:not([data-component], .site-search) ul > li,
 .su-page-content > ul > li{
   position: relative;
   padding-left: 30px;
@@ -3146,7 +3153,7 @@ WYSIWYG formatting styles
 
 .su-wysiwyg-content ul > li::before,
 .container > span ul > li::before,
-.su-page-content > div:not([data-component]) ul > li::before,
+.su-page-content > div:not([data-component], .site-search) ul > li::before,
 .su-page-content > ul > li::before{
   position: absolute;
   top: .6em;
