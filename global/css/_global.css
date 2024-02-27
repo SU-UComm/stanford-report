@@ -803,7 +803,7 @@ WYSIWYG formatting styles
 /* Use decanter styles for WYSIWYG elements */
 .su-wysiwyg-content,
 .container > span,
-.su-page-content > *:not([data-component], .container) {
+.su-page-content > *:not([data-component], .container, .site-search) {
   @apply su-wysiwyg;
 }
 
