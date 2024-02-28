@@ -26,7 +26,7 @@ export default function SingleImageVideo({
 }) {
   let captionCredit;
   // const { url, attributes } = imageData;
-  const { autoplay, vimeoid, youtubeid } = video;
+  const { vimeoid, youtubeid } = video;
 
   if (caption && credit) {
     captionCredit = `${caption} | ${credit}`;
@@ -37,7 +37,7 @@ export default function SingleImageVideo({
   // su-h-[234px] md:su-h-[489px] lg:su-h-[871.33px]
 
   // state
-  const [videoPlaying, setVideoPlaying] = useState("play");
+  const [videoPlaying, setVideoPlaying] = useState("pause");
   const [pausePlayTitle, setPausePlayTitle] = useState("Pause looping video");
   const [iframeNode, setIframeNode] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -62,6 +62,24 @@ export default function SingleImageVideo({
 
     if (videoPlaying === "play") setPausePlayTitle("Pause looping video");
     else setPausePlayTitle("Play looping video");
+
+    const onScroll = () => {
+      if (iframeNode) {
+        const { top, height } = iframeNode.getBoundingClientRect();
+        const topDistance = top - height;
+
+        if (topDistance <= 0) {
+          setVideoPlaying("play");
+        } else {
+          setVideoPlaying("pause");
+        }
+      }
+    };
+
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", onScroll);
   }, [videoPlaying, iframeNode]);
 
   // events
@@ -77,7 +95,7 @@ export default function SingleImageVideo({
             !youtubeid ? " su-w-full" : " su-w-full su-aspect-[16/9]"
           }`}
         >
-          {!youtubeid ? (
+          {!youtubeid && !vimeoid ? (
             <img
               // src="https://picsum.photos/800"
               src={imageData.url}
@@ -95,7 +113,6 @@ export default function SingleImageVideo({
               onClick={() => handleClick()}
             >
               <Video
-                autoplay={autoplay}
                 id={vimeoid}
                 thumbnail={imageData}
                 handleIframeLoad={handleIframeLoad}
@@ -115,7 +132,7 @@ export default function SingleImageVideo({
             {captionCredit}
           </p>
 
-          {youtubeid && vimeoid && autoplay && (
+          {youtubeid && vimeoid && (
             <button
               data-role="video-control"
               type="button"
@@ -152,11 +169,11 @@ export default function SingleImageVideo({
   );
 }
 
-function Video({ autoplay, id, thumbnail, handleIframeLoad }) {
-  if (autoplay && id) {
+function Video({ id, thumbnail, handleIframeLoad }) {
+  if (id) {
     return (
       <iframe
-        src={`https://player.vimeo.com/video/${id}?autoplay=1&loop=1&autopause=0&background=1`}
+        src={`https://player.vimeo.com/video/${id}?autoplay=0&loop=1&autopause=0&background=1`}
         className="su-w-full su-h-full su-absolute su-top-0 su-left-0 su-pointer-events-none"
         allow="autoplay; fullscreen"
         data-role="video-player"

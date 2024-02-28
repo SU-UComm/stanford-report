@@ -43,11 +43,6 @@
           "video": {
             "required": [],
             "properties": {
-              "autoplay": {
-                "title": "Autoplay",
-                "description": "This will enable the video auto play once scrolled into view",
-                "type": "boolean"
-              },
               "vimeoid": {
                 "title": "Vimeo video ID",
                 "description": "Provide the Vimeo autoplay video id here, this is the muted looped video that appears in the component.",
@@ -61,7 +56,7 @@
             }
           }
         },
-        "required": ["image"]
+        "required": []
       },
       "output": {
         "responseType": "html",
