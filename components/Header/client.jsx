@@ -22,22 +22,22 @@ import ReportHeader from "./scripts/reportHeader";
   props.pageData = pageData;
 
   const cdpConsentCookie = JSON.parse(getCookie("squiz.cdp.consent"));
-  props.consentData = cdpConsentCookie
-    ? !!Number(cdpConsentCookie?.CDPConsent)
-    : false;
+  // do we have consent data
+  props.consentData = cdpConsentCookie?.CDPConsent;
 
   const audienceData = getCookie("preferences_personalisation");
   props.audienceData = audienceData;
   if (audienceData === "null") {
     props.audienceData = null;
   }
-
-  const fbStoryData = await relatedStoryData(
-    pageData,
-    props.search,
-    audienceData
-  );
-  props.relatedStoryData = fbStoryData;
+  if (pageData?.isStory) {
+    const fbStoryData = await relatedStoryData(
+      pageData,
+      props.search,
+      audienceData
+    );
+    props.relatedStoryData = fbStoryData;
+  }
 
   // set the props we need, to a window variable
   window.suHeaderProps = props;
