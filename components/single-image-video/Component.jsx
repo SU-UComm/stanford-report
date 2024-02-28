@@ -60,17 +60,37 @@ export default function SingleImageVideo({
       );
     }
 
+    if (iframeNode && !iframeNode.dataset.loaded) {
+      setTimeout(() => {
+        const { top } = iframeNode.getBoundingClientRect();
+
+        // console.log(top);
+
+        if (top < window.innerHeight) {
+          setVideoPlaying("play");
+
+          iframeNode.dataset.loaded = "true";
+        }
+      }, 100);
+    }
+
     if (videoPlaying === "play") setPausePlayTitle("Pause looping video");
     else setPausePlayTitle("Play looping video");
 
     const onScroll = () => {
       if (iframeNode) {
-        const { top, height } = iframeNode.getBoundingClientRect();
-        const topDistance = top - height;
+        const { top } = iframeNode.getBoundingClientRect();
 
-        if (topDistance <= 0) {
+        if (
+          top <= window.innerHeight * 0.5 &&
+          top > -(window.innerHeight * 0.5)
+        ) {
           setVideoPlaying("play");
-        } else {
+        } else if (top >= window.innerHeight * 0.5) {
+          setVideoPlaying("pause");
+        }
+
+        if (top <= -(window.innerHeight * 0.5)) {
           setVideoPlaying("pause");
         }
       }
@@ -95,7 +115,7 @@ export default function SingleImageVideo({
             !youtubeid ? " su-w-full" : " su-w-full su-aspect-[16/9]"
           }`}
         >
-          {!youtubeid && !vimeoid ? (
+          {!youtubeid || !vimeoid ? (
             <img
               // src="https://picsum.photos/800"
               src={imageData.url}
@@ -118,7 +138,7 @@ export default function SingleImageVideo({
                 handleIframeLoad={handleIframeLoad}
               />
 
-              <div className="su-absolute su-bottom-[21.26px] su-left-[21.26px] su-hidden md:su-block [&>*]:md:su-w-[55.95px] [&>*]:md:su-h-[55.95px] [&>*]:lg:su-w-[100px] [&>*]:lg:su-h-[100px] lg:su-bottom-[38px] lg:su-left-[38px]">
+              <div className="su-absolute su-bottom-[20px] su-left-[20px] [&>*]:md:su-w-[40px] [&>*]:md:su-h-[40px] md:su-block [&>*]:md:su-w-[55.95px] [&>*]:md:su-h-[55.95px] [&>*]:lg:su-w-[100px] [&>*]:lg:su-h-[100px] lg:su-bottom-[38px] lg:su-left-[38px]">
                 <VideoPlay />
               </div>
             </button>
@@ -127,16 +147,18 @@ export default function SingleImageVideo({
 
         {/* background=1 */}
 
-        <div className="su-flex su-flex-col su-gap-[8px] su-items-center md:su-gap-[22px] su-w-full su-relative">
-          <p className="su-m-0 su-text-[14px] su-max-w-[633px] su-leading-[16.72px] su-font-normal su-text-black-70 md:su-text-[16px] su-leading-[19.11px] md:su-text-left">
-            {captionCredit}
-          </p>
+        <div className="su-flex su-gap-[8px] md:su-gap-[22px] su-w-full su-relative su-flex-col su-items-center lg:su-flex-row lg:su-items-start">
+          <div className="su-mx-auto su-flex su-justify-center su-w-full">
+            <p className="su-m-0 su-text-[14px] su-max-w-[633px] su-leading-[16.72px] su-font-normal su-text-black-70 md:su-text-[16px] su-leading-[19.11px] md:su-text-left">
+              {captionCredit}
+            </p>
+          </div>
 
           {youtubeid && vimeoid && (
             <button
               data-role="video-control"
               type="button"
-              className="su-fill-black-70"
+              className="su-fill-black-70 su-relative su-shrink-0"
               onClick={() => {
                 if (videoPlaying === "pause") {
                   setVideoPlaying("play");
@@ -147,7 +169,7 @@ export default function SingleImageVideo({
                 setVideoPlaying("pause");
               }}
             >
-              <span className="[&>*]:su-fill-black-70 [&>*]:su-w-[25px] [&>*]:su-h-[25px] su-text-black-70 su-flex su-gap-[6px] su-items-center su-text-[16px] [&>*]:lg:su-h-[30px] [&>*]:lg:su-w-[30px] lg:su-absolute lg:su-top-0 lg:su-right-0">
+              <span className="[&>*]:su-fill-black-70 [&>*]:su-w-[25px] [&>*]:su-h-[25px] su-text-black-70 su-flex su-gap-[6px] su-items-center su-text-[16px] [&>*]:lg:su-h-[30px] [&>*]:lg:su-w-[30px] lg:su-top-0 lg:su-right-0">
                 {videoPlaying === "pause" ? <Play /> : <Pause />}
                 {pausePlayTitle}
               </span>
