@@ -16,6 +16,8 @@ export default function FeatureStoryHero(props) {
   const { orientation } = props;
   const data = props;
 
+  console.log(orientation);
+
   switch (orientation) {
     case "vertical":
       return <VerticalHero data={data} />;

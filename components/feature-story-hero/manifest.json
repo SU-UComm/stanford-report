@@ -19,14 +19,7 @@
       "entry": "./dist/server.cjs",
       "input": {
         "type": "object",
-        "properties": {
-          "title": {
-            "title": "Heading",
-            "description": "The heading text",
-            "type": "string",
-            "default": "Lorem ipsum dolor"
-          }
-        },
+        "properties": {},
         "required": []
       },
       "output": {
