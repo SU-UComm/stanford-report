@@ -149,7 +149,7 @@ function ExternalLinks({ items }) {
  */
 export default function MobileNav({ navigation, search, audience }) {
   const { major, minor, contacts, external } = navigation;
-  const { endpoint, collection, profile } = search;
+  const { endpoint, collection, profile, resultPage } = search;
 
   let externalData = [];
   switch (audience) {
@@ -174,7 +174,7 @@ export default function MobileNav({ navigation, search, audience }) {
       <div className="report-header__overlay su-bg-black su-opacity-25 su-w-full su-h-full" />
       <div className="report-header__primary-nav su-bg-white dark:su-bg-black-true dark:su-text-white su-h-screen su-absolute su-top-0 su-left-0 su-w-full md:su-w-[390px] su-flex su-flex-wrap su-overflow-y-auto su-pb-[32px] md:su-pb-[64px] su-pt-[115px] md:su-pt-[167px] su-px-[38px]">
         <form
-          action={endpoint}
+          action={resultPage}
           method="get"
           role="search"
           className="su-mb-[32px] su-mx-[-18px] md:su-hidden su-grow su-flex su-flex-wrap su-order-1 su-relative"

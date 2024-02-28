@@ -17,8 +17,14 @@ export default function FactCallout({ displayConfiguration }) {
   const svgMap = new Map();
   const indicatorMap = new Map();
 
-  svgMap.set("pie chart", <PieChart />);
-  svgMap.set("bar graph", <BarGraph />);
+  svgMap.set("pie chart", {
+    light: <PieChart variant="light" />,
+    dark: <PieChart variant="dark" />,
+  });
+  svgMap.set("bar graph", {
+    light: <BarGraph variant="light" />,
+    dark: <BarGraph variant="dark" />,
+  });
 
   indicatorMap.set("top", "fact-wrapper__decoration-top");
   indicatorMap.set("bottom", "fact-wrapper__decoration-bottom");
@@ -30,23 +36,36 @@ export default function FactCallout({ displayConfiguration }) {
   return (
     <div className={`decoration-${indicatorPosition}`}>
       <Container width={width}>
-        <section className="fact-wrapper su-col-span-full su-w-full su-relative su-h-auto su-p-[3px] su-bg-gradient">
+        <section className="fact-wrapper su-col-span-full su-w-full su-relative su-h-auto su-p-[3px] su-bg-gradient-light-red-h-reverse">
           <div
             className={`${indicator} su-absolute su-left-1/2 su-right-1/2 su-flex su-items-center su-justify-start su-w-[24px] su-h-[90px]`}
           >
-            <div className="su-w-[3px] su-h-[72px] lg:su-h-[60px] su-bg-gradient" />
-            <div className="su-w-[24px] su-h-[24px] su-rounded-full su-bg-gradient su-flex su-items-center su-justify-center">
-              <div className="su-w-[18px] su-h-[18px] su-rounded-full su-bg-white dark:su-bg-black" />
+            <div className="su-w-[3px] su-h-[72px] lg:su-h-[60px] su-bg-gradient-light-red-h-reverse" />
+            <div className="su-w-[24px] su-h-[24px] su-rounded-full su-bg-gradient-light-red-h-reverse su-flex su-items-center su-justify-center">
+              <div className="su-w-[18px] su-h-[18px] su-rounded-full su-bg-white dark:su-bg-black-true" />
             </div>
           </div>
           <div
             className={`su-px-[38px] ${
               width === "Wide" ? "md:su-px-[121px]" : ""
-            } su-py-[38px] md:su-py-[61px] su-w-full su-h-full su-bg-white dark:su-bg-black su-flex su-flex-col su-items-center su-justify-center su-gap-[10px] lg:su-flex-row lg:su-gap-[38px] su-items-center`}
+            } su-py-[38px] md:su-py-[61px] su-w-full su-h-full su-bg-white dark:su-bg-black-true su-flex su-flex-col su-items-center su-justify-center su-gap-[10px] lg:su-flex-row lg:su-gap-[38px] su-items-center`}
           >
-            <div className="su-flex-shrink-0">
+            {svgMap.get(icon) &&
+              "light" in svgMap.get(icon) &&
+              "dark" in svgMap.get(icon) && (
+                <>
+                  <span data-test="icon" className="dark:su-hidden">
+                    {svgMap.get(icon).light}
+                  </span>
+                  <span data-test="icon" className="su-hidden dark:su-block">
+                    {svgMap.get(icon).dark}
+                  </span>
+                </>
+              )}
+
+            {/* <div className="su-flex-shrink-0">
               {svgMap.get(icon) ? svgMap.get(icon) : ""}
-            </div>
+            </div> */}
 
             <p className="su-font-serif su-m-0">{factText}</p>
           </div>

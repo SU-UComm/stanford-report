@@ -9,7 +9,8 @@ import { decode } from "html-entities";
 
 export default function CurrentStoryHeadline({ title = null, story = null }) {
   return (
-    title && (
+    title &&
+    story && (
       <div className="report-header__story su-z-40 su-hidden md:su-flex su-flex-grow su-items-center">
         <h1 className="su-m-0 su-text-[14px] lg:su-text-[16px] su-font-bold su-flex-grow su-opacity-0 su-max-h-[70px] lg:su-max-h-[79px] su-text-ellipsis su-overflow-hidden">
           {decode(title)}

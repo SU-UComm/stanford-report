@@ -14,32 +14,35 @@ import ReportHeader from "./scripts/reportHeader";
 
   if (!element) return;
 
-  const props = JSON.parse(element.getAttribute("data-hydration-props"));
+  // const props = JSON.parse(element.getAttribute("data-hydration-props"));
+  const props = {};
 
   const pageData =
     typeof window.pageController !== "undefined" ? window.pageController : null;
   props.pageData = pageData;
 
   const cdpConsentCookie = JSON.parse(getCookie("squiz.cdp.consent"));
-  props.consentData = cdpConsentCookie
-    ? !!Number(cdpConsentCookie?.CDPConsent)
-    : false;
+  // do we have consent data
+  props.consentData = cdpConsentCookie?.CDPConsent;
 
   const audienceData = getCookie("preferences_personalisation");
   props.audienceData = audienceData;
   if (audienceData === "null") {
     props.audienceData = null;
   }
+  if (pageData?.isStory) {
+    const fbStoryData = await relatedStoryData(
+      pageData,
+      props.search,
+      audienceData
+    );
+    props.relatedStoryData = fbStoryData;
+  }
 
-  const fbStoryData = await relatedStoryData(
-    pageData,
-    props.search,
-    audienceData
-  );
-  props.relatedStoryData = fbStoryData;
-
+  // set the props we need, to a window variable
+  window.suHeaderProps = props;
   // update the props
-  element.setAttribute("data-hydration-props", JSON.stringify(props));
+  // element.setAttribute("data-hydration-props", JSON.stringify(props));
 
   // Hydrate the component
   hydrateComponent({ Component, componentName: target });

@@ -45,7 +45,7 @@ export default function Pagination({
     }
   }
 
-  return (
+  return pages > 1 ? (
     <Container>
       <div className="su-flex su-gap-[9px] su-items-center su-justify-center su-my-[3.8rem] md:su-my-[7.2rem] lg:su-my-[7.6rem]">
         <button
@@ -87,5 +87,7 @@ export default function Pagination({
         </button>
       </div>
     </Container>
+  ) : (
+    ""
   );
 }

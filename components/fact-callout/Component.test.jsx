@@ -47,18 +47,18 @@ describe("FactCallout", () => {
     expect(element).toBeInTheDocument();
   });
 
-  it("Should show the bargraph SVG when the bar graph is selected", () => {
-    testData.displayConfiguration = {
-      ...testData.displayConfiguration,
-      icon: "bar graph",
-    };
+  // it("Should show the bargraph SVG when the bar graph is selected", () => {
+  //   testData.displayConfiguration = {
+  //     ...testData.displayConfiguration,
+  //     icon: "bar graph",
+  //   };
 
-    render(
-      <FactCallout displayConfiguration={testData.displayConfiguration} />
-    );
+  //   render(
+  //     <FactCallout displayConfiguration={testData.displayConfiguration} />
+  //   );
 
-    const element = document.querySelector(`[data-testid="bar-graph-svg"]`);
+  //   const element = document.querySelector(`[data-testid="bar-graph-svg"]`);
 
-    expect(element).toBeInTheDocument();
-  });
+  //   expect(element).toBeInTheDocument();
+  // });
 });

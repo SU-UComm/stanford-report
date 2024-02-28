@@ -318,7 +318,7 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                   id="preference-reset"
                   className="report-header__preferences-clear su-text-black-40 su-underline"
                   aria-pressed={!audience ? "true" : "false"}
-                  onClick={() => personaClickHandler(null)}
+                  onClick={() => personaClickHandler("external")}
                 >
                   Clear selection
                 </button>
