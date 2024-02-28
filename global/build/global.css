@@ -3326,3 +3326,25 @@ WYSIWYG formatting styles
     margin-top: 7.6rem !important;
   }
 }
+
+.su-page:not(.su-page-has-sidebar)
+  .su-lower-content
+  [data-component="metadata-fields"]{
+  margin-bottom: 7rem !important;
+}
+
+@media (min-width: 768px){
+  .su-page:not(.su-page-has-sidebar)
+  .su-lower-content
+  [data-component="metadata-fields"]{
+    margin-bottom: 16.2rem !important;
+  }
+}
+
+@media (min-width: 1500px){
+  .su-page:not(.su-page-has-sidebar)
+  .su-lower-content
+  [data-component="metadata-fields"]{
+    margin-bottom: 17.1rem !important;
+  }
+}

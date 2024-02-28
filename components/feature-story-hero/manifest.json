@@ -1,9 +1,9 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "feature-story-hero",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "namespace": "stanford-components",
-  "description": "Stanford university Base component.",
+  "description": "Hero that appears at the top of Featured Stories.",
   "displayName": "Feature story hero",
   "mainFunction": "main",
   "icon": {
@@ -19,14 +19,7 @@
       "entry": "./dist/server.cjs",
       "input": {
         "type": "object",
-        "properties": {
-          "title": {
-            "title": "Heading",
-            "description": "The heading text",
-            "type": "string",
-            "default": "Lorem ipsum dolor"
-          }
-        },
+        "properties": {},
         "required": []
       },
       "output": {
