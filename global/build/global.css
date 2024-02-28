@@ -2445,6 +2445,13 @@ audio::-webkit-media-controls-panel {
   max-width: 1412px;
 }
 
+/* Site search same as container wide */
+
+.site-search{
+  width: 100% !important;
+  max-width: 1412px !important;
+}
+
 .su-container-full{
   width: 100%;
   max-width: none;
@@ -2947,13 +2954,13 @@ WYSIWYG formatting styles
 
 .su-wysiwyg-content > *:first-child,
 .container > span > *:first-child,
-.su-page-content > *:not([data-component], .container) > *:first-child{
+.su-page-content > *:not([data-component], .container, .site-search) > *:first-child{
   margin-top: -0.25em;
 }
 
 .su-wysiwyg-content > *:last-child,
 .container > span > *:last-child,
-.su-page-content > *:not([data-component], .container) > *:last-child{
+.su-page-content > *:not([data-component], .container, .site-search) > *:last-child{
   margin-bottom: 0;
 }
 
@@ -2962,16 +2969,16 @@ WYSIWYG formatting styles
 .container > span ol,
 .container > span ul,
 .container > span dl,
-.su-page-content > *:not([data-component], .container) p,
-.su-page-content > *:not([data-component], .container) ol,
-.su-page-content > *:not([data-component], .container) ul,
-.su-page-content > *:not([data-component], .container) dl{
+.su-page-content > *:not([data-component], .container, .site-search) p,
+.su-page-content > *:not([data-component], .container, .site-search) ol,
+.su-page-content > *:not([data-component], .container, .site-search) ul,
+.su-page-content > *:not([data-component], .container, .site-search) dl{
   margin-bottom: 1.6em;
 }
 
 .su-wysiwyg-content li p,
 .container > span li p,
-.su-page-content > *:not([data-component], .container) li p{
+.su-page-content > *:not([data-component], .container, .site-search) li p{
   margin-bottom: 0.4em;
 }
 
@@ -2981,11 +2988,11 @@ WYSIWYG formatting styles
 .container > span h4,
 .container > span h5,
 .container > span h6,
-.su-page-content > *:not([data-component], .container) h2,
-.su-page-content > *:not([data-component], .container) h3,
-.su-page-content > *:not([data-component], .container) h4,
-.su-page-content > *:not([data-component], .container) h5,
-.su-page-content > *:not([data-component], .container) h6{
+.su-page-content > *:not([data-component], .container, .site-search) h2,
+.su-page-content > *:not([data-component], .container, .site-search) h3,
+.su-page-content > *:not([data-component], .container, .site-search) h4,
+.su-page-content > *:not([data-component], .container, .site-search) h5,
+.su-page-content > *:not([data-component], .container, .site-search) h6{
   margin-bottom: 0.7em;
   clear: both;
 }
@@ -2996,11 +3003,11 @@ WYSIWYG formatting styles
 .container > span h4:not(:first-child),
 .container > span h5:not(:first-child),
 .container > span h6:not(:first-child),
-.su-page-content > *:not([data-component], .container) h2:not(:first-child),
-.su-page-content > *:not([data-component], .container) h3:not(:first-child),
-.su-page-content > *:not([data-component], .container) h4:not(:first-child),
-.su-page-content > *:not([data-component], .container) h5:not(:first-child),
-.su-page-content > *:not([data-component], .container) h6:not(:first-child){
+.su-page-content > *:not([data-component], .container, .site-search) h2:not(:first-child),
+.su-page-content > *:not([data-component], .container, .site-search) h3:not(:first-child),
+.su-page-content > *:not([data-component], .container, .site-search) h4:not(:first-child),
+.su-page-content > *:not([data-component], .container, .site-search) h5:not(:first-child),
+.su-page-content > *:not([data-component], .container, .site-search) h6:not(:first-child){
   margin-top: 1.6em;
 }
 
@@ -3010,11 +3017,11 @@ WYSIWYG formatting styles
 .container > span h4 a,
 .container > span h5 a,
 .container > span h6 a,
-.su-page-content > *:not([data-component], .container) h2 a,
-.su-page-content > *:not([data-component], .container) h3 a,
-.su-page-content > *:not([data-component], .container) h4 a,
-.su-page-content > *:not([data-component], .container) h5 a,
-.su-page-content > *:not([data-component], .container) h6 a{
+.su-page-content > *:not([data-component], .container, .site-search) h2 a,
+.su-page-content > *:not([data-component], .container, .site-search) h3 a,
+.su-page-content > *:not([data-component], .container, .site-search) h4 a,
+.su-page-content > *:not([data-component], .container, .site-search) h5 a,
+.su-page-content > *:not([data-component], .container, .site-search) h6 a{
   text-decoration: none;
 }
 
@@ -3029,16 +3036,16 @@ WYSIWYG formatting styles
 .container > span h5 a:focus,
 .container > span h6 a:hover,
 .container > span h6 a:focus,
-.su-page-content > *:not([data-component], .container) h2 a:hover,
-.su-page-content > *:not([data-component], .container) h2 a:focus,
-.su-page-content > *:not([data-component], .container) h3 a:hover,
-.su-page-content > *:not([data-component], .container) h3 a:focus,
-.su-page-content > *:not([data-component], .container) h4 a:hover,
-.su-page-content > *:not([data-component], .container) h4 a:focus,
-.su-page-content > *:not([data-component], .container) h5 a:hover,
-.su-page-content > *:not([data-component], .container) h5 a:focus,
-.su-page-content > *:not([data-component], .container) h6 a:hover,
-.su-page-content > *:not([data-component], .container) h6 a:focus{
+.su-page-content > *:not([data-component], .container, .site-search) h2 a:hover,
+.su-page-content > *:not([data-component], .container, .site-search) h2 a:focus,
+.su-page-content > *:not([data-component], .container, .site-search) h3 a:hover,
+.su-page-content > *:not([data-component], .container, .site-search) h3 a:focus,
+.su-page-content > *:not([data-component], .container, .site-search) h4 a:hover,
+.su-page-content > *:not([data-component], .container, .site-search) h4 a:focus,
+.su-page-content > *:not([data-component], .container, .site-search) h5 a:hover,
+.su-page-content > *:not([data-component], .container, .site-search) h5 a:focus,
+.su-page-content > *:not([data-component], .container, .site-search) h6 a:hover,
+.su-page-content > *:not([data-component], .container, .site-search) h6 a:focus{
   text-decoration: underline;
 }
 
@@ -3047,10 +3054,10 @@ WYSIWYG formatting styles
 .container > span h3 + h4:not(:first-child),
 .container > span h4 + h5:not(:first-child),
 .container > span h5 + h6:not(:first-child),
-.su-page-content > *:not([data-component], .container) h2 + h3:not(:first-child),
-.su-page-content > *:not([data-component], .container) h3 + h4:not(:first-child),
-.su-page-content > *:not([data-component], .container) h4 + h5:not(:first-child),
-.su-page-content > *:not([data-component], .container) h5 + h6:not(:first-child){
+.su-page-content > *:not([data-component], .container, .site-search) h2 + h3:not(:first-child),
+.su-page-content > *:not([data-component], .container, .site-search) h3 + h4:not(:first-child),
+.su-page-content > *:not([data-component], .container, .site-search) h4 + h5:not(:first-child),
+.su-page-content > *:not([data-component], .container, .site-search) h5 + h6:not(:first-child){
   margin-top: 1em;
 }
 
@@ -3080,10 +3087,10 @@ WYSIWYG formatting styles
 .container > span ul ol,
 .container > span ol ol,
 .container > span ol ul,
-.su-page-content > *:not([data-component], .container) ul ul,
-.su-page-content > *:not([data-component], .container) ul ol,
-.su-page-content > *:not([data-component], .container) ol ol,
-.su-page-content > *:not([data-component], .container) ol ul{
+.su-page-content > *:not([data-component], .container, .site-search) ul ul,
+.su-page-content > *:not([data-component], .container, .site-search) ul ol,
+.su-page-content > *:not([data-component], .container, .site-search) ol ol,
+.su-page-content > *:not([data-component], .container, .site-search) ol ul{
   margin-bottom: 0;
 }
 
@@ -3130,7 +3137,7 @@ WYSIWYG formatting styles
 
 .su-wysiwyg-content ol,
 .container > span ol,
-.su-page-content > div:not([data-component]) ol,
+.su-page-content > div:not([data-component], .site-search) ol,
 .su-page-content > ol{
   position: relative;
   padding-left: 30px;
@@ -3138,7 +3145,7 @@ WYSIWYG formatting styles
 
 .su-wysiwyg-content ul > li,
 .container > span ul > li,
-.su-page-content > div:not([data-component]) ul > li,
+.su-page-content > div:not([data-component], .site-search) ul > li,
 .su-page-content > ul > li{
   position: relative;
   padding-left: 30px;
@@ -3146,7 +3153,7 @@ WYSIWYG formatting styles
 
 .su-wysiwyg-content ul > li::before,
 .container > span ul > li::before,
-.su-page-content > div:not([data-component]) ul > li::before,
+.su-page-content > div:not([data-component], .site-search) ul > li::before,
 .su-page-content > ul > li::before{
   position: absolute;
   top: .6em;
