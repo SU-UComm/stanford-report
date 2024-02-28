@@ -37,7 +37,9 @@ export default function Header({
   consentData = true,
 }) {
   // has the user given consent?
-  const [consent, setConsent] = useState(true);
+  const [consent, setConsent] = useState(false);
+  // has the user given consent?
+  const [displayConsentBanner, setDisplayConsentBanner] = useState(false);
   // if any, what audience value is set
   const [audience, setAudience] = useState(null);
   // page specific data
@@ -45,25 +47,32 @@ export default function Header({
   // related story display
   const [relatedStory, setRelatedStoryData] = useState(null);
 
-  const handleConsent = async (val) => {
-    if (val) {
+  const handleConsent = async (given) => {
+    if (given) {
       await cdpSetConsent(1);
-      setConsent(true);
     } else {
       await cdpSetConsent(0);
-      setConsent(true);
-      // set consent CDP = 0
     }
+    // tell the front end that we have interacted with Consent
+    setConsent(true);
+    // hide consent banner
+    setDisplayConsentBanner(false);
   };
   const handlePersona = async (personaVal) => {
     // check if we have consent first, if not, we need to set it
+    let persona = null;
     if (!consent) {
+      // if no consent previously given
       await cdpSetConsent(1);
       setConsent(true);
     }
-    await cdpSetPersona("persona-selector", personaVal);
-    setCookie("preferences_personalisation", personaVal);
-    setAudience(personaVal);
+    if (personaVal) {
+      persona = personaVal;
+    }
+    await cdpSetPersona("persona-selector", persona);
+    setCookie("preferences_personalisation", persona);
+    setDisplayConsentBanner(false);
+    setAudience(persona);
   };
 
   useEffect(() => {
@@ -72,6 +81,7 @@ export default function Header({
       setPageControls(window.suHeaderProps?.pageData);
       setAudience(window.suHeaderProps?.audienceData);
       setConsent(window.suHeaderProps?.consentData);
+      setDisplayConsentBanner(!window.suHeaderProps?.consentData);
     }
   }, []);
 
@@ -160,6 +170,7 @@ export default function Header({
                   endpoint={search?.endpoint}
                   collection={search?.collection}
                   profile={search?.profile}
+                  resultPage={search?.resultPage}
                 />
               </div>
 
@@ -187,7 +198,7 @@ export default function Header({
         </div>
       </header>
 
-      {!consent && (
+      {displayConsentBanner && (
         <CookieConsentBanner
           consentClickHandler={handleConsent}
           statement={site?.cookieStatement}
