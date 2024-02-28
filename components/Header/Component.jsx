@@ -49,11 +49,9 @@ export default function Header({
     if (val) {
       await cdpSetConsent(1);
       setConsent(true);
-      console.log("cookie consent accepted");
     } else {
       await cdpSetConsent(0);
       setConsent(true);
-      console.log("cookie consent NOT accepted");
       // set consent CDP = 0
     }
   };
@@ -69,10 +67,12 @@ export default function Header({
   };
 
   useEffect(() => {
-    setRelatedStoryData(relatedStoryData);
-    setPageControls(pageData);
-    setAudience(audienceData);
-    setConsent(consentData);
+    if (typeof window.suHeaderProps !== "undefined") {
+      setRelatedStoryData(window.suHeaderProps?.relatedStoryData);
+      setPageControls(window.suHeaderProps?.pageData);
+      setAudience(window.suHeaderProps?.audienceData);
+      setConsent(window.suHeaderProps?.consentData);
+    }
   }, []);
 
   return (

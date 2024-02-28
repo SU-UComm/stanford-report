@@ -14,7 +14,8 @@ import ReportHeader from "./scripts/reportHeader";
 
   if (!element) return;
 
-  const props = JSON.parse(element.getAttribute("data-hydration-props"));
+  // const props = JSON.parse(element.getAttribute("data-hydration-props"));
+  const props = {};
 
   const pageData =
     typeof window.pageController !== "undefined" ? window.pageController : null;
@@ -38,8 +39,10 @@ import ReportHeader from "./scripts/reportHeader";
   );
   props.relatedStoryData = fbStoryData;
 
+  // set the props we need, to a window variable
+  window.suHeaderProps = props;
   // update the props
-  element.setAttribute("data-hydration-props", JSON.stringify(props));
+  // element.setAttribute("data-hydration-props", JSON.stringify(props));
 
   // Hydrate the component
   hydrateComponent({ Component, componentName: target });
