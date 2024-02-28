@@ -138,7 +138,7 @@ export default function SingleImageVideo({
                 handleIframeLoad={handleIframeLoad}
               />
 
-              <div className="su-absolute su-bottom-[20px] su-left-[20px] [&>*]:md:su-w-[40px] [&>*]:md:su-h-[40px] md:su-block [&>*]:md:su-w-[55.95px] [&>*]:md:su-h-[55.95px] [&>*]:lg:su-w-[100px] [&>*]:lg:su-h-[100px] lg:su-bottom-[38px] lg:su-left-[38px]">
+              <div className="hocus:su-scale-110 su-transition-all su-absolute su-bottom-[20px] su-left-[20px] [&>*]:md:su-w-[40px] [&>*]:md:su-h-[40px] md:su-block [&>*]:md:su-w-[55.95px] [&>*]:md:su-h-[55.95px] [&>*]:lg:su-w-[100px] [&>*]:lg:su-h-[100px] lg:su-bottom-[38px] lg:su-left-[38px]">
                 <VideoPlay />
               </div>
             </button>
@@ -149,7 +149,7 @@ export default function SingleImageVideo({
 
         <div className="su-flex su-gap-[8px] md:su-gap-[22px] su-w-full su-relative su-flex-col su-items-center lg:su-flex-row lg:su-items-start">
           <div className="su-mx-auto su-flex su-justify-center su-w-full">
-            <p className="su-m-0 su-text-[14px] su-max-w-[633px] su-leading-[16.72px] su-font-normal su-text-black-70 md:su-text-[16px] su-leading-[19.11px] md:su-text-left">
+            <p className="dark:su-text-[white] su-m-0 su-text-[14px] su-max-w-[633px] su-leading-[16.72px] su-font-normal su-text-black-70 md:su-text-[16px] su-leading-[19.11px] md:su-text-left">
               {captionCredit}
             </p>
           </div>
@@ -158,7 +158,7 @@ export default function SingleImageVideo({
             <button
               data-role="video-control"
               type="button"
-              className="su-fill-black-70 su-relative su-shrink-0"
+              className="su-text-black-70 su-relative su-shrink-0 dark:su-text-[white] hocus:su-text-digital-red dark:hocus:su-text-dark-mode-red hocus:su-underline"
               onClick={() => {
                 if (videoPlaying === "pause") {
                   setVideoPlaying("play");
@@ -169,7 +169,7 @@ export default function SingleImageVideo({
                 setVideoPlaying("pause");
               }}
             >
-              <span className="[&>*]:su-fill-black-70 [&>*]:su-w-[25px] [&>*]:su-h-[25px] su-text-black-70 su-flex su-gap-[6px] su-items-center su-text-[16px] [&>*]:lg:su-h-[30px] [&>*]:lg:su-w-[30px] lg:su-top-0 lg:su-right-0">
+              <span className="[&>*]:su-w-[25px] [&>*]:su-h-[25px] su-flex su-gap-[6px] su-items-center su-text-[16px] [&>*]:lg:su-h-[30px] [&>*]:lg:su-w-[30px] lg:su-top-0 lg:su-right-0">
                 {videoPlaying === "pause" ? <Play /> : <Pause />}
                 {pausePlayTitle}
               </span>
