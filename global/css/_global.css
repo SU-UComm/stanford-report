@@ -963,5 +963,5 @@ WYSIWYG formatting styles
 .su-page:not(.su-page-has-sidebar)
   .su-lower-content
   [data-component="metadata-fields"] {
-  @apply su-rs-mt-5 !important;
+  @apply su-rs-mt-5 su-rs-mb-9 !important;
 }
