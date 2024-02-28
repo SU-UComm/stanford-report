@@ -22,9 +22,8 @@ import ReportHeader from "./scripts/reportHeader";
   props.pageData = pageData;
 
   const cdpConsentCookie = JSON.parse(getCookie("squiz.cdp.consent"));
-  props.consentData = cdpConsentCookie
-    ? !!Number(cdpConsentCookie?.CDPConsent)
-    : false;
+  // do we have consent data
+  props.consentData = cdpConsentCookie?.CDPConsent;
 
   const audienceData = getCookie("preferences_personalisation");
   props.audienceData = audienceData;

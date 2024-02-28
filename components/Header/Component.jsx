@@ -61,7 +61,10 @@ export default function Header({
   const handlePersona = async (personaVal) => {
     // check if we have consent first, if not, we need to set it
     let persona = null;
-    if (!consent) {
+    if (
+      typeof window.suHeaderProps?.consentData === "undefined" ||
+      window.suHeaderProps?.consentData === 0
+    ) {
       // if no consent previously given
       await cdpSetConsent(1);
       setConsent(true);
@@ -80,8 +83,10 @@ export default function Header({
       setRelatedStoryData(window.suHeaderProps?.relatedStoryData);
       setPageControls(window.suHeaderProps?.pageData);
       setAudience(window.suHeaderProps?.audienceData);
-      setConsent(window.suHeaderProps?.consentData);
-      setDisplayConsentBanner(!window.suHeaderProps?.consentData);
+      setConsent(!!Number(window.suHeaderProps?.consentData));
+      setDisplayConsentBanner(
+        typeof window.suHeaderProps?.consentData === "undefined"
+      );
     }
   }, []);
 
