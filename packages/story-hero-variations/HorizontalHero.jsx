@@ -6,49 +6,78 @@ export default function HorizontalHero({ data }) {
   const titleWordsCount = title.split(" ").length;
 
   return (
-    <Container>
-      <header className="basic-story__header su-relative su-w-full su-max-w-[1512px] su-mx-auto su-grid su-grid-cols-6 sm:su-grid-cols-12">
-        <div className="su-relative su-pr-[20px] sm:su-pl-[20px] lg:su-pl-[20px] sm:su-pr-0 su-flex su-col-span-5 su-col-start-2 sm:su-col-span-6 sm:su-col-start-6">
-          <h1 className="su-z-10 su-relative su-text-[46px] md:su-text-[80px] lg:su-text-[128px] su-font-serif su-text-right su-leading-[54.92px] md:su-leading-[96px] lg:su-leading-[153.6px]">
+    <header className="basic-story__header su-relative su-w-full">
+      <Container>
+        <div className="su-relative">
+          <h1
+            className={[
+              "su-relative su-z-10 su-text-right su-ml-auto su-mt-0 su-break-words su-font-bold su-leading-[119.4%] md:su-leading-[120%] su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.6rem] font-serif-4 su-w-[83.333%] md:su-w-[66.666%] lg:su-w-[70%]",
+              titleWordsCount > 5 ? "su-mb-[-1.75em]" : "su-mb-[-.5em]",
+            ].join(" ")}
+          >
             {title}
           </h1>
-        </div>
-        <div className="su-w-[2px] su-h-[60%] su-absolute su-left-[20px] sm:su-left-[10%] su-top-[80px] lg:su-top-[240px] su-bg-gradient su-z-0" />
-        <div className="su-w-[10%] sm:su-w-[25%] su-h-[2px] su-absolute su-left-[20px] sm:su-left-[10%] su-top-[80px] lg:su-top-[239px] su-bg-gradient su-z-0" />
-        <div className="su-w-[2px] su-h-[60%] su-absolute su-right-[20px] sm:su-right-[10%] su-bottom-0 su-bg-gradient su-z-0" />
 
-        <figure className="basic-story__header-image su-flex su-flex-col su-gap-[6px] su-col-span-full su-relative su-translate-y-[-110px] sm:su-translate-y-[-130px] lg:su-translate-y-[-200px] xl:su-translate-y-[-220px] su-z-0 md:su-gap-[18px] lg:su-gap-[15px]">
-          <div
-            className={`su-relative ${
-              titleWordsCount <= 5 ? "su-mt-[85px] lg:su-mt-[230px]" : ""
-            }`}
-          >
-            <img
-              src={media.featureImage.url}
-              alt={media.featureImage.alt}
-              className="su-relative su-w-full su-h-[300px] sm:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
+          <div className="su-relative">
+            <div
+              className={[
+                "su-w-[10%] sm:su-w-[25%] su-h-[2px] md:su-h-[3px] lg:su-h-[4px] su-absolute su-bg-gradient-light-red-h su-z-0 su-leading-[119.4%] md:su-leading-[120%] su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.6rem]",
+                titleWordsCount > 5
+                  ? "su-top-[-2em] lg:su-top-[-1.75em]"
+                  : "su-top-[-.5em]",
+              ].join(" ")}
             />
-            <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover" />
+            <div
+              className={[
+                "su-w-[2px] su-z-10 md:su-w-[3px] lg:su-w-[4px] su-absolute su-rotate-180 su-left-0 su-bg-gradient-light-red su-leading-[119.4%] md:su-leading-[120%] su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.6rem]",
+                titleWordsCount > 5
+                  ? "su-h-[calc(100%+1.5em)] lg:su-h-[calc(100%+1.25em)] su-bottom-[.5em]"
+                  : "su-h-[calc(100%+.25em)] su-bottom-[.5em]",
+              ].join(" ")}
+            />
+            <figure className="basic-story__header-image su-gap-[6px] su-col-span-full su-z-0 md:su-gap-[18px] lg:su-gap-[15px]">
+              <div className="su-relative su-w-[100vw] su-relative su-left-[50%] su-translate-x-[-50%]">
+                <img
+                  src={media.featureImage.url}
+                  alt={media.featureImage.alt}
+                  className="su-relative su-w-full su-max-w-none"
+                />
+              </div>
+              {(media.caption || media.credit) && (
+                <div className="su-rs-pb-5 su-relative">
+                  <div
+                    aria-hidden="true"
+                    className="su-w-[2px] md:su-w-[3px] lg:su-w-[4px] su-h-full su-absolute su-right-0 su-bg-digital-red-dark su-dark:su-bg-olive-green su-z-0"
+                  />
+                  <figcaption className="su-pb-[1.1rem] md:su-pb-[1.3rem] su-pt-[.9rem] su-mt-0 su-mb-0 su-w-[calc(100%-40px)] md:su-w-[83.333%] lg:su-w-[50%] lg:su-max-w-[633px] su-mx-auto su-text-center su-text-[1.4rem] md:su-text-[1.6rem]">
+                    {media.caption} {media.caption && media.credit && ` | `}
+                    {media.credit}
+                  </figcaption>
+                </div>
+              )}
+            </figure>
           </div>
-          {(media.caption || media.credit) && (
-            <figcaption className="su-text-[14px] su-w-3/4 su-mx-auto su-text-center su-m-0 su-leading-[16.72px] md:su-text-[16px] md:su-leading-[19.11px]">
-              {media.caption} {media.caption && media.credit && ` | `}
-              {media.credit}
-            </figcaption>
-          )}
-        </figure>
 
-        <p className="su-col-span-5 su-col-start-2 sm:su-col-span-6 sm:su-col-start-3 su-pr-[40px] sm:su-pr-[20px] su-h-min su-mx-auto su-font-semibold su-text-left font-serif-4 su-text-[20px] su-leading-[23.88px] md:su-text-[23px] md:su-leading-[28.75px] lg:su-text-[32px] lg:su-leading-[41.68px]">
-          {summary}
-        </p>
+          <div className="su-relative">
+            <div
+              aria-hidden="true"
+              className="su-w-[2px] md:su-w-[3px] lg:su-w-[4px] su-h-full su-absolute su-right-0 su-bg-gradient-light-red su-rotate-180 su-z-0"
+            />
+            <div className="su-px-[20px] su-w-full md:su-px-0 md:su-ml-[8.33%] md:su-w-[83.333%] lg:su-ml-[10%] lg:su-w-[60%] lg:su-max-w-[63.2rem]">
+              <p className="su-font-semibold su-text-left font-serif-4 su-text-[21px] su-leading-[125.28%] md:su-text-[25px] lg:su-text-[32px] su-mb-0">
+                {summary}
+              </p>
+            </div>
 
-        <span className="su-col-span-full su-pr-[40px] su-col-start-2 sm:su-col-span-4 sm:su-col-start-7 su-mt-[71px] su-flex su-items-start su-flex-row md:su-flex-row su-justify-end su-text-[16px] su-leading-[19.1px] md:su-text-[23px] md:su-leading-[28.75px] md:su-basefont-23">
-          <time className="su-m-0 md:su-mt-0 md:su-mr-[4px] su-font-semibold">
-            {pubDateFormatted}
-          </time>
-          {/* | {read time here} */}
-        </span>
-      </header>
-    </Container>
+            <span className="su-w-full su-pr-[20px] md:su-pr-[8.333%] lg:su-pr-[10%] su-rs-mt-5 su-flex su-items-start su-flex-row md:su-flex-row su-justify-end su-text-[16px] su-leading-[19.1px] md:su-text-[23px] md:su-leading-[28.75px] md:su-basefont-23">
+              <time className="su-m-0 md:su-mt-0 md:su-mr-[4px] su-font-semibold">
+                {pubDateFormatted}
+              </time>
+              {/* | {read time here} */}
+            </span>
+          </div>
+        </div>
+      </Container>
+    </header>
   );
 }
