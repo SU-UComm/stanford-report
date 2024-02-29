@@ -225,7 +225,7 @@ export default function FeaturedMetadata({ data }) {
                     (item) =>
                       item && (
                         <div
-                          className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal su-flex su-flex-col su-gap-[5px] md:su-gap-[10px] lg:su-gap-[13px] md:su-text-[21px] md:su-leading-[26.25px]"
+                          className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal su-flex su-flex-col su-gap-[3px] md:su-text-[21px] md:su-leading-[26.25px]"
                           key={item.asset_assetid}
                         >
                           {item.asset_name}
