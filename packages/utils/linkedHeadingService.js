@@ -7,19 +7,28 @@ import basicAssetUri from "./basicAssetUri";
  */
 export default async function linkedHeadingService(
   ctx,
-  { title, ctaText, ctaUrl }
+  { title, ctaText, ctaUrl, ctaManualUrl, ctaNewWindow }
 ) {
-  let resolvedUrl;
+  let resolvedUrl = "";
 
   // Resolve the CTA URL if one is supplied
-  if (ctaUrl !== "" && ctaUrl !== null && ctaUrl !== undefined) {
+  if (ctaUrl !== undefined && ctaUrl !== "" && ctaUrl !== null) {
     const linkedPageData = await basicAssetUri(ctx, ctaUrl);
     resolvedUrl = linkedPageData.url;
+  }
+
+  let ctaLink = null;
+
+  if (resolvedUrl !== "") {
+    ctaLink = resolvedUrl;
+  } else {
+    ctaLink = ctaManualUrl;
   }
 
   return {
     title,
     ctaText,
-    resolvedUrl,
+    ctaLink,
+    ctaNewWindow,
   };
 }

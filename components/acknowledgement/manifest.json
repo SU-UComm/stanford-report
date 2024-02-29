@@ -22,7 +22,7 @@
         "properties": {
           "title": {
             "title": "Acknowledgement Title",
-            "default": "Article details",
+            "default": "Story Acknowledgement",
             "description": "This title is read out for screen readers, to provide context and is not displayed visually.",
             "type": "string"
           },
@@ -31,7 +31,7 @@
             "type": "FormattedText"
           }
         },
-        "required": ["content"]
+        "required": ["content", "title"]
       },
       "output": {
         "responseType": "html",

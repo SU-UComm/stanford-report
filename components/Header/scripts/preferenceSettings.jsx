@@ -1,13 +1,5 @@
-import cdpSetConsent from "../../../packages/utils/cdpSetConsent";
-import cdpSetPersona from "../../../packages/utils/cdpSetPersona";
 import getCookie from "../../../packages/utils/cookieGet";
 import setCookie from "../../../packages/utils/cookieSet";
-import clearCookie from "../../../packages/utils/cookieClear";
-
-async function setPersona(value) {
-  await cdpSetConsent(1);
-  await cdpSetPersona("persona-selector", value);
-}
 
 export default function _preferencesSettings() {
   /**
@@ -90,13 +82,10 @@ export default function _preferencesSettings() {
     const currentPersonalisation = getCookie("preferences_personalisation");
     if (currentPersonalisation == "student") {
       htmlTag.classList.add("su-persona--student");
-      // preferenceStudent.setAttribute("aria-pressed", "true");
     } else if (currentPersonalisation == "faculty") {
       htmlTag.classList.add("su-persona--faculty");
-      // preferenceFaculty.setAttribute("aria-pressed", "true");
     } else {
       htmlTag.classList.add("su-persona--none");
-      // preferenceReset.setAttribute("aria-pressed", "true");
     }
 
     /* Set as no persona */
@@ -104,17 +93,6 @@ export default function _preferencesSettings() {
       htmlTag.classList.remove("su-persona--student");
       htmlTag.classList.remove("su-persona--faculty");
       htmlTag.classList.add("su-persona--none");
-
-      preferenceStudent.setAttribute("aria-pressed", "false");
-      preferenceFaculty.setAttribute("aria-pressed", "false");
-      preferenceReset.setAttribute("aria-pressed", "true");
-
-      cdpSetConsent(0);
-      setCookie(
-        "preferences_personalisation",
-        null,
-        process.env.NODE_ENV === "production"
-      );
     });
 
     /* Set as student persona */
@@ -122,16 +100,6 @@ export default function _preferencesSettings() {
       htmlTag.classList.add("su-persona--student");
       htmlTag.classList.remove("su-persona--none");
       htmlTag.classList.remove("su-persona--faculty");
-
-      preferenceStudent.setAttribute("aria-pressed", "true");
-      preferenceFaculty.setAttribute("aria-pressed", "false");
-      preferenceReset.setAttribute("aria-pressed", "false");
-      setPersona("student");
-      setCookie(
-        "preferences_personalisation",
-        "student",
-        process.env.NODE_ENV === "production"
-      );
     });
 
     /* Set as faculty persona */
@@ -139,16 +107,6 @@ export default function _preferencesSettings() {
       htmlTag.classList.remove("su-persona--student");
       htmlTag.classList.remove("su-persona--none");
       htmlTag.classList.add("su-persona--faculty");
-
-      preferenceStudent.setAttribute("aria-pressed", "false");
-      preferenceFaculty.setAttribute("aria-pressed", "true");
-      preferenceReset.setAttribute("aria-pressed", "false");
-      setPersona("staff");
-      setCookie(
-        "preferences_personalisation",
-        "faculty",
-        process.env.NODE_ENV === "production"
-      );
     });
   }
 }
