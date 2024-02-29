@@ -12,14 +12,8 @@ import { Container } from "../../packages/grids/Grids";
  * @returns {JSX.Element}
  * @constructor
  */
-export default function PullQuoteStory({ displayConfiguration, data }) {
+export default function PullQuoteStory({ displayConfiguration, imageUrl }) {
   const { quote, name, title, width } = displayConfiguration;
-
-  let imageUrl = "";
-
-  if (data.type === "page_standard")
-    imageUrl = data.metadata.csFeaturedImageUrl[0];
-  else if (data.type === "image") imageUrl = data.url;
 
   return (
     <Container width={width}>

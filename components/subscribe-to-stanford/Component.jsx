@@ -49,8 +49,9 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
   return (
     <form
       className="su-flex su-flex-col su-gap-[10px] su-items-left"
-      action={actionLink.url}
+      action={actionLink}
       onSubmit={submitSubscription}
+      method="POST"
     >
       <h2 className="su-m-0 su-font-bold su-text-[18px] su-leading-[21.6px] dark:su-text-[white] su-font-sans">
         {title}

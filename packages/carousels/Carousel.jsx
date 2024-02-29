@@ -17,7 +17,12 @@ import "swiper/css/pagination";
  * @returns {JSX.Element}
  * @constructor
  */
-export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
+export function Carousel({
+  slides,
+  variant = "single",
+  uniqueClass = "",
+  isDark = false,
+}) {
   const swiperRef = useRef();
   const hasSlides = slides.length > 0;
 
@@ -59,6 +64,24 @@ export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
     slidesPerView: 1.4,
     variantClassName: "component-slider-single component-slider-peek",
   });
+  variants.set("imagegallery", {
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      992: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+    },
+    slidesPerView: 1,
+    variantClassName: "component-slider-imagegallery",
+  });
   variants.set("content", {
     breakpoints: {
       0: {
@@ -76,7 +99,7 @@ export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
   });
 
   return hasSlides ? (
-    <div className="component-slider">
+    <div className={`component-slider ${isDark ? "su-slider-dark" : ""}`}>
       <Swiper
         centeredSlides
         loopAdditionalSlides={4}

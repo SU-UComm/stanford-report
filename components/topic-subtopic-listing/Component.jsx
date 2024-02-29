@@ -55,6 +55,8 @@ export default function TopicSubtopicListing({
 
           // save the current page's data in cache
           setCache((visited) => ({ ...visited, ...visitedPage }));
+
+          window.scrollTo({ top: 0, behavior: "smooth" });
         })
         .catch((err) => {
           throw new Error(err);
@@ -65,6 +67,8 @@ export default function TopicSubtopicListing({
 
     // if the paginated page is cached, get the cached page
     setResults(cache[pageNo]);
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pageNo]);
 
   results.forEach((card) => {
@@ -83,7 +87,9 @@ export default function TopicSubtopicListing({
         allResults={resultsSummary.totalMatching}
         resultsPerPage={resultsSummary.numRanks}
         paginationRange={4}
-        onPageChange={(number) => setPageNo(number)}
+        onPageChange={(number) => {
+          setPageNo(number);
+        }}
       />
     </Container>
   );

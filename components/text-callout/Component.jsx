@@ -27,7 +27,7 @@ export default function TextCallout({ displayConfiguration }) {
       <section className="su-flex su-flex-col su-gap-[12px] su-p-[20px] md:su-p-[36px] su-flex-col su-justify-start su-items-start su-bg-fog-light lg:su-mx-auto dark:su-bg-black [&>p]:su-m-0 [&>p]:!su-mb-0 [&>p]:su-text-[16px] md:[&>p]:!su-text-[19px] last-of-type:[&>p]:!su-mb-0">
         <div className="su-relative su-justify-start su-items-center su-w-full su-gap-3 su-flex su-overflow-hidden su-mb-[12px]">
           <div>
-            <h3 className="su-font-serif su-inline su-bg-fog-light dark:su-bg-black !su-text-[23px] su-pr-[10px] su-m-0">
+            <h3 className="su-font-serif su-inline !su-text-[23px] su-pr-[10px] su-m-0">
               {title}
             </h3>
             <span className="su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-[1px] su-absolute su-bottom-[4px]" />

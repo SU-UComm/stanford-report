@@ -5,6 +5,7 @@ import {
   BullseyePointer,
   FeaturedReading,
   FeaturedAudio,
+  MediaGallery,
 } from "../SVG-library/SVG";
 
 /**
@@ -50,6 +51,10 @@ export function SidebarHeading({
   iconMap.set("Featured audio", {
     light: <FeaturedAudio variant="light" />,
     dark: <FeaturedAudio variant="dark" />,
+  });
+  iconMap.set("mediagallery", {
+    light: <MediaGallery variant="light" />,
+    dark: <MediaGallery variant="dark" />,
   });
 
   const colorClassMap = new Map();

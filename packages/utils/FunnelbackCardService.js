@@ -8,13 +8,35 @@ export default class FunnelbackCardService {
   }
 
   /**
+   * validates the FB query string, this is adding futher
+   * flexibility to the FB query on the content editor's side
+   * allowing them to add a full FB URL (with query included)
+   * or just the query itself
+   *
+   * @returns {string}
+   */
+  validateQuery() {
+    const hasFullQuery = this.query.match(/https:\/\//);
+
+    if (hasFullQuery) {
+      const query = this.query.match(/(\?.*)/);
+
+      return this.FB_JSON_URL + query[0];
+    }
+
+    return this.FB_JSON_URL + this.query;
+  }
+
+  /**
    * will be injected into the adapter's instance
    * to get all card data
    *
    * @returns {array}
    */
   async getCards() {
-    const res = await fetch(this.FB_JSON_URL + this.query).catch((error) => {
+    const query = this.validateQuery();
+
+    const res = await fetch(query).catch((error) => {
       throw new Error(error);
     });
 

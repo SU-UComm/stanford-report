@@ -80,21 +80,23 @@ export default function FeaturedMetadata({ data }) {
     });
   }
 
-  if (
-    campus &&
-    ![null, undefined, "undefined", ""].includes(campus.asset_assetid)
-  ) {
-    metaMap.push({
-      name: "Campus unit",
-      items: campus,
-    });
-  }
+  // if (
+  //   campus &&
+  //   ![null, undefined, "undefined", ""].includes(campus.asset_assetid)
+  // ) {
+  //   metaMap.push({
+  //     name: "Campus unit",
+  //     items: campus,
+  //   });
+  // }
 
   const firstRow = metaMap.slice(0, metaMap.length > 3 ? 3 : metaMap.length);
   const otherRows = metaMap.slice(3, metaMap.length);
 
   const gridSettings =
     "md:su-gap-x-[20px] md:su-gap-y-[70px] lg:su-gap-x-[40px] lg:su-gap-y-[61px]";
+
+  console.log(campus);
 
   return (
     <section className="su-flex su-flex-col su-items-center">
@@ -116,7 +118,7 @@ export default function FeaturedMetadata({ data }) {
                       (item) =>
                         item && (
                           <p
-                            className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal md:su-text-[21px] md:su-leading-[26.25px]"
+                            className="!su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal md:su-text-[21px] md:su-leading-[26.25px]"
                             key={item.asset_assetid}
                           >
                             {item.asset_name}
@@ -162,7 +164,7 @@ export default function FeaturedMetadata({ data }) {
                       (item) =>
                         item && (
                           <p
-                            className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal md:su-text-[21px] md:su-leading-[26.25px]"
+                            className="!su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal md:su-text-[21px] md:su-leading-[26.25px]"
                             key={item.asset_assetid}
                           >
                             {item.asset_name}
@@ -216,14 +218,14 @@ export default function FeaturedMetadata({ data }) {
                   className={`md:su-grid ${
                     media >= 3
                       ? gridSettings
-                      : "su-flex su-gap-[10px] su-flex-col md:su-gap-[20px]"
+                      : "su-flex su-gap-[15px] su-flex-col md:su-gap-[25px]"
                   }`}
                 >
                   {media.map(
                     (item) =>
                       item && (
                         <div
-                          className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal su-flex su-flex-col su-gap-[10px] md:su-text-[21px] md:su-leading-[26.25px]"
+                          className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal su-flex su-flex-col su-gap-[3px] md:su-text-[21px] md:su-leading-[26.25px]"
                           key={item.asset_assetid}
                         >
                           {item.asset_name}
@@ -233,7 +235,7 @@ export default function FeaturedMetadata({ data }) {
                                 <br />
                                 <a
                                   href={`mailto:${item.asset_metadata_personEmail}`}
-                                  className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-semibold su-mt-[13px] md:su-text-[21px] md:su-leading-[23.75px]"
+                                  className=""
                                 >
                                   {item.asset_metadata_personEmail}
                                 </a>
@@ -252,8 +254,8 @@ export default function FeaturedMetadata({ data }) {
 
         {firstRow.length === 0 ? (
           <hr
-            aria-hidden="true"
-            className="su-border-none su-flex-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mt-[38px] md:su-mt-0"
+            className="su-bord
+           er-none su-flex-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mt-[38px] md:su-mt-0"
           />
         ) : (
           ""
@@ -265,6 +267,21 @@ export default function FeaturedMetadata({ data }) {
           aria-hidden="true"
           className="su-border-none su-flex-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mt-[38px] md:su-mt-0"
         />
+      ) : (
+        ""
+      )}
+
+      {campus &&
+      ![null, undefined, "undefined", ""].includes(campus.asset_assetid) ? (
+        <div className="su-text-center su-flex su-flex-col su-gap-[20px] md:su-gap-[26px]">
+          <h3 className="su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans su-m-0">
+            Campus Unit
+          </h3>
+
+          <div className="su-flex su-gap-[20px] su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-[12px] md:su-flex-row md:su-flex-wrap md:su-justify-center">
+            {campus.asset_name}
+          </div>
+        </div>
       ) : (
         ""
       )}

@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "subscribe-to-stanford-report",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "namespace": "stanford-components",
   "description": "Allows users to be able to subscribe to Stanford Report newsletters",
   "displayName": "Subscribe to Stanford Report",
@@ -38,8 +38,8 @@
               },
               "actionLink": {
                 "title": "Form action",
-                "description": "Where the subscription function executes.",
-                "type": "SquizLink"
+                "description": "Subscription service endpoint",
+                "type": "string"
               }
             }
           }
@@ -53,20 +53,6 @@
             "file": {
               "type": "css",
               "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
             }
           },
           {
@@ -92,7 +78,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "../../packages/__globalPreview/sidebar.html"
           }
         }
       }
