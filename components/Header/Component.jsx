@@ -185,10 +185,12 @@ export default function Header({
                 logoLight={site?.logoLight}
               />
 
-              <CurrentStoryHeadline
-                title={pageControls?.title}
-                story={relatedStory}
-              />
+              {pageControls?.isStory && (
+                <CurrentStoryHeadline
+                  title={pageControls?.title}
+                  story={relatedStory}
+                />
+              )}
 
               <PreferencesTray
                 audience={audience}
