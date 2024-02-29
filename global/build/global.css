@@ -1497,6 +1497,12 @@ h6{
   margin: 0 !important;
 }
 
+.component-slider.su-slider-dark .swiper-pagination-bullet:hover,
+.component-slider.su-slider-dark .swiper-pagination-bullet:active{
+  --tw-border-opacity: 1;
+  border-color: rgb(236 9 9 / var(--tw-border-opacity));
+}
+
 .component-slider .swiper-pagination-bullet:hover,
 .component-slider .swiper-pagination-bullet:active{
   --tw-border-opacity: 1;
@@ -1517,6 +1523,13 @@ h6{
 }
 
 :is(.su-dark .component-slider .swiper-pagination-bullet.swiper-pagination-bullet-active){
+  --tw-border-opacity: 1;
+  border-color: rgb(236 9 9 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 9 9 / var(--tw-bg-opacity));
+}
+
+.component-slider.su-slider-dark .swiper-pagination-bullet.swiper-pagination-bullet-active{
   --tw-border-opacity: 1;
   border-color: rgb(236 9 9 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
@@ -1604,6 +1617,39 @@ h6{
 }
 
 :is(.su-dark .component-slider .component-slider-btn:focus){
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 9 9 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.component-slider.su-slider-dark .component-slider-btn{
+  position: relative;
+  top: auto;
+  bottom: 0;
+  height: 37px;
+  min-width: 37px;
+  max-width: 37px;
+  border-radius: 9999px;
+  border-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(236 9 9 / var(--tw-border-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+.component-slider.su-slider-dark .component-slider-btn:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 9 9 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.component-slider.su-slider-dark .component-slider-btn:focus{
   --tw-bg-opacity: 1;
   background-color: rgb(236 9 9 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
