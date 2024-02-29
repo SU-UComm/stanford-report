@@ -35,11 +35,11 @@ export default function ContentCarousel({ title, slides }) {
       <div className="su-bg-fog-light dark:su-bg-black su-p-[20px] md:su-pt-[36px] md:su-px-[36px] md:su-pb-[26px]">
         <div className="su-relative su-mb-[38px] su-overflow-hidden">
           {title && (
-            <h3 className="su-relative su-text-[23px] su-leading-[119.415%] su-z-20 su-font-black su-mb-0 su-inline su-bg-fog-light dark:su-bg-black su-pr-[10px] su-m-0">
+            <h3 className="su-relative su-text-[23px] su-leading-[119.415%] su-z-20 su-font-black su-mb-0 su-inline su-pr-[10px] su-m-0">
               {title}
             </h3>
           )}
-          <span className="su-w-full su-bg-black-20 su-h-[1px] su-absolute su-bottom-[4px]" />
+          <span className="su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-[1px] su-absolute su-bottom-[4px]" />
         </div>
         <Carousel variant="content" slides={cards} />
       </div>

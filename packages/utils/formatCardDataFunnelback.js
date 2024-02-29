@@ -11,24 +11,52 @@ export default function formatCardDataFunnelback({
   title,
   listMetadata: {
     teaserPlain,
+    summary,
     image,
     taxonomyContentTypeText,
+    contentTopic,
+    contentSubtopic,
     taxonomyContentMainTopicText,
+    contentCategory,
     featuredVideo,
     taxonomyContentMainTopicLandingPageUrl,
     imageAlt,
+    authorName,
+    authorImage,
+    author,
   },
   date,
   liveUrl,
 }) {
+  const authorDisplayName = authorName !== undefined ? authorName : author;
+  const authorAvatar = authorImage !== "" ? authorImage : undefined;
+
   const imageUrl = image;
   const videoUrl = featuredVideo;
 
-  const description = teaserPlain;
+  const description = teaserPlain || summary;
 
-  const taxonomy = taxonomyContentMainTopicText;
+  // taxonomy
+  let taxonomy = taxonomyContentMainTopicText;
+
+  if (!taxonomy && contentTopic) {
+    taxonomy = contentTopic instanceof Array ? contentTopic[0] : contentTopic;
+  }
+
+  if (!taxonomy && contentSubtopic) {
+    taxonomy =
+      contentSubtopic instanceof Array ? contentSubtopic[0] : contentSubtopic;
+  }
+
   const taxonomyUrl = taxonomyContentMainTopicLandingPageUrl;
-  const type = taxonomyContentTypeText ? taxonomyContentTypeText[0] : "";
+
+  // type
+  let type = taxonomyContentTypeText ? taxonomyContentTypeText[0] : "";
+
+  if (!type && contentCategory) {
+    type =
+      contentCategory instanceof Array ? contentCategory[0] : contentCategory;
+  }
 
   return {
     title,
@@ -41,5 +69,7 @@ export default function formatCardDataFunnelback({
     type,
     videoUrl,
     date,
+    authorDisplayName,
+    authorAvatar,
   };
 }

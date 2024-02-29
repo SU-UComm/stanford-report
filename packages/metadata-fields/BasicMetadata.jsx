@@ -44,7 +44,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="!su-m-0 su-text-[21px] su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -64,7 +64,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="!su-m-0 su-text-[21px] su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -84,7 +84,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="!su-m-0 su-text-[21px] su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -104,7 +104,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="!su-m-0 su-text-[21px] su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -126,7 +126,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="!su-m-0 su-text-[21px] su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -148,7 +148,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="!su-m-0 su-text-[21px] su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}

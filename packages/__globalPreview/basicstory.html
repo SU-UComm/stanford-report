@@ -6,25 +6,38 @@
       href="https://sug-web.matrix.squiz.cloud/__data/assets/git_bridge/0026/127547/global/build/global.css?v=1.0.6"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     [component://static-header]
   </head>
   <body class="dark:su-bg-black-true dark:su-text-white">
-    <main role="main" class="su-page su-page-has-sidebar">
+    <main
+      role="main"
+      class="su-page su-page-has-sidebar su-page--hero su-page--top-margin su-page--bottom-margin su-page-story-basic"
+    >
       <article>
-        <header class="su-page-hero">
-          <div data-component="basic-story-hero" data-hydration-component="basic-story-hero" data-hydration-props="{&quot;storyType&quot;:&quot;Basic&quot;,&quot;bannerType&quot;:&quot;normal&quot;,&quot;contentType&quot;:&quot;Photo&quot;,&quot;title&quot;:&quot;IA Basic Story Test&quot;,&quot;orientation&quot;:&quot;vertical&quot;,&quot;pubDate&quot;:&quot;2024-01-01 00:00:00&quot;,&quot;pubDateFormatted&quot;:&quot;January 1st, 2024&quot;,&quot;mediaType&quot;:&quot;carousel&quot;,&quot;topic&quot;:{&quot;asset_assetid&quot;:&quot;28395&quot;,&quot;asset_name&quot;:&quot;Campus &amp; facilities&quot;,&quot;asset_url&quot;:&quot;https://sug-web.matrix.squiz.cloud/report/university-news/campus-and-facilities&quot;,&quot;target_id&quot;:&quot;124962&quot;},&quot;summary&quot;:&quot;&quot;,&quot;media&quot;:{&quot;type&quot;:&quot;image&quot;,&quot;caption&quot;:&quot;Caption text goes here lorem ipsum dolor sit amet&quot;,&quot;credit&quot;:&quot;Credit goes here&quot;,&quot;featureImage&quot;:{&quot;id&quot;:&quot;8695&quot;,&quot;url&quot;:&quot;https://sug-web.matrix.squiz.cloud/__data/assets/image/0028/8695/SU_Woods_Infographic_FedEnvPriorities_R3.webp&quot;,&quot;alt&quot;:&quot;Test Alt Text&quot;},&quot;featureVideo&quot;:{&quot;id&quot;:&quot;/9843t598yhrg&quot;},&quot;carousel&quot;:[{&quot;asset_assetid&quot;:&quot;9866&quot;,&quot;asset_url&quot;:&quot;https://sug-web.matrix.squiz.cloud/_media/images/mnpd3-material5.jpeg&quot;,&quot;asset_attribute_alt&quot;:&quot;&quot;},{&quot;asset_assetid&quot;:&quot;9871&quot;,&quot;asset_url&quot;:&quot;https://sug-web.matrix.squiz.cloud/_media/images/circuit,board5.jpeg&quot;,&quot;asset_attribute_alt&quot;:&quot;&quot;},{&quot;asset_assetid&quot;:&quot;9886&quot;,&quot;asset_url&quot;:&quot;https://sug-web.matrix.squiz.cloud/_media/images/field-reports-91.jpeg&quot;,&quot;asset_attribute_alt&quot;:&quot;&quot;}]}}"></div>
-        </header>
         <div class="su-page-wrap">
-          <div class="su-page-content">
-            [component://output]
-            <footer></footer>
+          <div class="su-upper-content">
+            <div
+              data-component="basic-story-hero"
+              data-hydration-component="basic-story-hero"
+              data-hydration-props='{"storyType":"Basic","bannerType":"normal","contentType":"Photo","title":"IA Basic Story Test","orientation":"vertical","pubDate":"2024-01-01 00:00:00","pubDateFormatted":"January 1st, 2024","mediaType":"carousel","topic":{"asset_assetid":"28395","asset_name":"Campus &amp; facilities","asset_url":"https://sug-web.matrix.squiz.cloud/report/university-news/campus-and-facilities","target_id":"124962"},"summary":"","media":{"type":"image","caption":"Caption text goes here lorem ipsum dolor sit amet","credit":"Credit goes here","featureImage":{"id":"8695","url":"https://sug-web.matrix.squiz.cloud/__data/assets/image/0028/8695/SU_Woods_Infographic_FedEnvPriorities_R3.webp","alt":"Test Alt Text"},"featureVideo":{"id":"/9843t598yhrg"},"carousel":[{"asset_assetid":"9866","asset_url":"https://sug-web.matrix.squiz.cloud/_media/images/mnpd3-material5.jpeg","asset_attribute_alt":""},{"asset_assetid":"9871","asset_url":"https://sug-web.matrix.squiz.cloud/_media/images/circuit,board5.jpeg","asset_attribute_alt":""},{"asset_assetid":"9886","asset_url":"https://sug-web.matrix.squiz.cloud/_media/images/field-reports-91.jpeg","asset_attribute_alt":""}]}}'
+            ></div>
           </div>
-          <aside class="su-page-sidebar">Sidebar contents</aside>
-          <div
-            data-component="stories-carousel"
-            data-hydration-component="stories-carousel"
-            data-hydration-props='{"headingData":{"title":"Read next","ctaText":"View all","resolvedUrl":"https://sug-web.matrix.squiz.cloud/report/on-campus/athletics"},"search":{"endpoint":"https://dxp-us-search.funnelback.squiz.cloud/s/search.html","collection":"sug~sp-stanford-report-search","profile":"stanford-report-push-search","maintopic":{"asset_assetid":"28408","asset_name":"Athletics","asset_url":"https://sug-web.matrix.squiz.cloud/report/on-campus/athletics","target_id":"125010"},"currentPage":128496},"related":[{"asset_assetid":"28408","asset_name":"Athletics","asset_url":"https://sug-web.matrix.squiz.cloud/report/on-campus/athletics","target_id":"125010"}]}'
-          ></div>
+          <div class="su-sidebar-content-wrap">
+            <div class="su-page-content">
+              [component://output]
+              <div class="su-lower-content"></div>
+            </div>
+            <aside class="su-page-sidebar">Sidebar contents</aside>
+          </div>
+          <div class="su-above-footer">
+            <div
+              data-component="stories-carousel"
+              data-hydration-component="stories-carousel"
+              data-hydration-props='{"headingData":{"title":"Read next","ctaText":"View all","resolvedUrl":"https://sug-web.matrix.squiz.cloud/report/on-campus/athletics"},"search":{"endpoint":"https://dxp-us-search.funnelback.squiz.cloud/s/search.html","collection":"sug~sp-stanford-report-search","profile":"stanford-report-push-search","maintopic":{"asset_assetid":"28408","asset_name":"Athletics","asset_url":"https://sug-web.matrix.squiz.cloud/report/on-campus/athletics","target_id":"125010"},"currentPage":128496},"related":[{"asset_assetid":"28408","asset_name":"Athletics","asset_url":"https://sug-web.matrix.squiz.cloud/report/on-campus/athletics","target_id":"125010"}]}'
+            ></div>
+          </div>
         </div>
       </article>
     </main>

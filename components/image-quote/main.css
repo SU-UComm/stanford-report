@@ -1,2 +1,10 @@
 @tailwind components;
 @tailwind utilities;
+
+.su-bg-gradient-reverse,
+.su-bg-gradient-before-reverse:before {
+  @apply su-bg-gradient-to-l su-from-plum su-to-plum md:su-bg-gradient-to-l md:su-from-plum md:su-via-digital-red md:su-to-digital-red dark:su-from-palo-verde dark:su-to-palo-verde dark:md:su-from-olive dark:md:su-to-palo-verde;
+}
+.su-bg-gradient-after-reverse:after {
+  @apply su-bg-gradient-to-t su-from-digital-red su-to-plum md:su-bg-gradient-to-b md:su-from-plum md:su-to-digital-red dark:su-from-olive dark:su-to-palo-verde dark:md:su-from-palo-verde dark:md:su-to-olive ;
+}

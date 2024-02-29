@@ -5,22 +5,22 @@ import basicAssetUri from "../../packages/utils/basicAssetUri";
 export default async (args, info) => {
   const { ctx } = info;
   const hasImage = args.image;
-  const hasVideoThumbnail = args.video.thumbnail;
+  // const hasVideoThumbnail = args.video.thumbnail;
   let imageData = null;
-  let videoThumbData = null;
+  // const videoThumbData = null;
 
   if (hasImage) {
     imageData = await basicAssetUri(ctx, hasImage);
   }
 
-  if (hasVideoThumbnail) {
-    videoThumbData = await basicAssetUri(ctx, hasVideoThumbnail);
-  }
+  // if (hasVideoThumbnail) {
+  //   videoThumbData = await basicAssetUri(ctx, hasVideoThumbnail);
+  // }
 
   const renderProps = {
     ...args,
     imageData,
-    videoThumbData,
+    // videoThumbData,
   };
 
   return renderComponent({

@@ -1,19 +1,14 @@
 import FetchAdapter from "../../../packages/utils/fetchAdapter";
 import translatePersonalisationProfile from "../../../packages/utils/translatePersonalisationProfile";
 
-export default async function relatedStoryData(
-  pageData = null,
-  search = null,
-  audience = ""
-) {
+export default async function relatedStoryData(pageData = null, audience = "") {
   const adapter = new FetchAdapter();
-
-  if (pageData && search) {
-    const fbUrl = `${search.endpoint?.replace(
+  if (pageData && pageData.search) {
+    const fbUrl = `${pageData.search.endpoint?.replace(
       "search.html",
       "search.json"
-    )}?profile=${search.profile}&query=%21null&collection=${
-      search.collection
+    )}?profile=${pageData.search.profile}&query=%21null&collection=${
+      pageData.search.collection
     }&meta_taxonomyContentMainTopicText=${
       pageData.mainTopic
     }&meta_taxonomyAudienceText=${translatePersonalisationProfile(

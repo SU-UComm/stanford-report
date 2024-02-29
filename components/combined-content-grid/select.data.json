@@ -1,6 +1,6 @@
 {
   "headingConfiguration": {
-    "ctaText": "View all",
+    "title": "Lorem ipsum dolor",
     "ctaUrl": "matrix-asset://api-identifier/89422"
   },
   "contentConfiguration": {
@@ -31,7 +31,7 @@
   },
   "announcementsConfiguration": {
     "heading": "Announcements",
-    "endPoint": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&log=false&query=!null&sort=date&f.Content+Type%7CtaxonomyContentTypeText=Announcement",
+    "endPoint": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&log=false&query=!null&sort=date&f.Content+Type%7CtaxonomyContentTypeText=Announcement&&f.Audience%7CtaxonomyAudienceText=Student",
     "numberOfItems": 3,
     "linkUrl": "matrix-asset://api-identifier/89422"
   }

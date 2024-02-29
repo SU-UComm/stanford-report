@@ -28,6 +28,7 @@ import { Avatar } from "./Avatar";
 export function PullQuote({
   quote,
   avatar,
+  imageAlt = "",
   name,
   title,
   avatarSize = "large",
@@ -41,7 +42,7 @@ export function PullQuote({
         "su-component-pullquote su-mx-auto su-relative su-mt-0 su-flex su-flex-wrap su-gap-[27px] su-justify-center su-mt-0 su-pr-0 su-py-0",
       ].join(" ")}
     >
-      <Avatar image={avatar} avatarSize={avatarSize} />
+      <Avatar image={avatar} avatarSize={avatarSize} alt={imageAlt} />
       <blockquote
         className={[
           "su-w-full su-pl-[39px] dark:su-text-white dark:before:su-text-white su-font-serif su-text-black",
@@ -49,7 +50,7 @@ export function PullQuote({
         ].join(" ")}
       >
         <XssSafeContent
-          content={quote}
+          content={`${quote}”`}
           elementType="div"
           className={[
             "su-font-semibold su-font-serif-0 su-text-[24px] md:su-text-[36px] su-leading-[150%] md:su-leading-[130.245%]",
@@ -59,7 +60,7 @@ export function PullQuote({
           ].join(" ")}
         />
         {name && (
-          <cite className="su-mt-[15px] md:su-mt-[26px] lg:su-mt-[29px] su-font-sans su-text-[21px] su-leading-[25.2px] su-flex su-flex-col su-gap-[6px] md:su-gap-[10px] lg:su-gap-[6px]">
+          <cite className="su-mt-[15px] md:su-mt-[26px] lg:su-mt-[29px] su-font-sans su-text-[21px] su-leading-[25.2px] su-flex su-flex-col">
             <span className="su-font-bold su-block su-leading-[25.2px]">
               {name}
             </span>
