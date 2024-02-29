@@ -27,16 +27,12 @@ describe("Vertical Card", () => {
   });
 
   test("when hide images is set", () => {
-    render(<VerticalCard data={testData} cardType="vertical" hideImages />);
-
-    const image = document.querySelector("img");
-
-    expect(image).toBe(null);
-  });
-
-  test("when hide image is not set and no URL for the image is provided it should not be shown.", () => {
     render(
-      <VerticalCard data={testData} cardType="vertical" hideImages={false} />
+      <VerticalCard
+        data={testData}
+        cardType="vertical"
+        displayThumbnail={false}
+      />
     );
 
     const image = document.querySelector("img");
@@ -44,9 +40,23 @@ describe("Vertical Card", () => {
     expect(image).toBe(null);
   });
 
+  test("when hide image is not set and no URL for the image is provided it should display a default image.", () => {
+    render(
+      <VerticalCard data={testData} cardType="vertical" displayThumbnail />
+    );
+
+    const image = document.querySelector("img");
+
+    expect(image).toBeInTheDocument();
+  });
+
   test("when a taxonomy is not present, it should not appear", () => {
     render(
-      <VerticalCard data={testData} cardType="vertical" hideImages={false} />
+      <VerticalCard
+        data={testData}
+        cardType="vertical"
+        displayThumbnail={false}
+      />
     );
 
     const taxonomy = document.querySelector(
@@ -60,7 +70,11 @@ describe("Vertical Card", () => {
     testData.taxonomy = "Earch & Climate";
 
     render(
-      <VerticalCard data={testData} cardType="vertical" hideImages={false} />
+      <VerticalCard
+        data={testData}
+        cardType="vertical"
+        displayThumbnail={false}
+      />
     );
 
     const taxonomy = document.querySelector(
@@ -75,7 +89,11 @@ describe("Vertical Card", () => {
     testData.taxonomy = "Test";
 
     render(
-      <VerticalCard data={testData} cardType="vertical" hideImages={false} />
+      <VerticalCard
+        data={testData}
+        cardType="vertical"
+        displayThumbnail={false}
+      />
     );
 
     const taxonomyURL = document.querySelector(
@@ -87,7 +105,11 @@ describe("Vertical Card", () => {
 
   test("when a card does not have a type, no type should render", () => {
     render(
-      <VerticalCard data={testData} cardType="vertical" hideImages={false} />
+      <VerticalCard
+        data={testData}
+        cardType="vertical"
+        displayThumbnail={false}
+      />
     );
 
     const taxonomy = document.querySelector(
@@ -101,7 +123,11 @@ describe("Vertical Card", () => {
     testData.type = "News";
 
     render(
-      <VerticalCard data={testData} cardType="vertical" hideImages={false} />
+      <VerticalCard
+        data={testData}
+        cardType="vertical"
+        displayThumbnail={false}
+      />
     );
 
     const taxonomy = document.querySelector(
@@ -115,7 +141,11 @@ describe("Vertical Card", () => {
     testData.type = "News";
 
     render(
-      <VerticalCard data={testData} cardType="vertical" hideImages={false} />
+      <VerticalCard
+        data={testData}
+        cardType="vertical"
+        displayThumbnail={false}
+      />
     );
 
     const svg = document.querySelector(`[data-testid="svg-news"]`);
@@ -127,7 +157,11 @@ describe("Vertical Card", () => {
     testData.type = "Test";
 
     render(
-      <VerticalCard data={testData} cardType="vertical" hideImages={false} />
+      <VerticalCard
+        data={testData}
+        cardType="vertical"
+        displayThumbnail={false}
+      />
     );
 
     const svg = document.querySelector(

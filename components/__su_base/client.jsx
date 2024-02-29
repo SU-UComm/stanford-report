@@ -1,4 +1,13 @@
 import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
 import Component from "./Component";
 
-hydrateComponent({ Component, componentName: "base-component" });
+(function () {
+  const componentName = "base-component";
+  const base = document.querySelector(
+    `[data-hydration-component="${componentName}"]`
+  );
+
+  if (!base) return;
+
+  hydrateComponent({ Component, componentName });
+})();

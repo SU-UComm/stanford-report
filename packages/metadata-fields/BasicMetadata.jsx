@@ -37,14 +37,14 @@ export default function BasicMetadata({ data }) {
 
   return (
     <section className="su-border-b-[1px] su-border-solid su-border-b-black-20 su-pt-[32px] su-mb-[32px] md:su-pt-[36px] lg:su-border-b-transparent lg:su-mb-[104px]">
-      {authors && authors.length && (
+      {authors && authors.length ? (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title={`Author${authors.length > 1 ? "s" : ""}`}>
             {authors.map(
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="!su-m-0 su-text-[21px] su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -53,16 +53,18 @@ export default function BasicMetadata({ data }) {
             )}
           </BasicFields>
         </div>
+      ) : (
+        ""
       )}
 
-      {producers && producers.length && (
+      {producers && producers.length ? (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title={`Producer${producers.length > 1 ? "s" : ""}`}>
             {producers.map(
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="!su-m-0 su-text-[21px] su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -71,16 +73,18 @@ export default function BasicMetadata({ data }) {
             )}
           </BasicFields>
         </div>
+      ) : (
+        ""
       )}
 
-      {writers && writers.length && (
+      {writers && writers.length ? (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title={`Writer${writers.length > 1 ? "s" : ""}`}>
             {writers.map(
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="!su-m-0 su-text-[21px] su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -89,16 +93,18 @@ export default function BasicMetadata({ data }) {
             )}
           </BasicFields>
         </div>
+      ) : (
+        ""
       )}
 
-      {editors && editors.length && (
+      {editors && editors.length ? (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title={`Editor${editors.length > 1 ? "s" : ""}`}>
             {editors.map(
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="!su-m-0 su-text-[21px] su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -107,9 +113,11 @@ export default function BasicMetadata({ data }) {
             )}
           </BasicFields>
         </div>
+      ) : (
+        ""
       )}
 
-      {videographers && videographers.length && (
+      {videographers && videographers.length ? (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields
             title={`Videographer${videographers.length > 1 ? "s" : ""}`}
@@ -118,7 +126,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="!su-m-0 su-text-[21px] su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -127,9 +135,11 @@ export default function BasicMetadata({ data }) {
             )}
           </BasicFields>
         </div>
+      ) : (
+        ""
       )}
 
-      {photography && photography.length && (
+      {photography && photography.length ? (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields
             title={`Photography director${photography.length > 1 ? "s" : ""}`}
@@ -138,7 +148,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="su-m-0 su-text-[21px] su-leading-[26.25px]"
+                    className="!su-m-0 su-text-[21px] su-leading-[26.25px]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -147,9 +157,11 @@ export default function BasicMetadata({ data }) {
             )}
           </BasicFields>
         </div>
+      ) : (
+        ""
       )}
 
-      {media && media.length && (
+      {media && media.length ? (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title={`Media contact${media.length > 1 ? "s" : ""}`}>
             {media.map(
@@ -174,9 +186,11 @@ export default function BasicMetadata({ data }) {
             )}
           </BasicFields>
         </div>
+      ) : (
+        ""
       )}
 
-      {campus && typeof campus.asset_assetid !== "undefined" && (
+      {campus && typeof campus.asset_assetid !== "undefined" ? (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title="Campus unit">
             <a
@@ -187,9 +201,11 @@ export default function BasicMetadata({ data }) {
             </a>
           </BasicFields>
         </div>
+      ) : (
+        ""
       )}
 
-      {related && related.length && (
+      {related && related.length ? (
         <div className="su-border-t-[1px] su-border-solid border-t-black-20">
           <BasicFields title="Related topics">
             {related.map(
@@ -207,6 +223,8 @@ export default function BasicMetadata({ data }) {
             )}
           </BasicFields>
         </div>
+      ) : (
+        ""
       )}
 
       <div className="su-border-t-[1px] su-border-solid border-t-black-20">

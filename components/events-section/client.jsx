@@ -1,4 +1,13 @@
 import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
 import Component from "./Component";
 
-hydrateComponent({ Component, componentName: "events-section" });
+(function () {
+  const componentName = "events-section";
+  const eventsSection = document.querySelector(
+    `[data-hydration-component="${componentName}"]`
+  );
+
+  if (!eventsSection) return;
+
+  hydrateComponent({ Component, componentName });
+})();

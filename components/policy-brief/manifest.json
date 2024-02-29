@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "policy-brief",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "namespace": "stanford-components",
   "description": "This component allows a content manager to create a policy brief that can be externally linked to a policy brief or case study.",
   "displayName": "Policy brief",
@@ -13,10 +13,10 @@
     }
   ],
   "icon": {
-    "id": "foundation",
+    "id": "edit_note",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "yellow"
     }
   },
   "functions": [
@@ -75,20 +75,6 @@
             "file": {
               "type": "css",
               "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
             }
           },
           {

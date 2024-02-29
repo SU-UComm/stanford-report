@@ -18,7 +18,6 @@ export default async (args, info) => {
   let data = null;
 
   const service = new MatrixCardService({ ctx, API_IDENTIFIER });
-
   if (featuredTeaser) {
     cards.push({ cardAsset: featuredTeaser });
   }

@@ -2,23 +2,23 @@ import renderComponent from "../../packages/utils/render-component";
 import Component from "./Component";
 import CardDataAdapter from "../../packages/utils/CardDataAdapter";
 import EventCardService from "../../packages/utils/EventCardService";
+import linkedHeadingService from "../../packages/utils/linkedHeadingService";
 
-export default async (args) => {
+export default async (args, info) => {
   const adapter = new CardDataAdapter();
-  const eventAPI = args.contentConfiguration.eventsUrl;
-  let data = null;
+  const eventAPI = args.contentConfiguration?.eventsUrl;
+  let data = [];
+  const { ctx } = info;
 
-  const headingData = {
-    title: args.headingConfiguration.title,
-    ctaText: args.headingConfiguration.ctaText,
-    ctaUrl: args.headingConfiguration.ctaUrl,
-  };
+  // Resolve the URI for the section heading link
+  const headingData = await linkedHeadingService(
+    ctx,
+    args.headingConfiguration
+  );
 
-  if (eventAPI) {
+  if (eventAPI !== undefined && eventAPI !== "") {
     const service = new EventCardService({ api: eventAPI });
-
     adapter.setCardService(service);
-
     data = await adapter.getCards();
   }
 

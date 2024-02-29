@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "in-the-news",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "namespace": "stanford-components",
   "description": "This component contains one featured quote and two supplementary teasers.",
   "displayName": "In the news",
@@ -16,7 +16,7 @@
     "id": "newspaper",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "purple"
     }
   },
   "functions": [
@@ -36,15 +36,26 @@
                 "type": "string",
                 "default": "In the news"
               },
+              "ctaUrl": {
+                "title": "Matrix Asset Link",
+                "type": "string",
+                "description": "Select an asset to link to. If this field is filled out, it will be used instead of the manual link",
+                "format": "matrix-asset-uri"
+              },
+              "ctaManualUrl": {
+                "title": "Manual Link",
+                "type": "string",
+                "description": "Enter the full URL, including https://"
+              },
               "ctaText": {
                 "title": "Link text",
                 "type": "string",
                 "default": "View all"
               },
-              "ctaUrl": {
-                "title": "Link URL",
-                "type": "string",
-                "format": "matrix-asset-uri"
+              "ctaNewWindow": {
+                "title": "Open link in a new window",
+                "type": "boolean",
+                "default": false
               }
             }
           },
@@ -61,6 +72,14 @@
               "featuredQuote": {
                 "title": "Featured Quote",
                 "type": "string"
+              },
+              "featuredTeaserDescription": {
+                "title": "Feature Teaser description",
+                "type": "string"
+              },
+              "featuredCtaText": {
+                "title": "Featured CTA text",
+                "type": "string"
               }
             }
           },
@@ -71,6 +90,10 @@
                 "title": "Teaser One",
                 "format": "matrix-asset-uri",
                 "type": "string"
+              },
+              "teaserOneDescription": {
+                "title": "Teaser One description",
+                "type": "string"
               }
             }
           },
@@ -80,6 +103,10 @@
               "teaserTwo": {
                 "title": "Teaser Two",
                 "format": "matrix-asset-uri",
+                "type": "string"
+              },
+              "teaserTwoDescription": {
+                "title": "Teaser Two description",
                 "type": "string"
               }
             }
@@ -94,20 +121,6 @@
             "file": {
               "type": "css",
               "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
             }
           },
           {

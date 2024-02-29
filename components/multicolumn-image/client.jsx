@@ -1,4 +1,12 @@
 import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
 import Component from "./Component";
 
-hydrateComponent({ Component, componentName: "multicolumn-image" });
+(function () {
+  const componentName = "multicolumn-image";
+  const target = document.querySelector(
+    `[data-hydration-component="${componentName}"]`
+  );
+
+  if (!target) return;
+  hydrateComponent({ Component, componentName });
+})();
