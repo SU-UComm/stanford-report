@@ -619,15 +619,6 @@ audio::-webkit-media-controls-panel {
 /*
 * Containers
 */
-.su-component-container {
-  @apply su-cc;
-}
-
-/* Cases where we want no padding */
-.su-component-container:not(.su-container-px) {
-  @apply su-px-0 !important;
-}
-
 .su-container-narrow {
   @apply su-w-full su-max-w-[732px] md:su-w-[84.75%];
 }
@@ -637,19 +628,23 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-container-large {
-  @apply su-w-full su-max-w-[1286px];
+  @apply su-w-full su-max-w-[1186px];
 }
 
 .su-container-wide {
-  @apply su-w-full su-max-w-[1512px];
+  @apply su-w-full su-max-w-[1412px];
 }
 /* Site search same as container wide */
 .site-search {
-  @apply su-w-full su-max-w-[1512px] !important;
+  @apply su-w-full su-max-w-[1412px] !important;
 }
 
 .su-container-full {
   @apply su-w-full su-max-w-none;
+}
+
+.su-container-px {
+  @apply su-px-[20px] md:su-px-[50px];
 }
 
 /*
