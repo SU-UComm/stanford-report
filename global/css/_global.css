@@ -189,6 +189,11 @@ svg {
   margin: 0 !important;
 }
 
+.component-slider.su-slider-dark .swiper-pagination-bullet:hover,
+.component-slider.su-slider-dark .swiper-pagination-bullet:active {
+  @apply su-border-dark-mode-red;
+}
+
 .component-slider .swiper-pagination-bullet:hover,
 .component-slider .swiper-pagination-bullet:active {
   @apply su-border-digital-red dark:su-border-dark-mode-red;
@@ -196,6 +201,10 @@ svg {
 
 .component-slider .swiper-pagination-bullet.swiper-pagination-bullet-active {
   @apply su-bg-digital-red dark:su-bg-dark-mode-red su-border-digital-red dark:su-border-dark-mode-red;
+}
+
+.component-slider.su-slider-dark .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply su-bg-dark-mode-red su-border-dark-mode-red;
 }
 
 .component-slider .component-slider-controls {
@@ -217,6 +226,10 @@ svg {
 
 .component-slider .component-slider-btn {
   @apply su-transition hocus:su-bg-digital-red hocus:su-text-white dark:hocus:su-bg-dark-mode-red dark:hocus:su-text-white su-relative su-min-w-[37px] su-max-w-[37px] su-h-[37px] su-top-auto su-bottom-0 su-border-solid su-border-2 su-border-digital-red dark:su-border-dark-mode-red su-rounded-full;
+}
+
+.component-slider.su-slider-dark .component-slider-btn {
+  @apply su-transition hocus:su-text-white hocus:su-bg-dark-mode-red hocus:su-text-white su-relative su-min-w-[37px] su-max-w-[37px] su-h-[37px] su-top-auto su-bottom-0 su-border-solid su-border-2 su-border-dark-mode-red su-rounded-full;
 }
 
 /*
