@@ -1,4 +1,5 @@
 import React from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../grids/Container";
 
 export default function HorizontalHero({ data }) {
@@ -78,9 +79,11 @@ export default function HorizontalHero({ data }) {
               className="su-w-[2px] md:su-w-[3px] lg:su-w-[4px] su-h-full su-absolute su-right-0 su-bg-gradient-light-red su-rotate-180 su-z-0"
             />
             <div className="su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-[20px] md:su-px-0">
-              <p className="su-font-semibold su-text-left su-col-span-6 md:su-col-span-10 md:su-col-start-2 lg:su-col-span-6 lg:su-col-start-2 font-serif-4 su-text-[21px] su-leading-[125.28%] md:su-text-[25px] lg:su-text-[32px] su-mb-0">
-                {summary}
-              </p>
+              <XssSafeContent
+                className="su-font-semibold su-text-left su-col-span-6 md:su-col-span-10 md:su-col-start-2 lg:su-col-span-6 lg:su-col-start-2 font-serif-4 su-text-[21px] su-leading-[125.28%] md:su-text-[25px] lg:su-text-[32px] su-mb-0"
+                content={summary}
+                elementType="p"
+              />
             </div>
 
             <div className="su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-[20px] md:su-px-0">
