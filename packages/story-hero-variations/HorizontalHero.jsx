@@ -9,7 +9,7 @@ export default function HorizontalHero({ data }) {
     "su-leading-[119.4%] md:su-leading-[120%] su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.5rem]";
 
   return (
-    <header className="basic-story__header su-relative su-w-full">
+    <header className="basic-story__header su-rs-pt-8 su-relative su-w-full">
       <Container>
         <div className="su-relative">
           <div className="su-relative">

@@ -1275,7 +1275,8 @@ h6{
     linear-gradient(180deg, rgba(0, 0, 0, 0) 64.92%, #fff 96.86%);
 }
 
-.su-bg-gradient-header-1-dark {
+.su-bg-gradient-header-1-dark,
+.su-dark .su-bg-gradient-header-1 {
   background: linear-gradient(180deg, #1c4270 0%, rgba(0, 0, 0, 0) 53.4%),
     linear-gradient(180deg, rgba(0, 0, 0, 0) 64.92%, #000 96.86%);
 }
@@ -2166,6 +2167,10 @@ audio::-webkit-media-controls-panel {
   }
 }
 
+.su-page-story-featured .su-upper-content{
+  margin-top: 0 !important;
+}
+
 .su-upper-content > [data-component] + *{
   margin-top: 5rem;
 }
@@ -2182,26 +2187,27 @@ audio::-webkit-media-controls-panel {
   }
 }
 
-[data-component="feature-story-hero"],
 [data-component="basic-story-hero"],
 [data-component="leadership-hero-hannah"]{
   margin-top: 6rem !important;
 }
 
 @media (min-width: 768px){
-  [data-component="feature-story-hero"],
-[data-component="basic-story-hero"],
+  [data-component="basic-story-hero"],
 [data-component="leadership-hero-hannah"]{
     margin-top: 12.6rem !important;
   }
 }
 
 @media (min-width: 1500px){
-  [data-component="feature-story-hero"],
-[data-component="basic-story-hero"],
+  [data-component="basic-story-hero"],
 [data-component="leadership-hero-hannah"]{
     margin-top: 13.3rem !important;
   }
+}
+
+[data-component="feature-story-hero"]{
+  margin-top: 0 !important;
 }
 
 [data-component="default-hero"],
