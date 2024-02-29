@@ -1,4 +1,12 @@
 import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
 import Component from "./Component";
 
-hydrateComponent({ Component, componentName: "image-gallery-modal" });
+(function () {
+  const componentName = "image-gallery-modal";
+  const target = document.querySelector(
+    `[data-hydration-component="${componentName}"]`
+  );
+
+  if (!target) return;
+  hydrateComponent({ Component, componentName });
+})();

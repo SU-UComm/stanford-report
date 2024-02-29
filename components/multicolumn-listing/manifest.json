@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "multicolumn-listing",
-  "version": "0.0.21",
+  "version": "0.0.25",
   "namespace": "stanford-components",
   "description": "",
   "displayName": "Multicolumn Listing",
@@ -13,6 +13,10 @@
     },
     {
       "name": "FB_JSON_URL",
+      "required": true
+    },
+    {
+      "name": "BASE_DOMAIN",
       "required": true
     }
   ],
@@ -41,15 +45,26 @@
                 "title": "Heading",
                 "type": "string"
               },
+              "ctaUrl": {
+                "title": "Matrix Asset Link",
+                "type": "string",
+                "description": "Select an asset to link to. If this field is filled out, it will be used instead of the manual link",
+                "format": "matrix-asset-uri"
+              },
+              "ctaManualUrl": {
+                "title": "Manual Link",
+                "type": "string",
+                "description": "Enter the full URL, including https://"
+              },
               "ctaText": {
                 "title": "Link text",
                 "type": "string",
                 "default": "View all"
               },
-              "ctaUrl": {
-                "title": "Link URL",
-                "type": "string",
-                "format": "matrix-asset-uri"
+              "ctaNewWindow": {
+                "title": "Open link in a new window",
+                "type": "boolean",
+                "default": false
               }
             }
           },
@@ -109,7 +124,7 @@
                   "properties": {
                     "cards": {
                       "title": "Cards",
-                      "description": "Select the assets that will be used for cards. The first card selected will be the featured card.",
+                      "description": "Select the assets that will be used for cards.",
                       "type": "array",
                       "minItems": 2,
                       "maxItems": 3,

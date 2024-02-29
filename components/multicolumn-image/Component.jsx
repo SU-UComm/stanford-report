@@ -17,6 +17,11 @@ import { Container } from "../../packages/grids/Container";
 export default function MulticolumnImage({ data, imageCaptions }) {
   const numberOfCaptions = imageCaptions.filter(Boolean).length;
 
+  // test
+  // data.forEach((img, i) => {
+  //   if (i === 1) img.url = "https://picsum.photos/400/800";
+  // });
+
   const images = data.map((image, i) => (
     <Image
       src={image.url}
@@ -28,11 +33,13 @@ export default function MulticolumnImage({ data, imageCaptions }) {
 
   return (
     <Container width="wide">
-      <section className="su-flex su-flex-col su-gap-8 md:su-gap-9">
-        <div className="su-flex su-gap-20 lg:su-gap-48">{images}</div>
+      <section className="su-flex su-flex-col su-items-center su-gap-8 md:su-gap-9">
+        <div className="su-flex su-gap-20 su-items-center lg:su-gap-48">
+          {images}
+        </div>
 
         {numberOfCaptions === 1 && (
-          <p className="su-text-14 su-text-black-70 dark:su-text-black-30 su-font-normal su-leading-[119.415%] su-text-center md:su-text-16 su-mb-0">
+          <p className="su-text-14 su-text-black-70 dark:su-text-black-30 su-font-normal su-max-w-[63.3rem] su-leading-[119.415%] su-text-center md:su-text-16 su-mb-0">
             {imageCaptions.filter(Boolean)[0]}
           </p>
         )}
@@ -47,7 +54,7 @@ function Image({ src, caption, numberOfCaptions }) {
       <img src={src} className="su-object-cover" alt="" />
 
       {caption && numberOfCaptions > 1 && (
-        <p className="su-text-14 su-text-black-70 dark:su-text-black-30 su-font-normal su-leading-[119.415%] su-text-center su-m-0  md:su-text-16">
+        <p className="su-text-14 su-text-black-70 dark:su-text-black-30 su-font-normal su-leading-[119.415%] su-text-center su-m-0 md:su-text-16">
           {caption}
         </p>
       )}

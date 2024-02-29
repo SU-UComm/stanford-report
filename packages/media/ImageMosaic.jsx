@@ -43,9 +43,7 @@ export default function ImageMosaic({ data, remainingImageCount }) {
 
     articleClass =
       orientation === "h"
-        ? `${
-            horizontalPositions[hasVertical ? images.length + 1 : i]
-          } su-aspect-[50/33]`
+        ? `${horizontalPositions[hasVertical ? images.length + 1 : i]} `
         : articleClass;
 
     images.push(

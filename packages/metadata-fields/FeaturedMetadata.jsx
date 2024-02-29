@@ -80,21 +80,23 @@ export default function FeaturedMetadata({ data }) {
     });
   }
 
-  if (
-    campus &&
-    ![null, undefined, "undefined", ""].includes(campus.asset_assetid)
-  ) {
-    metaMap.push({
-      name: "Campus unit",
-      items: campus,
-    });
-  }
+  // if (
+  //   campus &&
+  //   ![null, undefined, "undefined", ""].includes(campus.asset_assetid)
+  // ) {
+  //   metaMap.push({
+  //     name: "Campus unit",
+  //     items: campus,
+  //   });
+  // }
 
   const firstRow = metaMap.slice(0, metaMap.length > 3 ? 3 : metaMap.length);
   const otherRows = metaMap.slice(3, metaMap.length);
 
   const gridSettings =
     "md:su-gap-x-20 md:su-gap-y-70 lg:su-gap-x-40 lg:su-gap-y-[61px]";
+
+  console.log(campus);
 
   return (
     <section className="su-flex su-flex-col su-items-center">
@@ -216,14 +218,14 @@ export default function FeaturedMetadata({ data }) {
                   className={`md:su-grid ${
                     media >= 3
                       ? gridSettings
-                      : "su-flex su-gap-10 su-flex-col md:su-gap-20"
+                      : "su-flex su-gap-15 su-flex-col md:su-gap-25"
                   }`}
                 >
                   {media.map(
                     (item) =>
                       item && (
                         <div
-                          className="su-m-0 su-text-16 su-leading-[19.1px] su-font-normal su-flex su-flex-col su-gap-10 md:su-text-21 md:su-leading-[26.25px]"
+                          className="su-m-0 su-text-16 su-leading-[19.1px] su-font-normal su-flex su-flex-col su-gap-3 md:su-text-21 md:su-leading-[125%]"
                           key={item.asset_assetid}
                         >
                           {item.asset_name}
@@ -233,7 +235,7 @@ export default function FeaturedMetadata({ data }) {
                                 <br />
                                 <a
                                   href={`mailto:${item.asset_metadata_personEmail}`}
-                                  className="su-m-0 su-text-16 su-leading-[19.1px] su-font-semibold su-mt-13 md:su-text-21 md:su-leading-[23.75px]"
+                                  className=""
                                 >
                                   {item.asset_metadata_personEmail}
                                 </a>
@@ -251,10 +253,7 @@ export default function FeaturedMetadata({ data }) {
         </div>
 
         {firstRow.length === 0 ? (
-          <hr
-            aria-hidden="true"
-            className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
-          />
+          <hr className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0" />
         ) : (
           ""
         )}
@@ -269,8 +268,23 @@ export default function FeaturedMetadata({ data }) {
         ""
       )}
 
+      {campus &&
+      ![null, undefined, "undefined", ""].includes(campus.asset_assetid) ? (
+        <div className="su-text-center su-flex su-flex-col su-gap-20 md:su-gap-26">
+          <h3 className="su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans su-m-0">
+            Campus Unit
+          </h3>
+
+          <div className="su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
+            {campus.asset_name}
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+
       {related && related.length ? (
-        <div className="su-text-center su-mt-34 md:su-mt-58 lg:su-mt-[61px] su-flex su-flex-col su-gap-20 md:su-gap-26">
+        <div className="su-text-center su-mt-34 md:su-mt-58 lg:su-mt-61 su-flex su-flex-col su-gap-20 md:su-gap-26">
           <h3 className="su-text-18 su-font-bold su-leading-[22.5px] su-font-sans su-m-0">
             Related topics
           </h3>

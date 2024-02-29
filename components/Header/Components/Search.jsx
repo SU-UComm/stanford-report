@@ -7,7 +7,7 @@ import React from "react";
  * @constructor
  */
 
-export default function Search({ endpoint, collection, profile }) {
+export default function Search({ endpoint, collection, profile, resultPage }) {
   return (
     <div
       id="search"
@@ -17,7 +17,7 @@ export default function Search({ endpoint, collection, profile }) {
     >
       <div className="report-header__overlay su-bg-black su-opacity-25 su-size-full" />
       <form
-        action={endpoint}
+        action={resultPage}
         method="get"
         role="search"
         className="report-header__search su-bg-white dark:su-bg-black-true su-shadow su-shadow-black-60/50 su-absolute su-top-0 su-left-0 su-w-full su-px-50 su-pt-[249px] su-pb-[171px]"

@@ -17,9 +17,9 @@ export default function CampaignCta({ displayConfiguration, data, linkData }) {
 
   return (
     <Container width="full" paddingX={false}>
-      <section className="su-relative su-flex su-items-center su-justify-center su-flex-col">
-        <div className="su-component-campaigncta-wrap su-pt-126 su-pb-108 su-relative su-z-[2] su-text-white su-p-20 su-flex su-flex-col md:su-flex-row">
-          <div className="su-component-campaigncta-content su-relative md:su-border-r-black-30 md:su-border-r md:su-mr-25 su-max-w-[655px] md:su-pr-25">
+      <section className="su-container-inner su-relative su-flex su-items-center su-justify-center su-flex-col">
+        <div className="su-component-campaigncta-wrap su-pt-126 su-pb-108 su-relative su-z-[2] su-text-white su-p-20 md:su-px-50 su-flex su-flex-col md:su-flex-row">
+          <div className="su-component-campaigncta-content su-relative md:su-border-r-black-30 md:su-border-r md:su-mr-25 su-w-full md:su-max-w-[65.5rem] md:su-pr-25">
             <h2 className="su-font-serif su-text-[5.5rem] su-leading-none md:su-text-[7.2rem] su-m-0 su-font-bold">
               {title}
             </h2>

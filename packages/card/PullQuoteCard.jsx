@@ -27,6 +27,7 @@ import { PullQuote } from "../quotes/PullQuote";
 export default function PullQuoteCard({
   data: {
     imageUrl,
+    imageAlt = "",
     quote,
     description,
     liveUrl,
@@ -43,6 +44,7 @@ export default function PullQuoteCard({
         <PullQuote
           quote={quote}
           avatar={imageUrl}
+          imageAlt={imageAlt}
           avatarSize="medium"
           cardSize="featured"
         />

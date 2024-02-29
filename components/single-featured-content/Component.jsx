@@ -33,7 +33,8 @@ export default function SingleFeaturedContent({
       <LinkedHeading
         title={headingData.title}
         ctaText={headingData.ctaText}
-        ctaUrl={headingData.resolvedUrl}
+        ctaLink={headingData.ctaLink}
+        ctaNewWindow={headingData.ctaNewWindow}
       />
 
       <div className="su-single-featured-content md:su-px-[6.4rem] lg:su-px-[122.5px]">

@@ -63,10 +63,12 @@ export default function basicStoryHero(props) {
 
               <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" />
             </div>
-
-            <figcaption className="su-text-16 su-text-black su-m-0 su-leading-[19.11px] su-mt-12 dark:su-text-white md:su-text-16 md:su-leading-[19.11px]">
-              {media.caption} | {media.credit}
-            </figcaption>
+            {(media.caption || media.credit) && (
+              <figcaption className="su-text-16 su-text-black su-m-0 su-leading-[19.11px] su-mt-12 dark:su-text-white">
+                {media.caption} {media.caption && media.credit && ` | `}
+                {media.credit}
+              </figcaption>
+            )}
           </figure>
         </div>
       </div>

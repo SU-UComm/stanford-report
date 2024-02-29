@@ -36,7 +36,8 @@ export default function LeadershipMessages({ data, headingData }) {
           <LinkedHeading
             title={headingData.title}
             ctaText={headingData.ctaText}
-            ctaUrl={headingData.resolvedUrl}
+            ctaLink={headingData.ctaLink}
+            ctaNewWindow={headingData.ctaNewWindow}
           />
         )}
         <MultiColumnGrid items={cards} />

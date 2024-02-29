@@ -7,7 +7,7 @@ import React from "react";
  * @constructor
  */
 
-export default function PreferencesTray({ audience }) {
+export default function PreferencesTray({ audience, personaClickHandler }) {
   return (
     <div className="su-flex su-items-center su-justify-end su-w-32 md:su-w-[85px] lg:su-w-[91px]">
       <button
@@ -186,6 +186,7 @@ export default function PreferencesTray({ audience }) {
                     type="button"
                     id="preference-student"
                     aria-pressed={audience === "student" ? "true" : "false"}
+                    onClick={() => personaClickHandler("student")}
                     className="report-header__pref-toggle hover:su-text-white su-w-full su-h-full aria-pressed:su-text-white group su-bg-white dark:aria-pressed:su-text-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent aria-pressed:su-bg-transparent hover:su-bg-transparent dark:su-bg-black-true &[aria-pressed=“true”]:dark:su-bg-transparent before:su-rounded-inherit after:su-rounded-inherit before:su-bg-gradient-light-red after:su-transition-none su-transition before:su-transition after:su-bg-gradient-light-red dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-py-26 su-px-18 su-bg-transparent su-text-center"
                     data-location="student-info"
                   >
@@ -246,6 +247,7 @@ export default function PreferencesTray({ audience }) {
                     type="button"
                     id="preference-faculty"
                     aria-pressed={audience === "faculty" ? "true" : "false"}
+                    onClick={() => personaClickHandler("faculty")}
                     className="report-header__pref-toggle hover:su-text-white su-w-full su-h-full aria-pressed:su-text-white group su-bg-white dark:aria-pressed:su-text-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent aria-pressed:su-bg-transparent hover:su-bg-transparent dark:su-bg-black-true &[aria-pressed=“true”]:dark:su-bg-transparent before:su-rounded-inherit after:su-rounded-inherit before:su-bg-gradient-light-red after:su-transition-none su-transition before:su-transition after:su-bg-gradient-light-red dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-py-26 su-px-18 su-bg-transparent su-text-center"
                   >
                     <span className="icon-add su-block su-mx-auto su-relative su-w-44 su-h-44 su-text-digital-red dark:su-text-dark-mode-red">
@@ -312,6 +314,8 @@ export default function PreferencesTray({ audience }) {
                   type="button"
                   id="preference-reset"
                   className="report-header__preferences-clear su-text-black-40 su-underline"
+                  aria-pressed={!audience ? "true" : "false"}
+                  onClick={() => personaClickHandler("external")}
                 >
                   Clear selection
                 </button>
@@ -523,7 +527,7 @@ export default function PreferencesTray({ audience }) {
                   id="dark-theme"
                 />
                 <label
-                  className="su-inline-block su-leading-2 su-relative su-align-middle su-z-20 peer-checked/dark:su-z-10 su-pl-50 su-ml-[-44px] peer-checked/dark:su-text-digital-red dark:peer-checked/dark:su-text-palo-verde su-text-black-50"
+                  className="su-inline-block su-leading-2 su-relative su-align-middle su-z-20 peer-checked/dark:su-z-10 su-pl-50 su--ml-44 peer-checked/dark:su-text-digital-red dark:peer-checked/dark:su-text-palo-verde su-text-black-50"
                   htmlFor="dark-theme"
                   data-theme="dark-theme"
                 >

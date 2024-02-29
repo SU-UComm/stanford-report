@@ -21,13 +21,16 @@ export default function BasicHero({ data }) {
             <img
               src={media.featureImage.url}
               alt={media.featureImage.alt}
-              className="su-relative su-w-full su-h-[300px] sm:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
+              className="su-relative su-w-full su-h-[300px] sm:su-h-500 lg:su-h-[764px] su-object-cover su-object-center"
             />
             <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover" />
           </div>
-          <figcaption className="su-text-14 su-w-3/4 su-mx-auto su-text-center su-m-0 su-leading-[16.72px] md:su-text-16 md:su-leading-[19.11px]">
-            {media.caption} | {media.credit}
-          </figcaption>
+          {(media.caption || media.credit) && (
+            <figcaption className="su-text-14 su-w-3/4 su-mx-auto su-text-center su-m-0 su-leading-[16.72px] md:su-text-16 md:su-leading-[19.11px]">
+              {media.caption} {media.caption && media.credit && ` | `}
+              {media.credit}
+            </figcaption>
+          )}
         </figure>
 
         <p className="su-col-span-5 su-col-start-2 sm:su-col-span-6 sm:su-col-start-3 su-pr-40 sm:su-pr-20 su-h-min su-mx-auto su-font-semibold su-text-left font-serif-4 su-text-20 su-leading-[23.88px] md:su-text-22 md:su-leading-[28.75px] lg:su-text-[32px] lg:su-leading-[41.68px]">
