@@ -38,42 +38,42 @@ export default function Base({
   };
 
   // testing data
-  const testImages = [
-    { orientation: "h", alt: "", url: "https://picsum.photos/850/350" },
-    {
-      orientation: "v",
-      alt: "",
-      url: "https://picsum.photos/1000/1250",
-      caption:
-        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
-    },
-    {
-      orientation: "h",
-      alt: "",
-      url: "https://picsum.photos/800/350",
-      caption:
-        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
-    },
-    {
-      orientation: "h",
-      alt: "",
-      url: "https://picsum.photos/700/450",
-      caption:
-        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
-    },
-    { orientation: "h", alt: "", url: "https://picsum.photos/730/450" },
-    { orientation: "v", alt: "", url: "https://picsum.photos/900/1050" },
-  ];
+  // const testImages = [
+  //   { orientation: "h", alt: "", url: "https://picsum.photos/850/350" },
+  //   {
+  //     orientation: "v",
+  //     alt: "",
+  //     url: "https://picsum.photos/1000/1250",
+  //     caption:
+  //       "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
+  //   },
+  //   {
+  //     orientation: "h",
+  //     alt: "",
+  //     url: "https://picsum.photos/800/350",
+  //     caption:
+  //       "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
+  //   },
+  //   {
+  //     orientation: "h",
+  //     alt: "",
+  //     url: "https://picsum.photos/700/450",
+  //     caption:
+  //       "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
+  //   },
+  //   { orientation: "h", alt: "", url: "https://picsum.photos/730/450" },
+  //   { orientation: "v", alt: "", url: "https://picsum.photos/900/1050" },
+  // ];
 
   // place testData in this param to debug
-  // const modalImages = carouselImages(data);
-  const modalImages = carouselImages(testImages);
+  const modalImages = carouselImages(data);
+  // const modalImages = carouselImages(testImages);
 
   // generate the preview images
   // replace first param with testImages to debug
   const previewData = mosaic(
-    // data,
-    testImages,
+    data,
+    // testImages,
     `
     {v:v}
     {h:h:h:h}
@@ -89,8 +89,8 @@ export default function Base({
       : contentConfiguration.caption || contentConfiguration.credit;
 
   // change {testImages} back to {data}
-  // const leftOverImages = data.length - previewData.length;
-  const leftOverImages = testImages.length - previewData.length;
+  const leftOverImages = data.length - previewData.length;
+  // const leftOverImages = testImages.length - previewData.length;
 
   return (
     <>
