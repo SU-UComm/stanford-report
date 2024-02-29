@@ -5,7 +5,6 @@ import { Container } from "../../packages/grids/Container";
 import { LinkedHeading } from "../../packages/headings/Heading";
 import { MultiColumnGrid } from "../../packages/grids/Grids";
 import Card from "../../packages/card/Card";
-import AvatarCard from "../../packages/card/AvatarCard";
 
 /**
  * Leadership Messages
