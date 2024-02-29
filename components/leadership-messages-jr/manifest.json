@@ -1,10 +1,10 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "leadership-messages-jr",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "Links to leadership messages displayed in a grid.",
-  "displayName": "Leadership messages",
+  "displayName": "Leadership messages Justin",
   "mainFunction": "main",
   "environment": [
     {
