@@ -17,6 +17,11 @@ import { Container } from "../../packages/grids/Container";
 export default function MulticolumnImage({ data, imageCaptions }) {
   const numberOfCaptions = imageCaptions.filter(Boolean).length;
 
+  // test
+  // data.forEach((img, i) => {
+  //   if (i === 1) img.url = "https://picsum.photos/400/800";
+  // });
+
   const images = data.map((image, i) => (
     <Image
       src={image.url}
@@ -28,11 +33,13 @@ export default function MulticolumnImage({ data, imageCaptions }) {
 
   return (
     <Container width="wide">
-      <section className="su-flex su-flex-col su-gap-[8px] md:su-gap-[9px]">
-        <div className="su-flex su-gap-[20px] lg:su-gap-[48px]">{images}</div>
+      <section className="su-flex su-flex-col su-items-center su-gap-[8px] md:su-gap-[9px]">
+        <div className="su-flex su-gap-[20px] su-items-center lg:su-gap-[48px]">
+          {images}
+        </div>
 
         {numberOfCaptions === 1 && (
-          <p className="su-text-[14px] su-text-black-70 dark:su-text-black-30 su-font-normal su-leading-[119.415%] su-text-center md:su-text-[16px] su-mb-0">
+          <p className="su-text-[14px] su-text-black-70 dark:su-text-black-30 su-font-normal su-max-w-[633px] su-leading-[119.415%] su-text-center md:su-text-[16px] su-mb-0">
             {imageCaptions.filter(Boolean)[0]}
           </p>
         )}
