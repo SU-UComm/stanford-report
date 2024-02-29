@@ -27,8 +27,8 @@ export default function InTheNews({
   const cardData = [];
 
   const { featuredTeaserDescription } = featuredContent;
-  const { teaserOneDescription } = supplementaryTeaserOne;
-  const { teaserTwoDescription } = supplementaryTeaserTwo;
+  const teaserOneDescription = supplementaryTeaserOne?.teaserOneDescription;
+  const teaserTwoDescription = supplementaryTeaserTwo?.teaserTwoDescription;
 
   const customDescriptions = [
     featuredTeaserDescription,
