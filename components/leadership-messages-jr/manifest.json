@@ -193,6 +193,19 @@
           }
         }
       }
+    },
+    "frontend": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/frontend.html"
+          }
+        }
+      }
     }
   }
 }
