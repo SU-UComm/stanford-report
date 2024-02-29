@@ -1,10 +1,10 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "leadership-messages-hannah",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "Links to leadership messages displayed in a grid.",
-  "displayName": "Leadership messages",
+  "displayName": "Leadership messages - Hannah",
   "mainFunction": "main",
   "environment": [
     {
@@ -190,6 +190,19 @@
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "frontend": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/frontend.html"
           }
         }
       }
