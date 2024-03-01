@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "../../packages/grids/Container";
 import Modal from "../../packages/modal/ModalWrapper";
 import EmbedVideo from "../../packages/media/EmbedVideo";
@@ -15,6 +15,8 @@ import { Carousel } from "../../packages/carousels/Carousels";
  */
 
 function readingTime(text) {
+  if (!text) return 0;
+
   const wpm = 225;
   const words = text.trim().split(/\s+/).length;
   const time = Math.ceil(words / wpm);
@@ -24,16 +26,28 @@ function readingTime(text) {
 export default function basicStoryHero(props) {
   const { title, media, summary, pubDateFormatted, topic, mediaType } = props;
 
+  // state
+  const [readingTimeValue, setReadingTime] = useState(0);
+
+  useEffect(() => {
+    const content = document.querySelector(".su-page-content");
+
+    if (content) {
+      setReadingTime(() => readingTime(content.innerText));
+    }
+  });
+
   return (
     <Container>
       <div>
         <div className="su-px-0 md:su-px-[114px]">
           <div className="su-flex su-justify-between su-flex-wrap">
-            <span className="su-flex su-items-center su-justify-center su-text-[16px] su-leading-[20px] md:su-text-[21px] md:su-leading-[26.25px] md:su-basefont-23 lg:su-text-[23px] lg:su-text-[28.75px]">
+            <span className="su-flex su-items-center su-justify-center su-text-[16px] su-leading-[20px] md:su-text-[21px] md:su-leading-[26.25px] md:su-basefont-23 lg:su-text-[23px]">
               <time className="su-m-0 su-mr-[4px] su-font-semibold">
                 {pubDateFormatted}
               </time>
-              <span className="su-reading-time su-reading-time-separator" />
+              <span className="su-reading-time su-reading-time-separator" />|{" "}
+              {`${readingTimeValue} min read`}
             </span>
 
             <span className="su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-leading-[19.11px] su-text-[16px] md:su-leading-[25.08px] md:su-text-[21px] md:su-text-[24px] lg:su-text-[24px] lg:su-leading-[28.66px]">
