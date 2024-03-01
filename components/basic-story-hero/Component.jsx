@@ -38,7 +38,7 @@ export default function basicStoryHero(props) {
   });
 
   return (
-    <Container>
+    <Container width="wide">
       <div>
         <div className="su-px-0 md:su-px-[114px]">
           <div className="su-flex su-justify-between su-flex-wrap">
@@ -109,7 +109,7 @@ function Thumbnail({ url, alt, video, type, carousel }) {
       <img
         src={url}
         alt={alt}
-        className="su-relative su-w-full su-h-[300px] md:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
+        className="su-relative su-w-full su-max-w-full"
       />
     );
   }
