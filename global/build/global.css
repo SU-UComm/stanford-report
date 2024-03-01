@@ -2092,7 +2092,13 @@ audio::-webkit-media-controls-panel {
 
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
-  > *:not([data-component], .container, .su-lower-content),
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ),
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > .container
@@ -2108,7 +2114,13 @@ audio::-webkit-media-controls-panel {
 @media (min-width: 768px){
   .su-page:not(.su-page-has-sidebar)
   .su-page-content
-  > *:not([data-component], .container, .su-lower-content),
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ),
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > .container
