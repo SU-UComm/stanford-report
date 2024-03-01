@@ -14,7 +14,7 @@ function MajorLinks({ items }) {
       return (
         <div className="pre-footer-links su-relative" key={item.asset_assetid}>
           <div className="pre-footer-links-inner su-relative before:su-bg-gradient-footer before:su-w-2 before:su-absolute before:su-top-0 before:su-left-0 before:su-h-full">
-            <h2 className="su-text-black su-font-sans dark:su-text-white su-mb-11 md:su-mb-11 su-rs-pl-2 su-rs-pr-1">
+            <h2 className="su-text-black su-font-sans dark:su-text-white su-mb-11 su-rs-pl-2 su-rs-pr-1">
               <a
                 className="su-text-black dark:su-text-white hover:su-underline hover:su-text-digital-red dark:hover:su-text-dark-mode-red su-transition su-text-16 md:su-text-18 su-font-semibold"
                 href={item.asset_url}
