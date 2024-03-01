@@ -1,4 +1,5 @@
 import React from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../grids/Container";
 
 export default function VerticalHero({ data }) {
@@ -8,7 +9,7 @@ export default function VerticalHero({ data }) {
 
   return (
     <Container>
-      <div className="basic-story__header su-relative su-flex su-flex-col su-items-start md:su-items-end">
+      <div className="basic-story__header su-rs-pt-8 su-relative su-flex su-flex-col su-items-start md:su-items-end">
         <div className="su-relative su-w-full su-z-10">
           <h1
             className={[
@@ -54,16 +55,16 @@ export default function VerticalHero({ data }) {
             )}
           </figure>
 
-          <p
+          <XssSafeContent
             className={[
               "su-w-full su-h-min su-mx-auto su-font-semibold su-text-center font-serif-4 su-text-21 su-leading-[28.79px] su-m-0",
               "sm:su-text-[22.5px] sm:su-leading-[27px]",
               "md:su-w-4/5",
               "lg:su-text-[32px] lg:su-leading-[41.68px]",
             ].join(" ")}
-          >
-            {summary}
-          </p>
+            content={summary}
+            elementType="p"
+          />
 
           <span
             className={[

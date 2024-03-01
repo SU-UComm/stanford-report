@@ -74,7 +74,8 @@ svg {
     linear-gradient(180deg, rgba(0, 0, 0, 0) 64.92%, #fff 96.86%);
 }
 
-.su-bg-gradient-header-1-dark {
+.su-bg-gradient-header-1-dark,
+.su-dark .su-bg-gradient-header-1 {
   background: linear-gradient(180deg, #1c4270 0%, rgba(0, 0, 0, 0) 53.4%),
     linear-gradient(180deg, rgba(0, 0, 0, 0) 64.92%, #000 96.86%);
 }
@@ -538,7 +539,13 @@ audio::-webkit-media-controls-panel {
 
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
-  > *:not([data-component], .container, .su-lower-content),
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ),
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > .container
@@ -569,14 +576,21 @@ audio::-webkit-media-controls-panel {
   @apply su-rs-mt-5;
 }
 
+.su-page-story-featured .su-upper-content {
+  @apply su-mt-0 !important;
+}
+
 .su-upper-content > [data-component] + * {
   @apply su-rs-mt-7;
 }
 
-[data-component="feature-story-hero"],
 [data-component="basic-story-hero"],
 [data-component="leadership-hero-hannah"] {
   @apply su-rs-mt-8 !important;
+}
+
+[data-component="feature-story-hero"] {
+  @apply su-mt-0 !important;
 }
 
 [data-component="default-hero"],

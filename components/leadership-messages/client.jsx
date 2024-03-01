@@ -28,11 +28,9 @@ import getCookie from "../../packages/utils/cookieGet";
         "search.json"
       )}?profile=${props.search.profile}&query=%21null&collection=${
         props.search.collection
-      }&meta_taxonomyContentMainTopicText=${
-        props.search.maintopic?.asset_name
-      }&meta_taxonomyAudienceText=${translatePersonalisationProfile(
-        audience
-      )}&num_ranks=6&meta_id_not=${props.search.currentPage}`;
+      }&meta_taxonomyContentTypeText=Leadership%20messages&sort=date&meta_taxonomyAudienceText=${audience}&num_ranks=6&meta_id_not=${
+        props.search.currentPage
+      }`;
     }
 
     // Check if we have a URL to fetch data from
