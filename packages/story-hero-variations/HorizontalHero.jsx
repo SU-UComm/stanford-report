@@ -1,22 +1,26 @@
 import React from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../grids/Container";
 
 export default function HorizontalHero({ data }) {
   const { title, pubDateFormatted, media, summary } = data;
   const titleWordsCount = title.split(" ").length;
   const titleSize =
-    "su-leading-[119.4%] md:su-leading-[120%] su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.5rem]";
+    "su-leading-[119.4%] md:su-leading-display su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.5rem]";
 
   return (
-    <header className="basic-story__header su-relative su-w-full">
+    <header className="basic-story__header su-rs-pt-8 su-relative su-w-full">
       <Container>
         <div className="su-relative">
           <div className="su-relative">
             <div
               className={[
                 titleSize,
-                "su-w-[2px] su-z-0 md:su-w-[3px] lg:su-w-[4px] su-absolute su-rotate-180 su-top-[1.75em] su-left-0 su-bg-gradient-light-red",
-                "su-h-[calc(100%-2.25em)] md:su-top-auto md:su-hidden",
+                "su-w-2 su-z-0 md:su-w-3 lg:su-w-4 su-absolute su-rotate-180 su-top-[1.75em] su-left-0 su-bg-gradient-light-red",
+                "md:su-hidden",
+                media.caption || media.credit
+                  ? "su-h-[calc(100%-2.25em)]"
+                  : "su-h-[calc(100%-1em)]",
               ].join(" ")}
             />
             <div className="su-relative su-grid su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-grid-gap">
@@ -36,7 +40,7 @@ export default function HorizontalHero({ data }) {
                   "su-top-[1.75em] md:su-top-auto md:su-bottom-[12.3rem] lg:su-bottom-[15.5rem]",
                 ].join(" ")}
               >
-                <div className="su-col-span-1 md:su-col-span-4 lg:su-col-span-3 su-h-[2px] md:su-h-[3px] lg:su-h-[4px] su-bg-gradient-light-red-h" />
+                <div className="su-col-span-1 md:su-col-span-4 lg:su-col-span-3 su-h-[2px] md:su-h-[3px] lg:su-h-[4px] su-bg-gradient-light-red-h su-rotate-180" />
               </div>
             </div>
 
@@ -44,12 +48,15 @@ export default function HorizontalHero({ data }) {
               <div
                 className={[
                   titleSize,
-                  "su-w-[2px] su-z-0 md:su-w-[3px] lg:su-w-[4px] su-absolute su-rotate-180 su-top-[1.75em] su-left-0 su-bg-gradient-light-red",
-                  "su-hidden su-h-[calc(100%+12.3rem-.5em)] lg:su-h-[calc(100%+15.5rem-.5em)] md:su-top-auto md:su-bottom-[.5em] md:su-block",
+                  "su-w-[2px] su-z-0 md:su-w-[3px] lg:su-w-[4px] su-absolute su-top-[1.75em] su-left-0 su-bg-gradient-light-red dark:su-rotate-180",
+                  "su-hidden md:su-top-auto md:su-block",
+                  media.caption || media.credit
+                    ? "su-h-[calc(100%+12.3rem-.5em)] lg:su-h-[calc(100%+15.5rem-.5em)] md:su-bottom-[.5em]"
+                    : "su-h-[calc(100%+12.3rem+1em)] lg:su-h-[calc(100%+15.5rem+1em)] md:su-bottom-[-1em]",
                 ].join(" ")}
               />
-              <figure className="basic-story__header-image su-gap-[6px] su-col-span-full su-z-0 md:su-gap-[18px] lg:su-gap-[15px]">
-                <div className="su-relative su-w-[100vw] su-relative su-left-[50%] su-translate-x-[-50%]">
+              <figure className="basic-story__header-image su-gap-6 su-col-span-full su-z-0 md:su-gap-18 lg:su-gap-15">
+                <div className="su-relative su-w-screen su-left-1/2 su-translate-x-[-50%]">
                   <img
                     src={media.featureImage.url}
                     alt={media.featureImage.alt}
@@ -57,12 +64,12 @@ export default function HorizontalHero({ data }) {
                   />
                 </div>
                 {(media.caption || media.credit) && (
-                  <div className="su-rs-pb-5 su-relative">
+                  <div className="su-rs-pb-9 su-relative">
                     <div
                       aria-hidden="true"
-                      className="su-w-[2px] md:su-w-[3px] lg:su-w-[4px] su-h-full su-absolute su-right-0 su-bg-digital-red-dark su-dark:su-bg-olive-green su-z-0"
+                      className="su-w-[2px] md:su-w-[3px] lg:su-w-[4px] su-h-full su-absolute su-right-0 su-bg-digital-red-light dark:su-bg-olive su-z-0"
                     />
-                    <figcaption className="su-pb-[1.1rem] md:su-pb-[1.3rem] su-pt-[.9rem] su-mt-0 su-mb-0 su-w-[calc(100%-40px)] md:su-w-[83.333%] lg:su-w-[50%] lg:su-max-w-[633px] su-mx-auto su-text-center su-text-[1.4rem] md:su-text-[1.6rem]">
+                    <figcaption className="su-text-inherit su-pb-[1.1rem] md:su-pb-[1.3rem] su-pt-[.9rem] su-mt-0 su-mb-0 su-w-[calc(100%-40px)] md:su-w-[83.333%] lg:su-w-[50%] lg:su-max-w-[633px] su-mx-auto su-text-center su-text-[1.4rem] md:su-text-[1.6rem]">
                       {media.caption} {media.caption && media.credit && ` | `}
                       {media.credit}
                     </figcaption>
@@ -72,20 +79,26 @@ export default function HorizontalHero({ data }) {
             </div>
           </div>
 
-          <div className="su-relative">
+          <div
+            className={`su-relative ${
+              media.caption || media.credit ? "" : "su-rs-pt-9"
+            }`}
+          >
             <div
               aria-hidden="true"
-              className="su-w-[2px] md:su-w-[3px] lg:su-w-[4px] su-h-full su-absolute su-right-0 su-bg-gradient-light-red su-rotate-180 su-z-0"
+              className="su-w-2 md:su-w-3 lg:su-w-4 su-h-full su-absolute su-top-0 su-right-0 su-bg-gradient-light-red dark:su-rotate-180 su-z-0"
             />
-            <div className="su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-[20px] md:su-px-0">
-              <p className="su-font-semibold su-text-left su-col-span-6 md:su-col-span-10 md:su-col-start-2 lg:su-col-span-6 lg:su-col-start-2 font-serif-4 su-text-[21px] su-leading-[125.28%] md:su-text-[25px] lg:su-text-[32px] su-mb-0">
-                {summary}
-              </p>
+            <div className="su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-20 md:su-px-0">
+              <XssSafeContent
+                className="su-font-semibold su-text-left su-col-span-6 md:su-col-span-10 md:su-col-start-2 lg:su-col-span-6 lg:su-col-start-2 font-serif-4 su-text-21 su-leading-[125.28%] md:su-text-25 lg:su-text-32 su-mb-0"
+                content={summary}
+                elementType="p"
+              />
             </div>
 
-            <div className="su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-[20px] md:su-px-0">
+            <div className="su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-20 md:su-px-0">
               <span className="su-col-span-6 md:su-col-span-10 md:su-col-start-2 lg:su-col-span-8 lg:su-col-start-2 su-rs-mt-5 su-text-right su-text-1">
-                <time className="su-m-0 md:su-mt-0 md:su-mr-[4px] su-font-semibold">
+                <time className="su-m-0 md:su-mt-0 md:su-mr-4 su-font-semibold">
                   {pubDateFormatted}
                 </time>
                 {/* | {read time here} */}

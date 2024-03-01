@@ -707,7 +707,7 @@ html{
 }
 
 body{
-  background-color: #FFFFFF;
+  background-color: #fff;
   color: #2E2D29;
   overflow-x: hidden;
   font-size: 1.8rem;
@@ -1179,14 +1179,6 @@ h6{
  * by plugins.
  */
 
-/**
- * Use this directive to control where Tailwind injects the responsive
- * variations of each utility.
- *
- * If omitted, Tailwind will append these classes to the very end of
- * your stylesheet by default.
- */
-
 .su-bg-gradient,
 .su-bg-gradient-before:before,
 .su-bg-gradient-after:after{
@@ -1275,7 +1267,8 @@ h6{
     linear-gradient(180deg, rgba(0, 0, 0, 0) 64.92%, #fff 96.86%);
 }
 
-.su-bg-gradient-header-1-dark {
+.su-bg-gradient-header-1-dark,
+.su-dark .su-bg-gradient-header-1 {
   background: linear-gradient(180deg, #1c4270 0%, rgba(0, 0, 0, 0) 53.4%),
     linear-gradient(180deg, rgba(0, 0, 0, 0) 64.92%, #000 96.86%);
 }
@@ -1285,8 +1278,8 @@ h6{
           clip-path: inset(-100vw -100vw 0 0);
 }
 
-.font-serif-4 {
-  font-family: "Source Serif 4", Georgia, Times, "Times New Roman", serif;
+.font-serif-4{
+  font-family: "Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif;
 }
 
 .su-stop-red {
@@ -1318,8 +1311,8 @@ h6{
 }
 
 .tt-menu::before{
-  margin-bottom: 19px;
-  font-size: 26px;
+  margin-bottom: 1.9rem;
+  font-size: 2.6rem;
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(177 4 14 / var(--tw-text-opacity));
@@ -1347,9 +1340,9 @@ h6{
 .component-slider-cards .swiper-slide::before{
   position: absolute;
   top: 0;
-  left: -20px;
+  left: -2rem;
   height: 100%;
-  width: 2px;
+  width: 0.2rem;
   content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(192 192 191 / var(--tw-bg-opacity));
@@ -1358,14 +1351,14 @@ h6{
 @media (min-width: 768px){
   .component-slider-cards .swiper-slide::before{
     content: var(--tw-content);
-    left: -36px;
+    left: -3.6rem;
   }
 }
 
 @media (min-width: 992px){
   .component-slider-cards .swiper-slide::before{
     content: var(--tw-content);
-    left: -50px;
+    left: -5rem;
   }
 }
 
@@ -1374,8 +1367,8 @@ h6{
 }
 
 .component-slider-cards{
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -2rem;
+  margin-right: -2rem;
 }
 
 @media (min-width: 768px){
@@ -1408,14 +1401,14 @@ h6{
 }
 
 .component-slider-single.component-slider-peek{
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -2rem;
+  margin-right: -2rem;
 }
 
 @media (min-width: 768px){
   .component-slider-single.component-slider-peek{
-    margin-left: -50px;
-    margin-right: -50px;
+    margin-left: -5rem;
+    margin-right: -5rem;
   }
 }
 
@@ -1427,8 +1420,8 @@ h6{
 }
 
 .component-slider-cards.component-slider-peek{
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -2rem;
+  margin-right: -2rem;
 }
 
 @media (min-width: 768px){
@@ -1455,17 +1448,16 @@ h6{
 .component-slider .component-slider-pagination{
   position: static;
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   text-align: left;
 }
 
 .component-slider .swiper-pagination-bullet{
   margin-left: 0;
   margin-right: 0;
-  height: 20px;
-  width: 20px;
+  height: 2rem;
+  width: 2rem;
   border-width: 2px;
-  border-style: solid;
   --tw-border-opacity: 1;
   border-color: rgb(192 192 191 / var(--tw-border-opacity));
   background-color: transparent;
@@ -1538,12 +1530,12 @@ h6{
 
 .component-slider .component-slider-controls{
   display: flex;
-  gap: 20px;
+  gap: 2rem;
 }
 
 @media (min-width: 768px){
   .component-slider .component-slider-controls{
-    gap: 27px;
+    gap: 2.7rem;
   }
 }
 
@@ -1575,12 +1567,11 @@ h6{
   position: relative;
   top: auto;
   bottom: 0;
-  height: 37px;
-  min-width: 37px;
-  max-width: 37px;
+  height: 3.7rem;
+  min-width: 3.7rem;
+  max-width: 3.7rem;
   border-radius: 9999px;
   border-width: 2px;
-  border-style: solid;
   --tw-border-opacity: 1;
   border-color: rgb(177 4 14 / var(--tw-border-opacity));
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
@@ -1675,24 +1666,24 @@ h6{
   top: 0;
   left: 0;
   z-index: 50;
-  height: 100%;
   width: 100%;
+  height: 100%;
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 @media (min-width: 768px){
   .su-modal{
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
   }
 }
 
@@ -1714,14 +1705,14 @@ h6{
 
 .su-modal .su-component-close{
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 2rem;
+  right: 2rem;
 }
 
 @media (min-width: 768px){
   .su-modal .su-component-close{
-    top: 38px;
-    right: 38px;
+    top: 3.8rem;
+    right: 3.8rem;
   }
 }
 
@@ -1734,8 +1725,8 @@ h6{
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
+  height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
   -o-object-position: center;
@@ -1748,13 +1739,13 @@ h6{
 }
 
 .su-component-close svg{
-  height: 30px;
-  width: 30px;
+  width: 3rem;
+  height: 3rem;
   fill: currentColor;
 }
 
 .su-component-close span{
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 600;
   line-height: 119.415%;
 }
@@ -1773,7 +1764,7 @@ h6{
 
 @media (min-width: 992px){
   .su-modal-content .component-slider{
-    top: 50px;
+    top: 5rem;
   }
 }
 
@@ -2137,7 +2128,13 @@ audio::-webkit-media-controls-panel {
 
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
-  > *:not([data-component], .container, .su-lower-content),
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ),
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > .container
@@ -2145,23 +2142,29 @@ audio::-webkit-media-controls-panel {
 .su-page:not(.su-page-has-sidebar) .su-page-content > span{
   margin-left: auto;
   margin-right: auto;
-  max-width: 732px;
-  padding-left: 20px;
-  padding-right: 20px;
+  max-width: 73.2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 @media (min-width: 768px){
   .su-page:not(.su-page-has-sidebar)
   .su-page-content
-  > *:not([data-component], .container, .su-lower-content),
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ),
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
   > .container
   > *:not([data-component]),
 .su-page:not(.su-page-has-sidebar) .su-page-content > span{
     width: 84.75%;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 
@@ -2212,6 +2215,10 @@ audio::-webkit-media-controls-panel {
   }
 }
 
+.su-page-story-featured .su-upper-content{
+  margin-top: 0 !important;
+}
+
 .su-upper-content > [data-component] + *{
   margin-top: 5rem;
 }
@@ -2228,26 +2235,27 @@ audio::-webkit-media-controls-panel {
   }
 }
 
-[data-component="feature-story-hero"],
 [data-component="basic-story-hero"],
 [data-component="leadership-hero-hannah"]{
   margin-top: 6rem !important;
 }
 
 @media (min-width: 768px){
-  [data-component="feature-story-hero"],
-[data-component="basic-story-hero"],
+  [data-component="basic-story-hero"],
 [data-component="leadership-hero-hannah"]{
     margin-top: 12.6rem !important;
   }
 }
 
 @media (min-width: 1500px){
-  [data-component="feature-story-hero"],
-[data-component="basic-story-hero"],
+  [data-component="basic-story-hero"],
 [data-component="leadership-hero-hannah"]{
     margin-top: 13.3rem !important;
   }
+}
+
+[data-component="feature-story-hero"]{
+  margin-top: 0 !important;
 }
 
 [data-component="default-hero"],
@@ -2347,20 +2355,20 @@ audio::-webkit-media-controls-panel {
 @media (min-width: 992px){
   .su-page-has-sidebar .su-sidebar-content-wrap{
     flex-wrap: nowrap;
-    gap: 50px;
+    gap: 5rem;
   }
 }
 
 .su-page-has-sidebar .su-page-content{
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 2rem;
+  margin-right: 2rem;
   width: calc(100% - 40px);
 }
 
 @media (min-width: 768px){
   .su-page-has-sidebar .su-page-content{
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 5rem;
+    margin-right: 5rem;
     width: calc(100% - 100px);
     padding-left: 7.65%;
     padding-right: 7.65%;
@@ -2431,17 +2439,17 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-page-has-sidebar .su-page-sidebar{
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 38px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 3.8rem;
   width: 100%;
 }
 
 @media (min-width: 768px){
   .su-page-has-sidebar .su-page-sidebar{
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 110px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 11rem;
     padding-left: 7.65%;
     padding-right: 7.65%;
   }
@@ -2455,7 +2463,7 @@ audio::-webkit-media-controls-panel {
     margin-right: 8.33%;
     margin-top: 0;
     width: 25%;
-    max-width: 298px;
+    max-width: 29.8rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -2483,12 +2491,12 @@ audio::-webkit-media-controls-panel {
 
 .su-container-large{
   width: 100%;
-  max-width: 1186px;
+  max-width: 118.6rem;
 }
 
 .su-container-wide{
   width: 100%;
-  max-width: 1412px;
+  max-width: 141.2rem;
 }
 
 /* Site search same as container wide */
@@ -2504,14 +2512,14 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-container-px{
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 @media (min-width: 768px){
   .su-container-px{
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 
@@ -2568,10 +2576,10 @@ audio::-webkit-media-controls-panel {
   [data-component="content-carousel"]
   .su-component-container
   > .su-bg-fog-light{
-    margin-left: -61px;
-    margin-right: -61px;
-    padding-left: 61px;
-    padding-right: 61px;
+    margin-left: -6.1rem;
+    margin-right: -6.1rem;
+    padding-left: 6.1rem;
+    padding-right: 6.1rem;
   }
 }
 
@@ -2588,8 +2596,8 @@ audio::-webkit-media-controls-panel {
 /* Campaign CTA on basic story pages */
 
 .su-page-has-sidebar [data-component="campaign-cta"]{
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -2rem;
+  margin-right: -2rem;
 }
 
 @media (min-width: 768px){
@@ -2613,16 +2621,16 @@ audio::-webkit-media-controls-panel {
   [data-component="campaign-cta"]
   .su-component-campaigncta-wrap{
   width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 @media (min-width: 768px){
   .su-page-has-sidebar
   [data-component="campaign-cta"]
   .su-component-campaigncta-wrap{
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 
@@ -2631,8 +2639,8 @@ audio::-webkit-media-controls-panel {
   [data-component="campaign-cta"]
   .su-component-campaigncta-wrap{
     flex-direction: column;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 
   .su-page-has-sidebar
@@ -3186,7 +3194,7 @@ WYSIWYG formatting styles
 .su-page-content > div:not([data-component], .site-search) ol,
 .su-page-content > ol{
   position: relative;
-  padding-left: 30px;
+  padding-left: 3rem;
 }
 
 .su-wysiwyg-content ul > li,
@@ -3194,7 +3202,7 @@ WYSIWYG formatting styles
 .su-page-content > div:not([data-component], .site-search) ul > li,
 .su-page-content > ul > li{
   position: relative;
-  padding-left: 30px;
+  padding-left: 3rem;
 }
 
 .su-wysiwyg-content ul > li::before,
@@ -3203,9 +3211,9 @@ WYSIWYG formatting styles
 .su-page-content > ul > li::before{
   position: absolute;
   top: .6em;
-  left: 12px;
-  height: 4.5px;
-  width: 4.5px;
+  left: 1.2rem;
+  width: 0.45rem;
+  height: 0.45rem;
   content: var(--tw-content);
   border-radius: 9999px;
   background-color: currentColor;
@@ -3287,7 +3295,7 @@ WYSIWYG formatting styles
   [data-component="acknowledgement"]
   .su-component-container
   > hr{
-  height: 5px !important;
+  height: 0.5rem !important;
 }
 
 .su-page-story-featured * + [data-component="acknowledgement"],

@@ -36,19 +36,19 @@ export default function FactCallout({ displayConfiguration }) {
   return (
     <div className={`decoration-${indicatorPosition}`}>
       <Container width={width}>
-        <section className="fact-wrapper su-col-span-full su-w-full su-relative su-h-auto su-p-[3px] su-bg-gradient-light-red-h-reverse">
+        <section className="fact-wrapper su-col-span-full su-w-full su-relative su-h-auto su-p-3 su-bg-gradient-light-red-h-reverse">
           <div
-            className={`${indicator} su-absolute su-left-1/2 su-right-1/2 su-flex su-items-center su-justify-start su-w-[24px] su-h-[90px]`}
+            className={`${indicator} su-absolute su-left-1/2 su-right-1/2 su-flex su-items-center su-justify-start su-w-24 su-h-90`}
           >
-            <div className="su-w-[3px] su-h-[72px] lg:su-h-[60px] su-bg-gradient-light-red-h-reverse" />
-            <div className="su-w-[24px] su-h-[24px] su-rounded-full su-bg-gradient-light-red-h-reverse su-flex su-items-center su-justify-center">
-              <div className="su-w-[18px] su-h-[18px] su-rounded-full su-bg-white dark:su-bg-black-true" />
+            <div className="su-w-3 su-h-72 lg:su-h-60 su-bg-gradient-light-red-h-reverse" />
+            <div className="su-size-24 su-rounded-full su-bg-gradient-light-red-h-reverse su-flex su-items-center su-justify-center">
+              <div className="su-size-18 su-rounded-full su-bg-white dark:su-bg-black-true" />
             </div>
           </div>
           <div
-            className={`su-px-[38px] ${
-              width === "Wide" ? "md:su-px-[121px]" : ""
-            } su-py-[38px] md:su-py-[61px] su-w-full su-h-full su-bg-white dark:su-bg-black-true su-flex su-flex-col su-items-center su-justify-center su-gap-[10px] lg:su-flex-row lg:su-gap-[38px] su-items-center`}
+            className={`su-px-38 ${
+              width === "Wide" ? "md:su-px-[12.1rem]" : ""
+            } su-py-38 md:su-py-61 su-size-full su-bg-white dark:su-bg-black-true su-flex su-flex-col su-items-center su-justify-center su-gap-10 lg:su-flex-row lg:su-gap-38`}
           >
             {svgMap.get(icon) &&
               "light" in svgMap.get(icon) &&

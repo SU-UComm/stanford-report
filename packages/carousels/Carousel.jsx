@@ -156,7 +156,7 @@ export function Carousel({
         ))}
       </Swiper>
       {slides.length > 1 && (
-        <div className="component-slider-controls su-flex su-mt-[45px] lg:su-mt-[48px] su-items-center su-content-center">
+        <div className="component-slider-controls su-flex su-mt-45 lg:su-mt-48 su-items-center su-content-center">
           <div
             aria-label="Slide Navigation"
             className={`component-slider-pagination component-slider-pagination-${uniqueClass} su-mr-full`}

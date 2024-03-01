@@ -15,30 +15,21 @@ export function Avatar({ image, avatarSize = "small", alt = "" }) {
   const avatarWrapperClasses = new Map();
   avatarWrapperClasses.set(
     "small",
-    "su-min-w-[56px] su-w-[56px] su-h-[56px] su-p-[3px]"
+    "su-min-w-[56px] su-w-[56px] su-h-[56px] su-p-3"
   );
   avatarWrapperClasses.set(
     "medium",
-    "su-min-w-[165px] su-w-[165px] su-h-[165px] su-p-[7px]"
+    "su-min-w-[165px] su-w-[165px] su-h-[165px] su-p-7"
   );
   avatarWrapperClasses.set(
     "large",
-    "su-min-w-[218px] su-w-[218px] su-h-[218px] su-p-[9px]"
+    "su-min-w-[218px] su-w-[218px] su-h-[218px] su-p-9"
   );
 
   const avatarImageClasses = new Map();
-  avatarImageClasses.set(
-    "small",
-    "su-w-[50px] su-h-[50px] su-top-[3px] su-left-[3px]"
-  );
-  avatarImageClasses.set(
-    "medium",
-    "su-w-[150px] su-h-[150px] su-top-[7px] su-left-[8px]"
-  );
-  avatarImageClasses.set(
-    "large",
-    "su-w-[200px] su-h-[200px] su-top-[9px] su-left-[9px]"
-  );
+  avatarImageClasses.set("small", "su-w-50 su-h-50 su-top-3 su-left-3");
+  avatarImageClasses.set("medium", "su-size-150 su-top-7 su-left-8");
+  avatarImageClasses.set("large", "su-size-200 su-top-9 su-left-9");
 
   return image ? (
     <div
