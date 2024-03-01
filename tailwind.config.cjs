@@ -17,11 +17,6 @@ module.exports = {
   // design of your site.
   // https://tailwindcss.com/docs/configuration/#theme
   theme: {
-    // Overrides.
-
-    // Decanter Custom.
-    // decanter: require(`${dir}/theme/decanter.js`)(),
-    // Decanter's extension of Tailwind's default theme.
     extend: {
       colors: require(`${dir}/theme/colors.js`)(),
     },

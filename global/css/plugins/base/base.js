@@ -2,7 +2,7 @@ module.exports = function () {
   return function ({ addBase, config }) {
     addBase({
       html: {
-        color: "#2E2D29", // Stanford report primary black
+        color: config("theme.colors.black.DEFAULT"), // Stanford report primary black
       },
       body: {
         fontSize: "1.8rem",

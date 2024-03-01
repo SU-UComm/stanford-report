@@ -37,7 +37,7 @@ export default function SingleFeaturedContent({
         ctaNewWindow={headingData.ctaNewWindow}
       />
 
-      <div className="su-single-featured-content md:su-px-[64px] lg:su-px-[122.5px]">
+      <div className="su-single-featured-content md:su-px-[6.4rem] lg:su-px-[122.5px]">
         <Card data={data[0]} cardSize="featured" />
       </div>
     </Container>

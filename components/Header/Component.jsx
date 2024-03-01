@@ -95,22 +95,22 @@ export default function Header({
       <header
         className={`${
           pageControls?.isStory ? "report-header--story" : ""
-        } report-header su-pb-[139px] md:su-pb-[166px] lg:su-pb-[189px]`}
+        } report-header su-pb-[13.9rem] md:su-pb-[16.6rem] lg:su-pb-[18.9rem]`}
       >
         <div className="su-shadow su-fixed su-top-0 su-left-0 su-w-full su-bg-white dark:su-bg-black-true su-z-50">
           <TopBar url={site?.url} logo={site?.logoTopBar} />
 
-          <div className="su-w-full su-max-w-[1412px] su-px-[20px] md:su-px-[49px] su-mx-auto">
-            <div className="report-header__main su-flex su-items-center su-justify-between su-gap-[20px]">
-              <div className="su-flex su-items-center su-gap-[20px] lg:su-gap-[27px] su-w-[32px] md:su-w-[85px] lg:su-w-[91px]">
+          <div className="su-w-full su-max-w-[141.2rem] su-px-20 md:su-px-49 su-mx-auto">
+            <div className="report-header__main su-flex su-items-center su-justify-between su-gap-20">
+              <div className="su-flex su-items-center su-gap-20 lg:su-gap-27 su-w-32 md:su-w-85 lg:su-w-[9.1rem]">
                 <button
-                  className="su-w-[32px] su-flex su-flex-wrap su-gap-[3px] su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
+                  className="su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
                   aria-controls="menu"
                   aria-expanded="false"
                   aria-labelledby="toggle-menu"
                   type="button"
                 >
-                  <span className="su-relative su-h-[32px] su-w-[32px]">
+                  <span className="su-relative su-size-32">
                     <BurgerBar />
                     <MobileBurgerBar />
                   </span>
@@ -118,7 +118,7 @@ export default function Header({
                     Menu
                   </span>
                   <span
-                    className="su-text-[12px] su-hidden md:su-block"
+                    className="su-text-12 su-hidden md:su-block"
                     aria-hidden="true"
                   >
                     Menu
@@ -143,29 +143,29 @@ export default function Header({
 
                 <button
                   type="button"
-                  className="su-hidden su-relative su-z-40 su-order-3 su-w-[32px] md:su-flex su-flex-wrap su-gap-[3px] su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
+                  className="su-hidden su-relative su-z-40 su-order-3 su-w-32 md:su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
                   aria-controls="search"
                   aria-expanded="false"
                   aria-labelledby="toggle-search"
                   data-location="close-search"
                 >
-                  <span className="icon-search su-relative su-h-[32px] su-w-[32px]">
+                  <span className="icon-search su-relative su-size-32">
                     <SearchIcon />
                   </span>
-                  <span className="icon-close su-hidden su-relative su-h-[32px] su-w-[32px]">
+                  <span className="icon-close su-hidden su-relative su-size-32">
                     <CloseIcon />
                   </span>
                   <span id="toggle-search" hidden>
                     Toggle Search
                   </span>
                   <span
-                    className="text-search su-text-[12px] su-hidden md:su-block"
+                    className="text-search su-text-12 su-hidden md:su-block"
                     aria-hidden="true"
                   >
                     Search
                   </span>
                   <span
-                    className="text-close su-text-[12px] su-hidden"
+                    className="text-close su-text-12 su-hidden"
                     aria-hidden="true"
                   >
                     Close

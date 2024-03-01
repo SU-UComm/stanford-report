@@ -30,7 +30,7 @@ describe("MediaRatio", () => {
         videoUrl={testData.videoUrl}
         aspectRatio="card-small"
       >
-        <div className="su-absolute su-left-[13px] su-bottom-[13px]">
+        <div className="su-absolute su-left-13 su-bottom-13">
           <VideoPlay />
         </div>
       </MediaRatio>

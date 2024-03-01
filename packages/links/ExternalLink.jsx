@@ -27,7 +27,7 @@ export function ExternalLink({
   );
   ctaSizeClasses.set(
     "large",
-    "su-font-semibold su-text-[21px] su-leading-[26.25px]"
+    "su-font-semibold su-text-21 su-leading-[26.25px]"
   );
 
   return liveUrl ? (

@@ -161,7 +161,7 @@ export default function Base({
             />
           </button>
 
-          <div className="su-text-[1.5rem] su-w-full su-text-center dark:su-text-[white]">
+          <div className="su-text-[1.5rem] su-w-full su-text-center dark:su-text-white">
             {captionCredit}
           </div>
         </Container>

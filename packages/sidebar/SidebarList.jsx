@@ -50,7 +50,7 @@ export function SidebarList({
   return hasChildren ? (
     <div
       className={[
-        "su-component-sidebar-list su-flex su-flex-wrap su-gap-[27px]",
+        "su-component-sidebar-list su-flex su-flex-wrap su-gap-27",
       ].join(" ")}
     >
       {title && <SidebarHeading title={title} icon={icon} />}
@@ -60,7 +60,7 @@ export function SidebarList({
           data-test="cta"
           href={ctaUrl}
           className={[
-            "su-items-center su-group su-transition su-justify-center su-items-center md:su-justify-start su-w-full su-flex su-text-digital-red dark:su-text-dark-mode-red su-flex-nowrap su-gap-[2px] su-leading-[26.25px] su-text-[21px] su-font-semibold su-no-underline hocus:su-underline [&>*]:su-transition",
+            "su-items-center su-group su-transition su-justify-center md:su-justify-start su-w-full su-flex su-text-digital-red dark:su-text-dark-mode-red su-flex-nowrap su-gap-2 su-leading-[125%] su-text-21 su-font-semibold su-no-underline hocus:su-underline *:su-transition",
           ].join(" ")}
         >
           <span>{ctaText}</span>

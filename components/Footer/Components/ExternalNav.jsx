@@ -9,15 +9,15 @@ import { decode } from "html-entities";
  */
 export default function ExternalNav({ navigation, audience }) {
   return (
-    <div className="su-pb-[60px] lg:su-pb-[95px]">
+    <div className="su-pb-60 lg:su-pb-[95px]">
       {navigation && navigation.length > 0 && (
-        <ul className="su-list-none su-flex su-flex-wrap su-pl-0 su-gap-y-[6px] su-gap-x-[20px] lg:su-gap-x-[27px] pre-footer-bottom-third">
+        <ul className="su-list-none su-flex su-flex-wrap su-pl-0 su-gap-y-6 su-gap-x-20 lg:su-gap-x-27 pre-footer-bottom-third">
           {navigation.map((item) => {
             const title = decode(item.asset_name);
             return (
               <li key={item.asset_assetid}>
                 <a
-                  className="su-flex hover:su-underline su-leading-[26px] su-items-center su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-[14px] md:su-text-[16px] focus:su-text-digital-red hover:su-text-digital-red su-font-normal su-no-underline su-transition"
+                  className="su-flex hover:su-underline su-leading-[26px] su-items-center su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-14 md:su-text-16 focus:su-text-digital-red hover:su-text-digital-red su-font-normal su-no-underline su-transition"
                   href={item.asset_attribute_redirect_url}
                 >
                   <span className="su-mr-2">{title}</span>

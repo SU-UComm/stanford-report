@@ -11,7 +11,7 @@ function PrimaryLinks({ navigation }) {
   return (
     navigation &&
     navigation.length > 0 && (
-      <ul className="su-flex su-gap-[9px] md:su-gap-x-[24px] md:su-gap-x-[31px] md:su-text-center">
+      <ul className="su-flex su-gap-9 md:su-gap-x-24 md:su-gap-x-31 md:su-text-center">
         {navigation.map((item) => {
           const title = decode(item.asset_name);
           return (
@@ -40,7 +40,7 @@ function SecondaryLinks({ navigation }) {
   return (
     navigation &&
     navigation.length > 0 && (
-      <ul className="su-flex su-gap-[9px] md:su-gap-x-[24px] md:su-gap-x-[29px] md:su-text-center">
+      <ul className="su-flex su-gap-9 md:su-gap-x-24 md:su-gap-x-29 md:su-text-center">
         {navigation.map((item) => {
           const title = decode(item.asset_name);
           return (
@@ -70,23 +70,23 @@ export default function BottomBar({ site, navigation }) {
   const { footerPrimary, footerSecondary } = navigation;
   return (
     <div className="su-flex lg:su-items-center  su-text-white su-bg-digital-red">
-      <div className="su-text-white su-flex su-pl-[20px] su-pr-[20px] md:su-pl-[50px] md:su-pr-[50px] su-mx-auto su-w-full su-max-w-[1412px]">
-        <div className="bottom-footer su-pb-[12px] md:su-pb-[25px] lg:su-pb-[32px] su-flex-grow su-flex su-flex-col lg:su-flex-row lg:su-gap-[42px]">
+      <div className="su-text-white su-flex su-pl-20 su-pr-20 md:su-pl-50 md:su-pr-50 su-mx-auto su-w-full su-max-w-[1412px]">
+        <div className="bottom-footer su-pb-12 md:su-pb-25 lg:su-pb-32 su-grow su-flex su-flex-col lg:su-flex-row lg:su-gap-42">
           <div className="su-flex su-mx-auto">
             <a href={site.url}>
               <img
-                className="su-mt-[12px] md:su-mt-[10px] lg:su-mt-[19.5px] su-mb-auto"
+                className="su-mt-12 md:su-mt-10 lg:su-mt-[19.5px] su-mb-auto"
                 src={site?.logoFooter?.url}
                 alt={site?.logoFooter?.alt}
               />
             </a>
           </div>
 
-          <div className="su-flex lg:su-flex-col footer-links-wrapper su-flex-wrap lg:su-flex-grow">
-            <div className="footer-top-links su-font-sans su-font-semibold su-text-[14px] md:su-text-[18px] lg:su-text-[17px] lg:su-mt-[31px] su-mx-auto md:su-mb-[11px] lg:su-mb-[8px] lg:su-ml-0 lg:su-mr-0">
+          <div className="su-flex lg:su-flex-col footer-links-wrapper su-flex-wrap lg:su-grow">
+            <div className="footer-top-links su-font-sans su-font-semibold su-text-14 md:su-text-18 lg:su-text-17 lg:su-mt-31 su-mx-auto md:su-mb-11 lg:su-mb-8 lg:su-ml-0 lg:su-mr-0">
               <PrimaryLinks navigation={footerPrimary} />
             </div>
-            <div className="footer-bottom-links su-mx-auto lg:su-ml-0 lg:su-mr-0 su-font-normal su-text-[14px] md:su-text-[16px] md:su-mb-[10px] lg:su-mb-[9px] lg:su-text-[15px]">
+            <div className="footer-bottom-links su-mx-auto lg:su-ml-0 lg:su-mr-0 su-font-normal su-text-14 md:su-text-16 md:su-mb-10 lg:su-mb-9 lg:su-text-15">
               <SecondaryLinks navigation={footerSecondary} />
             </div>
             <div className="footer-bottom-copyright su-w-full su-text-white su-font-source-sans-pro su-text-15 su-font-normal su-tracking-normal su-mt-17 lg:su-mt-0 su-mx-auto lg:su-mx-0">

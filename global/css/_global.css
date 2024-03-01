@@ -45,15 +45,6 @@ svg {
  */
 @tailwind utilities;
 
-/**
- * Use this directive to control where Tailwind injects the responsive
- * variations of each utility.
- *
- * If omitted, Tailwind will append these classes to the very end of
- * your stylesheet by default.
- */
-@tailwind variants;
-
 .su-bg-gradient,
 .su-bg-gradient-before:before,
 .su-bg-gradient-after:after {
@@ -93,7 +84,7 @@ svg {
 }
 
 .font-serif-4 {
-  font-family: "Source Serif 4", Georgia, Times, "Times New Roman", serif;
+  @apply su-font-serif;
 }
 
 .su-stop-red {
@@ -125,7 +116,7 @@ svg {
 }
 
 .tt-menu::before {
-  @apply su-text-[26px] su-font-bold su-mb-[19px] su-text-digital-red dark:su-text-dark-mode-red;
+  @apply su-text-26 su-font-bold su-mb-19 su-text-digital-red dark:su-text-dark-mode-red;
 }
 
 /*
@@ -133,7 +124,7 @@ svg {
 */
 
 .component-slider-cards .swiper-slide {
-  @apply su-transition su-relative su-h-auto before:su-absolute before:su-bg-black-30 before:su-h-full before:su-w-[2px] before:su-top-0 before:su-left-[-20px] md:before:su-left-[-36px] lg:before:su-left-[-50px];
+  @apply su-transition su-relative su-h-auto before:su-absolute before:su-bg-black-30 before:su-h-full before:su-w-2 before:su-top-0 before:su--left-20 md:before:su--left-36 lg:before:su--left-50;
 }
 
 .component-slider .swiper-slide:not(.swiper-slide-visible) {
@@ -141,7 +132,7 @@ svg {
 }
 
 .component-slider-cards {
-  @apply su-mx-[-20px] md:su-mx-0;
+  @apply su--mx-20 md:su-mx-0;
 }
 
 .component-slider .swiper-slide > * {
@@ -154,11 +145,11 @@ svg {
 }
 
 .component-slider-single.component-slider-peek {
-  @apply su-mx-[-20px] md:su-mx-[-50px] lg:su-mx-0;
+  @apply su--mx-20 md:su--mx-50 lg:su-mx-0;
 }
 
 .component-slider-cards.component-slider-peek {
-  @apply su-mx-[-20px] md:su-mx-0;
+  @apply su--mx-20 md:su-mx-0;
 }
 
 .component-slider-single.component-slider-peek .swiper-slide-prev > *,
@@ -167,11 +158,11 @@ svg {
 }
 
 .component-slider .component-slider-pagination {
-  @apply su-static su-flex su-gap-[10px] su-text-left;
+  @apply su-static su-flex su-gap-10 su-text-left;
 }
 
 .component-slider .swiper-pagination-bullet {
-  @apply su-mx-0 su-transition su-opacity-100 su-w-[20px] su-h-[20px] su-bg-transparent su-border-solid su-border-2 su-border-black-30 dark:su-border-black-60;
+  @apply su-mx-0 su-transition su-opacity-100 su-w-20 su-h-20 su-bg-transparent su-border-2 su-border-black-30 dark:su-border-black-60;
 }
 
 .component-slider .swiper-pagination-lock {
@@ -208,7 +199,7 @@ svg {
 }
 
 .component-slider .component-slider-controls {
-  @apply su-flex su-gap-[20px] md:su-gap-[27px];
+  @apply su-flex su-gap-20 md:su-gap-27;
 }
 
 .component-slider .swiper-pagination-lock .component-slider-btn,
@@ -225,7 +216,7 @@ svg {
 }
 
 .component-slider .component-slider-btn {
-  @apply su-transition hocus:su-bg-digital-red hocus:su-text-white dark:hocus:su-bg-dark-mode-red dark:hocus:su-text-white su-relative su-min-w-[37px] su-max-w-[37px] su-h-[37px] su-top-auto su-bottom-0 su-border-solid su-border-2 su-border-digital-red dark:su-border-dark-mode-red su-rounded-full;
+  @apply su-transition hocus:su-bg-digital-red hocus:su-text-white dark:hocus:su-bg-dark-mode-red dark:hocus:su-text-white su-relative su-min-w-37 su-max-w-37 su-h-37 su-top-auto su-bottom-0 su-border-2 su-border-digital-red dark:su-border-dark-mode-red su-rounded-full;
 }
 
 .component-slider.su-slider-dark .component-slider-btn {
@@ -246,7 +237,7 @@ svg {
 }
 
 .su-modal {
-  @apply su-w-full su-h-full su-bg-black-true su-top-0 su-left-0 su-fixed su-z-50 su-text-white su-px-[20px] su-py-[90px] md:su-py-[50px] md:su-px-[100px];
+  @apply su-size-full su-bg-black-true su-top-0 su-left-0 su-fixed su-z-50 su-text-white su-px-20 su-py-90 md:su-py-50 md:su-px-100;
   animation: fadeIn 0.35s;
   opacity: 0;
   animation-fill-mode: forwards;
@@ -257,7 +248,7 @@ svg {
 }
 
 .su-modal .su-component-close {
-  @apply su-absolute su-top-[20px] su-right-[20px] md:su-top-[38px] md:su-right-[38px];
+  @apply su-absolute su-top-20 su-right-20 md:su-top-38 md:su-right-38;
 }
 
 .su-modal .su-component-close:hover {
@@ -265,7 +256,7 @@ svg {
 }
 
 .su-modal-content iframe {
-  @apply su-absolute su-top-0 su-left-0 su-w-full su-h-full su-object-contain su-object-center;
+  @apply su-absolute su-top-0 su-left-0 su-size-full su-object-contain su-object-center;
 }
 
 .su-component-close {
@@ -273,18 +264,18 @@ svg {
 }
 
 .su-component-close svg {
-  @apply su-w-[30px] su-h-[30px] su-fill-current;
+  @apply su-size-30 su-fill-current;
 }
 
 .su-component-close span {
-  @apply su-text-[12px] su-font-[600] su-leading-[119.415%];
+  @apply su-text-12 su-font-semibold su-leading-[119.415%];
 }
 
 /*
 * Slider inside modal
 */
 .su-modal-content .component-slider {
-  @apply su-absolute su-top-0 lg:su-top-[50px] su-left-0 su-w-full su-h-full;
+  @apply su-absolute su-top-0 lg:su-top-50 su-left-0 su-w-full su-h-full;
 }
 
 .su-modal-content .component-slider .swiper-wrapper {
@@ -308,7 +299,7 @@ svg {
 }
 
 .c-carousel-image-slide.has-caption .c-carousel-image {
-  @apply su-w-full su-h-[50%] md:su-h-full md:su-w-[60%];
+  @apply su-w-full su-h-1/2 md:su-h-full md:su-w-3/5;
 }
 
 .c-carousel-image-slide .c-carousel-image > * {
@@ -316,7 +307,7 @@ svg {
 }
 
 .c-carousel-image-slide.has-caption .c-carousel-caption {
-  @apply su-w-full su-h-[calc(50%-45px)] su-overflow-auto md:su-h-auto md:su-max-h-[100%] md:su-w-[40%] su-rs-mt-3 md:su-mt-0 md:su-rs-pl-3;
+  @apply su-w-full su-h-[calc(50%-45px)] su-overflow-auto md:su-h-auto md:su-max-h-full md:su-w-[40%] su-rs-mt-3 md:su-mt-0 md:su-rs-pl-3;
 }
 
 /*
@@ -553,7 +544,7 @@ audio::-webkit-media-controls-panel {
   > .container
   > *:not([data-component]),
 .su-page:not(.su-page-has-sidebar) .su-page-content > span {
-  @apply su-max-w-[732px] md:su-w-[84.75%] su-mx-auto su-px-[20px] md:su-px-[50px];
+  @apply su-max-w-[73.2rem] md:su-w-[84.75%] su-mx-auto su-px-20 md:su-px-50;
 }
 
 /* Content page / pagebuilder WYSIWYG */
@@ -606,11 +597,11 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-page-has-sidebar .su-sidebar-content-wrap {
-  @apply su-max-w-[1312px] su-mx-auto su-flex su-flex-wrap lg:su-flex-nowrap su-justify-between lg:su-gap-[50px];
+  @apply su-max-w-[1312px] su-mx-auto su-flex su-flex-wrap lg:su-flex-nowrap su-justify-between lg:su-gap-50;
 }
 
 .su-page-has-sidebar .su-page-content {
-  @apply su-w-[calc(100%-40px)] su-mx-[20px] md:su-mx-[50px] md:su-w-[calc(100%-100px)] lg:su-mx-0 md:su-px-[7.65%] lg:su-ml-[16.66%] lg:su-w-[50%] lg:su-flex-grow lg:su-px-0;
+  @apply su-w-[calc(100%-40px)] su-mx-20 md:su-mx-50 md:su-w-[calc(100%-100px)] lg:su-mx-0 md:su-px-[7.65%] lg:su-ml-[16.66%] lg:su-w-1/2 lg:su-grow lg:su-px-0;
 }
 
 .su-page-has-sidebar .su-page-content > *:first-child {
@@ -626,7 +617,7 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-page-has-sidebar .su-page-sidebar {
-  @apply su-mx-[20px] md:su-mx-[50px] lg:su-mx-0 md:su-px-[7.65%] lg:su-px-0 lg:su-ml-auto lg:su-w-[25%] lg:su-mr-[8.33%] su-w-full lg:su-max-w-[298px] su-mt-[38px] md:su-mt-[110px] lg:su-mt-0;
+  @apply su-mx-20 md:su-mx-50 lg:su-mx-0 md:su-px-[7.65%] lg:su-px-0 lg:su-ml-auto lg:su-w-1/4 lg:su-mr-[8.33%] su-w-full lg:su-max-w-[29.8rem] su-mt-38 md:su-mt-110 lg:su-mt-0;
 }
 
 /*
@@ -641,11 +632,11 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-container-large {
-  @apply su-w-full su-max-w-[1186px];
+  @apply su-w-full su-max-w-[118.6rem];
 }
 
 .su-container-wide {
-  @apply su-w-full su-max-w-[1412px];
+  @apply su-w-full su-max-w-[141.2rem];
 }
 /* Site search same as container wide */
 .site-search {
@@ -657,7 +648,7 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-container-px {
-  @apply su-px-[20px] md:su-px-[50px];
+  @apply su-px-20 md:su-px-50;
 }
 
 /*
@@ -680,7 +671,7 @@ audio::-webkit-media-controls-panel {
   [data-component="content-carousel"]
   .su-component-container
   > .su-bg-fog-light {
-  @apply md:su-mx-[-61px] md:su-px-[61px];
+  @apply md:su--mx-61 md:su-px-61;
 }
 
 /* Campaign CTA */
@@ -694,13 +685,13 @@ audio::-webkit-media-controls-panel {
 
 /* Campaign CTA on basic story pages */
 .su-page-has-sidebar [data-component="campaign-cta"] {
-  @apply su-mx-[-20px] md:su-mx-[calc(-7.65%+50px)] lg:su-mx-0 md:su-w-[calc(121.5%+100px)] md:su-ml-[calc(calc(-10.75%-50px))] lg:su-w-full;
+  @apply su--mx-20 md:su-mx-[calc(-7.65%+50px)] lg:su-mx-0 md:su-w-[calc(121.5%+100px)] md:su-ml-[calc(calc(-10.75%-50px))] lg:su-w-full;
 }
 
 .su-page-has-sidebar
   [data-component="campaign-cta"]
   .su-component-campaigncta-wrap {
-  @apply su-w-full su-px-[20px] md:su-px-[50px] lg:su-px-[60px] lg:su-flex-col;
+  @apply su-w-full su-px-20 md:su-px-50 lg:su-px-60 lg:su-flex-col;
 }
 
 .su-page-has-sidebar
@@ -795,7 +786,7 @@ audio::-webkit-media-controls-panel {
   .component-multicolumn-listing.has-no-title
   .su-component-container::before {
   content: "";
-  @apply su-block su-w-full su-h-[1px] su-bg-black-30 dark:su-bg-black su-rs-my-5;
+  @apply su-block su-w-full su-h-px su-bg-black-30 dark:su-bg-black su-rs-my-5;
 }
 
 [data-component="featured-content"]
@@ -822,7 +813,7 @@ WYSIWYG formatting styles
 
 /* Set specfic spacing for paragraphs */
 [data-component="text-callout"] .su-wysiwyg-content p {
-  @apply su-mb-[2rem] md:su-mb-[2.6rem] xl:su-mb-[2.7rem];
+  @apply su-mb-20 md:su-mb-26 xl:su-mb-27;
 }
 
 .su-wysiwyg-content ul ul,
@@ -868,14 +859,14 @@ WYSIWYG formatting styles
 .container > span ol,
 .su-page-content > div:not([data-component], .site-search) ol,
 .su-page-content > ol {
-  @apply su-relative su-pl-[30px];
+  @apply su-relative su-pl-30;
 }
 
 .su-wysiwyg-content ul > li,
 .container > span ul > li,
 .su-page-content > div:not([data-component], .site-search) ul > li,
 .su-page-content > ul > li {
-  @apply su-relative su-pl-[30px] before:su-absolute before:su-top-[.6em] before:su-w-[4.5px] before:su-h-[4.5px] before:su-left-[12px] before:su-rounded-full;
+  @apply su-relative su-pl-30 before:su-absolute before:su-top-[.6em] before:su-size-[0.45rem] before:su-left-12 before:su-rounded-full;
 }
 
 .su-wysiwyg-content ul > li::before,
@@ -959,7 +950,7 @@ WYSIWYG formatting styles
   [data-component="acknowledgement"]
   .su-component-container
   > hr {
-  @apply su-h-[5px] !important;
+  @apply su-h-5 !important;
 }
 
 .su-page-story-featured * + [data-component="acknowledgement"],
