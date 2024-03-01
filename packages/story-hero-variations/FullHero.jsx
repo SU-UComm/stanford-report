@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../grids/Container";
+
+function readingTime(text) {
+  if (!text) return 0;
+
+  const wpm = 225;
+  const words = text.trim().split(/\s+/).length;
+  const time = Math.ceil(words / wpm);
+  return time;
+}
 
 export default function FullHero({ data }) {
   const { title, pubDateFormatted, media, summary } = data;
   const titleSize =
     "su-leading-[119.4%] md:su-leading-[120%] su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.5rem]";
+
+  // state
+  const [readingTimeValue, setReadingTime] = useState(0);
+
+  useEffect(() => {
+    const content = document.querySelector(".su-page-content");
+
+    if (content) {
+      setReadingTime(() => readingTime(content.innerText));
+    }
+  });
 
   return (
     <Container width="wide">
@@ -48,7 +68,7 @@ export default function FullHero({ data }) {
                 <time className="su-m-0 md:su-mt-0 md:su-mr-[4px] su-font-semibold">
                   {pubDateFormatted}
                 </time>
-                {/* | {read time here} */}
+                |{` ${readingTimeValue} min read`}
               </span>
             </div>
           </div>

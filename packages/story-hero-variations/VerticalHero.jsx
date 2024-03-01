@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../grids/Container";
+
+function readingTime(text) {
+  if (!text) return 0;
+
+  const wpm = 225;
+  const words = text.trim().split(/\s+/).length;
+  const time = Math.ceil(words / wpm);
+  return time;
+}
 
 export default function VerticalHero({ data }) {
   const { title, pubDateFormatted, media, summary } = data;
 
   const titleWordsCount = title.split(" ").length;
+
+  // state
+  const [readingTimeValue, setReadingTime] = useState(0);
+
+  useEffect(() => {
+    const content = document.querySelector(".su-page-content");
+
+    if (content) {
+      setReadingTime(() => readingTime(content.innerText));
+    }
+  });
 
   return (
     <Container>
@@ -73,8 +93,8 @@ export default function VerticalHero({ data }) {
               "md:su-basefont-23 md:su-flex-row",
             ].join(" ")}
           >
-            <time className="su-m-0 su-font-semibold">{pubDateFormatted}</time>
-            {/* | {time to read here} */}
+            <time className="su-m-0 su-font-semibold">{pubDateFormatted}</time>|{" "}
+            {`${readingTimeValue} min read`}
           </span>
         </div>
       </div>
