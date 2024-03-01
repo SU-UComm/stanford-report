@@ -6,15 +6,15 @@
   these styles will only target single featured content components
 */
 .su-single-featured-content h2 {
-  @apply su-text-[25px] su-leading-[125%];
+  @apply su-text-25 su-leading-[125%];
 }
 
 .su-single-featured-content div > p {
-  @apply su-text-[18px] su-leading-[125%];
+  @apply su-text-18 su-leading-[125%];
 }
 
 .su-single-featured-content [data-testid="vertical-card-taxonomy"] {
-  @apply su-text-[18px];
+  @apply su-text-18;
 }
 
 @media screen and (min-width: 768px) {
@@ -28,15 +28,15 @@
   }
 
   .su-single-featured-content h2 {
-    @apply su-text-[40px] su-leading-[120%];
+    @apply su-text-[40px] su-leading-display;
   }
 
   .su-single-featured-content [data-testid="vertical-card-taxonomy"] {
-    @apply su-text-[20px];
+    @apply su-text-20;
   }
 
   .su-single-featured-content div > p {
-    @apply su-text-[19px] su-leading-[125%];
+    @apply su-text-19 su-leading-[125%];
   }
 }
 
@@ -46,6 +46,6 @@
   }
 
   .su-single-featured-content div > p {
-    @apply su-text-[21px] su-leading-[125%];
+    @apply su-text-21 su-leading-[125%];
   }
 }

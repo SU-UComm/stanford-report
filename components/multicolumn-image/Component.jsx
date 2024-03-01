@@ -33,13 +33,13 @@ export default function MulticolumnImage({ data, imageCaptions }) {
 
   return (
     <Container width="wide">
-      <section className="su-flex su-flex-col su-items-center su-gap-[8px] md:su-gap-[9px]">
-        <div className="su-flex su-gap-[20px] su-items-center lg:su-gap-[48px]">
+      <section className="su-flex su-flex-col su-items-center su-gap-8 md:su-gap-9">
+        <div className="su-flex su-gap-20 su-items-center lg:su-gap-48">
           {images}
         </div>
 
         {numberOfCaptions === 1 && (
-          <p className="su-text-[14px] su-text-black-70 dark:su-text-black-30 su-font-normal su-max-w-[633px] su-leading-[119.415%] su-text-center md:su-text-[16px] su-mb-0">
+          <p className="su-text-14 su-text-black-70 dark:su-text-black-30 su-font-normal su-max-w-[63.3rem] su-leading-[119.415%] su-text-center md:su-text-16 su-mb-0">
             {imageCaptions.filter(Boolean)[0]}
           </p>
         )}
@@ -50,11 +50,11 @@ export default function MulticolumnImage({ data, imageCaptions }) {
 
 function Image({ src, caption, numberOfCaptions }) {
   return (
-    <div className="su-relative su-flex su-flex-col su-gap-[8px] su-flex-1">
+    <div className="su-relative su-flex su-flex-col su-gap-8 su-flex-1">
       <img src={src} className="su-object-cover" alt="" />
 
       {caption && numberOfCaptions > 1 && (
-        <p className="su-text-[14px] su-text-black-70 dark:su-text-black-30 su-font-normal su-leading-[119.415%] su-text-center su-m-0  md:su-text-[16px]">
+        <p className="su-text-14 su-text-black-70 dark:su-text-black-30 su-font-normal su-leading-[119.415%] su-text-center su-m-0 md:su-text-16">
           {caption}
         </p>
       )}

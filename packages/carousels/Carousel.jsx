@@ -17,7 +17,12 @@ import "swiper/css/pagination";
  * @returns {JSX.Element}
  * @constructor
  */
-export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
+export function Carousel({
+  slides,
+  variant = "single",
+  uniqueClass = "",
+  isDark = false,
+}) {
   const swiperRef = useRef();
   const hasSlides = slides.length > 0;
 
@@ -94,7 +99,7 @@ export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
   });
 
   return hasSlides ? (
-    <div className="component-slider">
+    <div className={`component-slider ${isDark ? "su-slider-dark" : ""}`}>
       <Swiper
         centeredSlides
         loopAdditionalSlides={4}
@@ -151,7 +156,7 @@ export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
         ))}
       </Swiper>
       {slides.length > 1 && (
-        <div className="component-slider-controls su-flex su-mt-[45px] lg:su-mt-[48px] su-items-center su-content-center">
+        <div className="component-slider-controls su-flex su-mt-45 lg:su-mt-48 su-items-center su-content-center">
           <div
             aria-label="Slide Navigation"
             className={`component-slider-pagination component-slider-pagination-${uniqueClass} su-mr-full`}

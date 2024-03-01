@@ -31,14 +31,9 @@ import ReportHeader from "./scripts/reportHeader";
     props.audienceData = null;
   }
   if (pageData?.isStory) {
-    const fbStoryData = await relatedStoryData(
-      pageData,
-      props.search,
-      audienceData
-    );
+    const fbStoryData = await relatedStoryData(pageData, audienceData);
     props.relatedStoryData = fbStoryData;
   }
-
   // set the props we need, to a window variable
   window.suHeaderProps = props;
   // update the props

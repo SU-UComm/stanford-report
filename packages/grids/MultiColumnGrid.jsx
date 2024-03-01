@@ -19,14 +19,14 @@ export function MultiColumnGrid({ items, separator = false }) {
   gapClasses.set(
     "2col",
     separator
-      ? "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[160px]"
-      : "su-gap-[34px] md:su-gap-[72px] lg:su-gap-[160px]"
+      ? "su-gap-[68px] md:su-gap-72 lg:su-gap-[160px]"
+      : "su-gap-34 md:su-gap-72 lg:su-gap-[160px]"
   );
   gapClasses.set(
     "3col",
     separator
-      ? "su-gap-[68px] md:su-gap-[72px] lg:su-gap-[102px]"
-      : "su-gap-[34px] md:su-gap-[72px] lg:su-gap-[160px]"
+      ? "su-gap-[68px] md:su-gap-72 lg:su-gap-[102px]"
+      : "su-gap-34 md:su-gap-72 lg:su-gap-[160px]"
   );
 
   const gridItems =

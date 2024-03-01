@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "metadata-fields",
-  "version": "0.0.11",
+  "version": "0.0.13",
   "namespace": "stanford-components",
   "description": "This is a global element that is designed to render client side based on page information.",
   "displayName": "Metadata fields",

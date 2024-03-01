@@ -43,9 +43,7 @@ export default function ImageMosaic({ data, remainingImageCount }) {
 
     articleClass =
       orientation === "h"
-        ? `${
-            horizontalPositions[hasVertical ? images.length + 1 : i]
-          } su-aspect-[50/33]`
+        ? `${horizontalPositions[hasVertical ? images.length + 1 : i]} `
         : articleClass;
 
     images.push(
@@ -60,7 +58,7 @@ export default function ImageMosaic({ data, remainingImageCount }) {
           <div className="su-bg-black/[0.33] su-w-full su-h-full su-absolute su-top-0 su-left-0 su-flex su-justify-center su-items-center su-z-[1]">
             <span
               className={[
-                "su-text-[white] su-relative su-z-[2] su-font-bold su-text-[4.8rem] su-leading-[5.76rem]",
+                "su-text-white su-relative su-z-[2] su-font-bold su-text-[4.8rem] su-leading-[5.76rem]",
                 "md:su-text-[10rem] md:su-leading-[11.941rem]",
               ].join(" ")}
             >
