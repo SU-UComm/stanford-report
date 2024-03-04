@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "image-gallery-modal",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "namespace": "stanford-components",
   "description": "An image gallery that opens in a modal.",
   "displayName": "Image gallery with modal",
@@ -67,9 +67,10 @@
                       "type": "string"
                     },
                     "caption": {
-                      "title": "Caption",
+                      "title": "Description",
                       "description": "The image's caption",
-                      "type": "string"
+                      "type": "string",
+                      "format": "multi-line"
                     }
                   }
                 }
