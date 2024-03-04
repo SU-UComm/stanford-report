@@ -2,7 +2,14 @@ import React from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 
 export default function TeaserCard({ credit, data }) {
-  const { title, liveUrl, authorName, description, source } = data;
+  const {
+    title,
+    liveUrl,
+    authorName,
+    description,
+    source,
+    isCustomDescription,
+  } = data;
 
   return (
     <article>
@@ -20,7 +27,7 @@ export default function TeaserCard({ credit, data }) {
 
         <div className="su-flex su-flex-col su-text-16 su-text-black-70">
           <div>
-            <strong>Featured scholar:</strong>
+            {isCustomDescription ? <strong>Featured scholar:</strong> : ""}
             {credit}
           </div>
 
