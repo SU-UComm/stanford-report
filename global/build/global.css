@@ -1458,6 +1458,7 @@ h6{
   height: 2rem;
   width: 2rem;
   border-width: 2px;
+  border-style: solid;
   --tw-border-opacity: 1;
   border-color: rgb(192 192 191 / var(--tw-border-opacity));
   background-color: transparent;
@@ -1472,6 +1473,24 @@ h6{
 :is(.su-dark .component-slider .swiper-pagination-bullet){
   --tw-border-opacity: 1;
   border-color: rgb(118 118 116 / var(--tw-border-opacity));
+}
+
+.component-slider.su-slider-dark .swiper-pagination-bullet{
+  margin-left: 0;
+  margin-right: 0;
+  height: 2rem;
+  width: 2rem;
+  border-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(118 118 116 / var(--tw-border-opacity));
+  background-color: transparent;
+  opacity: 1;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .component-slider .swiper-pagination-lock{
