@@ -1714,9 +1714,12 @@ h6{
 
 .su-modal > div{
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   height: 100%;
   width: 100%;
+  max-width: 1312px;
   flex-wrap: wrap;
   align-content: center;
   align-items: center;

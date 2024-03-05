@@ -249,7 +249,7 @@ svg {
 }
 
 .su-modal > div {
-  @apply su-flex su-h-full su-w-full su-items-center su-content-center su-flex-wrap su-relative;
+  @apply su-flex su-h-full su-max-w-[1312px] su-w-full su-items-center su-content-center su-flex-wrap su-relative su-mx-auto;
 }
 
 .su-modal .su-component-close {
