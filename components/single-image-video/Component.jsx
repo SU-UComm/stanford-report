@@ -138,7 +138,7 @@ export default function SingleImageVideo({
                 handleIframeLoad={handleIframeLoad}
               />
 
-              <div className="su-play-btn su-transition-all su-absolute su-bottom-20 su-left-20 *:md:su-size-40 md:su-block *:md:su-size-[55.95px] *:lg:su-size-100 lg:su-bottom-38 lg:su-left-38">
+              <div className="su-play-btn su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:md:su-size-40 md:su-block *:md:su-size-[55.95px] *:lg:su-w-[100px] *:lg:su-h-[100px] *:lg:su-size-100 lg:su-bottom-38 lg:su-left-38">
                 <VideoPlay />
               </div>
             </button>
