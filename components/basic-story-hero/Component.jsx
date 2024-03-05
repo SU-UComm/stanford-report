@@ -37,8 +37,16 @@ export default function basicStoryHero(props) {
     }
   });
 
+  let mediaTypeAspect = null;
+
+  if (["image", "carousel"].includes(mediaType)) {
+    mediaTypeAspect = "su-aspect-[3/2]";
+  } else if (mediaType === "video") {
+    mediaTypeAspect = "su-aspect-[16/9]";
+  }
+
   return (
-    <Container>
+    <Container width="wide">
       <div>
         <div className="su-px-0 md:su-px-[114px]">
           <div className="su-flex su-justify-between su-flex-wrap">
@@ -66,7 +74,7 @@ export default function basicStoryHero(props) {
 
         <div className="swiper basic-story__header-slider su-overflow-visible su-mt-32 md:su-mt-58 lg:su-mt-72">
           <figure className="basic-story__header-image su-flex su-flex-col su-gap-6 su-col-span-full su-relative su-z-0 md:su-gap-18 lg:su-gap-15">
-            <div className="su-relative">
+            <div className={`su-relative ${mediaTypeAspect}`}>
               <Thumbnail
                 url={media.featureImage.url}
                 alt={media.featureImage.alt}
@@ -107,9 +115,13 @@ function Thumbnail({ url, alt, video, type, carousel }) {
   if (type === "image") {
     return (
       <img
-        src={url}
+        // src="https://picsum.photos/1230/600"
+        src="https://picsum.photos/1630/800"
+        // src="https://picsum.photos/600/1230"
+        // src={url}
         alt={alt}
-        className="su-relative su-w-full su-h-[300px] md:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
+        // className="su-relative su-w-full su-h-[300px] md:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
+        className="su-relative su-max-h-[300px] md:su-max-h-[500px] lg:su-max-h-[764px] su-object-cover su-object-center su-mx-auto"
       />
     );
   }
@@ -118,8 +130,8 @@ function Thumbnail({ url, alt, video, type, carousel }) {
     carousel.forEach((slide) => {
       slides.push(
         <img
-          // src="https://picsum.photos/700"
-          src={slide.asset_url}
+          src="https://picsum.photos/200/700"
+          // src={slide.asset_url}
           alt={slide.asset_attribute_alt}
           className="su-relative su-w-full su-h-[300px] md:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
         />
@@ -138,7 +150,7 @@ function Thumbnail({ url, alt, video, type, carousel }) {
         onClick={handleClick}
       >
         <img
-          src={url}
+          // src={url}
           alt={alt}
           className="su-relative su-w-full su-h-[300px] md:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
         />
