@@ -20,23 +20,17 @@ export function MultiColumnGridContent({
   const HAS_SEPARATOR = separator === true;
 
   const widthClasses = new Map();
-  widthClasses.set(
-    "2col",
-    "md:su-basis-1/2"
-  );
-  widthClasses.set(
-    "3col",
-    "md:su-basis-1/3"
-  );
-  
+  widthClasses.set("2col", "md:su-basis-1/2");
+  widthClasses.set("3col", "md:su-basis-1/3");
+
   const separatorClasses = new Map();
   separatorClasses.set(
     "2col",
-    "before:su-w-full before:md:su-w-px before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px before:md:su-h-full before:su-left-0 before:su-top-[-34px] before:md:su-top-0 before:md:su-left-[-36px] before:lg:su-left-[-80px]"
+    "before:su-w-full before:md:su-w-px before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[2px] before:md:su-h-full before:su-left-0 before:su-top-[-34px] before:md:su-top-0 before:md:su-left-[-36px] before:lg:su-left-[-80px]"
   );
   separatorClasses.set(
     "3col",
-    "before:su-w-full before:md:su-w-px before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px before:md:su-h-full before:su-left-0 before:su-top-[-34px] before:md:su-top-0 before:md:su-left-[-36px] before:lg:su-left-[-51px]"
+    "before:su-w-full before:md:su-w-px before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-[2px] before:md:su-h-full before:su-left-0 before:su-top-[-34px] before:md:su-top-0 before:md:su-left-[-36px] before:lg:su-left-[-51px]"
   );
 
   return (
