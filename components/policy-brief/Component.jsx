@@ -64,24 +64,27 @@ export default function PolicyBriefComponent({ data, contentConfiguration }) {
           {linkUrl && (
             <a
               href={linkUrl}
-              className="su-flex su-gap-2 su-text-19 su-font-semibold su-leading-[125%] su-text-digital-red su-no-underline"
+              className="su-flex su-gap-2 su-group su-text-19 su-font-semibold su-leading-[125%] su-text-digital-red su-no-underline dark:su-text-dark-mode-red hocus:su-underline"
             >
               {linkText}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="23"
-                height="23"
-                viewBox="0 0 23 23"
-                fill="none"
-              >
-                <path
-                  d="M8.95664 7.42241L15.5563 7.42241M15.5563 7.42241L15.5563 14.0221M15.5563 7.42241L7.07102 15.9077"
-                  stroke="#B1040E"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+
+              <span className="su-transition group-hocus:su--translate-y-01em group-hocus:su-translate-x-01em [&>svg]:su-translate-y-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="23"
+                  height="23"
+                  viewBox="0 0 23 23"
+                  fill="none"
+                >
+                  <path
+                    d="M8.95664 7.42241L15.5563 7.42241M15.5563 7.42241L15.5563 14.0221M15.5563 7.42241L7.07102 15.9077"
+                    stroke="#B1040E"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
             </a>
           )}
         </div>

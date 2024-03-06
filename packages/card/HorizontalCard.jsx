@@ -180,7 +180,7 @@ export default function HorizontalCard({
       )}
 
       {cardSize === "small" && imageUrl && (
-        <div className="su-shrink-0 su-w-[73px] su-h-[73px]">
+        <div className="su-shrink-0 su-w-[73px] su-h-[73px] su-relative">
           <CardThumbnail
             imageUrl={imageUrl}
             alt={imageAlt}

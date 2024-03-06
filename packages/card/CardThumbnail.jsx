@@ -70,7 +70,7 @@ export default function CardThumbnail({
       )}
     </>
   ) : (
-    <div className="su-component-card-thumbnail">
+    <div className="su-component-card-thumbnail su-w-full su-h-full">
       <MediaRatio
         imageUrl={imageUrl}
         imageAlt={alt}

@@ -49,12 +49,17 @@ export default function InTheNews({
         cardData.push(<Card cardType="pullquote" data={featured} />);
         return;
       }
+
       const standardCard = card;
+
+      standardCard.isCustomDescription = false;
+
       if (
         typeof customDescriptions[i] !== "undefined" &&
         customDescriptions[i].length > 0
       ) {
         standardCard.description = customDescriptions[i];
+        standardCard.isCustomDescription = true;
       }
       cardData.push(<Card cardType="teaser" data={standardCard} />);
     });

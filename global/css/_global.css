@@ -163,7 +163,11 @@ svg {
 }
 
 .component-slider .swiper-pagination-bullet {
-  @apply su-mx-0 su-transition su-opacity-100 su-w-20 su-h-20 su-bg-transparent su-border-2 su-border-black-30 dark:su-border-black-60;
+  @apply su-mx-0 su-transition su-opacity-100 su-w-20 su-h-20 su-bg-transparent su-border-2 su-border-solid su-border-black-30 dark:su-border-black-60;
+}
+
+.component-slider.su-slider-dark .swiper-pagination-bullet {
+  @apply su-mx-0 su-transition su-opacity-100 su-w-20 su-h-20 su-bg-transparent su-border-2 su-border-solid su-border-black-60;
 }
 
 .component-slider .swiper-pagination-lock {
@@ -246,7 +250,7 @@ svg {
 }
 
 .su-modal > div {
-  @apply su-flex su-h-full su-w-full su-items-center su-content-center su-flex-wrap su-relative;
+  @apply su-flex su-h-full su-max-w-[1312px] su-w-full su-items-center su-content-center su-flex-wrap su-relative su-mx-auto;
 }
 
 .su-modal .su-component-close {
