@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../../packages/grids/Container";
 import Modal from "../../packages/modal/ModalWrapper";
 import EmbedVideo from "../../packages/media/EmbedVideo";
@@ -39,10 +40,10 @@ export default function basicStoryHero(props) {
 
   return (
     <Container width="wide">
-      <div>
-        <div className="su-px-0 md:su-px-[114px]">
-          <div className="su-flex su-justify-between su-flex-wrap">
-            <span className="su-flex su-items-center su-justify-center su-text-16 su-leading-[20px] md:su-text-21 md:su-leading-[26.25px] md:su-basefont-23 lg:su-text-22">
+      <div className="su-grid su-gap su-grid-cols-6 md:su-grid-cols-12">
+        <div className="su-col-span-6 su-col-start-1 md:su-col-span-10 md:su-col-start-2">
+          <div className="su-flex su-gap-y-8 su-gap-x-16 su-justify-between su-flex-wrap su-text-16 md:su-basefont-23">
+            <span className="su-flex su-items-center su-justify-center">
               <time className="su-m-0 su-mr-4 su-font-semibold">
                 {pubDateFormatted}
               </time>
@@ -50,23 +51,32 @@ export default function basicStoryHero(props) {
               {`${readingTimeValue} min read`}
             </span>
 
-            <span className="su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-leading-[19.11px] su-text-16 md:su-leading-[25.08px] md:su-text-21 md:su-text-24 lg:su-text-24 lg:su-leading-[28.66px]">
-              {topic.asset_name}
-            </span>
+            {topic.asset_name && (
+              <a
+                href={topic.asset_url !== "" ? topic.asset_url : "#"}
+                className="su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline"
+              >
+                {topic.asset_name}
+              </a>
+            )}
           </div>
 
-          <h1 className="su-text-[39px] su-leading-[46.57px] su-font-bold su-mt-32 md:su-text-[54px] md:su-mt-45 md:su-leading-[64.8px] lg:su-text-[64px] lg:su-mt-58 lg:su-leading-[76.43px] su-font-serif">
+          <h1 className="su-font-bold su-rs-mt-4 su-font-serif su-mb-0 xl:su-text-[6.4rem]">
             {title}
           </h1>
-
-          <p className="su-font-serif su-intro-text su-text-21 su-leading-[27.35px] su-m-0 su-mt-32 md:su-mt-38 md:su-text-28 md:su-leading-[36.47px]">
-            {summary}
-          </p>
+          <XssSafeContent
+            className={[
+              "su-font-serif su-intro-text su-mb-0 su-rs-mt-2 su-text-21 su-leading-[27.35px] md:su-text-28 md:su-leading-[36.47px]",
+              "",
+            ].join(" ")}
+            content={summary}
+            elementType="p"
+          />
         </div>
 
-        <div className="swiper basic-story__header-slider su-overflow-visible su-mt-32 md:su-mt-58 lg:su-mt-72">
-          <figure className="basic-story__header-image su-flex su-flex-col su-gap-6 su-col-span-full su-relative su-z-0 md:su-gap-18 lg:su-gap-15">
-            <div className="su-relative">
+        <div className="su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4">
+          <figure className="basic-story__header-image su-col-span-full su-relative su-z-0">
+            <div className="su-relative su-w-full">
               <Thumbnail
                 url={media.featureImage.url}
                 alt={media.featureImage.alt}
@@ -77,8 +87,8 @@ export default function basicStoryHero(props) {
 
               <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" />
             </div>
-            {(media.caption || media.credit) && (
-              <figcaption className="su-text-16 su-text-black su-m-0 su-leading-[19.11px] su-mt-12 dark:su-text-white">
+            {mediaType !== "carousel" && (media.caption || media.credit) && (
+              <figcaption className="su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white">
                 {media.caption} {media.caption && media.credit && ` | `}
                 {media.credit}
               </figcaption>
@@ -117,16 +127,24 @@ function Thumbnail({ url, alt, video, type, carousel }) {
   if (type === "carousel") {
     carousel.forEach((slide) => {
       slides.push(
-        <img
-          // src="https://picsum.photos/700"
-          src={slide.asset_url}
-          alt={slide.asset_attribute_alt}
-          className="su-relative su-w-full su-h-[300px] md:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
-        />
+        <>
+          <div className="su-aspect-[3/2] su-relative su-bg-fog-light">
+            <img
+              src={slide.asset_url}
+              alt={slide.asset_attribute_alt}
+              className="su-absolute su-top-0 su-left-0 su-w-full su-h-full su-object-scale-down su-object-center"
+            />
+          </div>
+          {slide.asset_attribute_caption && (
+            <figcaption className="su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white">
+              {slide.asset_attribute_caption}
+            </figcaption>
+          )}
+        </>
       );
     });
 
-    return <Carousel slides={slides} variant="media" />;
+    return <Carousel slides={slides} variant="basicstory" />;
   }
 
   return (
@@ -134,13 +152,13 @@ function Thumbnail({ url, alt, video, type, carousel }) {
       <button
         type="button"
         aria-haspopup="dialog"
-        className="su-w-full"
+        className="su-w-full su-aspect-[16/9]"
         onClick={handleClick}
       >
         <img
           src={url}
           alt={alt}
-          className="su-relative su-w-full su-h-[300px] md:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
+          className="su-w-full su-h-full su-absolute su-top-0 su-left-0 su-object-cover su-object-center"
         />
 
         <span className="su-absolute su-bottom-20 su-left-20">

@@ -9,3 +9,7 @@
   content: "|";
   @apply su-ml-1 su-mr-1;
 }
+
+.component-slider-controls {
+  @apply su-mt-30 lg:su-mt-36 md:su-w-[83.333%] md:su-ml-[8.333%] !important;
+}
