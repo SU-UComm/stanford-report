@@ -34,7 +34,8 @@ import getCookie from "../../packages/utils/cookieGet";
           : ""
       }&meta_taxonomyAudienceText=${translatePersonalisationProfile(
         audience
-      )}&num_ranks=6&meta_notisTeaser=true&meta_id_not=${
+      )}&meta_taxonomyContentTypeText_not=Leadership%20messages+News+Announcements
+      &num_ranks=6&meta_notisTeaser=true&meta_id_not=${
         props.search.currentPage
       }`;
     }
