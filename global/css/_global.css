@@ -585,9 +585,12 @@ audio::-webkit-media-controls-panel {
   @apply su-rs-mt-7;
 }
 
-[data-component="basic-story-hero"],
 [data-component="leadership-hero-hannah"] {
   @apply su-rs-mt-8 !important;
+}
+
+[data-component="basic-story-hero"] {
+  @apply su-rs-mt-6 !important;
 }
 
 [data-component="default-hero"],
@@ -596,7 +599,7 @@ audio::-webkit-media-controls-panel {
 }
 
 [data-component="basic-story-hero"] {
-  @apply su-rs-mb-3 lg:su-rs-mb-6 !important;
+  @apply su-rs-mb-3 lg:su-rs-mb-5 !important;
 }
 
 [data-component="feature-story-hero"] {
