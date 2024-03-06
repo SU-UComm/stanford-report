@@ -26,8 +26,6 @@ export default function Search({ endpoint, collection, profile, resultPage }) {
           <label className="sr-only" htmlFor="desktop_search_query">
             Search query
           </label>
-          <input type="hidden" value={collection} name="collection" />
-          <input type="hidden" value={profile} name="profile" />
           <input
             type="search"
             className="su-w-full su-h-50 dark:su-text-black su-rounded-full su-text-20 su-leading-[26px] su-py-10 su-pl-15 su-pr-120 su-bg-white su-border-2 su-border-black-30 hover:su-border-black-40 focus:su-border-digital-blue"
