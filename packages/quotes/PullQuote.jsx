@@ -53,7 +53,7 @@ export function PullQuote({
           content={`${quote}”`}
           elementType="div"
           className={[
-            "su-font-semibold su-font-serif-0 su-text-24 md:su-text-36 su-leading md:su-leading-[130.245%]",
+            "su-font-semibold su-font-serif-0 su-text-[2.4rem] md:su-text-[3.6rem] su-leading md:su-leading-[130.245%]",
             "[&>*:last-child]:su-mb-0 [&>*:last-child]:after:su-content-['”']",
             "su-relative before:su-text-[73px] before:su-leading-[109.5px] lg:before:su-leading-[139.5px] lg:before:su-text-[93px] before:su-font-semibold before:su--mt-25 lg:before:su--mt-38 before:su-content-['“'] before:su-text-serif before:su-text-black dark:su-text-white before:su-absolute before:su-right-full lg:before:su-right-full before:su-mr-6 lg:before:su-mr-13 dark:before:su-text-white",
             "su-leading-[33.6px] md:su-leading-[46.89px]",
