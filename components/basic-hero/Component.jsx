@@ -21,7 +21,7 @@ export default function BasicHero(props) {
         <h1
           className={cnb(
             "su-font-serif su-mb-0",
-            titleAlignment === "center" && "su-text-center"
+            titleAlignment === "center" && "su-text-center su-mx-auto"
           )}
         >
           {title}
