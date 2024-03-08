@@ -14,16 +14,17 @@ import EmbedVideo from "../../packages/media/EmbedVideo";
  */
 
 export default function VideoHero(props) {
-  const { title, pubDateFormatted, topic, video } = props;
+  const { title, pubDateFormatted, topic, media } = props;
+  const video = media.featureVideo.id;
   return (
     <Container>
       <div className="su-relative su-pb-[56.25%]">
         <EmbedVideo
-          videoId="kvGRk87kCRE"
+          videoId={video}
           className="su-absolute su-top-0 su-left-0 su-w-full su-h-full"
         />
       </div>
-      <div className="su-flex su-justify-between su-flex-wrap su-rs-mt-4">
+      <div className="su-flex su-justify-between su-flex-wrap su-rs-mt-6">
         <span className="su-flex su-items-center su-justify-center su-text-16 md:su-basefont-23">
           <time className="su-m-0 su-mr-4 su-font-semibold">
             {pubDateFormatted}
