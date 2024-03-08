@@ -25,7 +25,9 @@ export default function VideoRecommendations({ data, headingData }) {
 
   if (data !== null && data !== undefined) {
     data.forEach((card) => {
-      cards.push(<Card cardType="avatar" data={card} />);
+      cards.push(
+        <Card cardType="vertical" data={card} displayDescription={false} />
+      );
     });
   }
 
