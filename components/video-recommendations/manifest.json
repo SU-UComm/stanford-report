@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "video-recommendations",
-  "version": "0.0.8",
+  "version": "0.0.1",
   "namespace": "stanford-components",
   "description": "Video recommendations displayed in a grid at the bottom of Video story pages.",
   "displayName": "Video recommendations",
