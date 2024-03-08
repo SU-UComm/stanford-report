@@ -1,0 +1,10 @@
+{
+  "headingConfiguration": {
+    "title": "Recent videos",
+    "ctaText": "View all",
+    "ctaUrl": "matrix-asset://api-identifier/89422"
+  },
+  "contentConfiguration": {
+    "searchQuery": "?f.Content+Type%7CtaxonomyContentTypeText=Video&log=false&taxonomyContentTypeText=Video&profile=stanford-report-push-search_preview&query=%21null&collection=sug~sp-stanford-report-search&num_ranks=3"
+  }
+}
