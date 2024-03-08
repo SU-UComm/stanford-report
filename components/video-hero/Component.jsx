@@ -30,14 +30,19 @@ export default function VideoHero(props) {
             {pubDateFormatted}
           </time>
         </span>
-        {topic.asset_name && (
-          <a
-            href={topic.asset_url !== "" ? topic.asset_url : "#"}
-            className="su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline"
-          >
-            {topic.asset_name}
-          </a>
-        )}
+        {topic.asset_name &&
+          (topic.asset_url !== "" ? (
+            <a
+              href={topic.asset_url !== "" ? topic.asset_url : "#"}
+              className="su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline"
+            >
+              {topic.asset_name}
+            </a>
+          ) : (
+            <span className="su-font-semibold su-text-digital-red dark:su-text-dark-mode-red">
+              {topic.asset_name}
+            </span>
+          ))}
       </div>
       <h1 className="su-mt-32 sm:su-mt-45 xl:su-mt-58 su-font-serif">
         {title}
