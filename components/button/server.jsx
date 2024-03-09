@@ -7,10 +7,10 @@ export default async (args, info) => {
   const { ctx } = info;
   let linkUrl = null;
 
-  if (args.internalUrl) {
+  if (args?.internalUrl) {
     linkUrl = await basicAssetUri(ctx, args.internalUrl);
   }
-  const internalLinkUrl = linkUrl.url;
+  const internalLinkUrl = linkUrl?.url;
 
   const renderProps = {
     ...args,
