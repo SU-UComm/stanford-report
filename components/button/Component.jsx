@@ -13,7 +13,7 @@ import { LinkButton } from "../../packages/links/LinkButton";
 
 export default function Button({
   buttonText,
-  internalUrl,
+  internalLinkUrl,
   externalUrl,
   isNewWindow,
 }) {
@@ -21,7 +21,7 @@ export default function Button({
     <Container>
       <LinkButton
         buttonText={buttonText}
-        internalUrl={internalUrl}
+        internalUrl={internalLinkUrl}
         externalUrl={externalUrl}
         isNewWindow={isNewWindow}
       />

@@ -5,16 +5,16 @@ import basicAssetUri from "../../packages/utils/basicAssetUri";
 export default async (args, info) => {
   // Using code from Campaign CTA component to resolve internal URL
   const { ctx } = info;
-  const { internalUrl } = args.internalUrl;
   let linkUrl = null;
 
-  if (internalUrl) {
-    linkUrl = await basicAssetUri(ctx, internalUrl);
+  if (args.internalUrl) {
+    linkUrl = await basicAssetUri(ctx, args.internalUrl);
   }
+  const internalLinkUrl = linkUrl.url;
 
   const renderProps = {
     ...args,
-    linkUrl,
+    internalLinkUrl,
   };
   return renderComponent({
     Component,
