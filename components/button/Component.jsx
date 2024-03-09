@@ -5,7 +5,7 @@ import { LinkButton } from "../../packages/links/LinkButton";
 /**
  * Button component
  *
- * @param {string} title The component title
+ * @param {string} title Button
  * ... any other options needed
  * @returns {JSX.Element}
  * @constructor

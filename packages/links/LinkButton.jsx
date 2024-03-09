@@ -30,7 +30,7 @@ export function LinkButton({
       className={cnb(
         "su-group su-inline-block su-button hocus:su-underline md:su-px-30 md:su-pt-12 md:su-pb-14 su-text-18 md:su-text-20 su-transition-colors"
       )}
-      href={internalUrl || externalUrl}
+      href={externalUrl || internalUrl}
       target={isNewWindow ? "_blank" : undefined}
       rel={isNewWindow ? "noreferrer noopener nofollow" : undefined}
     >

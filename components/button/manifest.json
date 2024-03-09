@@ -1,16 +1,16 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "button",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
-  "description": "Stanford university Base component.",
+  "description": "A button that can be linked to internal or external pages.",
   "displayName": "Button",
   "mainFunction": "main",
   "icon": {
     "id": "link",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "red"
     }
   },
   "functions": [
@@ -34,7 +34,7 @@
           "externalUrl": {
             "title": "External link",
             "type": "string",
-            "description": "Enter the full URL, including https://"
+            "description": "Enter the full URL, including https://. A diagonal arrow icon will be automatically added after the button text."
           },
           "isNewWindow": {
             "title": "Open link in a new window",
