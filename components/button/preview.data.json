@@ -1,4 +1,4 @@
 {
     "buttonText": "Button text",
-    "externalUrl": "http://www.google.com"
+    "internalUrl": "matrix-asset://api-identifier/28192"
 }

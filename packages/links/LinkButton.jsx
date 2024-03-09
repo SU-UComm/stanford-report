@@ -27,7 +27,6 @@ export function LinkButton({
 }) {
   return internalUrl || externalUrl ? (
     <a
-      // data-test={}
       className={cnb(
         "su-group su-inline-block su-button hocus:su-underline md:su-px-30 md:su-pt-12 md:su-pb-14 su-text-18 md:su-text-20 su-transition-colors"
       )}
