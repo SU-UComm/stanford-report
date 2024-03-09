@@ -1,8 +1,6 @@
 import React from "react";
-
-// import specific templates for the component
 import { Container } from "../../packages/grids/Container";
-import { LinkedHeading } from "../../packages/headings/Heading";
+import { LinkButton } from "../../packages/links/LinkButton";
 
 /**
  * Button component
@@ -13,10 +11,20 @@ import { LinkedHeading } from "../../packages/headings/Heading";
  * @constructor
  */
 
-export default function Button({ title }) {
+export default function Button({
+  buttonText,
+  internalUrl,
+  externalUrl,
+  isNewWindow,
+}) {
   return (
     <Container>
-      <LinkedHeading title={title} />
+      <LinkButton
+        buttonText={buttonText}
+        internalUrl={internalUrl}
+        externalUrl={externalUrl}
+        isNewWindow={isNewWindow}
+      />
     </Container>
   );
 }

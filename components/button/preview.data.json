@@ -1,3 +1,4 @@
 {
-    "title": "Welcome to Stanford University!"
+    "buttonText": "Button text",
+    "externalUrl": "http://www.google.com"
 }

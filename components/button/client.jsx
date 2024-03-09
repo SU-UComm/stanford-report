@@ -3,11 +3,11 @@ import Component from "./Component";
 
 (function () {
   const componentName = "button";
-  const base = document.querySelector(
+  const button = document.querySelector(
     `[data-hydration-component="${componentName}"]`
   );
 
-  if (!base) return;
+  if (!button) return;
 
   hydrateComponent({ Component, componentName });
 })();
