@@ -27,7 +27,8 @@ export function LinkButton({
 }) {
   // Check extenalUrl field to see if it is actually external
   // Do not add external arrow and rel attributes if link has news.stanford.edu
-  const isRealExternalLink = !externalUrl?.includes("news.stanford.edu");
+  const isRealExternalLink =
+    !!externalUrl && !externalUrl?.includes("news.stanford.edu");
 
   return internalUrl || externalUrl ? (
     // eslint-disable-next-line react/jsx-no-target-blank
