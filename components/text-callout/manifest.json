@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "text-callout",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "namespace": "stanford-components",
   "description": "This component is intended for displaying extra text content with a background colour applied",
   "displayName": "Text Callout",
@@ -37,6 +37,31 @@
                 "type": "FormattedText"
               }
             }
+          },
+          "imageConfiguration": {
+            "title": "Image configuration",
+            "required": [],
+            "properties": {
+              "image": {
+                "title": "Image asset",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              },
+              "caption": {
+                "title": "Caption",
+                "type": "string"
+              },
+              "credit": {
+                "title": "Credit",
+                "type": "string"
+              },
+              "imagePlacement": {
+                "title": "Image position",
+                "enum": ["Below content", "Above content"],
+                "type": "string",
+                "default": "Below content"
+              }
+            }
           }
         }
       },
@@ -63,6 +88,20 @@
   ],
   "staticFiles": {
     "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/125800": {
+      "type": "file",
+      "path": "mocked-uris/125800.json"
+    },
+    "matrix-asset://api-identifier/125801": {
+      "type": "file",
+      "path": "mocked-uris/125801.json"
+    }
   },
   "previews": {
     "default": {

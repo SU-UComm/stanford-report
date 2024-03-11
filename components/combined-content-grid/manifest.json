@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "combined-content-grid",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "namespace": "stanford-components",
   "description": "A featured content grid combined with announcements and events",
   "displayName": "Combined content grid",
