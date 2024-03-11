@@ -25,17 +25,22 @@ export function LinkButton({
   buttonText = "Button text",
   isNewWindow,
 }) {
+  // Check extenalUrl field to see if it is actually external
+  // Do not add external arrow and rel attributes if link has news.stanford.edu
+  const isRealExternalLink = !externalUrl?.includes("news.stanford.edu");
+
   return internalUrl || externalUrl ? (
+    // eslint-disable-next-line react/jsx-no-target-blank
     <a
       className={cnb(
         "su-group su-inline-block su-button hocus:su-underline md:su-px-30 md:su-pt-12 md:su-pb-14 su-text-18 md:su-text-20 su-transition-colors"
       )}
       href={externalUrl || internalUrl}
       target={isNewWindow ? "_blank" : undefined}
-      rel={isNewWindow ? "noreferrer noopener nofollow" : undefined}
+      rel={isRealExternalLink ? "noopener nofollow" : undefined}
     >
       {buttonText}
-      {externalUrl && (
+      {isRealExternalLink && (
         <ExternalArrowUnstyled
           title="link is external"
           className="su-inline-block su-text-white group-hocus:su-text-white group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-ml-05em su-w-08em su-transition-transform"
