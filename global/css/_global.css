@@ -988,3 +988,10 @@ WYSIWYG formatting styles
   [data-component="metadata-fields"] {
   @apply su-rs-mt-5 su-rs-mb-9 !important;
 }
+
+/*
+Single image/video component
+*/
+.su-page-story-basic .su-play-button-icon svg {
+  @apply su-w-[40px] su-h-[40px] su-left-[20px] su-bottom-[20px] md:su-w-[60px] md:su-h-[60px] md:su-left-[26px] md:su-bottom-[26px];
+}

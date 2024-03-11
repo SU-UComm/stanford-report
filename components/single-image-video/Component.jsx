@@ -144,7 +144,7 @@ export default function SingleImageVideo({
               />
 
               <div
-                className={`${playButtonIconSize}  *:md:su-size-40 su-play-btn su-transition-all su-absolute su-bottom-20 su-left-20 md:su-left-27 md:su-bottom-27 md:su-block *:md:su-size-[55.95px]`}
+                className={`${playButtonIconSize} su-play-button-icon *:md:su-size-40 su-play-btn su-transition-all su-absolute su-bottom-20 su-left-20 md:su-left-27 md:su-bottom-27 md:su-block *:md:su-size-[55.95px]`}
               >
                 <VideoPlay />
               </div>
