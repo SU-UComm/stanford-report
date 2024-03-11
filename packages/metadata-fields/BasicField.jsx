@@ -12,7 +12,7 @@ export default function BasicFields({ title, children, alignment = "left" }) {
         alignment
       )}`}
     >
-      <h3 className="su-text-23 su-font-bold su-leading-[27.6px] su-font-sans su-m-0 md:su-leading-[27.7px] ">
+      <h3 className="su-text-23 su-font-bold su-leading-[27.6px] su-font-sans !su-m-0 md:su-leading-[27.7px] ">
         {title}
       </h3>
 
