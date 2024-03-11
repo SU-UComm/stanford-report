@@ -198,7 +198,7 @@ export default function HorizontalCard({
             data-testid="horizontal-card-taxonomy"
           >
             <XssSafeContent
-              className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
+              className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red su-block su-mt-[-6px]"
               content={taxonomy}
               href={taxonomyUrl}
               elementType="a"
