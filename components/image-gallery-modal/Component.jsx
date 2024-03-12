@@ -66,14 +66,14 @@ export default function Base({
   ];
 
   // place testData in this param to debug
-  // const modalImages = carouselImages(data);
-  const modalImages = carouselImages(testImages);
+  const modalImages = carouselImages(data);
+  // const modalImages = carouselImages(testImages);
 
   // generate the preview images
   // replace first param with testImages to debug
   const previewData = mosaic(
-    // data,
-    testImages,
+    data,
+    // testImages,
     `
     {v:v}
     {h:h:h:h}
@@ -94,8 +94,8 @@ export default function Base({
       : contentConfiguration.caption || contentConfiguration.credit;
 
   // change {testImages} back to {data}
-  // const leftOverImages = data.length - previewData.length;
-  const leftOverImages = testImages.length - previewData.length;
+  const leftOverImages = data.length - previewData.length;
+  // const leftOverImages = testImages.length - previewData.length;
 
   return (
     <>
