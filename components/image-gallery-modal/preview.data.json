@@ -33,6 +33,7 @@
   },
   "displayConfiguration": {
     "displayIconHeading": true,
-    "backgroundColor": "Grey"
+    "backgroundColor": "Grey",
+    "width": "Wide"
   }
 }
