@@ -75,7 +75,7 @@ export default function TextCallout({
               className="su-w-full"
             />
 
-            <p className="su-m-0 su-text-14 su-leading-[1.672rem] md:su-leading-[1.911rem] md:su-text-16 su-mt-8 md:su-mt-12 lg:su-text-18">
+            <p className="su-m-0 su-text-14 su-leading-[1.672rem] md:su-leading-[1.911rem] md:su-text-16 su-mt-8 md:su-mt-12">
               {captionCredit}
             </p>
           </div>
