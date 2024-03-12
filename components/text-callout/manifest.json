@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "text-callout",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "namespace": "stanford-components",
   "description": "This component is intended for displaying extra text content with a background colour applied",
   "displayName": "Text Callout",
@@ -49,7 +49,8 @@
               },
               "caption": {
                 "title": "Caption",
-                "type": "string"
+                "type": "string",
+                "format": "multi-line"
               },
               "credit": {
                 "title": "Credit",
