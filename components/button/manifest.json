@@ -1,0 +1,92 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "button",
+  "version": "0.0.7",
+  "namespace": "stanford-components",
+  "description": "A button that can be linked to internal or external pages.",
+  "displayName": "Button",
+  "mainFunction": "main",
+  "icon": {
+    "id": "link",
+    "color": {
+      "type": "enum",
+      "value": "red"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {
+          "buttonText": {
+            "title": "Button text",
+            "type": "string",
+            "default": "Button text"
+          },
+          "internalUrl": {
+            "title": "Internal link (Matrix asset link)",
+            "type": "string",
+            "description": "Select a page/asset to link to. If this field is filled out, it will be used instead of the external link field below.",
+            "format": "matrix-asset-uri"
+          },
+          "externalUrl": {
+            "title": "External (manual) link",
+            "type": "string",
+            "description": "Enter the full URL, including https://. A diagonal arrow icon will be automatically added after the button text if the URL does not contain news.stanford.edu."
+          },
+          "isNewWindow": {
+            "title": "Open link in a new window",
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/28192": {
+      "type": "file",
+      "path": "mocked-uris/28192.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}
