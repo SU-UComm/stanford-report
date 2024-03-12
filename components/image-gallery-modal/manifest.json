@@ -118,6 +118,11 @@
                 ],
                 "type": "string",
                 "default": "Grey"
+              },
+              "wide": {
+                "type": "string",
+                "enum": [ "Wide", "Content" ],
+                "default": "Wide"
               }
             }
           }
