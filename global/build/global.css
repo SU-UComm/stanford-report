@@ -3435,3 +3435,23 @@ WYSIWYG formatting styles
     margin-bottom: 17.1rem !important;
   }
 }
+
+/*
+Single image/video component
+*/
+
+.su-page-story-basic .su-play-button-icon svg{
+  left: 20px;
+  bottom: 20px;
+  height: 40px;
+  width: 40px;
+}
+
+@media (min-width: 768px){
+  .su-page-story-basic .su-play-button-icon svg{
+    left: 26px;
+    bottom: 26px;
+    height: 60px;
+    width: 60px;
+  }
+}

@@ -65,13 +65,17 @@ export default function TextCallout({
           <div
             className={`su-order-${
               imagePlacement === "Above content"
-                ? "1 su-pb-20 md:su-pb-36"
-                : "2 su-pt-20 md:su-pt-36"
-            }`}
+                ? "1 su-pb-20 md:su-pb-12 lg:su-pb-27"
+                : "2 su-pt-20 md:su-pt-12 lg:su-pt-27"
+            } su-w-full`}
           >
-            <img src={imageData.url} alt={imageData.attributes.alt} />
+            <img
+              src={imageData.url}
+              alt={imageData.attributes.alt}
+              className="su-w-full"
+            />
 
-            <p className="su-m-0 su-text-16 su-mt-12 lg:su-text-18">
+            <p className="su-m-0 su-text-14 su-leading-[1.672rem] md:su-leading-[1.911rem] md:su-text-16 su-mt-8 md:su-mt-12 lg:su-text-18">
               {captionCredit}
             </p>
           </div>
