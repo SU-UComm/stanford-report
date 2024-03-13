@@ -42,6 +42,7 @@ export default function formatCardDataMatrix(props) {
   const source = dataChecker(metadata.storySource);
   const author = dataChecker(metadata.contributorsAuthors);
   const returnData = {
+    type,
     title,
     liveUrl,
     description,
@@ -57,7 +58,7 @@ export default function formatCardDataMatrix(props) {
     authorEmail: null,
   };
 
-  if (author) {
+  if (author && type === "link") {
     const avatar = dataStringChecker(author?.metadata?.personHeadshot[0]?.url);
     const avatarAlt = dataStringChecker(
       author?.metadata?.personHeadshot[0]?.attributes?.alt
