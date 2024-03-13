@@ -50,7 +50,6 @@ export default function formatCardDataMatrix(props) {
     imageAlt,
     taxonomy,
     taxonomyUrl,
-    type,
     videoUrl,
     date,
     source,
