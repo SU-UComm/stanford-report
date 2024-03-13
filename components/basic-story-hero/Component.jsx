@@ -109,6 +109,8 @@ function Thumbnail({ url, alt, video, type, carousel }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const slides = [];
 
+  type = "video";
+
   // events
   const handleClick = () => {
     setIsModalOpen(true);
@@ -166,7 +168,7 @@ function Thumbnail({ url, alt, video, type, carousel }) {
           className="su-w-full su-h-full su-absolute su-top-0 su-left-0 su-object-cover su-object-center"
         />
 
-        <span className="su-play-button-icon su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px]">
+        <span className="su-play-button-icon-hero su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px]">
           <VideoPlay />
         </span>
       </button>
