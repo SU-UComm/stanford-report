@@ -50,11 +50,11 @@
                   "default": false
                 }
               },
-              "required": ["buttonText"]
+              "required": []
             }
-          },
-          "required": []
-        }
+          }
+        },
+        "required": []
       },
       "output": {
         "responseType": "html",
