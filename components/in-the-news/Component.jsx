@@ -41,6 +41,9 @@ export default function InTheNews({
     if (headshotData && headshotData.url) {
       data[0].imageUrl = headshotData.url;
       data[0].imageAlt = headshotData.attributes.alt;
+    } else {
+      data[0].imageUrl = "";
+      data[0].imageAlt = "";
     }
 
     const featured = {
