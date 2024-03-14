@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "related-story",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "namespace": "stanford-components",
   "description": "Displays a related story on a featured story",
   "displayName": "Related story",
@@ -41,6 +41,12 @@
                 "title": "Related story",
                 "type": "string",
                 "format": "matrix-asset-uri"
+              },
+              "descriptionOverride": {
+                "title": "Description",
+                "description": "This field will override the related story description that comes from the selected story asset.",
+                "type": "string",
+                "format": "multi-line"
               }
             }
           }
