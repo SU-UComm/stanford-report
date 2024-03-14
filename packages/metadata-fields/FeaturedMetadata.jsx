@@ -271,7 +271,7 @@ export default function FeaturedMetadata({ data }) {
       {campus &&
       ![null, undefined, "undefined", ""].includes(campus.asset_assetid) ? (
         <div className="su-text-center su-flex su-flex-col su-gap-20 md:su-gap-26">
-          <h3 className="su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans su-m-0">
+          <h3 className="su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans !su-m-0">
             Campus Unit
           </h3>
 
@@ -285,7 +285,7 @@ export default function FeaturedMetadata({ data }) {
 
       {related && related.length ? (
         <div className="su-text-center su-mt-34 md:su-mt-58 lg:su-mt-61 su-flex su-flex-col su-gap-20 md:su-gap-26">
-          <h3 className="su-text-18 su-font-bold su-leading-[22.5px] su-font-sans su-m-0">
+          <h3 className="su-text-18 su-font-bold su-leading-[22.5px] su-font-sans !su-m-0">
             Related topics
           </h3>
 
@@ -311,7 +311,7 @@ export default function FeaturedMetadata({ data }) {
       )}
 
       <div className="su-text-center su-mt-34 md:su-mt-58 lg:su-mt-61 su-flex su-flex-col su-gap-20 md:su-gap-26">
-        <h3 className="su-text-18 su-font-bold su-leading-[22.5px] su-font-sans su-m-0">
+        <h3 className="su-text-18 su-font-bold su-leading-[22.5px] !su-m-0 su-font-sans">
           Share this story
         </h3>
 

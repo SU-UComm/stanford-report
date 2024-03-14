@@ -75,7 +75,11 @@ export default function basicStoryHero(props) {
         </div>
 
         <div className="su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4">
-          <figure className="basic-story__header-image su-col-span-full su-relative su-z-0">
+          <figure
+            className={`basic-story__header-image su-col-span-full su-relative su-z-0 ${
+              mediaType === "image" ? "dark:su-bg-black" : ""
+            }`}
+          >
             <div className="su-relative su-w-full">
               <Thumbnail
                 url={media.featureImage.url}
@@ -105,6 +109,8 @@ function Thumbnail({ url, alt, video, type, carousel }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const slides = [];
 
+  type = "video";
+
   // events
   const handleClick = () => {
     setIsModalOpen(true);
@@ -117,7 +123,8 @@ function Thumbnail({ url, alt, video, type, carousel }) {
   if (type === "image") {
     return (
       <img
-        src={url}
+        // src={url}
+        src="https://picsum.photos/350/200"
         alt={alt}
         className="su-relative su-w-full su-max-w-full"
       />
@@ -128,7 +135,7 @@ function Thumbnail({ url, alt, video, type, carousel }) {
     carousel.forEach((slide) => {
       slides.push(
         <>
-          <div className="su-aspect-[3/2] su-relative su-bg-fog-light">
+          <div className="su-aspect-[3/2] su-relative su-bg-fog-light dark:su-bg-black">
             <img
               src={slide.asset_url}
               alt={slide.asset_attribute_alt}
@@ -152,7 +159,7 @@ function Thumbnail({ url, alt, video, type, carousel }) {
       <button
         type="button"
         aria-haspopup="dialog"
-        className="su-w-full su-aspect-[16/9]"
+        className="su-w-full su-aspect-[16/9] su-video-trigger"
         onClick={handleClick}
       >
         <img
@@ -161,7 +168,7 @@ function Thumbnail({ url, alt, video, type, carousel }) {
           className="su-w-full su-h-full su-absolute su-top-0 su-left-0 su-object-cover su-object-center"
         />
 
-        <span className="su-absolute su-bottom-20 su-left-20">
+        <span className="su-play-button-icon-hero su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px]">
           <VideoPlay />
         </span>
       </button>

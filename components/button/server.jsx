@@ -3,23 +3,22 @@ import Component from "./Component";
 import basicAssetUri from "../../packages/utils/basicAssetUri";
 
 export default async (args, info) => {
+  // Using code from Campaign CTA component to resolve internal URL
   const { ctx } = info;
-  const { image } = args.imageConfiguration;
+  let linkUrl = null;
 
-  let imageData = null;
-
-  if (image) {
-    imageData = await basicAssetUri(ctx, image);
+  if (args?.internalUrl) {
+    linkUrl = await basicAssetUri(ctx, args.internalUrl);
   }
+  const internalLinkUrl = linkUrl?.url;
 
   const renderProps = {
     ...args,
-    imageData,
+    internalLinkUrl,
   };
-
   return renderComponent({
     Component,
-    componentName: "text-callout",
+    componentName: "button",
     args: renderProps,
   });
 };

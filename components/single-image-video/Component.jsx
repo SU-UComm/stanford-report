@@ -144,7 +144,7 @@ export default function SingleImageVideo({
               />
 
               <div
-                className={`${playButtonIconSize}  *:md:su-size-40 su-play-btn su-transition-all su-absolute su-bottom-20 su-left-20 md:su-left-27 md:su-bottom-27 md:su-block *:md:su-size-[55.95px]`}
+                className={`${playButtonIconSize} su-play-button-icon *:md:su-size-40 su-play-btn su-transition-all su-absolute su-bottom-20 su-left-20 md:su-left-27 md:su-bottom-27 md:su-block *:md:su-size-[55.95px]`}
               >
                 <VideoPlay />
               </div>
@@ -176,7 +176,7 @@ export default function SingleImageVideo({
                 setVideoPlaying("pause");
               }}
             >
-              <span className="*:su-size-25 su-flex su-gap-6 su-items-center su-text-16 *:lg:su-size-30 lg:su-top-0 lg:su-right-0">
+              <span className="*:su-size-14 su-flex su-gap-6 su-items-center su-text-14 lg:su-top-0 lg:su-right-0">
                 {videoPlaying === "pause" ? <Play /> : <Pause />}
                 {pausePlayTitle}
               </span>

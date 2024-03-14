@@ -38,32 +38,34 @@ export default function Base({
   };
 
   // testing data
-  // const testImages = [
-  //   { orientation: "h", alt: "", url: "https://picsum.photos/850/350" },
-  //   {
-  //     orientation: "v",
-  //     alt: "",
-  //     url: "https://picsum.photos/1000/1250",
-  //     caption:
-  //       "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
-  //   },
-  //   {
-  //     orientation: "h",
-  //     alt: "",
-  //     url: "https://picsum.photos/800/350",
-  //     caption:
-  //       "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
-  //   },
-  //   {
-  //     orientation: "h",
-  //     alt: "",
-  //     url: "https://picsum.photos/700/450",
-  //     caption:
-  //       "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
-  //   },
-  //   { orientation: "h", alt: "", url: "https://picsum.photos/730/450" },
-  //   { orientation: "v", alt: "", url: "https://picsum.photos/900/1050" },
-  // ];
+  const testImages = [
+    {
+      orientation: "h",
+      alt: "",
+      url: "https://picsum.photos/400/350",
+      caption:
+        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
+    },
+    { orientation: "h", alt: "", url: "https://picsum.photos/350/250" },
+    {
+      orientation: "h",
+      alt: "",
+      url: "https://picsum.photos/350/210",
+      caption:
+        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
+    },
+    { orientation: "v", alt: "", url: "https://picsum.photos/300/550" },
+    { orientation: "h", alt: "", url: "https://picsum.photos/730/450" },
+    {
+      orientation: "v",
+      alt: "",
+      url: "https://picsum.photos/300/550",
+      caption:
+        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
+    },
+    { orientation: "v", alt: "", url: "https://picsum.photos/300/500" },
+    { orientation: "v", alt: "", url: "https://picsum.photos/250/550" },
+  ];
 
   // place testData in this param to debug
   const modalImages = carouselImages(data);
@@ -75,12 +77,20 @@ export default function Base({
     data,
     // testImages,
     `
-    {v:v}
-    {h:h:h:h}
-    {h:h:v}
-    {v:h:h}
-  `
+      {v:v}
+      {h:h:h:h}
+      {h:h:v}
+      {v:h:h}
+    `,
+    `
+      {h:h:h:v}
+    `
   );
+
+  const width =
+    displayConfiguration.width === "Wide"
+      ? displayConfiguration.width
+      : "narrow";
 
   // caption & credit
   const captionCredit =
@@ -101,7 +111,7 @@ export default function Base({
             : "",
         ].join(" ")}
       >
-        <Container width="wide">
+        <Container width={width}>
           <div className="su-w-[100%] md:su-max-w-[60.7rem] lg:su-max-w-[63.6rem] su-mx-auto">
             <div
               className={[
@@ -150,7 +160,7 @@ export default function Base({
             aria-label="Open image gallery"
             type="button"
             className={[
-              "su-grid su-grid-cols-2 su-grid-rows-2 su-max-w-[1312px] su-gap-x-[0.691rem] su-gap-y-[0.572rem] su-mt-[3.2rem] su-pb-[1rem]",
+              "su-grid su-grid-cols-2 su-mx-auto su-grid-rows-2 su-max-w-[1312px] su-gap-x-[0.691rem] su-gap-y-[0.572rem] su-mt-[3.2rem] su-pb-[1rem]",
               "md:su-mt-[4.8rem] md:su-gap-x-[1.448rem] md:su-gap-y-[1.199rem]",
               "lg:su-gap-x-[2.589rem] lg:su-gap-y-[2.143rem]",
             ].join(" ")}
