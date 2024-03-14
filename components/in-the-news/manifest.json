@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "in-the-news",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "namespace": "stanford-components",
   "description": "This component contains one featured quote and two supplementary teasers.",
   "displayName": "In the news",
@@ -72,7 +72,8 @@
               "personHeadshot": {
                 "title": "Quotee headshot",
                 "type": "string",
-                "format": "matrix-asset-uri"
+                "format": "matrix-asset-uri",
+                "description": "Please use image assets for the person headshot."
               },
               "featuredQuote": {
                 "title": "Featured Quote",
