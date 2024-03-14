@@ -40,29 +40,31 @@ export default function Base({
   // testing data
   const testImages = [
     {
+      orientation: "h",
+      alt: "",
+      url: "https://picsum.photos/400/350",
+      caption:
+        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
+    },
+    { orientation: "h", alt: "", url: "https://picsum.photos/350/250" },
+    {
+      orientation: "h",
+      alt: "",
+      url: "https://picsum.photos/350/210",
+      caption:
+        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
+    },
+    { orientation: "v", alt: "", url: "https://picsum.photos/300/550" },
+    { orientation: "h", alt: "", url: "https://picsum.photos/730/450" },
+    {
       orientation: "v",
       alt: "",
-      url: "https://picsum.photos/300/1250",
+      url: "https://picsum.photos/300/550",
       caption:
         "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
     },
-    { orientation: "v", alt: "", url: "https://picsum.photos/300/850" },
-    { orientation: "h", alt: "", url: "https://picsum.photos/850/750" },
-    {
-      orientation: "h",
-      alt: "",
-      url: "https://picsum.photos/800/350",
-      caption:
-        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
-    },
-    {
-      orientation: "h",
-      alt: "",
-      url: "https://picsum.photos/700/450",
-      caption:
-        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
-    },
-    { orientation: "h", alt: "", url: "https://picsum.photos/730/450" },
+    { orientation: "v", alt: "", url: "https://picsum.photos/300/500" },
+    { orientation: "v", alt: "", url: "https://picsum.photos/250/550" },
   ];
 
   // place testData in this param to debug
@@ -75,11 +77,14 @@ export default function Base({
     data,
     // testImages,
     `
-    {v:v}
-    {h:h:h:h}
-    {h:h:v}
-    {v:h:h}
-  `
+      {v:v}
+      {h:h:h:h}
+      {h:h:v}
+      {v:h:h}
+    `,
+    `
+      {h:h:h:v}
+    `
   );
 
   const width =

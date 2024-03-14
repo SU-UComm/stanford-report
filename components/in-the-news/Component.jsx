@@ -21,6 +21,7 @@ export default function InTheNews({
   headingData,
   supplementaryTeaserOne,
   supplementaryTeaserTwo,
+  headshotData,
 }) {
   const { featuredQuote } = featuredContent;
   const { featuredCtaText } = featuredContent;
@@ -37,6 +38,11 @@ export default function InTheNews({
   ];
 
   if (data.length) {
+    if (headshotData && headshotData.url) {
+      data[0].imageUrl = headshotData.url;
+      data[0].imageAlt = headshotData.attributes.alt;
+    }
+
     const featured = {
       ...data[0],
       quote: featuredQuote,
