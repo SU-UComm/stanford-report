@@ -2,6 +2,7 @@ import React from "react";
 
 // import specific templates for the component
 import { Container } from "../../packages/grids/Container";
+import { LinkButton } from "../../packages/links/LinkButton";
 
 /**
  * Button row
@@ -12,10 +13,22 @@ import { Container } from "../../packages/grids/Container";
  * @constructor
  */
 
-export default function ButtonRow({ title }) {
+export default function ButtonRow({ buttonsArray }) {
   return (
     <Container>
-      <div />
+      {buttonsArray.map((button) => {
+        const { buttonText, internalLinkUrl, externalUrl, isNewWindow } =
+          button;
+        return (
+          <LinkButton
+            key={buttonText}
+            buttonText={buttonText}
+            internalUrl={internalLinkUrl}
+            externalUrl={externalUrl}
+            isNewWindow={isNewWindow}
+          />
+        );
+      })}
     </Container>
   );
 }
