@@ -69,6 +69,11 @@
                 "format": "matrix-asset-uri",
                 "type": "string"
               },
+              "personHeadshot": {
+                "title": "Quotee headshot",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              },
               "featuredQuote": {
                 "title": "Featured Quote",
                 "type": "string"
