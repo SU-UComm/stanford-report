@@ -3,6 +3,7 @@ import React from "react";
 // import specific templates for the component
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../../packages/grids/Container";
+import { LinkButton } from "../../packages/links/LinkButton";
 
 /**
  * Renders out the text callout component
@@ -23,9 +24,12 @@ export default function TextCallout({
   displayConfiguration,
   imageConfiguration,
   imageData,
+  buttonConfiguration,
+  internalLinkUrl,
 }) {
   const { title, content } = displayConfiguration;
   const { caption, credit, imagePlacement, image } = imageConfiguration;
+  const { buttonText, externalUrl, isNewWindow } = buttonConfiguration;
 
   const captionCredit =
     caption && credit ? `${caption} | ${credit}` : caption || credit;
@@ -79,6 +83,15 @@ export default function TextCallout({
               {captionCredit}
             </p>
           </div>
+        )}
+        {buttonText && (
+          <LinkButton
+            buttonText={buttonText}
+            internalUrl={internalLinkUrl}
+            externalUrl={externalUrl}
+            isNewWindow={isNewWindow}
+            className="su-rs-mt-1 su-order-3"
+          />
         )}
       </section>
     </Container>

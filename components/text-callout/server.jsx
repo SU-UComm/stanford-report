@@ -5,6 +5,13 @@ import basicAssetUri from "../../packages/utils/basicAssetUri";
 export default async (args, info) => {
   const { ctx } = info;
   const { image } = args.imageConfiguration;
+  const { internalUrl } = args.buttonConfiguration;
+
+  let linkUrl = null;
+  if (internalUrl) {
+    linkUrl = await basicAssetUri(ctx, internalUrl);
+  }
+  const internalLinkUrl = linkUrl?.url;
 
   let imageData = null;
 
@@ -15,6 +22,7 @@ export default async (args, info) => {
   const renderProps = {
     ...args,
     imageData,
+    internalLinkUrl,
   };
 
   return renderComponent({
