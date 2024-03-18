@@ -1,3 +1,6 @@
+@tailwind components;
+@tailwind utilities;
+
 /* 
   single featured content
   these styles will only target single featured content components

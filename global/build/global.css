@@ -10082,6 +10082,11 @@ Single image/video component
   margin-bottom: 0;
 }
 
+.\[\&\>\*\:last-child\]\:after\:su-content-\[\'\\u201D\'\]>*:last-child::after{
+  --tw-content: '\u201D';
+  content: var(--tw-content);
+}
+
 .\[\&\>\*\:last-child\]\:after\:su-content-\[\'\201D\'\]>*:last-child::after{
   --tw-content: '”';
   content: var(--tw-content);

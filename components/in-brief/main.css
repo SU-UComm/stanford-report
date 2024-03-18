@@ -1,3 +1,6 @@
+@tailwind components;
+@tailwind utilities;
+
 .su-wysiwyg-content ul {
   @apply su-list-none su-pl-0;
 }
