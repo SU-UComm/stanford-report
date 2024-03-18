@@ -1,14 +1,14 @@
-.su-linklist-mob-width {
+[data-component="link-list"] .su-linklist-mob-width {
   width: calc(100% - 60px);
 }
 
 @media screen and (min-width: 768px) {
-  .su-linklist-mob-width {
+  [data-component="link-list"] .su-linklist-mob-width {
     width: calc(100% - 352px);
   }
 }
 
-.su-link-list-no-stories {
+[data-component="link-list"] .su-link-list-no-stories {
   display: none;
   position: absolute;
   width: 0;
