@@ -4,7 +4,6 @@
   "description": "",
   "scripts": {
     "build": "npm-run-all -p build:*",
-    "build:import-css": "node ./build/importComponentCSS.js",
     "build:components": "node ./build/index.js",
     "build:tailwind": "tailwind -i ./global/css/_global.css -o ./global/build/global.css",
     "test-import-css": "node ./build/importComponentCSS.js",

@@ -1,23 +1,23 @@
-[data-component="fact-callout"] .decoration-top {
+.decoration-top {
   @apply su-pt-90;
 }
 
-[data-component="fact-callout"] .decoration-bottom {
+.decoration-bottom {
   @apply su-pb-90;
 }
 
-[data-component="fact-callout"] .fact-wrapper__decoration-top {
+.fact-wrapper__decoration-top {
   top: 0;
   flex-direction: column-reverse;
   transform: translateY(-90px);
 }
 
-[data-component="fact-callout"] .fact-wrapper__decoration-bottom {
+.fact-wrapper__decoration-bottom {
   bottom: 0;
   flex-direction: column;
   transform: translateY(90px);
 }
 
-[data-component="fact-callout"] .su-bg-gradient-light-red-h-reverse {
+.su-bg-gradient-light-red-h-reverse {
   @apply su-bg-gradient-to-l su-from-digital-red-dark su-to-digital-red-light dark:su-bg-gradient-to-tl dark:su-from-palo-verde dark:su-via-palo-verde dark:su-to-olive;
 }
