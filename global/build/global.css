@@ -6982,11 +6982,6 @@ Single image/video component
   content: var(--tw-content);
 }
 
-.before\:su-content-\[\'\\u201C\'\]::before{
-  --tw-content: '\u201C';
-  content: var(--tw-content);
-}
-
 .before\:su-content-\[\'\201C\'\]::before{
   --tw-content: '“';
   content: var(--tw-content);
@@ -10080,11 +10075,6 @@ Single image/video component
 
 .\[\&\>\*\:last-child\]\:su-mb-0>*:last-child{
   margin-bottom: 0;
-}
-
-.\[\&\>\*\:last-child\]\:after\:su-content-\[\'\\u201D\'\]>*:last-child::after{
-  --tw-content: '\u201D';
-  content: var(--tw-content);
 }
 
 .\[\&\>\*\:last-child\]\:after\:su-content-\[\'\201D\'\]>*:last-child::after{
