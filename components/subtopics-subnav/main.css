@@ -1,6 +1,3 @@
-@tailwind components;
-@tailwind utilities;
-
-.scrollable-list__item::after {
+[data-component="subtopic-subnav-component"] .scrollable-list__item::after {
   @apply su-inline-block su-align-middle;
 }

@@ -1,37 +1,34 @@
-@tailwind components;
-@tailwind utilities;
-
-.su-horizontal-image-first {
+[data-component="image-gallery-modal"] .su-horizontal-image-first {
   grid-column: 1;
   grid-row: 1 / span 1;
   height: 100%;
 }
 
-.su-horizontal-image-second {
+[data-component="image-gallery-modal"] .su-horizontal-image-second {
   grid-column: 1;
   grid-row: 2 / span 1;
   height: 100%;
 }
 
-.su-horizontal-image-third {
+[data-component="image-gallery-modal"] .su-horizontal-image-third {
   grid-column: 2;
   grid-row: 1 / span 1;
   height: 100%;
 }
 
-.su-horizontal-image-fourth {
+[data-component="image-gallery-modal"] .su-horizontal-image-fourth {
   grid-column: 2;
   grid-row: 2 / span 1;
   height: 100%;
 }
 
-.su-vertical-image-first {
+[data-component="image-gallery-modal"] .su-vertical-image-first {
   grid-column: 1;
   grid-row: 1 / span 2;
   height: 100%;
 }
 
-.su-vertical-image-second {
+[data-component="image-gallery-modal"] .su-vertical-image-second {
   grid-column: 2;
   grid-row: 1 / span 2;
   height: 100%;
