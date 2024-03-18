@@ -122,7 +122,7 @@ export default function SingleImageVideo({
               : " su-w-full su-aspect-[16/9]"
           }`}
         >
-          {!video || !video.youtubeid || !video.vimeoid ? (
+          {!video ? (
             <img
               // src="https://picsum.photos/800"
               src={imageData.url}
