@@ -1,3 +1,6 @@
+@tailwind components;
+@tailwind utilities;
+
 .su-component-container .component-slider {
   @apply lg:su-mx-auto;
 }

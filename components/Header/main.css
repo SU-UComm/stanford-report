@@ -1,3 +1,6 @@
+@tailwind components;
+@tailwind utilities;
+
 .report-header {
   width: 100%;
 }
