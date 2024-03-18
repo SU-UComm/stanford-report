@@ -1,19 +1,17 @@
-[data-component="basic-story-hero"] .su-reading-time-separator:empty {
+.su-reading-time-separator:empty {
   @apply su-hidden;
 }
 
-[data-component="basic-story-hero"]
-  .su-reading-time-separator:not(:empty)::before {
+.su-reading-time-separator:not(:empty)::before {
   content: "|";
   @apply su-ml-1 su-mr-1;
 }
 
-[data-component="basic-story-hero"] .component-slider-controls {
+.component-slider-controls {
   @apply su-mt-30 lg:su-mt-36 md:su-w-[83.333%] md:su-ml-[8.333%] !important;
 }
 
-[data-component="basic-story-hero"]
-  .su-video-trigger:is(:hover, :focus)
+.su-video-trigger:is(:hover, :focus)
   .su-play-button-icon-hero {
   @apply su-scale-110;
 }

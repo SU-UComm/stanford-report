@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "image-gallery-modal",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "namespace": "stanford-components",
   "description": "An image gallery that opens in a modal.",
   "displayName": "Image gallery with modal",
@@ -132,6 +132,13 @@
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
           {
             "location": "header",
             "file": {
