@@ -109,8 +109,6 @@ function Thumbnail({ url, alt, video, type, carousel }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const slides = [];
 
-  type = "video";
-
   // events
   const handleClick = () => {
     setIsModalOpen(true);
