@@ -8,5 +8,9 @@
         "caption": "This is the image's title",
         "credit": "Isaac Astley",
         "imagePlacement": "Below content"
+    },
+    "buttonConfiguration": {
+        "buttonText": "Optional link button",
+        "internalUrl": "matrix-asset://api-identifier/28192"
     }
 }
