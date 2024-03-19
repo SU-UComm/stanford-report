@@ -1,6 +1,3 @@
-@tailwind components;
-@tailwind utilities;
-
 .su-reading-time-separator:empty {
   @apply su-hidden;
 }
