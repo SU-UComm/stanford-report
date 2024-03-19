@@ -1842,6 +1842,10 @@ h6{
   bottom: 2.7rem;
 }
 
+.su-bottom-38{
+  bottom: 3.8rem;
+}
+
 .su-bottom-4{
   bottom: 0.4rem;
 }
@@ -2136,6 +2140,11 @@ h6{
   margin-right: 0;
 }
 
+.su-mx-50{
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
 .su-mx-\[-20px\]{
   margin-left: -20px;
   margin-right: -20px;
@@ -2171,12 +2180,30 @@ h6{
   margin-bottom: 3.8rem;
 }
 
+.su-my-72{
+  margin-top: 7.2rem;
+  margin-bottom: 7.2rem;
+}
+
+.su-my-76{
+  margin-top: 7.6rem;
+  margin-bottom: 7.6rem;
+}
+
+.\!su-mb-0{
+  margin-bottom: 0 !important;
+}
+
 .su--ml-44{
   margin-left: -4.4rem;
 }
 
 .su--ml-5{
   margin-left: -0.5rem;
+}
+
+.su--mt-2{
+  margin-top: -0.2rem;
 }
 
 .su-mb-0{
@@ -2215,6 +2242,10 @@ h6{
   margin-bottom: 2rem;
 }
 
+.su-mb-25{
+  margin-bottom: 2.5rem;
+}
+
 .su-mb-26{
   margin-bottom: 2.6rem;
 }
@@ -2245,6 +2276,10 @@ h6{
 
 .su-mb-38{
   margin-bottom: 3.8rem;
+}
+
+.su-mb-41{
+  margin-bottom: 4.1rem;
 }
 
 .su-mb-45{
@@ -2343,6 +2378,10 @@ h6{
   margin-right: 0;
 }
 
+.su-mr-19{
+  margin-right: 1.9rem;
+}
+
 .su-mr-2{
   margin-right: 0.2rem;
 }
@@ -2419,6 +2458,10 @@ h6{
   margin-top: 2.9rem;
 }
 
+.su-mt-3{
+  margin-top: 0.3rem;
+}
+
 .su-mt-30{
   margin-top: 3rem;
 }
@@ -2433,6 +2476,10 @@ h6{
 
 .su-mt-34{
   margin-top: 3.4rem;
+}
+
+.su-mt-36{
+  margin-top: 3.6rem;
 }
 
 .su-mt-38{
@@ -2543,9 +2590,19 @@ h6{
   aspect-ratio: 3/2;
 }
 
+.su-size-100{
+  width: 10rem;
+  height: 10rem;
+}
+
 .su-size-13{
   width: 1.3rem;
   height: 1.3rem;
+}
+
+.su-size-14{
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 .su-size-150{
@@ -2645,6 +2702,10 @@ h6{
 
 .su-h-42{
   height: 4.2rem;
+}
+
+.su-h-43{
+  height: 4.3rem;
 }
 
 .su-h-44{
@@ -2842,6 +2903,10 @@ h6{
 
 .su-w-40{
   width: 4rem;
+}
+
+.su-w-41{
+  width: 4.1rem;
 }
 
 .su-w-42{
@@ -3279,6 +3344,10 @@ h6{
 
 .su-gap-20{
   gap: 2rem;
+}
+
+.su-gap-22{
+  gap: 2.2rem;
 }
 
 .su-gap-25{
@@ -3828,6 +3897,10 @@ h6{
   padding: 0.3rem;
 }
 
+.su-p-36{
+  padding: 3.6rem;
+}
+
 .su-p-38{
   padding: 3.8rem;
 }
@@ -3892,6 +3965,11 @@ h6{
 .su-px-50{
   padding-left: 5rem;
   padding-right: 5rem;
+}
+
+.su-px-65{
+  padding-left: 6.5rem;
+  padding-right: 6.5rem;
 }
 
 .su-py-0{
@@ -4243,6 +4321,10 @@ h6{
 
 .su-font-serif{
   font-family: "Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif;
+}
+
+.\!su-text-19{
+  font-size: 1.9rem !important;
 }
 
 .\!su-text-23{

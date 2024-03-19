@@ -1,6 +1,3 @@
-@tailwind components;
-@tailwind utilities;
-
 .su-linklist-mob-width {
   width: calc(100% - 60px);
 }
