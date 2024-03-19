@@ -90,7 +90,7 @@ export default function Base({
   const width =
     displayConfiguration.width === "Wide"
       ? displayConfiguration.width
-      : "narrow";
+      : "content";
 
   // caption & credit
   const captionCredit =
