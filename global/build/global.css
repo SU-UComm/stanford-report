@@ -2152,11 +2152,6 @@ h6{
   margin-right: 0;
 }
 
-.su-mx-50{
-  margin-left: 5rem;
-  margin-right: 5rem;
-}
-
 .su-mx-\[-20px\]{
   margin-left: -20px;
   margin-right: -20px;
@@ -2454,10 +2449,6 @@ h6{
 
 .su-mt-34{
   margin-top: 3.4rem;
-}
-
-.su-mt-36{
-  margin-top: 3.6rem;
 }
 
 .su-mt-38{
@@ -2969,6 +2960,11 @@ h6{
   width: auto;
 }
 
+.su-w-fit{
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .su-w-full{
   width: 100%;
 }
@@ -3420,6 +3416,11 @@ h6{
        column-gap: 1.6rem;
 }
 
+.su-gap-x-18{
+  -moz-column-gap: 1.8rem;
+       column-gap: 1.8rem;
+}
+
 .su-gap-x-20{
   -moz-column-gap: 2rem;
        column-gap: 2rem;
@@ -3853,10 +3854,6 @@ h6{
   padding: 0.3rem;
 }
 
-.su-p-36{
-  padding: 3.6rem;
-}
-
 .su-p-38{
   padding: 3.8rem;
 }
@@ -3921,11 +3918,6 @@ h6{
 .su-px-50{
   padding-left: 5rem;
   padding-right: 5rem;
-}
-
-.su-px-65{
-  padding-left: 6.5rem;
-  padding-right: 6.5rem;
 }
 
 .su-py-0{
