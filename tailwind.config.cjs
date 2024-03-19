@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 const path = require("path");
-const plugin = require("tailwindcss/plugin");
 
 const dir = path.resolve(__dirname, "./global/css/plugins");
 const decanter = require("decanter");
