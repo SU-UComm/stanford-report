@@ -70,6 +70,13 @@
         "responseType": "html",
         "staticFiles": [
           {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "main.css"
+            }
+          },
+          {
             "location": "footer",
             "file": {
               "type": "js",
