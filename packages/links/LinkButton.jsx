@@ -36,7 +36,7 @@ export function LinkButton({
     // eslint-disable-next-line react/jsx-no-target-blank
     <a
       className={cnb(
-        "su-group su-inline-block su-button hocus:su-underline md:su-px-30 md:su-pt-12 md:su-pb-14 su-text-18 md:su-text-20 su-transition-colors",
+        "su-group su-inline-block su-button hocus:su-underline md:su-px-30 md:su-pt-12 md:su-pb-14 su-text-18 md:su-text-20 su-transition-colors dark:hocus:su-ring-1 dark:hocus:su-ring-white",
         className
       )}
       href={externalUrl || internalUrl}
