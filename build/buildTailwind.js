@@ -17,7 +17,7 @@ export async function buildTailwind() {
   await execPromise(`npx tailwind -i ${globalInput} -o ${globalOutput}`);
 
   // now find all main main.css component files
-  const mainCSS = await glob("./components/*/main.css");
+  const mainCSS = await glob("./components/**/dist/*.css");
   // Combine
   let combinedContent = "";
   mainCSS.forEach((file) => {
@@ -27,6 +27,6 @@ export async function buildTailwind() {
   fs.writeFile(componentOutput, combinedContent, function (err) {
     if (err) throw err;
   });
-  await execPromise(`npx tailwind -i ${componentOutput} -o ${componentOutput}`);
+  // await execPromise(`npx tailwind -i ${componentOutput} -o ${componentOutput}`);
   console.log("componentOutput written");
 }
