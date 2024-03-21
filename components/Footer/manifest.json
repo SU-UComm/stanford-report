@@ -38,11 +38,20 @@
             "type": "string"
           }
         },
-        "required": ["dataUrl"]
+        "required": [
+          "dataUrl"
+        ]
       },
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {

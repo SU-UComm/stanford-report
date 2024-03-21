@@ -57,7 +57,10 @@
               "width": {
                 "title": "Width",
                 "description": "The width of the pullquote, this option will only take effect on featured story pages, not basic story pages.",
-                "enum": ["Narrow", "Large"],
+                "enum": [
+                  "Narrow",
+                  "Large"
+                ],
                 "type": "string",
                 "default": "Narrow"
               }
@@ -68,6 +71,13 @@
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {

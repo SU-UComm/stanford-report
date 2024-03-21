@@ -24,7 +24,9 @@
           "displayConfiguration": {
             "title": "Campaign CTA configuration",
             "description": "These options will output to the frontend of the Campaign CTA component",
-            "required": ["image"],
+            "required": [
+              "image"
+            ],
             "properties": {
               "image": {
                 "title": "Background image",
@@ -63,6 +65,13 @@
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {

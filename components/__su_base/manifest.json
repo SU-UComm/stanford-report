@@ -33,6 +33,13 @@
         "responseType": "html",
         "staticFiles": [
           {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
+          {
             "location": "footer",
             "file": {
               "type": "js",

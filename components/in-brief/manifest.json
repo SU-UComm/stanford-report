@@ -42,6 +42,13 @@
             "location": "header",
             "file": {
               "type": "css",
+              "filepath": "global.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
               "filepath": "main.css"
             }
           },

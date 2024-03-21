@@ -45,14 +45,28 @@
             "title": "Image Alignment",
             "type": "string",
             "default": "right",
-            "enum": ["left", "right"]
+            "enum": [
+              "left",
+              "right"
+            ]
           }
         },
-        "required": ["title", "content", "image"]
+        "required": [
+          "title",
+          "content",
+          "image"
+        ]
       },
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {

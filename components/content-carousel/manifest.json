@@ -32,7 +32,9 @@
             "minItems": 1,
             "maxItems": 5,
             "items": {
-              "required": ["content"],
+              "required": [
+                "content"
+              ],
               "type": "object",
               "properties": {
                 "content": {
@@ -48,6 +50,13 @@
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {

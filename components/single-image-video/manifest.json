@@ -36,7 +36,10 @@
           },
           "width": {
             "title": "Width",
-            "enum": ["Wide", "Narrow"],
+            "enum": [
+              "Wide",
+              "Narrow"
+            ],
             "default": "Wide",
             "type": "string"
           },
@@ -61,6 +64,13 @@
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {

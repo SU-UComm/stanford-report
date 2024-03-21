@@ -35,7 +35,9 @@
             "title": "Related story content",
             "description": "Select an asset ID to be featured as a related story.",
             "type": "object",
-            "required": ["story"],
+            "required": [
+              "story"
+            ],
             "properties": {
               "story": {
                 "title": "Related story",
@@ -55,6 +57,13 @@
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {

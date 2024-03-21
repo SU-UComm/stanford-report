@@ -39,7 +39,10 @@
               },
               "type": {
                 "title": "Type",
-                "enum": ["Policy Brief", "Case Study"],
+                "enum": [
+                  "Policy Brief",
+                  "Case Study"
+                ],
                 "default": "Policy Brief",
                 "type": "string"
               },
@@ -70,6 +73,13 @@
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {

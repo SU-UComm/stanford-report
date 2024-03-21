@@ -73,6 +73,7 @@ export async function buildCSS(
   if (tailwindEntryPoints.length > 0) {
     // Define our output file
     const output = path.join(componentPath, "dist", "main.css");
+    const globalOutput = path.join(componentPath, "dist", "global.css");
 
     // Get the content paths for tailwind for this component
     const contentFiles = memoizedGetContentFiles(
@@ -109,5 +110,9 @@ export async function buildCSS(
 
     // Write the file
     fs.writeFileSync(output, scopedContents, "utf-8");
+
+    execPromise(
+      `npx tailwind -i "./global/css/_global.css" -o ${globalOutput}`
+    );
   }
 }

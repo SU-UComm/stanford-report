@@ -58,7 +58,10 @@
               },
               "imagePlacement": {
                 "title": "Image position",
-                "enum": ["Below content", "Above content"],
+                "enum": [
+                  "Below content",
+                  "Above content"
+                ],
                 "type": "string",
                 "default": "Below content"
               }
@@ -69,6 +72,13 @@
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {

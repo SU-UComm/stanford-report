@@ -4,8 +4,9 @@
   "description": "",
   "scripts": {
     "build": "npm-run-all -p build:*",
-    "build:tailwind": "node ./build/tailwindIndex.js",
+    "build:tailwind": "tailwind -i ./global/css/_global.css -o ./global/build/global.css",
     "build:components": "node ./build/index.js",
+    "build:componentcss": "node ./build/tailwindIndex.js",
     "watch": "./load_dotenv.sh && npm-run-all -p watch:*",
     "watch:js": "node ./build/index.js --watch",
     "watch:unit": "jest --watch",

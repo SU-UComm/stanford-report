@@ -29,13 +29,23 @@
             "title": "Variant",
             "type": "string",
             "default": "Basic Story",
-            "enum": ["Basic Story", "Featured Story"]
+            "enum": [
+              "Basic Story",
+              "Featured Story"
+            ]
           }
         }
       },
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {

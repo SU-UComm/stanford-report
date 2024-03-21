@@ -64,7 +64,9 @@
             "title": "Grid Content",
             "description": "The cards to display in the grid area of the component.",
             "type": "object",
-            "required": ["searchQuery"],
+            "required": [
+              "searchQuery"
+            ],
             "properties": {
               "searchQuery": {
                 "type": "string",
@@ -79,6 +81,13 @@
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {
