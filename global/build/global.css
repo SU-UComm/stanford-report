@@ -2058,6 +2058,10 @@ h6{
   order: 3;
 }
 
+.su-order-first{
+  order: -9999;
+}
+
 .su-col-span-1{
   grid-column: span 1 / span 1;
 }
@@ -2463,12 +2467,20 @@ h6{
   margin-top: 5rem;
 }
 
+.su-mt-58{
+  margin-top: 5.8rem;
+}
+
 .su-mt-6{
   margin-top: 0.6rem;
 }
 
 .su-mt-61{
   margin-top: 6.1rem;
+}
+
+.su-mt-72{
+  margin-top: 7.2rem;
 }
 
 .su-mt-8{
@@ -2583,9 +2595,19 @@ h6{
   height: 3.2rem;
 }
 
+.su-size-36{
+  width: 3.6rem;
+  height: 3.6rem;
+}
+
 .su-size-40{
   width: 4rem;
   height: 4rem;
+}
+
+.su-size-50{
+  width: 5rem;
+  height: 5rem;
 }
 
 .su-size-full{
@@ -2603,6 +2625,10 @@ h6{
 
 .su-h-2{
   height: 0.2rem;
+}
+
+.su-h-20{
+  height: 2rem;
 }
 
 .su-h-21{
@@ -2802,6 +2828,10 @@ h6{
   width: 0.2rem;
 }
 
+.su-w-20{
+  width: 2rem;
+}
+
 .su-w-24{
   width: 2.4rem;
 }
@@ -2836,6 +2866,10 @@ h6{
 
 .su-w-44{
   width: 4.4rem;
+}
+
+.su-w-5{
+  width: 0.5rem;
 }
 
 .su-w-5\/6{
@@ -3106,6 +3140,11 @@ h6{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.su-rotate-45{
+  --tw-rotate: 45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .su-rotate-90{
   --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -3113,6 +3152,12 @@ h6{
 
 .su-rotate-\[-90deg\]{
   --tw-rotate: -90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.su-scale-110{
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3258,6 +3303,10 @@ h6{
 
 .su-gap-27{
   gap: 2.7rem;
+}
+
+.su-gap-29{
+  gap: 2.9rem;
 }
 
 .su-gap-3{
@@ -3758,6 +3807,10 @@ h6{
   padding: 1.2rem;
 }
 
+.su-p-14{
+  padding: 1.4rem;
+}
+
 .su-p-20{
   padding: 2rem;
 }
@@ -3768,6 +3821,10 @@ h6{
 
 .su-p-38{
   padding: 3.8rem;
+}
+
+.su-p-48{
+  padding: 4.8rem;
 }
 
 .su-p-7{
@@ -3858,6 +3915,11 @@ h6{
   padding-bottom: 3rem;
 }
 
+.su-py-36{
+  padding-top: 3.6rem;
+  padding-bottom: 3.6rem;
+}
+
 .su-py-38{
   padding-top: 3.8rem;
   padding-bottom: 3.8rem;
@@ -3871,6 +3933,11 @@ h6{
 .su-py-61{
   padding-top: 6.1rem;
   padding-bottom: 6.1rem;
+}
+
+.su-py-72{
+  padding-top: 7.2rem;
+  padding-bottom: 7.2rem;
 }
 
 .su-pb-0{
@@ -3931,6 +3998,10 @@ h6{
 
 .su-pb-32{
   padding-bottom: 3.2rem;
+}
+
+.su-pb-36{
+  padding-bottom: 3.6rem;
 }
 
 .su-pb-60{
@@ -4047,6 +4118,10 @@ h6{
 
 .su-pr-50{
   padding-right: 5rem;
+}
+
+.su-pr-72{
+  padding-right: 7.2rem;
 }
 
 .su-pt-0{
@@ -8157,6 +8232,12 @@ Single image/video component
 :is(.su-dark .dark\:su-text-white){
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+:is(.su-dark .dark\:su-shadow-\[0_3px_6px_0_rgba\(46\2c 45\2c 41\2c 0\.5\)\]){
+  --tw-shadow: 0 3px 6px 0 rgba(46,45,41,0.5);
+  --tw-shadow-colored: 0 3px 6px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 :is(.su-dark .\*\:dark\:su-text-black) > *{
