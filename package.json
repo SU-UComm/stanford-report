@@ -16,7 +16,7 @@
     "test:eslint": "eslint .",
     "test:unit": "jest",
     "test:coverage": "jest --coverage",
-    "tw": "node ./build/buildTailwind.js"
+    "tw": "node ./build/tailwindIndex.js"
   },
   "author": "",
   "license": "ISC",

@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab:wght@300;400;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap");
 
-/* @import "../build/imports.css"; */
-
 /** Source Sans 3, Source Serif 4, Roboto Slab, Roboto Mono (regular only) */
 
 @font-face {
@@ -60,7 +58,7 @@ svg {
  * plugins.
  */
 
-/* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -1330,6 +1328,22 @@ h6{
   }
 }
 
+.su-rs-mt-1{
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px){
+  .su-rs-mt-1{
+    margin-top: 2.6rem;
+  }
+}
+
+@media (min-width: 1500px){
+  .su-rs-mt-1{
+    margin-top: 2.7rem;
+  }
+}
+
 .su-rs-pr-1{
   padding-right: 2rem;
 }
@@ -2048,10 +2062,6 @@ h6{
   margin-bottom: 0.6rem;
 }
 
-.su-mb-8{
-  margin-bottom: 0.8rem;
-}
-
 .su-mb-9{
   margin-bottom: 0.9rem;
 }
@@ -2186,10 +2196,6 @@ h6{
 
 .su-mt-45{
   margin-top: 4.5rem;
-}
-
-.su-mt-48{
-  margin-top: 4.8rem;
 }
 
 .su-mt-50{
@@ -2841,10 +2847,6 @@ h6{
 
 .su-gap-12{
   gap: 1.2rem;
-}
-
-.su-gap-13{
-  gap: 1.3rem;
 }
 
 .su-gap-15{
@@ -7767,6 +7769,17 @@ Single image/video component
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+:is(.su-dark .dark\:hocus\:su-ring-1:hover){
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+:is(.su-dark .dark\:hocus\:su-ring-white:hover){
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
+}
+
 :is(.su-dark .dark\:hocus\:su-bg-dark-mode-red:focus){
   --tw-bg-opacity: 1;
   background-color: rgb(236 9 9 / var(--tw-bg-opacity));
@@ -7780,6 +7793,17 @@ Single image/video component
 :is(.su-dark .dark\:hocus\:su-text-white:focus){
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+:is(.su-dark .dark\:hocus\:su-ring-1:focus){
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+:is(.su-dark .dark\:hocus\:su-ring-white:focus){
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
 }
 
 @media (min-width: 576px){
