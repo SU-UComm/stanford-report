@@ -97,7 +97,7 @@ export default function Header({
           pageControls?.isStory ? "report-header--story" : ""
         } report-header su-pb-[13.9rem] md:su-pb-[16.6rem] lg:su-pb-[18.9rem]`}
       >
-        <div className="su-shadow su-fixed su-top-0 su-left-0 su-w-full su-bg-white dark:su-bg-black-true su-z-50">
+        <div className="su-shadow dark:su-shadow-[0_3px_6px_0_rgba(46,45,41,0.5)] su-fixed su-top-0 su-left-0 su-w-full su-bg-white dark:su-bg-black-true su-z-50">
           <TopBar url={site?.url} logo={site?.logoTopBar} />
 
           <div className="su-w-full su-max-w-[141.2rem] su-px-20 md:su-px-49 su-mx-auto">
