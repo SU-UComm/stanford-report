@@ -8,21 +8,6 @@ export default async function relatedStory(
 ) {
   const adapter = new FetchAdapter();
 
-  window.pageController = {
-    id: 129998,
-    title: "B Stakeholder Demo Basic Story Test",
-    isStory: true,
-    mainTopic: "Campus &amp;amp; Facilities",
-    mainTopicId: "28395",
-    storyLayout: "Basic",
-    search: {
-      endpoint: "https://dxp-us-search.funnelback.squiz.cloud/s/search.html",
-      collection: "sug~sp-stanford-report-search",
-      profile: "stanford-report-push-search",
-      resultPage: "https://sug-web.matrix.squiz.cloud/report/search",
-    },
-  };
-
   if (pageData && search) {
     const fbUrl = `
       ${search.endpoint?.replace(/\.html/g, ".json")}
