@@ -37,7 +37,7 @@ import getCookie from "../../packages/utils/cookieGet";
       }&meta_taxonomyAudienceText=${translatePersonalisationProfile(
         audience
       )}&meta_taxonomyContentTypeText_not=Leadership%20messages+News+Announcements
-      &num_ranks=${MAX_CARDS}&meta_notisTeaser=true&meta_id_not=${
+      &num_ranks=${MAX_CARDS}&meta_notisTeaser=true&sort=date&meta_id_not=${
         props.search.currentPage
       }`;
 
@@ -47,7 +47,7 @@ import getCookie from "../../packages/utils/cookieGet";
       )}?profile=${props.search.profile}&query=%21null&collection=${
         props.search.collection
       }&meta_taxonomyContentTypeText_not=Leadership%20messages+News+Announcements
-      &num_ranks=12&meta_notisTeaser=true&meta_id_not=${
+      &num_ranks=12&meta_notisTeaser=true&sort=date&meta_id_not=${
         props.search.currentPage
       }`;
     }
