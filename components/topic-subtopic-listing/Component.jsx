@@ -72,13 +72,17 @@ export default function TopicSubtopicListing({
   }, [pageNo]);
 
   results.forEach((card) => {
-    cards.push(<Card data={card} cardType="horizontal" cardSize="large" />);
+    if (displayConfiguration.displayStyle === "Press Center") {
+      cards.push(<Card data={card} cardType="narrowhorizontal" />);
+    } else {
+      cards.push(<Card data={card} cardType="horizontal" cardSize="large" />);
+    }
   });
 
   return (
     <Container>
       <HorizontalCardGrid
-        orientation="vertical"
+        orientation="topiclisting"
         items={cards}
         maximumItems={10}
       />
