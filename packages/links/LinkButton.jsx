@@ -5,10 +5,10 @@ import ExternalArrowUnstyled from "../SVG-library/ExternalArrowUnstyled";
 /**
  * Displays a link that looks like a button
  *
- * @param {JSX.element} internalUrl
+ * @param {string} internalUrl
  * Internal link to Matrix asset
  *
- * @param {JSX.element} externalUrl
+ * @param {string} externalUrl
  * Manually entered external link
  *
  * @param {string} buttonText
