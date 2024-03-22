@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { buildTailwind } from "./buildTailwind.js";
+import { cssGenerator } from "./cssGenerator.js";
 
-buildTailwind();
+cssGenerator();
