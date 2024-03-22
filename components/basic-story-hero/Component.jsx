@@ -74,27 +74,30 @@ export default function basicStoryHero(props) {
           />
         </div>
 
-        <div className="su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4">
-          <figure className="basic-story__header-image su-col-span-full su-relative su-z-0">
-            <div className="su-relative su-w-full">
-              <Thumbnail
-                url={media.featureImage.url}
-                alt={media.featureImage.alt}
-                video={media.featureVideo.id}
-                type={mediaType}
-                carousel={media.carousel}
-              />
+        {/* If no media asset(s) are added, do not display this <div> */}
+        {media.featureImage || media.featureVideo || media.carousel ? (
+          <div className="su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4">
+            <figure className="basic-story__header-image su-col-span-full su-relative su-z-0">
+              <div className="su-relative su-w-full">
+                <Thumbnail
+                  url={media.featureImage.url}
+                  alt={media.featureImage.alt}
+                  video={media.featureVideo.id}
+                  type={mediaType}
+                  carousel={media.carousel}
+                />
 
-              <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" />
-            </div>
-            {mediaType !== "carousel" && (media.caption || media.credit) && (
-              <figcaption className="su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white">
-                {media.caption} {media.caption && media.credit && ` | `}
-                {media.credit}
-              </figcaption>
-            )}
-          </figure>
-        </div>
+                <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" />
+              </div>
+              {mediaType !== "carousel" && (media.caption || media.credit) && (
+                <figcaption className="su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white">
+                  {media.caption} {media.caption && media.credit && ` | `}
+                  {media.credit}
+                </figcaption>
+              )}
+            </figure>
+          </div>
+        ) : null}
       </div>
     </Container>
   );
