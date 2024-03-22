@@ -75,7 +75,9 @@ export default function basicStoryHero(props) {
         </div>
 
         {/* If no media asset(s) are added, do not display this <div> */}
-        {media.featureImage || media.featureVideo || media.carousel ? (
+        {media.featureImage.id ||
+        media.featureVideo.id ||
+        media.carousel !== null ? (
           <div className="su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4">
             <figure className="basic-story__header-image su-col-span-full su-relative su-z-0">
               <div className="su-relative su-w-full">
