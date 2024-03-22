@@ -8,6 +8,12 @@
   }
 }
 
+@media screen and (min-width: 992px) {
+  .su-linklist-mob-width {
+    width: 100%;
+  }
+}
+
 .su-link-list-no-stories {
   display: none;
   position: absolute;

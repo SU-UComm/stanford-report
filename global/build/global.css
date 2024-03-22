@@ -1328,6 +1328,22 @@ h6{
   }
 }
 
+.su-rs-mt-1{
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px){
+  .su-rs-mt-1{
+    margin-top: 2.6rem;
+  }
+}
+
+@media (min-width: 1500px){
+  .su-rs-mt-1{
+    margin-top: 2.7rem;
+  }
+}
+
 .su-rs-pr-1{
   padding-right: 2rem;
 }
@@ -1880,10 +1896,6 @@ h6{
   left: 0.3rem;
 }
 
-.su-left-38{
-  left: 3.8rem;
-}
-
 .su-left-8{
   left: 0.8rem;
 }
@@ -1916,6 +1928,10 @@ h6{
   right: 2rem;
 }
 
+.su-right-38{
+  right: 3.8rem;
+}
+
 .su-right-48{
   right: 4.8rem;
 }
@@ -1926,10 +1942,6 @@ h6{
 
 .su-right-70{
   right: 7rem;
-}
-
-.su-right-auto{
-  right: auto;
 }
 
 .su-top-0{
@@ -2406,6 +2418,10 @@ h6{
 
 .su-mr-44{
   margin-right: 4.4rem;
+}
+
+.su-mr-6{
+  margin-right: 0.6rem;
 }
 
 .su-mr-8{
@@ -2957,6 +2973,10 @@ h6{
 
 .su-w-85{
   width: 8.5rem;
+}
+
+.su-w-\[1\.838rem\]{
+  width: 1.838rem;
 }
 
 .su-w-\[10\%\]{
@@ -3941,11 +3961,6 @@ h6{
   padding-right: 0;
 }
 
-.su-px-18{
-  padding-left: 1.8rem;
-  padding-right: 1.8rem;
-}
-
 .su-px-20{
   padding-left: 2rem;
   padding-right: 2rem;
@@ -3954,6 +3969,11 @@ h6{
 .su-px-22{
   padding-left: 2.2rem;
   padding-right: 2.2rem;
+}
+
+.su-px-29{
+  padding-left: 2.9rem;
+  padding-right: 2.9rem;
 }
 
 .su-px-30{
@@ -8357,6 +8377,12 @@ Single image/video component
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+:is(.su-dark .dark\:su-shadow-\[0_3px_6px_0_rgba\(46\2c 45\2c 41\2c 0\.5\)\]){
+  --tw-shadow: 0 3px 6px 0 rgba(46,45,41,0.5);
+  --tw-shadow-colored: 0 3px 6px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 :is(.su-dark .\*\:dark\:su-text-black) > *{
   --tw-text-opacity: 1;
   color: rgb(46 45 41 / var(--tw-text-opacity));
@@ -8681,16 +8707,8 @@ Single image/video component
     left: 2.7rem;
   }
 
-  .md\:su-left-38{
-    left: 3.8rem;
-  }
-
   .md\:su-right-48{
     right: 4.8rem;
-  }
-
-  .md\:su-right-auto{
-    right: auto;
   }
 
   .md\:su-top-72{
@@ -9423,6 +9441,10 @@ Single image/video component
 
   .md\:su-pt-45{
     padding-top: 4.5rem;
+  }
+
+  .md\:su-pt-\[159px\]{
+    padding-top: 159px;
   }
 
   .md\:su-pt-\[167px\]{

@@ -26,6 +26,10 @@
   }
 }
 
+.report-header .tt-menu {
+  background-color: white;
+}
+
 .su-dark .report-header .tt-menu {
   background-color: #000;
 }
@@ -176,7 +180,7 @@
 }
 
 .report-header__pref-toggle {
-  @apply su-size-full su-bg-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent dark:hover:su-text-white aria-pressed:dark:su-text-white hover:su-bg-transparent dark:su-bg-black-true after:su-transition-none su-transition before:su-transition dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-py-26 su-px-18 su-text-center;
+  @apply su-py-26 su-px-29 su-size-full su-bg-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent dark:hover:su-text-white aria-pressed:dark:su-text-white hover:su-bg-transparent dark:su-bg-black-true after:su-transition-none su-transition before:su-transition dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-text-center;
   border-radius: 9px;
   background-clip: padding-box;
   border: 2px solid transparent;

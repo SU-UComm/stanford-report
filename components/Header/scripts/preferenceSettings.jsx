@@ -11,6 +11,8 @@ export default function _preferencesSettings() {
   const PREFERENCES_RESET_TOGGLE = '[id="preference-reset"]';
   const PREFERENCES_STUDENT_TOGGLE = '[id="preference-student"]';
   const PREFERENCES_FACULTY_TOGGLE = '[id="preference-faculty"]';
+  const PREFERENCES_DARKMODE_ACTIVE = `[data-role="su-darkmode-icon-active"]`;
+  const PREFERENCES_DARKMODE_NONACTIVE = `[data-role="su-darkmode-icon-nonactive"]`;
 
   /**
    * How many days dismissal will be stored in cookie.
@@ -23,6 +25,12 @@ export default function _preferencesSettings() {
   const preferenceReset = document.querySelector(PREFERENCES_RESET_TOGGLE);
   const preferenceStudent = document.querySelector(PREFERENCES_STUDENT_TOGGLE);
   const preferenceFaculty = document.querySelector(PREFERENCES_FACULTY_TOGGLE);
+  const darkmodeActiveIcon = document.querySelector(
+    PREFERENCES_DARKMODE_ACTIVE
+  );
+  const darkmodeNonActiveIcon = document.querySelector(
+    PREFERENCES_DARKMODE_NONACTIVE
+  );
 
   const htmlTag = document.querySelector("html");
   if (lightToggle && darkToggle) {
@@ -30,13 +38,17 @@ export default function _preferencesSettings() {
     const theme = getCookie("preferences_theme");
     if (
       theme === "dark" ||
-      (theme === "" &&
+      (["", null, undefined, false].includes(theme) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       htmlTag.classList.add("su-dark");
+      darkmodeActiveIcon.classList.remove("su-hidden");
+      darkmodeNonActiveIcon.classList.add("su-hidden");
       darkToggle.checked = true;
       lightToggle.checked = false;
     } else {
+      darkmodeActiveIcon.classList.add("su-hidden");
+      darkmodeNonActiveIcon.classList.remove("su-hidden");
       htmlTag.classList.add("su-light");
     }
 
@@ -56,6 +68,8 @@ export default function _preferencesSettings() {
     lightToggle.addEventListener("click", () => {
       htmlTag.classList.remove("su-dark");
       htmlTag.classList.add("su-light");
+      darkmodeActiveIcon.classList.add("su-hidden");
+      darkmodeNonActiveIcon.classList.remove("su-hidden");
 
       setCookie(
         "preferences_theme",
@@ -68,6 +82,8 @@ export default function _preferencesSettings() {
     darkToggle.addEventListener("click", () => {
       htmlTag.classList.remove("su-light");
       htmlTag.classList.add("su-dark");
+      darkmodeActiveIcon.classList.remove("su-hidden");
+      darkmodeNonActiveIcon.classList.add("su-hidden");
 
       setCookie(
         "preferences_theme",
