@@ -1,13 +1,11 @@
 import React from "react";
-
-// import specific templates for the component
 import { Container } from "../../packages/grids/Container";
-import { LinkedHeading } from "../../packages/headings/Heading";
+import CtaCard from "../../packages/card/CtaCard";
 
-export default function CtaCardsBlock({ title }) {
+export default function CtaCardsBlock({ title, eyebrow, description }) {
   return (
     <Container>
-      <LinkedHeading title={title} />
+      <CtaCard title={title} eyebrow={eyebrow} description={description} />
     </Container>
   );
 }

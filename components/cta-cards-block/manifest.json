@@ -2,15 +2,15 @@
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "cta-cards-block",
   "version": "0.0.1",
-  "namespace": "cta-cards-block",
-  "description": "Stanford university Base component.",
-  "displayName": "Base component",
+  "namespace": "stanford-components",
+  "description": "Add up to 3 CTA cards in this block.",
+  "displayName": "CTA cards block",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "view-column",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "red"
     }
   },
   "functions": [
@@ -19,15 +19,59 @@
       "entry": "./dist/server.cjs",
       "input": {
         "type": "object",
+        "required": [],
         "properties": {
-          "title": {
-            "title": "Heading",
-            "description": "The heading text",
-            "type": "string",
-            "default": "Lorem ipsum dolor"
+          "cards": {
+            "title": "CTA cards",
+            "description": "Enter the details for each card. You can add up to 3 cards in this block.",
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "properties": {
+                "eyebrow": {
+                  "type": "string",
+                  "title": "Eyebrow",
+                  "description": "This is the superheading above the title."
+                },
+                "title": {
+                  "type": "string",
+                  "title": "Title"
+                },
+                "content": {
+                  "title": "Description",
+                  "description": "This is the body text that appears below the title.",
+                  "type": "FormattedText"
+                },
+                "linkDetails": {
+                  "title": "Link details",
+                  "required": [],
+                  "description": "Enter the details for the optional link.",
+                  "properties": {
+                    "internalUrl": {
+                      "title": "Internal link (Matrix asset link)",
+                      "type": "string",
+                      "description": "Select a page/asset to link to. If this field is filled out, it will be used instead of the external link field below.",
+                      "format": "matrix-asset-uri"
+                    },
+                    "externalUrl": {
+                      "title": "External (manual) link",
+                      "type": "string",
+                      "description": "Enter the full URL, including https://. A diagonal arrow icon will be automatically added after the button text if the URL does not contain news.stanford.edu."
+                    },
+                    "isNewWindow": {
+                      "title": "Open link in a new window",
+                      "type": "boolean",
+                      "default": false
+                    }
+                  }
+                }
+              },
+              "required": []
+            }
           }
-        },
-        "required": []
+        }
       },
       "output": {
         "responseType": "html",
@@ -52,6 +96,12 @@
   ],
   "staticFiles": {
     "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/28192": {
+      "type": "file",
+      "path": "mocked-uris/28192.json"
+    }
   },
   "previews": {
     "default": {

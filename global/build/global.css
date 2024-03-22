@@ -1691,6 +1691,23 @@ h6{
   }
 }
 
+.su-type-5{
+  font-size: 2.01em;
+  letter-spacing: -0.018em;
+}
+
+@media (min-width: 768px){
+  .su-type-5{
+    font-size: 2.49em;
+  }
+}
+
+@media (min-width: 992px){
+  .su-type-5{
+    font-size: 3.05em;
+  }
+}
+
 .su-type-4{
   font-size: 1.75em;
   letter-spacing: -0.016em;
@@ -2329,6 +2346,10 @@ h6{
 
 .su-ml-4{
   margin-left: 0.4rem;
+}
+
+.su-ml-8{
+  margin-left: 0.8rem;
 }
 
 .su-ml-\[-\.5rem\]{
@@ -3306,6 +3327,14 @@ h6{
   gap: 2rem;
 }
 
+.su-gap-25{
+  gap: 2.5rem;
+}
+
+.su-gap-26{
+  gap: 2.6rem;
+}
+
 .su-gap-27{
   gap: 2.7rem;
 }
@@ -3332,6 +3361,10 @@ h6{
 
 .su-gap-38{
   gap: 3.8rem;
+}
+
+.su-gap-40{
+  gap: 4rem;
 }
 
 .su-gap-42{
@@ -3438,6 +3471,11 @@ h6{
        column-gap: 3.1em;
 }
 
+.su-gap-x-40{
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+}
+
 .su-gap-x-\[0\.691rem\]{
   -moz-column-gap: 0.691rem;
        column-gap: 0.691rem;
@@ -3451,12 +3489,20 @@ h6{
   row-gap: 1.1rem;
 }
 
+.su-gap-y-12{
+  row-gap: 1.2rem;
+}
+
 .su-gap-y-45{
   row-gap: 4.5rem;
 }
 
 .su-gap-y-6{
   row-gap: 0.6rem;
+}
+
+.su-gap-y-70{
+  row-gap: 7rem;
 }
 
 .su-gap-y-8{
@@ -3618,6 +3664,10 @@ h6{
 .su-border-b-black-70{
   --tw-border-opacity: 1;
   border-bottom-color: rgb(109 108 105 / var(--tw-border-opacity));
+}
+
+.su-border-b-transparent{
+  border-bottom-color: transparent;
 }
 
 .su-border-r-black-30{
@@ -4188,6 +4238,10 @@ h6{
 
 .su-pt-38{
   padding-top: 3.8rem;
+}
+
+.su-pt-45{
+  padding-top: 4.5rem;
 }
 
 .su-pt-49{
