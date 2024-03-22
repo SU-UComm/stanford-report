@@ -218,11 +218,7 @@ export function Carousel({
             className="component-slider-btn component-slider-next"
             type="button"
             onClick={() => {
-              if (swiperRef.current?.isEnd === true) {
-                swiperRef.current?.slideToLoop(0);
-              } else {
-                swiperRef.current?.slideNext();
-              }
+              swiperRef.current?.slideNext();
             }}
           >
             <span className="sr-only">Next</span>
