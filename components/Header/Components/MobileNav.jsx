@@ -18,7 +18,7 @@ function MajorLinks({ items }) {
           return (
             <li className="su-mb-0 su-w-full" key={item.asset_assetid}>
               <a
-                className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-20 md:su-text-26 su-leading-[3.1rem] focus:su-text-digital-red hover:su-text-digital-red su-font-bold su-no-underline su-transition"
+                className="su-text-black hocus:su-underline dark:su-text-white dark:hover:su-text-dark-mode-red su-text-20 md:su-text-26 su-leading-[3.1rem] focus:su-text-digital-red hover:su-text-digital-red su-font-bold su-no-underline su-transition"
                 href={item.asset_url}
               >
                 {title}
@@ -49,7 +49,7 @@ function MinorLinks({ items }) {
               key={item.asset_assetid}
             >
               <a
-                className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-16 md:su-text-18 focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
+                className="su-text-black hocus:su-underline dark:su-text-white dark:hover:su-text-dark-mode-red su-text-16 md:su-text-18 focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
                 href={item.asset_url}
               >
                 {title}
@@ -80,7 +80,7 @@ function ContactLinks({ items }) {
               key={item.asset_assetid}
             >
               <a
-                className="su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-14 focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
+                className="su-text-black hocus:su-underline dark:su-text-white dark:hover:su-text-dark-mode-red su-text-14 focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
                 href={item.asset_url}
               >
                 {title}
@@ -112,7 +112,7 @@ function ExternalLinks({ items }) {
             >
               <a
                 target="_blank"
-                className="su-flex su-items-center su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-14 focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
+                className="su-flex hocus:su-underline su-items-center su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-14 focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
                 href={item.asset_attribute_redirect_url}
                 rel="noreferrer"
               >
@@ -172,7 +172,7 @@ export default function MobileNav({ navigation, search, audience }) {
     >
       <span tabIndex="0" data-tp-to="close" />
       <div className="report-header__overlay su-bg-black su-opacity-25 su-size-full" />
-      <div className="report-header__primary-nav su-bg-white dark:su-bg-black-true dark:su-text-white su-h-screen su-absolute su-top-0 su-left-0 su-w-full md:su-w-[390px] su-flex su-flex-wrap su-overflow-y-auto su-pb-32 md:su-pb-[64px] su-pt-[115px] md:su-pt-[167px] su-px-38">
+      <div className="report-header__primary-nav su-bg-white dark:su-bg-black-true dark:su-text-white su-h-screen su-absolute su-top-0 su-left-0 su-w-full md:su-w-[390px] su-flex su-flex-wrap su-overflow-y-auto su-pb-32 md:su-pb-[64px] su-pt-[115px] md:su-pt-[159px] md:su-pt-[167px] su-px-38">
         <form
           action={resultPage}
           method="get"
@@ -239,14 +239,14 @@ export default function MobileNav({ navigation, search, audience }) {
 
         <hr
           aria-hidden="true"
-          className="su-block su-order-2 su-my-15 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2 md:su-h-3"
+          className="su-block su-order-2 su-my-15 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
         />
 
         <ContactLinks items={contacts} />
 
         <hr
           aria-hidden="true"
-          className="su-block su-order-2 su-my-15 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2 md:su-h-3"
+          className="su-block su-order-2 su-my-15 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
         />
 
         <ExternalLinks items={externalData} audience={audience} />
