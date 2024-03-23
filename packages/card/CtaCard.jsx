@@ -34,49 +34,57 @@ export default function CtaCard({
       {eyebrow && (
         <span
           aria-hidden
-          className="su-type-1 su-text-black-60 su-font-semibold"
+          className="su-type-1 su-text-black-60 su-font-semibold su-rs-mb-1"
         >
           {eyebrow}
         </span>
       )}
-      <h2 className="su-type-5 lg:su-type-4 su-mb-0 su-font-sans su-rs-mt-1 su-leading-tight">
-        <a
-          href={internalUrl || externalUrl}
-          target={isNewWindow ? "_blank" : ""}
-          rel="noreferrer"
-          className="group-hocus-within:su-underline su-stretched-link"
-        >
-          <span className="su-sr-only">
-            {`${eyebrow ? `${eyebrow}: ` : ""}`}
-          </span>
-          {title}
-        </a>
+      <h2 className="su-type-5 md:su-type-4 2xl:su-type-3 su-mb-0 su-font-sans">
+        {internalUrl || externalUrl ? (
+          // eslint-disable-next-line react/jsx-no-target-blank
+          <a
+            href={internalUrl || externalUrl}
+            target={isNewWindow ? "_blank" : undefined}
+            rel={isRealExternalLink ? "noopener nofollow" : undefined}
+            className="group-hocus-within:su-underline su-stretched-link"
+          >
+            {eyebrow && <span className="su-sr-only">{`${eyebrow}:`}</span>}
+            {title}
+          </a>
+        ) : (
+          <>
+            {eyebrow && <span className="su-sr-only">{`${eyebrow}:`}</span>}
+            {title}
+          </>
+        )}
       </h2>
-      <div className="su-grow">
-        {description && (
+      {description && (
+        <div className="su-grow">
           <XssSafeContent
             data-test="cta-card-content"
             className="su-type-1 su-rs-mt-4 *:su-leading-snug"
             content={description}
           />
-        )}
-      </div>
-      <div className="su-flex group-hocus-within:su-translate-x-03em su-transition-transform su-items-center su-justify-center su-size-50 md:su-size-70 su-mt-auto su-rounded-full su-bg-gradient-to-r su-from-digital-red-light su-to-cardinal-red-dark su-ml-auto">
-        {isRealExternalLink ? (
-          <ExternalArrowUnstyled
-            aria-hidden
-            strokeWidth={3}
-            className="su-inline-block su-w-20 md:su-w-30 su-text-white *:su-stroke-3"
-          />
-        ) : (
-          <ChevronRight
-            aria-hidden
-            width={undefined}
-            height={undefined}
-            className="su-fill-transparent su-stroke-current su-inline-block su-w-22 md:su-w-36 su-text-white *:su-stroke-3"
-          />
-        )}
-      </div>
+        </div>
+      )}
+      {(internalUrl || externalUrl) && (
+        <div className="su-flex group-hocus-within:su-translate-x-03em su-transition-transform su-items-center su-justify-center su-size-50 md:su-size-70 su-mt-auto su-rounded-full su-bg-gradient-to-r su-from-digital-red-light su-to-cardinal-red-dark su-ml-auto">
+          {isRealExternalLink ? (
+            <ExternalArrowUnstyled
+              title="link is external"
+              strokeWidth={3}
+              className="su-inline-block su-w-20 md:su-w-30 su-text-white *:su-stroke-3"
+            />
+          ) : (
+            <ChevronRight
+              aria-hidden
+              width={undefined}
+              height={undefined}
+              className="su-fill-transparent su-stroke-current su-inline-block su-w-22 md:su-w-36 su-text-white *:su-stroke-3"
+            />
+          )}
+        </div>
+      )}
     </article>
   );
 }

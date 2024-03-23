@@ -1442,6 +1442,25 @@ h6{
   }
 }
 
+.su-rs-px-4{
+  padding-left: 3.4rem;
+  padding-right: 3.4rem;
+}
+
+@media (min-width: 768px){
+  .su-rs-px-4{
+    padding-left: 5.8rem;
+    padding-right: 5.8rem;
+  }
+}
+
+@media (min-width: 1500px){
+  .su-rs-px-4{
+    padding-left: 6.1rem;
+    padding-right: 6.1rem;
+  }
+}
+
 .su-rs-mt-5{
   margin-top: 3.8rem;
 }
@@ -1455,6 +1474,22 @@ h6{
 @media (min-width: 1500px){
   .su-rs-mt-5{
     margin-top: 7.6rem;
+  }
+}
+
+.su-rs-pt-5{
+  padding-top: 3.8rem;
+}
+
+@media (min-width: 768px){
+  .su-rs-pt-5{
+    padding-top: 7.2rem;
+  }
+}
+
+@media (min-width: 1500px){
+  .su-rs-pt-5{
+    padding-top: 7.6rem;
   }
 }
 
@@ -1595,6 +1630,25 @@ h6{
   }
 }
 
+.su-rs-py-7{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px){
+  .su-rs-py-7{
+    padding-top: 10.8rem;
+    padding-bottom: 10.8rem;
+  }
+}
+
+@media (min-width: 1500px){
+  .su-rs-py-7{
+    padding-top: 11.4rem;
+    padding-bottom: 11.4rem;
+  }
+}
+
 .su-rs-pt-8{
   padding-top: 6rem;
 }
@@ -1725,6 +1779,23 @@ h6{
   }
 }
 
+.su-type-3{
+  font-size: 1.52em;
+  letter-spacing: -0.014em;
+}
+
+@media (min-width: 768px){
+  .su-type-3{
+    font-size: 1.73em;
+  }
+}
+
+@media (min-width: 992px){
+  .su-type-3{
+    font-size: 1.95em;
+  }
+}
+
 .su-type-1{
   font-size: 1.15em;
   letter-spacing: -0.010em;
@@ -1838,6 +1909,18 @@ h6{
  * This injects Tailwind's utility classes and any utility classes registered
  * by plugins.
  */
+
+.su-sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 
 .su-pointer-events-none{
   pointer-events: none;
@@ -2165,11 +2248,6 @@ h6{
   margin-right: 0;
 }
 
-.su-mx-50{
-  margin-left: 5rem;
-  margin-right: 5rem;
-}
-
 .su-mx-\[-20px\]{
   margin-left: -20px;
   margin-right: -20px;
@@ -2473,10 +2551,6 @@ h6{
   margin-top: 3.4rem;
 }
 
-.su-mt-36{
-  margin-top: 3.6rem;
-}
-
 .su-mt-38{
   margin-top: 3.8rem;
 }
@@ -2638,6 +2712,11 @@ h6{
 .su-size-50{
   width: 5rem;
   height: 5rem;
+}
+
+.su-size-70{
+  width: 7rem;
+  height: 7rem;
 }
 
 .su-size-full{
@@ -2862,6 +2941,10 @@ h6{
   width: 2rem;
 }
 
+.su-w-22{
+  width: 2.2rem;
+}
+
 .su-w-24{
   width: 2.4rem;
 }
@@ -2878,8 +2961,16 @@ h6{
   width: 75%;
 }
 
+.su-w-30{
+  width: 3rem;
+}
+
 .su-w-32{
   width: 3.2rem;
+}
+
+.su-w-36{
+  width: 3.6rem;
 }
 
 .su-w-4{
@@ -3035,6 +3126,10 @@ h6{
   max-width: 16rem;
 }
 
+.su-max-w-900{
+  max-width: 90rem;
+}
+
 .su-max-w-\[1026px\]{
   max-width: 1026px;
 }
@@ -3142,6 +3237,11 @@ h6{
 
 .su-translate-x-01em{
   --tw-translate-x: 0.1em;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.su-translate-x-03em{
+  --tw-translate-x: 0.3em;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3791,6 +3891,10 @@ h6{
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.su-to-cardinal-red-dark{
+  --tw-gradient-to: #820000 var(--tw-gradient-to-position);
+}
+
 .su-to-digital-red{
   --tw-gradient-to: #B1040E var(--tw-gradient-to-position);
 }
@@ -3888,10 +3992,6 @@ h6{
   padding: 0.3rem;
 }
 
-.su-p-36{
-  padding: 3.6rem;
-}
-
 .su-p-38{
   padding: 3.8rem;
 }
@@ -3956,11 +4056,6 @@ h6{
 .su-px-50{
   padding-left: 5rem;
   padding-right: 5rem;
-}
-
-.su-px-65{
-  padding-left: 6.5rem;
-  padding-right: 6.5rem;
 }
 
 .su-py-0{
@@ -4804,6 +4899,12 @@ h6{
 
 .su-transition-colors{
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+.su-transition-shadow{
+  transition-property: box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 250ms;
 }
@@ -7198,6 +7299,23 @@ Single image/video component
     }
   }
 
+  .md\:su-type-4{
+    font-size: 1.75em;
+    letter-spacing: -0.016em;
+  }
+
+  @media (min-width: 768px){
+    .md\:su-type-4{
+      font-size: 2.07em;
+    }
+  }
+
+  @media (min-width: 992px){
+    .md\:su-type-4{
+      font-size: 2.44em;
+    }
+  }
+
   .md\:su-basefont-23{
     font-size: 1.8rem;
   }
@@ -7250,6 +7368,25 @@ Single image/video component
   @media (min-width: 1500px){
     .xl\:su-rs-mb-9{
       margin-bottom: 17.1rem;
+    }
+  }
+}
+
+@media (min-width: 1500px){
+  .\32xl\:su-type-3{
+    font-size: 1.52em;
+    letter-spacing: -0.014em;
+  }
+
+  @media (min-width: 768px){
+    .\32xl\:su-type-3{
+      font-size: 1.73em;
+    }
+  }
+
+  @media (min-width: 992px){
+    .\32xl\:su-type-3{
+      font-size: 1.95em;
     }
   }
 }
@@ -7884,6 +8021,12 @@ Single image/video component
   margin-bottom: 0;
 }
 
+.focus-within\:su-shadow-md:focus-within{
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .hover\:su-border-black-40:hover{
   --tw-border-opacity: 1;
   border-color: rgb(171 171 169 / var(--tw-border-opacity));
@@ -7915,6 +8058,12 @@ Single image/video component
 
 .hover\:su-underline:hover{
   text-decoration-line: underline;
+}
+
+.hover\:su-shadow-md:hover{
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .focus\:su-border-digital-blue:focus{
@@ -8156,6 +8305,24 @@ Single image/video component
 }
 
 .su-group:hover .group-hocus\:su-underline{
+  text-decoration-line: underline;
+}
+
+.su-group:focus-within .group-hocus-within\:su-translate-x-03em{
+  --tw-translate-x: 0.3em;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.su-group:focus-within .group-hocus-within\:su-underline{
+  text-decoration-line: underline;
+}
+
+.su-group:hover .group-hocus-within\:su-translate-x-03em{
+  --tw-translate-x: 0.3em;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.su-group:hover .group-hocus-within\:su-underline{
   text-decoration-line: underline;
 }
 
@@ -8867,6 +9034,11 @@ Single image/video component
     height: 5rem;
   }
 
+  .md\:su-size-70{
+    width: 7rem;
+    height: 7rem;
+  }
+
   .md\:su-h-3{
     height: 0.3rem;
   }
@@ -8913,6 +9085,14 @@ Single image/video component
 
   .md\:su-w-3{
     width: 0.3rem;
+  }
+
+  .md\:su-w-30{
+    width: 3rem;
+  }
+
+  .md\:su-w-36{
+    width: 3.6rem;
   }
 
   .md\:su-w-4\/5{
@@ -10803,6 +10983,12 @@ Single image/video component
 
   .xl\:su-text-\[6\.4rem\]{
     font-size: 6.4rem;
+  }
+}
+
+@media (min-width: 1500px){
+  .\32xl\:su-flex-row{
+    flex-direction: row;
   }
 }
 
