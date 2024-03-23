@@ -1,8 +1,11 @@
 import React from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
+import ChevronRight from "../SVG-library/ChevronRight";
+import ExternalArrowUnstyled from "../SVG-library/ExternalArrowUnstyled";
 
 /**
  * The CTA Card component
+ * This card is used in the CTA Cards Block component
  *
  * @param {string} title The title of the card
  * @param {string} eyebrow Superheading above the title
@@ -21,29 +24,56 @@ export default function CtaCard({
   externalUrl,
   isNewWindow,
 }) {
+  // Check extenalUrl field to see if it is actually external
+  // Do not use external arrow and rel attributes if link has news.stanford.edu
+  const isRealExternalLink =
+    !!externalUrl && !externalUrl?.includes("news.stanford.edu");
+
   return (
-    <article className="su-relative su-w-full su-bg-white su-rounded-[8px] su-rs-pt-5 su-rs-px-4 su-rs-pb-4">
+    <article className="su-group su-flex su-flex-col su-break-words hover:su-shadow-md focus-within:su-shadow-md su-relative su-w-full su-bg-white su-rounded-[8px] su-rs-pt-5 su-rs-px-4 su-rs-pb-4 su-max-w-900 su-mx-auto su-transition-shadow">
       {eyebrow && (
-        <span className="su-type-1 su-text-black-60 su-font-semibold">
+        <span
+          aria-hidden
+          className="su-type-1 su-text-black-60 su-font-semibold"
+        >
           {eyebrow}
         </span>
       )}
-      <h2 className="su-type-5 lg:su-type-4 su-font-sans su-rs-mt-1 su-leading-tight">
+      <h2 className="su-type-5 lg:su-type-4 su-mb-0 su-font-sans su-rs-mt-1 su-leading-tight">
         <a
           href={internalUrl || externalUrl}
           target={isNewWindow ? "_blank" : ""}
           rel="noreferrer"
-          className="su-stretched-link"
+          className="group-hocus-within:su-underline su-stretched-link"
         >
+          <span className="su-sr-only">
+            {`${eyebrow ? `${eyebrow}: ` : ""}`}
+          </span>
           {title}
         </a>
       </h2>
-      <div>
+      <div className="su-grow">
         {description && (
           <XssSafeContent
             data-test="cta-card-content"
-            className="su-type-1 su-grow su-rs-mt-4 *:su-leading-snug"
+            className="su-type-1 su-rs-mt-4 *:su-leading-snug"
             content={description}
+          />
+        )}
+      </div>
+      <div className="su-flex group-hocus-within:su-translate-x-03em su-transition-transform su-items-center su-justify-center su-size-50 md:su-size-70 su-mt-auto su-rounded-full su-bg-gradient-to-r su-from-digital-red-light su-to-cardinal-red-dark su-ml-auto">
+        {isRealExternalLink ? (
+          <ExternalArrowUnstyled
+            aria-hidden
+            strokeWidth={3}
+            className="su-inline-block su-w-20 md:su-w-30 su-text-white *:su-stroke-3"
+          />
+        ) : (
+          <ChevronRight
+            aria-hidden
+            width={undefined}
+            height={undefined}
+            className="su-fill-transparent su-stroke-current su-inline-block su-w-22 md:su-w-36 su-text-white *:su-stroke-3"
           />
         )}
       </div>

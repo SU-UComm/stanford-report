@@ -4,7 +4,7 @@ import CtaCard from "../../packages/card/CtaCard";
 export default function CtaCardsBlock({ cardsArray }) {
   return (
     <div className="su-relative su-cc su-bg-fog-light su-rs-py-7">
-      <div className="su-relative su-flex su-grid-gap su-flex-col xl:su-flex-row">
+      <div className="su-relative su-flex su-grid-gap su-flex-col 2xl:su-flex-row">
         {cardsArray.map((card) => {
           const { eyebrow, title, description, linkDetails, internalLinkUrl } =
             card;
