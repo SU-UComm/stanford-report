@@ -3,10 +3,10 @@ import CtaCard from "../../packages/card/CtaCard";
 
 export default function CtaCardsBlock({ cardsArray }) {
   return (
-    <div className="su-relative su-cc su-bg-fog-light">
+    <div className="su-relative su-cc su-bg-fog-light su-rs-py-7">
       <div className="su-relative su-flex su-grid-gap su-flex-col xl:su-flex-row">
         {cardsArray.map((card) => {
-          const { eyebrow, title, description, linksDetail, internalLinkUrl } =
+          const { eyebrow, title, description, linkDetails, internalLinkUrl } =
             card;
           return (
             <CtaCard
@@ -15,8 +15,8 @@ export default function CtaCardsBlock({ cardsArray }) {
               description={description}
               eyebrow={eyebrow}
               internalUrl={internalLinkUrl}
-              externalUrl={linksDetail?.externalUrl}
-              isNewWindow={linksDetail?.isNewWindow}
+              externalUrl={linkDetails?.externalUrl}
+              isNewWindow={linkDetails?.isNewWindow}
             />
           );
         })}

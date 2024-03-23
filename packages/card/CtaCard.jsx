@@ -4,9 +4,9 @@ import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 /**
  * The CTA Card component
  *
- * @param {string} Title The title of the card
- * @param {string} Eyebrow Superheading above the title
- * @param {string} Description Body text of the card
+ * @param {string} title The title of the card
+ * @param {string} eyebrow Superheading above the title
+ * @param {string} description Body text of the card
  * @param {string} internalUrl Internal link to Matrix asset
  * @param {string} externalUrl Manually entered external link
  * @param {boolean} isNewWindow Whether the link should open in a new window

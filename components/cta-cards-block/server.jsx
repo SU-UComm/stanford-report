@@ -8,10 +8,10 @@ export default async (args, info) => {
 
   const cardsArray = await Promise.all(
     cards.map(async (card) => {
-      const { eyebrow, title, description, linksDetail } = card;
+      const { eyebrow, title, description, linkDetails } = card;
       let linkUrl = null;
-      if (linksDetail?.internalUrl) {
-        linkUrl = await basicAssetUri(ctx, linksDetail.internalUrl);
+      if (linkDetails?.internalUrl) {
+        linkUrl = await basicAssetUri(ctx, linkDetails.internalUrl);
       }
       const internalLinkUrl = linkUrl?.url;
 
@@ -19,7 +19,7 @@ export default async (args, info) => {
         eyebrow,
         title,
         description,
-        linksDetail,
+        linkDetails,
         internalLinkUrl,
       };
     })
