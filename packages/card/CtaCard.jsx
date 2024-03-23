@@ -25,6 +25,7 @@ export default function CtaCard({
   externalUrl,
   isNewWindow,
 }) {
+  const hasLink = !!internalUrl || !!externalUrl;
   // Check extenalUrl field to see if it is actually external
   // Do not use external arrow and rel attributes if link has news.stanford.edu
   const isRealExternalLink =
@@ -33,10 +34,11 @@ export default function CtaCard({
   return (
     <article
       className={cnb(
-        "su-group su-relative su-w-full su-flex su-flex-col su-break-words su-bg-white su-rounded-[8px] su-rs-pt-5 su-rs-px-4 su-rs-pb-4 su-max-w-900 su-mx-auto su-transition-shadow",
+        "su-group su-relative su-w-full su-flex su-flex-col su-break-words su-bg-white su-rounded-[8px] su-rs-pt-5 su-rs-px-4 su-max-w-900 su-mx-auto su-transition-shadow",
         internalUrl || externalUrl
           ? "hover:su-shadow-md focus-within:su-shadow-md"
-          : ""
+          : "",
+        hasLink ? "su-rs-pb-4" : "su-rs-pb-5"
       )}
     >
       {eyebrow && (
@@ -48,7 +50,7 @@ export default function CtaCard({
         </span>
       )}
       <h2 className="su-type-5 md:su-type-4 2xl:su-type-3 su-mb-0 su-font-sans su-text-black">
-        {internalUrl || externalUrl ? (
+        {hasLink ? (
           // eslint-disable-next-line react/jsx-no-target-blank
           <a
             href={internalUrl || externalUrl}
@@ -75,22 +77,24 @@ export default function CtaCard({
           />
         </div>
       )}
-      {(internalUrl || externalUrl) && (
-        <div className="su-flex su-rs-mt-1 group-hocus-within:su-translate-x-03em su-transition-transform su-items-center su-justify-center su-size-50 md:su-size-70 su-rounded-full su-bg-gradient-to-r su-from-digital-red-light su-to-cardinal-red-dark su-ml-auto">
-          {isRealExternalLink ? (
-            <ExternalArrowUnstyled
-              title="link is external"
-              strokeWidth={3}
-              className="su-inline-block su-w-20 md:su-w-30 su-text-white *:su-stroke-3"
-            />
-          ) : (
-            <ChevronRight
-              aria-hidden
-              width={undefined}
-              height={undefined}
-              className="su-fill-transparent su-stroke-current su-inline-block su-w-22 md:su-w-36 su-text-white *:su-stroke-3"
-            />
-          )}
+      {hasLink && (
+        <div className="su-mt-auto">
+          <div className="su-flex su-rs-mt-1 group-hocus-within:su-translate-x-03em su-transition-transform su-items-center su-justify-center su-size-50 md:su-size-70 su-rounded-full su-bg-gradient-to-r su-from-digital-red-light su-to-cardinal-red-dark su-ml-auto">
+            {isRealExternalLink ? (
+              <ExternalArrowUnstyled
+                title="link is external"
+                strokeWidth={3}
+                className="su-inline-block su-w-20 md:su-w-30 su-text-white *:su-stroke-3"
+              />
+            ) : (
+              <ChevronRight
+                aria-hidden
+                width={undefined}
+                height={undefined}
+                className="su-fill-transparent su-stroke-current su-inline-block su-w-22 md:su-w-36 su-text-white *:su-stroke-3"
+              />
+            )}
+          </div>
         </div>
       )}
     </article>
