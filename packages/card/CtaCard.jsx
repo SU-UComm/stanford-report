@@ -58,15 +58,13 @@ export default function CtaCard({
           </>
         )}
       </h2>
-      {description && (
-        <div className="su-grow">
-          <XssSafeContent
-            data-test="cta-card-content"
-            className="su-type-1 su-rs-mt-4 *:su-leading-snug"
-            content={description}
-          />
-        </div>
-      )}
+      <div className="su-grow">
+        <XssSafeContent
+          data-test="cta-card-content"
+          className="su-type-1 su-rs-mt-4 *:su-leading-snug"
+          content={description}
+        />
+      </div>
       {(internalUrl || externalUrl) && (
         <div className="su-flex group-hocus-within:su-translate-x-03em su-transition-transform su-items-center su-justify-center su-size-50 md:su-size-70 su-mt-auto su-rounded-full su-bg-gradient-to-r su-from-digital-red-light su-to-cardinal-red-dark su-ml-auto">
           {isRealExternalLink ? (
