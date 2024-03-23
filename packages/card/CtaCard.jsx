@@ -1,4 +1,5 @@
 import React from "react";
+import { cnb } from "cnbuilder";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import ChevronRight from "../SVG-library/ChevronRight";
 import ExternalArrowUnstyled from "../SVG-library/ExternalArrowUnstyled";
@@ -30,7 +31,14 @@ export default function CtaCard({
     !!externalUrl && !externalUrl?.includes("news.stanford.edu");
 
   return (
-    <article className="su-group su-flex su-flex-col su-break-words hover:su-shadow-md focus-within:su-shadow-md su-relative su-w-full su-bg-white su-rounded-[8px] su-rs-pt-5 su-rs-px-4 su-rs-pb-4 su-max-w-900 su-mx-auto su-transition-shadow">
+    <article
+      className={cnb(
+        "su-group su-relative su-w-full su-flex su-flex-col su-break-words su-bg-white su-rounded-[8px] su-rs-pt-5 su-rs-px-4 su-rs-pb-4 su-max-w-900 su-mx-auto su-transition-shadow",
+        internalUrl || externalUrl
+          ? "hover:su-shadow-md focus-within:su-shadow-md"
+          : ""
+      )}
+    >
       {eyebrow && (
         <span
           aria-hidden
@@ -39,14 +47,14 @@ export default function CtaCard({
           {eyebrow}
         </span>
       )}
-      <h2 className="su-type-5 md:su-type-4 2xl:su-type-3 su-mb-0 su-font-sans">
+      <h2 className="su-type-5 md:su-type-4 2xl:su-type-3 su-mb-0 su-font-sans su-text-black">
         {internalUrl || externalUrl ? (
           // eslint-disable-next-line react/jsx-no-target-blank
           <a
             href={internalUrl || externalUrl}
             target={isNewWindow ? "_blank" : undefined}
             rel={isRealExternalLink ? "noopener nofollow" : undefined}
-            className="group-hocus-within:su-underline su-stretched-link"
+            className="group-hocus-within:su-underline su-stretched-link su-text-black group-hocus-within:su-text-digital-red"
           >
             {eyebrow && <span className="su-sr-only">{`${eyebrow}:`}</span>}
             {title}

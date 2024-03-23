@@ -12,7 +12,7 @@
         {
             "eyebrow": "Explore",
             "title": "Types of financial aid",
-            "description": "<p>Stanford provides financial aid in the form of scholarships, which do not need to be repaid. Federal and state grants, outside scholarships, and student employment are additional sources of funding. We do not expect you to take out student loans to cover your college costs.</p>",
+            "description": "<p>Stanford provides financial aid in the form of scholarships, which do not need to be repaid.</p>",
             "linkDetails": {
                 "externalUrl": "https://google.com",
                 "isNewWindow": true
@@ -21,11 +21,7 @@
         {
             "eyebrow": "Plan",
             "title": "Testing long word like University or Opportunities",
-            "description": "<p>The average need-based scholarship in the current freshman class is more than $62,000. Use the net price calculator tool to see what level of financial aid you can expect to receive if you attend.</p>",
-            "linkDetails": {
-                "externalUrl": "https://news.stanford.edu/2024/03/07/ai-makes-rendezvous-space/",
-                "isNewWindow": false
-            }
+            "description": "<p>The average need-based scholarship in the current freshman class is more than $62,000. Use the net price calculator tool to see what level of financial aid you can expect to receive if you attend.</p>"
         }
     ]
 }
