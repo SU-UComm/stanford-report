@@ -7,7 +7,7 @@
   "displayName": "CTA cards block",
   "mainFunction": "main",
   "icon": {
-    "id": "view-column",
+    "id": "view_column",
     "color": {
       "type": "enum",
       "value": "red"

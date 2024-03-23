@@ -1,11 +1,26 @@
 import React from "react";
-import { Container } from "../../packages/grids/Container";
 import CtaCard from "../../packages/card/CtaCard";
 
-export default function CtaCardsBlock({ title, eyebrow, description }) {
+export default function CtaCardsBlock({ cardsArray }) {
   return (
-    <Container>
-      <CtaCard title={title} eyebrow={eyebrow} description={description} />
-    </Container>
+    <div className="su-relative su-cc su-bg-fog-light">
+      <div className="su-relative su-flex su-grid-gap su-flex-col xl:su-flex-row">
+        {cardsArray.map((card) => {
+          const { eyebrow, title, description, linksDetail, internalLinkUrl } =
+            card;
+          return (
+            <CtaCard
+              key={title}
+              title={title}
+              description={description}
+              eyebrow={eyebrow}
+              internalUrl={internalLinkUrl}
+              externalUrl={linksDetail?.externalUrl}
+              isNewWindow={linksDetail?.isNewWindow}
+            />
+          );
+        })}
+      </div>
+    </div>
   );
 }

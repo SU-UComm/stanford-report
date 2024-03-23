@@ -22,13 +22,13 @@ export default function CtaCard({
   isNewWindow,
 }) {
   return (
-    <article className="su-rounded-[8px] su-rs-pt-6 su-rs-px-5 su-rs-pb-4">
+    <article className="su-relative su-w-full su-bg-white su-rounded-[8px] su-rs-pt-5 su-rs-px-4 su-rs-pb-4">
       {eyebrow && (
         <span className="su-type-1 su-text-black-60 su-font-semibold">
           {eyebrow}
         </span>
       )}
-      <h2 className="su-type-5 su-font-sans su-rs-mt-1">
+      <h2 className="su-type-5 lg:su-type-4 su-font-sans su-rs-mt-1 su-leading-tight">
         <a
           href={internalUrl || externalUrl}
           target={isNewWindow ? "_blank" : ""}
@@ -42,7 +42,7 @@ export default function CtaCard({
         {description && (
           <XssSafeContent
             data-test="cta-card-content"
-            className="su-type-1 su-grow su-rs-mt-4"
+            className="su-type-1 su-grow su-rs-mt-4 *:su-leading-snug"
             content={description}
           />
         )}
