@@ -186,7 +186,7 @@ export default function MobileNav({ navigation, search, audience }) {
           <input type="hidden" value={profile} name="profile" />
           <input
             type="search"
-            className="su-w-full su-h-50 su-rounded-full dark:su-text-black su-text-20 su-leading-[2.6rem] su-py-10 su-pl-15 su-pr-120 su-bg-white su-border-2 su-border-black-30 hover:su-border-black-40 focus:su-border-digital-blue"
+            className="su-w-full su-h-50 su-rounded-full dark:su-text-black su-text-20 su-leading-[2.6rem] su-py-10 su-pl-15 su-pr-120 su-border-2 su-border-black-30 dark:su-border-black-60 hover:su-border-black-40 dark:focus:su-border-digital-blue-vivid focus:su-border-digital-blue"
             name="query"
             defaultValue=""
             placeholder="Search"
@@ -242,12 +242,16 @@ export default function MobileNav({ navigation, search, audience }) {
           className="su-block su-order-2 su-my-15 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
         />
 
-        <ContactLinks items={contacts} />
+        {audience === "external" && (
+          <>
+            <ContactLinks items={contacts} />
 
-        <hr
-          aria-hidden="true"
-          className="su-block su-order-2 su-my-15 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
-        />
+            <hr
+              aria-hidden="true"
+              className="su-block su-order-2 su-my-15 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
+            />
+          </>
+        )}
 
         <ExternalLinks items={externalData} audience={audience} />
 

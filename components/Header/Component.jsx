@@ -98,10 +98,15 @@ export default function Header({
         } report-header su-pb-[13.9rem] md:su-pb-[16.6rem] lg:su-pb-[18.9rem]`}
       >
         <div className="su-shadow dark:su-shadow-[0_3px_6px_0_rgba(46,45,41,0.5)] su-fixed su-top-0 su-left-0 su-w-full su-bg-white dark:su-bg-black-true su-z-50">
-          <TopBar url={site?.url} logo={site?.logoTopBar} />
+          <TopBar
+            // url={site?.url}
+            url="https://www.stanford.edu/"
+            logo={site?.logoTopBar}
+          />
 
           <div className="su-w-full su-max-w-[141.2rem] su-px-20 md:su-px-49 su-mx-auto">
-            <div className="report-header__main su-flex su-items-center su-justify-between su-gap-20">
+            {/* <div className="report-header__main su-flex su-items-center su-justify-between su-gap-20"> */}
+            <div className="report-header__main su-flex su-items-center lg:su-items-end su-justify-between md:su-pb-[10px] lg:su-pb-[11px]">
               <div className="su-flex su-items-center su-gap-20 lg:su-gap-27 su-w-32 md:su-w-85 lg:su-w-[9.1rem]">
                 <button
                   className="su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"

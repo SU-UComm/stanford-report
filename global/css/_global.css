@@ -122,6 +122,48 @@ svg {
   @apply su-text-26 su-font-bold su-mb-19 su-text-digital-red dark:su-text-dark-mode-red;
 }
 
+.report-header .tt-menu {
+  background-color: white;
+}
+
+.su-dark .report-header .tt-menu {
+  background-color: #000;
+}
+
+.report-header input[type="search"] {
+  background-color: white;
+}
+
+.su-dark .report-header input[type="search"] {
+  color: white;
+  background-color: #000 !important;
+}
+
+.report-header .input-has-value input[type="search"] {
+  box-shadow: 0 0 38px 0 rgba(0, 0, 0, 0.25);
+}
+
+.su-dark .report-header .input-has-value input[type="search"] {
+  box-shadow: 0 0 38px 0 rgba(46, 45, 41, 1);
+}
+
+.report-header input[type="search"]::placeholder {
+  @apply su-text-black-30 dark:su-text-black-50;
+}
+
+.report-header .tt-menu {
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
+}
+
+.su-dark .report-header .tt-menu {
+  box-shadow: 0 0 38px 0 rgba(46, 45, 41, 1);
+}
+
+.su-dark .report-header__pref-toggle[aria-pressed="true"]:hover svg,
+.su-dark .report-header__pref-toggle[aria-pressed="true"] svg {
+  color:#000 !important;
+}
+
 /*
 * Global slider/swiper styles
 */
