@@ -2995,6 +2995,11 @@ h6{
   width: auto;
 }
 
+.su-w-fit{
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .su-w-full{
   width: 100%;
 }
@@ -3448,6 +3453,11 @@ h6{
 .su-gap-x-16{
   -moz-column-gap: 1.6rem;
        column-gap: 1.6rem;
+}
+
+.su-gap-x-18{
+  -moz-column-gap: 1.8rem;
+       column-gap: 1.8rem;
 }
 
 .su-gap-x-20{
