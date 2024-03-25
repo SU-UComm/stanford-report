@@ -3884,33 +3884,6 @@
     }
   });
 
-  // node_modules/node-fetch/browser.js
-  var require_browser = __commonJS({
-    "node_modules/node-fetch/browser.js"(exports, module) {
-      "use strict";
-      var getGlobal = function() {
-        if (typeof self !== "undefined") {
-          return self;
-        }
-        if (typeof window !== "undefined") {
-          return window;
-        }
-        if (typeof global !== "undefined") {
-          return global;
-        }
-        throw new Error("unable to locate global object");
-      };
-      var globalObject = getGlobal();
-      module.exports = exports = globalObject.fetch;
-      if (globalObject.fetch) {
-        exports.default = globalObject.fetch.bind(globalObject);
-      }
-      exports.Headers = globalObject.Headers;
-      exports.Request = globalObject.Request;
-      exports.Response = globalObject.Response;
-    }
-  });
-
   // node_modules/html-entities/lib/named-references.js
   var require_named_references = __commonJS({
     "node_modules/html-entities/lib/named-references.js"(exports) {
@@ -4118,6 +4091,33 @@
         return replaceResult_1;
       }
       exports.decode = decode11;
+    }
+  });
+
+  // node_modules/node-fetch/browser.js
+  var require_browser = __commonJS({
+    "node_modules/node-fetch/browser.js"(exports, module) {
+      "use strict";
+      var getGlobal = function() {
+        if (typeof self !== "undefined") {
+          return self;
+        }
+        if (typeof window !== "undefined") {
+          return window;
+        }
+        if (typeof global !== "undefined") {
+          return global;
+        }
+        throw new Error("unable to locate global object");
+      };
+      var globalObject = getGlobal();
+      module.exports = exports = globalObject.fetch;
+      if (globalObject.fetch) {
+        exports.default = globalObject.fetch.bind(globalObject);
+      }
+      exports.Headers = globalObject.Headers;
+      exports.Request = globalObject.Request;
+      exports.Response = globalObject.Response;
     }
   });
 
@@ -15517,6 +15517,65 @@
     hydrateComponent({ Component: TopicSubtopicListing, componentName });
   })();
 
+  // components/subtopics-subnav/Component.jsx
+  var import_react112 = __toESM(require_react(), 1);
+  var import_html_entities = __toESM(require_lib3(), 1);
+  function Subnav({ navigation }) {
+    let liClass = "scrollable-list__item su-mb-0 su-relative after:su-h-22 after:su-w-[1px] after:su-bg-black-60 after:su-mx-12 lg:after:su-mx-18";
+    const aClass = "su-text-inherit su-text-black su-font-semi-bold su-text-16 lg:su-text-18 lg:su-leading-[21.6px] su-no-underline hover:su-underline dark:su-text-white hover:su-text-digital-red dark:hover:su-text-dark-mode-red";
+    return /* @__PURE__ */ import_react112.default.createElement("div", { className: "scrollable-list su-w-full md:su-justify-center su-flex su-nowrap su-mb-15 md:su-mb-25 lg:su-mb-41" }, /* @__PURE__ */ import_react112.default.createElement("ul", { className: "scrollable-list__items su-w-[calc(100%+40px)] md:su-w-auto su-flex md:su-justify-center su-mb-0 su-whitespace-nowrap su-flex-nowrap md:su-flex-wrap su-overflow-x-scroll md:su-overflow-visible su-list-none su-mx-[-20px] md:su-mr-0 su-px-20 su-mb-0 su-pb-12 lg:su-pb-0" }, navigation.map((item, i, row) => {
+      const title = (0, import_html_entities.decode)(item.asset_name);
+      if (i + 1 === row.length) {
+        liClass = "su-relative su-mb-0";
+      }
+      return /* @__PURE__ */ import_react112.default.createElement("li", { className: liClass, key: item.asset_assetid }, /* @__PURE__ */ import_react112.default.createElement("a", { className: aClass, href: item.asset_url }, title));
+    })));
+  }
+  function SubtopicSubnav({
+    title,
+    parent: parent2,
+    children: children2,
+    isTopLevel
+  }) {
+    return /* @__PURE__ */ import_react112.default.createElement(Container, { width: "large" }, /* @__PURE__ */ import_react112.default.createElement("section", { className: "listing" }, /* @__PURE__ */ import_react112.default.createElement("div", { className: "listing__header" }, !isTopLevel && /* @__PURE__ */ import_react112.default.createElement("p", { className: "listing__back-link su-flex su-justify-center su-mb-15 md:su-mb-18 lg:su-mb-10" }, /* @__PURE__ */ import_react112.default.createElement(
+      "a",
+      {
+        href: parent2.url,
+        className: "su-flex su-font-semi-bold su-items-center su-no-underline su-text-16 lg:su-text-18 su-text-black-60 hover:su-underline hover:su-text-digital-red dark:hover:su-text-dark-mode-red su-ml-[-.5rem] lg:su-ml-[-2rem]"
+      },
+      /* @__PURE__ */ import_react112.default.createElement(
+        "svg",
+        {
+          width: "24",
+          height: "24",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          xmlns: "http://www.w3.org/2000/svg"
+        },
+        /* @__PURE__ */ import_react112.default.createElement(
+          "path",
+          {
+            fillRule: "evenodd",
+            clipRule: "evenodd",
+            d: "M15.2485 6.35147C15.7172 6.8201 15.7172 7.5799 15.2485 8.04853L11.2971 12L15.2485 15.9515C15.7172 16.4201 15.7172 17.1799 15.2485 17.6485C14.7799 18.1172 14.0201 18.1172 13.5515 17.6485L8.75147 12.8485C8.28284 12.3799 8.28284 11.6201 8.75147 11.1515L13.5515 6.35147C14.0201 5.88284 14.7799 5.88284 15.2485 6.35147Z"
+          }
+        )
+      ),
+      /* @__PURE__ */ import_react112.default.createElement("span", null, (0, import_html_entities.decode)(parent2.title))
+    )), title && /* @__PURE__ */ import_react112.default.createElement("h1", { className: "su-text-black su-font-bold su-font-serif dark:su-text-white su-text-center su-text-[39px] md:su-text-[54px] lg:su-text-[70px] su-mb-15 md:su-mb-26 lg:su-mb-19 su-leading-[46.57px] md:su-leading-[64.8px] lg:su-leading-[84px]" }, (0, import_html_entities.decode)(title)), children2 && children2.length > 0 && /* @__PURE__ */ import_react112.default.createElement(Subnav, { navigation: children2 }))));
+  }
+
+  // components/subtopics-subnav/client.jsx
+  (function() {
+    const componentName = "subtopic-subnav-component";
+    const element = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!element)
+      return;
+    hydrateComponent({ Component: SubtopicSubnav, componentName });
+  })();
+
   // node_modules/cnbuilder/esm/cnb.js
   var isArray = Array.isArray;
   var toClassName = function(val2) {
@@ -15572,7 +15631,7 @@
   }
 
   // packages/links/LinkButton.jsx
-  var import_react112 = __toESM(require_react(), 1);
+  var import_react113 = __toESM(require_react(), 1);
   function LinkButton({
     internalUrl,
     externalUrl,
@@ -15584,7 +15643,7 @@
     const isRealExternalLink = !!externalUrl && !externalUrl?.includes("news.stanford.edu");
     return internalUrl || externalUrl ? (
       // eslint-disable-next-line react/jsx-no-target-blank
-      /* @__PURE__ */ import_react112.default.createElement(
+      /* @__PURE__ */ import_react113.default.createElement(
         "a",
         {
           className: cnb(
@@ -15596,7 +15655,7 @@
           rel: isRealExternalLink ? "noopener nofollow" : void 0
         },
         buttonText,
-        isRealExternalLink && /* @__PURE__ */ import_react112.default.createElement(
+        isRealExternalLink && /* @__PURE__ */ import_react113.default.createElement(
           ExternalArrowUnstyled,
           {
             title: "link is external",
@@ -15608,7 +15667,7 @@
   }
 
   // components/text-callout/Component.jsx
-  var import_react113 = __toESM(require_react(), 1);
+  var import_react114 = __toESM(require_react(), 1);
   function TextCallout({
     displayConfiguration,
     imageConfiguration,
@@ -15620,12 +15679,12 @@
     const { caption, credit, imagePlacement, image } = imageConfiguration;
     const { buttonText, externalUrl, isNewWindow } = buttonConfiguration;
     const captionCredit = caption && credit ? `${caption} | ${credit}` : caption || credit;
-    return /* @__PURE__ */ import_react113.default.createElement(Container, { width: "narrow" }, /* @__PURE__ */ import_react113.default.createElement("section", { className: "su-flex su-flex-col su-p-20 md:su-p-36 su-justify-start su-items-start su-bg-fog-light lg:su-mx-auto dark:su-bg-black [&>p]:su-m-0 [&>p]:!su-mb-0 [&>p]:su-text-16 md:[&>p]:!su-text-19 last-of-type:[&>p]:!su-mb-0" }, /* @__PURE__ */ import_react113.default.createElement("div", { className: "su-relative su-justify-start su-items-center su-w-full su-gap-3 su-flex su-overflow-hidden su-mb-12" }, /* @__PURE__ */ import_react113.default.createElement("div", null, /* @__PURE__ */ import_react113.default.createElement("h3", { className: "su-font-serif su-inline !su-text-23 su-pr-10 su-m-0" }, title), /* @__PURE__ */ import_react113.default.createElement("span", { className: "su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-px su-absolute su-bottom-4" }))), /* @__PURE__ */ import_react113.default.createElement(
+    return /* @__PURE__ */ import_react114.default.createElement(Container, { width: "narrow" }, /* @__PURE__ */ import_react114.default.createElement("section", { className: "su-flex su-flex-col su-p-20 md:su-p-36 su-justify-start su-items-start su-bg-fog-light lg:su-mx-auto dark:su-bg-black [&>p]:su-m-0 [&>p]:!su-mb-0 [&>p]:su-text-16 md:[&>p]:!su-text-19 last-of-type:[&>p]:!su-mb-0" }, /* @__PURE__ */ import_react114.default.createElement("div", { className: "su-relative su-justify-start su-items-center su-w-full su-gap-3 su-flex su-overflow-hidden su-mb-12" }, /* @__PURE__ */ import_react114.default.createElement("div", null, /* @__PURE__ */ import_react114.default.createElement("h3", { className: "su-font-serif su-inline !su-text-23 su-pr-10 su-m-0" }, title), /* @__PURE__ */ import_react114.default.createElement("span", { className: "su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-px su-absolute su-bottom-4" }))), /* @__PURE__ */ import_react114.default.createElement(
       "div",
       {
         className: `${image && imagePlacement === "Above content" ? "su-order-2" : "su-order-1"} su-flex su-flex-col su-gap-12`
       },
-      /* @__PURE__ */ import_react113.default.createElement(
+      /* @__PURE__ */ import_react114.default.createElement(
         XssSafeContent_default,
         {
           "data-test": "acknowledgement",
@@ -15638,12 +15697,12 @@
           content
         }
       )
-    ), image && /* @__PURE__ */ import_react113.default.createElement(
+    ), image && /* @__PURE__ */ import_react114.default.createElement(
       "div",
       {
         className: `su-order-${imagePlacement === "Above content" ? "1 su-pb-20 md:su-pb-12 lg:su-pb-27" : "2 su-pt-20 md:su-pt-12 lg:su-pt-27"} su-w-full`
       },
-      /* @__PURE__ */ import_react113.default.createElement(
+      /* @__PURE__ */ import_react114.default.createElement(
         "img",
         {
           src: imageData.url,
@@ -15651,8 +15710,8 @@
           className: "su-w-full"
         }
       ),
-      /* @__PURE__ */ import_react113.default.createElement("p", { className: "su-m-0 su-text-14 su-leading-[1.672rem] md:su-leading-[1.911rem] md:su-text-16 su-mt-8 md:su-mt-12" }, captionCredit)
-    ), buttonText && /* @__PURE__ */ import_react113.default.createElement(
+      /* @__PURE__ */ import_react114.default.createElement("p", { className: "su-m-0 su-text-14 su-leading-[1.672rem] md:su-leading-[1.911rem] md:su-text-16 su-mt-8 md:su-mt-12" }, captionCredit)
+    ), buttonText && /* @__PURE__ */ import_react114.default.createElement(
       LinkButton,
       {
         buttonText,
@@ -15675,12 +15734,101 @@
     hydrateComponent({ Component: TextCallout, componentName });
   })();
 
+  // components/story-lead/Component.jsx
+  var import_react115 = __toESM(require_react(), 1);
+  function StoryLead({ content, variant }) {
+    const hasContent = content !== null && content !== void 0;
+    const variantClasses = /* @__PURE__ */ new Map();
+    variantClasses.set(
+      "Featured Story",
+      "*:su-text-20 md:*:su-text-25 lg:*:su-text-26 su-font-serif su-font-medium"
+    );
+    variantClasses.set(
+      "Basic Story",
+      "su-story-first-letter *:su-text-18 md:*:su-text-23"
+    );
+    const letterSvgs = /* @__PURE__ */ new Map();
+    letterSvgs.set("a", /* @__PURE__ */ import_react115.default.createElement(LetterA, null));
+    letterSvgs.set("b", /* @__PURE__ */ import_react115.default.createElement(LetterB, null));
+    letterSvgs.set("c", /* @__PURE__ */ import_react115.default.createElement(LetterC, null));
+    letterSvgs.set("d", /* @__PURE__ */ import_react115.default.createElement(LetterD, null));
+    letterSvgs.set("e", /* @__PURE__ */ import_react115.default.createElement(LetterE, null));
+    letterSvgs.set("f", /* @__PURE__ */ import_react115.default.createElement(LetterF, null));
+    letterSvgs.set("g", /* @__PURE__ */ import_react115.default.createElement(LetterG, null));
+    letterSvgs.set("h", /* @__PURE__ */ import_react115.default.createElement(LetterH, null));
+    letterSvgs.set("i", /* @__PURE__ */ import_react115.default.createElement(LetterI, null));
+    letterSvgs.set("j", /* @__PURE__ */ import_react115.default.createElement(LetterJ, null));
+    letterSvgs.set("k", /* @__PURE__ */ import_react115.default.createElement(LetterK, null));
+    letterSvgs.set("l", /* @__PURE__ */ import_react115.default.createElement(LetterL, null));
+    letterSvgs.set("m", /* @__PURE__ */ import_react115.default.createElement(LetterM, null));
+    letterSvgs.set("n", /* @__PURE__ */ import_react115.default.createElement(LetterN, null));
+    letterSvgs.set("o", /* @__PURE__ */ import_react115.default.createElement(LetterO, null));
+    letterSvgs.set("p", /* @__PURE__ */ import_react115.default.createElement(LetterP, null));
+    letterSvgs.set("q", /* @__PURE__ */ import_react115.default.createElement(LetterQ, null));
+    letterSvgs.set("r", /* @__PURE__ */ import_react115.default.createElement(LetterR, null));
+    letterSvgs.set("s", /* @__PURE__ */ import_react115.default.createElement(LetterS, null));
+    letterSvgs.set("t", /* @__PURE__ */ import_react115.default.createElement(LetterT, null));
+    letterSvgs.set("u", /* @__PURE__ */ import_react115.default.createElement(LetterU, null));
+    letterSvgs.set("v", /* @__PURE__ */ import_react115.default.createElement(LetterV, null));
+    letterSvgs.set("w", /* @__PURE__ */ import_react115.default.createElement(LetterW, null));
+    letterSvgs.set("x", /* @__PURE__ */ import_react115.default.createElement(LetterX, null));
+    letterSvgs.set("y", /* @__PURE__ */ import_react115.default.createElement(LetterY, null));
+    letterSvgs.set("z", /* @__PURE__ */ import_react115.default.createElement(LetterZ, null));
+    let formattedContent = content;
+    let selectedSvg = null;
+    if (hasContent) {
+      const textContent = formattedContent.replace(/(<([^>]+)>)/gi, "");
+      const firstWord = textContent.split(" ")[0];
+      const firstLetter = firstWord[0];
+      selectedSvg = letterSvgs.get(firstLetter.toLowerCase());
+      if (variant === "Featured Story") {
+        const truncatedFirstWord = firstWord.substring(1);
+        formattedContent = truncatedFirstWord.length > 0 ? content.replace(
+          firstWord,
+          `<span aria-hidden="true">${truncatedFirstWord}</span><span class="sr-only">${firstWord}</span>`
+        ) : content.replace(
+          firstWord,
+          `<span class="sr-only">${firstWord}</span>`
+        );
+      }
+    }
+    return hasContent ? /* @__PURE__ */ import_react115.default.createElement(Container, { width: "narrow" }, variant === "Featured Story" && /* @__PURE__ */ import_react115.default.createElement(
+      "span",
+      {
+        "data-test": "component-story-lead-letter",
+        className: "su-float-left [&>svg]:su-mt-3 md:[&>svg]:su--mt-2 lg:[&>svg]:su-mt-4 [&>svg]:su-w-41 [&>svg]:su-h-43 md:[&>svg]:su-w-[97px] md:[&>svg]:su-h-[102px] su-mr-8 lg:su-mr-19"
+      },
+      selectedSvg
+    ), /* @__PURE__ */ import_react115.default.createElement(
+      XssSafeContent_default,
+      {
+        className: ["su-wysiwyg-content", variantClasses.get(variant)].join(
+          " "
+        ),
+        elementType: "div",
+        "data-test": "component-story-lead",
+        content: formattedContent
+      }
+    )) : "";
+  }
+
+  // components/story-lead/client.jsx
+  (function() {
+    const componentName = "story-lead";
+    const target = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!target)
+      return;
+    hydrateComponent({ Component: StoryLead, componentName });
+  })();
+
   // components/subscribe-to-stanford/Component.jsx
-  var import_react114 = __toESM(require_react(), 1);
+  var import_react116 = __toESM(require_react(), 1);
   function SubscribeToStanfordReport({ contentConfiguration }) {
     const { actionLink, title, summary } = contentConfiguration;
-    const [email, setEmail] = (0, import_react114.useState)("");
-    const [subscriptionError, setSubscriptionError] = (0, import_react114.useState)("");
+    const [email, setEmail] = (0, import_react116.useState)("");
+    const [subscriptionError, setSubscriptionError] = (0, import_react116.useState)("");
     const emailInputEvent = ({ target }) => {
       const { value: value2 } = target;
       setEmail(() => value2);
@@ -15696,7 +15844,7 @@
       setSubscriptionError(() => "");
       e.target.submit();
     };
-    return /* @__PURE__ */ import_react114.default.createElement(
+    return /* @__PURE__ */ import_react116.default.createElement(
       "form",
       {
         className: "su-flex su-flex-col su-gap-10 su-items-left",
@@ -15704,9 +15852,9 @@
         onSubmit: submitSubscription,
         method: "POST"
       },
-      /* @__PURE__ */ import_react114.default.createElement("h2", { className: "su-m-0 su-font-bold su-text-18 su-leading-[2.16rem] dark:su-text-white su-font-sans" }, title),
-      /* @__PURE__ */ import_react114.default.createElement("p", { className: "su-m-0 su-font-normal su-text-16 su-leading-[1.25] dark:su-text-white" }, summary),
-      /* @__PURE__ */ import_react114.default.createElement(
+      /* @__PURE__ */ import_react116.default.createElement("h2", { className: "su-m-0 su-font-bold su-text-18 su-leading-[2.16rem] dark:su-text-white su-font-sans" }, title),
+      /* @__PURE__ */ import_react116.default.createElement("p", { className: "su-m-0 su-font-normal su-text-16 su-leading-[1.25] dark:su-text-white" }, summary),
+      /* @__PURE__ */ import_react116.default.createElement(
         "input",
         {
           type: "email",
@@ -15718,7 +15866,7 @@
           onKeyUp: emailInputEvent
         }
       ),
-      /* @__PURE__ */ import_react114.default.createElement(
+      /* @__PURE__ */ import_react116.default.createElement(
         "button",
         {
           type: "submit",
@@ -15726,7 +15874,7 @@
         },
         "Sign up"
       ),
-      /* @__PURE__ */ import_react114.default.createElement(XssSafeContent_default, { content: subscriptionError })
+      /* @__PURE__ */ import_react116.default.createElement(XssSafeContent_default, { content: subscriptionError })
     );
   }
 
@@ -25661,16 +25809,16 @@
   };
 
   // node_modules/swiper/react/loop.js
-  var import_react115 = __toESM(require_react(), 1);
+  var import_react117 = __toESM(require_react(), 1);
   function renderLoop(swiper, slides, swiperParams) {
     const modifiedSlides = slides.map((child, index2) => {
-      return /* @__PURE__ */ import_react115.default.cloneElement(child, {
+      return /* @__PURE__ */ import_react117.default.cloneElement(child, {
         swiper,
         "data-swiper-slide-index": index2
       });
     });
     function duplicateSlide(child, index2, position) {
-      return /* @__PURE__ */ import_react115.default.cloneElement(child, {
+      return /* @__PURE__ */ import_react117.default.cloneElement(child, {
         key: `${child.key}-duplicate-${index2}-${position}`,
         className: `${child.props.className || ""} ${swiperParams.slideDuplicateClass}`
       });
@@ -25679,7 +25827,7 @@
       const blankSlidesNum = swiperParams.slidesPerGroup - modifiedSlides.length % swiperParams.slidesPerGroup;
       if (blankSlidesNum !== swiperParams.slidesPerGroup) {
         for (let i = 0; i < blankSlidesNum; i += 1) {
-          const blankSlide = /* @__PURE__ */ import_react115.default.createElement("div", {
+          const blankSlide = /* @__PURE__ */ import_react117.default.createElement("div", {
             className: `${swiperParams.slideClass} ${swiperParams.slideBlankClass}`
           });
           modifiedSlides.push(blankSlide);
@@ -25748,13 +25896,13 @@
   }
 
   // node_modules/swiper/react/get-children.js
-  var import_react116 = __toESM(require_react(), 1);
+  var import_react118 = __toESM(require_react(), 1);
   function isChildSwiperSlide(child) {
     return child.type && child.type.displayName && child.type.displayName.includes("SwiperSlide");
   }
   function processChildren(c) {
     const slides = [];
-    import_react116.default.Children.toArray(c).forEach((child) => {
+    import_react118.default.Children.toArray(c).forEach((child) => {
       if (isChildSwiperSlide(child)) {
         slides.push(child);
       } else if (child.props && child.props.children) {
@@ -25771,7 +25919,7 @@
       "wrapper-start": [],
       "wrapper-end": []
     };
-    import_react116.default.Children.toArray(c).forEach((child) => {
+    import_react118.default.Children.toArray(c).forEach((child) => {
       if (isChildSwiperSlide(child)) {
         slides.push(child);
       } else if (child.props && child.props.slot && slots[child.props.slot]) {
@@ -25913,7 +26061,7 @@
   }
 
   // node_modules/swiper/react/virtual.js
-  var import_react117 = __toESM(require_react(), 1);
+  var import_react119 = __toESM(require_react(), 1);
   function renderVirtual(swiper, slides, virtualData) {
     if (!virtualData)
       return null;
@@ -25923,7 +26071,7 @@
       top: `${virtualData.offset}px`
     };
     return slides.filter((child, index2) => index2 >= virtualData.from && index2 <= virtualData.to).map((child) => {
-      return /* @__PURE__ */ import_react117.default.cloneElement(child, {
+      return /* @__PURE__ */ import_react119.default.cloneElement(child, {
         swiper,
         style
       });
@@ -25946,26 +26094,26 @@
   };
 
   // node_modules/swiper/react/use-isomorphic-layout-effect.js
-  var import_react118 = __toESM(require_react(), 1);
+  var import_react120 = __toESM(require_react(), 1);
   function useIsomorphicLayoutEffect(callback, deps) {
     if (typeof window === "undefined")
-      return (0, import_react118.useEffect)(callback, deps);
-    return (0, import_react118.useLayoutEffect)(callback, deps);
+      return (0, import_react120.useEffect)(callback, deps);
+    return (0, import_react120.useLayoutEffect)(callback, deps);
   }
 
   // node_modules/swiper/react/context.js
-  var import_react119 = __toESM(require_react(), 1);
-  var SwiperSlideContext = /* @__PURE__ */ (0, import_react119.createContext)(null);
+  var import_react121 = __toESM(require_react(), 1);
+  var SwiperSlideContext = /* @__PURE__ */ (0, import_react121.createContext)(null);
   var useSwiperSlide = () => {
-    return (0, import_react119.useContext)(SwiperSlideContext);
+    return (0, import_react121.useContext)(SwiperSlideContext);
   };
-  var SwiperContext = /* @__PURE__ */ (0, import_react119.createContext)(null);
+  var SwiperContext = /* @__PURE__ */ (0, import_react121.createContext)(null);
   var useSwiper = () => {
-    return (0, import_react119.useContext)(SwiperContext);
+    return (0, import_react121.useContext)(SwiperContext);
   };
 
   // node_modules/swiper/react/swiper.js
-  var import_react120 = __toESM(require_react(), 1);
+  var import_react122 = __toESM(require_react(), 1);
   function _extends() {
     _extends = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -25980,7 +26128,7 @@
     };
     return _extends.apply(this, arguments);
   }
-  var Swiper2 = /* @__PURE__ */ (0, import_react120.forwardRef)(function(_temp, externalElRef) {
+  var Swiper2 = /* @__PURE__ */ (0, import_react122.forwardRef)(function(_temp, externalElRef) {
     let {
       className,
       tag: Tag = "div",
@@ -25990,18 +26138,18 @@
       ...rest
     } = _temp === void 0 ? {} : _temp;
     let eventsAssigned = false;
-    const [containerClasses, setContainerClasses] = (0, import_react120.useState)("swiper");
-    const [virtualData, setVirtualData] = (0, import_react120.useState)(null);
-    const [breakpointChanged, setBreakpointChanged] = (0, import_react120.useState)(false);
-    const initializedRef = (0, import_react120.useRef)(false);
-    const swiperElRef = (0, import_react120.useRef)(null);
-    const swiperRef = (0, import_react120.useRef)(null);
-    const oldPassedParamsRef = (0, import_react120.useRef)(null);
-    const oldSlides = (0, import_react120.useRef)(null);
-    const nextElRef = (0, import_react120.useRef)(null);
-    const prevElRef = (0, import_react120.useRef)(null);
-    const paginationElRef = (0, import_react120.useRef)(null);
-    const scrollbarElRef = (0, import_react120.useRef)(null);
+    const [containerClasses, setContainerClasses] = (0, import_react122.useState)("swiper");
+    const [virtualData, setVirtualData] = (0, import_react122.useState)(null);
+    const [breakpointChanged, setBreakpointChanged] = (0, import_react122.useState)(false);
+    const initializedRef = (0, import_react122.useRef)(false);
+    const swiperElRef = (0, import_react122.useRef)(null);
+    const swiperRef = (0, import_react122.useRef)(null);
+    const oldPassedParamsRef = (0, import_react122.useRef)(null);
+    const oldSlides = (0, import_react122.useRef)(null);
+    const nextElRef = (0, import_react122.useRef)(null);
+    const prevElRef = (0, import_react122.useRef)(null);
+    const paginationElRef = (0, import_react122.useRef)(null);
+    const scrollbarElRef = (0, import_react122.useRef)(null);
     const {
       params: swiperParams,
       passedParams,
@@ -26063,13 +26211,13 @@
         swiperRef.current.off(eventName, events2[eventName]);
       });
     };
-    (0, import_react120.useEffect)(() => {
+    (0, import_react122.useEffect)(() => {
       return () => {
         if (swiperRef.current)
           swiperRef.current.off("_beforeBreakpoint", onBeforeBreakpoint);
       };
     });
-    (0, import_react120.useEffect)(() => {
+    (0, import_react122.useEffect)(() => {
       if (!initializedRef.current && swiperRef.current) {
         swiperRef.current.emitSlidesClasses();
         initializedRef.current = true;
@@ -26130,30 +26278,30 @@
       }
       if (!swiperParams.loop || swiperRef.current && swiperRef.current.destroyed) {
         return slides.map((child) => {
-          return /* @__PURE__ */ import_react120.default.cloneElement(child, {
+          return /* @__PURE__ */ import_react122.default.cloneElement(child, {
             swiper: swiperRef.current
           });
         });
       }
       return renderLoop(swiperRef.current, slides, swiperParams);
     }
-    return /* @__PURE__ */ import_react120.default.createElement(Tag, _extends({
+    return /* @__PURE__ */ import_react122.default.createElement(Tag, _extends({
       ref: swiperElRef,
       className: uniqueClasses(`${containerClasses}${className ? ` ${className}` : ""}`)
-    }, restProps), /* @__PURE__ */ import_react120.default.createElement(SwiperContext.Provider, {
+    }, restProps), /* @__PURE__ */ import_react122.default.createElement(SwiperContext.Provider, {
       value: swiperRef.current
-    }, slots["container-start"], /* @__PURE__ */ import_react120.default.createElement(WrapperTag, {
+    }, slots["container-start"], /* @__PURE__ */ import_react122.default.createElement(WrapperTag, {
       className: "swiper-wrapper"
-    }, slots["wrapper-start"], renderSlides(), slots["wrapper-end"]), needsNavigation(swiperParams) && /* @__PURE__ */ import_react120.default.createElement(import_react120.default.Fragment, null, /* @__PURE__ */ import_react120.default.createElement("div", {
+    }, slots["wrapper-start"], renderSlides(), slots["wrapper-end"]), needsNavigation(swiperParams) && /* @__PURE__ */ import_react122.default.createElement(import_react122.default.Fragment, null, /* @__PURE__ */ import_react122.default.createElement("div", {
       ref: prevElRef,
       className: "swiper-button-prev"
-    }), /* @__PURE__ */ import_react120.default.createElement("div", {
+    }), /* @__PURE__ */ import_react122.default.createElement("div", {
       ref: nextElRef,
       className: "swiper-button-next"
-    })), needsScrollbar(swiperParams) && /* @__PURE__ */ import_react120.default.createElement("div", {
+    })), needsScrollbar(swiperParams) && /* @__PURE__ */ import_react122.default.createElement("div", {
       ref: scrollbarElRef,
       className: "swiper-scrollbar"
-    }), needsPagination(swiperParams) && /* @__PURE__ */ import_react120.default.createElement("div", {
+    }), needsPagination(swiperParams) && /* @__PURE__ */ import_react122.default.createElement("div", {
       ref: paginationElRef,
       className: "swiper-pagination"
     }), slots["container-end"]));
@@ -26161,7 +26309,7 @@
   Swiper2.displayName = "Swiper";
 
   // node_modules/swiper/react/swiper-slide.js
-  var import_react121 = __toESM(require_react(), 1);
+  var import_react123 = __toESM(require_react(), 1);
   function _extends2() {
     _extends2 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -26176,7 +26324,7 @@
     };
     return _extends2.apply(this, arguments);
   }
-  var SwiperSlide = /* @__PURE__ */ (0, import_react121.forwardRef)(function(_temp, externalRef) {
+  var SwiperSlide = /* @__PURE__ */ (0, import_react123.forwardRef)(function(_temp, externalRef) {
     let {
       tag: Tag = "div",
       children: children2,
@@ -26186,8 +26334,8 @@
       virtualIndex,
       ...rest
     } = _temp === void 0 ? {} : _temp;
-    const slideElRef = (0, import_react121.useRef)(null);
-    const [slideClasses, setSlideClasses] = (0, import_react121.useState)("swiper-slide");
+    const slideElRef = (0, import_react123.useRef)(null);
+    const [slideClasses, setSlideClasses] = (0, import_react123.useState)("swiper-slide");
     function updateClasses(_s, el, classNames) {
       if (el === slideElRef.current) {
         setSlideClasses(classNames);
@@ -26228,13 +26376,13 @@
     const renderChildren = () => {
       return typeof children2 === "function" ? children2(slideData) : children2;
     };
-    return /* @__PURE__ */ import_react121.default.createElement(Tag, _extends2({
+    return /* @__PURE__ */ import_react123.default.createElement(Tag, _extends2({
       ref: slideElRef,
       className: uniqueClasses(`${slideClasses}${className ? ` ${className}` : ""}`),
       "data-swiper-slide-index": virtualIndex
-    }, rest), /* @__PURE__ */ import_react121.default.createElement(SwiperSlideContext.Provider, {
+    }, rest), /* @__PURE__ */ import_react123.default.createElement(SwiperSlideContext.Provider, {
       value: slideData
-    }, zoom ? /* @__PURE__ */ import_react121.default.createElement("div", {
+    }, zoom ? /* @__PURE__ */ import_react123.default.createElement("div", {
       className: "swiper-zoom-container",
       "data-swiper-zoom": typeof zoom === "number" ? zoom : void 0
     }, renderChildren()) : renderChildren()));
@@ -26242,14 +26390,14 @@
   SwiperSlide.displayName = "SwiperSlide";
 
   // packages/carousels/Carousel.jsx
-  var import_react122 = __toESM(require_react(), 1);
+  var import_react124 = __toESM(require_react(), 1);
   function Carousel({
     slides,
     variant = "single",
     uniqueClass = "",
     isDark = false
   }) {
-    const swiperRef = (0, import_react122.useRef)();
+    const swiperRef = (0, import_react124.useRef)();
     const hasSlides = slides.length > 0;
     const variants = /* @__PURE__ */ new Map();
     variants.set("cards", {
@@ -26340,7 +26488,7 @@
       slidesPerView: 1,
       variantClassName: "component-slider-single"
     });
-    return hasSlides ? /* @__PURE__ */ import_react122.default.createElement("div", { className: `component-slider ${isDark ? "su-slider-dark" : ""}` }, /* @__PURE__ */ import_react122.default.createElement(
+    return hasSlides ? /* @__PURE__ */ import_react124.default.createElement("div", { className: `component-slider ${isDark ? "su-slider-dark" : ""}` }, /* @__PURE__ */ import_react124.default.createElement(
       Swiper2,
       {
         centeredSlides: true,
@@ -26385,50 +26533,50 @@
         modules: [Pagination2],
         className: ["", variants.get(variant).variantClassName].join(" ")
       },
-      slides.map((slide) => /* @__PURE__ */ import_react122.default.createElement(SwiperSlide, { key: slide }, slide))
-    ), slides.length > 1 && /* @__PURE__ */ import_react122.default.createElement("div", { className: "component-slider-controls su-flex su-mt-45 lg:su-mt-48 su-items-center su-content-center" }, /* @__PURE__ */ import_react122.default.createElement(
+      slides.map((slide) => /* @__PURE__ */ import_react124.default.createElement(SwiperSlide, { key: slide }, slide))
+    ), slides.length > 1 && /* @__PURE__ */ import_react124.default.createElement("div", { className: "component-slider-controls su-flex su-mt-45 lg:su-mt-48 su-items-center su-content-center" }, /* @__PURE__ */ import_react124.default.createElement(
       "div",
       {
         "aria-label": "Slide Navigation",
         className: `component-slider-pagination component-slider-pagination-${uniqueClass} su-mr-full`
       }
-    ), /* @__PURE__ */ import_react122.default.createElement(
+    ), /* @__PURE__ */ import_react124.default.createElement(
       "button",
       {
         className: "component-slider-btn component-slider-prev",
         type: "button",
         onClick: () => swiperRef.current?.slidePrev()
       },
-      /* @__PURE__ */ import_react122.default.createElement("span", { className: "sr-only" }, "Previous"),
-      /* @__PURE__ */ import_react122.default.createElement(
+      /* @__PURE__ */ import_react124.default.createElement("span", { className: "sr-only" }, "Previous"),
+      /* @__PURE__ */ import_react124.default.createElement(
         "span",
         {
           "aria-hidden": "true",
           className: "su-absolute su-top-[50%] su-left-[50%] su-translate-y-[-50%] su-translate-x-[-50%] su-inline-block"
         },
-        /* @__PURE__ */ import_react122.default.createElement(ChevronRight, null)
+        /* @__PURE__ */ import_react124.default.createElement(ChevronRight, null)
       )
-    ), /* @__PURE__ */ import_react122.default.createElement(
+    ), /* @__PURE__ */ import_react124.default.createElement(
       "button",
       {
         className: "component-slider-btn component-slider-next",
         type: "button",
         onClick: () => swiperRef.current?.slideNext()
       },
-      /* @__PURE__ */ import_react122.default.createElement("span", { className: "sr-only" }, "Next"),
-      /* @__PURE__ */ import_react122.default.createElement(
+      /* @__PURE__ */ import_react124.default.createElement("span", { className: "sr-only" }, "Next"),
+      /* @__PURE__ */ import_react124.default.createElement(
         "span",
         {
           "aria-hidden": "true",
           className: "su-absolute su-top-[50%] su-left-[50%] su-translate-y-[-50%] su-translate-x-[-50%] su-inline-block"
         },
-        /* @__PURE__ */ import_react122.default.createElement(ChevronRight, null)
+        /* @__PURE__ */ import_react124.default.createElement(ChevronRight, null)
       )
     ))) : "";
   }
 
   // components/stories-carousel/Component.jsx
-  var import_react124 = __toESM(require_react(), 1);
+  var import_react126 = __toESM(require_react(), 1);
   var import_object_hash5 = __toESM(require_object_hash(), 1);
   function StoriesCarousel({ data: data2, headingData }) {
     const cards = [];
@@ -26437,10 +26585,10 @@
     );
     if (data2 !== null && data2 !== void 0) {
       data2.forEach((card) => {
-        cards.push(/* @__PURE__ */ import_react124.default.createElement(Card, { data: card, displayDescription: false }));
+        cards.push(/* @__PURE__ */ import_react126.default.createElement(Card, { data: card, displayDescription: false }));
       });
     }
-    return cards.length > 0 && /* @__PURE__ */ import_react124.default.createElement(Container, null, headingData && /* @__PURE__ */ import_react124.default.createElement(
+    return cards.length > 0 && /* @__PURE__ */ import_react126.default.createElement(Container, null, headingData && /* @__PURE__ */ import_react126.default.createElement(
       LinkedHeading,
       {
         title: headingData.title,
@@ -26448,7 +26596,7 @@
         ctaLink: headingData.ctaLink,
         ctaNewWindow: headingData.ctaNewWindow
       }
-    ), /* @__PURE__ */ import_react124.default.createElement(Carousel, { variant: "cards", slides: cards, uniqueClass }));
+    ), /* @__PURE__ */ import_react126.default.createElement(Carousel, { variant: "cards", slides: cards, uniqueClass }));
   }
 
   // packages/utils/fetchAdapter.js
@@ -26596,154 +26744,6 @@
       }
     }
     hydrateComponent({ Component: StoriesCarousel, componentName: "stories-carousel" });
-  })();
-
-  // components/subtopics-subnav/Component.jsx
-  var import_react125 = __toESM(require_react(), 1);
-  var import_html_entities = __toESM(require_lib3(), 1);
-  function Subnav({ navigation }) {
-    let liClass = "scrollable-list__item su-mb-0 su-relative after:su-h-22 after:su-w-[1px] after:su-bg-black-60 after:su-mx-12 lg:after:su-mx-18";
-    const aClass = "su-text-inherit su-text-black su-font-semi-bold su-text-16 lg:su-text-18 lg:su-leading-[21.6px] su-no-underline hover:su-underline dark:su-text-white hover:su-text-digital-red dark:hover:su-text-dark-mode-red";
-    return /* @__PURE__ */ import_react125.default.createElement("div", { className: "scrollable-list su-w-full md:su-justify-center su-flex su-nowrap su-mb-15 md:su-mb-25 lg:su-mb-41" }, /* @__PURE__ */ import_react125.default.createElement("ul", { className: "scrollable-list__items su-w-[calc(100%+40px)] md:su-w-auto su-flex md:su-justify-center su-mb-0 su-whitespace-nowrap su-flex-nowrap md:su-flex-wrap su-overflow-x-scroll md:su-overflow-visible su-list-none su-mx-[-20px] md:su-mr-0 su-px-20 su-mb-0 su-pb-12 lg:su-pb-0" }, navigation.map((item, i, row) => {
-      const title = (0, import_html_entities.decode)(item.asset_name);
-      if (i + 1 === row.length) {
-        liClass = "su-relative su-mb-0";
-      }
-      return /* @__PURE__ */ import_react125.default.createElement("li", { className: liClass, key: item.asset_assetid }, /* @__PURE__ */ import_react125.default.createElement("a", { className: aClass, href: item.asset_url }, title));
-    })));
-  }
-  function SubtopicSubnav({
-    title,
-    parent: parent2,
-    children: children2,
-    isTopLevel
-  }) {
-    return /* @__PURE__ */ import_react125.default.createElement(Container, { width: "large" }, /* @__PURE__ */ import_react125.default.createElement("section", { className: "listing" }, /* @__PURE__ */ import_react125.default.createElement("div", { className: "listing__header" }, !isTopLevel && /* @__PURE__ */ import_react125.default.createElement("p", { className: "listing__back-link su-flex su-justify-center su-mb-15 md:su-mb-18 lg:su-mb-10" }, /* @__PURE__ */ import_react125.default.createElement(
-      "a",
-      {
-        href: parent2.url,
-        className: "su-flex su-font-semi-bold su-items-center su-no-underline su-text-16 lg:su-text-18 su-text-black-60 hover:su-underline hover:su-text-digital-red dark:hover:su-text-dark-mode-red su-ml-[-.5rem] lg:su-ml-[-2rem]"
-      },
-      /* @__PURE__ */ import_react125.default.createElement(
-        "svg",
-        {
-          width: "24",
-          height: "24",
-          viewBox: "0 0 24 24",
-          fill: "none",
-          xmlns: "http://www.w3.org/2000/svg"
-        },
-        /* @__PURE__ */ import_react125.default.createElement(
-          "path",
-          {
-            fillRule: "evenodd",
-            clipRule: "evenodd",
-            d: "M15.2485 6.35147C15.7172 6.8201 15.7172 7.5799 15.2485 8.04853L11.2971 12L15.2485 15.9515C15.7172 16.4201 15.7172 17.1799 15.2485 17.6485C14.7799 18.1172 14.0201 18.1172 13.5515 17.6485L8.75147 12.8485C8.28284 12.3799 8.28284 11.6201 8.75147 11.1515L13.5515 6.35147C14.0201 5.88284 14.7799 5.88284 15.2485 6.35147Z"
-          }
-        )
-      ),
-      /* @__PURE__ */ import_react125.default.createElement("span", null, (0, import_html_entities.decode)(parent2.title))
-    )), title && /* @__PURE__ */ import_react125.default.createElement("h1", { className: "su-text-black su-font-bold su-font-serif dark:su-text-white su-text-center su-text-[39px] md:su-text-[54px] lg:su-text-[70px] su-mb-15 md:su-mb-26 lg:su-mb-19 su-leading-[46.57px] md:su-leading-[64.8px] lg:su-leading-[84px]" }, (0, import_html_entities.decode)(title)), children2 && children2.length > 0 && /* @__PURE__ */ import_react125.default.createElement(Subnav, { navigation: children2 }))));
-  }
-
-  // components/subtopics-subnav/client.jsx
-  (function() {
-    const componentName = "subtopic-subnav-component";
-    const element = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!element)
-      return;
-    hydrateComponent({ Component: SubtopicSubnav, componentName });
-  })();
-
-  // components/story-lead/Component.jsx
-  var import_react126 = __toESM(require_react(), 1);
-  function StoryLead({ content, variant }) {
-    const hasContent = content !== null && content !== void 0;
-    const variantClasses = /* @__PURE__ */ new Map();
-    variantClasses.set(
-      "Featured Story",
-      "*:su-text-20 md:*:su-text-25 lg:*:su-text-26 su-font-serif su-font-medium"
-    );
-    variantClasses.set(
-      "Basic Story",
-      "su-story-first-letter *:su-text-18 md:*:su-text-23"
-    );
-    const letterSvgs = /* @__PURE__ */ new Map();
-    letterSvgs.set("a", /* @__PURE__ */ import_react126.default.createElement(LetterA, null));
-    letterSvgs.set("b", /* @__PURE__ */ import_react126.default.createElement(LetterB, null));
-    letterSvgs.set("c", /* @__PURE__ */ import_react126.default.createElement(LetterC, null));
-    letterSvgs.set("d", /* @__PURE__ */ import_react126.default.createElement(LetterD, null));
-    letterSvgs.set("e", /* @__PURE__ */ import_react126.default.createElement(LetterE, null));
-    letterSvgs.set("f", /* @__PURE__ */ import_react126.default.createElement(LetterF, null));
-    letterSvgs.set("g", /* @__PURE__ */ import_react126.default.createElement(LetterG, null));
-    letterSvgs.set("h", /* @__PURE__ */ import_react126.default.createElement(LetterH, null));
-    letterSvgs.set("i", /* @__PURE__ */ import_react126.default.createElement(LetterI, null));
-    letterSvgs.set("j", /* @__PURE__ */ import_react126.default.createElement(LetterJ, null));
-    letterSvgs.set("k", /* @__PURE__ */ import_react126.default.createElement(LetterK, null));
-    letterSvgs.set("l", /* @__PURE__ */ import_react126.default.createElement(LetterL, null));
-    letterSvgs.set("m", /* @__PURE__ */ import_react126.default.createElement(LetterM, null));
-    letterSvgs.set("n", /* @__PURE__ */ import_react126.default.createElement(LetterN, null));
-    letterSvgs.set("o", /* @__PURE__ */ import_react126.default.createElement(LetterO, null));
-    letterSvgs.set("p", /* @__PURE__ */ import_react126.default.createElement(LetterP, null));
-    letterSvgs.set("q", /* @__PURE__ */ import_react126.default.createElement(LetterQ, null));
-    letterSvgs.set("r", /* @__PURE__ */ import_react126.default.createElement(LetterR, null));
-    letterSvgs.set("s", /* @__PURE__ */ import_react126.default.createElement(LetterS, null));
-    letterSvgs.set("t", /* @__PURE__ */ import_react126.default.createElement(LetterT, null));
-    letterSvgs.set("u", /* @__PURE__ */ import_react126.default.createElement(LetterU, null));
-    letterSvgs.set("v", /* @__PURE__ */ import_react126.default.createElement(LetterV, null));
-    letterSvgs.set("w", /* @__PURE__ */ import_react126.default.createElement(LetterW, null));
-    letterSvgs.set("x", /* @__PURE__ */ import_react126.default.createElement(LetterX, null));
-    letterSvgs.set("y", /* @__PURE__ */ import_react126.default.createElement(LetterY, null));
-    letterSvgs.set("z", /* @__PURE__ */ import_react126.default.createElement(LetterZ, null));
-    let formattedContent = content;
-    let selectedSvg = null;
-    if (hasContent) {
-      const textContent = formattedContent.replace(/(<([^>]+)>)/gi, "");
-      const firstWord = textContent.split(" ")[0];
-      const firstLetter = firstWord[0];
-      selectedSvg = letterSvgs.get(firstLetter.toLowerCase());
-      if (variant === "Featured Story") {
-        const truncatedFirstWord = firstWord.substring(1);
-        formattedContent = truncatedFirstWord.length > 0 ? content.replace(
-          firstWord,
-          `<span aria-hidden="true">${truncatedFirstWord}</span><span class="sr-only">${firstWord}</span>`
-        ) : content.replace(
-          firstWord,
-          `<span class="sr-only">${firstWord}</span>`
-        );
-      }
-    }
-    return hasContent ? /* @__PURE__ */ import_react126.default.createElement(Container, { width: "narrow" }, variant === "Featured Story" && /* @__PURE__ */ import_react126.default.createElement(
-      "span",
-      {
-        "data-test": "component-story-lead-letter",
-        className: "su-float-left [&>svg]:su-mt-3 md:[&>svg]:su--mt-2 lg:[&>svg]:su-mt-4 [&>svg]:su-w-41 [&>svg]:su-h-43 md:[&>svg]:su-w-[97px] md:[&>svg]:su-h-[102px] su-mr-8 lg:su-mr-19"
-      },
-      selectedSvg
-    ), /* @__PURE__ */ import_react126.default.createElement(
-      XssSafeContent_default,
-      {
-        className: ["su-wysiwyg-content", variantClasses.get(variant)].join(
-          " "
-        ),
-        elementType: "div",
-        "data-test": "component-story-lead",
-        content: formattedContent
-      }
-    )) : "";
-  }
-
-  // components/story-lead/client.jsx
-  (function() {
-    const componentName = "story-lead";
-    const target = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!target)
-      return;
-    hydrateComponent({ Component: StoryLead, componentName });
   })();
 
   // components/single-image-video/Component.jsx
@@ -26984,34 +26984,52 @@
     hydrateComponent({ Component: RelatedStory, componentName });
   })();
 
-  // components/policy-brief/Component.jsx
+  // components/pullquote/Component.jsx
   var import_react130 = __toESM(require_react(), 1);
+  function PullQuoteStory({ displayConfiguration, imageUrl }) {
+    const { quote, name, title, width: width2 } = displayConfiguration;
+    return /* @__PURE__ */ import_react130.default.createElement(Container, { width: width2 }, /* @__PURE__ */ import_react130.default.createElement(PullQuote, { quote, name, title, avatar: imageUrl }));
+  }
+
+  // components/pullquote/client.jsx
+  (function() {
+    const componentName = "pullquote";
+    const target = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!target)
+      return;
+    hydrateComponent({ Component: PullQuoteStory, componentName });
+  })();
+
+  // components/policy-brief/Component.jsx
+  var import_react131 = __toESM(require_react(), 1);
   function PolicyBriefComponent({ data: data2, contentConfiguration }) {
     const { type, title, summary, linkUrl, linkText } = contentConfiguration;
     const SVGMap = /* @__PURE__ */ new Map();
     SVGMap.set("Policy Brief", {
-      light: /* @__PURE__ */ import_react130.default.createElement(PolicyBrief, { variant: "light" }),
-      dark: /* @__PURE__ */ import_react130.default.createElement(PolicyBrief, { variant: "dark" })
+      light: /* @__PURE__ */ import_react131.default.createElement(PolicyBrief, { variant: "light" }),
+      dark: /* @__PURE__ */ import_react131.default.createElement(PolicyBrief, { variant: "dark" })
     });
     SVGMap.set("Case Study", {
-      light: /* @__PURE__ */ import_react130.default.createElement(CaseStudy, { variant: "light" }),
-      dark: /* @__PURE__ */ import_react130.default.createElement(CaseStudy, { variant: "dark" })
+      light: /* @__PURE__ */ import_react131.default.createElement(CaseStudy, { variant: "light" }),
+      dark: /* @__PURE__ */ import_react131.default.createElement(CaseStudy, { variant: "dark" })
     });
-    return /* @__PURE__ */ import_react130.default.createElement(Container, { width: "wide", paddingX: false }, /* @__PURE__ */ import_react130.default.createElement("section", { className: "su-relative su-flex su-flex-col su-gap-20 su-py-30 su-px-20 su-bg-fog-light md:su-mx-50 md:su-flex-row md:su-gap-18 lg:su-gap-48 md:su-p-36 lg:su-py-61 lg:su-px-65 dark:su-bg-transparent dark:before:su-bg-black dark:before:su-opacity-[0.5] dark:before:su-content-[''] dark:before:su-absolute dark:before:su-w-full dark:before:su-h-full dark:before:su-top-0 dark:before:su-left-0 dark:before:su-z-1" }, /* @__PURE__ */ import_react130.default.createElement("div", { className: "su-relative su-w-full su-h-[233px] md:su-h-auto md:su-min-w-[257px] lg:su-h-[378.331px] lg:su-flex-1 su-z-2" }, /* @__PURE__ */ import_react130.default.createElement(
+    return /* @__PURE__ */ import_react131.default.createElement(Container, { width: "wide", paddingX: false }, /* @__PURE__ */ import_react131.default.createElement("section", { className: "su-relative su-flex su-flex-col su-gap-20 su-py-30 su-px-20 su-bg-fog-light md:su-mx-50 md:su-flex-row md:su-gap-18 lg:su-gap-48 md:su-p-36 lg:su-py-61 lg:su-px-65 dark:su-bg-transparent dark:before:su-bg-black dark:before:su-opacity-[0.5] dark:before:su-content-[''] dark:before:su-absolute dark:before:su-w-full dark:before:su-h-full dark:before:su-top-0 dark:before:su-left-0 dark:before:su-z-1" }, /* @__PURE__ */ import_react131.default.createElement("div", { className: "su-relative su-w-full su-h-[233px] md:su-h-auto md:su-min-w-[257px] lg:su-h-[378.331px] lg:su-flex-1 su-z-2" }, /* @__PURE__ */ import_react131.default.createElement(
       "img",
       {
         src: data2 && data2.url ? data2.url : "",
         className: "su-absolute su-size-full su-object-cover",
         alt: data2 && data2.attributes.alt ? data2.attributes.alt : ""
       }
-    )), /* @__PURE__ */ import_react130.default.createElement("div", { className: "lg:su-flex-1 su-relative su-z-2" }, /* @__PURE__ */ import_react130.default.createElement("div", { className: "su-flex su-gap-6 su-items-center su-text-18 su-font-semibold su-pb-20 md:su-pb-27" }, SVGMap.get(type) && /* @__PURE__ */ import_react130.default.createElement(import_react130.default.Fragment, null, /* @__PURE__ */ import_react130.default.createElement("span", { className: "dark:su-hidden" }, SVGMap.get(type).light), /* @__PURE__ */ import_react130.default.createElement("span", { className: "su-hidden dark:su-block" }, SVGMap.get(type).dark)), /* @__PURE__ */ import_react130.default.createElement("span", null, type)), /* @__PURE__ */ import_react130.default.createElement("h2", { className: "su-text-[33px] su-font-bold su-leading-[125%] su-font-serif su-pb-19 su-m-0" }, title), /* @__PURE__ */ import_react130.default.createElement("p", { className: "su-text-19 su-font-normal su-leading-[125%] su-pb-20 md:su-pb-27 su-m-0" }, summary), linkUrl && /* @__PURE__ */ import_react130.default.createElement(
+    )), /* @__PURE__ */ import_react131.default.createElement("div", { className: "lg:su-flex-1 su-relative su-z-2" }, /* @__PURE__ */ import_react131.default.createElement("div", { className: "su-flex su-gap-6 su-items-center su-text-18 su-font-semibold su-pb-20 md:su-pb-27" }, SVGMap.get(type) && /* @__PURE__ */ import_react131.default.createElement(import_react131.default.Fragment, null, /* @__PURE__ */ import_react131.default.createElement("span", { className: "dark:su-hidden" }, SVGMap.get(type).light), /* @__PURE__ */ import_react131.default.createElement("span", { className: "su-hidden dark:su-block" }, SVGMap.get(type).dark)), /* @__PURE__ */ import_react131.default.createElement("span", null, type)), /* @__PURE__ */ import_react131.default.createElement("h2", { className: "su-text-[33px] su-font-bold su-leading-[125%] su-font-serif su-pb-19 su-m-0" }, title), /* @__PURE__ */ import_react131.default.createElement("p", { className: "su-text-19 su-font-normal su-leading-[125%] su-pb-20 md:su-pb-27 su-m-0" }, summary), linkUrl && /* @__PURE__ */ import_react131.default.createElement(
       "a",
       {
         href: linkUrl,
         className: "su-flex su-gap-2 su-group su-text-19 su-font-semibold su-leading-[125%] su-text-digital-red su-no-underline dark:su-text-dark-mode-red hocus:su-underline"
       },
       linkText,
-      /* @__PURE__ */ import_react130.default.createElement("span", { className: "su-transition group-hocus:su--translate-y-01em group-hocus:su-translate-x-01em [&>svg]:su-translate-y-1" }, /* @__PURE__ */ import_react130.default.createElement(
+      /* @__PURE__ */ import_react131.default.createElement("span", { className: "su-transition group-hocus:su--translate-y-01em group-hocus:su-translate-x-01em [&>svg]:su-translate-y-1" }, /* @__PURE__ */ import_react131.default.createElement(
         "svg",
         {
           xmlns: "http://www.w3.org/2000/svg",
@@ -27020,7 +27038,7 @@
           viewBox: "0 0 23 23",
           fill: "none"
         },
-        /* @__PURE__ */ import_react130.default.createElement(
+        /* @__PURE__ */ import_react131.default.createElement(
           "path",
           {
             d: "M8.95664 7.42241L15.5563 7.42241M15.5563 7.42241L15.5563 14.0221M15.5563 7.42241L7.07102 15.9077",
@@ -27043,24 +27061,6 @@
     if (!target)
       return;
     hydrateComponent({ Component: PolicyBriefComponent, componentName });
-  })();
-
-  // components/pullquote/Component.jsx
-  var import_react131 = __toESM(require_react(), 1);
-  function PullQuoteStory({ displayConfiguration, imageUrl }) {
-    const { quote, name, title, width: width2 } = displayConfiguration;
-    return /* @__PURE__ */ import_react131.default.createElement(Container, { width: width2 }, /* @__PURE__ */ import_react131.default.createElement(PullQuote, { quote, name, title, avatar: imageUrl }));
-  }
-
-  // components/pullquote/client.jsx
-  (function() {
-    const componentName = "pullquote";
-    const target = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!target)
-      return;
-    hydrateComponent({ Component: PullQuoteStory, componentName });
   })();
 
   // components/multicolumn-listing/Component.jsx
@@ -27609,30 +27609,6 @@
     hydrateComponent({ Component: MediaFeature, componentName });
   })();
 
-  // components/media-carousel/Component.jsx
-  var import_react141 = __toESM(require_react(), 1);
-  var import_object_hash7 = __toESM(require_object_hash(), 1);
-  function StoriesCarousel2({ data: data2 }) {
-    const cards = [];
-    const uniqueClass = import_object_hash7.default.MD5(JSON.stringify(data2));
-    data2.forEach((card) => {
-      cards.push(
-        /* @__PURE__ */ import_react141.default.createElement(Card, { cardType: "media", data: card, displayDescription: false })
-      );
-    });
-    return /* @__PURE__ */ import_react141.default.createElement(Container, { width: "large" }, /* @__PURE__ */ import_react141.default.createElement(Carousel, { variant: "media", slides: cards, uniqueClass }));
-  }
-
-  // components/media-carousel/client.jsx
-  (function() {
-    const mediaCarousel = document.querySelector(
-      `[data-hydration-component="media-carousel"]`
-    );
-    if (!mediaCarousel)
-      return;
-    hydrateComponent({ Component: StoriesCarousel2, componentName: "media-carousel" });
-  })();
-
   // components/link-list/scripts/relatedStory.js
   async function relatedStory(search = null, pageData = null, personalisation = "") {
     const adapter = new FetchAdapter();
@@ -27657,31 +27633,31 @@
   }
 
   // components/link-list/components/LinkListItem.jsx
-  var import_react142 = __toESM(require_react(), 1);
+  var import_react141 = __toESM(require_react(), 1);
   function LinkListItem({ title, url }) {
-    return /* @__PURE__ */ import_react142.default.createElement("a", { href: url, className: "su-no-underline" }, /* @__PURE__ */ import_react142.default.createElement("h3", { className: "su-text-16 su-font-bold su-m-0 lg:su-text-24 lg:su-leading-[28.8px]" }, title));
+    return /* @__PURE__ */ import_react141.default.createElement("a", { href: url, className: "su-no-underline" }, /* @__PURE__ */ import_react141.default.createElement("h3", { className: "su-text-16 su-font-bold su-m-0 lg:su-text-24 lg:su-leading-[28.8px]" }, title));
   }
 
   // components/link-list/Component.jsx
-  var import_react143 = __toESM(require_react(), 1);
+  var import_react142 = __toESM(require_react(), 1);
   function LinkList({ search }) {
     const isClient = typeof window !== "undefined";
     const pageData = isClient && typeof window.pageController !== "undefined" ? window.pageController : null;
     const audienceCookie = getCookie("preferences_personalisation");
     const links = [];
-    const [relatedStoryData2, setRelatedStoryData] = (0, import_react143.useState)(null);
-    const [personalisation, setPersonalisation] = (0, import_react143.useState)(null);
-    const [linkItems, setLinkItems] = (0, import_react143.useState)([]);
+    const [relatedStoryData2, setRelatedStoryData] = (0, import_react142.useState)(null);
+    const [personalisation, setPersonalisation] = (0, import_react142.useState)(null);
+    const [linkItems, setLinkItems] = (0, import_react142.useState)([]);
     const getFB = async () => {
       const data2 = await relatedStory(search, pageData, audienceCookie);
       setRelatedStoryData(data2);
     };
     if (relatedStoryData2) {
       relatedStoryData2.forEach((link) => {
-        links.push(/* @__PURE__ */ import_react143.default.createElement(LinkListItem, { title: link.title, url: link.indexUrl }));
+        links.push(/* @__PURE__ */ import_react142.default.createElement(LinkListItem, { title: link.title, url: link.indexUrl }));
       });
     }
-    (0, import_react143.useEffect)(() => {
+    (0, import_react142.useEffect)(() => {
       if (audienceCookie)
         setPersonalisation(audienceCookie);
       if (relatedStoryData2 && !linkItems.length)
@@ -27690,13 +27666,13 @@
         getFB();
       }
     }, [personalisation, relatedStoryData2]);
-    return /* @__PURE__ */ import_react143.default.createElement(
+    return /* @__PURE__ */ import_react142.default.createElement(
       "div",
       {
         "data-role": "link-list-wrapper",
         className: `${linkItems.length ? "" : "su-link-list-no-stories"} su-fixed su-opacity-0 su--bottom-[100 su-left-0 su-left-1/2 su-right-1/2 su-translate-x-[-50%] su-max-w-[482px] su-p-20 su-bg-foggy-light lg:dark:su-bg-black-true dark:su-bg-black su-linklist-mob-width su-rounded-tl-[8px] su-rounded-tr-[8px] su-transition su-z-[9999] su-px-30 su-linklist-mob-width lg:su-z-[1] lg:su-bg-white lg:su-relative lg:su-bottom-0 lg:su-opacity-100 lg:su-p-0 lg:su-w-full`
       },
-      /* @__PURE__ */ import_react143.default.createElement("div", { className: "su-flex" }, linkItems.length ? /* @__PURE__ */ import_react143.default.createElement(SidebarHeading, { title: "Stories for you", icon: "bullseyePointer" }) : "", /* @__PURE__ */ import_react143.default.createElement(
+      /* @__PURE__ */ import_react142.default.createElement("div", { className: "su-flex" }, linkItems.length ? /* @__PURE__ */ import_react142.default.createElement(SidebarHeading, { title: "Stories for you", icon: "bullseyePointer" }) : "", /* @__PURE__ */ import_react142.default.createElement(
         "button",
         {
           className: "su-text-digital-red su-rotate-[-90deg] lg:su-hidden",
@@ -27706,18 +27682,18 @@
           "aria-label": "link-drawer",
           type: "button"
         },
-        /* @__PURE__ */ import_react143.default.createElement(ChevronRight, null)
+        /* @__PURE__ */ import_react142.default.createElement(ChevronRight, null)
       )),
-      /* @__PURE__ */ import_react143.default.createElement(
+      /* @__PURE__ */ import_react142.default.createElement(
         "div",
         {
           className: "su-max-h-1000 su-h-0 su-overflow-hidden su-transition lg:su-h-auto",
           id: "link-drawer",
           "data-role": "link-drawer"
         },
-        linkItems[0] && /* @__PURE__ */ import_react143.default.createElement("article", { className: "su-border-b su-border-b-black-20 dark:su-border-b-black-70 su-pb-15 su-mt-[23.65px] lg:su-pb-36" }, linkItems[0]),
-        linkItems[1] && /* @__PURE__ */ import_react143.default.createElement("article", { className: "su-border-b dark:su-border-b-black-70 su-border-b-black-20 su-py-15 lg:su-py-36" }, linkItems[1]),
-        linkItems[2] && /* @__PURE__ */ import_react143.default.createElement("article", { className: "su-pt-15 lg:su-pt-36" }, linkItems[2])
+        linkItems[0] && /* @__PURE__ */ import_react142.default.createElement("article", { className: "su-border-b su-border-b-black-20 dark:su-border-b-black-70 su-pb-15 su-mt-[23.65px] lg:su-pb-36" }, linkItems[0]),
+        linkItems[1] && /* @__PURE__ */ import_react142.default.createElement("article", { className: "su-border-b dark:su-border-b-black-70 su-border-b-black-20 su-py-15 lg:su-py-36" }, linkItems[1]),
+        linkItems[2] && /* @__PURE__ */ import_react142.default.createElement("article", { className: "su-pt-15 lg:su-pt-36" }, linkItems[2])
       )
     );
   }
@@ -27764,6 +27740,30 @@
       linkListWrapper.classList.add("su-opacity-[0]");
     });
     hydrateComponent({ Component: LinkList, componentName: "link-list" });
+  })();
+
+  // components/media-carousel/Component.jsx
+  var import_react143 = __toESM(require_react(), 1);
+  var import_object_hash7 = __toESM(require_object_hash(), 1);
+  function StoriesCarousel2({ data: data2 }) {
+    const cards = [];
+    const uniqueClass = import_object_hash7.default.MD5(JSON.stringify(data2));
+    data2.forEach((card) => {
+      cards.push(
+        /* @__PURE__ */ import_react143.default.createElement(Card, { cardType: "media", data: card, displayDescription: false })
+      );
+    });
+    return /* @__PURE__ */ import_react143.default.createElement(Container, { width: "large" }, /* @__PURE__ */ import_react143.default.createElement(Carousel, { variant: "media", slides: cards, uniqueClass }));
+  }
+
+  // components/media-carousel/client.jsx
+  (function() {
+    const mediaCarousel = document.querySelector(
+      `[data-hydration-component="media-carousel"]`
+    );
+    if (!mediaCarousel)
+      return;
+    hydrateComponent({ Component: StoriesCarousel2, componentName: "media-carousel" });
   })();
 
   // components/leadership-messages/Component.jsx
@@ -28011,93 +28011,20 @@
     hydrateComponent({ Component: InTheNews2, componentName });
   })();
 
-  // components/image-quote/Component.jsx
-  var import_react148 = __toESM(require_react(), 1);
-  function ImageQuote({ displayConfiguration, data: data2 }) {
-    const { imageCaption, imageCredit, quote, name, title } = displayConfiguration;
-    const imageOrientation = data2.attributes.height > data2.attributes.width ? "portrait" : "landscape";
-    const imageWidthMaps = /* @__PURE__ */ new Map();
-    imageWidthMaps.set("landscape", {
-      image: "su-w-5/6 md:su-w-[75%] lg:su-w-[calc(50%-19px)]",
-      quote: "lg:su-w-[62%] lg:su-ml-[-10%]",
-      line: "before:su-w-[18%] md:before:su-w-[26%] lg:before:su-w-[52%] dark:before:su-rotate-180"
-    });
-    imageWidthMaps.set("portrait", {
-      image: "su-w-5/6 md:su-w-[58.33%] lg:su-mr-[2%] lg:su-w-[38%]",
-      quote: "lg:su-w-[70%] lg:su-ml-[-10%]",
-      line: "before:su-w-[18%] md:before:su-w-[42%] lg:before:su-w-[62%] dark:before:su-rotate-180"
-    });
-    const widthClasses = imageWidthMaps.get(imageOrientation);
-    const captionCredit = imageCaption && imageCredit ? `${imageCaption} | ${imageCredit}` : imageCaption || imageCredit;
-    return /* @__PURE__ */ import_react148.default.createElement(Container, { width: "large" }, /* @__PURE__ */ import_react148.default.createElement(
-      "section",
-      {
-        className: [
-          "story__quote su-relative",
-          "su-flex su-flex-wrap lg:su-flex-nowrap lg:su-items-start",
-          "before:su-absolute before:su-top-45 before:su-h-4 lg:before:su-top-72 before:su-z-0 before:su-right-0 su-bg-gradient-before-reverse",
-          widthClasses.line,
-          "after:su-absolute after:su-w-4 after:su-z-[-10] after:su-top-[45px] lg:after:su-top-72 after:su-right-0 su-bg-gradient-after-reverse after:su-h-[calc(100%-45px)] lg:after:su-h-[calc(100%-72px)] lg:after:su-hidden"
-        ].join(" ")
-      },
-      /* @__PURE__ */ import_react148.default.createElement(
-        "figure",
-        {
-          className: ["su-flex su-flex-col su-gap-8", widthClasses.image].join(
-            " "
-          )
-        },
-        /* @__PURE__ */ import_react148.default.createElement(
-          "img",
-          {
-            src: data2.url,
-            className: "su-z-10 su-w-full su-h-auto su-object-center su-object-cover",
-            alt: ""
-          }
-        ),
-        /* @__PURE__ */ import_react148.default.createElement("figcaption", { className: "dark:su-text-white su-text-14 su-font-normal su-mt-8 md:su-text-16" }, captionCredit)
-      ),
-      /* @__PURE__ */ import_react148.default.createElement(
-        "figure",
-        {
-          className: [
-            "su-ml-0 md:su-w-[83.32%]]",
-            "su-pl-32 su-pr-45 md:su-pr-0 md:su-pl-[51px] md:su-mx-[8.33%] lg:su-mx-0 lg:su-pl-[17.7%] lg:su-mt-72 su-flex su-flex-col su-pt-49 lg:su-pt-[91px] su-gap-6 md:su-gap-18 lg:su-gap-29 su-pr-0 lg:su-pr-72 su-relative",
-            widthClasses.quote,
-            "after:su-hidden lg:after:su-block after:su-absolute after:su-w-4 after:su--z-10 after:su-top-45 lg:after:su-top-0 after:su-right-0 lg:after:su-h-full su-bg-gradient-after-reverse"
-          ].join(" ")
-        },
-        /* @__PURE__ */ import_react148.default.createElement("blockquote", { className: "story__quote-target su-relative su-pl-0 su-flex su-m-0 su-items-start su-gap-6 su-text-black dark:su-text-white su-font-semibold su-text-24 md:su-text-[36px] font-serif-4 before:su-text-[59px] md:before:su-text-[73px] before:su-leading-[109.5px] lg:before:su-leading-[139.5px] lg:before:su-text-[93px] before:su-font-regular before:su--mt-30 md:before:su--mt-25 lg:before:su--mt-32 before:su-content-['\u201C'] before:su-text-serif before:su-text-black before:su-absolute before:su-right-full before:su-mr-6 md:before:su-mr-13 dark:before:su-text-white" }, `${quote}\u201D`),
-        /* @__PURE__ */ import_react148.default.createElement("figcaption", { className: "su-relative su-text-black su-basefont-21 su-mt-0 su-flex su-flex-col dark:su-text-white su-text-16 md:su-text-21 su-font-normal lg:su-flex su-gap-5 md:su-gap-6 after:su-h-[calc(100%+32px)] after:su-hidden lg:after:su-block after:su-w-5 after:su-bg-white dark:after:su-bg-black-true after:su-absolute after:su-left-full after:su--top-32 after:su-translate-x-72 after:su--ml-4" }, /* @__PURE__ */ import_react148.default.createElement("strong", null, name), " ", /* @__PURE__ */ import_react148.default.createElement("span", null, title))
-      )
-    ));
-  }
-
-  // components/image-quote/client.jsx
-  (function() {
-    const componentName = "image-quote";
-    const target = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!target)
-      return;
-    hydrateComponent({ Component: ImageQuote, componentName });
-  })();
-
   // components/in-brief/Component.jsx
-  var import_react149 = __toESM(require_react(), 1);
+  var import_react148 = __toESM(require_react(), 1);
   var import_object_hash8 = __toESM(require_object_hash(), 1);
   function InBrief({ points }) {
     const hasPoints = points.length > 0;
-    return hasPoints ? /* @__PURE__ */ import_react149.default.createElement(Container, { width: "narrow" }, /* @__PURE__ */ import_react149.default.createElement(
+    return hasPoints ? /* @__PURE__ */ import_react148.default.createElement(Container, { width: "narrow" }, /* @__PURE__ */ import_react148.default.createElement(
       "div",
       {
         "data-test": "in-brief",
         className: "su-border-b su-border-black-20"
       },
-      /* @__PURE__ */ import_react149.default.createElement("div", { className: "su-relative su-overflow-hidden" }, /* @__PURE__ */ import_react149.default.createElement("h2", { className: "su-font-serif su-font-black su-inline su-bg-white dark:su-bg-black-true !su-text-23 su-pr-10 su-m-0" }, "In brief"), /* @__PURE__ */ import_react149.default.createElement("span", { className: "su-w-full su-bg-black-20 su-h-px su-absolute su-bottom-4" })),
-      /* @__PURE__ */ import_react149.default.createElement("div", { className: "su-wysiwyg-content" }, /* @__PURE__ */ import_react149.default.createElement("ul", { className: "su-basefont-19 su-flex su-flex-col su-mb-0 su-gap-18 su-pt-34 su-pb-27 [&>li]:su-m-0" }, points.map((item) => {
-        return /* @__PURE__ */ import_react149.default.createElement(
+      /* @__PURE__ */ import_react148.default.createElement("div", { className: "su-relative su-overflow-hidden" }, /* @__PURE__ */ import_react148.default.createElement("h2", { className: "su-font-serif su-font-black su-inline su-bg-white dark:su-bg-black-true !su-text-23 su-pr-10 su-m-0" }, "In brief"), /* @__PURE__ */ import_react148.default.createElement("span", { className: "su-w-full su-bg-black-20 su-h-px su-absolute su-bottom-4" })),
+      /* @__PURE__ */ import_react148.default.createElement("div", { className: "su-wysiwyg-content" }, /* @__PURE__ */ import_react148.default.createElement("ul", { className: "su-basefont-19 su-flex su-flex-col su-mb-0 su-gap-18 su-pt-34 su-pb-27 [&>li]:su-m-0" }, points.map((item) => {
+        return /* @__PURE__ */ import_react148.default.createElement(
           XssSafeContent_default,
           {
             elementType: "li",
@@ -28121,6 +28048,79 @@
     if (!target)
       return;
     hydrateComponent({ Component: InBrief, componentName });
+  })();
+
+  // components/image-quote/Component.jsx
+  var import_react149 = __toESM(require_react(), 1);
+  function ImageQuote({ displayConfiguration, data: data2 }) {
+    const { imageCaption, imageCredit, quote, name, title } = displayConfiguration;
+    const imageOrientation = data2.attributes.height > data2.attributes.width ? "portrait" : "landscape";
+    const imageWidthMaps = /* @__PURE__ */ new Map();
+    imageWidthMaps.set("landscape", {
+      image: "su-w-5/6 md:su-w-[75%] lg:su-w-[calc(50%-19px)]",
+      quote: "lg:su-w-[62%] lg:su-ml-[-10%]",
+      line: "before:su-w-[18%] md:before:su-w-[26%] lg:before:su-w-[52%] dark:before:su-rotate-180"
+    });
+    imageWidthMaps.set("portrait", {
+      image: "su-w-5/6 md:su-w-[58.33%] lg:su-mr-[2%] lg:su-w-[38%]",
+      quote: "lg:su-w-[70%] lg:su-ml-[-10%]",
+      line: "before:su-w-[18%] md:before:su-w-[42%] lg:before:su-w-[62%] dark:before:su-rotate-180"
+    });
+    const widthClasses = imageWidthMaps.get(imageOrientation);
+    const captionCredit = imageCaption && imageCredit ? `${imageCaption} | ${imageCredit}` : imageCaption || imageCredit;
+    return /* @__PURE__ */ import_react149.default.createElement(Container, { width: "large" }, /* @__PURE__ */ import_react149.default.createElement(
+      "section",
+      {
+        className: [
+          "story__quote su-relative",
+          "su-flex su-flex-wrap lg:su-flex-nowrap lg:su-items-start",
+          "before:su-absolute before:su-top-45 before:su-h-4 lg:before:su-top-72 before:su-z-0 before:su-right-0 su-bg-gradient-before-reverse",
+          widthClasses.line,
+          "after:su-absolute after:su-w-4 after:su-z-[-10] after:su-top-[45px] lg:after:su-top-72 after:su-right-0 su-bg-gradient-after-reverse after:su-h-[calc(100%-45px)] lg:after:su-h-[calc(100%-72px)] lg:after:su-hidden"
+        ].join(" ")
+      },
+      /* @__PURE__ */ import_react149.default.createElement(
+        "figure",
+        {
+          className: ["su-flex su-flex-col su-gap-8", widthClasses.image].join(
+            " "
+          )
+        },
+        /* @__PURE__ */ import_react149.default.createElement(
+          "img",
+          {
+            src: data2.url,
+            className: "su-z-10 su-w-full su-h-auto su-object-center su-object-cover",
+            alt: ""
+          }
+        ),
+        /* @__PURE__ */ import_react149.default.createElement("figcaption", { className: "dark:su-text-white su-text-14 su-font-normal su-mt-8 md:su-text-16" }, captionCredit)
+      ),
+      /* @__PURE__ */ import_react149.default.createElement(
+        "figure",
+        {
+          className: [
+            "su-ml-0 md:su-w-[83.32%]]",
+            "su-pl-32 su-pr-45 md:su-pr-0 md:su-pl-[51px] md:su-mx-[8.33%] lg:su-mx-0 lg:su-pl-[17.7%] lg:su-mt-72 su-flex su-flex-col su-pt-49 lg:su-pt-[91px] su-gap-6 md:su-gap-18 lg:su-gap-29 su-pr-0 lg:su-pr-72 su-relative",
+            widthClasses.quote,
+            "after:su-hidden lg:after:su-block after:su-absolute after:su-w-4 after:su--z-10 after:su-top-45 lg:after:su-top-0 after:su-right-0 lg:after:su-h-full su-bg-gradient-after-reverse"
+          ].join(" ")
+        },
+        /* @__PURE__ */ import_react149.default.createElement("blockquote", { className: "story__quote-target su-relative su-pl-0 su-flex su-m-0 su-items-start su-gap-6 su-text-black dark:su-text-white su-font-semibold su-text-24 md:su-text-[36px] font-serif-4 before:su-text-[59px] md:before:su-text-[73px] before:su-leading-[109.5px] lg:before:su-leading-[139.5px] lg:before:su-text-[93px] before:su-font-regular before:su--mt-30 md:before:su--mt-25 lg:before:su--mt-32 before:su-content-['\u201C'] before:su-text-serif before:su-text-black before:su-absolute before:su-right-full before:su-mr-6 md:before:su-mr-13 dark:before:su-text-white" }, `${quote}\u201D`),
+        /* @__PURE__ */ import_react149.default.createElement("figcaption", { className: "su-relative su-text-black su-basefont-21 su-mt-0 su-flex su-flex-col dark:su-text-white su-text-16 md:su-text-21 su-font-normal lg:su-flex su-gap-5 md:su-gap-6 after:su-h-[calc(100%+32px)] after:su-hidden lg:after:su-block after:su-w-5 after:su-bg-white dark:after:su-bg-black-true after:su-absolute after:su-left-full after:su--top-32 after:su-translate-x-72 after:su--ml-4" }, /* @__PURE__ */ import_react149.default.createElement("strong", null, name), " ", /* @__PURE__ */ import_react149.default.createElement("span", null, title))
+      )
+    ));
+  }
+
+  // components/image-quote/client.jsx
+  (function() {
+    const componentName = "image-quote";
+    const target = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!target)
+      return;
+    hydrateComponent({ Component: ImageQuote, componentName });
   })();
 
   // packages/media/ImageMosaic.jsx
@@ -28719,37 +28719,70 @@
     hydrateComponent({ Component: FeatureStoryHero, componentName });
   })();
 
-  // components/fact-callout/Component.jsx
+  // components/content-carousel/Component.jsx
   var import_react158 = __toESM(require_react(), 1);
+  function ContentCarousel({ title, slides }) {
+    const cards = [];
+    slides.forEach((slide) => {
+      cards.push(
+        /* @__PURE__ */ import_react158.default.createElement(
+          XssSafeContent_default,
+          {
+            "data-test": "content-carousel-content",
+            className: [
+              "su-wysiwyg-content su-w-full",
+              "*:su-mb-6 *:su-text-16 *:su-leading-[125%] *:md:su-text-19 *:lg:su-text-19 [&>*:last-child]:su-mb-0 *:su-card-paragraph"
+            ].join(" "),
+            content: slide.content
+          }
+        )
+      );
+    });
+    return /* @__PURE__ */ import_react158.default.createElement(Container, { width: "narrow" }, /* @__PURE__ */ import_react158.default.createElement("div", { className: "su-bg-fog-light dark:su-bg-black su-p-20 md:su-pt-36 md:su-px-36 md:su-pb-26" }, /* @__PURE__ */ import_react158.default.createElement("div", { className: "su-relative su-mb-38 su-overflow-hidden" }, title && /* @__PURE__ */ import_react158.default.createElement("h3", { className: "su-relative su-text-23 su-leading-[119.415%] su-z-20 su-font-black su-mb-0 su-inline su-pr-10 su-m-0" }, title), /* @__PURE__ */ import_react158.default.createElement("span", { className: "su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-1 su-absolute su-bottom-4" })), /* @__PURE__ */ import_react158.default.createElement(Carousel, { variant: "content", slides: cards })));
+  }
+
+  // components/content-carousel/client.jsx
+  (function() {
+    const componentName = "content-carousel";
+    const contentCarousel = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!contentCarousel)
+      return;
+    hydrateComponent({ Component: ContentCarousel, componentName });
+  })();
+
+  // components/fact-callout/Component.jsx
+  var import_react159 = __toESM(require_react(), 1);
   function FactCallout({ displayConfiguration }) {
     const { icon, factText, indicatorPosition, width: width2 } = displayConfiguration;
     const svgMap = /* @__PURE__ */ new Map();
     const indicatorMap = /* @__PURE__ */ new Map();
     svgMap.set("pie chart", {
-      light: /* @__PURE__ */ import_react158.default.createElement(PieChart, { variant: "light" }),
-      dark: /* @__PURE__ */ import_react158.default.createElement(PieChart, { variant: "dark" })
+      light: /* @__PURE__ */ import_react159.default.createElement(PieChart, { variant: "light" }),
+      dark: /* @__PURE__ */ import_react159.default.createElement(PieChart, { variant: "dark" })
     });
     svgMap.set("bar graph", {
-      light: /* @__PURE__ */ import_react158.default.createElement(BarGraph, { variant: "light" }),
-      dark: /* @__PURE__ */ import_react158.default.createElement(BarGraph, { variant: "dark" })
+      light: /* @__PURE__ */ import_react159.default.createElement(BarGraph, { variant: "light" }),
+      dark: /* @__PURE__ */ import_react159.default.createElement(BarGraph, { variant: "dark" })
     });
     indicatorMap.set("top", "fact-wrapper__decoration-top");
     indicatorMap.set("bottom", "fact-wrapper__decoration-bottom");
     const indicator = indicatorMap.get(indicatorPosition) ? indicatorMap.get(indicatorPosition) : "fact-wrapper__decoration-top";
-    return /* @__PURE__ */ import_react158.default.createElement("div", { className: `decoration-${indicatorPosition}` }, /* @__PURE__ */ import_react158.default.createElement(Container, { width: width2 }, /* @__PURE__ */ import_react158.default.createElement("section", { className: "fact-wrapper su-col-span-full su-w-full su-relative su-h-auto su-p-3 su-bg-gradient-light-red-h-reverse" }, /* @__PURE__ */ import_react158.default.createElement(
+    return /* @__PURE__ */ import_react159.default.createElement("div", { className: `decoration-${indicatorPosition}` }, /* @__PURE__ */ import_react159.default.createElement(Container, { width: width2 }, /* @__PURE__ */ import_react159.default.createElement("section", { className: "fact-wrapper su-col-span-full su-w-full su-relative su-h-auto su-p-3 su-bg-gradient-light-red-h-reverse" }, /* @__PURE__ */ import_react159.default.createElement(
       "div",
       {
         className: `${indicator} su-absolute su-left-1/2 su-right-1/2 su-flex su-items-center su-justify-start su-w-24 su-h-90`
       },
-      /* @__PURE__ */ import_react158.default.createElement("div", { className: "su-w-3 su-h-72 lg:su-h-60 su-bg-gradient-light-red-h-reverse" }),
-      /* @__PURE__ */ import_react158.default.createElement("div", { className: "su-size-24 su-rounded-full su-bg-gradient-light-red-h-reverse su-flex su-items-center su-justify-center" }, /* @__PURE__ */ import_react158.default.createElement("div", { className: "su-size-18 su-rounded-full su-bg-white dark:su-bg-black-true" }))
-    ), /* @__PURE__ */ import_react158.default.createElement(
+      /* @__PURE__ */ import_react159.default.createElement("div", { className: "su-w-3 su-h-72 lg:su-h-60 su-bg-gradient-light-red-h-reverse" }),
+      /* @__PURE__ */ import_react159.default.createElement("div", { className: "su-size-24 su-rounded-full su-bg-gradient-light-red-h-reverse su-flex su-items-center su-justify-center" }, /* @__PURE__ */ import_react159.default.createElement("div", { className: "su-size-18 su-rounded-full su-bg-white dark:su-bg-black-true" }))
+    ), /* @__PURE__ */ import_react159.default.createElement(
       "div",
       {
         className: `su-px-38 ${width2 === "Wide" ? "md:su-px-[12.1rem]" : ""} su-py-38 md:su-py-61 su-size-full su-bg-white dark:su-bg-black-true su-flex su-flex-col su-items-center su-justify-center su-gap-10 lg:su-flex-row lg:su-gap-38`
       },
-      svgMap.get(icon) && "light" in svgMap.get(icon) && "dark" in svgMap.get(icon) && /* @__PURE__ */ import_react158.default.createElement(import_react158.default.Fragment, null, /* @__PURE__ */ import_react158.default.createElement("span", { "data-test": "icon", className: "dark:su-hidden" }, svgMap.get(icon).light), /* @__PURE__ */ import_react158.default.createElement("span", { "data-test": "icon", className: "su-hidden dark:su-block" }, svgMap.get(icon).dark)),
-      /* @__PURE__ */ import_react158.default.createElement("p", { className: "su-font-serif su-m-0" }, factText)
+      svgMap.get(icon) && "light" in svgMap.get(icon) && "dark" in svgMap.get(icon) && /* @__PURE__ */ import_react159.default.createElement(import_react159.default.Fragment, null, /* @__PURE__ */ import_react159.default.createElement("span", { "data-test": "icon", className: "dark:su-hidden" }, svgMap.get(icon).light), /* @__PURE__ */ import_react159.default.createElement("span", { "data-test": "icon", className: "su-hidden dark:su-block" }, svgMap.get(icon).dark)),
+      /* @__PURE__ */ import_react159.default.createElement("p", { className: "su-font-serif su-m-0" }, factText)
     ))));
   }
 
@@ -28765,7 +28798,7 @@
   })();
 
   // components/events-section/Component.jsx
-  var import_react159 = __toESM(require_react(), 1);
+  var import_react160 = __toESM(require_react(), 1);
   function EventsSection({
     headingData,
     displayConfiguration,
@@ -28774,9 +28807,9 @@
     const noOfCards = Number(displayConfiguration.numberOfEvents);
     const cards = [];
     data2.forEach((card) => {
-      cards.push(/* @__PURE__ */ import_react159.default.createElement(Card, { data: card, cardType: "horizontal" }));
+      cards.push(/* @__PURE__ */ import_react160.default.createElement(Card, { data: card, cardType: "horizontal" }));
     });
-    return cards.length > 0 ? /* @__PURE__ */ import_react159.default.createElement(Container, { width: "large", "data-component": "events-section" }, /* @__PURE__ */ import_react159.default.createElement(
+    return cards.length > 0 ? /* @__PURE__ */ import_react160.default.createElement(Container, { width: "large", "data-component": "events-section" }, /* @__PURE__ */ import_react160.default.createElement(
       LinkedHeading,
       {
         title: headingData.title,
@@ -28784,7 +28817,7 @@
         ctaLink: headingData.ctaLink,
         ctaNewWindow: headingData.ctaNewWindow
       }
-    ), /* @__PURE__ */ import_react159.default.createElement(HorizontalCardGrid, { items: cards, maximumItems: noOfCards })) : "";
+    ), /* @__PURE__ */ import_react160.default.createElement(HorizontalCardGrid, { items: cards, maximumItems: noOfCards })) : "";
   }
 
   // components/events-section/client.jsx
@@ -28798,83 +28831,8 @@
     hydrateComponent({ Component: EventsSection, componentName });
   })();
 
-  // components/content-carousel/Component.jsx
-  var import_react160 = __toESM(require_react(), 1);
-  function ContentCarousel({ title, slides }) {
-    const cards = [];
-    slides.forEach((slide) => {
-      cards.push(
-        /* @__PURE__ */ import_react160.default.createElement(
-          XssSafeContent_default,
-          {
-            "data-test": "content-carousel-content",
-            className: [
-              "su-wysiwyg-content su-w-full",
-              "*:su-mb-6 *:su-text-16 *:su-leading-[125%] *:md:su-text-19 *:lg:su-text-19 [&>*:last-child]:su-mb-0 *:su-card-paragraph"
-            ].join(" "),
-            content: slide.content
-          }
-        )
-      );
-    });
-    return /* @__PURE__ */ import_react160.default.createElement(Container, { width: "narrow" }, /* @__PURE__ */ import_react160.default.createElement("div", { className: "su-bg-fog-light dark:su-bg-black su-p-20 md:su-pt-36 md:su-px-36 md:su-pb-26" }, /* @__PURE__ */ import_react160.default.createElement("div", { className: "su-relative su-mb-38 su-overflow-hidden" }, title && /* @__PURE__ */ import_react160.default.createElement("h3", { className: "su-relative su-text-23 su-leading-[119.415%] su-z-20 su-font-black su-mb-0 su-inline su-pr-10 su-m-0" }, title), /* @__PURE__ */ import_react160.default.createElement("span", { className: "su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-1 su-absolute su-bottom-4" })), /* @__PURE__ */ import_react160.default.createElement(Carousel, { variant: "content", slides: cards })));
-  }
-
-  // components/content-carousel/client.jsx
-  (function() {
-    const componentName = "content-carousel";
-    const contentCarousel = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!contentCarousel)
-      return;
-    hydrateComponent({ Component: ContentCarousel, componentName });
-  })();
-
-  // components/campaign-cta/Component.jsx
-  var import_react161 = __toESM(require_react(), 1);
-  function CampaignCta({ displayConfiguration, data: data2, linkData }) {
-    const { title, description, linkText } = displayConfiguration;
-    return /* @__PURE__ */ import_react161.default.createElement(Container, { width: "full", paddingX: false }, /* @__PURE__ */ import_react161.default.createElement("section", { className: "su-container-inner su-relative su-flex su-items-center su-justify-center su-flex-col" }, /* @__PURE__ */ import_react161.default.createElement("div", { className: "su-component-campaigncta-wrap su-pt-126 su-pb-108 su-relative su-z-[2] su-text-white su-p-20 md:su-px-50 su-flex su-flex-col md:su-flex-row" }, /* @__PURE__ */ import_react161.default.createElement("div", { className: "su-component-campaigncta-content su-relative md:su-border-r-black-30 md:su-border-r md:su-mr-25 su-w-full md:su-max-w-[65.5rem] md:su-pr-25" }, /* @__PURE__ */ import_react161.default.createElement("h2", { className: "su-font-serif su-text-[5.5rem] su-leading-none md:su-text-[7.2rem] su-m-0 su-font-bold" }, title), /* @__PURE__ */ import_react161.default.createElement(
-      XssSafeContent_default,
-      {
-        content: description,
-        elementType: "div",
-        className: [
-          "su-mt-34 su-font-serif su-text-20 md:su-text-24 su-mb-0 md:su-mb-[5.9rem] su-text-semibold md:su-mt-61",
-          "su-font-semibold su-leading-[130.245%]"
-        ].join(" ")
-      }
-    )), linkData && linkData.url && /* @__PURE__ */ import_react161.default.createElement(
-      "a",
-      {
-        href: linkData.url,
-        className: "su-text-18 su-mt-50 su-font-normal su-leading-display su-inline-block su-px-30 su-pt-10 su-pb-12 su-bg-digital-red su-mr-auto su-text-white su-no-underline hover:su-bg-black su-transition md:su-px-35 md:su-pt-14 md:su-pb-16 md:su-text-24 md:su-leading-[119.415%] md:su-mt-auto su-shrink-0"
-      },
-      linkText
-    )), /* @__PURE__ */ import_react161.default.createElement(
-      "img",
-      {
-        className: "su-absolute su-object-cover su-size-full su-z-[1]",
-        src: data2 && data2.url ? data2.url : "",
-        alt: data2 && data2.attributes.alt ? data2.attributes.alt : ""
-      }
-    ), /* @__PURE__ */ import_react161.default.createElement("div", { className: "su-campaign-cta-gradient su-z-[1]" })));
-  }
-
-  // components/campaign-cta/client.jsx
-  (function() {
-    const componentName = "campaign-cta";
-    const campaignCta = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!campaignCta)
-      return;
-    hydrateComponent({ Component: CampaignCta, componentName });
-  })();
-
   // packages/sidebar/SidebarList.jsx
-  var import_react162 = __toESM(require_react(), 1);
+  var import_react161 = __toESM(require_react(), 1);
   var import_object_hash9 = __toESM(require_object_hash(), 1);
   function SidebarList({
     children: children2,
@@ -28885,8 +28843,8 @@
     ctaIcon = "chevronright"
   }) {
     const iconMap = /* @__PURE__ */ new Map();
-    iconMap.set("chevronright", /* @__PURE__ */ import_react162.default.createElement(ChevronRight, null));
-    iconMap.set("externalarrow", /* @__PURE__ */ import_react162.default.createElement(ExternalArrow, null));
+    iconMap.set("chevronright", /* @__PURE__ */ import_react161.default.createElement(ChevronRight, null));
+    iconMap.set("externalarrow", /* @__PURE__ */ import_react161.default.createElement(ExternalArrow, null));
     const iconAlignments = /* @__PURE__ */ new Map();
     iconAlignments.set("chevronright", "group-hocus:su-translate-x-01em");
     iconAlignments.set(
@@ -28894,16 +28852,16 @@
       "group-hocus:su--translate-y-01em group-hocus:su-translate-x-01em [&>svg]:su-translate-y-1"
     );
     const hasChildren = children2 !== void 0;
-    return hasChildren ? /* @__PURE__ */ import_react162.default.createElement(
+    return hasChildren ? /* @__PURE__ */ import_react161.default.createElement(
       "div",
       {
         className: [
           "su-component-sidebar-list su-flex su-flex-wrap su-gap-27"
         ].join(" ")
       },
-      title && /* @__PURE__ */ import_react162.default.createElement(SidebarHeading, { title, icon }),
+      title && /* @__PURE__ */ import_react161.default.createElement(SidebarHeading, { title, icon }),
       children2,
-      ctaUrl && /* @__PURE__ */ import_react162.default.createElement(
+      ctaUrl && /* @__PURE__ */ import_react161.default.createElement(
         "a",
         {
           "data-test": "cta",
@@ -28912,8 +28870,8 @@
             "su-items-center su-group su-transition su-justify-center md:su-justify-start su-w-full su-flex su-text-digital-red dark:su-text-dark-mode-red su-flex-nowrap su-gap-2 su-leading-[125%] su-text-21 su-font-semibold su-no-underline hocus:su-underline *:su-transition"
           ].join(" ")
         },
-        /* @__PURE__ */ import_react162.default.createElement("span", null, ctaText),
-        /* @__PURE__ */ import_react162.default.createElement(
+        /* @__PURE__ */ import_react161.default.createElement("span", null, ctaText),
+        /* @__PURE__ */ import_react161.default.createElement(
           "span",
           {
             className: ["su-transition", iconAlignments.get(ctaIcon)].join(" ")
@@ -28925,7 +28883,7 @@
   }
 
   // components/combined-content-grid/Component.jsx
-  var import_react163 = __toESM(require_react(), 1);
+  var import_react162 = __toESM(require_react(), 1);
   function FeaturedContent2({
     contentConfiguration,
     displayConfiguration,
@@ -28943,12 +28901,12 @@
     }
     const eventCards = [];
     eventData.forEach((card) => {
-      eventCards.push(/* @__PURE__ */ import_react163.default.createElement(Card, { data: card, cardType: "horizontal" }));
+      eventCards.push(/* @__PURE__ */ import_react162.default.createElement(Card, { data: card, cardType: "horizontal" }));
     });
     const announcementCards = [];
     announcementData.forEach((card, i) => {
       announcementCards.push(
-        /* @__PURE__ */ import_react163.default.createElement("article", { className: "su-relative su-mt-0 su-gap-6 su-flex su-flex-wrap" }, /* @__PURE__ */ import_react163.default.createElement(
+        /* @__PURE__ */ import_react162.default.createElement("article", { className: "su-relative su-mt-0 su-gap-6 su-flex su-flex-wrap" }, /* @__PURE__ */ import_react162.default.createElement(
           XssSafeContent_default,
           {
             id: `aria-announcement-${i}`,
@@ -28956,19 +28914,19 @@
             content: card.description,
             elementType: "p"
           }
-        ), /* @__PURE__ */ import_react163.default.createElement(
+        ), /* @__PURE__ */ import_react162.default.createElement(
           "a",
           {
             href: card.liveUrl,
             "aria-labelledby": `aria-announcement-${i}`,
             className: "su-group su-transition dark:su-text-digital-blue-vivid su-text-digital-blue su-flex su-flex-nowrap su-gap-2 su-items-center su-leading-[125%] su-text-16 su-font-semibold su-no-underline before:su-size-full before:su-top-0 before:su-left-0 before:su-absolute [&>svg]:su-size-16"
           },
-          /* @__PURE__ */ import_react163.default.createElement("span", { className: "group-hocus:su-underline" }, "Read more"),
-          /* @__PURE__ */ import_react163.default.createElement("span", { className: "su-transition group-hocus:su-translate-x-01em" }, /* @__PURE__ */ import_react163.default.createElement(ChevronRight, null))
+          /* @__PURE__ */ import_react162.default.createElement("span", { className: "group-hocus:su-underline" }, "Read more"),
+          /* @__PURE__ */ import_react162.default.createElement("span", { className: "su-transition group-hocus:su-translate-x-01em" }, /* @__PURE__ */ import_react162.default.createElement(ChevronRight, null))
         ))
       );
     });
-    return /* @__PURE__ */ import_react163.default.createElement(Container, { width: "large", "data-component": "combined-content-grid" }, /* @__PURE__ */ import_react163.default.createElement(
+    return /* @__PURE__ */ import_react162.default.createElement(Container, { width: "large", "data-component": "combined-content-grid" }, /* @__PURE__ */ import_react162.default.createElement(
       LinkedHeading,
       {
         title: headingData.title,
@@ -28976,7 +28934,7 @@
         ctaLink: headingData.ctaLink,
         ctaNewWindow: headingData.ctaNewWindow
       }
-    ), /* @__PURE__ */ import_react163.default.createElement("div", { className: "su-w-full su-component-featured-grid" }, /* @__PURE__ */ import_react163.default.createElement("div", { className: "su-flex su-flex-wrap lg:su-flex-nowrap su-gap-[68px] md:su-gap-72 lg:su-gap-[160px]" }, /* @__PURE__ */ import_react163.default.createElement("div", { className: "su-relative su-flex su-flex-wrap md:su-flex-nowrap lg:su-flex-wrap lg:su-order-2 md:su-items-start md:su-content-start su-gap-80 md:su-gap-72 lg:su-gap-[76px] md:su-basis-[39.5%] lg:su-basis-[30%] su-grow before:su-w-full before:md:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px before:lg:su-h-full before:su-left-0 before:su--bottom-35 before:lg:su-bottom-auto before:lg:su-top-0 before:md:su-left-0 lg:before:su-w-px before:lg:su--left-80" }, /* @__PURE__ */ import_react163.default.createElement("div", { className: "su-relative su-w-full md:su-h-full lg:su-h-auto" }, /* @__PURE__ */ import_react163.default.createElement(
+    ), /* @__PURE__ */ import_react162.default.createElement("div", { className: "su-w-full su-component-featured-grid" }, /* @__PURE__ */ import_react162.default.createElement("div", { className: "su-flex su-flex-wrap lg:su-flex-nowrap su-gap-[68px] md:su-gap-72 lg:su-gap-[160px]" }, /* @__PURE__ */ import_react162.default.createElement("div", { className: "su-relative su-flex su-flex-wrap md:su-flex-nowrap lg:su-flex-wrap lg:su-order-2 md:su-items-start md:su-content-start su-gap-80 md:su-gap-72 lg:su-gap-[76px] md:su-basis-[39.5%] lg:su-basis-[30%] su-grow before:su-w-full before:md:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px before:lg:su-h-full before:su-left-0 before:su--bottom-35 before:lg:su-bottom-auto before:lg:su-top-0 before:md:su-left-0 lg:before:su-w-px before:lg:su--left-80" }, /* @__PURE__ */ import_react162.default.createElement("div", { className: "su-relative su-w-full md:su-h-full lg:su-h-auto" }, /* @__PURE__ */ import_react162.default.createElement(
       SidebarList,
       {
         title: eventsConfiguration.heading,
@@ -28985,7 +28943,7 @@
         ctaUrl: eventsConfiguration.linkUrl,
         ctaIcon: "externalarrow"
       },
-      /* @__PURE__ */ import_react163.default.createElement(
+      /* @__PURE__ */ import_react162.default.createElement(
         HorizontalCardGrid,
         {
           items: eventCards,
@@ -28993,7 +28951,7 @@
           maximumItems: Number(eventsConfiguration.numberOfItems)
         }
       )
-    )), /* @__PURE__ */ import_react163.default.createElement("div", { className: "su-relative su-w-full md:su-h-full lg:su-h-auto before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px md:before:su-h-full md:before:su-w-px before:su-left-0 md:before:su--left-38 before:su--top-40 md:before:su-top-0 lg:before:su--top-38 lg:before:su-left-0 lg:before:su-w-full lg:before:su-h-px" }, /* @__PURE__ */ import_react163.default.createElement(
+    )), /* @__PURE__ */ import_react162.default.createElement("div", { className: "su-relative su-w-full md:su-h-full lg:su-h-auto before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px md:before:su-h-full md:before:su-w-px before:su-left-0 md:before:su--left-38 before:su--top-40 md:before:su-top-0 lg:before:su--top-38 lg:before:su-left-0 lg:before:su-w-full lg:before:su-h-px" }, /* @__PURE__ */ import_react162.default.createElement(
       SidebarList,
       {
         title: announcementsConfiguration.heading,
@@ -29001,7 +28959,7 @@
         ctaText: "See all announcements",
         ctaUrl: announcementLink
       },
-      /* @__PURE__ */ import_react163.default.createElement(
+      /* @__PURE__ */ import_react162.default.createElement(
         HorizontalCardGrid,
         {
           items: announcementCards,
@@ -29011,13 +28969,13 @@
           )
         }
       )
-    ))), /* @__PURE__ */ import_react163.default.createElement("div", { className: "md:su-basis-[58.333%] lg:su-basis-[64.5%] su-grow" }, /* @__PURE__ */ import_react163.default.createElement(
+    ))), /* @__PURE__ */ import_react162.default.createElement("div", { className: "md:su-basis-[58.333%] lg:su-basis-[64.5%] su-grow" }, /* @__PURE__ */ import_react162.default.createElement(
       FeaturedGrid,
       {
         alignment: "left",
         items: [
-          /* @__PURE__ */ import_react163.default.createElement(Card, { data: featuredCardData2, cardSize: "featured" }),
-          /* @__PURE__ */ import_react163.default.createElement(
+          /* @__PURE__ */ import_react162.default.createElement(Card, { data: featuredCardData2, cardSize: "featured" }),
+          /* @__PURE__ */ import_react162.default.createElement(
             Card,
             {
               data: data2[1],
@@ -29026,7 +28984,7 @@
               cardSize: "small"
             }
           ),
-          /* @__PURE__ */ import_react163.default.createElement(
+          /* @__PURE__ */ import_react162.default.createElement(
             Card,
             {
               data: data2[2],
@@ -29050,6 +29008,48 @@
     if (!combinedGrid)
       return;
     hydrateComponent({ Component: FeaturedContent2, componentName });
+  })();
+
+  // components/campaign-cta/Component.jsx
+  var import_react163 = __toESM(require_react(), 1);
+  function CampaignCta({ displayConfiguration, data: data2, linkData }) {
+    const { title, description, linkText } = displayConfiguration;
+    return /* @__PURE__ */ import_react163.default.createElement(Container, { width: "full", paddingX: false }, /* @__PURE__ */ import_react163.default.createElement("section", { className: "su-container-inner su-relative su-flex su-items-center su-justify-center su-flex-col" }, /* @__PURE__ */ import_react163.default.createElement("div", { className: "su-component-campaigncta-wrap su-pt-126 su-pb-108 su-relative su-z-[2] su-text-white su-p-20 md:su-px-50 su-flex su-flex-col md:su-flex-row" }, /* @__PURE__ */ import_react163.default.createElement("div", { className: "su-component-campaigncta-content su-relative md:su-border-r-black-30 md:su-border-r md:su-mr-25 su-w-full md:su-max-w-[65.5rem] md:su-pr-25" }, /* @__PURE__ */ import_react163.default.createElement("h2", { className: "su-font-serif su-text-[5.5rem] su-leading-none md:su-text-[7.2rem] su-m-0 su-font-bold" }, title), /* @__PURE__ */ import_react163.default.createElement(
+      XssSafeContent_default,
+      {
+        content: description,
+        elementType: "div",
+        className: [
+          "su-mt-34 su-font-serif su-text-20 md:su-text-24 su-mb-0 md:su-mb-[5.9rem] su-text-semibold md:su-mt-61",
+          "su-font-semibold su-leading-[130.245%]"
+        ].join(" ")
+      }
+    )), linkData && linkData.url && /* @__PURE__ */ import_react163.default.createElement(
+      "a",
+      {
+        href: linkData.url,
+        className: "su-text-18 su-mt-50 su-font-normal su-leading-display su-inline-block su-px-30 su-pt-10 su-pb-12 su-bg-digital-red su-mr-auto su-text-white su-no-underline hover:su-bg-black su-transition md:su-px-35 md:su-pt-14 md:su-pb-16 md:su-text-24 md:su-leading-[119.415%] md:su-mt-auto su-shrink-0"
+      },
+      linkText
+    )), /* @__PURE__ */ import_react163.default.createElement(
+      "img",
+      {
+        className: "su-absolute su-object-cover su-size-full su-z-[1]",
+        src: data2 && data2.url ? data2.url : "",
+        alt: data2 && data2.attributes.alt ? data2.attributes.alt : ""
+      }
+    ), /* @__PURE__ */ import_react163.default.createElement("div", { className: "su-campaign-cta-gradient su-z-[1]" })));
+  }
+
+  // components/campaign-cta/client.jsx
+  (function() {
+    const componentName = "campaign-cta";
+    const campaignCta = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!campaignCta)
+      return;
+    hydrateComponent({ Component: CampaignCta, componentName });
   })();
 
   // components/button-row/Component.jsx
@@ -29111,130 +29111,11 @@
     hydrateComponent({ Component: Button, componentName });
   })();
 
-  // components/basic-story-hero/Component.jsx
-  var import_react166 = __toESM(require_react(), 1);
-  function readingTime4(text2) {
-    if (!text2)
-      return 0;
-    const wpm = 225;
-    const words = text2.trim().split(/\s+/).length;
-    const time = Math.ceil(words / wpm);
-    return time;
-  }
-  function basicStoryHero(props) {
-    const { title, media, summary, pubDateFormatted, topic, mediaType } = props;
-    const [readingTimeValue, setReadingTime] = (0, import_react166.useState)(0);
-    (0, import_react166.useEffect)(() => {
-      const content = document.querySelector(".su-page-content");
-      if (content) {
-        setReadingTime(() => readingTime4(content.innerText));
-      }
-    });
-    return /* @__PURE__ */ import_react166.default.createElement(Container, { width: "wide" }, /* @__PURE__ */ import_react166.default.createElement("div", { className: "su-grid su-gap su-grid-cols-6 md:su-grid-cols-12" }, /* @__PURE__ */ import_react166.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-10 md:su-col-start-2" }, /* @__PURE__ */ import_react166.default.createElement("div", { className: "su-flex su-gap-y-8 su-gap-x-16 su-justify-between su-flex-wrap su-text-16 md:su-basefont-23" }, /* @__PURE__ */ import_react166.default.createElement("span", { className: "su-flex su-items-center su-justify-center" }, /* @__PURE__ */ import_react166.default.createElement("time", { className: "su-m-0 su-mr-4 su-font-semibold" }, pubDateFormatted), /* @__PURE__ */ import_react166.default.createElement("span", { className: "su-reading-time su-reading-time-separator" }), "|", " ", `${readingTimeValue} min read`), topic.asset_name && /* @__PURE__ */ import_react166.default.createElement(
-      "a",
-      {
-        href: topic.asset_url !== "" ? topic.asset_url : "#",
-        className: "su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline"
-      },
-      topic.asset_name
-    )), /* @__PURE__ */ import_react166.default.createElement("h1", { className: "su-font-bold su-rs-mt-4 su-font-serif su-mb-0 xl:su-text-[6.4rem]" }, title), /* @__PURE__ */ import_react166.default.createElement(
-      XssSafeContent_default,
-      {
-        className: [
-          "su-font-serif su-intro-text su-mb-0 su-rs-mt-2 su-text-21 su-leading-[27.35px] md:su-text-28 md:su-leading-[36.47px]",
-          ""
-        ].join(" "),
-        content: summary,
-        elementType: "p"
-      }
-    )), /* @__PURE__ */ import_react166.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4" }, /* @__PURE__ */ import_react166.default.createElement(
-      "figure",
-      {
-        className: `basic-story__header-image su-col-span-full su-relative su-z-0 ${mediaType === "image" ? "dark:su-bg-black" : ""}`
-      },
-      /* @__PURE__ */ import_react166.default.createElement("div", { className: "su-relative su-w-full" }, /* @__PURE__ */ import_react166.default.createElement(
-        Thumbnail,
-        {
-          url: media.featureImage.url,
-          alt: media.featureImage.alt,
-          video: media.featureVideo.id,
-          type: mediaType,
-          carousel: media.carousel
-        }
-      ), /* @__PURE__ */ import_react166.default.createElement("div", { className: "su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" })),
-      mediaType !== "carousel" && (media.caption || media.credit) && /* @__PURE__ */ import_react166.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, media.caption, " ", media.caption && media.credit && ` | `, media.credit)
-    ))));
-  }
-  function Thumbnail({ url, alt, video, type, carousel }) {
-    const [isModalOpen, setIsModalOpen] = (0, import_react166.useState)(false);
-    const slides = [];
-    const handleClick = () => {
-      setIsModalOpen(true);
-    };
-    const handleCloseModal = () => {
-      setIsModalOpen(false);
-    };
-    if (type === "image") {
-      return /* @__PURE__ */ import_react166.default.createElement(
-        "img",
-        {
-          src: "https://picsum.photos/350/200",
-          alt,
-          className: "su-relative su-w-full su-max-w-full"
-        }
-      );
-    }
-    if (type === "carousel") {
-      carousel.forEach((slide) => {
-        slides.push(
-          /* @__PURE__ */ import_react166.default.createElement(import_react166.default.Fragment, null, /* @__PURE__ */ import_react166.default.createElement("div", { className: "su-aspect-[3/2] su-relative su-bg-fog-light dark:su-bg-black" }, /* @__PURE__ */ import_react166.default.createElement(
-            "img",
-            {
-              src: slide.asset_url,
-              alt: slide.asset_attribute_alt,
-              className: "su-absolute su-top-0 su-left-0 su-w-full su-h-full su-object-scale-down su-object-center"
-            }
-          )), slide.asset_attribute_caption && /* @__PURE__ */ import_react166.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, slide.asset_attribute_caption))
-        );
-      });
-      return /* @__PURE__ */ import_react166.default.createElement(Carousel, { slides, variant: "basicstory" });
-    }
-    return /* @__PURE__ */ import_react166.default.createElement(import_react166.default.Fragment, null, /* @__PURE__ */ import_react166.default.createElement(
-      "button",
-      {
-        type: "button",
-        "aria-haspopup": "dialog",
-        className: "su-w-full su-aspect-[16/9] su-video-trigger",
-        onClick: handleClick
-      },
-      /* @__PURE__ */ import_react166.default.createElement(
-        "img",
-        {
-          src: url,
-          alt,
-          className: "su-w-full su-h-full su-absolute su-top-0 su-left-0 su-object-cover su-object-center"
-        }
-      ),
-      /* @__PURE__ */ import_react166.default.createElement("span", { className: "su-play-button-icon-hero su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px]" }, /* @__PURE__ */ import_react166.default.createElement(VideoPlay, null))
-    ), isModalOpen && /* @__PURE__ */ import_react166.default.createElement(ModalWrapper_default, { onClose: handleCloseModal }, /* @__PURE__ */ import_react166.default.createElement(EmbedVideo, { videoId: video })));
-  }
-
-  // components/basic-story-hero/client.jsx
-  (function() {
-    const componentName = "basic-story-hero";
-    const target = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!target)
-      return;
-    hydrateComponent({ Component: basicStoryHero, componentName });
-  })();
-
   // components/basic-hero/Component.jsx
-  var import_react167 = __toESM(require_react(), 1);
+  var import_react166 = __toESM(require_react(), 1);
   function BasicHero(props) {
     const { title, titleAlignment } = props;
-    return /* @__PURE__ */ import_react167.default.createElement(Container, null, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-flex su-justify-between su-flex-wrap su-rs-mt-6 su-rs-mb-5" }, /* @__PURE__ */ import_react167.default.createElement(
+    return /* @__PURE__ */ import_react166.default.createElement(Container, null, /* @__PURE__ */ import_react166.default.createElement("div", { className: "su-flex su-justify-between su-flex-wrap su-rs-mt-6 su-rs-mb-5" }, /* @__PURE__ */ import_react166.default.createElement(
       "h1",
       {
         className: cnb(
@@ -29255,6 +29136,125 @@
     if (!target)
       return;
     hydrateComponent({ Component: BasicHero, componentName });
+  })();
+
+  // components/basic-story-hero/Component.jsx
+  var import_react167 = __toESM(require_react(), 1);
+  function readingTime4(text2) {
+    if (!text2)
+      return 0;
+    const wpm = 225;
+    const words = text2.trim().split(/\s+/).length;
+    const time = Math.ceil(words / wpm);
+    return time;
+  }
+  function basicStoryHero(props) {
+    const { title, media, summary, pubDateFormatted, topic, mediaType } = props;
+    const [readingTimeValue, setReadingTime] = (0, import_react167.useState)(0);
+    (0, import_react167.useEffect)(() => {
+      const content = document.querySelector(".su-page-content");
+      if (content) {
+        setReadingTime(() => readingTime4(content.innerText));
+      }
+    });
+    return /* @__PURE__ */ import_react167.default.createElement(Container, { width: "wide" }, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-grid su-gap su-grid-cols-6 md:su-grid-cols-12" }, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-10 md:su-col-start-2" }, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-flex su-gap-y-8 su-gap-x-16 su-justify-between su-flex-wrap su-text-16 md:su-basefont-23" }, /* @__PURE__ */ import_react167.default.createElement("span", { className: "su-flex su-items-center su-justify-center" }, /* @__PURE__ */ import_react167.default.createElement("time", { className: "su-m-0 su-mr-4 su-font-semibold" }, pubDateFormatted), /* @__PURE__ */ import_react167.default.createElement("span", { className: "su-reading-time su-reading-time-separator" }), "|", " ", `${readingTimeValue} min read`), topic.asset_name && /* @__PURE__ */ import_react167.default.createElement(
+      "a",
+      {
+        href: topic.asset_url !== "" ? topic.asset_url : "#",
+        className: "su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline"
+      },
+      topic.asset_name
+    )), /* @__PURE__ */ import_react167.default.createElement("h1", { className: "su-font-bold su-rs-mt-4 su-font-serif su-mb-0 xl:su-text-[6.4rem]" }, title), /* @__PURE__ */ import_react167.default.createElement(
+      XssSafeContent_default,
+      {
+        className: [
+          "su-font-serif su-intro-text su-mb-0 su-rs-mt-2 su-text-21 su-leading-[27.35px] md:su-text-28 md:su-leading-[36.47px]",
+          ""
+        ].join(" "),
+        content: summary,
+        elementType: "p"
+      }
+    )), /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4" }, /* @__PURE__ */ import_react167.default.createElement(
+      "figure",
+      {
+        className: `basic-story__header-image su-col-span-full su-relative su-z-0 ${mediaType === "image" ? "dark:su-bg-black" : ""}`
+      },
+      /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-relative su-w-full" }, /* @__PURE__ */ import_react167.default.createElement(
+        Thumbnail,
+        {
+          url: media.featureImage.url,
+          alt: media.featureImage.alt,
+          video: media.featureVideo.id,
+          type: mediaType,
+          carousel: media.carousel
+        }
+      ), /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" })),
+      mediaType !== "carousel" && (media.caption || media.credit) && /* @__PURE__ */ import_react167.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, media.caption, " ", media.caption && media.credit && ` | `, media.credit)
+    ))));
+  }
+  function Thumbnail({ url, alt, video, type, carousel }) {
+    const [isModalOpen, setIsModalOpen] = (0, import_react167.useState)(false);
+    const slides = [];
+    const handleClick = () => {
+      setIsModalOpen(true);
+    };
+    const handleCloseModal = () => {
+      setIsModalOpen(false);
+    };
+    if (type === "image") {
+      return /* @__PURE__ */ import_react167.default.createElement(
+        "img",
+        {
+          src: "https://picsum.photos/350/200",
+          alt,
+          className: "su-relative su-w-full su-max-w-full"
+        }
+      );
+    }
+    if (type === "carousel") {
+      carousel.forEach((slide) => {
+        slides.push(
+          /* @__PURE__ */ import_react167.default.createElement(import_react167.default.Fragment, null, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-aspect-[3/2] su-relative su-bg-fog-light dark:su-bg-black" }, /* @__PURE__ */ import_react167.default.createElement(
+            "img",
+            {
+              src: slide.asset_url,
+              alt: slide.asset_attribute_alt,
+              className: "su-absolute su-top-0 su-left-0 su-w-full su-h-full su-object-scale-down su-object-center"
+            }
+          )), slide.asset_attribute_caption && /* @__PURE__ */ import_react167.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, slide.asset_attribute_caption))
+        );
+      });
+      return /* @__PURE__ */ import_react167.default.createElement(Carousel, { slides, variant: "basicstory" });
+    }
+    return /* @__PURE__ */ import_react167.default.createElement(import_react167.default.Fragment, null, /* @__PURE__ */ import_react167.default.createElement(
+      "button",
+      {
+        type: "button",
+        "aria-haspopup": "dialog",
+        className: "su-w-full su-aspect-[16/9] su-video-trigger",
+        onClick: handleClick
+      },
+      /* @__PURE__ */ import_react167.default.createElement(
+        "img",
+        {
+          src: url,
+          alt,
+          className: "su-w-full su-h-full su-absolute su-top-0 su-left-0 su-object-cover su-object-center"
+        }
+      ),
+      /* @__PURE__ */ import_react167.default.createElement("span", { className: "su-play-button-icon-hero su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px]" }, /* @__PURE__ */ import_react167.default.createElement(VideoPlay, null))
+    ), isModalOpen && /* @__PURE__ */ import_react167.default.createElement(ModalWrapper_default, { onClose: handleCloseModal }, /* @__PURE__ */ import_react167.default.createElement(EmbedVideo, { videoId: video })));
+  }
+
+  // components/basic-story-hero/client.jsx
+  (function() {
+    const componentName = "basic-story-hero";
+    const target = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!target)
+      return;
+    hydrateComponent({ Component: basicStoryHero, componentName });
   })();
 
   // components/acknowledgement/Component.jsx
