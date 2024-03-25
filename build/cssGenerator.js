@@ -43,13 +43,13 @@ export async function cssGenerator() {
     const pathExists = fs.existsSync(distPath);
 
     if (!pathExists) {
-      console.log(`Destination directory does not exist for ${components[i]}`);
+      // console.log(`Destination directory does not exist for ${components[i]}`);
     } else {
       fs.copyFile(globalOutput, `${distPath}global.css`, (err) => {
         if (err) {
           // console.log("Operation Failed: ", err);
         }
-        console.log(`Action completed for ${components[i]}`);
+        // console.log(`Action completed for ${components[i]}`);
       });
     }
   }

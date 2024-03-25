@@ -15,7 +15,7 @@
     "test:eslint": "eslint .",
     "test:unit": "jest",
     "test:coverage": "jest --coverage",
-    "tw": "node ./build/cssIndex.js"
+    "export": "node ./build/cssIndex.js"
   },
   "author": "",
   "license": "ISC",
