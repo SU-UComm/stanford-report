@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "basic-hero",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "namespace": "stanford-components",
   "description": "Basic hero and title area.",
   "displayName": "Basic Hero",
@@ -29,7 +29,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
+              "filepath": "global.css"
             }
           },
           {

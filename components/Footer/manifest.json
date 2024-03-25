@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "footer-component",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "namespace": "stanford-components",
   "description": "Stanford university Footer component.",
   "displayName": "Footer",
@@ -38,7 +38,9 @@
             "type": "string"
           }
         },
-        "required": ["dataUrl"]
+        "required": [
+          "dataUrl"
+        ]
       },
       "output": {
         "responseType": "html",
@@ -47,7 +49,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
+              "filepath": "global.css"
             }
           },
           {

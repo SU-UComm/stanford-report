@@ -46,8 +46,6 @@ export default async (args, info) => {
             data[i].taxonomyUrl = asset_url;
           }
         });
-
-        // console.log(JSON.stringify(siteJson));
       }
     });
   }

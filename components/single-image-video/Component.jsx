@@ -64,8 +64,6 @@ export default function SingleImageVideo({
       setTimeout(() => {
         const { top } = iframeNode.getBoundingClientRect();
 
-        // console.log(top);
-
         if (top < window.innerHeight) {
           setVideoPlaying("play");
 

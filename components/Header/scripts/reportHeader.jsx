@@ -20,9 +20,7 @@ export default class ReportHeader {
     this.handleSearchInputs();
   }
 
-  /// /////////////////////////////////
   // focus trapping
-
   focus(target) {
     if (target.match(/:/g)) {
       const [context, node, child] = target.split(":");
@@ -54,7 +52,6 @@ export default class ReportHeader {
   }
 
   // end focus trapping
-  /// /////////////////////////////////
 
   // Add typeahead for
   handleSearchInputs() {

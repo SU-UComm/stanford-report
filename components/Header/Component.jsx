@@ -36,6 +36,7 @@ export default function Header({
   relatedStoryData = null,
   consentData = true,
 }) {
+  const [isClient, setClient] = useState(false);
   // has the user given consent?
   const [consent, setConsent] = useState(false);
   // has the user given consent?
@@ -61,24 +62,28 @@ export default function Header({
   const handlePersona = async (personaVal) => {
     // check if we have consent first, if not, we need to set it
     let persona = null;
-    if (
-      typeof window.suHeaderProps?.consentData === "undefined" ||
-      window.suHeaderProps?.consentData === 0
-    ) {
+    if (!consent) {
       // if no consent previously given
       await cdpSetConsent(1);
       setConsent(true);
     }
     if (personaVal) {
-      persona = personaVal;
+      if (audience === personaVal) {
+        // if we've selected the same option again, we need to un-check it
+        // so, force into external
+        persona = "external";
+      } else {
+        persona = personaVal;
+      }
     }
-    await cdpSetPersona("persona-selector", persona);
+    cdpSetPersona("persona-selector", persona);
     setCookie("preferences_personalisation", persona);
     setDisplayConsentBanner(false);
     setAudience(persona);
   };
 
   useEffect(() => {
+    setClient(true);
     if (typeof window.suHeaderProps !== "undefined") {
       setRelatedStoryData(window.suHeaderProps?.relatedStoryData);
       setPageControls(window.suHeaderProps?.pageData);
@@ -126,16 +131,26 @@ export default function Header({
                     className="su-text-12 su-hidden md:su-block"
                     aria-hidden="true"
                   >
-                    Menu
+                    <span id="toggle-menu" hidden>
+                      Menu
+                    </span>
+                    <span
+                      className="su-text-12 su-hidden md:su-block"
+                      aria-hidden="true"
+                    >
+                      Menu
+                    </span>
                   </span>
                 </button>
 
-                <MobileNav
-                  site={site}
-                  navigation={navigation}
-                  search={search}
-                  audience={audience}
-                />
+                {isClient && (
+                  <MobileNav
+                    site={site}
+                    navigation={navigation}
+                    search={search}
+                    audience={audience}
+                  />
+                )}
 
                 <span className="su-absolute">
                   <span
@@ -190,27 +205,30 @@ export default function Header({
                 logoLight={site?.logoLight}
               />
 
-              {pageControls?.isStory && (
+              {isClient && pageControls?.isStory && (
                 <CurrentStoryHeadline
                   title={pageControls?.title}
                   story={relatedStory}
                 />
               )}
-
-              <PreferencesTray
-                audience={audience}
-                personaClickHandler={handlePersona}
-              />
+              {isClient && (
+                <PreferencesTray
+                  audience={audience}
+                  personaClickHandler={handlePersona}
+                />
+              )}
             </div>
-            <MainNav
-              major={navigation?.major}
-              currentPage={pageControls?.id ? pageControls.id : null}
-            />
+            {isClient && (
+              <MainNav
+                major={navigation?.major}
+                currentPage={pageControls?.id ? pageControls.id : null}
+              />
+            )}
           </div>
         </div>
       </header>
 
-      {displayConsentBanner && (
+      {isClient && displayConsentBanner && (
         <CookieConsentBanner
           consentClickHandler={handleConsent}
           statement={site?.cookieStatement}

@@ -1,6 +1,3 @@
-@tailwind components;
-@tailwind utilities;
-
 .report-header {
   width: 100%;
 }
@@ -109,7 +106,7 @@
 .report-header__utility {
   max-height: 10em;
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
 }
 
 .report-header__logo img,
@@ -119,61 +116,25 @@
 
 .report-header__main {
   padding-top: 0;
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
 }
 
 .report-header__menu-tray,
 .report-header__search-tray,
 .report-header__preferences-tray {
   opacity: 0;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
   pointer-events: none;
 }
 
 .report-header__primary-nav {
   transform: translateX(-100%);
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
 }
 
 .report-header__preferences {
   transform: translateX(100%);
-  transition: all 0.5s ease;
-}
-
-.report-header [aria-controls="preferences"] > * {
-  display: none;
-}
-
-.report-header [aria-controls="preferences"] > .icon-preferences {
-  display: block;
-}
-
-.su-persona--student
-  .report-header
-  [aria-controls="preferences"]
-  > .icon-preferences {
-  display: none;
-}
-
-.su-persona--student
-  .report-header
-  [aria-controls="preferences"]
-  > .icon-student {
-  display: block;
-}
-
-.su-persona--faculty
-  .report-header
-  [aria-controls="preferences"]
-  > .icon-preferences {
-  display: none;
-}
-
-.su-persona--faculty
-  .report-header
-  [aria-controls="preferences"]
-  > .icon-faculty {
-  display: block;
+  transition: all 0.25s ease;
 }
 
 .report-header__pref-toggle {
@@ -288,7 +249,7 @@
 .report-header__search input {
   filter: drop-shadow(0px 0px 38px rgba(0, 0, 0, 0))
     drop-shadow(0px 0px 12px rgba(0, 0, 0, 0));
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .report-header__search input:valid,
@@ -361,7 +322,7 @@
   right: 70px;
   overflow: hidden;
   width: calc(100% - 340px);
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
   opacity: 0;
 }
 

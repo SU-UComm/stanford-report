@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "image-gallery-modal",
-  "version": "0.0.19",
+  "version": "0.0.21",
   "namespace": "stanford-components",
   "description": "An image gallery that opens in a modal.",
   "displayName": "Image gallery with modal",
@@ -122,7 +122,10 @@
               "width": {
                 "title": "Width",
                 "type": "string",
-                "enum": [ "Wide", "Content" ],
+                "enum": [
+                  "Wide",
+                  "Content"
+                ],
                 "default": "Wide"
               }
             }
@@ -136,7 +139,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
+              "filepath": "global.css"
             }
           },
           {

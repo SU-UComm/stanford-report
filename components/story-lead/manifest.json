@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "story-lead",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "namespace": "stanford-components",
   "description": "Introduction to a story, with a decorative first letter.",
   "displayName": "Story Lead",
@@ -29,7 +29,10 @@
             "title": "Variant",
             "type": "string",
             "default": "Basic Story",
-            "enum": ["Basic Story", "Featured Story"]
+            "enum": [
+              "Basic Story",
+              "Featured Story"
+            ]
           }
         }
       },
@@ -40,7 +43,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
+              "filepath": "global.css"
             }
           },
           {
