@@ -72,8 +72,16 @@ export default function TopicSubtopicListing({
   }, [pageNo]);
 
   results.forEach((card) => {
-    if (displayConfiguration.displayStyle === "Press Center") {
-      cards.push(<Card data={card} cardType="narrowhorizontal" />);
+    if (
+      displayConfiguration.displayStyle === "Press Center" ||
+      displayConfiguration.displayStyle === "Leadership Messages" ||
+      displayConfiguration.displayStyle === "Announcements" ||
+      displayConfiguration.displayStyle === "In the News"
+    ) {
+      const cardData = card;
+      console.log(card);
+      cardData.displayConfiguration = displayConfiguration.displayStyle;
+      cards.push(<Card data={cardData} cardType="narrowhorizontal" />);
     } else {
       cards.push(<Card data={card} cardType="horizontal" cardSize="large" />);
     }
