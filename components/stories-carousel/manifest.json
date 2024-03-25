@@ -96,13 +96,6 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "css",
               "filepath": "client.css"
             }
           },
