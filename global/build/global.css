@@ -1955,10 +1955,6 @@ h6{
   bottom: 2.7rem;
 }
 
-.su-bottom-38{
-  bottom: 3.8rem;
-}
-
 .su-bottom-4{
   bottom: 0.4rem;
 }
@@ -1993,10 +1989,6 @@ h6{
 
 .su-left-3{
   left: 0.3rem;
-}
-
-.su-left-38{
-  left: 3.8rem;
 }
 
 .su-left-8{
@@ -2561,10 +2553,6 @@ h6{
   margin-top: 3.4rem;
 }
 
-.su-mt-36{
-  margin-top: 3.6rem;
-}
-
 .su-mt-38{
   margin-top: 3.8rem;
 }
@@ -2673,19 +2661,9 @@ h6{
   aspect-ratio: 3/2;
 }
 
-.su-size-100{
-  width: 10rem;
-  height: 10rem;
-}
-
 .su-size-13{
   width: 1.3rem;
   height: 1.3rem;
-}
-
-.su-size-14{
-  width: 1.4rem;
-  height: 1.4rem;
 }
 
 .su-size-150{
@@ -3468,10 +3446,6 @@ h6{
 
 .su-gap-20{
   gap: 2rem;
-}
-
-.su-gap-22{
-  gap: 2.2rem;
 }
 
 .su-gap-25{
