@@ -11,7 +11,6 @@ import ReportHeader from "./scripts/reportHeader";
   const element = document.querySelector(
     `[data-hydration-component="${target}"]`
   );
-
   if (!element) return;
 
   // const props = JSON.parse(element.getAttribute("data-hydration-props"));
@@ -42,7 +41,9 @@ import ReportHeader from "./scripts/reportHeader";
   // Hydrate the component
   hydrateComponent({ Component, componentName: target });
 
-  const headerDom = document.querySelector(".report-header");
-  const initHeader = new ReportHeader(headerDom);
-  _preferencesSettings();
+  setTimeout(() => {
+    const headerDom = document.querySelector(".report-header");
+    const initHeader = new ReportHeader(headerDom);
+    _preferencesSettings();
+  }, "100");
 })();

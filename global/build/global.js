@@ -15517,65 +15517,6 @@
     hydrateComponent({ Component: TopicSubtopicListing, componentName });
   })();
 
-  // components/subtopics-subnav/Component.jsx
-  var import_react112 = __toESM(require_react(), 1);
-  var import_html_entities = __toESM(require_lib3(), 1);
-  function Subnav({ navigation }) {
-    let liClass = "scrollable-list__item su-mb-0 su-relative after:su-h-22 after:su-w-[1px] after:su-bg-black-60 after:su-mx-12 lg:after:su-mx-18";
-    const aClass = "su-text-inherit su-text-black su-font-semi-bold su-text-16 lg:su-text-18 lg:su-leading-[21.6px] su-no-underline hover:su-underline dark:su-text-white hover:su-text-digital-red dark:hover:su-text-dark-mode-red";
-    return /* @__PURE__ */ import_react112.default.createElement("div", { className: "scrollable-list su-w-full md:su-justify-center su-flex su-nowrap su-mb-15 md:su-mb-25 lg:su-mb-41" }, /* @__PURE__ */ import_react112.default.createElement("ul", { className: "scrollable-list__items su-w-[calc(100%+40px)] md:su-w-auto su-flex md:su-justify-center su-mb-0 su-whitespace-nowrap su-flex-nowrap md:su-flex-wrap su-overflow-x-scroll md:su-overflow-visible su-list-none su-mx-[-20px] md:su-mr-0 su-px-20 su-mb-0 su-pb-12 lg:su-pb-0" }, navigation.map((item, i, row) => {
-      const title = (0, import_html_entities.decode)(item.asset_name);
-      if (i + 1 === row.length) {
-        liClass = "su-relative su-mb-0";
-      }
-      return /* @__PURE__ */ import_react112.default.createElement("li", { className: liClass, key: item.asset_assetid }, /* @__PURE__ */ import_react112.default.createElement("a", { className: aClass, href: item.asset_url }, title));
-    })));
-  }
-  function SubtopicSubnav({
-    title,
-    parent: parent2,
-    children: children2,
-    isTopLevel
-  }) {
-    return /* @__PURE__ */ import_react112.default.createElement(Container, { width: "large" }, /* @__PURE__ */ import_react112.default.createElement("section", { className: "listing" }, /* @__PURE__ */ import_react112.default.createElement("div", { className: "listing__header" }, !isTopLevel && /* @__PURE__ */ import_react112.default.createElement("p", { className: "listing__back-link su-flex su-justify-center su-mb-15 md:su-mb-18 lg:su-mb-10" }, /* @__PURE__ */ import_react112.default.createElement(
-      "a",
-      {
-        href: parent2.url,
-        className: "su-flex su-font-semi-bold su-items-center su-no-underline su-text-16 lg:su-text-18 su-text-black-60 hover:su-underline hover:su-text-digital-red dark:hover:su-text-dark-mode-red su-ml-[-.5rem] lg:su-ml-[-2rem]"
-      },
-      /* @__PURE__ */ import_react112.default.createElement(
-        "svg",
-        {
-          width: "24",
-          height: "24",
-          viewBox: "0 0 24 24",
-          fill: "none",
-          xmlns: "http://www.w3.org/2000/svg"
-        },
-        /* @__PURE__ */ import_react112.default.createElement(
-          "path",
-          {
-            fillRule: "evenodd",
-            clipRule: "evenodd",
-            d: "M15.2485 6.35147C15.7172 6.8201 15.7172 7.5799 15.2485 8.04853L11.2971 12L15.2485 15.9515C15.7172 16.4201 15.7172 17.1799 15.2485 17.6485C14.7799 18.1172 14.0201 18.1172 13.5515 17.6485L8.75147 12.8485C8.28284 12.3799 8.28284 11.6201 8.75147 11.1515L13.5515 6.35147C14.0201 5.88284 14.7799 5.88284 15.2485 6.35147Z"
-          }
-        )
-      ),
-      /* @__PURE__ */ import_react112.default.createElement("span", null, (0, import_html_entities.decode)(parent2.title))
-    )), title && /* @__PURE__ */ import_react112.default.createElement("h1", { className: "su-text-black su-font-bold su-font-serif dark:su-text-white su-text-center su-text-[39px] md:su-text-[54px] lg:su-text-[70px] su-mb-15 md:su-mb-26 lg:su-mb-19 su-leading-[46.57px] md:su-leading-[64.8px] lg:su-leading-[84px]" }, (0, import_html_entities.decode)(title)), children2 && children2.length > 0 && /* @__PURE__ */ import_react112.default.createElement(Subnav, { navigation: children2 }))));
-  }
-
-  // components/subtopics-subnav/client.jsx
-  (function() {
-    const componentName = "subtopic-subnav-component";
-    const element = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!element)
-      return;
-    hydrateComponent({ Component: SubtopicSubnav, componentName });
-  })();
-
   // node_modules/cnbuilder/esm/cnb.js
   var isArray = Array.isArray;
   var toClassName = function(val2) {
@@ -15631,7 +15572,7 @@
   }
 
   // packages/links/LinkButton.jsx
-  var import_react113 = __toESM(require_react(), 1);
+  var import_react112 = __toESM(require_react(), 1);
   function LinkButton({
     internalUrl,
     externalUrl,
@@ -15643,7 +15584,7 @@
     const isRealExternalLink = !!externalUrl && !externalUrl?.includes("news.stanford.edu");
     return internalUrl || externalUrl ? (
       // eslint-disable-next-line react/jsx-no-target-blank
-      /* @__PURE__ */ import_react113.default.createElement(
+      /* @__PURE__ */ import_react112.default.createElement(
         "a",
         {
           className: cnb(
@@ -15655,7 +15596,7 @@
           rel: isRealExternalLink ? "noopener nofollow" : void 0
         },
         buttonText,
-        isRealExternalLink && /* @__PURE__ */ import_react113.default.createElement(
+        isRealExternalLink && /* @__PURE__ */ import_react112.default.createElement(
           ExternalArrowUnstyled,
           {
             title: "link is external",
@@ -15667,7 +15608,7 @@
   }
 
   // components/text-callout/Component.jsx
-  var import_react114 = __toESM(require_react(), 1);
+  var import_react113 = __toESM(require_react(), 1);
   function TextCallout({
     displayConfiguration,
     imageConfiguration,
@@ -15679,12 +15620,12 @@
     const { caption, credit, imagePlacement, image } = imageConfiguration;
     const { buttonText, externalUrl, isNewWindow } = buttonConfiguration;
     const captionCredit = caption && credit ? `${caption} | ${credit}` : caption || credit;
-    return /* @__PURE__ */ import_react114.default.createElement(Container, { width: "narrow" }, /* @__PURE__ */ import_react114.default.createElement("section", { className: "su-flex su-flex-col su-p-20 md:su-p-36 su-justify-start su-items-start su-bg-fog-light lg:su-mx-auto dark:su-bg-black [&>p]:su-m-0 [&>p]:!su-mb-0 [&>p]:su-text-16 md:[&>p]:!su-text-19 last-of-type:[&>p]:!su-mb-0" }, /* @__PURE__ */ import_react114.default.createElement("div", { className: "su-relative su-justify-start su-items-center su-w-full su-gap-3 su-flex su-overflow-hidden su-mb-12" }, /* @__PURE__ */ import_react114.default.createElement("div", null, /* @__PURE__ */ import_react114.default.createElement("h3", { className: "su-font-serif su-inline !su-text-23 su-pr-10 su-m-0" }, title), /* @__PURE__ */ import_react114.default.createElement("span", { className: "su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-px su-absolute su-bottom-4" }))), /* @__PURE__ */ import_react114.default.createElement(
+    return /* @__PURE__ */ import_react113.default.createElement(Container, { width: "narrow" }, /* @__PURE__ */ import_react113.default.createElement("section", { className: "su-flex su-flex-col su-p-20 md:su-p-36 su-justify-start su-items-start su-bg-fog-light lg:su-mx-auto dark:su-bg-black [&>p]:su-m-0 [&>p]:!su-mb-0 [&>p]:su-text-16 md:[&>p]:!su-text-19 last-of-type:[&>p]:!su-mb-0" }, /* @__PURE__ */ import_react113.default.createElement("div", { className: "su-relative su-justify-start su-items-center su-w-full su-gap-3 su-flex su-overflow-hidden su-mb-12" }, /* @__PURE__ */ import_react113.default.createElement("div", null, /* @__PURE__ */ import_react113.default.createElement("h3", { className: "su-font-serif su-inline !su-text-23 su-pr-10 su-m-0" }, title), /* @__PURE__ */ import_react113.default.createElement("span", { className: "su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-px su-absolute su-bottom-4" }))), /* @__PURE__ */ import_react113.default.createElement(
       "div",
       {
         className: `${image && imagePlacement === "Above content" ? "su-order-2" : "su-order-1"} su-flex su-flex-col su-gap-12`
       },
-      /* @__PURE__ */ import_react114.default.createElement(
+      /* @__PURE__ */ import_react113.default.createElement(
         XssSafeContent_default,
         {
           "data-test": "acknowledgement",
@@ -15697,12 +15638,12 @@
           content
         }
       )
-    ), image && /* @__PURE__ */ import_react114.default.createElement(
+    ), image && /* @__PURE__ */ import_react113.default.createElement(
       "div",
       {
         className: `su-order-${imagePlacement === "Above content" ? "1 su-pb-20 md:su-pb-12 lg:su-pb-27" : "2 su-pt-20 md:su-pt-12 lg:su-pt-27"} su-w-full`
       },
-      /* @__PURE__ */ import_react114.default.createElement(
+      /* @__PURE__ */ import_react113.default.createElement(
         "img",
         {
           src: imageData.url,
@@ -15710,8 +15651,8 @@
           className: "su-w-full"
         }
       ),
-      /* @__PURE__ */ import_react114.default.createElement("p", { className: "su-m-0 su-text-14 su-leading-[1.672rem] md:su-leading-[1.911rem] md:su-text-16 su-mt-8 md:su-mt-12" }, captionCredit)
-    ), buttonText && /* @__PURE__ */ import_react114.default.createElement(
+      /* @__PURE__ */ import_react113.default.createElement("p", { className: "su-m-0 su-text-14 su-leading-[1.672rem] md:su-leading-[1.911rem] md:su-text-16 su-mt-8 md:su-mt-12" }, captionCredit)
+    ), buttonText && /* @__PURE__ */ import_react113.default.createElement(
       LinkButton,
       {
         buttonText,
@@ -15734,8 +15675,133 @@
     hydrateComponent({ Component: TextCallout, componentName });
   })();
 
-  // components/story-lead/Component.jsx
+  // components/subtopics-subnav/Component.jsx
+  var import_react114 = __toESM(require_react(), 1);
+  var import_html_entities = __toESM(require_lib3(), 1);
+  function Subnav({ navigation }) {
+    let liClass = "scrollable-list__item su-mb-0 su-relative after:su-h-22 after:su-w-[1px] after:su-bg-black-60 after:su-mx-12 lg:after:su-mx-18";
+    const aClass = "su-text-inherit su-text-black su-font-semi-bold su-text-16 lg:su-text-18 lg:su-leading-[21.6px] su-no-underline hover:su-underline dark:su-text-white hover:su-text-digital-red dark:hover:su-text-dark-mode-red";
+    return /* @__PURE__ */ import_react114.default.createElement("div", { className: "scrollable-list su-w-full md:su-justify-center su-flex su-nowrap su-mb-15 md:su-mb-25 lg:su-mb-41" }, /* @__PURE__ */ import_react114.default.createElement("ul", { className: "scrollable-list__items su-w-[calc(100%+40px)] md:su-w-auto su-flex md:su-justify-center su-mb-0 su-whitespace-nowrap su-flex-nowrap md:su-flex-wrap su-overflow-x-scroll md:su-overflow-visible su-list-none su-mx-[-20px] md:su-mr-0 su-px-20 su-mb-0 su-pb-12 lg:su-pb-0" }, navigation.map((item, i, row) => {
+      const title = (0, import_html_entities.decode)(item.asset_name);
+      if (i + 1 === row.length) {
+        liClass = "su-relative su-mb-0";
+      }
+      return /* @__PURE__ */ import_react114.default.createElement("li", { className: liClass, key: item.asset_assetid }, /* @__PURE__ */ import_react114.default.createElement("a", { className: aClass, href: item.asset_url }, title));
+    })));
+  }
+  function SubtopicSubnav({
+    title,
+    parent: parent2,
+    children: children2,
+    isTopLevel
+  }) {
+    return /* @__PURE__ */ import_react114.default.createElement(Container, { width: "large" }, /* @__PURE__ */ import_react114.default.createElement("section", { className: "listing" }, /* @__PURE__ */ import_react114.default.createElement("div", { className: "listing__header" }, !isTopLevel && /* @__PURE__ */ import_react114.default.createElement("p", { className: "listing__back-link su-flex su-justify-center su-mb-15 md:su-mb-18 lg:su-mb-10" }, /* @__PURE__ */ import_react114.default.createElement(
+      "a",
+      {
+        href: parent2.url,
+        className: "su-flex su-font-semi-bold su-items-center su-no-underline su-text-16 lg:su-text-18 su-text-black-60 hover:su-underline hover:su-text-digital-red dark:hover:su-text-dark-mode-red su-ml-[-.5rem] lg:su-ml-[-2rem]"
+      },
+      /* @__PURE__ */ import_react114.default.createElement(
+        "svg",
+        {
+          width: "24",
+          height: "24",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          xmlns: "http://www.w3.org/2000/svg"
+        },
+        /* @__PURE__ */ import_react114.default.createElement(
+          "path",
+          {
+            fillRule: "evenodd",
+            clipRule: "evenodd",
+            d: "M15.2485 6.35147C15.7172 6.8201 15.7172 7.5799 15.2485 8.04853L11.2971 12L15.2485 15.9515C15.7172 16.4201 15.7172 17.1799 15.2485 17.6485C14.7799 18.1172 14.0201 18.1172 13.5515 17.6485L8.75147 12.8485C8.28284 12.3799 8.28284 11.6201 8.75147 11.1515L13.5515 6.35147C14.0201 5.88284 14.7799 5.88284 15.2485 6.35147Z"
+          }
+        )
+      ),
+      /* @__PURE__ */ import_react114.default.createElement("span", null, (0, import_html_entities.decode)(parent2.title))
+    )), title && /* @__PURE__ */ import_react114.default.createElement("h1", { className: "su-text-black su-font-bold su-font-serif dark:su-text-white su-text-center su-text-[39px] md:su-text-[54px] lg:su-text-[70px] su-mb-15 md:su-mb-26 lg:su-mb-19 su-leading-[46.57px] md:su-leading-[64.8px] lg:su-leading-[84px]" }, (0, import_html_entities.decode)(title)), children2 && children2.length > 0 && /* @__PURE__ */ import_react114.default.createElement(Subnav, { navigation: children2 }))));
+  }
+
+  // components/subtopics-subnav/client.jsx
+  (function() {
+    const componentName = "subtopic-subnav-component";
+    const element = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!element)
+      return;
+    hydrateComponent({ Component: SubtopicSubnav, componentName });
+  })();
+
+  // components/subscribe-to-stanford/Component.jsx
   var import_react115 = __toESM(require_react(), 1);
+  function SubscribeToStanfordReport({ contentConfiguration }) {
+    const { actionLink, title, summary } = contentConfiguration;
+    const [email, setEmail] = (0, import_react115.useState)("");
+    const [subscriptionError, setSubscriptionError] = (0, import_react115.useState)("");
+    const emailInputEvent = ({ target }) => {
+      const { value: value2 } = target;
+      setEmail(() => value2);
+    };
+    const submitSubscription = (e) => {
+      e.preventDefault();
+      if (!email || !email.match(/\w+@\w+\.\w+/)) {
+        setSubscriptionError(
+          () => `<span class="su-block su-text-16 su-font-normal su-text-digital-red">Please enter a valid email address.</span>`
+        );
+        return;
+      }
+      setSubscriptionError(() => "");
+      e.target.submit();
+    };
+    return /* @__PURE__ */ import_react115.default.createElement(
+      "form",
+      {
+        className: "su-flex su-flex-col su-gap-10 su-items-left",
+        action: actionLink,
+        onSubmit: submitSubscription,
+        method: "POST"
+      },
+      /* @__PURE__ */ import_react115.default.createElement("h2", { className: "su-m-0 su-font-bold su-text-18 su-leading-[2.16rem] dark:su-text-white su-font-sans" }, title),
+      /* @__PURE__ */ import_react115.default.createElement("p", { className: "su-m-0 su-font-normal su-text-16 su-leading-[1.25] dark:su-text-white" }, summary),
+      /* @__PURE__ */ import_react115.default.createElement(
+        "input",
+        {
+          type: "email",
+          name: "subsciption-email",
+          placeholder: "Email address",
+          title: "Subscription Email",
+          "aria-label": "Subscription Email",
+          className: "su-rounded su-p-12 su-text-16 su-leading-[1.25] su-text-black placeholder:su-text-black su-font-normal su-border-black-20 su-border su-border-b-black-70 su-border-b-2  dark:su-bg-black-90 dark:su-text-white dark:placeholder:su-text-white",
+          onKeyUp: emailInputEvent
+        }
+      ),
+      /* @__PURE__ */ import_react115.default.createElement(
+        "button",
+        {
+          type: "submit",
+          className: "su-mr-auto su-text-white su-bg-digital-red su-text-16 su-font-normal su-px-22 su-pt-9 su-pb-11 hover:su-bg-black su-transition"
+        },
+        "Sign up"
+      ),
+      /* @__PURE__ */ import_react115.default.createElement(XssSafeContent_default, { content: subscriptionError })
+    );
+  }
+
+  // components/subscribe-to-stanford/client.jsx
+  (function() {
+    const componentName = "subscribe-to-stanford-report";
+    const target = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!target)
+      return;
+    hydrateComponent({ Component: SubscribeToStanfordReport, componentName });
+  })();
+
+  // components/story-lead/Component.jsx
+  var import_react116 = __toESM(require_react(), 1);
   function StoryLead({ content, variant }) {
     const hasContent = content !== null && content !== void 0;
     const variantClasses = /* @__PURE__ */ new Map();
@@ -15748,32 +15814,32 @@
       "su-story-first-letter *:su-text-18 md:*:su-text-23"
     );
     const letterSvgs = /* @__PURE__ */ new Map();
-    letterSvgs.set("a", /* @__PURE__ */ import_react115.default.createElement(LetterA, null));
-    letterSvgs.set("b", /* @__PURE__ */ import_react115.default.createElement(LetterB, null));
-    letterSvgs.set("c", /* @__PURE__ */ import_react115.default.createElement(LetterC, null));
-    letterSvgs.set("d", /* @__PURE__ */ import_react115.default.createElement(LetterD, null));
-    letterSvgs.set("e", /* @__PURE__ */ import_react115.default.createElement(LetterE, null));
-    letterSvgs.set("f", /* @__PURE__ */ import_react115.default.createElement(LetterF, null));
-    letterSvgs.set("g", /* @__PURE__ */ import_react115.default.createElement(LetterG, null));
-    letterSvgs.set("h", /* @__PURE__ */ import_react115.default.createElement(LetterH, null));
-    letterSvgs.set("i", /* @__PURE__ */ import_react115.default.createElement(LetterI, null));
-    letterSvgs.set("j", /* @__PURE__ */ import_react115.default.createElement(LetterJ, null));
-    letterSvgs.set("k", /* @__PURE__ */ import_react115.default.createElement(LetterK, null));
-    letterSvgs.set("l", /* @__PURE__ */ import_react115.default.createElement(LetterL, null));
-    letterSvgs.set("m", /* @__PURE__ */ import_react115.default.createElement(LetterM, null));
-    letterSvgs.set("n", /* @__PURE__ */ import_react115.default.createElement(LetterN, null));
-    letterSvgs.set("o", /* @__PURE__ */ import_react115.default.createElement(LetterO, null));
-    letterSvgs.set("p", /* @__PURE__ */ import_react115.default.createElement(LetterP, null));
-    letterSvgs.set("q", /* @__PURE__ */ import_react115.default.createElement(LetterQ, null));
-    letterSvgs.set("r", /* @__PURE__ */ import_react115.default.createElement(LetterR, null));
-    letterSvgs.set("s", /* @__PURE__ */ import_react115.default.createElement(LetterS, null));
-    letterSvgs.set("t", /* @__PURE__ */ import_react115.default.createElement(LetterT, null));
-    letterSvgs.set("u", /* @__PURE__ */ import_react115.default.createElement(LetterU, null));
-    letterSvgs.set("v", /* @__PURE__ */ import_react115.default.createElement(LetterV, null));
-    letterSvgs.set("w", /* @__PURE__ */ import_react115.default.createElement(LetterW, null));
-    letterSvgs.set("x", /* @__PURE__ */ import_react115.default.createElement(LetterX, null));
-    letterSvgs.set("y", /* @__PURE__ */ import_react115.default.createElement(LetterY, null));
-    letterSvgs.set("z", /* @__PURE__ */ import_react115.default.createElement(LetterZ, null));
+    letterSvgs.set("a", /* @__PURE__ */ import_react116.default.createElement(LetterA, null));
+    letterSvgs.set("b", /* @__PURE__ */ import_react116.default.createElement(LetterB, null));
+    letterSvgs.set("c", /* @__PURE__ */ import_react116.default.createElement(LetterC, null));
+    letterSvgs.set("d", /* @__PURE__ */ import_react116.default.createElement(LetterD, null));
+    letterSvgs.set("e", /* @__PURE__ */ import_react116.default.createElement(LetterE, null));
+    letterSvgs.set("f", /* @__PURE__ */ import_react116.default.createElement(LetterF, null));
+    letterSvgs.set("g", /* @__PURE__ */ import_react116.default.createElement(LetterG, null));
+    letterSvgs.set("h", /* @__PURE__ */ import_react116.default.createElement(LetterH, null));
+    letterSvgs.set("i", /* @__PURE__ */ import_react116.default.createElement(LetterI, null));
+    letterSvgs.set("j", /* @__PURE__ */ import_react116.default.createElement(LetterJ, null));
+    letterSvgs.set("k", /* @__PURE__ */ import_react116.default.createElement(LetterK, null));
+    letterSvgs.set("l", /* @__PURE__ */ import_react116.default.createElement(LetterL, null));
+    letterSvgs.set("m", /* @__PURE__ */ import_react116.default.createElement(LetterM, null));
+    letterSvgs.set("n", /* @__PURE__ */ import_react116.default.createElement(LetterN, null));
+    letterSvgs.set("o", /* @__PURE__ */ import_react116.default.createElement(LetterO, null));
+    letterSvgs.set("p", /* @__PURE__ */ import_react116.default.createElement(LetterP, null));
+    letterSvgs.set("q", /* @__PURE__ */ import_react116.default.createElement(LetterQ, null));
+    letterSvgs.set("r", /* @__PURE__ */ import_react116.default.createElement(LetterR, null));
+    letterSvgs.set("s", /* @__PURE__ */ import_react116.default.createElement(LetterS, null));
+    letterSvgs.set("t", /* @__PURE__ */ import_react116.default.createElement(LetterT, null));
+    letterSvgs.set("u", /* @__PURE__ */ import_react116.default.createElement(LetterU, null));
+    letterSvgs.set("v", /* @__PURE__ */ import_react116.default.createElement(LetterV, null));
+    letterSvgs.set("w", /* @__PURE__ */ import_react116.default.createElement(LetterW, null));
+    letterSvgs.set("x", /* @__PURE__ */ import_react116.default.createElement(LetterX, null));
+    letterSvgs.set("y", /* @__PURE__ */ import_react116.default.createElement(LetterY, null));
+    letterSvgs.set("z", /* @__PURE__ */ import_react116.default.createElement(LetterZ, null));
     let formattedContent = content;
     let selectedSvg = null;
     if (hasContent) {
@@ -15792,14 +15858,14 @@
         );
       }
     }
-    return hasContent ? /* @__PURE__ */ import_react115.default.createElement(Container, { width: "narrow" }, variant === "Featured Story" && /* @__PURE__ */ import_react115.default.createElement(
+    return hasContent ? /* @__PURE__ */ import_react116.default.createElement(Container, { width: "narrow" }, variant === "Featured Story" && /* @__PURE__ */ import_react116.default.createElement(
       "span",
       {
         "data-test": "component-story-lead-letter",
         className: "su-float-left [&>svg]:su-mt-3 md:[&>svg]:su--mt-2 lg:[&>svg]:su-mt-4 [&>svg]:su-w-41 [&>svg]:su-h-43 md:[&>svg]:su-w-[97px] md:[&>svg]:su-h-[102px] su-mr-8 lg:su-mr-19"
       },
       selectedSvg
-    ), /* @__PURE__ */ import_react115.default.createElement(
+    ), /* @__PURE__ */ import_react116.default.createElement(
       XssSafeContent_default,
       {
         className: ["su-wysiwyg-content", variantClasses.get(variant)].join(
@@ -15821,72 +15887,6 @@
     if (!target)
       return;
     hydrateComponent({ Component: StoryLead, componentName });
-  })();
-
-  // components/subscribe-to-stanford/Component.jsx
-  var import_react116 = __toESM(require_react(), 1);
-  function SubscribeToStanfordReport({ contentConfiguration }) {
-    const { actionLink, title, summary } = contentConfiguration;
-    const [email, setEmail] = (0, import_react116.useState)("");
-    const [subscriptionError, setSubscriptionError] = (0, import_react116.useState)("");
-    const emailInputEvent = ({ target }) => {
-      const { value: value2 } = target;
-      setEmail(() => value2);
-    };
-    const submitSubscription = (e) => {
-      e.preventDefault();
-      if (!email || !email.match(/\w+@\w+\.\w+/)) {
-        setSubscriptionError(
-          () => `<span class="su-block su-text-16 su-font-normal su-text-digital-red">Please enter a valid email address.</span>`
-        );
-        return;
-      }
-      setSubscriptionError(() => "");
-      e.target.submit();
-    };
-    return /* @__PURE__ */ import_react116.default.createElement(
-      "form",
-      {
-        className: "su-flex su-flex-col su-gap-10 su-items-left",
-        action: actionLink,
-        onSubmit: submitSubscription,
-        method: "POST"
-      },
-      /* @__PURE__ */ import_react116.default.createElement("h2", { className: "su-m-0 su-font-bold su-text-18 su-leading-[2.16rem] dark:su-text-white su-font-sans" }, title),
-      /* @__PURE__ */ import_react116.default.createElement("p", { className: "su-m-0 su-font-normal su-text-16 su-leading-[1.25] dark:su-text-white" }, summary),
-      /* @__PURE__ */ import_react116.default.createElement(
-        "input",
-        {
-          type: "email",
-          name: "subsciption-email",
-          placeholder: "Email address",
-          title: "Subscription Email",
-          "aria-label": "Subscription Email",
-          className: "su-rounded su-p-12 su-text-16 su-leading-[1.25] su-text-black placeholder:su-text-black su-font-normal su-border-black-20 su-border su-border-b-black-70 su-border-b-2  dark:su-bg-black-90 dark:su-text-white dark:placeholder:su-text-white",
-          onKeyUp: emailInputEvent
-        }
-      ),
-      /* @__PURE__ */ import_react116.default.createElement(
-        "button",
-        {
-          type: "submit",
-          className: "su-mr-auto su-text-white su-bg-digital-red su-text-16 su-font-normal su-px-22 su-pt-9 su-pb-11 hover:su-bg-black su-transition"
-        },
-        "Sign up"
-      ),
-      /* @__PURE__ */ import_react116.default.createElement(XssSafeContent_default, { content: subscriptionError })
-    );
-  }
-
-  // components/subscribe-to-stanford/client.jsx
-  (function() {
-    const componentName = "subscribe-to-stanford-report";
-    const target = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!target)
-      return;
-    hydrateComponent({ Component: SubscribeToStanfordReport, componentName });
   })();
 
   // node_modules/ssr-window/ssr-window.esm.js
@@ -26984,52 +26984,34 @@
     hydrateComponent({ Component: RelatedStory, componentName });
   })();
 
-  // components/pullquote/Component.jsx
-  var import_react130 = __toESM(require_react(), 1);
-  function PullQuoteStory({ displayConfiguration, imageUrl }) {
-    const { quote, name, title, width: width2 } = displayConfiguration;
-    return /* @__PURE__ */ import_react130.default.createElement(Container, { width: width2 }, /* @__PURE__ */ import_react130.default.createElement(PullQuote, { quote, name, title, avatar: imageUrl }));
-  }
-
-  // components/pullquote/client.jsx
-  (function() {
-    const componentName = "pullquote";
-    const target = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!target)
-      return;
-    hydrateComponent({ Component: PullQuoteStory, componentName });
-  })();
-
   // components/policy-brief/Component.jsx
-  var import_react131 = __toESM(require_react(), 1);
+  var import_react130 = __toESM(require_react(), 1);
   function PolicyBriefComponent({ data: data2, contentConfiguration }) {
     const { type, title, summary, linkUrl, linkText } = contentConfiguration;
     const SVGMap = /* @__PURE__ */ new Map();
     SVGMap.set("Policy Brief", {
-      light: /* @__PURE__ */ import_react131.default.createElement(PolicyBrief, { variant: "light" }),
-      dark: /* @__PURE__ */ import_react131.default.createElement(PolicyBrief, { variant: "dark" })
+      light: /* @__PURE__ */ import_react130.default.createElement(PolicyBrief, { variant: "light" }),
+      dark: /* @__PURE__ */ import_react130.default.createElement(PolicyBrief, { variant: "dark" })
     });
     SVGMap.set("Case Study", {
-      light: /* @__PURE__ */ import_react131.default.createElement(CaseStudy, { variant: "light" }),
-      dark: /* @__PURE__ */ import_react131.default.createElement(CaseStudy, { variant: "dark" })
+      light: /* @__PURE__ */ import_react130.default.createElement(CaseStudy, { variant: "light" }),
+      dark: /* @__PURE__ */ import_react130.default.createElement(CaseStudy, { variant: "dark" })
     });
-    return /* @__PURE__ */ import_react131.default.createElement(Container, { width: "wide", paddingX: false }, /* @__PURE__ */ import_react131.default.createElement("section", { className: "su-relative su-flex su-flex-col su-gap-20 su-py-30 su-px-20 su-bg-fog-light md:su-mx-50 md:su-flex-row md:su-gap-18 lg:su-gap-48 md:su-p-36 lg:su-py-61 lg:su-px-65 dark:su-bg-transparent dark:before:su-bg-black dark:before:su-opacity-[0.5] dark:before:su-content-[''] dark:before:su-absolute dark:before:su-w-full dark:before:su-h-full dark:before:su-top-0 dark:before:su-left-0 dark:before:su-z-1" }, /* @__PURE__ */ import_react131.default.createElement("div", { className: "su-relative su-w-full su-h-[233px] md:su-h-auto md:su-min-w-[257px] lg:su-h-[378.331px] lg:su-flex-1 su-z-2" }, /* @__PURE__ */ import_react131.default.createElement(
+    return /* @__PURE__ */ import_react130.default.createElement(Container, { width: "wide", paddingX: false }, /* @__PURE__ */ import_react130.default.createElement("section", { className: "su-relative su-flex su-flex-col su-gap-20 su-py-30 su-px-20 su-bg-fog-light md:su-mx-50 md:su-flex-row md:su-gap-18 lg:su-gap-48 md:su-p-36 lg:su-py-61 lg:su-px-65 dark:su-bg-transparent dark:before:su-bg-black dark:before:su-opacity-[0.5] dark:before:su-content-[''] dark:before:su-absolute dark:before:su-w-full dark:before:su-h-full dark:before:su-top-0 dark:before:su-left-0 dark:before:su-z-1" }, /* @__PURE__ */ import_react130.default.createElement("div", { className: "su-relative su-w-full su-h-[233px] md:su-h-auto md:su-min-w-[257px] lg:su-h-[378.331px] lg:su-flex-1 su-z-2" }, /* @__PURE__ */ import_react130.default.createElement(
       "img",
       {
         src: data2 && data2.url ? data2.url : "",
         className: "su-absolute su-size-full su-object-cover",
         alt: data2 && data2.attributes.alt ? data2.attributes.alt : ""
       }
-    )), /* @__PURE__ */ import_react131.default.createElement("div", { className: "lg:su-flex-1 su-relative su-z-2" }, /* @__PURE__ */ import_react131.default.createElement("div", { className: "su-flex su-gap-6 su-items-center su-text-18 su-font-semibold su-pb-20 md:su-pb-27" }, SVGMap.get(type) && /* @__PURE__ */ import_react131.default.createElement(import_react131.default.Fragment, null, /* @__PURE__ */ import_react131.default.createElement("span", { className: "dark:su-hidden" }, SVGMap.get(type).light), /* @__PURE__ */ import_react131.default.createElement("span", { className: "su-hidden dark:su-block" }, SVGMap.get(type).dark)), /* @__PURE__ */ import_react131.default.createElement("span", null, type)), /* @__PURE__ */ import_react131.default.createElement("h2", { className: "su-text-[33px] su-font-bold su-leading-[125%] su-font-serif su-pb-19 su-m-0" }, title), /* @__PURE__ */ import_react131.default.createElement("p", { className: "su-text-19 su-font-normal su-leading-[125%] su-pb-20 md:su-pb-27 su-m-0" }, summary), linkUrl && /* @__PURE__ */ import_react131.default.createElement(
+    )), /* @__PURE__ */ import_react130.default.createElement("div", { className: "lg:su-flex-1 su-relative su-z-2" }, /* @__PURE__ */ import_react130.default.createElement("div", { className: "su-flex su-gap-6 su-items-center su-text-18 su-font-semibold su-pb-20 md:su-pb-27" }, SVGMap.get(type) && /* @__PURE__ */ import_react130.default.createElement(import_react130.default.Fragment, null, /* @__PURE__ */ import_react130.default.createElement("span", { className: "dark:su-hidden" }, SVGMap.get(type).light), /* @__PURE__ */ import_react130.default.createElement("span", { className: "su-hidden dark:su-block" }, SVGMap.get(type).dark)), /* @__PURE__ */ import_react130.default.createElement("span", null, type)), /* @__PURE__ */ import_react130.default.createElement("h2", { className: "su-text-[33px] su-font-bold su-leading-[125%] su-font-serif su-pb-19 su-m-0" }, title), /* @__PURE__ */ import_react130.default.createElement("p", { className: "su-text-19 su-font-normal su-leading-[125%] su-pb-20 md:su-pb-27 su-m-0" }, summary), linkUrl && /* @__PURE__ */ import_react130.default.createElement(
       "a",
       {
         href: linkUrl,
         className: "su-flex su-gap-2 su-group su-text-19 su-font-semibold su-leading-[125%] su-text-digital-red su-no-underline dark:su-text-dark-mode-red hocus:su-underline"
       },
       linkText,
-      /* @__PURE__ */ import_react131.default.createElement("span", { className: "su-transition group-hocus:su--translate-y-01em group-hocus:su-translate-x-01em [&>svg]:su-translate-y-1" }, /* @__PURE__ */ import_react131.default.createElement(
+      /* @__PURE__ */ import_react130.default.createElement("span", { className: "su-transition group-hocus:su--translate-y-01em group-hocus:su-translate-x-01em [&>svg]:su-translate-y-1" }, /* @__PURE__ */ import_react130.default.createElement(
         "svg",
         {
           xmlns: "http://www.w3.org/2000/svg",
@@ -27038,7 +27020,7 @@
           viewBox: "0 0 23 23",
           fill: "none"
         },
-        /* @__PURE__ */ import_react131.default.createElement(
+        /* @__PURE__ */ import_react130.default.createElement(
           "path",
           {
             d: "M8.95664 7.42241L15.5563 7.42241M15.5563 7.42241L15.5563 14.0221M15.5563 7.42241L7.07102 15.9077",
@@ -27061,6 +27043,24 @@
     if (!target)
       return;
     hydrateComponent({ Component: PolicyBriefComponent, componentName });
+  })();
+
+  // components/pullquote/Component.jsx
+  var import_react131 = __toESM(require_react(), 1);
+  function PullQuoteStory({ displayConfiguration, imageUrl }) {
+    const { quote, name, title, width: width2 } = displayConfiguration;
+    return /* @__PURE__ */ import_react131.default.createElement(Container, { width: width2 }, /* @__PURE__ */ import_react131.default.createElement(PullQuote, { quote, name, title, avatar: imageUrl }));
+  }
+
+  // components/pullquote/client.jsx
+  (function() {
+    const componentName = "pullquote";
+    const target = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!target)
+      return;
+    hydrateComponent({ Component: PullQuoteStory, componentName });
   })();
 
   // components/multicolumn-listing/Component.jsx
@@ -27609,6 +27609,30 @@
     hydrateComponent({ Component: MediaFeature, componentName });
   })();
 
+  // components/media-carousel/Component.jsx
+  var import_react141 = __toESM(require_react(), 1);
+  var import_object_hash7 = __toESM(require_object_hash(), 1);
+  function StoriesCarousel2({ data: data2 }) {
+    const cards = [];
+    const uniqueClass = import_object_hash7.default.MD5(JSON.stringify(data2));
+    data2.forEach((card) => {
+      cards.push(
+        /* @__PURE__ */ import_react141.default.createElement(Card, { cardType: "media", data: card, displayDescription: false })
+      );
+    });
+    return /* @__PURE__ */ import_react141.default.createElement(Container, { width: "large" }, /* @__PURE__ */ import_react141.default.createElement(Carousel, { variant: "media", slides: cards, uniqueClass }));
+  }
+
+  // components/media-carousel/client.jsx
+  (function() {
+    const mediaCarousel = document.querySelector(
+      `[data-hydration-component="media-carousel"]`
+    );
+    if (!mediaCarousel)
+      return;
+    hydrateComponent({ Component: StoriesCarousel2, componentName: "media-carousel" });
+  })();
+
   // components/link-list/scripts/relatedStory.js
   async function relatedStory(search = null, pageData = null, personalisation = "") {
     const adapter = new FetchAdapter();
@@ -27633,31 +27657,31 @@
   }
 
   // components/link-list/components/LinkListItem.jsx
-  var import_react141 = __toESM(require_react(), 1);
+  var import_react142 = __toESM(require_react(), 1);
   function LinkListItem({ title, url }) {
-    return /* @__PURE__ */ import_react141.default.createElement("a", { href: url, className: "su-no-underline" }, /* @__PURE__ */ import_react141.default.createElement("h3", { className: "su-text-16 su-font-bold su-m-0 lg:su-text-24 lg:su-leading-[28.8px]" }, title));
+    return /* @__PURE__ */ import_react142.default.createElement("a", { href: url, className: "su-no-underline" }, /* @__PURE__ */ import_react142.default.createElement("h3", { className: "su-text-16 su-font-bold su-m-0 lg:su-text-24 lg:su-leading-[28.8px]" }, title));
   }
 
   // components/link-list/Component.jsx
-  var import_react142 = __toESM(require_react(), 1);
+  var import_react143 = __toESM(require_react(), 1);
   function LinkList({ search }) {
     const isClient = typeof window !== "undefined";
     const pageData = isClient && typeof window.pageController !== "undefined" ? window.pageController : null;
     const audienceCookie = getCookie("preferences_personalisation");
     const links = [];
-    const [relatedStoryData2, setRelatedStoryData] = (0, import_react142.useState)(null);
-    const [personalisation, setPersonalisation] = (0, import_react142.useState)(null);
-    const [linkItems, setLinkItems] = (0, import_react142.useState)([]);
+    const [relatedStoryData2, setRelatedStoryData] = (0, import_react143.useState)(null);
+    const [personalisation, setPersonalisation] = (0, import_react143.useState)(null);
+    const [linkItems, setLinkItems] = (0, import_react143.useState)([]);
     const getFB = async () => {
       const data2 = await relatedStory(search, pageData, audienceCookie);
       setRelatedStoryData(data2);
     };
     if (relatedStoryData2) {
       relatedStoryData2.forEach((link) => {
-        links.push(/* @__PURE__ */ import_react142.default.createElement(LinkListItem, { title: link.title, url: link.indexUrl }));
+        links.push(/* @__PURE__ */ import_react143.default.createElement(LinkListItem, { title: link.title, url: link.indexUrl }));
       });
     }
-    (0, import_react142.useEffect)(() => {
+    (0, import_react143.useEffect)(() => {
       if (audienceCookie)
         setPersonalisation(audienceCookie);
       if (relatedStoryData2 && !linkItems.length)
@@ -27666,13 +27690,13 @@
         getFB();
       }
     }, [personalisation, relatedStoryData2]);
-    return /* @__PURE__ */ import_react142.default.createElement(
+    return /* @__PURE__ */ import_react143.default.createElement(
       "div",
       {
         "data-role": "link-list-wrapper",
         className: `${linkItems.length ? "" : "su-link-list-no-stories"} su-fixed su-opacity-0 su--bottom-[100 su-left-0 su-left-1/2 su-right-1/2 su-translate-x-[-50%] su-max-w-[482px] su-p-20 su-bg-foggy-light lg:dark:su-bg-black-true dark:su-bg-black su-linklist-mob-width su-rounded-tl-[8px] su-rounded-tr-[8px] su-transition su-z-[9999] su-px-30 su-linklist-mob-width lg:su-z-[1] lg:su-bg-white lg:su-relative lg:su-bottom-0 lg:su-opacity-100 lg:su-p-0 lg:su-w-full`
       },
-      /* @__PURE__ */ import_react142.default.createElement("div", { className: "su-flex" }, linkItems.length ? /* @__PURE__ */ import_react142.default.createElement(SidebarHeading, { title: "Stories for you", icon: "bullseyePointer" }) : "", /* @__PURE__ */ import_react142.default.createElement(
+      /* @__PURE__ */ import_react143.default.createElement("div", { className: "su-flex" }, linkItems.length ? /* @__PURE__ */ import_react143.default.createElement(SidebarHeading, { title: "Stories for you", icon: "bullseyePointer" }) : "", /* @__PURE__ */ import_react143.default.createElement(
         "button",
         {
           className: "su-text-digital-red su-rotate-[-90deg] lg:su-hidden",
@@ -27682,18 +27706,18 @@
           "aria-label": "link-drawer",
           type: "button"
         },
-        /* @__PURE__ */ import_react142.default.createElement(ChevronRight, null)
+        /* @__PURE__ */ import_react143.default.createElement(ChevronRight, null)
       )),
-      /* @__PURE__ */ import_react142.default.createElement(
+      /* @__PURE__ */ import_react143.default.createElement(
         "div",
         {
           className: "su-max-h-1000 su-h-0 su-overflow-hidden su-transition lg:su-h-auto",
           id: "link-drawer",
           "data-role": "link-drawer"
         },
-        linkItems[0] && /* @__PURE__ */ import_react142.default.createElement("article", { className: "su-border-b su-border-b-black-20 dark:su-border-b-black-70 su-pb-15 su-mt-[23.65px] lg:su-pb-36" }, linkItems[0]),
-        linkItems[1] && /* @__PURE__ */ import_react142.default.createElement("article", { className: "su-border-b dark:su-border-b-black-70 su-border-b-black-20 su-py-15 lg:su-py-36" }, linkItems[1]),
-        linkItems[2] && /* @__PURE__ */ import_react142.default.createElement("article", { className: "su-pt-15 lg:su-pt-36" }, linkItems[2])
+        linkItems[0] && /* @__PURE__ */ import_react143.default.createElement("article", { className: "su-border-b su-border-b-black-20 dark:su-border-b-black-70 su-pb-15 su-mt-[23.65px] lg:su-pb-36" }, linkItems[0]),
+        linkItems[1] && /* @__PURE__ */ import_react143.default.createElement("article", { className: "su-border-b dark:su-border-b-black-70 su-border-b-black-20 su-py-15 lg:su-py-36" }, linkItems[1]),
+        linkItems[2] && /* @__PURE__ */ import_react143.default.createElement("article", { className: "su-pt-15 lg:su-pt-36" }, linkItems[2])
       )
     );
   }
@@ -27740,30 +27764,6 @@
       linkListWrapper.classList.add("su-opacity-[0]");
     });
     hydrateComponent({ Component: LinkList, componentName: "link-list" });
-  })();
-
-  // components/media-carousel/Component.jsx
-  var import_react143 = __toESM(require_react(), 1);
-  var import_object_hash7 = __toESM(require_object_hash(), 1);
-  function StoriesCarousel2({ data: data2 }) {
-    const cards = [];
-    const uniqueClass = import_object_hash7.default.MD5(JSON.stringify(data2));
-    data2.forEach((card) => {
-      cards.push(
-        /* @__PURE__ */ import_react143.default.createElement(Card, { cardType: "media", data: card, displayDescription: false })
-      );
-    });
-    return /* @__PURE__ */ import_react143.default.createElement(Container, { width: "large" }, /* @__PURE__ */ import_react143.default.createElement(Carousel, { variant: "media", slides: cards, uniqueClass }));
-  }
-
-  // components/media-carousel/client.jsx
-  (function() {
-    const mediaCarousel = document.querySelector(
-      `[data-hydration-component="media-carousel"]`
-    );
-    if (!mediaCarousel)
-      return;
-    hydrateComponent({ Component: StoriesCarousel2, componentName: "media-carousel" });
   })();
 
   // components/leadership-messages/Component.jsx
@@ -28394,8 +28394,307 @@
     hydrateComponent({ Component: Base, componentName });
   })();
 
-  // components/featured-content/Component.jsx
+  // packages/story-hero-variations/VerticalHero.jsx
   var import_react153 = __toESM(require_react(), 1);
+  function readingTime(text2) {
+    if (!text2)
+      return 0;
+    const wpm = 225;
+    const words = text2.trim().split(/\s+/).length;
+    const time = Math.ceil(words / wpm);
+    return time;
+  }
+  function VerticalHero({ data: data2 }) {
+    const { title, pubDateFormatted, media, summary } = data2;
+    const titleWordsCount = title.split(" ").length;
+    const [readingTimeValue, setReadingTime] = (0, import_react153.useState)(0);
+    (0, import_react153.useEffect)(() => {
+      const content = document.querySelector(".su-page-content");
+      if (content) {
+        setReadingTime(() => readingTime(content.innerText));
+      }
+    });
+    return /* @__PURE__ */ import_react153.default.createElement(Container, null, /* @__PURE__ */ import_react153.default.createElement("div", { className: "basic-story__header su-rs-pt-8 su-relative su-flex su-flex-col su-items-start md:su-items-end" }, /* @__PURE__ */ import_react153.default.createElement("div", { className: "su-relative su-w-full su-z-10" }, /* @__PURE__ */ import_react153.default.createElement(
+      "h1",
+      {
+        className: [
+          "su-mt-0 su-break-words su-font-bold su-leading-[119.4%] md:su-leading-leading su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.6rem] font-serif-4 su-w-[83.333%] md:su-w-[66.666%] lg:su-w-[70%] su-pr-20",
+          titleWordsCount > 5 ? "su-mb-[-1.75em]" : "su-mb-[-.5em]"
+        ].join(" ")
+      },
+      title
+    )), /* @__PURE__ */ import_react153.default.createElement("div", { className: "sm:su-overflow-visible su-relative su-pl-[calc(16.666%+10px)] lg:su-pl-[20%] su-w-full" }, /* @__PURE__ */ import_react153.default.createElement(
+      "div",
+      {
+        "aria-hidden": "true",
+        className: "su-mt-[-63px] sm:su-mt-[-85px] lg:su-mt-[-131px] su-w-[16.66%] md:su-w-1/3 lg:su-w-[30%] su-h-2 md:su-h-3 su-absolute su-right-0 su-top-0 su-bg-gradient"
+      }
+    ), /* @__PURE__ */ import_react153.default.createElement(
+      "div",
+      {
+        "aria-hidden": "true",
+        className: [
+          "su-leading-[119.4%] md:su-leading-display su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.6rem]",
+          "su-w-[2px] md:su-w-[3px] su-absolute su-left-0 su-bottom-0 su-bg-gradient-b",
+          titleWordsCount > 5 ? "su-h-[calc(100%-2.25em)]" : "su-h-[calc(100%-1.25em)]"
+        ].join(" ")
+      }
+    ), /* @__PURE__ */ import_react153.default.createElement("figure", { className: "basic-story__header-image su-relative su-flex su-items-center su-flex-col su-gap-8 sm:su-gap-15 su-pb-11 md:su-pb-13 su-rs-mb-5 md:su-rs-mb-7 xl:su-rs-mb-9" }, /* @__PURE__ */ import_react153.default.createElement(
+      "img",
+      {
+        src: media.featureImage.url,
+        alt: media.featureImage.alt,
+        className: "su-relative su-w-full su-block"
+      }
+    ), (media.caption || media.credit) && /* @__PURE__ */ import_react153.default.createElement(
+      "figcaption",
+      {
+        className: [
+          "su-text-14 md:su-text-16 su-text-center su-m-0",
+          "sm:su-w-3/4"
+        ].join(" ")
+      },
+      media.caption,
+      " ",
+      media.caption && media.credit && ` | `,
+      media.credit
+    )), /* @__PURE__ */ import_react153.default.createElement(
+      XssSafeContent_default,
+      {
+        className: [
+          "su-w-full su-h-min su-mx-auto su-font-semibold su-text-center font-serif-4 su-text-21 su-leading-[28.79px] su-m-0",
+          "sm:su-text-[22.5px] sm:su-leading-[27px]",
+          "md:su-w-4/5",
+          "lg:su-text-[32px] lg:su-leading-[41.68px]"
+        ].join(" "),
+        content: summary,
+        elementType: "p"
+      }
+    ), /* @__PURE__ */ import_react153.default.createElement(
+      "span",
+      {
+        className: [
+          "su-w-full su-flex su-items-center su-justify-center su-text-18 su-leading-[27px] su-gap-7 su-rs-mt-5 md:su-rs-mt-7 ",
+          "sm:su-text-23 sm:su-leading-[28.75px]",
+          "md:su-basefont-23 md:su-flex-row"
+        ].join(" ")
+      },
+      /* @__PURE__ */ import_react153.default.createElement("time", { className: "su-m-0 su-font-semibold" }, pubDateFormatted),
+      "|",
+      " ",
+      `${readingTimeValue} min read`
+    ))));
+  }
+
+  // packages/story-hero-variations/HorizontalHero.jsx
+  var import_react154 = __toESM(require_react(), 1);
+  function readingTime2(text2) {
+    if (!text2)
+      return 0;
+    const wpm = 225;
+    const words = text2.trim().split(/\s+/).length;
+    const time = Math.ceil(words / wpm);
+    return time;
+  }
+  function HorizontalHero({ data: data2 }) {
+    const { title, pubDateFormatted, media, summary } = data2;
+    const titleWordsCount = title.split(" ").length;
+    const titleSize2 = "su-leading-[119.4%] md:su-leading-display su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.5rem]";
+    const [readingTimeValue, setReadingTime] = (0, import_react154.useState)(0);
+    (0, import_react154.useEffect)(() => {
+      const content = document.querySelector(".su-page-content");
+      if (content) {
+        setReadingTime(() => readingTime2(content.innerText));
+      }
+    });
+    return /* @__PURE__ */ import_react154.default.createElement("header", { className: "basic-story__header su-rs-pt-8 su-relative su-w-full" }, /* @__PURE__ */ import_react154.default.createElement(Container, null, /* @__PURE__ */ import_react154.default.createElement("div", { className: "su-relative" }, /* @__PURE__ */ import_react154.default.createElement("div", { className: "su-relative" }, /* @__PURE__ */ import_react154.default.createElement(
+      "div",
+      {
+        className: [
+          titleSize2,
+          "su-w-2 su-z-0 md:su-w-3 lg:su-w-4 su-absolute su-rotate-180 su-top-[1.75em] su-left-0 su-bg-gradient-light-red",
+          "md:su-hidden",
+          media.caption || media.credit ? "su-h-[calc(100%-2.25em)]" : "su-h-[calc(100%-1em)]"
+        ].join(" ")
+      }
+    ), /* @__PURE__ */ import_react154.default.createElement("div", { className: "su-relative su-grid su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-grid-gap" }, /* @__PURE__ */ import_react154.default.createElement(
+      "h1",
+      {
+        className: [
+          titleSize2,
+          "su-relative md:su-max-h-[6em] su-z-10 su-text-right su-ml-auto su-mt-0 su-break-words su-font-bold font-serif-4 su-col-span-5 md:su-col-span-8 lg:su-col-span-7 su-col-start-2 md:su-col-start-5 lg:su-col-start-4",
+          titleWordsCount > 7 ? "su-mb-[-1.75em]" : "su-mb-[-.5em]"
+        ].join(" ")
+      },
+      title
+    ), /* @__PURE__ */ import_react154.default.createElement(
+      "div",
+      {
+        className: [
+          titleSize2,
+          "su-absolute su-w-full su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-z-0",
+          "su-top-[1.75em] md:su-top-auto md:su-bottom-[12.3rem] lg:su-bottom-[15.5rem]"
+        ].join(" ")
+      },
+      /* @__PURE__ */ import_react154.default.createElement("div", { className: "su-col-span-1 md:su-col-span-4 lg:su-col-span-3 su-h-[2px] md:su-h-[3px] lg:su-h-[4px] su-bg-gradient-light-red-h su-rotate-180" })
+    )), /* @__PURE__ */ import_react154.default.createElement("div", { className: "su-relative" }, /* @__PURE__ */ import_react154.default.createElement(
+      "div",
+      {
+        className: [
+          titleSize2,
+          "su-w-[2px] su-z-0 md:su-w-[3px] lg:su-w-[4px] su-absolute su-top-[1.75em] su-left-0 su-bg-gradient-light-red dark:su-rotate-180",
+          "su-hidden md:su-top-auto md:su-block",
+          media.caption || media.credit ? "su-h-[calc(100%+12.3rem-.5em)] lg:su-h-[calc(100%+15.5rem-.5em)] md:su-bottom-[.5em]" : "su-h-[calc(100%+12.3rem+1em)] lg:su-h-[calc(100%+15.5rem+1em)] md:su-bottom-[-1em]"
+        ].join(" ")
+      }
+    ), /* @__PURE__ */ import_react154.default.createElement("figure", { className: "basic-story__header-image su-gap-6 su-col-span-full su-z-0 md:su-gap-18 lg:su-gap-15" }, /* @__PURE__ */ import_react154.default.createElement("div", { className: "su-relative su-w-screen su-left-1/2 su-translate-x-[-50%]" }, /* @__PURE__ */ import_react154.default.createElement(
+      "img",
+      {
+        src: media.featureImage.url,
+        alt: media.featureImage.alt,
+        className: "su-relative su-w-full su-max-w-none"
+      }
+    )), (media.caption || media.credit) && /* @__PURE__ */ import_react154.default.createElement("div", { className: "su-rs-pb-9 su-relative" }, /* @__PURE__ */ import_react154.default.createElement(
+      "div",
+      {
+        "aria-hidden": "true",
+        className: "su-w-[2px] md:su-w-[3px] lg:su-w-[4px] su-h-full su-absolute su-right-0 su-bg-digital-red-light dark:su-bg-olive su-z-0"
+      }
+    ), /* @__PURE__ */ import_react154.default.createElement("figcaption", { className: "su-text-inherit su-pb-[1.1rem] md:su-pb-[1.3rem] su-pt-[.9rem] su-mt-0 su-mb-0 su-w-[calc(100%-40px)] md:su-w-[83.333%] lg:su-w-[50%] lg:su-max-w-[633px] su-mx-auto su-text-center su-text-[1.4rem] md:su-text-[1.6rem]" }, media.caption, " ", media.caption && media.credit && ` | `, media.credit))))), /* @__PURE__ */ import_react154.default.createElement(
+      "div",
+      {
+        className: `su-relative ${media.caption || media.credit ? "" : "su-rs-pt-9"}`
+      },
+      /* @__PURE__ */ import_react154.default.createElement(
+        "div",
+        {
+          "aria-hidden": "true",
+          className: "su-w-2 md:su-w-3 lg:su-w-4 su-h-full su-absolute su-top-0 su-right-0 su-bg-gradient-light-red dark:su-rotate-180 su-z-0"
+        }
+      ),
+      /* @__PURE__ */ import_react154.default.createElement("div", { className: "su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-20 md:su-px-0" }, /* @__PURE__ */ import_react154.default.createElement(
+        XssSafeContent_default,
+        {
+          className: "su-font-semibold su-text-left su-col-span-6 md:su-col-span-10 md:su-col-start-2 lg:su-col-span-6 lg:su-col-start-2 font-serif-4 su-text-21 su-leading-[125.28%] md:su-text-25 lg:su-text-32 su-mb-0",
+          content: summary,
+          elementType: "p"
+        }
+      )),
+      /* @__PURE__ */ import_react154.default.createElement("div", { className: "su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-20 md:su-px-0" }, /* @__PURE__ */ import_react154.default.createElement("span", { className: "su-col-span-6 md:su-col-span-10 md:su-col-start-2 lg:su-col-span-8 lg:su-col-start-2 su-rs-mt-5 su-text-right su-text-1" }, /* @__PURE__ */ import_react154.default.createElement("time", { className: "su-m-0 md:su-mt-0 md:su-mr-4 su-font-semibold" }, pubDateFormatted), " ", "|", ` ${readingTimeValue} min read`))
+    ))));
+  }
+
+  // packages/story-hero-variations/FullHero.jsx
+  var import_react155 = __toESM(require_react(), 1);
+  function readingTime3(text2) {
+    if (!text2)
+      return 0;
+    const wpm = 225;
+    const words = text2.trim().split(/\s+/).length;
+    const time = Math.ceil(words / wpm);
+    return time;
+  }
+  function FullHero({ data: data2 }) {
+    const { title, pubDateFormatted, media, summary } = data2;
+    const titleSize2 = "su-leading-[119.4%] md:su-leading-[120%] su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.5rem]";
+    const [readingTimeValue, setReadingTime] = (0, import_react155.useState)(0);
+    (0, import_react155.useEffect)(() => {
+      const content = document.querySelector(".su-page-content");
+      if (content) {
+        setReadingTime(() => readingTime3(content.innerText));
+      }
+    });
+    return /* @__PURE__ */ import_react155.default.createElement(Container, { width: "wide" }, /* @__PURE__ */ import_react155.default.createElement("header", { className: "featured-story__header-v2 su-relative" }, /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-relative su-w-screen su-left-[50%] su-translate-x-[-50%]" }, /* @__PURE__ */ import_react155.default.createElement(
+      "img",
+      {
+        className: "su-w-full su-max-w-none",
+        src: media.featureImage.url,
+        alt: media.featureImage.alt
+      }
+    ), /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-bg-gradient-header-1 dark:su-bg-gradient-header-1-dark su-absolute su-w-full su-h-[101%] su--bottom-1 su-left-0" })), /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-mt-45 md:su-mt-0 su-grid su-grid-cols-6 md:su-items-center md:su-grid-cols-12 su-gap-y-0 su-grid-gap md:su-px-0 su-flex-wrap su-mx-auto" }, /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-col-span-6 md:su-col-span-7 md:su-col-start-1 lg:su-col-span-8 lg:su-col-start-1 lg:su-pr-30" }, /* @__PURE__ */ import_react155.default.createElement(
+      "h1",
+      {
+        className: [
+          "su-text-left su-w-full su-break-words su-my-0 md:su-rs-py-6 lg:su-rs-py-5 md:su-text-right su-font-serif su-w-full",
+          titleSize2
+        ].join(" ")
+      },
+      title
+    )), /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-hidden md:su-block md:su-col-span-1 md:su-col-start-8 lg:su-col-start-9 lg:su-col-span-4 su-h-full lg:su-hidden" }, /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-bg-gradient-light-red su-h-full su-w-3 su-left-0 su-top-0 su-mx-auto" })), /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-relative su-mt-50 md:su-mt-0 su-col-span-6 su-pl-32 md:su-pl-0 md:su-col-span-4 md:su-col-start-9 su-self-stretch lg:su-pl-48 lg:su-translate-x-[1.5rem]" }, /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-flex su-flex-col su-h-full" }, /* @__PURE__ */ import_react155.default.createElement("div", { className: "md:su-hidden su-absolute su-bg-gradient-light-red su-h-full su-w-3 su-left-0 su-top-0 lg:su-block" }), /* @__PURE__ */ import_react155.default.createElement(
+      XssSafeContent_default,
+      {
+        className: [
+          "lg:su-max-w-[29.2rem] su-m-0 su-font-serif su-text-20 su-leading-[119.4%] su-mb-rs-5 md:su-text-21 md:su-leading-[130.245%] md:su-pb-72 lg:su-text-24 su-font-semibold",
+          "su-pb-80 md:su-pb-0"
+        ].join(" "),
+        content: summary,
+        elementType: "p"
+      }
+    ), /* @__PURE__ */ import_react155.default.createElement("span", { className: "su-w-auto md:su-mt-auto su-text-16 su-leading-[19.1px] su-flex su-gap-[7px] md:su-basefont-23 md:su-text-21 md:su-leading-[26.25px]" }, /* @__PURE__ */ import_react155.default.createElement("time", { className: "su-m-0 md:su-mt-0 md:su-mr-[4px] su-font-semibold" }, pubDateFormatted), "|", ` ${readingTimeValue} min read`))))));
+  }
+
+  // components/feature-story-hero/Component.jsx
+  var import_react156 = __toESM(require_react(), 1);
+  function FeatureStoryHero(props) {
+    const { orientation } = props;
+    const data2 = props;
+    switch (orientation) {
+      case "vertical":
+        return /* @__PURE__ */ import_react156.default.createElement(VerticalHero, { data: data2 });
+      case "full":
+        return /* @__PURE__ */ import_react156.default.createElement(FullHero, { data: data2 });
+      default:
+        return /* @__PURE__ */ import_react156.default.createElement(HorizontalHero, { data: data2 });
+    }
+  }
+
+  // components/feature-story-hero/client.jsx
+  (function() {
+    const componentName = "feature-story-hero";
+    const target = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!target)
+      return;
+    hydrateComponent({ Component: FeatureStoryHero, componentName });
+  })();
+
+  // components/events-section/Component.jsx
+  var import_react157 = __toESM(require_react(), 1);
+  function EventsSection({
+    headingData,
+    displayConfiguration,
+    data: data2
+  }) {
+    const noOfCards = Number(displayConfiguration.numberOfEvents);
+    const cards = [];
+    data2.forEach((card) => {
+      cards.push(/* @__PURE__ */ import_react157.default.createElement(Card, { data: card, cardType: "horizontal" }));
+    });
+    return cards.length > 0 ? /* @__PURE__ */ import_react157.default.createElement(Container, { width: "large", "data-component": "events-section" }, /* @__PURE__ */ import_react157.default.createElement(
+      LinkedHeading,
+      {
+        title: headingData.title,
+        ctaText: headingData.ctaText,
+        ctaLink: headingData.ctaLink,
+        ctaNewWindow: headingData.ctaNewWindow
+      }
+    ), /* @__PURE__ */ import_react157.default.createElement(HorizontalCardGrid, { items: cards, maximumItems: noOfCards })) : "";
+  }
+
+  // components/events-section/client.jsx
+  (function() {
+    const componentName = "events-section";
+    const eventsSection = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!eventsSection)
+      return;
+    hydrateComponent({ Component: EventsSection, componentName });
+  })();
+
+  // components/featured-content/Component.jsx
+  var import_react158 = __toESM(require_react(), 1);
   function FeaturedContent({
     contentConfiguration,
     displayConfiguration,
@@ -28406,7 +28705,7 @@
     if (contentConfiguration.featuredDescription !== "" && contentConfiguration.featuredDescription !== null && contentConfiguration.featuredDescription !== void 0) {
       featuredCardData2.description = contentConfiguration.featuredDescription;
     }
-    return /* @__PURE__ */ import_react153.default.createElement(Container, { width: "large", "data-component": "featured-content" }, /* @__PURE__ */ import_react153.default.createElement(
+    return /* @__PURE__ */ import_react158.default.createElement(Container, { width: "large", "data-component": "featured-content" }, /* @__PURE__ */ import_react158.default.createElement(
       LinkedHeading,
       {
         title: headingData.title,
@@ -28414,13 +28713,13 @@
         ctaLink: headingData.ctaLink,
         ctaNewWindow: headingData.ctaNewWindow
       }
-    ), /* @__PURE__ */ import_react153.default.createElement(
+    ), /* @__PURE__ */ import_react158.default.createElement(
       FeaturedGrid,
       {
         alignment: displayConfiguration.alignment,
         items: [
-          /* @__PURE__ */ import_react153.default.createElement(Card, { data: featuredCardData2, cardSize: "featured" }),
-          /* @__PURE__ */ import_react153.default.createElement(
+          /* @__PURE__ */ import_react158.default.createElement(Card, { data: featuredCardData2, cardSize: "featured" }),
+          /* @__PURE__ */ import_react158.default.createElement(
             Card,
             {
               data: data2[1],
@@ -28429,7 +28728,7 @@
               cardSize: "small"
             }
           ),
-          /* @__PURE__ */ import_react153.default.createElement(
+          /* @__PURE__ */ import_react158.default.createElement(
             Card,
             {
               data: data2[2],
@@ -28452,304 +28751,6 @@
     if (!target)
       return;
     hydrateComponent({ Component: FeaturedContent, componentName });
-  })();
-
-  // packages/story-hero-variations/VerticalHero.jsx
-  var import_react154 = __toESM(require_react(), 1);
-  function readingTime(text2) {
-    if (!text2)
-      return 0;
-    const wpm = 225;
-    const words = text2.trim().split(/\s+/).length;
-    const time = Math.ceil(words / wpm);
-    return time;
-  }
-  function VerticalHero({ data: data2 }) {
-    const { title, pubDateFormatted, media, summary } = data2;
-    const titleWordsCount = title.split(" ").length;
-    const [readingTimeValue, setReadingTime] = (0, import_react154.useState)(0);
-    (0, import_react154.useEffect)(() => {
-      const content = document.querySelector(".su-page-content");
-      if (content) {
-        setReadingTime(() => readingTime(content.innerText));
-      }
-    });
-    return /* @__PURE__ */ import_react154.default.createElement(Container, null, /* @__PURE__ */ import_react154.default.createElement("div", { className: "basic-story__header su-rs-pt-8 su-relative su-flex su-flex-col su-items-start md:su-items-end" }, /* @__PURE__ */ import_react154.default.createElement("div", { className: "su-relative su-w-full su-z-10" }, /* @__PURE__ */ import_react154.default.createElement(
-      "h1",
-      {
-        className: [
-          "su-mt-0 su-break-words su-font-bold su-leading-[119.4%] md:su-leading-leading su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.6rem] font-serif-4 su-w-[83.333%] md:su-w-[66.666%] lg:su-w-[70%] su-pr-20",
-          titleWordsCount > 5 ? "su-mb-[-1.75em]" : "su-mb-[-.5em]"
-        ].join(" ")
-      },
-      title
-    )), /* @__PURE__ */ import_react154.default.createElement("div", { className: "sm:su-overflow-visible su-relative su-pl-[calc(16.666%+10px)] lg:su-pl-[20%] su-w-full" }, /* @__PURE__ */ import_react154.default.createElement(
-      "div",
-      {
-        "aria-hidden": "true",
-        className: "su-mt-[-63px] sm:su-mt-[-85px] lg:su-mt-[-131px] su-w-[16.66%] md:su-w-1/3 lg:su-w-[30%] su-h-2 md:su-h-3 su-absolute su-right-0 su-top-0 su-bg-gradient"
-      }
-    ), /* @__PURE__ */ import_react154.default.createElement(
-      "div",
-      {
-        "aria-hidden": "true",
-        className: [
-          "su-leading-[119.4%] md:su-leading-display su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.6rem]",
-          "su-w-[2px] md:su-w-[3px] su-absolute su-left-0 su-bottom-0 su-bg-gradient-b",
-          titleWordsCount > 5 ? "su-h-[calc(100%-2.25em)]" : "su-h-[calc(100%-1.25em)]"
-        ].join(" ")
-      }
-    ), /* @__PURE__ */ import_react154.default.createElement("figure", { className: "basic-story__header-image su-relative su-flex su-items-center su-flex-col su-gap-8 sm:su-gap-15 su-pb-11 md:su-pb-13 su-rs-mb-5 md:su-rs-mb-7 xl:su-rs-mb-9" }, /* @__PURE__ */ import_react154.default.createElement(
-      "img",
-      {
-        src: media.featureImage.url,
-        alt: media.featureImage.alt,
-        className: "su-relative su-w-full su-block"
-      }
-    ), (media.caption || media.credit) && /* @__PURE__ */ import_react154.default.createElement(
-      "figcaption",
-      {
-        className: [
-          "su-text-14 md:su-text-16 su-text-center su-m-0",
-          "sm:su-w-3/4"
-        ].join(" ")
-      },
-      media.caption,
-      " ",
-      media.caption && media.credit && ` | `,
-      media.credit
-    )), /* @__PURE__ */ import_react154.default.createElement(
-      XssSafeContent_default,
-      {
-        className: [
-          "su-w-full su-h-min su-mx-auto su-font-semibold su-text-center font-serif-4 su-text-21 su-leading-[28.79px] su-m-0",
-          "sm:su-text-[22.5px] sm:su-leading-[27px]",
-          "md:su-w-4/5",
-          "lg:su-text-[32px] lg:su-leading-[41.68px]"
-        ].join(" "),
-        content: summary,
-        elementType: "p"
-      }
-    ), /* @__PURE__ */ import_react154.default.createElement(
-      "span",
-      {
-        className: [
-          "su-w-full su-flex su-items-center su-justify-center su-text-18 su-leading-[27px] su-gap-7 su-rs-mt-5 md:su-rs-mt-7 ",
-          "sm:su-text-23 sm:su-leading-[28.75px]",
-          "md:su-basefont-23 md:su-flex-row"
-        ].join(" ")
-      },
-      /* @__PURE__ */ import_react154.default.createElement("time", { className: "su-m-0 su-font-semibold" }, pubDateFormatted),
-      "|",
-      " ",
-      `${readingTimeValue} min read`
-    ))));
-  }
-
-  // packages/story-hero-variations/HorizontalHero.jsx
-  var import_react155 = __toESM(require_react(), 1);
-  function readingTime2(text2) {
-    if (!text2)
-      return 0;
-    const wpm = 225;
-    const words = text2.trim().split(/\s+/).length;
-    const time = Math.ceil(words / wpm);
-    return time;
-  }
-  function HorizontalHero({ data: data2 }) {
-    const { title, pubDateFormatted, media, summary } = data2;
-    const titleWordsCount = title.split(" ").length;
-    const titleSize2 = "su-leading-[119.4%] md:su-leading-display su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.5rem]";
-    const [readingTimeValue, setReadingTime] = (0, import_react155.useState)(0);
-    (0, import_react155.useEffect)(() => {
-      const content = document.querySelector(".su-page-content");
-      if (content) {
-        setReadingTime(() => readingTime2(content.innerText));
-      }
-    });
-    return /* @__PURE__ */ import_react155.default.createElement("header", { className: "basic-story__header su-rs-pt-8 su-relative su-w-full" }, /* @__PURE__ */ import_react155.default.createElement(Container, null, /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-relative" }, /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-relative" }, /* @__PURE__ */ import_react155.default.createElement(
-      "div",
-      {
-        className: [
-          titleSize2,
-          "su-w-2 su-z-0 md:su-w-3 lg:su-w-4 su-absolute su-rotate-180 su-top-[1.75em] su-left-0 su-bg-gradient-light-red",
-          "md:su-hidden",
-          media.caption || media.credit ? "su-h-[calc(100%-2.25em)]" : "su-h-[calc(100%-1em)]"
-        ].join(" ")
-      }
-    ), /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-relative su-grid su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-grid-gap" }, /* @__PURE__ */ import_react155.default.createElement(
-      "h1",
-      {
-        className: [
-          titleSize2,
-          "su-relative md:su-max-h-[6em] su-z-10 su-text-right su-ml-auto su-mt-0 su-break-words su-font-bold font-serif-4 su-col-span-5 md:su-col-span-8 lg:su-col-span-7 su-col-start-2 md:su-col-start-5 lg:su-col-start-4",
-          titleWordsCount > 7 ? "su-mb-[-1.75em]" : "su-mb-[-.5em]"
-        ].join(" ")
-      },
-      title
-    ), /* @__PURE__ */ import_react155.default.createElement(
-      "div",
-      {
-        className: [
-          titleSize2,
-          "su-absolute su-w-full su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-z-0",
-          "su-top-[1.75em] md:su-top-auto md:su-bottom-[12.3rem] lg:su-bottom-[15.5rem]"
-        ].join(" ")
-      },
-      /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-col-span-1 md:su-col-span-4 lg:su-col-span-3 su-h-[2px] md:su-h-[3px] lg:su-h-[4px] su-bg-gradient-light-red-h su-rotate-180" })
-    )), /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-relative" }, /* @__PURE__ */ import_react155.default.createElement(
-      "div",
-      {
-        className: [
-          titleSize2,
-          "su-w-[2px] su-z-0 md:su-w-[3px] lg:su-w-[4px] su-absolute su-top-[1.75em] su-left-0 su-bg-gradient-light-red dark:su-rotate-180",
-          "su-hidden md:su-top-auto md:su-block",
-          media.caption || media.credit ? "su-h-[calc(100%+12.3rem-.5em)] lg:su-h-[calc(100%+15.5rem-.5em)] md:su-bottom-[.5em]" : "su-h-[calc(100%+12.3rem+1em)] lg:su-h-[calc(100%+15.5rem+1em)] md:su-bottom-[-1em]"
-        ].join(" ")
-      }
-    ), /* @__PURE__ */ import_react155.default.createElement("figure", { className: "basic-story__header-image su-gap-6 su-col-span-full su-z-0 md:su-gap-18 lg:su-gap-15" }, /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-relative su-w-screen su-left-1/2 su-translate-x-[-50%]" }, /* @__PURE__ */ import_react155.default.createElement(
-      "img",
-      {
-        src: media.featureImage.url,
-        alt: media.featureImage.alt,
-        className: "su-relative su-w-full su-max-w-none"
-      }
-    )), (media.caption || media.credit) && /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-rs-pb-9 su-relative" }, /* @__PURE__ */ import_react155.default.createElement(
-      "div",
-      {
-        "aria-hidden": "true",
-        className: "su-w-[2px] md:su-w-[3px] lg:su-w-[4px] su-h-full su-absolute su-right-0 su-bg-digital-red-light dark:su-bg-olive su-z-0"
-      }
-    ), /* @__PURE__ */ import_react155.default.createElement("figcaption", { className: "su-text-inherit su-pb-[1.1rem] md:su-pb-[1.3rem] su-pt-[.9rem] su-mt-0 su-mb-0 su-w-[calc(100%-40px)] md:su-w-[83.333%] lg:su-w-[50%] lg:su-max-w-[633px] su-mx-auto su-text-center su-text-[1.4rem] md:su-text-[1.6rem]" }, media.caption, " ", media.caption && media.credit && ` | `, media.credit))))), /* @__PURE__ */ import_react155.default.createElement(
-      "div",
-      {
-        className: `su-relative ${media.caption || media.credit ? "" : "su-rs-pt-9"}`
-      },
-      /* @__PURE__ */ import_react155.default.createElement(
-        "div",
-        {
-          "aria-hidden": "true",
-          className: "su-w-2 md:su-w-3 lg:su-w-4 su-h-full su-absolute su-top-0 su-right-0 su-bg-gradient-light-red dark:su-rotate-180 su-z-0"
-        }
-      ),
-      /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-20 md:su-px-0" }, /* @__PURE__ */ import_react155.default.createElement(
-        XssSafeContent_default,
-        {
-          className: "su-font-semibold su-text-left su-col-span-6 md:su-col-span-10 md:su-col-start-2 lg:su-col-span-6 lg:su-col-start-2 font-serif-4 su-text-21 su-leading-[125.28%] md:su-text-25 lg:su-text-32 su-mb-0",
-          content: summary,
-          elementType: "p"
-        }
-      )),
-      /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-20 md:su-px-0" }, /* @__PURE__ */ import_react155.default.createElement("span", { className: "su-col-span-6 md:su-col-span-10 md:su-col-start-2 lg:su-col-span-8 lg:su-col-start-2 su-rs-mt-5 su-text-right su-text-1" }, /* @__PURE__ */ import_react155.default.createElement("time", { className: "su-m-0 md:su-mt-0 md:su-mr-4 su-font-semibold" }, pubDateFormatted), " ", "|", ` ${readingTimeValue} min read`))
-    ))));
-  }
-
-  // packages/story-hero-variations/FullHero.jsx
-  var import_react156 = __toESM(require_react(), 1);
-  function readingTime3(text2) {
-    if (!text2)
-      return 0;
-    const wpm = 225;
-    const words = text2.trim().split(/\s+/).length;
-    const time = Math.ceil(words / wpm);
-    return time;
-  }
-  function FullHero({ data: data2 }) {
-    const { title, pubDateFormatted, media, summary } = data2;
-    const titleSize2 = "su-leading-[119.4%] md:su-leading-[120%] su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.5rem]";
-    const [readingTimeValue, setReadingTime] = (0, import_react156.useState)(0);
-    (0, import_react156.useEffect)(() => {
-      const content = document.querySelector(".su-page-content");
-      if (content) {
-        setReadingTime(() => readingTime3(content.innerText));
-      }
-    });
-    return /* @__PURE__ */ import_react156.default.createElement(Container, { width: "wide" }, /* @__PURE__ */ import_react156.default.createElement("header", { className: "featured-story__header-v2 su-relative" }, /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-relative su-w-screen su-left-[50%] su-translate-x-[-50%]" }, /* @__PURE__ */ import_react156.default.createElement(
-      "img",
-      {
-        className: "su-w-full su-max-w-none",
-        src: media.featureImage.url,
-        alt: media.featureImage.alt
-      }
-    ), /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-bg-gradient-header-1 dark:su-bg-gradient-header-1-dark su-absolute su-w-full su-h-[101%] su--bottom-1 su-left-0" })), /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-mt-45 md:su-mt-0 su-grid su-grid-cols-6 md:su-items-center md:su-grid-cols-12 su-gap-y-0 su-grid-gap md:su-px-0 su-flex-wrap su-mx-auto" }, /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-col-span-6 md:su-col-span-7 md:su-col-start-1 lg:su-col-span-8 lg:su-col-start-1 lg:su-pr-30" }, /* @__PURE__ */ import_react156.default.createElement(
-      "h1",
-      {
-        className: [
-          "su-text-left su-w-full su-break-words su-my-0 md:su-rs-py-6 lg:su-rs-py-5 md:su-text-right su-font-serif su-w-full",
-          titleSize2
-        ].join(" ")
-      },
-      title
-    )), /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-hidden md:su-block md:su-col-span-1 md:su-col-start-8 lg:su-col-start-9 lg:su-col-span-4 su-h-full lg:su-hidden" }, /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-bg-gradient-light-red su-h-full su-w-3 su-left-0 su-top-0 su-mx-auto" })), /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-relative su-mt-50 md:su-mt-0 su-col-span-6 su-pl-32 md:su-pl-0 md:su-col-span-4 md:su-col-start-9 su-self-stretch lg:su-pl-48 lg:su-translate-x-[1.5rem]" }, /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-flex su-flex-col su-h-full" }, /* @__PURE__ */ import_react156.default.createElement("div", { className: "md:su-hidden su-absolute su-bg-gradient-light-red su-h-full su-w-3 su-left-0 su-top-0 lg:su-block" }), /* @__PURE__ */ import_react156.default.createElement(
-      XssSafeContent_default,
-      {
-        className: [
-          "lg:su-max-w-[29.2rem] su-m-0 su-font-serif su-text-20 su-leading-[119.4%] su-mb-rs-5 md:su-text-21 md:su-leading-[130.245%] md:su-pb-72 lg:su-text-24 su-font-semibold",
-          "su-pb-80 md:su-pb-0"
-        ].join(" "),
-        content: summary,
-        elementType: "p"
-      }
-    ), /* @__PURE__ */ import_react156.default.createElement("span", { className: "su-w-auto md:su-mt-auto su-text-16 su-leading-[19.1px] su-flex su-gap-[7px] md:su-basefont-23 md:su-text-21 md:su-leading-[26.25px]" }, /* @__PURE__ */ import_react156.default.createElement("time", { className: "su-m-0 md:su-mt-0 md:su-mr-[4px] su-font-semibold" }, pubDateFormatted), "|", ` ${readingTimeValue} min read`))))));
-  }
-
-  // components/feature-story-hero/Component.jsx
-  var import_react157 = __toESM(require_react(), 1);
-  function FeatureStoryHero(props) {
-    const { orientation } = props;
-    const data2 = props;
-    switch (orientation) {
-      case "vertical":
-        return /* @__PURE__ */ import_react157.default.createElement(VerticalHero, { data: data2 });
-      case "full":
-        return /* @__PURE__ */ import_react157.default.createElement(FullHero, { data: data2 });
-      default:
-        return /* @__PURE__ */ import_react157.default.createElement(HorizontalHero, { data: data2 });
-    }
-  }
-
-  // components/feature-story-hero/client.jsx
-  (function() {
-    const componentName = "feature-story-hero";
-    const target = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!target)
-      return;
-    hydrateComponent({ Component: FeatureStoryHero, componentName });
-  })();
-
-  // components/content-carousel/Component.jsx
-  var import_react158 = __toESM(require_react(), 1);
-  function ContentCarousel({ title, slides }) {
-    const cards = [];
-    slides.forEach((slide) => {
-      cards.push(
-        /* @__PURE__ */ import_react158.default.createElement(
-          XssSafeContent_default,
-          {
-            "data-test": "content-carousel-content",
-            className: [
-              "su-wysiwyg-content su-w-full",
-              "*:su-mb-6 *:su-text-16 *:su-leading-[125%] *:md:su-text-19 *:lg:su-text-19 [&>*:last-child]:su-mb-0 *:su-card-paragraph"
-            ].join(" "),
-            content: slide.content
-          }
-        )
-      );
-    });
-    return /* @__PURE__ */ import_react158.default.createElement(Container, { width: "narrow" }, /* @__PURE__ */ import_react158.default.createElement("div", { className: "su-bg-fog-light dark:su-bg-black su-p-20 md:su-pt-36 md:su-px-36 md:su-pb-26" }, /* @__PURE__ */ import_react158.default.createElement("div", { className: "su-relative su-mb-38 su-overflow-hidden" }, title && /* @__PURE__ */ import_react158.default.createElement("h3", { className: "su-relative su-text-23 su-leading-[119.415%] su-z-20 su-font-black su-mb-0 su-inline su-pr-10 su-m-0" }, title), /* @__PURE__ */ import_react158.default.createElement("span", { className: "su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-1 su-absolute su-bottom-4" })), /* @__PURE__ */ import_react158.default.createElement(Carousel, { variant: "content", slides: cards })));
-  }
-
-  // components/content-carousel/client.jsx
-  (function() {
-    const componentName = "content-carousel";
-    const contentCarousel = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!contentCarousel)
-      return;
-    hydrateComponent({ Component: ContentCarousel, componentName });
   })();
 
   // components/fact-callout/Component.jsx
@@ -28797,38 +28798,37 @@
     hydrateComponent({ Component: FactCallout, componentName });
   })();
 
-  // components/events-section/Component.jsx
+  // components/content-carousel/Component.jsx
   var import_react160 = __toESM(require_react(), 1);
-  function EventsSection({
-    headingData,
-    displayConfiguration,
-    data: data2
-  }) {
-    const noOfCards = Number(displayConfiguration.numberOfEvents);
+  function ContentCarousel({ title, slides }) {
     const cards = [];
-    data2.forEach((card) => {
-      cards.push(/* @__PURE__ */ import_react160.default.createElement(Card, { data: card, cardType: "horizontal" }));
+    slides.forEach((slide) => {
+      cards.push(
+        /* @__PURE__ */ import_react160.default.createElement(
+          XssSafeContent_default,
+          {
+            "data-test": "content-carousel-content",
+            className: [
+              "su-wysiwyg-content su-w-full",
+              "*:su-mb-6 *:su-text-16 *:su-leading-[125%] *:md:su-text-19 *:lg:su-text-19 [&>*:last-child]:su-mb-0 *:su-card-paragraph"
+            ].join(" "),
+            content: slide.content
+          }
+        )
+      );
     });
-    return cards.length > 0 ? /* @__PURE__ */ import_react160.default.createElement(Container, { width: "large", "data-component": "events-section" }, /* @__PURE__ */ import_react160.default.createElement(
-      LinkedHeading,
-      {
-        title: headingData.title,
-        ctaText: headingData.ctaText,
-        ctaLink: headingData.ctaLink,
-        ctaNewWindow: headingData.ctaNewWindow
-      }
-    ), /* @__PURE__ */ import_react160.default.createElement(HorizontalCardGrid, { items: cards, maximumItems: noOfCards })) : "";
+    return /* @__PURE__ */ import_react160.default.createElement(Container, { width: "narrow" }, /* @__PURE__ */ import_react160.default.createElement("div", { className: "su-bg-fog-light dark:su-bg-black su-p-20 md:su-pt-36 md:su-px-36 md:su-pb-26" }, /* @__PURE__ */ import_react160.default.createElement("div", { className: "su-relative su-mb-38 su-overflow-hidden" }, title && /* @__PURE__ */ import_react160.default.createElement("h3", { className: "su-relative su-text-23 su-leading-[119.415%] su-z-20 su-font-black su-mb-0 su-inline su-pr-10 su-m-0" }, title), /* @__PURE__ */ import_react160.default.createElement("span", { className: "su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-1 su-absolute su-bottom-4" })), /* @__PURE__ */ import_react160.default.createElement(Carousel, { variant: "content", slides: cards })));
   }
 
-  // components/events-section/client.jsx
+  // components/content-carousel/client.jsx
   (function() {
-    const componentName = "events-section";
-    const eventsSection = document.querySelector(
+    const componentName = "content-carousel";
+    const contentCarousel = document.querySelector(
       `[data-hydration-component="${componentName}"]`
     );
-    if (!eventsSection)
+    if (!contentCarousel)
       return;
-    hydrateComponent({ Component: EventsSection, componentName });
+    hydrateComponent({ Component: ContentCarousel, componentName });
   })();
 
   // packages/sidebar/SidebarList.jsx
@@ -29052,33 +29052,123 @@
     hydrateComponent({ Component: CampaignCta, componentName });
   })();
 
-  // components/button-row/Component.jsx
+  // components/basic-story-hero/Component.jsx
   var import_react164 = __toESM(require_react(), 1);
-  function ButtonRow({ buttonsArray }) {
-    return /* @__PURE__ */ import_react164.default.createElement(Container, null, /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-flex su-flex-wrap su-justify-center su-gap-x-18 md:su-gap-x-27 su-gap-y-12 su-mx-auto su-w-fit" }, buttonsArray.map((button) => {
-      const { buttonText, internalLinkUrl, externalUrl, isNewWindow } = button;
-      return /* @__PURE__ */ import_react164.default.createElement(
-        LinkButton,
+  function readingTime4(text2) {
+    if (!text2)
+      return 0;
+    const wpm = 225;
+    const words = text2.trim().split(/\s+/).length;
+    const time = Math.ceil(words / wpm);
+    return time;
+  }
+  function basicStoryHero(props) {
+    const { title, media, summary, pubDateFormatted, topic, mediaType } = props;
+    const [readingTimeValue, setReadingTime] = (0, import_react164.useState)(0);
+    (0, import_react164.useEffect)(() => {
+      const content = document.querySelector(".su-page-content");
+      if (content) {
+        setReadingTime(() => readingTime4(content.innerText));
+      }
+    });
+    return /* @__PURE__ */ import_react164.default.createElement(Container, { width: "wide" }, /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-grid su-gap su-grid-cols-6 md:su-grid-cols-12" }, /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-10 md:su-col-start-2" }, /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-flex su-gap-y-8 su-gap-x-16 su-justify-between su-flex-wrap su-text-16 md:su-basefont-23" }, /* @__PURE__ */ import_react164.default.createElement("span", { className: "su-flex su-items-center su-justify-center" }, /* @__PURE__ */ import_react164.default.createElement("time", { className: "su-m-0 su-mr-4 su-font-semibold" }, pubDateFormatted), /* @__PURE__ */ import_react164.default.createElement("span", { className: "su-reading-time su-reading-time-separator" }), "|", " ", `${readingTimeValue} min read`), topic.asset_name && /* @__PURE__ */ import_react164.default.createElement(
+      "a",
+      {
+        href: topic.asset_url !== "" ? topic.asset_url : "#",
+        className: "su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline"
+      },
+      topic.asset_name
+    )), /* @__PURE__ */ import_react164.default.createElement("h1", { className: "su-font-bold su-rs-mt-4 su-font-serif su-mb-0 xl:su-text-[6.4rem]" }, title), /* @__PURE__ */ import_react164.default.createElement(
+      XssSafeContent_default,
+      {
+        className: [
+          "su-font-serif su-intro-text su-mb-0 su-rs-mt-2 su-text-21 su-leading-[27.35px] md:su-text-28 md:su-leading-[36.47px]",
+          ""
+        ].join(" "),
+        content: summary,
+        elementType: "p"
+      }
+    )), /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4" }, /* @__PURE__ */ import_react164.default.createElement(
+      "figure",
+      {
+        className: `basic-story__header-image su-col-span-full su-relative su-z-0 ${mediaType === "image" ? "dark:su-bg-black" : ""}`
+      },
+      /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-relative su-w-full" }, /* @__PURE__ */ import_react164.default.createElement(
+        Thumbnail,
         {
-          key: buttonText,
-          buttonText,
-          internalUrl: internalLinkUrl,
-          externalUrl,
-          isNewWindow
+          url: media.featureImage.url,
+          alt: media.featureImage.alt,
+          video: media.featureVideo.id,
+          type: mediaType,
+          carousel: media.carousel
+        }
+      ), /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" })),
+      mediaType !== "carousel" && (media.caption || media.credit) && /* @__PURE__ */ import_react164.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, media.caption, " ", media.caption && media.credit && ` | `, media.credit)
+    ))));
+  }
+  function Thumbnail({ url, alt, video, type, carousel }) {
+    const [isModalOpen, setIsModalOpen] = (0, import_react164.useState)(false);
+    const slides = [];
+    const handleClick = () => {
+      setIsModalOpen(true);
+    };
+    const handleCloseModal = () => {
+      setIsModalOpen(false);
+    };
+    if (type === "image") {
+      return /* @__PURE__ */ import_react164.default.createElement(
+        "img",
+        {
+          src: "https://picsum.photos/350/200",
+          alt,
+          className: "su-relative su-w-full su-max-w-full"
         }
       );
-    })));
+    }
+    if (type === "carousel") {
+      carousel.forEach((slide) => {
+        slides.push(
+          /* @__PURE__ */ import_react164.default.createElement(import_react164.default.Fragment, null, /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-aspect-[3/2] su-relative su-bg-fog-light dark:su-bg-black" }, /* @__PURE__ */ import_react164.default.createElement(
+            "img",
+            {
+              src: slide.asset_url,
+              alt: slide.asset_attribute_alt,
+              className: "su-absolute su-top-0 su-left-0 su-w-full su-h-full su-object-scale-down su-object-center"
+            }
+          )), slide.asset_attribute_caption && /* @__PURE__ */ import_react164.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, slide.asset_attribute_caption))
+        );
+      });
+      return /* @__PURE__ */ import_react164.default.createElement(Carousel, { slides, variant: "basicstory" });
+    }
+    return /* @__PURE__ */ import_react164.default.createElement(import_react164.default.Fragment, null, /* @__PURE__ */ import_react164.default.createElement(
+      "button",
+      {
+        type: "button",
+        "aria-haspopup": "dialog",
+        className: "su-w-full su-aspect-[16/9] su-video-trigger",
+        onClick: handleClick
+      },
+      /* @__PURE__ */ import_react164.default.createElement(
+        "img",
+        {
+          src: url,
+          alt,
+          className: "su-w-full su-h-full su-absolute su-top-0 su-left-0 su-object-cover su-object-center"
+        }
+      ),
+      /* @__PURE__ */ import_react164.default.createElement("span", { className: "su-play-button-icon-hero su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px]" }, /* @__PURE__ */ import_react164.default.createElement(VideoPlay, null))
+    ), isModalOpen && /* @__PURE__ */ import_react164.default.createElement(ModalWrapper_default, { onClose: handleCloseModal }, /* @__PURE__ */ import_react164.default.createElement(EmbedVideo, { videoId: video })));
   }
 
-  // components/button-row/client.jsx
+  // components/basic-story-hero/client.jsx
   (function() {
-    const componentName = "button-row";
-    const base = document.querySelector(
+    const componentName = "basic-story-hero";
+    const target = document.querySelector(
       `[data-hydration-component="${componentName}"]`
     );
-    if (!base)
+    if (!target)
       return;
-    hydrateComponent({ Component: ButtonRow, componentName });
+    hydrateComponent({ Component: basicStoryHero, componentName });
   })();
 
   // components/button/Component.jsx
@@ -29111,11 +29201,40 @@
     hydrateComponent({ Component: Button, componentName });
   })();
 
-  // components/basic-hero/Component.jsx
+  // components/button-row/Component.jsx
   var import_react166 = __toESM(require_react(), 1);
+  function ButtonRow({ buttonsArray }) {
+    return /* @__PURE__ */ import_react166.default.createElement(Container, null, /* @__PURE__ */ import_react166.default.createElement("div", { className: "su-flex su-flex-wrap su-justify-center su-gap-x-18 md:su-gap-x-27 su-gap-y-12 su-mx-auto su-w-fit" }, buttonsArray.map((button) => {
+      const { buttonText, internalLinkUrl, externalUrl, isNewWindow } = button;
+      return /* @__PURE__ */ import_react166.default.createElement(
+        LinkButton,
+        {
+          key: buttonText,
+          buttonText,
+          internalUrl: internalLinkUrl,
+          externalUrl,
+          isNewWindow
+        }
+      );
+    })));
+  }
+
+  // components/button-row/client.jsx
+  (function() {
+    const componentName = "button-row";
+    const base = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!base)
+      return;
+    hydrateComponent({ Component: ButtonRow, componentName });
+  })();
+
+  // components/basic-hero/Component.jsx
+  var import_react167 = __toESM(require_react(), 1);
   function BasicHero(props) {
     const { title, titleAlignment } = props;
-    return /* @__PURE__ */ import_react166.default.createElement(Container, null, /* @__PURE__ */ import_react166.default.createElement("div", { className: "su-flex su-justify-between su-flex-wrap su-rs-mt-6 su-rs-mb-5" }, /* @__PURE__ */ import_react166.default.createElement(
+    return /* @__PURE__ */ import_react167.default.createElement(Container, null, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-flex su-justify-between su-flex-wrap su-rs-mt-6 su-rs-mb-5" }, /* @__PURE__ */ import_react167.default.createElement(
       "h1",
       {
         className: cnb(
@@ -29138,136 +29257,34 @@
     hydrateComponent({ Component: BasicHero, componentName });
   })();
 
-  // components/basic-story-hero/Component.jsx
-  var import_react167 = __toESM(require_react(), 1);
-  function readingTime4(text2) {
-    if (!text2)
-      return 0;
-    const wpm = 225;
-    const words = text2.trim().split(/\s+/).length;
-    const time = Math.ceil(words / wpm);
-    return time;
-  }
-  function basicStoryHero(props) {
-    const { title, media, summary, pubDateFormatted, topic, mediaType } = props;
-    const [readingTimeValue, setReadingTime] = (0, import_react167.useState)(0);
-    (0, import_react167.useEffect)(() => {
-      const content = document.querySelector(".su-page-content");
-      if (content) {
-        setReadingTime(() => readingTime4(content.innerText));
-      }
-    });
-    return /* @__PURE__ */ import_react167.default.createElement(Container, { width: "wide" }, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-grid su-gap su-grid-cols-6 md:su-grid-cols-12" }, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-10 md:su-col-start-2" }, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-flex su-gap-y-8 su-gap-x-16 su-justify-between su-flex-wrap su-text-16 md:su-basefont-23" }, /* @__PURE__ */ import_react167.default.createElement("span", { className: "su-flex su-items-center su-justify-center" }, /* @__PURE__ */ import_react167.default.createElement("time", { className: "su-m-0 su-mr-4 su-font-semibold" }, pubDateFormatted), /* @__PURE__ */ import_react167.default.createElement("span", { className: "su-reading-time su-reading-time-separator" }), "|", " ", `${readingTimeValue} min read`), topic.asset_name && /* @__PURE__ */ import_react167.default.createElement(
-      "a",
-      {
-        href: topic.asset_url !== "" ? topic.asset_url : "#",
-        className: "su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline"
-      },
-      topic.asset_name
-    )), /* @__PURE__ */ import_react167.default.createElement("h1", { className: "su-font-bold su-rs-mt-4 su-font-serif su-mb-0 xl:su-text-[6.4rem]" }, title), /* @__PURE__ */ import_react167.default.createElement(
-      XssSafeContent_default,
-      {
-        className: [
-          "su-font-serif su-intro-text su-mb-0 su-rs-mt-2 su-text-21 su-leading-[27.35px] md:su-text-28 md:su-leading-[36.47px]",
-          ""
-        ].join(" "),
-        content: summary,
-        elementType: "p"
-      }
-    )), /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4" }, /* @__PURE__ */ import_react167.default.createElement(
-      "figure",
-      {
-        className: `basic-story__header-image su-col-span-full su-relative su-z-0 ${mediaType === "image" ? "dark:su-bg-black" : ""}`
-      },
-      /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-relative su-w-full" }, /* @__PURE__ */ import_react167.default.createElement(
-        Thumbnail,
-        {
-          url: media.featureImage.url,
-          alt: media.featureImage.alt,
-          video: media.featureVideo.id,
-          type: mediaType,
-          carousel: media.carousel
-        }
-      ), /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" })),
-      mediaType !== "carousel" && (media.caption || media.credit) && /* @__PURE__ */ import_react167.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, media.caption, " ", media.caption && media.credit && ` | `, media.credit)
-    ))));
-  }
-  function Thumbnail({ url, alt, video, type, carousel }) {
-    const [isModalOpen, setIsModalOpen] = (0, import_react167.useState)(false);
-    const slides = [];
-    const handleClick = () => {
-      setIsModalOpen(true);
-    };
-    const handleCloseModal = () => {
-      setIsModalOpen(false);
-    };
-    if (type === "image") {
-      return /* @__PURE__ */ import_react167.default.createElement(
-        "img",
-        {
-          src: "https://picsum.photos/350/200",
-          alt,
-          className: "su-relative su-w-full su-max-w-full"
-        }
-      );
-    }
-    if (type === "carousel") {
-      carousel.forEach((slide) => {
-        slides.push(
-          /* @__PURE__ */ import_react167.default.createElement(import_react167.default.Fragment, null, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-aspect-[3/2] su-relative su-bg-fog-light dark:su-bg-black" }, /* @__PURE__ */ import_react167.default.createElement(
-            "img",
-            {
-              src: slide.asset_url,
-              alt: slide.asset_attribute_alt,
-              className: "su-absolute su-top-0 su-left-0 su-w-full su-h-full su-object-scale-down su-object-center"
-            }
-          )), slide.asset_attribute_caption && /* @__PURE__ */ import_react167.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, slide.asset_attribute_caption))
-        );
-      });
-      return /* @__PURE__ */ import_react167.default.createElement(Carousel, { slides, variant: "basicstory" });
-    }
-    return /* @__PURE__ */ import_react167.default.createElement(import_react167.default.Fragment, null, /* @__PURE__ */ import_react167.default.createElement(
-      "button",
-      {
-        type: "button",
-        "aria-haspopup": "dialog",
-        className: "su-w-full su-aspect-[16/9] su-video-trigger",
-        onClick: handleClick
-      },
-      /* @__PURE__ */ import_react167.default.createElement(
-        "img",
-        {
-          src: url,
-          alt,
-          className: "su-w-full su-h-full su-absolute su-top-0 su-left-0 su-object-cover su-object-center"
-        }
-      ),
-      /* @__PURE__ */ import_react167.default.createElement("span", { className: "su-play-button-icon-hero su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px]" }, /* @__PURE__ */ import_react167.default.createElement(VideoPlay, null))
-    ), isModalOpen && /* @__PURE__ */ import_react167.default.createElement(ModalWrapper_default, { onClose: handleCloseModal }, /* @__PURE__ */ import_react167.default.createElement(EmbedVideo, { videoId: video })));
+  // components/__su_base/Component.jsx
+  var import_react168 = __toESM(require_react(), 1);
+  function Base2({ title }) {
+    return /* @__PURE__ */ import_react168.default.createElement(Container, null, "cdcdcdcd", /* @__PURE__ */ import_react168.default.createElement(LinkedHeading, { title }));
   }
 
-  // components/basic-story-hero/client.jsx
+  // components/__su_base/client.jsx
   (function() {
-    const componentName = "basic-story-hero";
-    const target = document.querySelector(
+    const componentName = "base-component";
+    const base = document.querySelector(
       `[data-hydration-component="${componentName}"]`
     );
-    if (!target)
+    if (!base)
       return;
-    hydrateComponent({ Component: basicStoryHero, componentName });
+    hydrateComponent({ Component: Base2, componentName });
   })();
 
   // components/acknowledgement/Component.jsx
-  var import_react168 = __toESM(require_react(), 1);
+  var import_react169 = __toESM(require_react(), 1);
   function Acknowledgement({ title, content }) {
     const hasContent = !!(content !== "" && content !== void 0);
-    return hasContent ? /* @__PURE__ */ import_react168.default.createElement(Container, { width: "narrow" }, /* @__PURE__ */ import_react168.default.createElement(
+    return hasContent ? /* @__PURE__ */ import_react169.default.createElement(Container, { width: "narrow" }, /* @__PURE__ */ import_react169.default.createElement(
       "hr",
       {
         "aria-hidden": "true",
         className: "su-mb-36 su-border-none su-w-100 su-h-6 lg:su-h-9 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive"
       }
-    ), title && /* @__PURE__ */ import_react168.default.createElement("h2", { className: "sr-only" }, title), /* @__PURE__ */ import_react168.default.createElement(
+    ), title && /* @__PURE__ */ import_react169.default.createElement("h2", { className: "sr-only" }, title), /* @__PURE__ */ import_react169.default.createElement(
       XssSafeContent_default,
       {
         "data-test": "acknowledgement",
@@ -29290,23 +29307,6 @@
     if (!acknowledgement)
       return;
     hydrateComponent({ Component: Acknowledgement, componentName });
-  })();
-
-  // components/__su_base/Component.jsx
-  var import_react169 = __toESM(require_react(), 1);
-  function Base2({ title }) {
-    return /* @__PURE__ */ import_react169.default.createElement(Container, null, "cdcdcdcd", /* @__PURE__ */ import_react169.default.createElement(LinkedHeading, { title }));
-  }
-
-  // components/__su_base/client.jsx
-  (function() {
-    const componentName = "base-component";
-    const base = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!base)
-      return;
-    hydrateComponent({ Component: Base2, componentName });
   })();
 
   // packages/utils/hydrate-component.js
@@ -29632,6 +29632,7 @@
   // components/Header/Components/PreferencesTray.jsx
   var import_react172 = __toESM(require_react(), 1);
   function PreferencesTray({ audience, personaClickHandler }) {
+    console.log(audience);
     return /* @__PURE__ */ import_react172.default.createElement("div", { className: "su-flex su-items-center su-justify-end su-w-32 md:su-w-[85px] lg:su-w-[91px]" }, /* @__PURE__ */ import_react172.default.createElement(
       "button",
       {
@@ -29641,7 +29642,7 @@
         "aria-expanded": "false",
         "aria-labelledby": "toggle-preferences"
       },
-      /* @__PURE__ */ import_react172.default.createElement("span", { className: "icon-preferences" }, /* @__PURE__ */ import_react172.default.createElement("span", { className: "su-relative su-size-32 su-block su-mx-auto" }, /* @__PURE__ */ import_react172.default.createElement(
+      !audience || audience === "external" && /* @__PURE__ */ import_react172.default.createElement("span", { className: "icon-preferences" }, /* @__PURE__ */ import_react172.default.createElement("span", { className: "su-relative su-size-32 su-block su-mx-auto" }, /* @__PURE__ */ import_react172.default.createElement(
         "svg",
         {
           "aria-hidden": "true",
@@ -29654,8 +29655,15 @@
           xmlns: "http://www.w3.org/2000/svg"
         },
         /* @__PURE__ */ import_react172.default.createElement("path", { d: "M14.0723 3.66094C13.8789 3.73398 13.75 3.91875 13.75 4.125C13.75 4.33125 13.8789 4.51602 14.0723 4.58906L16.5 5.5L17.4109 7.92773C17.484 8.12109 17.6688 8.25 17.875 8.25C18.0812 8.25 18.266 8.12109 18.3391 7.92773L19.25 5.5L21.6777 4.58906C21.8711 4.51602 22 4.33125 22 4.125C22 3.91875 21.8711 3.73398 21.6777 3.66094L19.25 2.75L18.3391 0.322266C18.266 0.128906 18.0812 0 17.875 0C17.6688 0 17.484 0.128906 17.4109 0.322266L16.5 2.75L14.0723 3.66094ZM8.81289 3.14961C8.70117 2.90469 8.45625 2.75 8.18984 2.75C7.92344 2.75 7.67852 2.90469 7.5668 3.14961L5.29805 8.04805L0.399609 10.3125C0.154688 10.4242 0 10.6691 0 10.9398C0 11.2105 0.154688 11.4512 0.399609 11.5629L5.30234 13.8273L7.5625 18.7258C7.67422 18.9707 7.91914 19.1254 8.18555 19.1254C8.45195 19.1254 8.69687 18.9707 8.80859 18.7258L11.073 13.823L15.9758 11.5586C16.2207 11.4469 16.3754 11.202 16.3754 10.9355C16.3754 10.6691 16.2207 10.4242 15.9758 10.3125L11.0773 8.05234L8.81289 3.14961ZM16.5 16.5L14.0723 17.4109C13.8789 17.484 13.75 17.6688 13.75 17.875C13.75 18.0812 13.8789 18.266 14.0723 18.3391L16.5 19.25L17.4109 21.6777C17.484 21.8711 17.6688 22 17.875 22C18.0812 22 18.266 21.8711 18.3391 21.6777L19.25 19.25L21.6777 18.3391C21.8711 18.266 22 18.0812 22 17.875C22 17.6688 21.8711 17.484 21.6777 17.4109L19.25 16.5L18.3391 14.0723C18.266 13.8789 18.0812 13.75 17.875 13.75C17.6688 13.75 17.484 13.8789 17.4109 14.0723L16.5 16.5Z" })
-      )), /* @__PURE__ */ import_react172.default.createElement("span", { id: "toggle-preferences", hidden: true }, "Preferences"), /* @__PURE__ */ import_react172.default.createElement("span", { className: "su-text-12 su-hidden md:su-block", "aria-hidden": "true" }, "Show me...")),
-      /* @__PURE__ */ import_react172.default.createElement("span", { className: "icon-faculty" }, /* @__PURE__ */ import_react172.default.createElement("span", { className: "su-relative su-size-32 su-block su-mx-auto" }, /* @__PURE__ */ import_react172.default.createElement(
+      )), /* @__PURE__ */ import_react172.default.createElement("span", { id: "toggle-preferences", hidden: true }, "Preferences"), /* @__PURE__ */ import_react172.default.createElement(
+        "span",
+        {
+          className: "su-text-12 su-hidden md:su-block",
+          "aria-hidden": "true"
+        },
+        "Show me..."
+      )),
+      audience === "faculty" && /* @__PURE__ */ import_react172.default.createElement("span", { className: "icon-faculty" }, /* @__PURE__ */ import_react172.default.createElement("span", { className: "su-relative su-size-32 su-block su-mx-auto" }, /* @__PURE__ */ import_react172.default.createElement(
         "svg",
         {
           className: "dark:su-hidden su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2",
@@ -29723,7 +29731,7 @@
         },
         "Faculty/Staff"
       )),
-      /* @__PURE__ */ import_react172.default.createElement("span", { className: "icon-student" }, /* @__PURE__ */ import_react172.default.createElement("span", { className: "su-relative su-size-32 su-block su-mx-auto" }, /* @__PURE__ */ import_react172.default.createElement(
+      audience === "student" && /* @__PURE__ */ import_react172.default.createElement("span", { className: "icon-student" }, /* @__PURE__ */ import_react172.default.createElement("span", { className: "su-relative su-size-32 su-block su-mx-auto" }, /* @__PURE__ */ import_react172.default.createElement(
         "svg",
         {
           className: "dark:su-hidden su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2",
@@ -29927,7 +29935,7 @@
           /* @__PURE__ */ import_react172.default.createElement("path", { d: "M10 10.5C11.4145 10.5 12.7711 9.94688 13.7713 8.96231C14.7715 7.97774 15.3334 6.64239 15.3334 5.25C15.3334 3.85761 14.7715 2.52226 13.7713 1.53769C12.7711 0.553123 11.4145 0 10 0C8.58553 0 7.22898 0.553123 6.22879 1.53769C5.22859 2.52226 4.66669 3.85761 4.66669 5.25C4.66669 6.64239 5.22859 7.97774 6.22879 8.96231C7.22898 9.94688 8.58553 10.5 10 10.5ZM8.09586 12.4688C3.99169 12.4688 0.666687 15.7418 0.666687 19.7818C0.666687 20.4545 1.22085 21 1.90419 21H18.0959C18.7792 21 19.3334 20.4545 19.3334 19.7818C19.3334 15.7418 16.0084 12.4688 11.9042 12.4688H8.09586Z" })
         )),
         /* @__PURE__ */ import_react172.default.createElement("span", { className: "su-block su-text-18 su-leading-[22px] su-w-full" }, "Faculty/Staff information")
-      ))), /* @__PURE__ */ import_react172.default.createElement("div", { className: "su-flex su-flex-wrap su-gap-9" }, /* @__PURE__ */ import_react172.default.createElement("p", { className: "su-mb-0 su-text-16 su-font-normal" }, "We want to provide announcements, events, leadership messages and resources that are relevant to you. Your selection is stored in a browser cookie which you can remove at any time using \u201CClear selection\u201D below."), /* @__PURE__ */ import_react172.default.createElement(
+      ))), /* @__PURE__ */ import_react172.default.createElement("div", { className: "su-flex su-flex-wrap su-gap-9" }, /* @__PURE__ */ import_react172.default.createElement("p", { className: "su-mb-0 su-text-16 su-font-normal" }, "We want to provide announcements, events, leadership messages and resources that are relevant to you. Your selection is stored in a browser cookie which you can remove at any time using \u201CClear all personalization\u201D below."), /* @__PURE__ */ import_react172.default.createElement(
         "button",
         {
           type: "button",
@@ -29937,7 +29945,7 @@
           disabled: audience === "external" ? "disabled" : "",
           onClick: () => personaClickHandler("external")
         },
-        "Clear selection"
+        "Clear all personalization"
       ))), /* @__PURE__ */ import_react172.default.createElement("hr", { className: "su-h-2 su-bg-black-10 dark:su-bg-black su-w-full su-border-none su-my-38" }), /* @__PURE__ */ import_react172.default.createElement("form", { className: "su-gap-27 su-flex su-flex-wrap su-pt-38 su-cursor-pointer" }, /* @__PURE__ */ import_react172.default.createElement(
         "fieldset",
         {
@@ -30645,6 +30653,7 @@
     relatedStoryData: relatedStoryData2 = null,
     consentData = true
   }) {
+    const [isClient, setClient] = (0, import_react181.useState)(false);
     const [consent, setConsent2] = (0, import_react181.useState)(false);
     const [displayConsentBanner, setDisplayConsentBanner] = (0, import_react181.useState)(false);
     const [audience, setAudience] = (0, import_react181.useState)(null);
@@ -30661,19 +30670,24 @@
     };
     const handlePersona = async (personaVal) => {
       let persona = null;
-      if (typeof window.suHeaderProps?.consentData === "undefined" || window.suHeaderProps?.consentData === 0) {
+      if (!consent) {
         await setConsent(1);
         setConsent2(true);
       }
       if (personaVal) {
-        persona = personaVal;
+        if (audience === personaVal) {
+          persona = "external";
+        } else {
+          persona = personaVal;
+        }
       }
-      await setPersona("persona-selector", persona);
+      setPersona("persona-selector", persona);
       setCookie("preferences_personalisation", persona);
       setDisplayConsentBanner(false);
       setAudience(persona);
     };
     (0, import_react181.useEffect)(() => {
+      setClient(true);
       if (typeof window.suHeaderProps !== "undefined") {
         setRelatedStoryData(window.suHeaderProps?.relatedStoryData);
         setPageControls(window.suHeaderProps?.pageData);
@@ -30684,7 +30698,7 @@
         );
       }
     }, []);
-    return /* @__PURE__ */ import_react181.default.createElement(import_react181.default.Fragment, null, /* @__PURE__ */ import_react181.default.createElement(
+    return /* @__PURE__ */ import_react181.default.createElement(import_react181.default.Fragment, null, isClient && /* @__PURE__ */ import_react181.default.createElement(
       "header",
       {
         className: `${pageControls?.isStory ? "report-header--story" : ""} report-header su-pb-[13.9rem] md:su-pb-[16.6rem] lg:su-pb-[18.9rem]`
@@ -30708,7 +30722,7 @@
           },
           "Menu"
         )
-      ), /* @__PURE__ */ import_react181.default.createElement(
+      ), isClient && /* @__PURE__ */ import_react181.default.createElement(
         MobileNav,
         {
           site,
@@ -30768,26 +30782,26 @@
           logo: site?.logo,
           logoLight: site?.logoLight
         }
-      ), pageControls?.isStory && /* @__PURE__ */ import_react181.default.createElement(
+      ), isClient && pageControls?.isStory && /* @__PURE__ */ import_react181.default.createElement(
         CurrentStoryHeadline,
         {
           title: pageControls?.title,
           story: relatedStory2
         }
-      ), /* @__PURE__ */ import_react181.default.createElement(
+      ), isClient && /* @__PURE__ */ import_react181.default.createElement(
         PreferencesTray,
         {
           audience,
           personaClickHandler: handlePersona
         }
-      )), /* @__PURE__ */ import_react181.default.createElement(
+      )), isClient && /* @__PURE__ */ import_react181.default.createElement(
         MainNav,
         {
           major: navigation?.major,
           currentPage: pageControls?.id ? pageControls.id : null
         }
       )))
-    ), displayConsentBanner && /* @__PURE__ */ import_react181.default.createElement(
+    ), isClient && displayConsentBanner && /* @__PURE__ */ import_react181.default.createElement(
       CookieConsentBanner,
       {
         consentClickHandler: handleConsent,
@@ -30818,16 +30832,10 @@
   function _preferencesSettings() {
     const LIGHT_TOGGLE_SELECTOR = '[id="light-theme"]';
     const DARK_TOGGLE_SELECTOR = '[id="dark-theme"]';
-    const PREFERENCES_RESET_TOGGLE = '[id="preference-reset"]';
-    const PREFERENCES_STUDENT_TOGGLE = '[id="preference-student"]';
-    const PREFERENCES_FACULTY_TOGGLE = '[id="preference-faculty"]';
     const PREFERENCES_DARKMODE_ACTIVE = `[data-role="su-darkmode-icon-active"]`;
     const PREFERENCES_DARKMODE_NONACTIVE = `[data-role="su-darkmode-icon-nonactive"]`;
     const lightToggle = document.querySelector(LIGHT_TOGGLE_SELECTOR);
     const darkToggle = document.querySelector(DARK_TOGGLE_SELECTOR);
-    const preferenceReset = document.querySelector(PREFERENCES_RESET_TOGGLE);
-    const preferenceStudent = document.querySelector(PREFERENCES_STUDENT_TOGGLE);
-    const preferenceFaculty = document.querySelector(PREFERENCES_FACULTY_TOGGLE);
     const darkmodeActiveIcon = document.querySelector(
       PREFERENCES_DARKMODE_ACTIVE
     );
@@ -30881,31 +30889,6 @@
         );
       });
     }
-    if (preferenceReset) {
-      const currentPersonalisation = getCookie("preferences_personalisation");
-      if (currentPersonalisation == "student") {
-        htmlTag.classList.add("su-persona--student");
-      } else if (currentPersonalisation == "faculty") {
-        htmlTag.classList.add("su-persona--faculty");
-      } else {
-        htmlTag.classList.add("su-persona--none");
-      }
-      preferenceReset.addEventListener("click", () => {
-        htmlTag.classList.remove("su-persona--student");
-        htmlTag.classList.remove("su-persona--faculty");
-        htmlTag.classList.add("su-persona--none");
-      });
-      preferenceStudent.addEventListener("click", () => {
-        htmlTag.classList.add("su-persona--student");
-        htmlTag.classList.remove("su-persona--none");
-        htmlTag.classList.remove("su-persona--faculty");
-      });
-      preferenceFaculty.addEventListener("click", () => {
-        htmlTag.classList.remove("su-persona--student");
-        htmlTag.classList.remove("su-persona--none");
-        htmlTag.classList.add("su-persona--faculty");
-      });
-    }
   }
 
   // components/Header/scripts/reportHeader.jsx
@@ -30930,7 +30913,6 @@
       this.handleHeaderToggles();
       this.handleSearchInputs();
     }
-    /// /////////////////////////////////
     // focus trapping
     focus(target) {
       if (target.match(/:/g)) {
@@ -30953,7 +30935,6 @@
       });
     }
     // end focus trapping
-    /// /////////////////////////////////
     // Add typeahead for
     handleSearchInputs() {
       const searchInputs = document.querySelectorAll(
@@ -31130,9 +31111,11 @@
     }
     window.suHeaderProps = props;
     hydrateComponent2({ Component: Header, componentName: target });
-    const headerDom = document.querySelector(".report-header");
-    const initHeader = new ReportHeader(headerDom);
-    _preferencesSettings();
+    setTimeout(() => {
+      const headerDom = document.querySelector(".report-header");
+      const initHeader = new ReportHeader(headerDom);
+      _preferencesSettings();
+    }, "100");
   })();
 
   // components/Footer/Components/MissionLogo.jsx
