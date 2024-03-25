@@ -8,7 +8,6 @@ import React from "react";
  */
 
 export default function PreferencesTray({ audience, personaClickHandler }) {
-  console.log(audience);
   return (
     <div className="su-flex su-items-center su-justify-end su-w-32 md:su-w-[85px] lg:su-w-[91px]">
       <button

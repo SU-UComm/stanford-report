@@ -69,7 +69,6 @@ let fbAutocomplete = jQuery('input#mobile_search_query,input#desktop_search_quer
         searchClear.forEach((btn) => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                console.log(1);
                 fbAutocomplete.typeahead('val', '');
             });
         });

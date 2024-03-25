@@ -21,7 +21,6 @@ export async function cssGenerator() {
   // now find all main main.css component files and lib client css files
   const mainCSS = await glob("./components/*/*.css");
   const libCSS = await glob("./components/*/dist/client.css");
-  console.log(globalInputCss);
   // Combine
   let combinedContent = "";
   [globalInputCss, ...mainCSS, ...libCSS].forEach((file) => {
