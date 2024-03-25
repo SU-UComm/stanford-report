@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "subtopic-subnav-component",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "namespace": "stanford-components",
   "description": "Stanford university Subtopic Subnav component.",
   "displayName": "Subtopic Subnav",
@@ -25,6 +25,13 @@
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {

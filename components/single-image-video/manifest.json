@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "single-image-video",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "namespace": "stanford-components",
   "description": "Stanford university Base component.",
   "displayName": "Single image or video",
@@ -36,7 +36,10 @@
           },
           "width": {
             "title": "Width",
-            "enum": ["Wide", "Narrow"],
+            "enum": [
+              "Wide",
+              "Narrow"
+            ],
             "default": "Wide",
             "type": "string"
           },
@@ -61,6 +64,13 @@
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {

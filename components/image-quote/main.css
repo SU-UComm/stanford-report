@@ -1,6 +1,3 @@
-@tailwind components;
-@tailwind utilities;
-
 .su-bg-gradient-reverse,
 .su-bg-gradient-before-reverse:before {
   @apply su-bg-gradient-to-l su-from-digital-red su-to-digital-red md:su-bg-gradient-to-l md:su-from-digital-red md:su-via-digital-red-light md:su-to-digital-red-light dark:su-from-palo-verde dark:su-to-palo-verde dark:md:su-from-olive dark:md:su-to-palo-verde;

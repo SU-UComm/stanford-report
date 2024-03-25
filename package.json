@@ -5,8 +5,6 @@
   "scripts": {
     "build": "npm-run-all -p build:*",
     "build:components": "node ./build/index.js",
-    "build:tailwind": "tailwind -i ./global/css/_global.css -o ./global/build/global.css",
-    "test-import-css": "node ./build/importComponentCSS.js",
     "watch": "./load_dotenv.sh && npm-run-all -p watch:*",
     "watch:js": "node ./build/index.js --watch",
     "watch:unit": "jest --watch",
@@ -17,7 +15,7 @@
     "test:eslint": "eslint .",
     "test:unit": "jest",
     "test:coverage": "jest --coverage",
-    "deploy": "Increment the version of all the components and deploy it to component service"
+    "export": "node ./build/cssIndex.js"
   },
   "author": "",
   "license": "ISC",
@@ -48,6 +46,7 @@
     "postcss": "^8.4.35",
     "postcss-import": "^16.0.1",
     "postcss-import-ext-glob": "^2.1.1",
+    "postcss-scss": "^4.0.9",
     "postcss-wrap": "^0.0.4",
     "rimraf": "^5.0.5",
     "tailwindcss": "^3.3.5"

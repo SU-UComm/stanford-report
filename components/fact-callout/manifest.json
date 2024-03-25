@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "fact-callout",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "namespace": "stanford-components",
   "description": "Display a fact on featured story pages",
   "displayName": "Fact callout",
@@ -28,7 +28,10 @@
             "properties": {
               "icon": {
                 "title": "Fact icon",
-                "enum": ["pie chart", "bar graph"],
+                "enum": [
+                  "pie chart",
+                  "bar graph"
+                ],
                 "type": "string",
                 "default": "pie chart"
               },
@@ -39,14 +42,20 @@
               },
               "indicatorPosition": {
                 "title": "Indicator position",
-                "enum": ["top", "bottom"],
+                "enum": [
+                  "top",
+                  "bottom"
+                ],
                 "type": "string",
                 "default": "top"
               },
               "width": {
                 "title": "Fact width",
                 "description": "This option sets the width of the component, please note that this option will only work on featured story pages, not basic story pages.",
-                "enum": ["Wide", "Narrow"],
+                "enum": [
+                  "Wide",
+                  "Narrow"
+                ],
                 "type": "string",
                 "default": "content"
               }
@@ -57,6 +66,13 @@
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {

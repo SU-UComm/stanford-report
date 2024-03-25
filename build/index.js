@@ -5,6 +5,7 @@ import path from "path";
 import { cleanDist } from "./cleanDist.js";
 import { buildComponent } from "./buildComponent.js";
 import { watchComponent } from "./watchComponent.js";
+import { cssGenerator } from "./cssGenerator.js";
 
 // Setup our args
 args
@@ -66,6 +67,7 @@ const { watch, minify } = args.parse(process.argv);
 
   // When all promises have resolved then log that we have succeeded with the build
   Promise.all(allBuildPromises).then(() => {
+    cssGenerator();
     console.log("✅ build has completed successfully");
   });
 })();

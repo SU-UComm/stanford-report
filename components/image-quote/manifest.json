@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "image-quote",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "namespace": "stanford-components",
   "description": "An image with an associated quote.",
   "displayName": "Image quote",
@@ -70,6 +70,13 @@
       "output": {
         "responseType": "html",
         "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
           {
             "location": "header",
             "file": {
