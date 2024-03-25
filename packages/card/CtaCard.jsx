@@ -34,7 +34,7 @@ export default function CtaCard({
   return (
     <article
       className={cnb(
-        "su-group su-relative su-w-full su-flex su-flex-col su-break-words su-bg-white su-rounded-[8px] su-rs-pt-5 su-rs-px-4 su-max-w-900 su-mx-auto su-transition-shadow",
+        "su-group su-relative su-w-full su-flex su-flex-col su-break-words su-bg-white su-rounded-[8px] su-rs-pt-5 su-rs-px-4 su-max-w-900 su-mx-auto su-transition-shadow su-border su-border-black-30/30 su-shadow",
         internalUrl || externalUrl
           ? "hover:su-shadow-md focus-within:su-shadow-md"
           : "",
@@ -79,7 +79,14 @@ export default function CtaCard({
       )}
       {hasLink && (
         <div className="su-mt-auto">
-          <div className="su-flex su-rs-mt-1 group-hocus-within:su-translate-x-03em su-transition-transform su-items-center su-justify-center su-size-50 md:su-size-70 su-rounded-full su-bg-gradient-to-r su-from-digital-red-light su-to-cardinal-red-dark su-ml-auto">
+          <div
+            className={cnb(
+              "su-flex su-rs-mt-1 su-transition-transform su-items-center su-justify-center su-size-50 md:su-size-70 su-rounded-full su-bg-gradient-to-r su-from-digital-red-light su-to-cardinal-red-dark su-ml-auto",
+              isRealExternalLink
+                ? "group-hocus-within:su-translate-x-02em group-hocus-within:su--translate-y-02em"
+                : "group-hocus-within:su-translate-x-03em"
+            )}
+          >
             {isRealExternalLink ? (
               <ExternalArrowUnstyled
                 title="link is external"
