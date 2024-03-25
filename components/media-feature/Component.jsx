@@ -53,7 +53,7 @@ export default function MediaFeature({
               </h3>
             </a>
 
-            <div className="su-w-full su-flex su-gap-[0.933rem] su-text-18 su-text-black-70 su-font-semibold su-items-center su-pb-15 su-leading-snug md:su-pb-19 md:su-text-16">
+            <div className="su-w-full su-flex su-gap-[0.6rem] su-text-18 su-text-black-70 su-font-semibold su-items-center su-pb-15 su-leading-snug md:su-pb-19 md:su-text-16">
               <MediaType type={mediaType} />
             </div>
 

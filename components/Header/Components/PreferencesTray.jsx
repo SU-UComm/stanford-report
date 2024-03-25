@@ -172,10 +172,10 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
         className="su-hidden report-header__preferences-tray su-shadow su-z-50 su-fixed su-right-0 su-top-0 su-size-full"
       >
         <div className="report-header__overlay su-bg-black su-opacity-25 su-size-full" />
-        <div className="report-header__preferences su-h-screen su-bg-white dark:su-bg-black-true su-absolute su-top-0 su-right-0 su-w-full md:su-w-[398px] su-flex su-flex-wrap su-overflow-y-auto su-pb-32 md:su-pb-[64px] su-pt-[115px] md:su-pt-[167px] su-px-38">
+        <div className="report-header__preferences su-overflow-hidden su-h-screen su-bg-white dark:su-bg-black-true su-absolute su-top-0 su-right-0 su-w-full md:su-w-[398px] su-flex su-flex-wrap su-overflow-y-auto su-pb-32 md:su-pb-[64px] su-pt-[115px] md:su-pt-[167px] su-px-38">
           <div className="report-header__preference-content su-transition su-text-black dark:su-text-white">
             <div className="su-gap-27 su-flex su-flex-wrap">
-              <h2 className="su-text-18 su-font-semibold su-mb-0">
+              <h2 className="su-text-18 su-font-semibold su-mb-0 su-font-sans">
                 Along with Stanford news and stories, show me:
               </h2>
               <ul className="su-flex su-list-none su-pl-0 su-gap-18 su-w-full">
@@ -187,7 +187,7 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                     id="preference-student"
                     aria-pressed={audience === "student" ? "true" : "false"}
                     onClick={() => personaClickHandler("student")}
-                    className="report-header__pref-toggle hover:su-text-white su-w-full su-h-full aria-pressed:su-text-white group su-bg-white dark:aria-pressed:su-text-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent aria-pressed:su-bg-transparent hover:su-bg-transparent dark:su-bg-black-true &[aria-pressed=“true”]:dark:su-bg-transparent before:su-rounded-inherit after:su-rounded-inherit before:su-bg-gradient-light-red after:su-transition-none su-transition before:su-transition after:su-bg-gradient-light-red dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-py-26 su-px-18 su-bg-transparent su-text-center"
+                    className="report-header__pref-toggle hover:su-text-white su-w-full su-h-full aria-pressed:su-text-white group su-bg-white dark:aria-pressed:su-text-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent aria-pressed:su-bg-transparent hover:su-bg-transparent dark:su-bg-black-true &[aria-pressed=“true”]:dark:su-bg-transparent before:su-rounded-inherit after:su-rounded-inherit before:su-bg-gradient-light-red after:su-transition-none su-transition before:su-transition after:su-bg-gradient-light-red dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-bg-transparent su-text-center"
                     data-location="student-info"
                   >
                     <span className="icon-add su-block su-mx-auto su-relative su-w-44 su-h-44 su-text-digital-red dark:su-text-dark-mode-red">
@@ -225,7 +225,7 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                         />
                       </svg>
                     </span>
-                    <span className="icon-detail su-block su-mb-6 su-mt-18 su-mx-auto su-relative su-size-30">
+                    <span className="icon-detail su-block su-mb-6 su-mt-18 su-mx-auto su-relative su-w-[1.838rem] su-h-21">
                       <svg
                         className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
                         xmlns="http://www.w3.org/2000/svg"
@@ -248,7 +248,7 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                     id="preference-faculty"
                     aria-pressed={audience === "faculty" ? "true" : "false"}
                     onClick={() => personaClickHandler("faculty")}
-                    className="report-header__pref-toggle hover:su-text-white su-w-full su-h-full aria-pressed:su-text-white group su-bg-white dark:aria-pressed:su-text-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent aria-pressed:su-bg-transparent hover:su-bg-transparent dark:su-bg-black-true &[aria-pressed=“true”]:dark:su-bg-transparent before:su-rounded-inherit after:su-rounded-inherit before:su-bg-gradient-light-red after:su-transition-none su-transition before:su-transition after:su-bg-gradient-light-red dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-py-26 su-px-18 su-bg-transparent su-text-center"
+                    className="report-header__pref-toggle hover:su-text-white su-w-full su-h-full aria-pressed:su-text-white group su-bg-white dark:aria-pressed:su-text-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent aria-pressed:su-bg-transparent hover:su-bg-transparent dark:su-bg-black-true &[aria-pressed=“true”]:dark:su-bg-transparent before:su-rounded-inherit after:su-rounded-inherit before:su-bg-gradient-light-red after:su-transition-none su-transition before:su-transition after:su-bg-gradient-light-red dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-bg-transparent su-text-center"
                   >
                     <span className="icon-add su-block su-mx-auto su-relative su-w-44 su-h-44 su-text-digital-red dark:su-text-dark-mode-red">
                       <svg
@@ -285,7 +285,7 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                         />
                       </svg>
                     </span>
-                    <span className="icon-detail su-block su-mb-6 su-mt-18 su-mx-auto su-relative su-size-30">
+                    <span className="icon-detail su-block su-mb-6 su-mt-18 su-mx-auto su-relative su-w-[1.838rem] su-h-21">
                       <svg
                         className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
                         xmlns="http://www.w3.org/2000/svg"
@@ -313,8 +313,13 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                 <button
                   type="button"
                   id="preference-reset"
-                  className="report-header__preferences-clear su-text-black-40 su-underline"
+                  className={`report-header__preferences-clear su-text-black-40 su-underline ${
+                    audience !== "external"
+                      ? "su-text-digital-blue dark:su-text-digital-blue-vivid"
+                      : ""
+                  }`}
                   aria-pressed={!audience ? "true" : "false"}
+                  disabled={audience === "external" ? "disabled" : ""}
                   onClick={() => personaClickHandler("external")}
                 >
                   Clear selection
@@ -343,7 +348,9 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                   htmlFor="light-theme"
                   data-theme="light-theme"
                 >
-                  <span className="su-inline-block su-align-middle">Light</span>
+                  <span className="su-inline-block su-align-middle su-mr-6">
+                    Light
+                  </span>
                   <span
                     aria-hidden="true"
                     className="su-inline-block su-align-middle su-relative su-w-28 su-h-28 peer-checked/light:su-hidden"
@@ -500,22 +507,20 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                     className="su-hidden su-align-middle su-relative su-w-28 su-h-28 peer-checked/light:su-inline-block"
                   >
                     <svg
-                      className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
+                      className="su-fill-transparent"
                       xmlns="http://www.w3.org/2000/svg"
                       width="28"
                       height="28"
                       viewBox="0 0 28 28"
                       fill="none"
                     >
-                      <path d="M14 2.80005C14.7732 2.80005 15.4 3.42685 15.4 4.20005V5.60005C15.4 6.37325 14.7732 7.00005 14 7.00005C13.2268 7.00005 12.6 6.37325 12.6 5.60005V4.20005C12.6 3.42685 13.2268 2.80005 14 2.80005Z" />
-                      <path d="M19.6 14C19.6 17.0928 17.0928 19.6 14 19.6C10.9072 19.6 8.39999 17.0928 8.39999 14C8.39999 10.9073 10.9072 8.40005 14 8.40005C17.0928 8.40005 19.6 10.9073 19.6 14Z" />
-                      <path d="M18.9498 20.9296L19.9398 21.9196C20.4865 22.4663 21.3729 22.4663 21.9197 21.9196C22.4664 21.3729 22.4664 20.4864 21.9197 19.9397L20.9297 18.9497C20.383 18.403 19.4965 18.403 18.9498 18.9497C18.4031 19.4965 18.4031 20.3829 18.9498 20.9296Z" />
-                      <path d="M21.9195 6.08038C22.4663 6.62711 22.4663 7.51354 21.9195 8.06028L20.9296 9.05023C20.3828 9.59696 19.4964 9.59696 18.9497 9.05023C18.4029 8.50349 18.4029 7.61706 18.9497 7.07033L19.9396 6.08038C20.4864 5.53365 21.3728 5.53365 21.9195 6.08038Z" />
-                      <path d="M23.8 15.4C24.5732 15.4 25.2 14.7732 25.2 14C25.2 13.2269 24.5732 12.6 23.8 12.6H22.4C21.6268 12.6 21 13.2269 21 14C21 14.7732 21.6268 15.4 22.4 15.4H23.8Z" />
-                      <path d="M14 21C14.7732 21 15.4 21.6269 15.4 22.4001V23.8001C15.4 24.5732 14.7732 25.2001 14 25.2001C13.2268 25.2001 12.6 24.5732 12.6 23.8001V22.4001C12.6 21.6269 13.2268 21 14 21Z" />
-                      <path d="M7.07042 9.05025C7.61716 9.59699 8.50359 9.59699 9.05032 9.05025C9.59706 8.50352 9.59706 7.61709 9.05032 7.07035L8.06037 6.0804C7.51364 5.53367 6.62721 5.53367 6.08047 6.0804C5.53374 6.62714 5.53374 7.51357 6.08047 8.0603L7.07042 9.05025Z" />
-                      <path d="M9.05019 20.9296L8.06024 21.9196C7.51351 22.4663 6.62708 22.4663 6.08034 21.9196C5.53361 21.3728 5.53361 20.4864 6.08034 19.9397L7.07029 18.9497C7.61703 18.403 8.50346 18.403 9.05019 18.9497C9.59693 19.4965 9.59693 20.3829 9.05019 20.9296Z" />
-                      <path d="M5.59999 15.4C6.37319 15.4 6.99999 14.7732 6.99999 14C6.99999 13.2269 6.37319 12.6 5.59999 12.6H4.19999C3.42679 12.6 2.79999 13.2269 2.79999 14C2.79999 14.7732 3.42679 15.4 4.19999 15.4H5.59999Z" />
+                      <path
+                        d="M14 3.5V4.66667M14 23.3333V24.5M24.5 14H23.3333M4.66667 14H3.5M21.4246 21.4246L20.5997 20.5997M7.40034 7.40034L6.57538 6.57538M21.4247 6.57544L20.5997 7.4004M7.4004 20.5997L6.57544 21.4247M18.6667 14C18.6667 16.5773 16.5773 18.6667 14 18.6667C11.4227 18.6667 9.33333 16.5773 9.33333 14C9.33333 11.4227 11.4227 9.33333 14 9.33333C16.5773 9.33333 18.6667 11.4227 18.6667 14Z"
+                        stroke="#767674"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </span>
                 </label>
@@ -534,6 +539,7 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                   <span
                     aria-hidden="true"
                     className="su-inline-block su-align-middle su-relative su-w-28 su-h-28"
+                    data-role="su-darkmode-icon-nonactive"
                   >
                     <svg
                       className="su-absolute su-fill-transparent su-stroke-current su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
@@ -551,6 +557,37 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                       />
                     </svg>
                   </span>
+
+                  <span
+                    className="su-hidden su-inline-block su-align-middle su-relative su-w-28 su-h-28"
+                    data-role="su-darkmode-icon-active"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20.7515 15.9516C19.5464 16.4965 18.2086 16.7999 16.8 16.7999C11.4981 16.7999 7.20002 12.5019 7.20002 7.19992C7.20002 5.79116 7.50347 4.45327 8.04857 3.24805C4.71767 4.75435 2.40002 8.10636 2.40002 11.9997C2.40002 17.3016 6.69809 21.5997 12 21.5997C15.8932 21.5997 19.2451 19.2822 20.7515 15.9516Z"
+                        fill="url(#paint0_linear_3034_2174)"
+                      />
+                      <defs>
+                        <linearGradient
+                          id="paint0_linear_3034_2174"
+                          x1="2.40002"
+                          y1="3.24805"
+                          x2="20.7515"
+                          y2="3.24805"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stopColor="#279989" />
+                          <stop offset="1" stopColor="#8F993E" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </span>
                   <span className="su-inline-block su-align-middle">Dark</span>
                 </label>
               </fieldset>
@@ -559,7 +596,7 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
 
           <button
             type="button"
-            className="report-header__preferences-close su-absolute su-right-20 md:su-right-auto md:su-left-38 su-top-43 md:su-top-72 su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center dark:hover:su-text-dark-mode-red hover:su-text-digital-red"
+            className="report-header__preferences-close su-absolute su-right-38 su-top-43 md:su-top-72 su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center dark:hover:su-text-dark-mode-red hover:su-text-digital-red"
             aria-expanded="true"
             aria-controls="menu"
             aria-labelledby="close-preferences"

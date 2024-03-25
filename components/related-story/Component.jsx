@@ -14,8 +14,9 @@ import { Container } from "../../packages/grids/Grids";
  * @returns {JSX.Element}
  * @constructor
  */
-export default function RelatedStory({ data }) {
+export default function RelatedStory({ data, contentConfiguration }) {
   const { title, description, liveUrl, imageUrl, imageAlt } = data[0];
+  const { descriptionOverride } = contentConfiguration;
 
   return (
     <Container width="narrow">
@@ -42,7 +43,7 @@ export default function RelatedStory({ data }) {
 
               <XssSafeContent
                 className="su-wysiwyg-content su-text-16 sm:su-text-18 su-leading-[125%] !su-m-0 su-font-normal dark:su-text-white"
-                content={description}
+                content={descriptionOverride || description}
               />
             </div>
           </div>

@@ -13,3 +13,8 @@
 .component-slider-controls {
   @apply su-mt-30 lg:su-mt-36 md:su-w-[83.333%] md:su-ml-[8.333%] !important;
 }
+
+.su-video-trigger:is(:hover, :focus)
+  .su-play-button-icon-hero {
+  @apply su-scale-110;
+}

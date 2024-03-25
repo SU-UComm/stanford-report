@@ -6,6 +6,7 @@
     "build": "npm-run-all -p build:*",
     "build:components": "node ./build/index.js",
     "build:tailwind": "tailwind -i ./global/css/_global.css -o ./global/build/global.css",
+    "test-import-css": "node ./build/importComponentCSS.js",
     "watch": "./load_dotenv.sh && npm-run-all -p watch:*",
     "watch:js": "node ./build/index.js --watch",
     "watch:unit": "jest --watch",
@@ -44,7 +45,9 @@
     "memoizee": "^0.4.15",
     "node-fetch": "^2.7.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.32",
+    "postcss": "^8.4.35",
+    "postcss-import": "^16.0.1",
+    "postcss-import-ext-glob": "^2.1.1",
     "postcss-wrap": "^0.0.4",
     "rimraf": "^5.0.5",
     "tailwindcss": "^3.3.5"

@@ -2,5 +2,15 @@
     "displayConfiguration": {
         "title": "Living Lab Fellowship Living Lab Fellowship Living Lab Fellowship",
         "content": "<p>Text callout heading Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet cursus sit amet dictum sit amet. Dui id ornare arcu odio. Scelerisque in dictum non consectetur. Facilisi nullam vehicula ipsum a arcu cursus vitae. Tempus quam pellentesque nec nam aliquam sem. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum. Porta non pulvinar neque laoreet. Lectus magna fringilla urna porttitor rhoncus. Vulputate dignissim suspendisse in est. Lacus sed turpis tincidunt id aliquet risus feugiat in ante. Dignissim sodales ut eu sem integer vitae justo eget. Maecenas ultricies mi eget mauris pharetra et ultrices neque ornare. Sit amet risus nullam eget felis eget nunc. Donec et odio pellentesque diam volutpat commodo sed. Suscipit tellus mauris a diam.</p> <p>Pellentesque habitant morbi tristique senectus et netus et malesuada. Arcu ac tortor dignissim convallis aenean et.v</p>"
+    },
+    "imageConfiguration": {
+        "image": "matrix-asset://api-identifier/99100",
+        "caption": "This is the image's title",
+        "credit": "Isaac Astley",
+        "imagePlacement": "Below content"
+    },
+    "buttonConfiguration": {
+        "buttonText": "Optional link button",
+        "internalUrl": "matrix-asset://api-identifier/28192"
     }
 }

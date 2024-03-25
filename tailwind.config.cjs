@@ -11,7 +11,7 @@ module.exports = {
   // Our own prefix.
   darkMode: "class",
   prefix: "su-",
-  content: [],
+  content: ["./components/**/*.{css,jsx,js}", "./packages/**/*.{jsx,js,html}"],
   // The theme section is where you define your color palette, font stacks,
   // type scale, border sizes, breakpoints — anything related to the visual
   // design of your site.

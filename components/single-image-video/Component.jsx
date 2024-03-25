@@ -26,7 +26,7 @@ export default function SingleImageVideo({
 }) {
   let captionCredit;
   // const { url, attributes } = imageData;
-  const { vimeoid, youtubeid } = video;
+  // const { vimeoid, youtubeid } = video;
 
   if (caption && credit) {
     captionCredit = `${caption} | ${credit}`;
@@ -117,10 +117,12 @@ export default function SingleImageVideo({
       <section className="su-flex su-flex-col su-items-center su-gap-8 su-gap-15">
         <div
           className={`su-relative${
-            !youtubeid ? " su-w-full" : " su-w-full su-aspect-[16/9]"
+            video && !video.youtubeid
+              ? " su-w-full"
+              : " su-w-full su-aspect-[16/9]"
           }`}
         >
-          {!youtubeid || !vimeoid ? (
+          {!video ? (
             <img
               // src="https://picsum.photos/800"
               src={imageData.url}
@@ -138,13 +140,13 @@ export default function SingleImageVideo({
               onClick={() => handleClick()}
             >
               <Video
-                id={vimeoid}
+                id={video.vimeoid}
                 thumbnail={imageData}
                 handleIframeLoad={handleIframeLoad}
               />
 
               <div
-                className={`${playButtonIconSize}  *:md:su-size-40 su-play-btn su-transition-all su-absolute su-bottom-20 su-left-20 md:su-left-27 md:su-bottom-27 md:su-block *:md:su-size-[55.95px]`}
+                className={`${playButtonIconSize} su-play-button-icon *:md:su-size-40 su-play-btn su-transition-all su-absolute su-bottom-20 su-left-20 md:su-left-27 md:su-bottom-27 md:su-block *:md:su-size-[55.95px]`}
               >
                 <VideoPlay />
               </div>
@@ -161,7 +163,7 @@ export default function SingleImageVideo({
             </p>
           </div>
 
-          {youtubeid && vimeoid && (
+          {video && video.youtubeid && video.vimeoid && (
             <button
               data-role="video-control"
               type="button"
@@ -176,7 +178,7 @@ export default function SingleImageVideo({
                 setVideoPlaying("pause");
               }}
             >
-              <span className="*:su-size-25 su-flex su-gap-6 su-items-center su-text-16 *:lg:su-size-30 lg:su-top-0 lg:su-right-0">
+              <span className="*:su-size-14 su-flex su-gap-6 su-items-center su-text-14 lg:su-top-0 lg:su-right-0">
                 {videoPlaying === "pause" ? <Play /> : <Pause />}
                 {pausePlayTitle}
               </span>
@@ -190,7 +192,7 @@ export default function SingleImageVideo({
             title="Modal"
             onClose={handleCloseModal}
           >
-            <EmbedVideo videoId={youtubeid} />
+            <EmbedVideo videoId={video.youtubeid} />
           </Modal>
         )}
       </section>
