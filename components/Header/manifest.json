@@ -63,7 +63,7 @@
             "location": "footer",
             "file": {
               "type": "js",
-              "filepath": "client.js"
+              "filepath": "global.js"
             }
           }
         ]

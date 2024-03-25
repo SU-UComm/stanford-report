@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import fs from "fs";
 import { globSync } from "glob";
 import args from "args";
 import path from "path";
@@ -6,6 +7,11 @@ import { cleanDist } from "./cleanDist.js";
 import { buildComponent } from "./buildComponent.js";
 import { watchComponent } from "./watchComponent.js";
 import { cssGenerator } from "./cssGenerator.js";
+import { jsBundler } from "./jsBundler.js";
+
+const buildPath = "./global/build";
+const globalOutputCss = `${buildPath}/global.css`;
+const globalOutputJs = `${buildPath}/global.js`;
 
 // Setup our args
 args
@@ -66,8 +72,33 @@ const { watch, minify } = args.parse(process.argv);
   }
 
   // When all promises have resolved then log that we have succeeded with the build
-  Promise.all(allBuildPromises).then(() => {
-    cssGenerator();
+  Promise.all(allBuildPromises).then(async () => {
+    await jsBundler();
+    await cssGenerator();
+
+    const components = globSync(path.join(".", "components", "*/"));
+    for (let i = 0; i < components.length; i++) {
+      // Get the current component path
+      const distPath = `${components[i]}/dist/`;
+
+      const pathExists = fs.existsSync(distPath);
+
+      if (!pathExists) {
+        // console.log(`Destination directory does not exist for ${components[i]}`);
+      } else {
+        fs.copyFile(globalOutputCss, `${distPath}global.css`, (err) => {
+          if (err) {
+            console.log(`Operation Failed for for ${components[i]}:  ${err}`);
+          }
+        });
+        fs.copyFile(globalOutputJs, `${distPath}global.js`, (err) => {
+          if (err) {
+            console.log(`Operation Failed for for ${components[i]}:  ${err}`);
+          }
+        });
+      }
+    }
+
     console.log("✅ build has completed successfully");
   });
 })();
