@@ -102,7 +102,7 @@ export default function FeaturedMetadata({ data }) {
         <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center md:su-flex-row md:su-gap-20 lg:su-gap-40">
           <hr
             aria-hidden="true"
-            className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
+            className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
           />
 
           <div
@@ -136,10 +136,7 @@ export default function FeaturedMetadata({ data }) {
             ))}
           </div>
 
-          <hr
-            aria-hidden="true"
-            className="su-hidden su-grow su-rotate-180 su-border-none su-w-70 su-w-auto su-h-2 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-block md:su-h-3"
-          />
+          <hr className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0" />
         </div>
       ) : (
         ""
@@ -198,7 +195,7 @@ export default function FeaturedMetadata({ data }) {
         {firstRow.length === 0 ? (
           <hr
             aria-hidden="true"
-            className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
+            className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
           />
         ) : (
           ""
@@ -251,7 +248,7 @@ export default function FeaturedMetadata({ data }) {
         </div>
 
         {firstRow.length === 0 ? (
-          <hr className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0" />
+          <hr className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0" />
         ) : (
           ""
         )}
@@ -260,7 +257,7 @@ export default function FeaturedMetadata({ data }) {
       {firstRow.length > 0 ? (
         <hr
           aria-hidden="true"
-          className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
+          className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
         />
       ) : (
         ""

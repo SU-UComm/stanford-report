@@ -2331,6 +2331,10 @@ h6{
   margin-left: 0.4rem;
 }
 
+.su-ml-8{
+  margin-left: 0.8rem;
+}
+
 .su-ml-\[-\.5rem\]{
   margin-left: -.5rem;
 }
@@ -2465,6 +2469,10 @@ h6{
 
 .su-mt-50{
   margin-top: 5rem;
+}
+
+.su-mt-58{
+  margin-top: 5.8rem;
 }
 
 .su-mt-6{
@@ -2621,6 +2629,10 @@ h6{
 
 .su-h-2{
   height: 0.2rem;
+}
+
+.su-h-20{
+  height: 2rem;
 }
 
 .su-h-21{
@@ -2818,6 +2830,10 @@ h6{
 
 .su-w-2{
   width: 0.2rem;
+}
+
+.su-w-20{
+  width: 2rem;
 }
 
 .su-w-24{
@@ -3294,6 +3310,14 @@ h6{
   gap: 2rem;
 }
 
+.su-gap-25{
+  gap: 2.5rem;
+}
+
+.su-gap-26{
+  gap: 2.6rem;
+}
+
 .su-gap-27{
   gap: 2.7rem;
 }
@@ -3320,6 +3344,10 @@ h6{
 
 .su-gap-38{
   gap: 3.8rem;
+}
+
+.su-gap-40{
+  gap: 4rem;
 }
 
 .su-gap-42{
@@ -3426,6 +3454,11 @@ h6{
        column-gap: 3.1em;
 }
 
+.su-gap-x-40{
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+}
+
 .su-gap-x-\[0\.691rem\]{
   -moz-column-gap: 0.691rem;
        column-gap: 0.691rem;
@@ -3449,6 +3482,10 @@ h6{
 
 .su-gap-y-6{
   row-gap: 0.6rem;
+}
+
+.su-gap-y-70{
+  row-gap: 7rem;
 }
 
 .su-gap-y-8{
@@ -3612,6 +3649,10 @@ h6{
   border-bottom-color: rgb(109 108 105 / var(--tw-border-opacity));
 }
 
+.su-border-b-transparent{
+  border-bottom-color: transparent;
+}
+
 .su-border-r-black-30{
   --tw-border-opacity: 1;
   border-right-color: rgb(192 192 191 / var(--tw-border-opacity));
@@ -3728,6 +3769,10 @@ h6{
   --tw-gradient-to: #B1040E var(--tw-gradient-to-position);
 }
 
+.su-to-digital-red-dark{
+  --tw-gradient-to: #820000 var(--tw-gradient-to-position);
+}
+
 .su-to-digital-red-light{
   --tw-gradient-to: #E50808 var(--tw-gradient-to-position);
 }
@@ -3825,6 +3870,10 @@ h6{
   padding: 3.8rem;
 }
 
+.su-p-48{
+  padding: 4.8rem;
+}
+
 .su-p-7{
   padding: 0.7rem;
 }
@@ -3913,6 +3962,11 @@ h6{
   padding-bottom: 3rem;
 }
 
+.su-py-36{
+  padding-top: 3.6rem;
+  padding-bottom: 3.6rem;
+}
+
 .su-py-38{
   padding-top: 3.8rem;
   padding-bottom: 3.8rem;
@@ -3926,6 +3980,11 @@ h6{
 .su-py-61{
   padding-top: 6.1rem;
   padding-bottom: 6.1rem;
+}
+
+.su-py-72{
+  padding-top: 7.2rem;
+  padding-bottom: 7.2rem;
 }
 
 .su-pb-0{
@@ -3986,6 +4045,10 @@ h6{
 
 .su-pb-32{
   padding-bottom: 3.2rem;
+}
+
+.su-pb-36{
+  padding-bottom: 3.6rem;
 }
 
 .su-pb-60{
@@ -4162,6 +4225,10 @@ h6{
 
 .su-pt-38{
   padding-top: 3.8rem;
+}
+
+.su-pt-45{
+  padding-top: 4.5rem;
 }
 
 .su-pt-49{
