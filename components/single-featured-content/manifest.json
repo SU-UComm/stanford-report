@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "single-featured-content",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "namespace": "stanford-components",
   "description": "Stanford university single featured content component",
   "displayName": "Single featured content",
@@ -63,7 +63,9 @@
           "contentConfiguration": {
             "title": "Single featured content inner content",
             "description": "The featured content to display in the component",
-            "required": ["source"],
+            "required": [
+              "source"
+            ],
             "properties": {
               "source": {
                 "title": "Featured content",
@@ -82,7 +84,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
+              "filepath": "global.css"
             }
           },
           {

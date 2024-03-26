@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 const path = require("path");
-const plugin = require("tailwindcss/plugin");
 
 const dir = path.resolve(__dirname, "./global/css/plugins");
 const decanter = require("decanter");
@@ -11,7 +10,10 @@ module.exports = {
   // Our own prefix.
   darkMode: "class",
   prefix: "su-",
-  content: ["./components/**/*.{css,jsx,js}", "./packages/**/*.{jsx,js,html}"],
+  content: [
+    "./components/**/*.{css,jsx,js,scss,html}",
+    "./packages/**/*.{css,jsx,js,scss,html}",
+  ],
   // The theme section is where you define your color palette, font stacks,
   // type scale, border sizes, breakpoints — anything related to the visual
   // design of your site.

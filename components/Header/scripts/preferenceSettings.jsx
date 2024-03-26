@@ -8,9 +8,6 @@ export default function _preferencesSettings() {
    */
   const LIGHT_TOGGLE_SELECTOR = '[id="light-theme"]';
   const DARK_TOGGLE_SELECTOR = '[id="dark-theme"]';
-  const PREFERENCES_RESET_TOGGLE = '[id="preference-reset"]';
-  const PREFERENCES_STUDENT_TOGGLE = '[id="preference-student"]';
-  const PREFERENCES_FACULTY_TOGGLE = '[id="preference-faculty"]';
   const PREFERENCES_DARKMODE_ACTIVE = `[data-role="su-darkmode-icon-active"]`;
   const PREFERENCES_DARKMODE_NONACTIVE = `[data-role="su-darkmode-icon-nonactive"]`;
 
@@ -22,9 +19,6 @@ export default function _preferencesSettings() {
 
   const lightToggle = document.querySelector(LIGHT_TOGGLE_SELECTOR);
   const darkToggle = document.querySelector(DARK_TOGGLE_SELECTOR);
-  const preferenceReset = document.querySelector(PREFERENCES_RESET_TOGGLE);
-  const preferenceStudent = document.querySelector(PREFERENCES_STUDENT_TOGGLE);
-  const preferenceFaculty = document.querySelector(PREFERENCES_FACULTY_TOGGLE);
   const darkmodeActiveIcon = document.querySelector(
     PREFERENCES_DARKMODE_ACTIVE
   );
@@ -91,38 +85,8 @@ export default function _preferencesSettings() {
         process.env.NODE_ENV === "production"
       );
     });
-  }
 
-  if (preferenceReset) {
-    // Personalisation preferences
-    const currentPersonalisation = getCookie("preferences_personalisation");
-    if (currentPersonalisation == "student") {
-      htmlTag.classList.add("su-persona--student");
-    } else if (currentPersonalisation == "faculty") {
-      htmlTag.classList.add("su-persona--faculty");
-    } else {
-      htmlTag.classList.add("su-persona--none");
-    }
-
-    /* Set as no persona */
-    preferenceReset.addEventListener("click", () => {
-      htmlTag.classList.remove("su-persona--student");
-      htmlTag.classList.remove("su-persona--faculty");
-      htmlTag.classList.add("su-persona--none");
-    });
-
-    /* Set as student persona */
-    preferenceStudent.addEventListener("click", () => {
-      htmlTag.classList.add("su-persona--student");
-      htmlTag.classList.remove("su-persona--none");
-      htmlTag.classList.remove("su-persona--faculty");
-    });
-
-    /* Set as faculty persona */
-    preferenceFaculty.addEventListener("click", () => {
-      htmlTag.classList.remove("su-persona--student");
-      htmlTag.classList.remove("su-persona--none");
-      htmlTag.classList.add("su-persona--faculty");
-    });
+    // custom event for state updates
+    document.personaChangeEvent = new Event("personaChange");
   }
 }

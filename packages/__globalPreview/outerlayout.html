@@ -2,10 +2,6 @@
 <html lang="en" dir="ltr">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://sug-web.matrix.squiz.cloud/__data/assets/git_bridge/0026/127547/global/build/global.css?v=1.0.6"
-      rel="stylesheet"
-    />
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     [component://static-header]
@@ -73,7 +69,6 @@ let fbAutocomplete = jQuery('input#mobile_search_query,input#desktop_search_quer
         searchClear.forEach((btn) => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                console.log(1);
                 fbAutocomplete.typeahead('val', '');
             });
         });

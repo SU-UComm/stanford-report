@@ -72,13 +72,24 @@ export default function TopicSubtopicListing({
   }, [pageNo]);
 
   results.forEach((card) => {
-    cards.push(<Card data={card} cardType="horizontal" cardSize="large" />);
+    if (
+      displayConfiguration.displayStyle === "Press Center" ||
+      displayConfiguration.displayStyle === "Leadership Messages" ||
+      displayConfiguration.displayStyle === "Announcements" ||
+      displayConfiguration.displayStyle === "In the News"
+    ) {
+      const cardData = card;
+      cardData.displayConfiguration = displayConfiguration.displayStyle;
+      cards.push(<Card data={cardData} cardType="narrowhorizontal" />);
+    } else {
+      cards.push(<Card data={card} cardType="horizontal" cardSize="large" />);
+    }
   });
 
   return (
     <Container>
       <HorizontalCardGrid
-        orientation="vertical"
+        orientation="topiclisting"
         items={cards}
         maximumItems={10}
       />

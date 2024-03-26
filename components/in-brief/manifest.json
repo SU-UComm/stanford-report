@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "in-brief",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "namespace": "stanford-components",
   "description": "Summary of main points in a bulleted list.",
   "displayName": "In Brief",
@@ -42,7 +42,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
+              "filepath": "global.css"
             }
           },
           {
