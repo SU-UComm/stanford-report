@@ -79,7 +79,6 @@ export default function TopicSubtopicListing({
       displayConfiguration.displayStyle === "In the News"
     ) {
       const cardData = card;
-      console.log(card);
       cardData.displayConfiguration = displayConfiguration.displayStyle;
       cards.push(<Card data={cardData} cardType="narrowhorizontal" />);
     } else {

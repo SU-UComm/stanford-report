@@ -28,33 +28,39 @@ export default function NarrowHorizontalCard({
     description,
     liveUrl,
     date,
-    taxonomy,
-    taxonomyUrl,
     authorAvatar,
     authorDisplayName,
     displayConfiguration,
+    taxonomyFeaturedUnitLandingPageUrl,
+    taxonomyFeaturedUnitText,
+    isTeaser,
+    storySource,
   },
 }) {
   const authorDate = (
     <time className="su-text-black-70 dark:su-text-black-60">
-      {formatNewsDate(date)}
+      {authorDisplayName ? (
+        <XssSafeContent
+          content={` &nbsp;|&nbsp; ${formatNewsDate(date)}`}
+          elementType="span"
+        />
+      ) : (
+        formatNewsDate(date)
+      )}
     </time>
   );
   const authorDetails = authorDisplayName ? (
-    <>
-      <span>{`${authorDisplayName} &nbsp;|&nbsp;}`}</span>
+    <span className="su-my-0">
+      {authorDisplayName}
       {authorDate}
-    </>
+    </span>
   ) : (
-    { authorDate }
+    authorDate
   );
 
-  let isExternalLink = false;
-  if (
-    displayConfiguration === "Announcement" ||
-    displayConfiguration === "In the News"
-  ) {
-    isExternalLink = true;
+  let isExternalLink = isTeaser || false;
+  if (typeof isTeaser === "object") {
+    isExternalLink = isTeaser[0] === "true";
   }
 
   return (
@@ -63,19 +69,26 @@ export default function NarrowHorizontalCard({
       data-testid="narrow-horizontal-card"
     >
       <div className="su-flex su-flex-col su-gap-12 su-col-start-1 su-col-span-full lg:su-col-span-6 lg:su-col-start-3">
-        {displayConfiguration === "Announcements" && taxonomy && (
-          <p
-            data-testid="vertical-card-taxonomy"
-            className="su-relative su-text-16 su-leading-[2.3rem] lg:su-text-18 su-z-10 su-mb-0 su-font-semibold" // size
-          >
-            <XssSafeContent
-              className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
-              content={taxonomy}
-              href={taxonomyUrl}
-              elementType="a"
-            />
+        {displayConfiguration === "In the News" && storySource && (
+          <p className="su-text-16 lg:su-text-18 su-leading-[130%] su-font-semibold su-my-0">
+            {storySource}
           </p>
         )}
+
+        {displayConfiguration === "Announcements" &&
+          taxonomyFeaturedUnitText && (
+            <p
+              data-testid="vertical-card-taxonomy"
+              className="su-relative su-text-16 su-leading-[2.3rem] lg:su-text-18 su-z-10 su-mb-0 su-font-semibold" // size
+            >
+              <XssSafeContent
+                className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
+                content={taxonomyFeaturedUnitText}
+                href={taxonomyFeaturedUnitLandingPageUrl || undefined}
+                elementType={taxonomyFeaturedUnitLandingPageUrl ? "a" : "span"}
+              />
+            </p>
+          )}
 
         <h2 className="su-font-serif su-basefont-23 su-my-0">
           <a
@@ -83,9 +96,11 @@ export default function NarrowHorizontalCard({
             href={liveUrl}
           >
             {title}
-            <span className="su-inline [&>*]:su-inline-block">
-              {isExternalLink && <ExternalArrow />}
-            </span>
+            {isExternalLink === true && (
+              <span className="su-inline [&>*]:su-inline-block">
+                <ExternalArrow />
+              </span>
+            )}
           </a>
         </h2>
 
@@ -116,11 +131,7 @@ export default function NarrowHorizontalCard({
                 alt={`Photo of ${authorDisplayName}`}
               />
             )}
-            <XssSafeContent
-              className=""
-              content={authorDetails}
-              elementType="span"
-            />
+            {authorDetails}
           </div>
         )}
 
