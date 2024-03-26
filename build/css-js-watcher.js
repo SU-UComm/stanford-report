@@ -47,6 +47,7 @@ const distFiles = async () => {
     "./packages/**/*.(jsx|js|cjs|css|scss|html)",
   ];
   chokidar.watch(pathsToWatch).on("change", async (event, pth) => {
+    console.log(event, "changed");
     await distFiles();
   });
 })();
