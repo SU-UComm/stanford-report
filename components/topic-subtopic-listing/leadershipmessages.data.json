@@ -1,6 +1,6 @@
 {
   "displayConfiguration": {
-    "searchQuery": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search&sort=date&taxonomyContentTypeText=Leadership+Messages&f.Content+Type%7CtaxonomyContentTypeText=Leadership+messages",
+    "searchQuery": "?collection=sug~sp-stanford-report-search&profile=default&log=false&sort=date&meta_taxonomyContentTypeId=28201",
     "displayStyle": "Leadership Messages"
   }
 }

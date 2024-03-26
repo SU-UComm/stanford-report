@@ -92,12 +92,12 @@ export default function NarrowHorizontalCard({
 
         <h2 className="su-font-serif su-basefont-23 su-my-0">
           <a
-            className="hocus:su-text-digital-red hocus:su-underline su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
+            className="su-group hocus:su-text-digital-red hocus:su-underline su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
             href={liveUrl}
           >
             {title}
             {isExternalLink === true && (
-              <span className="su-inline [&>*]:su-inline-block">
+              <span className="su-translate-x-0 su-translate-y-0 su-transition group-hocus:su-translate-y-[-.1em] group-hocus:su-translate-x-[.1em] su-inline-block [&>*]:su-inline-block">
                 <ExternalArrow />
               </span>
             )}
