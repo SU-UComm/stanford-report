@@ -76,7 +76,7 @@ export default function HorizontalHero({ data }) {
                 ].join(" ")}
               />
               <figure className="basic-story__header-image su-gap-6 su-col-span-full su-z-0 md:su-gap-18 lg:su-gap-15">
-                <div className="su-relative su-w-screen su-left-1/2 su-translate-x-[-50%]">
+                <div className="su-relative su-w-screen su-left-1/2 su-translate-x-[-50%] su-max-w-1500">
                   <img
                     src={media.featureImage.url}
                     alt={media.featureImage.alt}
