@@ -96,8 +96,6 @@ export default function FeaturedMetadata({ data }) {
   const gridSettings =
     "md:su-gap-x-20 md:su-gap-y-70 lg:su-gap-x-40 lg:su-gap-y-[61px]";
 
-  console.log(campus);
-
   return (
     <section className="su-flex su-flex-col su-items-center">
       {firstRow.length > 0 ? (

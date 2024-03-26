@@ -190,7 +190,8 @@ export default function BasicMetadata({ data }) {
         ""
       )}
 
-      {campus && typeof campus.asset_assetid !== "undefined" ? (
+      {campus &&
+      !["undefined", undefined, null, ""].includes(campus.asset_assetid) ? (
         <div className="su-border-t border-t-black-20">
           <BasicFields title="Campus unit">
             <a
