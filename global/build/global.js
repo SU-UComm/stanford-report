@@ -15923,95 +15923,6 @@
     hydrateComponent({ Component: SubscribeToStanfordReport, componentName });
   })();
 
-  // components/story-lead/Component.jsx
-  var import_react117 = __toESM(require_react(), 1);
-  function StoryLead({ content, variant }) {
-    const hasContent = content !== null && content !== void 0;
-    const variantClasses = /* @__PURE__ */ new Map();
-    variantClasses.set(
-      "Featured Story",
-      "*:su-text-20 md:*:su-text-25 lg:*:su-text-26 su-font-serif su-font-medium"
-    );
-    variantClasses.set(
-      "Basic Story",
-      "su-story-first-letter *:su-text-18 md:*:su-text-23"
-    );
-    const letterSvgs = /* @__PURE__ */ new Map();
-    letterSvgs.set("a", /* @__PURE__ */ import_react117.default.createElement(LetterA, null));
-    letterSvgs.set("b", /* @__PURE__ */ import_react117.default.createElement(LetterB, null));
-    letterSvgs.set("c", /* @__PURE__ */ import_react117.default.createElement(LetterC, null));
-    letterSvgs.set("d", /* @__PURE__ */ import_react117.default.createElement(LetterD, null));
-    letterSvgs.set("e", /* @__PURE__ */ import_react117.default.createElement(LetterE, null));
-    letterSvgs.set("f", /* @__PURE__ */ import_react117.default.createElement(LetterF, null));
-    letterSvgs.set("g", /* @__PURE__ */ import_react117.default.createElement(LetterG, null));
-    letterSvgs.set("h", /* @__PURE__ */ import_react117.default.createElement(LetterH, null));
-    letterSvgs.set("i", /* @__PURE__ */ import_react117.default.createElement(LetterI, null));
-    letterSvgs.set("j", /* @__PURE__ */ import_react117.default.createElement(LetterJ, null));
-    letterSvgs.set("k", /* @__PURE__ */ import_react117.default.createElement(LetterK, null));
-    letterSvgs.set("l", /* @__PURE__ */ import_react117.default.createElement(LetterL, null));
-    letterSvgs.set("m", /* @__PURE__ */ import_react117.default.createElement(LetterM, null));
-    letterSvgs.set("n", /* @__PURE__ */ import_react117.default.createElement(LetterN, null));
-    letterSvgs.set("o", /* @__PURE__ */ import_react117.default.createElement(LetterO, null));
-    letterSvgs.set("p", /* @__PURE__ */ import_react117.default.createElement(LetterP, null));
-    letterSvgs.set("q", /* @__PURE__ */ import_react117.default.createElement(LetterQ, null));
-    letterSvgs.set("r", /* @__PURE__ */ import_react117.default.createElement(LetterR, null));
-    letterSvgs.set("s", /* @__PURE__ */ import_react117.default.createElement(LetterS, null));
-    letterSvgs.set("t", /* @__PURE__ */ import_react117.default.createElement(LetterT, null));
-    letterSvgs.set("u", /* @__PURE__ */ import_react117.default.createElement(LetterU, null));
-    letterSvgs.set("v", /* @__PURE__ */ import_react117.default.createElement(LetterV, null));
-    letterSvgs.set("w", /* @__PURE__ */ import_react117.default.createElement(LetterW, null));
-    letterSvgs.set("x", /* @__PURE__ */ import_react117.default.createElement(LetterX, null));
-    letterSvgs.set("y", /* @__PURE__ */ import_react117.default.createElement(LetterY, null));
-    letterSvgs.set("z", /* @__PURE__ */ import_react117.default.createElement(LetterZ, null));
-    let formattedContent = content;
-    let selectedSvg = null;
-    if (hasContent) {
-      const textContent = formattedContent.replace(/(<([^>]+)>)/gi, "");
-      const firstWord = textContent.split(" ")[0];
-      const firstLetter = firstWord[0];
-      selectedSvg = letterSvgs.get(firstLetter.toLowerCase());
-      if (variant === "Featured Story") {
-        const truncatedFirstWord = firstWord.substring(1);
-        formattedContent = truncatedFirstWord.length > 0 ? content.replace(
-          firstWord,
-          `<span aria-hidden="true">${truncatedFirstWord}</span><span class="sr-only">${firstWord}</span>`
-        ) : content.replace(
-          firstWord,
-          `<span class="sr-only">${firstWord}</span>`
-        );
-      }
-    }
-    return hasContent ? /* @__PURE__ */ import_react117.default.createElement(Container, { width: "narrow" }, variant === "Featured Story" && /* @__PURE__ */ import_react117.default.createElement(
-      "span",
-      {
-        "data-test": "component-story-lead-letter",
-        className: "su-float-left [&>svg]:su-mt-3 md:[&>svg]:su--mt-2 lg:[&>svg]:su-mt-4 [&>svg]:su-w-41 [&>svg]:su-h-43 md:[&>svg]:su-w-[97px] md:[&>svg]:su-h-[102px] su-mr-8 lg:su-mr-19"
-      },
-      selectedSvg
-    ), /* @__PURE__ */ import_react117.default.createElement(
-      XssSafeContent_default,
-      {
-        className: ["su-wysiwyg-content", variantClasses.get(variant)].join(
-          " "
-        ),
-        elementType: "div",
-        "data-test": "component-story-lead",
-        content: formattedContent
-      }
-    )) : "";
-  }
-
-  // components/story-lead/client.jsx
-  (function() {
-    const componentName = "story-lead";
-    const target = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!target)
-      return;
-    hydrateComponent({ Component: StoryLead, componentName });
-  })();
-
   // node_modules/ssr-window/ssr-window.esm.js
   function isObject(obj) {
     return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
@@ -25932,16 +25843,16 @@
   };
 
   // node_modules/swiper/react/loop.js
-  var import_react118 = __toESM(require_react(), 1);
+  var import_react117 = __toESM(require_react(), 1);
   function renderLoop(swiper, slides, swiperParams) {
     const modifiedSlides = slides.map((child, index2) => {
-      return /* @__PURE__ */ import_react118.default.cloneElement(child, {
+      return /* @__PURE__ */ import_react117.default.cloneElement(child, {
         swiper,
         "data-swiper-slide-index": index2
       });
     });
     function duplicateSlide(child, index2, position) {
-      return /* @__PURE__ */ import_react118.default.cloneElement(child, {
+      return /* @__PURE__ */ import_react117.default.cloneElement(child, {
         key: `${child.key}-duplicate-${index2}-${position}`,
         className: `${child.props.className || ""} ${swiperParams.slideDuplicateClass}`
       });
@@ -25950,7 +25861,7 @@
       const blankSlidesNum = swiperParams.slidesPerGroup - modifiedSlides.length % swiperParams.slidesPerGroup;
       if (blankSlidesNum !== swiperParams.slidesPerGroup) {
         for (let i = 0; i < blankSlidesNum; i += 1) {
-          const blankSlide = /* @__PURE__ */ import_react118.default.createElement("div", {
+          const blankSlide = /* @__PURE__ */ import_react117.default.createElement("div", {
             className: `${swiperParams.slideClass} ${swiperParams.slideBlankClass}`
           });
           modifiedSlides.push(blankSlide);
@@ -26019,13 +25930,13 @@
   }
 
   // node_modules/swiper/react/get-children.js
-  var import_react119 = __toESM(require_react(), 1);
+  var import_react118 = __toESM(require_react(), 1);
   function isChildSwiperSlide(child) {
     return child.type && child.type.displayName && child.type.displayName.includes("SwiperSlide");
   }
   function processChildren(c) {
     const slides = [];
-    import_react119.default.Children.toArray(c).forEach((child) => {
+    import_react118.default.Children.toArray(c).forEach((child) => {
       if (isChildSwiperSlide(child)) {
         slides.push(child);
       } else if (child.props && child.props.children) {
@@ -26042,7 +25953,7 @@
       "wrapper-start": [],
       "wrapper-end": []
     };
-    import_react119.default.Children.toArray(c).forEach((child) => {
+    import_react118.default.Children.toArray(c).forEach((child) => {
       if (isChildSwiperSlide(child)) {
         slides.push(child);
       } else if (child.props && child.props.slot && slots[child.props.slot]) {
@@ -26184,7 +26095,7 @@
   }
 
   // node_modules/swiper/react/virtual.js
-  var import_react120 = __toESM(require_react(), 1);
+  var import_react119 = __toESM(require_react(), 1);
   function renderVirtual(swiper, slides, virtualData) {
     if (!virtualData)
       return null;
@@ -26194,7 +26105,7 @@
       top: `${virtualData.offset}px`
     };
     return slides.filter((child, index2) => index2 >= virtualData.from && index2 <= virtualData.to).map((child) => {
-      return /* @__PURE__ */ import_react120.default.cloneElement(child, {
+      return /* @__PURE__ */ import_react119.default.cloneElement(child, {
         swiper,
         style
       });
@@ -26217,26 +26128,26 @@
   };
 
   // node_modules/swiper/react/use-isomorphic-layout-effect.js
-  var import_react121 = __toESM(require_react(), 1);
+  var import_react120 = __toESM(require_react(), 1);
   function useIsomorphicLayoutEffect(callback, deps) {
     if (typeof window === "undefined")
-      return (0, import_react121.useEffect)(callback, deps);
-    return (0, import_react121.useLayoutEffect)(callback, deps);
+      return (0, import_react120.useEffect)(callback, deps);
+    return (0, import_react120.useLayoutEffect)(callback, deps);
   }
 
   // node_modules/swiper/react/context.js
-  var import_react122 = __toESM(require_react(), 1);
-  var SwiperSlideContext = /* @__PURE__ */ (0, import_react122.createContext)(null);
+  var import_react121 = __toESM(require_react(), 1);
+  var SwiperSlideContext = /* @__PURE__ */ (0, import_react121.createContext)(null);
   var useSwiperSlide = () => {
-    return (0, import_react122.useContext)(SwiperSlideContext);
+    return (0, import_react121.useContext)(SwiperSlideContext);
   };
-  var SwiperContext = /* @__PURE__ */ (0, import_react122.createContext)(null);
+  var SwiperContext = /* @__PURE__ */ (0, import_react121.createContext)(null);
   var useSwiper = () => {
-    return (0, import_react122.useContext)(SwiperContext);
+    return (0, import_react121.useContext)(SwiperContext);
   };
 
   // node_modules/swiper/react/swiper.js
-  var import_react123 = __toESM(require_react(), 1);
+  var import_react122 = __toESM(require_react(), 1);
   function _extends() {
     _extends = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -26251,7 +26162,7 @@
     };
     return _extends.apply(this, arguments);
   }
-  var Swiper2 = /* @__PURE__ */ (0, import_react123.forwardRef)(function(_temp, externalElRef) {
+  var Swiper2 = /* @__PURE__ */ (0, import_react122.forwardRef)(function(_temp, externalElRef) {
     let {
       className,
       tag: Tag = "div",
@@ -26261,18 +26172,18 @@
       ...rest
     } = _temp === void 0 ? {} : _temp;
     let eventsAssigned = false;
-    const [containerClasses, setContainerClasses] = (0, import_react123.useState)("swiper");
-    const [virtualData, setVirtualData] = (0, import_react123.useState)(null);
-    const [breakpointChanged, setBreakpointChanged] = (0, import_react123.useState)(false);
-    const initializedRef = (0, import_react123.useRef)(false);
-    const swiperElRef = (0, import_react123.useRef)(null);
-    const swiperRef = (0, import_react123.useRef)(null);
-    const oldPassedParamsRef = (0, import_react123.useRef)(null);
-    const oldSlides = (0, import_react123.useRef)(null);
-    const nextElRef = (0, import_react123.useRef)(null);
-    const prevElRef = (0, import_react123.useRef)(null);
-    const paginationElRef = (0, import_react123.useRef)(null);
-    const scrollbarElRef = (0, import_react123.useRef)(null);
+    const [containerClasses, setContainerClasses] = (0, import_react122.useState)("swiper");
+    const [virtualData, setVirtualData] = (0, import_react122.useState)(null);
+    const [breakpointChanged, setBreakpointChanged] = (0, import_react122.useState)(false);
+    const initializedRef = (0, import_react122.useRef)(false);
+    const swiperElRef = (0, import_react122.useRef)(null);
+    const swiperRef = (0, import_react122.useRef)(null);
+    const oldPassedParamsRef = (0, import_react122.useRef)(null);
+    const oldSlides = (0, import_react122.useRef)(null);
+    const nextElRef = (0, import_react122.useRef)(null);
+    const prevElRef = (0, import_react122.useRef)(null);
+    const paginationElRef = (0, import_react122.useRef)(null);
+    const scrollbarElRef = (0, import_react122.useRef)(null);
     const {
       params: swiperParams,
       passedParams,
@@ -26334,13 +26245,13 @@
         swiperRef.current.off(eventName, events2[eventName]);
       });
     };
-    (0, import_react123.useEffect)(() => {
+    (0, import_react122.useEffect)(() => {
       return () => {
         if (swiperRef.current)
           swiperRef.current.off("_beforeBreakpoint", onBeforeBreakpoint);
       };
     });
-    (0, import_react123.useEffect)(() => {
+    (0, import_react122.useEffect)(() => {
       if (!initializedRef.current && swiperRef.current) {
         swiperRef.current.emitSlidesClasses();
         initializedRef.current = true;
@@ -26401,30 +26312,30 @@
       }
       if (!swiperParams.loop || swiperRef.current && swiperRef.current.destroyed) {
         return slides.map((child) => {
-          return /* @__PURE__ */ import_react123.default.cloneElement(child, {
+          return /* @__PURE__ */ import_react122.default.cloneElement(child, {
             swiper: swiperRef.current
           });
         });
       }
       return renderLoop(swiperRef.current, slides, swiperParams);
     }
-    return /* @__PURE__ */ import_react123.default.createElement(Tag, _extends({
+    return /* @__PURE__ */ import_react122.default.createElement(Tag, _extends({
       ref: swiperElRef,
       className: uniqueClasses(`${containerClasses}${className ? ` ${className}` : ""}`)
-    }, restProps), /* @__PURE__ */ import_react123.default.createElement(SwiperContext.Provider, {
+    }, restProps), /* @__PURE__ */ import_react122.default.createElement(SwiperContext.Provider, {
       value: swiperRef.current
-    }, slots["container-start"], /* @__PURE__ */ import_react123.default.createElement(WrapperTag, {
+    }, slots["container-start"], /* @__PURE__ */ import_react122.default.createElement(WrapperTag, {
       className: "swiper-wrapper"
-    }, slots["wrapper-start"], renderSlides(), slots["wrapper-end"]), needsNavigation(swiperParams) && /* @__PURE__ */ import_react123.default.createElement(import_react123.default.Fragment, null, /* @__PURE__ */ import_react123.default.createElement("div", {
+    }, slots["wrapper-start"], renderSlides(), slots["wrapper-end"]), needsNavigation(swiperParams) && /* @__PURE__ */ import_react122.default.createElement(import_react122.default.Fragment, null, /* @__PURE__ */ import_react122.default.createElement("div", {
       ref: prevElRef,
       className: "swiper-button-prev"
-    }), /* @__PURE__ */ import_react123.default.createElement("div", {
+    }), /* @__PURE__ */ import_react122.default.createElement("div", {
       ref: nextElRef,
       className: "swiper-button-next"
-    })), needsScrollbar(swiperParams) && /* @__PURE__ */ import_react123.default.createElement("div", {
+    })), needsScrollbar(swiperParams) && /* @__PURE__ */ import_react122.default.createElement("div", {
       ref: scrollbarElRef,
       className: "swiper-scrollbar"
-    }), needsPagination(swiperParams) && /* @__PURE__ */ import_react123.default.createElement("div", {
+    }), needsPagination(swiperParams) && /* @__PURE__ */ import_react122.default.createElement("div", {
       ref: paginationElRef,
       className: "swiper-pagination"
     }), slots["container-end"]));
@@ -26432,7 +26343,7 @@
   Swiper2.displayName = "Swiper";
 
   // node_modules/swiper/react/swiper-slide.js
-  var import_react124 = __toESM(require_react(), 1);
+  var import_react123 = __toESM(require_react(), 1);
   function _extends2() {
     _extends2 = Object.assign ? Object.assign.bind() : function(target) {
       for (var i = 1; i < arguments.length; i++) {
@@ -26447,7 +26358,7 @@
     };
     return _extends2.apply(this, arguments);
   }
-  var SwiperSlide = /* @__PURE__ */ (0, import_react124.forwardRef)(function(_temp, externalRef) {
+  var SwiperSlide = /* @__PURE__ */ (0, import_react123.forwardRef)(function(_temp, externalRef) {
     let {
       tag: Tag = "div",
       children: children2,
@@ -26457,8 +26368,8 @@
       virtualIndex,
       ...rest
     } = _temp === void 0 ? {} : _temp;
-    const slideElRef = (0, import_react124.useRef)(null);
-    const [slideClasses, setSlideClasses] = (0, import_react124.useState)("swiper-slide");
+    const slideElRef = (0, import_react123.useRef)(null);
+    const [slideClasses, setSlideClasses] = (0, import_react123.useState)("swiper-slide");
     function updateClasses(_s, el, classNames) {
       if (el === slideElRef.current) {
         setSlideClasses(classNames);
@@ -26499,13 +26410,13 @@
     const renderChildren = () => {
       return typeof children2 === "function" ? children2(slideData) : children2;
     };
-    return /* @__PURE__ */ import_react124.default.createElement(Tag, _extends2({
+    return /* @__PURE__ */ import_react123.default.createElement(Tag, _extends2({
       ref: slideElRef,
       className: uniqueClasses(`${slideClasses}${className ? ` ${className}` : ""}`),
       "data-swiper-slide-index": virtualIndex
-    }, rest), /* @__PURE__ */ import_react124.default.createElement(SwiperSlideContext.Provider, {
+    }, rest), /* @__PURE__ */ import_react123.default.createElement(SwiperSlideContext.Provider, {
       value: slideData
-    }, zoom ? /* @__PURE__ */ import_react124.default.createElement("div", {
+    }, zoom ? /* @__PURE__ */ import_react123.default.createElement("div", {
       className: "swiper-zoom-container",
       "data-swiper-zoom": typeof zoom === "number" ? zoom : void 0
     }, renderChildren()) : renderChildren()));
@@ -26513,14 +26424,14 @@
   SwiperSlide.displayName = "SwiperSlide";
 
   // packages/carousels/Carousel.jsx
-  var import_react125 = __toESM(require_react(), 1);
+  var import_react124 = __toESM(require_react(), 1);
   function Carousel({
     slides,
     variant = "single",
     uniqueClass = "",
     isDark = false
   }) {
-    const swiperRef = (0, import_react125.useRef)();
+    const swiperRef = (0, import_react124.useRef)();
     const hasSlides = slides.length > 0;
     const variants = /* @__PURE__ */ new Map();
     variants.set("cards", {
@@ -26611,7 +26522,7 @@
       slidesPerView: 1,
       variantClassName: "component-slider-single"
     });
-    return hasSlides ? /* @__PURE__ */ import_react125.default.createElement("div", { className: `component-slider ${isDark ? "su-slider-dark" : ""}` }, /* @__PURE__ */ import_react125.default.createElement(
+    return hasSlides ? /* @__PURE__ */ import_react124.default.createElement("div", { className: `component-slider ${isDark ? "su-slider-dark" : ""}` }, /* @__PURE__ */ import_react124.default.createElement(
       Swiper2,
       {
         centeredSlides: true,
@@ -26656,50 +26567,50 @@
         modules: [Pagination2],
         className: ["", variants.get(variant).variantClassName].join(" ")
       },
-      slides.map((slide) => /* @__PURE__ */ import_react125.default.createElement(SwiperSlide, { key: slide }, slide))
-    ), slides.length > 1 && /* @__PURE__ */ import_react125.default.createElement("div", { className: "component-slider-controls su-flex su-mt-45 lg:su-mt-48 su-items-center su-content-center" }, /* @__PURE__ */ import_react125.default.createElement(
+      slides.map((slide) => /* @__PURE__ */ import_react124.default.createElement(SwiperSlide, { key: slide }, slide))
+    ), slides.length > 1 && /* @__PURE__ */ import_react124.default.createElement("div", { className: "component-slider-controls su-flex su-mt-45 lg:su-mt-48 su-items-center su-content-center" }, /* @__PURE__ */ import_react124.default.createElement(
       "div",
       {
         "aria-label": "Slide Navigation",
         className: `component-slider-pagination component-slider-pagination-${uniqueClass} su-mr-full`
       }
-    ), /* @__PURE__ */ import_react125.default.createElement(
+    ), /* @__PURE__ */ import_react124.default.createElement(
       "button",
       {
         className: "component-slider-btn component-slider-prev",
         type: "button",
         onClick: () => swiperRef.current?.slidePrev()
       },
-      /* @__PURE__ */ import_react125.default.createElement("span", { className: "sr-only" }, "Previous"),
-      /* @__PURE__ */ import_react125.default.createElement(
+      /* @__PURE__ */ import_react124.default.createElement("span", { className: "sr-only" }, "Previous"),
+      /* @__PURE__ */ import_react124.default.createElement(
         "span",
         {
           "aria-hidden": "true",
           className: "su-absolute su-top-[50%] su-left-[50%] su-translate-y-[-50%] su-translate-x-[-50%] su-inline-block"
         },
-        /* @__PURE__ */ import_react125.default.createElement(ChevronRight, null)
+        /* @__PURE__ */ import_react124.default.createElement(ChevronRight, null)
       )
-    ), /* @__PURE__ */ import_react125.default.createElement(
+    ), /* @__PURE__ */ import_react124.default.createElement(
       "button",
       {
         className: "component-slider-btn component-slider-next",
         type: "button",
         onClick: () => swiperRef.current?.slideNext()
       },
-      /* @__PURE__ */ import_react125.default.createElement("span", { className: "sr-only" }, "Next"),
-      /* @__PURE__ */ import_react125.default.createElement(
+      /* @__PURE__ */ import_react124.default.createElement("span", { className: "sr-only" }, "Next"),
+      /* @__PURE__ */ import_react124.default.createElement(
         "span",
         {
           "aria-hidden": "true",
           className: "su-absolute su-top-[50%] su-left-[50%] su-translate-y-[-50%] su-translate-x-[-50%] su-inline-block"
         },
-        /* @__PURE__ */ import_react125.default.createElement(ChevronRight, null)
+        /* @__PURE__ */ import_react124.default.createElement(ChevronRight, null)
       )
     ))) : "";
   }
 
   // components/stories-carousel/Component.jsx
-  var import_react127 = __toESM(require_react(), 1);
+  var import_react126 = __toESM(require_react(), 1);
   var import_object_hash5 = __toESM(require_object_hash(), 1);
   function StoriesCarousel({ data: data2, headingData }) {
     const cards = [];
@@ -26708,10 +26619,10 @@
     );
     if (data2 !== null && data2 !== void 0) {
       data2.forEach((card) => {
-        cards.push(/* @__PURE__ */ import_react127.default.createElement(Card, { data: card, displayDescription: false }));
+        cards.push(/* @__PURE__ */ import_react126.default.createElement(Card, { data: card, displayDescription: false }));
       });
     }
-    return cards.length > 0 && /* @__PURE__ */ import_react127.default.createElement(Container, null, headingData && /* @__PURE__ */ import_react127.default.createElement(
+    return cards.length > 0 && /* @__PURE__ */ import_react126.default.createElement(Container, null, headingData && /* @__PURE__ */ import_react126.default.createElement(
       LinkedHeading,
       {
         title: headingData.title,
@@ -26719,7 +26630,7 @@
         ctaLink: headingData.ctaLink,
         ctaNewWindow: headingData.ctaNewWindow
       }
-    ), /* @__PURE__ */ import_react127.default.createElement(Carousel, { variant: "cards", slides: cards, uniqueClass }));
+    ), /* @__PURE__ */ import_react126.default.createElement(Carousel, { variant: "cards", slides: cards, uniqueClass }));
   }
 
   // packages/utils/fetchAdapter.js
@@ -26867,6 +26778,95 @@
       }
     }
     hydrateComponent({ Component: StoriesCarousel, componentName: "stories-carousel" });
+  })();
+
+  // components/story-lead/Component.jsx
+  var import_react127 = __toESM(require_react(), 1);
+  function StoryLead({ content, variant }) {
+    const hasContent = content !== null && content !== void 0;
+    const variantClasses = /* @__PURE__ */ new Map();
+    variantClasses.set(
+      "Featured Story",
+      "*:su-text-20 md:*:su-text-25 lg:*:su-text-26 su-font-serif su-font-medium"
+    );
+    variantClasses.set(
+      "Basic Story",
+      "su-story-first-letter *:su-text-18 md:*:su-text-23"
+    );
+    const letterSvgs = /* @__PURE__ */ new Map();
+    letterSvgs.set("a", /* @__PURE__ */ import_react127.default.createElement(LetterA, null));
+    letterSvgs.set("b", /* @__PURE__ */ import_react127.default.createElement(LetterB, null));
+    letterSvgs.set("c", /* @__PURE__ */ import_react127.default.createElement(LetterC, null));
+    letterSvgs.set("d", /* @__PURE__ */ import_react127.default.createElement(LetterD, null));
+    letterSvgs.set("e", /* @__PURE__ */ import_react127.default.createElement(LetterE, null));
+    letterSvgs.set("f", /* @__PURE__ */ import_react127.default.createElement(LetterF, null));
+    letterSvgs.set("g", /* @__PURE__ */ import_react127.default.createElement(LetterG, null));
+    letterSvgs.set("h", /* @__PURE__ */ import_react127.default.createElement(LetterH, null));
+    letterSvgs.set("i", /* @__PURE__ */ import_react127.default.createElement(LetterI, null));
+    letterSvgs.set("j", /* @__PURE__ */ import_react127.default.createElement(LetterJ, null));
+    letterSvgs.set("k", /* @__PURE__ */ import_react127.default.createElement(LetterK, null));
+    letterSvgs.set("l", /* @__PURE__ */ import_react127.default.createElement(LetterL, null));
+    letterSvgs.set("m", /* @__PURE__ */ import_react127.default.createElement(LetterM, null));
+    letterSvgs.set("n", /* @__PURE__ */ import_react127.default.createElement(LetterN, null));
+    letterSvgs.set("o", /* @__PURE__ */ import_react127.default.createElement(LetterO, null));
+    letterSvgs.set("p", /* @__PURE__ */ import_react127.default.createElement(LetterP, null));
+    letterSvgs.set("q", /* @__PURE__ */ import_react127.default.createElement(LetterQ, null));
+    letterSvgs.set("r", /* @__PURE__ */ import_react127.default.createElement(LetterR, null));
+    letterSvgs.set("s", /* @__PURE__ */ import_react127.default.createElement(LetterS, null));
+    letterSvgs.set("t", /* @__PURE__ */ import_react127.default.createElement(LetterT, null));
+    letterSvgs.set("u", /* @__PURE__ */ import_react127.default.createElement(LetterU, null));
+    letterSvgs.set("v", /* @__PURE__ */ import_react127.default.createElement(LetterV, null));
+    letterSvgs.set("w", /* @__PURE__ */ import_react127.default.createElement(LetterW, null));
+    letterSvgs.set("x", /* @__PURE__ */ import_react127.default.createElement(LetterX, null));
+    letterSvgs.set("y", /* @__PURE__ */ import_react127.default.createElement(LetterY, null));
+    letterSvgs.set("z", /* @__PURE__ */ import_react127.default.createElement(LetterZ, null));
+    let formattedContent = content;
+    let selectedSvg = null;
+    if (hasContent) {
+      const textContent = formattedContent.replace(/(<([^>]+)>)/gi, "");
+      const firstWord = textContent.split(" ")[0];
+      const firstLetter = firstWord[0];
+      selectedSvg = letterSvgs.get(firstLetter.toLowerCase());
+      if (variant === "Featured Story") {
+        const truncatedFirstWord = firstWord.substring(1);
+        formattedContent = truncatedFirstWord.length > 0 ? content.replace(
+          firstWord,
+          `<span aria-hidden="true">${truncatedFirstWord}</span><span class="sr-only">${firstWord}</span>`
+        ) : content.replace(
+          firstWord,
+          `<span class="sr-only">${firstWord}</span>`
+        );
+      }
+    }
+    return hasContent ? /* @__PURE__ */ import_react127.default.createElement(Container, { width: "narrow" }, variant === "Featured Story" && /* @__PURE__ */ import_react127.default.createElement(
+      "span",
+      {
+        "data-test": "component-story-lead-letter",
+        className: "su-float-left [&>svg]:su-mt-3 md:[&>svg]:su--mt-2 lg:[&>svg]:su-mt-4 [&>svg]:su-w-41 [&>svg]:su-h-43 md:[&>svg]:su-w-[97px] md:[&>svg]:su-h-[102px] su-mr-8 lg:su-mr-19"
+      },
+      selectedSvg
+    ), /* @__PURE__ */ import_react127.default.createElement(
+      XssSafeContent_default,
+      {
+        className: ["su-wysiwyg-content", variantClasses.get(variant)].join(
+          " "
+        ),
+        elementType: "div",
+        "data-test": "component-story-lead",
+        content: formattedContent
+      }
+    )) : "";
+  }
+
+  // components/story-lead/client.jsx
+  (function() {
+    const componentName = "story-lead";
+    const target = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!target)
+      return;
+    hydrateComponent({ Component: StoryLead, componentName });
   })();
 
   // components/single-image-video/Component.jsx
@@ -27470,6 +27470,7 @@
       campus,
       related
     } = data2;
+    console.log(campus);
     const [copyLinkTitle, setCopyLinkTitle] = (0, import_react138.useState)("Copy link");
     const copyLink = () => {
       const { origin, pathname } = window.location;
@@ -27642,7 +27643,14 @@
         "aria-hidden": "true",
         className: "su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
       }
-    ) : "", campus && ![null, void 0, "undefined", ""].includes(campus.asset_assetid) ? /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-text-center su-flex su-flex-col su-gap-20 md:su-gap-26" }, /* @__PURE__ */ import_react138.default.createElement("h3", { className: "su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans !su-m-0" }, "Campus Unit"), !campus.asset_url ? /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center" }, campus.asset_name) : /* @__PURE__ */ import_react138.default.createElement("a", { href: campus.asset_name }, /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center" }, campus.asset_name))) : "", related && related.length ? /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-text-center su-mt-34 md:su-mt-58 lg:su-mt-61 su-flex su-flex-col su-gap-20 md:su-gap-26" }, /* @__PURE__ */ import_react138.default.createElement("h3", { className: "su-text-18 su-font-bold su-leading-[22.5px] su-font-sans !su-m-0" }, "Related topics"), /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center" }, related.map(
+    ) : "", campus && ![null, void 0, "undefined", ""].includes(campus.asset_assetid) ? /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-text-center su-flex su-flex-col su-gap-20 md:su-gap-26" }, /* @__PURE__ */ import_react138.default.createElement("h3", { className: "su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans !su-m-0" }, "Campus Unit"), !campus.asset_url ? /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center" }, campus.asset_name) : /* @__PURE__ */ import_react138.default.createElement(
+      "a",
+      {
+        href: campus.asset_url,
+        className: "su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-19 su-font-semibold"
+      },
+      /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center" }, campus.asset_name)
+    )) : "", related && related.length ? /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-text-center su-mt-34 md:su-mt-58 lg:su-mt-61 su-flex su-flex-col su-gap-20 md:su-gap-26" }, /* @__PURE__ */ import_react138.default.createElement("h3", { className: "su-text-18 su-font-bold su-leading-[22.5px] su-font-sans !su-m-0" }, "Related topics"), /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center" }, related.map(
       (item) => item ? /* @__PURE__ */ import_react138.default.createElement("div", { key: item.asset_assetid }, /* @__PURE__ */ import_react138.default.createElement(
         "a",
         {
@@ -28522,68 +28530,8 @@
     hydrateComponent({ Component: Base, componentName });
   })();
 
-  // components/featured-content/Component.jsx
-  var import_react154 = __toESM(require_react(), 1);
-  function FeaturedContent({
-    contentConfiguration,
-    displayConfiguration,
-    data: data2,
-    headingData
-  }) {
-    const featuredCardData2 = data2[0];
-    if (contentConfiguration.featuredDescription !== "" && contentConfiguration.featuredDescription !== null && contentConfiguration.featuredDescription !== void 0) {
-      featuredCardData2.description = contentConfiguration.featuredDescription;
-    }
-    return /* @__PURE__ */ import_react154.default.createElement(Container, { width: "large", "data-component": "featured-content" }, /* @__PURE__ */ import_react154.default.createElement(
-      LinkedHeading,
-      {
-        title: headingData.title,
-        ctaText: headingData.ctaText,
-        ctaLink: headingData.ctaLink,
-        ctaNewWindow: headingData.ctaNewWindow
-      }
-    ), /* @__PURE__ */ import_react154.default.createElement(
-      FeaturedGrid,
-      {
-        alignment: displayConfiguration.alignment,
-        items: [
-          /* @__PURE__ */ import_react154.default.createElement(Card, { data: featuredCardData2, cardSize: "featured" }),
-          /* @__PURE__ */ import_react154.default.createElement(
-            Card,
-            {
-              data: data2[1],
-              displayThumbnail: displayConfiguration.displayThumbnails,
-              displayDescription: displayConfiguration.displayDescriptions,
-              cardSize: "small"
-            }
-          ),
-          /* @__PURE__ */ import_react154.default.createElement(
-            Card,
-            {
-              data: data2[2],
-              displayThumbnail: displayConfiguration.displayThumbnails,
-              displayDescription: displayConfiguration.displayDescriptions,
-              cardSize: "small"
-            }
-          )
-        ]
-      }
-    ));
-  }
-
-  // components/featured-content/client.jsx
-  (function() {
-    const componentName = "featured-content";
-    const target = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!target)
-      return;
-    hydrateComponent({ Component: FeaturedContent, componentName });
-  })();
-
   // packages/story-hero-variations/VerticalHero.jsx
-  var import_react155 = __toESM(require_react(), 1);
+  var import_react154 = __toESM(require_react(), 1);
   function readingTime(text2) {
     if (!text2)
       return 0;
@@ -28595,14 +28543,14 @@
   function VerticalHero({ data: data2 }) {
     const { title, pubDateFormatted, media, summary } = data2;
     const titleWordsCount = title.split(" ").length;
-    const [readingTimeValue, setReadingTime] = (0, import_react155.useState)(0);
-    (0, import_react155.useEffect)(() => {
+    const [readingTimeValue, setReadingTime] = (0, import_react154.useState)(0);
+    (0, import_react154.useEffect)(() => {
       const content = document.querySelector(".su-page-content");
       if (content) {
         setReadingTime(() => readingTime(content.innerText));
       }
     });
-    return /* @__PURE__ */ import_react155.default.createElement(Container, null, /* @__PURE__ */ import_react155.default.createElement("div", { className: "basic-story__header su-rs-pt-8 su-relative su-flex su-flex-col su-items-start md:su-items-end" }, /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-relative su-w-full su-z-10" }, /* @__PURE__ */ import_react155.default.createElement(
+    return /* @__PURE__ */ import_react154.default.createElement(Container, null, /* @__PURE__ */ import_react154.default.createElement("div", { className: "basic-story__header su-rs-pt-8 su-relative su-flex su-flex-col su-items-start md:su-items-end" }, /* @__PURE__ */ import_react154.default.createElement("div", { className: "su-relative su-w-full su-z-10" }, /* @__PURE__ */ import_react154.default.createElement(
       "h1",
       {
         className: [
@@ -28611,13 +28559,13 @@
         ].join(" ")
       },
       title
-    )), /* @__PURE__ */ import_react155.default.createElement("div", { className: "sm:su-overflow-visible su-relative su-pl-[calc(16.666%+10px)] lg:su-pl-[20%] su-w-full" }, /* @__PURE__ */ import_react155.default.createElement(
+    )), /* @__PURE__ */ import_react154.default.createElement("div", { className: "sm:su-overflow-visible su-relative su-pl-[calc(16.666%+10px)] lg:su-pl-[20%] su-w-full" }, /* @__PURE__ */ import_react154.default.createElement(
       "div",
       {
         "aria-hidden": "true",
         className: "su-mt-[-63px] sm:su-mt-[-85px] lg:su-mt-[-131px] su-w-[16.66%] md:su-w-1/3 lg:su-w-[30%] su-h-2 md:su-h-3 su-absolute su-right-0 su-top-0 su-bg-gradient"
       }
-    ), /* @__PURE__ */ import_react155.default.createElement(
+    ), /* @__PURE__ */ import_react154.default.createElement(
       "div",
       {
         "aria-hidden": "true",
@@ -28627,14 +28575,14 @@
           titleWordsCount > 5 ? "su-h-[calc(100%-2.25em)]" : "su-h-[calc(100%-1.25em)]"
         ].join(" ")
       }
-    ), /* @__PURE__ */ import_react155.default.createElement("figure", { className: "basic-story__header-image su-relative su-flex su-items-center su-flex-col su-gap-8 sm:su-gap-15 su-pb-11 md:su-pb-13 su-rs-mb-5 md:su-rs-mb-7 xl:su-rs-mb-9" }, /* @__PURE__ */ import_react155.default.createElement(
+    ), /* @__PURE__ */ import_react154.default.createElement("figure", { className: "basic-story__header-image su-relative su-flex su-items-center su-flex-col su-gap-8 sm:su-gap-15 su-pb-11 md:su-pb-13 su-rs-mb-5 md:su-rs-mb-7 xl:su-rs-mb-9" }, /* @__PURE__ */ import_react154.default.createElement(
       "img",
       {
         src: media.featureImage.url,
         alt: media.featureImage.alt,
         className: "su-relative su-w-full su-block"
       }
-    ), (media.caption || media.credit) && /* @__PURE__ */ import_react155.default.createElement(
+    ), (media.caption || media.credit) && /* @__PURE__ */ import_react154.default.createElement(
       "figcaption",
       {
         className: [
@@ -28646,7 +28594,7 @@
       " ",
       media.caption && media.credit && ` | `,
       media.credit
-    )), /* @__PURE__ */ import_react155.default.createElement(
+    )), /* @__PURE__ */ import_react154.default.createElement(
       XssSafeContent_default,
       {
         className: [
@@ -28658,7 +28606,7 @@
         content: summary,
         elementType: "p"
       }
-    ), /* @__PURE__ */ import_react155.default.createElement(
+    ), /* @__PURE__ */ import_react154.default.createElement(
       "span",
       {
         className: [
@@ -28667,7 +28615,7 @@
           "md:su-basefont-23 md:su-flex-row"
         ].join(" ")
       },
-      /* @__PURE__ */ import_react155.default.createElement("time", { className: "su-m-0 su-font-semibold" }, pubDateFormatted),
+      /* @__PURE__ */ import_react154.default.createElement("time", { className: "su-m-0 su-font-semibold" }, pubDateFormatted),
       "|",
       " ",
       `${readingTimeValue} min read`
@@ -28675,7 +28623,7 @@
   }
 
   // packages/story-hero-variations/HorizontalHero.jsx
-  var import_react156 = __toESM(require_react(), 1);
+  var import_react155 = __toESM(require_react(), 1);
   function readingTime2(text2) {
     if (!text2)
       return 0;
@@ -28688,14 +28636,14 @@
     const { title, pubDateFormatted, media, summary } = data2;
     const titleWordsCount = title.split(" ").length;
     const titleSize2 = "su-leading-[119.4%] md:su-leading-display su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.5rem]";
-    const [readingTimeValue, setReadingTime] = (0, import_react156.useState)(0);
-    (0, import_react156.useEffect)(() => {
+    const [readingTimeValue, setReadingTime] = (0, import_react155.useState)(0);
+    (0, import_react155.useEffect)(() => {
       const content = document.querySelector(".su-page-content");
       if (content) {
         setReadingTime(() => readingTime2(content.innerText));
       }
     });
-    return /* @__PURE__ */ import_react156.default.createElement("header", { className: "basic-story__header su-rs-pt-8 su-relative su-w-full" }, /* @__PURE__ */ import_react156.default.createElement(Container, null, /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-relative" }, /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-relative" }, /* @__PURE__ */ import_react156.default.createElement(
+    return /* @__PURE__ */ import_react155.default.createElement("header", { className: "basic-story__header su-rs-pt-8 su-relative su-w-full" }, /* @__PURE__ */ import_react155.default.createElement(Container, null, /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-relative" }, /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-relative" }, /* @__PURE__ */ import_react155.default.createElement(
       "div",
       {
         className: [
@@ -28705,7 +28653,7 @@
           media.caption || media.credit ? "su-h-[calc(100%-2.25em)]" : "su-h-[calc(100%-1em)]"
         ].join(" ")
       }
-    ), /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-relative su-grid su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-grid-gap" }, /* @__PURE__ */ import_react156.default.createElement(
+    ), /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-relative su-grid su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-grid-gap" }, /* @__PURE__ */ import_react155.default.createElement(
       "h1",
       {
         className: [
@@ -28715,7 +28663,7 @@
         ].join(" ")
       },
       title
-    ), /* @__PURE__ */ import_react156.default.createElement(
+    ), /* @__PURE__ */ import_react155.default.createElement(
       "div",
       {
         className: [
@@ -28724,8 +28672,8 @@
           "su-top-[1.75em] md:su-top-auto md:su-bottom-[12.3rem] lg:su-bottom-[15.5rem]"
         ].join(" ")
       },
-      /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-col-span-1 md:su-col-span-4 lg:su-col-span-3 su-h-[2px] md:su-h-[3px] lg:su-h-[4px] su-bg-gradient-light-red-h su-rotate-180" })
-    )), /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-relative" }, /* @__PURE__ */ import_react156.default.createElement(
+      /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-col-span-1 md:su-col-span-4 lg:su-col-span-3 su-h-[2px] md:su-h-[3px] lg:su-h-[4px] su-bg-gradient-light-red-h su-rotate-180" })
+    )), /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-relative" }, /* @__PURE__ */ import_react155.default.createElement(
       "div",
       {
         className: [
@@ -28735,32 +28683,32 @@
           media.caption || media.credit ? "su-h-[calc(100%+12.3rem-.5em)] lg:su-h-[calc(100%+15.5rem-.5em)] md:su-bottom-[.5em]" : "su-h-[calc(100%+12.3rem+1em)] lg:su-h-[calc(100%+15.5rem+1em)] md:su-bottom-[-1em]"
         ].join(" ")
       }
-    ), /* @__PURE__ */ import_react156.default.createElement("figure", { className: "basic-story__header-image su-gap-6 su-col-span-full su-z-0 md:su-gap-18 lg:su-gap-15" }, /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-relative su-w-screen su-left-1/2 su-translate-x-[-50%]" }, /* @__PURE__ */ import_react156.default.createElement(
+    ), /* @__PURE__ */ import_react155.default.createElement("figure", { className: "basic-story__header-image su-gap-6 su-col-span-full su-z-0 md:su-gap-18 lg:su-gap-15" }, /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-relative su-w-screen su-left-1/2 su-translate-x-[-50%]" }, /* @__PURE__ */ import_react155.default.createElement(
       "img",
       {
         src: media.featureImage.url,
         alt: media.featureImage.alt,
         className: "su-relative su-w-full su-max-w-none"
       }
-    )), (media.caption || media.credit) && /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-rs-pb-9 su-relative" }, /* @__PURE__ */ import_react156.default.createElement(
+    )), (media.caption || media.credit) && /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-rs-pb-9 su-relative" }, /* @__PURE__ */ import_react155.default.createElement(
       "div",
       {
         "aria-hidden": "true",
         className: "su-w-[2px] md:su-w-[3px] lg:su-w-[4px] su-h-full su-absolute su-right-0 su-bg-digital-red-light dark:su-bg-olive su-z-0"
       }
-    ), /* @__PURE__ */ import_react156.default.createElement("figcaption", { className: "su-text-inherit su-pb-[1.1rem] md:su-pb-[1.3rem] su-pt-[.9rem] su-mt-0 su-mb-0 su-w-[calc(100%-40px)] md:su-w-[83.333%] lg:su-w-[50%] lg:su-max-w-[633px] su-mx-auto su-text-center su-text-[1.4rem] md:su-text-[1.6rem]" }, media.caption, " ", media.caption && media.credit && ` | `, media.credit))))), /* @__PURE__ */ import_react156.default.createElement(
+    ), /* @__PURE__ */ import_react155.default.createElement("figcaption", { className: "su-text-inherit su-pb-[1.1rem] md:su-pb-[1.3rem] su-pt-[.9rem] su-mt-0 su-mb-0 su-w-[calc(100%-40px)] md:su-w-[83.333%] lg:su-w-[50%] lg:su-max-w-[633px] su-mx-auto su-text-center su-text-[1.4rem] md:su-text-[1.6rem]" }, media.caption, " ", media.caption && media.credit && ` | `, media.credit))))), /* @__PURE__ */ import_react155.default.createElement(
       "div",
       {
         className: `su-relative ${media.caption || media.credit ? "" : "su-rs-pt-9"}`
       },
-      /* @__PURE__ */ import_react156.default.createElement(
+      /* @__PURE__ */ import_react155.default.createElement(
         "div",
         {
           "aria-hidden": "true",
           className: "su-w-2 md:su-w-3 lg:su-w-4 su-h-full su-absolute su-top-0 su-right-0 su-bg-gradient-light-red dark:su-rotate-180 su-z-0"
         }
       ),
-      /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-20 md:su-px-0" }, /* @__PURE__ */ import_react156.default.createElement(
+      /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-20 md:su-px-0" }, /* @__PURE__ */ import_react155.default.createElement(
         XssSafeContent_default,
         {
           className: "su-font-semibold su-text-left su-col-span-6 md:su-col-span-10 md:su-col-start-2 lg:su-col-span-6 lg:su-col-start-2 font-serif-4 su-text-21 su-leading-[125.28%] md:su-text-25 lg:su-text-32 su-mb-0",
@@ -28768,12 +28716,12 @@
           elementType: "p"
         }
       )),
-      /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-20 md:su-px-0" }, /* @__PURE__ */ import_react156.default.createElement("span", { className: "su-col-span-6 md:su-col-span-10 md:su-col-start-2 lg:su-col-span-8 lg:su-col-start-2 su-rs-mt-5 su-text-right su-text-1" }, /* @__PURE__ */ import_react156.default.createElement("time", { className: "su-m-0 md:su-mt-0 md:su-mr-4 su-font-semibold" }, pubDateFormatted), " ", "|", ` ${readingTimeValue} min read`))
+      /* @__PURE__ */ import_react155.default.createElement("div", { className: "su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-20 md:su-px-0" }, /* @__PURE__ */ import_react155.default.createElement("span", { className: "su-col-span-6 md:su-col-span-10 md:su-col-start-2 lg:su-col-span-8 lg:su-col-start-2 su-rs-mt-5 su-text-right su-text-1" }, /* @__PURE__ */ import_react155.default.createElement("time", { className: "su-m-0 md:su-mt-0 md:su-mr-4 su-font-semibold" }, pubDateFormatted), " ", "|", ` ${readingTimeValue} min read`))
     ))));
   }
 
   // packages/story-hero-variations/FullHero.jsx
-  var import_react157 = __toESM(require_react(), 1);
+  var import_react156 = __toESM(require_react(), 1);
   function readingTime3(text2) {
     if (!text2)
       return 0;
@@ -28785,21 +28733,21 @@
   function FullHero({ data: data2 }) {
     const { title, pubDateFormatted, media, summary } = data2;
     const titleSize2 = "su-leading-[119.4%] md:su-leading-[120%] su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.5rem]";
-    const [readingTimeValue, setReadingTime] = (0, import_react157.useState)(0);
-    (0, import_react157.useEffect)(() => {
+    const [readingTimeValue, setReadingTime] = (0, import_react156.useState)(0);
+    (0, import_react156.useEffect)(() => {
       const content = document.querySelector(".su-page-content");
       if (content) {
         setReadingTime(() => readingTime3(content.innerText));
       }
     });
-    return /* @__PURE__ */ import_react157.default.createElement(Container, { width: "wide" }, /* @__PURE__ */ import_react157.default.createElement("header", { className: "featured-story__header-v2 su-relative" }, /* @__PURE__ */ import_react157.default.createElement("div", { className: "su-relative su-w-screen su-left-[50%] su-translate-x-[-50%]" }, /* @__PURE__ */ import_react157.default.createElement(
+    return /* @__PURE__ */ import_react156.default.createElement(Container, { width: "wide" }, /* @__PURE__ */ import_react156.default.createElement("header", { className: "featured-story__header-v2 su-relative" }, /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-relative su-w-screen su-left-[50%] su-translate-x-[-50%]" }, /* @__PURE__ */ import_react156.default.createElement(
       "img",
       {
         className: "su-w-full su-max-w-none",
         src: media.featureImage.url,
         alt: media.featureImage.alt
       }
-    ), /* @__PURE__ */ import_react157.default.createElement("div", { className: "su-bg-gradient-header-1 dark:su-bg-gradient-header-1-dark su-absolute su-w-full su-h-[101%] su--bottom-1 su-left-0" })), /* @__PURE__ */ import_react157.default.createElement("div", { className: "su-mt-45 md:su-mt-0 su-grid su-grid-cols-6 md:su-items-center md:su-grid-cols-12 su-gap-y-0 su-grid-gap md:su-px-0 su-flex-wrap su-mx-auto" }, /* @__PURE__ */ import_react157.default.createElement("div", { className: "su-col-span-6 md:su-col-span-7 md:su-col-start-1 lg:su-col-span-8 lg:su-col-start-1 lg:su-pr-30" }, /* @__PURE__ */ import_react157.default.createElement(
+    ), /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-bg-gradient-header-1 dark:su-bg-gradient-header-1-dark su-absolute su-w-full su-h-[101%] su--bottom-1 su-left-0" })), /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-mt-45 md:su-mt-0 su-grid su-grid-cols-6 md:su-items-center md:su-grid-cols-12 su-gap-y-0 su-grid-gap md:su-px-0 su-flex-wrap su-mx-auto" }, /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-col-span-6 md:su-col-span-7 md:su-col-start-1 lg:su-col-span-8 lg:su-col-start-1 lg:su-pr-30" }, /* @__PURE__ */ import_react156.default.createElement(
       "h1",
       {
         className: [
@@ -28808,7 +28756,7 @@
         ].join(" ")
       },
       title
-    )), /* @__PURE__ */ import_react157.default.createElement("div", { className: "su-hidden md:su-block md:su-col-span-1 md:su-col-start-8 lg:su-col-start-9 lg:su-col-span-4 su-h-full lg:su-hidden" }, /* @__PURE__ */ import_react157.default.createElement("div", { className: "su-bg-gradient-light-red su-h-full su-w-3 su-left-0 su-top-0 su-mx-auto" })), /* @__PURE__ */ import_react157.default.createElement("div", { className: "su-relative su-mt-50 md:su-mt-0 su-col-span-6 su-pl-32 md:su-pl-0 md:su-col-span-4 md:su-col-start-9 su-self-stretch lg:su-pl-48 lg:su-translate-x-[1.5rem]" }, /* @__PURE__ */ import_react157.default.createElement("div", { className: "su-flex su-flex-col su-h-full" }, /* @__PURE__ */ import_react157.default.createElement("div", { className: "md:su-hidden su-absolute su-bg-gradient-light-red su-h-full su-w-3 su-left-0 su-top-0 lg:su-block" }), /* @__PURE__ */ import_react157.default.createElement(
+    )), /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-hidden md:su-block md:su-col-span-1 md:su-col-start-8 lg:su-col-start-9 lg:su-col-span-4 su-h-full lg:su-hidden" }, /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-bg-gradient-light-red su-h-full su-w-3 su-left-0 su-top-0 su-mx-auto" })), /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-relative su-mt-50 md:su-mt-0 su-col-span-6 su-pl-32 md:su-pl-0 md:su-col-span-4 md:su-col-start-9 su-self-stretch lg:su-pl-48 lg:su-translate-x-[1.5rem]" }, /* @__PURE__ */ import_react156.default.createElement("div", { className: "su-flex su-flex-col su-h-full" }, /* @__PURE__ */ import_react156.default.createElement("div", { className: "md:su-hidden su-absolute su-bg-gradient-light-red su-h-full su-w-3 su-left-0 su-top-0 lg:su-block" }), /* @__PURE__ */ import_react156.default.createElement(
       XssSafeContent_default,
       {
         className: [
@@ -28818,21 +28766,21 @@
         content: summary,
         elementType: "p"
       }
-    ), /* @__PURE__ */ import_react157.default.createElement("span", { className: "su-w-auto md:su-mt-auto su-text-16 su-leading-[19.1px] su-flex su-gap-[7px] md:su-basefont-23 md:su-text-21 md:su-leading-[26.25px]" }, /* @__PURE__ */ import_react157.default.createElement("time", { className: "su-m-0 md:su-mt-0 md:su-mr-[4px] su-font-semibold" }, pubDateFormatted), "|", ` ${readingTimeValue} min read`))))));
+    ), /* @__PURE__ */ import_react156.default.createElement("span", { className: "su-w-auto md:su-mt-auto su-text-16 su-leading-[19.1px] su-flex su-gap-[7px] md:su-basefont-23 md:su-text-21 md:su-leading-[26.25px]" }, /* @__PURE__ */ import_react156.default.createElement("time", { className: "su-m-0 md:su-mt-0 md:su-mr-[4px] su-font-semibold" }, pubDateFormatted), "|", ` ${readingTimeValue} min read`))))));
   }
 
   // components/feature-story-hero/Component.jsx
-  var import_react158 = __toESM(require_react(), 1);
+  var import_react157 = __toESM(require_react(), 1);
   function FeatureStoryHero(props) {
     const { orientation } = props;
     const data2 = props;
     switch (orientation) {
       case "vertical":
-        return /* @__PURE__ */ import_react158.default.createElement(VerticalHero, { data: data2 });
+        return /* @__PURE__ */ import_react157.default.createElement(VerticalHero, { data: data2 });
       case "full":
-        return /* @__PURE__ */ import_react158.default.createElement(FullHero, { data: data2 });
+        return /* @__PURE__ */ import_react157.default.createElement(FullHero, { data: data2 });
       default:
-        return /* @__PURE__ */ import_react158.default.createElement(HorizontalHero, { data: data2 });
+        return /* @__PURE__ */ import_react157.default.createElement(HorizontalHero, { data: data2 });
     }
   }
 
@@ -28845,6 +28793,51 @@
     if (!target)
       return;
     hydrateComponent({ Component: FeatureStoryHero, componentName });
+  })();
+
+  // components/fact-callout/Component.jsx
+  var import_react158 = __toESM(require_react(), 1);
+  function FactCallout({ displayConfiguration }) {
+    const { icon, factText, indicatorPosition, width: width2 } = displayConfiguration;
+    const svgMap = /* @__PURE__ */ new Map();
+    const indicatorMap = /* @__PURE__ */ new Map();
+    svgMap.set("pie chart", {
+      light: /* @__PURE__ */ import_react158.default.createElement(PieChart, { variant: "light" }),
+      dark: /* @__PURE__ */ import_react158.default.createElement(PieChart, { variant: "dark" })
+    });
+    svgMap.set("bar graph", {
+      light: /* @__PURE__ */ import_react158.default.createElement(BarGraph, { variant: "light" }),
+      dark: /* @__PURE__ */ import_react158.default.createElement(BarGraph, { variant: "dark" })
+    });
+    indicatorMap.set("top", "fact-wrapper__decoration-top");
+    indicatorMap.set("bottom", "fact-wrapper__decoration-bottom");
+    const indicator = indicatorMap.get(indicatorPosition) ? indicatorMap.get(indicatorPosition) : "fact-wrapper__decoration-top";
+    return /* @__PURE__ */ import_react158.default.createElement("div", { className: `decoration-${indicatorPosition}` }, /* @__PURE__ */ import_react158.default.createElement(Container, { width: width2 }, /* @__PURE__ */ import_react158.default.createElement("section", { className: "fact-wrapper su-col-span-full su-w-full su-relative su-h-auto su-p-3 su-bg-gradient-light-red-h-reverse" }, /* @__PURE__ */ import_react158.default.createElement(
+      "div",
+      {
+        className: `${indicator} su-absolute su-left-1/2 su-right-1/2 su-flex su-items-center su-justify-start su-w-24 su-h-90`
+      },
+      /* @__PURE__ */ import_react158.default.createElement("div", { className: "su-w-3 su-h-72 lg:su-h-60 su-bg-gradient-light-red-h-reverse" }),
+      /* @__PURE__ */ import_react158.default.createElement("div", { className: "su-size-24 su-rounded-full su-bg-gradient-light-red-h-reverse su-flex su-items-center su-justify-center" }, /* @__PURE__ */ import_react158.default.createElement("div", { className: "su-size-18 su-rounded-full su-bg-white dark:su-bg-black-true" }))
+    ), /* @__PURE__ */ import_react158.default.createElement(
+      "div",
+      {
+        className: `su-px-38 ${width2 === "Wide" ? "md:su-px-[12.1rem]" : ""} su-py-38 md:su-py-61 su-size-full su-bg-white dark:su-bg-black-true su-flex su-flex-col su-items-center su-justify-center su-gap-10 lg:su-flex-row lg:su-gap-38`
+      },
+      svgMap.get(icon) && "light" in svgMap.get(icon) && "dark" in svgMap.get(icon) && /* @__PURE__ */ import_react158.default.createElement(import_react158.default.Fragment, null, /* @__PURE__ */ import_react158.default.createElement("span", { "data-test": "icon", className: "dark:su-hidden" }, svgMap.get(icon).light), /* @__PURE__ */ import_react158.default.createElement("span", { "data-test": "icon", className: "su-hidden dark:su-block" }, svgMap.get(icon).dark)),
+      /* @__PURE__ */ import_react158.default.createElement("p", { className: "su-font-serif su-m-0" }, factText)
+    ))));
+  }
+
+  // components/fact-callout/client.jsx
+  (function() {
+    const componentName = "fact-callout";
+    const target = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!target)
+      return;
+    hydrateComponent({ Component: FactCallout, componentName });
   })();
 
   // components/events-section/Component.jsx
@@ -28881,58 +28874,13 @@
     hydrateComponent({ Component: EventsSection, componentName });
   })();
 
-  // components/fact-callout/Component.jsx
-  var import_react160 = __toESM(require_react(), 1);
-  function FactCallout({ displayConfiguration }) {
-    const { icon, factText, indicatorPosition, width: width2 } = displayConfiguration;
-    const svgMap = /* @__PURE__ */ new Map();
-    const indicatorMap = /* @__PURE__ */ new Map();
-    svgMap.set("pie chart", {
-      light: /* @__PURE__ */ import_react160.default.createElement(PieChart, { variant: "light" }),
-      dark: /* @__PURE__ */ import_react160.default.createElement(PieChart, { variant: "dark" })
-    });
-    svgMap.set("bar graph", {
-      light: /* @__PURE__ */ import_react160.default.createElement(BarGraph, { variant: "light" }),
-      dark: /* @__PURE__ */ import_react160.default.createElement(BarGraph, { variant: "dark" })
-    });
-    indicatorMap.set("top", "fact-wrapper__decoration-top");
-    indicatorMap.set("bottom", "fact-wrapper__decoration-bottom");
-    const indicator = indicatorMap.get(indicatorPosition) ? indicatorMap.get(indicatorPosition) : "fact-wrapper__decoration-top";
-    return /* @__PURE__ */ import_react160.default.createElement("div", { className: `decoration-${indicatorPosition}` }, /* @__PURE__ */ import_react160.default.createElement(Container, { width: width2 }, /* @__PURE__ */ import_react160.default.createElement("section", { className: "fact-wrapper su-col-span-full su-w-full su-relative su-h-auto su-p-3 su-bg-gradient-light-red-h-reverse" }, /* @__PURE__ */ import_react160.default.createElement(
-      "div",
-      {
-        className: `${indicator} su-absolute su-left-1/2 su-right-1/2 su-flex su-items-center su-justify-start su-w-24 su-h-90`
-      },
-      /* @__PURE__ */ import_react160.default.createElement("div", { className: "su-w-3 su-h-72 lg:su-h-60 su-bg-gradient-light-red-h-reverse" }),
-      /* @__PURE__ */ import_react160.default.createElement("div", { className: "su-size-24 su-rounded-full su-bg-gradient-light-red-h-reverse su-flex su-items-center su-justify-center" }, /* @__PURE__ */ import_react160.default.createElement("div", { className: "su-size-18 su-rounded-full su-bg-white dark:su-bg-black-true" }))
-    ), /* @__PURE__ */ import_react160.default.createElement(
-      "div",
-      {
-        className: `su-px-38 ${width2 === "Wide" ? "md:su-px-[12.1rem]" : ""} su-py-38 md:su-py-61 su-size-full su-bg-white dark:su-bg-black-true su-flex su-flex-col su-items-center su-justify-center su-gap-10 lg:su-flex-row lg:su-gap-38`
-      },
-      svgMap.get(icon) && "light" in svgMap.get(icon) && "dark" in svgMap.get(icon) && /* @__PURE__ */ import_react160.default.createElement(import_react160.default.Fragment, null, /* @__PURE__ */ import_react160.default.createElement("span", { "data-test": "icon", className: "dark:su-hidden" }, svgMap.get(icon).light), /* @__PURE__ */ import_react160.default.createElement("span", { "data-test": "icon", className: "su-hidden dark:su-block" }, svgMap.get(icon).dark)),
-      /* @__PURE__ */ import_react160.default.createElement("p", { className: "su-font-serif su-m-0" }, factText)
-    ))));
-  }
-
-  // components/fact-callout/client.jsx
-  (function() {
-    const componentName = "fact-callout";
-    const target = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!target)
-      return;
-    hydrateComponent({ Component: FactCallout, componentName });
-  })();
-
   // components/content-carousel/Component.jsx
-  var import_react161 = __toESM(require_react(), 1);
+  var import_react160 = __toESM(require_react(), 1);
   function ContentCarousel({ title, slides }) {
     const cards = [];
     slides.forEach((slide) => {
       cards.push(
-        /* @__PURE__ */ import_react161.default.createElement(
+        /* @__PURE__ */ import_react160.default.createElement(
           XssSafeContent_default,
           {
             "data-test": "content-carousel-content",
@@ -28945,7 +28893,7 @@
         )
       );
     });
-    return /* @__PURE__ */ import_react161.default.createElement(Container, { width: "narrow" }, /* @__PURE__ */ import_react161.default.createElement("div", { className: "su-bg-fog-light dark:su-bg-black su-p-20 md:su-pt-36 md:su-px-36 md:su-pb-26" }, /* @__PURE__ */ import_react161.default.createElement("div", { className: "su-relative su-mb-38 su-overflow-hidden" }, title && /* @__PURE__ */ import_react161.default.createElement("h3", { className: "su-relative su-text-23 su-leading-[119.415%] su-z-20 su-font-black su-mb-0 su-inline su-pr-10 su-m-0" }, title), /* @__PURE__ */ import_react161.default.createElement("span", { className: "su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-1 su-absolute su-bottom-4" })), /* @__PURE__ */ import_react161.default.createElement(Carousel, { variant: "content", slides: cards })));
+    return /* @__PURE__ */ import_react160.default.createElement(Container, { width: "narrow" }, /* @__PURE__ */ import_react160.default.createElement("div", { className: "su-bg-fog-light dark:su-bg-black su-p-20 md:su-pt-36 md:su-px-36 md:su-pb-26" }, /* @__PURE__ */ import_react160.default.createElement("div", { className: "su-relative su-mb-38 su-overflow-hidden" }, title && /* @__PURE__ */ import_react160.default.createElement("h3", { className: "su-relative su-text-23 su-leading-[119.415%] su-z-20 su-font-black su-mb-0 su-inline su-pr-10 su-m-0" }, title), /* @__PURE__ */ import_react160.default.createElement("span", { className: "su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-1 su-absolute su-bottom-4" })), /* @__PURE__ */ import_react160.default.createElement(Carousel, { variant: "content", slides: cards })));
   }
 
   // components/content-carousel/client.jsx
@@ -28959,102 +28907,19 @@
     hydrateComponent({ Component: ContentCarousel, componentName });
   })();
 
-  // packages/sidebar/SidebarList.jsx
-  var import_react162 = __toESM(require_react(), 1);
-  var import_object_hash9 = __toESM(require_object_hash(), 1);
-  function SidebarList({
-    children: children2,
-    title,
-    icon,
-    ctaUrl,
-    ctaText = "See all",
-    ctaIcon = "chevronright"
-  }) {
-    const iconMap = /* @__PURE__ */ new Map();
-    iconMap.set("chevronright", /* @__PURE__ */ import_react162.default.createElement(ChevronRight, null));
-    iconMap.set("externalarrow", /* @__PURE__ */ import_react162.default.createElement(ExternalArrow, null));
-    const iconAlignments = /* @__PURE__ */ new Map();
-    iconAlignments.set("chevronright", "group-hocus:su-translate-x-01em");
-    iconAlignments.set(
-      "externalarrow",
-      "group-hocus:su--translate-y-01em group-hocus:su-translate-x-01em [&>svg]:su-translate-y-1"
-    );
-    const hasChildren = children2 !== void 0;
-    return hasChildren ? /* @__PURE__ */ import_react162.default.createElement(
-      "div",
-      {
-        className: [
-          "su-component-sidebar-list su-flex su-flex-wrap su-gap-27"
-        ].join(" ")
-      },
-      title && /* @__PURE__ */ import_react162.default.createElement(SidebarHeading, { title, icon }),
-      children2,
-      ctaUrl && /* @__PURE__ */ import_react162.default.createElement(
-        "a",
-        {
-          "data-test": "cta",
-          href: ctaUrl,
-          className: [
-            "su-items-center su-group su-transition su-justify-center md:su-justify-start su-w-full su-flex su-text-digital-red dark:su-text-dark-mode-red su-flex-nowrap su-gap-2 su-leading-[125%] su-text-21 su-font-semibold su-no-underline hocus:su-underline *:su-transition"
-          ].join(" ")
-        },
-        /* @__PURE__ */ import_react162.default.createElement("span", null, ctaText),
-        /* @__PURE__ */ import_react162.default.createElement(
-          "span",
-          {
-            className: ["su-transition", iconAlignments.get(ctaIcon)].join(" ")
-          },
-          iconMap.get(ctaIcon)
-        )
-      )
-    ) : "";
-  }
-
-  // components/combined-content-grid/Component.jsx
-  var import_react163 = __toESM(require_react(), 1);
-  function FeaturedContent2({
+  // components/featured-content/Component.jsx
+  var import_react161 = __toESM(require_react(), 1);
+  function FeaturedContent({
     contentConfiguration,
     displayConfiguration,
-    eventsConfiguration,
-    announcementsConfiguration,
     data: data2,
-    headingData,
-    eventData,
-    announcementData,
-    announcementLink
+    headingData
   }) {
     const featuredCardData2 = data2[0];
     if (contentConfiguration.featuredDescription !== "" && contentConfiguration.featuredDescription !== null && contentConfiguration.featuredDescription !== void 0) {
       featuredCardData2.description = contentConfiguration.featuredDescription;
     }
-    const eventCards = [];
-    eventData.forEach((card) => {
-      eventCards.push(/* @__PURE__ */ import_react163.default.createElement(Card, { data: card, cardType: "horizontal" }));
-    });
-    const announcementCards = [];
-    announcementData.forEach((card, i) => {
-      announcementCards.push(
-        /* @__PURE__ */ import_react163.default.createElement("article", { className: "su-relative su-mt-0 su-gap-6 su-flex su-flex-wrap" }, /* @__PURE__ */ import_react163.default.createElement(
-          XssSafeContent_default,
-          {
-            id: `aria-announcement-${i}`,
-            className: "su-wysiwyg-content su-w-full su-text-black dark:su-text-white su-mb-0 su-text-18 su-leading-[2.25rem] su-font-sans",
-            content: card.description,
-            elementType: "p"
-          }
-        ), /* @__PURE__ */ import_react163.default.createElement(
-          "a",
-          {
-            href: card.liveUrl,
-            "aria-labelledby": `aria-announcement-${i}`,
-            className: "su-group su-transition dark:su-text-digital-blue-vivid su-text-digital-blue su-flex su-flex-nowrap su-gap-2 su-items-center su-leading-[125%] su-text-16 su-font-semibold su-no-underline before:su-size-full before:su-top-0 before:su-left-0 before:su-absolute [&>svg]:su-size-16"
-          },
-          /* @__PURE__ */ import_react163.default.createElement("span", { className: "group-hocus:su-underline" }, "Read more"),
-          /* @__PURE__ */ import_react163.default.createElement("span", { className: "su-transition group-hocus:su-translate-x-01em" }, /* @__PURE__ */ import_react163.default.createElement(ChevronRight, null))
-        ))
-      );
-    });
-    return /* @__PURE__ */ import_react163.default.createElement(Container, { width: "large", "data-component": "combined-content-grid" }, /* @__PURE__ */ import_react163.default.createElement(
+    return /* @__PURE__ */ import_react161.default.createElement(Container, { width: "large", "data-component": "featured-content" }, /* @__PURE__ */ import_react161.default.createElement(
       LinkedHeading,
       {
         title: headingData.title,
@@ -29062,48 +28927,13 @@
         ctaLink: headingData.ctaLink,
         ctaNewWindow: headingData.ctaNewWindow
       }
-    ), /* @__PURE__ */ import_react163.default.createElement("div", { className: "su-w-full su-component-featured-grid" }, /* @__PURE__ */ import_react163.default.createElement("div", { className: "su-flex su-flex-wrap lg:su-flex-nowrap su-gap-[68px] md:su-gap-72 lg:su-gap-[160px]" }, /* @__PURE__ */ import_react163.default.createElement("div", { className: "su-relative su-flex su-flex-wrap md:su-flex-nowrap lg:su-flex-wrap lg:su-order-2 md:su-items-start md:su-content-start su-gap-80 md:su-gap-72 lg:su-gap-[76px] md:su-basis-[39.5%] lg:su-basis-[30%] su-grow before:su-w-full before:md:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px before:lg:su-h-full before:su-left-0 before:su--bottom-35 before:lg:su-bottom-auto before:lg:su-top-0 before:md:su-left-0 lg:before:su-w-px before:lg:su--left-80" }, /* @__PURE__ */ import_react163.default.createElement("div", { className: "su-relative su-w-full md:su-h-full lg:su-h-auto" }, /* @__PURE__ */ import_react163.default.createElement(
-      SidebarList,
-      {
-        title: eventsConfiguration.heading,
-        icon: "eventscalendar",
-        ctaText: "See all events",
-        ctaUrl: eventsConfiguration.linkUrl,
-        ctaIcon: "externalarrow"
-      },
-      /* @__PURE__ */ import_react163.default.createElement(
-        HorizontalCardGrid,
-        {
-          items: eventCards,
-          orientation: "vertical",
-          maximumItems: Number(eventsConfiguration.numberOfItems)
-        }
-      )
-    )), /* @__PURE__ */ import_react163.default.createElement("div", { className: "su-relative su-w-full md:su-h-full lg:su-h-auto before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px md:before:su-h-full md:before:su-w-px before:su-left-0 md:before:su--left-38 before:su--top-40 md:before:su-top-0 lg:before:su--top-38 lg:before:su-left-0 lg:before:su-w-full lg:before:su-h-px" }, /* @__PURE__ */ import_react163.default.createElement(
-      SidebarList,
-      {
-        title: announcementsConfiguration.heading,
-        icon: "announcement",
-        ctaText: "See all announcements",
-        ctaUrl: announcementLink
-      },
-      /* @__PURE__ */ import_react163.default.createElement(
-        HorizontalCardGrid,
-        {
-          items: announcementCards,
-          orientation: "vertical",
-          maximumItems: Number(
-            announcementsConfiguration.numberOfItems
-          )
-        }
-      )
-    ))), /* @__PURE__ */ import_react163.default.createElement("div", { className: "md:su-basis-[58.333%] lg:su-basis-[64.5%] su-grow" }, /* @__PURE__ */ import_react163.default.createElement(
+    ), /* @__PURE__ */ import_react161.default.createElement(
       FeaturedGrid,
       {
-        alignment: "left",
+        alignment: displayConfiguration.alignment,
         items: [
-          /* @__PURE__ */ import_react163.default.createElement(Card, { data: featuredCardData2, cardSize: "featured" }),
-          /* @__PURE__ */ import_react163.default.createElement(
+          /* @__PURE__ */ import_react161.default.createElement(Card, { data: featuredCardData2, cardSize: "featured" }),
+          /* @__PURE__ */ import_react161.default.createElement(
             Card,
             {
               data: data2[1],
@@ -29112,7 +28942,7 @@
               cardSize: "small"
             }
           ),
-          /* @__PURE__ */ import_react163.default.createElement(
+          /* @__PURE__ */ import_react161.default.createElement(
             Card,
             {
               data: data2[2],
@@ -29121,71 +28951,28 @@
               cardSize: "small"
             }
           )
-        ],
-        isNested: true
+        ]
       }
-    )))));
+    ));
   }
 
-  // components/combined-content-grid/client.jsx
+  // components/featured-content/client.jsx
   (function() {
-    const componentName = "combined-content-grid";
-    const combinedGrid = document.querySelector(
+    const componentName = "featured-content";
+    const target = document.querySelector(
       `[data-hydration-component="${componentName}"]`
     );
-    if (!combinedGrid)
+    if (!target)
       return;
-    hydrateComponent({ Component: FeaturedContent2, componentName });
-  })();
-
-  // components/campaign-cta/Component.jsx
-  var import_react164 = __toESM(require_react(), 1);
-  function CampaignCta({ displayConfiguration, data: data2, linkData }) {
-    const { title, description, linkText } = displayConfiguration;
-    return /* @__PURE__ */ import_react164.default.createElement(Container, { width: "full", paddingX: false }, /* @__PURE__ */ import_react164.default.createElement("section", { className: "su-container-inner su-relative su-flex su-items-center su-justify-center su-flex-col" }, /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-component-campaigncta-wrap su-pt-126 su-pb-108 su-relative su-z-[2] su-text-white su-p-20 md:su-px-50 su-flex su-flex-col md:su-flex-row" }, /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-component-campaigncta-content su-relative md:su-border-r-black-30 md:su-border-r md:su-mr-25 su-w-full md:su-max-w-[65.5rem] md:su-pr-25" }, /* @__PURE__ */ import_react164.default.createElement("h2", { className: "su-font-serif su-text-[5.5rem] su-leading-none md:su-text-[7.2rem] su-m-0 su-font-bold" }, title), /* @__PURE__ */ import_react164.default.createElement(
-      XssSafeContent_default,
-      {
-        content: description,
-        elementType: "div",
-        className: [
-          "su-mt-34 su-font-serif su-text-20 md:su-text-24 su-mb-0 md:su-mb-[5.9rem] su-text-semibold md:su-mt-61",
-          "su-font-semibold su-leading-[130.245%]"
-        ].join(" ")
-      }
-    )), linkData && linkData.url && /* @__PURE__ */ import_react164.default.createElement(
-      "a",
-      {
-        href: linkData.url,
-        className: "su-text-18 su-mt-50 su-font-normal su-leading-display su-inline-block su-px-30 su-pt-10 su-pb-12 su-bg-digital-red su-mr-auto su-text-white su-no-underline hover:su-bg-black su-transition md:su-px-35 md:su-pt-14 md:su-pb-16 md:su-text-24 md:su-leading-[119.415%] md:su-mt-auto su-shrink-0"
-      },
-      linkText
-    )), /* @__PURE__ */ import_react164.default.createElement(
-      "img",
-      {
-        className: "su-absolute su-object-cover su-size-full su-z-[1]",
-        src: data2 && data2.url ? data2.url : "",
-        alt: data2 && data2.attributes.alt ? data2.attributes.alt : ""
-      }
-    ), /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-campaign-cta-gradient su-z-[1]" })));
-  }
-
-  // components/campaign-cta/client.jsx
-  (function() {
-    const componentName = "campaign-cta";
-    const campaignCta = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!campaignCta)
-      return;
-    hydrateComponent({ Component: CampaignCta, componentName });
+    hydrateComponent({ Component: FeaturedContent, componentName });
   })();
 
   // components/button-row/Component.jsx
-  var import_react165 = __toESM(require_react(), 1);
+  var import_react162 = __toESM(require_react(), 1);
   function ButtonRow({ buttonsArray }) {
-    return /* @__PURE__ */ import_react165.default.createElement(Container, null, /* @__PURE__ */ import_react165.default.createElement("div", { className: "su-flex su-flex-wrap su-justify-center su-gap-x-18 md:su-gap-x-27 su-gap-y-12 su-mx-auto su-w-fit" }, buttonsArray.map((button) => {
+    return /* @__PURE__ */ import_react162.default.createElement(Container, null, /* @__PURE__ */ import_react162.default.createElement("div", { className: "su-flex su-flex-wrap su-justify-center su-gap-x-18 md:su-gap-x-27 su-gap-y-12 su-mx-auto su-w-fit" }, buttonsArray.map((button) => {
       const { buttonText, internalLinkUrl, externalUrl, isNewWindow } = button;
-      return /* @__PURE__ */ import_react165.default.createElement(
+      return /* @__PURE__ */ import_react162.default.createElement(
         LinkButton,
         {
           key: buttonText,
@@ -29210,14 +28997,14 @@
   })();
 
   // components/button/Component.jsx
-  var import_react166 = __toESM(require_react(), 1);
+  var import_react163 = __toESM(require_react(), 1);
   function Button({
     buttonText,
     internalLinkUrl,
     externalUrl,
     isNewWindow
   }) {
-    return /* @__PURE__ */ import_react166.default.createElement(Container, null, /* @__PURE__ */ import_react166.default.createElement(
+    return /* @__PURE__ */ import_react163.default.createElement(Container, null, /* @__PURE__ */ import_react163.default.createElement(
       LinkButton,
       {
         buttonText,
@@ -29240,7 +29027,7 @@
   })();
 
   // components/basic-story-hero/Component.jsx
-  var import_react167 = __toESM(require_react(), 1);
+  var import_react164 = __toESM(require_react(), 1);
   function readingTime4(text2) {
     if (!text2)
       return 0;
@@ -29251,21 +29038,21 @@
   }
   function basicStoryHero(props) {
     const { title, media, summary, pubDateFormatted, topic, mediaType } = props;
-    const [readingTimeValue, setReadingTime] = (0, import_react167.useState)(0);
-    (0, import_react167.useEffect)(() => {
+    const [readingTimeValue, setReadingTime] = (0, import_react164.useState)(0);
+    (0, import_react164.useEffect)(() => {
       const content = document.querySelector(".su-page-content");
       if (content) {
         setReadingTime(() => readingTime4(content.innerText));
       }
     });
-    return /* @__PURE__ */ import_react167.default.createElement(Container, { width: "wide" }, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-grid su-gap su-grid-cols-6 md:su-grid-cols-12" }, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-10 md:su-col-start-2" }, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-flex su-gap-y-8 su-gap-x-16 su-justify-between su-flex-wrap su-text-16 md:su-basefont-23" }, /* @__PURE__ */ import_react167.default.createElement("span", { className: "su-flex su-items-center su-justify-center" }, /* @__PURE__ */ import_react167.default.createElement("time", { className: "su-m-0 su-mr-4 su-font-semibold" }, pubDateFormatted), /* @__PURE__ */ import_react167.default.createElement("span", { className: "su-reading-time su-reading-time-separator" }), "|", " ", `${readingTimeValue} min read`), topic.asset_name && /* @__PURE__ */ import_react167.default.createElement(
+    return /* @__PURE__ */ import_react164.default.createElement(Container, { width: "wide" }, /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-grid su-gap su-grid-cols-6 md:su-grid-cols-12" }, /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-10 md:su-col-start-2" }, /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-flex su-gap-y-8 su-gap-x-16 su-justify-between su-flex-wrap su-text-16 md:su-basefont-23" }, /* @__PURE__ */ import_react164.default.createElement("span", { className: "su-flex su-items-center su-justify-center" }, /* @__PURE__ */ import_react164.default.createElement("time", { className: "su-m-0 su-mr-4 su-font-semibold" }, pubDateFormatted), /* @__PURE__ */ import_react164.default.createElement("span", { className: "su-reading-time su-reading-time-separator" }), "|", " ", `${readingTimeValue} min read`), topic.asset_name && /* @__PURE__ */ import_react164.default.createElement(
       "a",
       {
         href: topic.asset_url !== "" ? topic.asset_url : "#",
         className: "su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline"
       },
       topic.asset_name
-    )), /* @__PURE__ */ import_react167.default.createElement("h1", { className: "su-font-bold su-rs-mt-4 su-font-serif su-mb-0 xl:su-text-[6.4rem]" }, title), /* @__PURE__ */ import_react167.default.createElement(
+    )), /* @__PURE__ */ import_react164.default.createElement("h1", { className: "su-font-bold su-rs-mt-4 su-font-serif su-mb-0 xl:su-text-[6.4rem]" }, title), /* @__PURE__ */ import_react164.default.createElement(
       XssSafeContent_default,
       {
         className: [
@@ -29275,12 +29062,12 @@
         content: summary,
         elementType: "p"
       }
-    )), /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4" }, /* @__PURE__ */ import_react167.default.createElement(
+    )), /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4" }, /* @__PURE__ */ import_react164.default.createElement(
       "figure",
       {
         className: `basic-story__header-image su-col-span-full su-relative su-z-0 ${mediaType === "image" ? "dark:su-bg-black" : ""}`
       },
-      /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-relative su-w-full" }, /* @__PURE__ */ import_react167.default.createElement(
+      /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-relative su-w-full" }, /* @__PURE__ */ import_react164.default.createElement(
         Thumbnail,
         {
           url: media.featureImage.url,
@@ -29289,12 +29076,12 @@
           type: mediaType,
           carousel: media.carousel
         }
-      ), /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" })),
-      mediaType !== "carousel" && (media.caption || media.credit) && /* @__PURE__ */ import_react167.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, media.caption, " ", media.caption && media.credit && ` | `, media.credit)
+      ), /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" })),
+      mediaType !== "carousel" && (media.caption || media.credit) && /* @__PURE__ */ import_react164.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, media.caption, " ", media.caption && media.credit && ` | `, media.credit)
     ))));
   }
   function Thumbnail({ url, alt, video, type, carousel }) {
-    const [isModalOpen, setIsModalOpen] = (0, import_react167.useState)(false);
+    const [isModalOpen, setIsModalOpen] = (0, import_react164.useState)(false);
     const slides = [];
     const handleClick = () => {
       setIsModalOpen(true);
@@ -29303,7 +29090,7 @@
       setIsModalOpen(false);
     };
     if (type === "image") {
-      return /* @__PURE__ */ import_react167.default.createElement(
+      return /* @__PURE__ */ import_react164.default.createElement(
         "img",
         {
           src: "https://picsum.photos/350/200",
@@ -29315,19 +29102,19 @@
     if (type === "carousel") {
       carousel.forEach((slide) => {
         slides.push(
-          /* @__PURE__ */ import_react167.default.createElement(import_react167.default.Fragment, null, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-aspect-[3/2] su-relative su-bg-fog-light dark:su-bg-black" }, /* @__PURE__ */ import_react167.default.createElement(
+          /* @__PURE__ */ import_react164.default.createElement(import_react164.default.Fragment, null, /* @__PURE__ */ import_react164.default.createElement("div", { className: "su-aspect-[3/2] su-relative su-bg-fog-light dark:su-bg-black" }, /* @__PURE__ */ import_react164.default.createElement(
             "img",
             {
               src: slide.asset_url,
               alt: slide.asset_attribute_alt,
               className: "su-absolute su-top-0 su-left-0 su-w-full su-h-full su-object-scale-down su-object-center"
             }
-          )), slide.asset_attribute_caption && /* @__PURE__ */ import_react167.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, slide.asset_attribute_caption))
+          )), slide.asset_attribute_caption && /* @__PURE__ */ import_react164.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, slide.asset_attribute_caption))
         );
       });
-      return /* @__PURE__ */ import_react167.default.createElement(Carousel, { slides, variant: "basicstory" });
+      return /* @__PURE__ */ import_react164.default.createElement(Carousel, { slides, variant: "basicstory" });
     }
-    return /* @__PURE__ */ import_react167.default.createElement(import_react167.default.Fragment, null, /* @__PURE__ */ import_react167.default.createElement(
+    return /* @__PURE__ */ import_react164.default.createElement(import_react164.default.Fragment, null, /* @__PURE__ */ import_react164.default.createElement(
       "button",
       {
         type: "button",
@@ -29335,7 +29122,7 @@
         className: "su-w-full su-aspect-[16/9] su-video-trigger",
         onClick: handleClick
       },
-      /* @__PURE__ */ import_react167.default.createElement(
+      /* @__PURE__ */ import_react164.default.createElement(
         "img",
         {
           src: url,
@@ -29343,8 +29130,8 @@
           className: "su-w-full su-h-full su-absolute su-top-0 su-left-0 su-object-cover su-object-center"
         }
       ),
-      /* @__PURE__ */ import_react167.default.createElement("span", { className: "su-play-button-icon-hero su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px]" }, /* @__PURE__ */ import_react167.default.createElement(VideoPlay, null))
-    ), isModalOpen && /* @__PURE__ */ import_react167.default.createElement(ModalWrapper_default, { onClose: handleCloseModal }, /* @__PURE__ */ import_react167.default.createElement(EmbedVideo, { videoId: video })));
+      /* @__PURE__ */ import_react164.default.createElement("span", { className: "su-play-button-icon-hero su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px]" }, /* @__PURE__ */ import_react164.default.createElement(VideoPlay, null))
+    ), isModalOpen && /* @__PURE__ */ import_react164.default.createElement(ModalWrapper_default, { onClose: handleCloseModal }, /* @__PURE__ */ import_react164.default.createElement(EmbedVideo, { videoId: video })));
   }
 
   // components/basic-story-hero/client.jsx
@@ -29358,11 +29145,53 @@
     hydrateComponent({ Component: basicStoryHero, componentName });
   })();
 
+  // components/campaign-cta/Component.jsx
+  var import_react165 = __toESM(require_react(), 1);
+  function CampaignCta({ displayConfiguration, data: data2, linkData }) {
+    const { title, description, linkText } = displayConfiguration;
+    return /* @__PURE__ */ import_react165.default.createElement(Container, { width: "full", paddingX: false }, /* @__PURE__ */ import_react165.default.createElement("section", { className: "su-container-inner su-relative su-flex su-items-center su-justify-center su-flex-col" }, /* @__PURE__ */ import_react165.default.createElement("div", { className: "su-component-campaigncta-wrap su-pt-126 su-pb-108 su-relative su-z-[2] su-text-white su-p-20 md:su-px-50 su-flex su-flex-col md:su-flex-row" }, /* @__PURE__ */ import_react165.default.createElement("div", { className: "su-component-campaigncta-content su-relative md:su-border-r-black-30 md:su-border-r md:su-mr-25 su-w-full md:su-max-w-[65.5rem] md:su-pr-25" }, /* @__PURE__ */ import_react165.default.createElement("h2", { className: "su-font-serif su-text-[5.5rem] su-leading-none md:su-text-[7.2rem] su-m-0 su-font-bold" }, title), /* @__PURE__ */ import_react165.default.createElement(
+      XssSafeContent_default,
+      {
+        content: description,
+        elementType: "div",
+        className: [
+          "su-mt-34 su-font-serif su-text-20 md:su-text-24 su-mb-0 md:su-mb-[5.9rem] su-text-semibold md:su-mt-61",
+          "su-font-semibold su-leading-[130.245%]"
+        ].join(" ")
+      }
+    )), linkData && linkData.url && /* @__PURE__ */ import_react165.default.createElement(
+      "a",
+      {
+        href: linkData.url,
+        className: "su-text-18 su-mt-50 su-font-normal su-leading-display su-inline-block su-px-30 su-pt-10 su-pb-12 su-bg-digital-red su-mr-auto su-text-white su-no-underline hover:su-bg-black su-transition md:su-px-35 md:su-pt-14 md:su-pb-16 md:su-text-24 md:su-leading-[119.415%] md:su-mt-auto su-shrink-0"
+      },
+      linkText
+    )), /* @__PURE__ */ import_react165.default.createElement(
+      "img",
+      {
+        className: "su-absolute su-object-cover su-size-full su-z-[1]",
+        src: data2 && data2.url ? data2.url : "",
+        alt: data2 && data2.attributes.alt ? data2.attributes.alt : ""
+      }
+    ), /* @__PURE__ */ import_react165.default.createElement("div", { className: "su-campaign-cta-gradient su-z-[1]" })));
+  }
+
+  // components/campaign-cta/client.jsx
+  (function() {
+    const componentName = "campaign-cta";
+    const campaignCta = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!campaignCta)
+      return;
+    hydrateComponent({ Component: CampaignCta, componentName });
+  })();
+
   // components/basic-hero/Component.jsx
-  var import_react168 = __toESM(require_react(), 1);
+  var import_react166 = __toESM(require_react(), 1);
   function BasicHero(props) {
     const { title, titleAlignment } = props;
-    return /* @__PURE__ */ import_react168.default.createElement(Container, null, /* @__PURE__ */ import_react168.default.createElement("div", { className: "su-flex su-justify-between su-flex-wrap su-rs-mt-6 su-rs-mb-5" }, /* @__PURE__ */ import_react168.default.createElement(
+    return /* @__PURE__ */ import_react166.default.createElement(Container, null, /* @__PURE__ */ import_react166.default.createElement("div", { className: "su-flex su-justify-between su-flex-wrap su-rs-mt-6 su-rs-mb-5" }, /* @__PURE__ */ import_react166.default.createElement(
       "h1",
       {
         className: cnb(
@@ -29383,6 +29212,185 @@
     if (!target)
       return;
     hydrateComponent({ Component: BasicHero, componentName });
+  })();
+
+  // packages/sidebar/SidebarList.jsx
+  var import_react167 = __toESM(require_react(), 1);
+  var import_object_hash9 = __toESM(require_object_hash(), 1);
+  function SidebarList({
+    children: children2,
+    title,
+    icon,
+    ctaUrl,
+    ctaText = "See all",
+    ctaIcon = "chevronright"
+  }) {
+    const iconMap = /* @__PURE__ */ new Map();
+    iconMap.set("chevronright", /* @__PURE__ */ import_react167.default.createElement(ChevronRight, null));
+    iconMap.set("externalarrow", /* @__PURE__ */ import_react167.default.createElement(ExternalArrow, null));
+    const iconAlignments = /* @__PURE__ */ new Map();
+    iconAlignments.set("chevronright", "group-hocus:su-translate-x-01em");
+    iconAlignments.set(
+      "externalarrow",
+      "group-hocus:su--translate-y-01em group-hocus:su-translate-x-01em [&>svg]:su-translate-y-1"
+    );
+    const hasChildren = children2 !== void 0;
+    return hasChildren ? /* @__PURE__ */ import_react167.default.createElement(
+      "div",
+      {
+        className: [
+          "su-component-sidebar-list su-flex su-flex-wrap su-gap-27"
+        ].join(" ")
+      },
+      title && /* @__PURE__ */ import_react167.default.createElement(SidebarHeading, { title, icon }),
+      children2,
+      ctaUrl && /* @__PURE__ */ import_react167.default.createElement(
+        "a",
+        {
+          "data-test": "cta",
+          href: ctaUrl,
+          className: [
+            "su-items-center su-group su-transition su-justify-center md:su-justify-start su-w-full su-flex su-text-digital-red dark:su-text-dark-mode-red su-flex-nowrap su-gap-2 su-leading-[125%] su-text-21 su-font-semibold su-no-underline hocus:su-underline *:su-transition"
+          ].join(" ")
+        },
+        /* @__PURE__ */ import_react167.default.createElement("span", null, ctaText),
+        /* @__PURE__ */ import_react167.default.createElement(
+          "span",
+          {
+            className: ["su-transition", iconAlignments.get(ctaIcon)].join(" ")
+          },
+          iconMap.get(ctaIcon)
+        )
+      )
+    ) : "";
+  }
+
+  // components/combined-content-grid/Component.jsx
+  var import_react168 = __toESM(require_react(), 1);
+  function FeaturedContent2({
+    contentConfiguration,
+    displayConfiguration,
+    eventsConfiguration,
+    announcementsConfiguration,
+    data: data2,
+    headingData,
+    eventData,
+    announcementData,
+    announcementLink
+  }) {
+    const featuredCardData2 = data2[0];
+    if (contentConfiguration.featuredDescription !== "" && contentConfiguration.featuredDescription !== null && contentConfiguration.featuredDescription !== void 0) {
+      featuredCardData2.description = contentConfiguration.featuredDescription;
+    }
+    const eventCards = [];
+    eventData.forEach((card) => {
+      eventCards.push(/* @__PURE__ */ import_react168.default.createElement(Card, { data: card, cardType: "horizontal" }));
+    });
+    const announcementCards = [];
+    announcementData.forEach((card, i) => {
+      announcementCards.push(
+        /* @__PURE__ */ import_react168.default.createElement("article", { className: "su-relative su-mt-0 su-gap-6 su-flex su-flex-wrap" }, /* @__PURE__ */ import_react168.default.createElement(
+          XssSafeContent_default,
+          {
+            id: `aria-announcement-${i}`,
+            className: "su-wysiwyg-content su-w-full su-text-black dark:su-text-white su-mb-0 su-text-18 su-leading-[2.25rem] su-font-sans",
+            content: card.description,
+            elementType: "p"
+          }
+        ), /* @__PURE__ */ import_react168.default.createElement(
+          "a",
+          {
+            href: card.liveUrl,
+            "aria-labelledby": `aria-announcement-${i}`,
+            className: "su-group su-transition dark:su-text-digital-blue-vivid su-text-digital-blue su-flex su-flex-nowrap su-gap-2 su-items-center su-leading-[125%] su-text-16 su-font-semibold su-no-underline before:su-size-full before:su-top-0 before:su-left-0 before:su-absolute [&>svg]:su-size-16"
+          },
+          /* @__PURE__ */ import_react168.default.createElement("span", { className: "group-hocus:su-underline" }, "Read more"),
+          /* @__PURE__ */ import_react168.default.createElement("span", { className: "su-transition group-hocus:su-translate-x-01em" }, /* @__PURE__ */ import_react168.default.createElement(ChevronRight, null))
+        ))
+      );
+    });
+    return /* @__PURE__ */ import_react168.default.createElement(Container, { width: "large", "data-component": "combined-content-grid" }, /* @__PURE__ */ import_react168.default.createElement(
+      LinkedHeading,
+      {
+        title: headingData.title,
+        ctaText: headingData.ctaText,
+        ctaLink: headingData.ctaLink,
+        ctaNewWindow: headingData.ctaNewWindow
+      }
+    ), /* @__PURE__ */ import_react168.default.createElement("div", { className: "su-w-full su-component-featured-grid" }, /* @__PURE__ */ import_react168.default.createElement("div", { className: "su-flex su-flex-wrap lg:su-flex-nowrap su-gap-[68px] md:su-gap-72 lg:su-gap-[160px]" }, /* @__PURE__ */ import_react168.default.createElement("div", { className: "su-relative su-flex su-flex-wrap md:su-flex-nowrap lg:su-flex-wrap lg:su-order-2 md:su-items-start md:su-content-start su-gap-80 md:su-gap-72 lg:su-gap-[76px] md:su-basis-[39.5%] lg:su-basis-[30%] su-grow before:su-w-full before:md:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px before:lg:su-h-full before:su-left-0 before:su--bottom-35 before:lg:su-bottom-auto before:lg:su-top-0 before:md:su-left-0 lg:before:su-w-px before:lg:su--left-80" }, /* @__PURE__ */ import_react168.default.createElement("div", { className: "su-relative su-w-full md:su-h-full lg:su-h-auto" }, /* @__PURE__ */ import_react168.default.createElement(
+      SidebarList,
+      {
+        title: eventsConfiguration.heading,
+        icon: "eventscalendar",
+        ctaText: "See all events",
+        ctaUrl: eventsConfiguration.linkUrl,
+        ctaIcon: "externalarrow"
+      },
+      /* @__PURE__ */ import_react168.default.createElement(
+        HorizontalCardGrid,
+        {
+          items: eventCards,
+          orientation: "vertical",
+          maximumItems: Number(eventsConfiguration.numberOfItems)
+        }
+      )
+    )), /* @__PURE__ */ import_react168.default.createElement("div", { className: "su-relative su-w-full md:su-h-full lg:su-h-auto before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black before:su-h-px md:before:su-h-full md:before:su-w-px before:su-left-0 md:before:su--left-38 before:su--top-40 md:before:su-top-0 lg:before:su--top-38 lg:before:su-left-0 lg:before:su-w-full lg:before:su-h-px" }, /* @__PURE__ */ import_react168.default.createElement(
+      SidebarList,
+      {
+        title: announcementsConfiguration.heading,
+        icon: "announcement",
+        ctaText: "See all announcements",
+        ctaUrl: announcementLink
+      },
+      /* @__PURE__ */ import_react168.default.createElement(
+        HorizontalCardGrid,
+        {
+          items: announcementCards,
+          orientation: "vertical",
+          maximumItems: Number(
+            announcementsConfiguration.numberOfItems
+          )
+        }
+      )
+    ))), /* @__PURE__ */ import_react168.default.createElement("div", { className: "md:su-basis-[58.333%] lg:su-basis-[64.5%] su-grow" }, /* @__PURE__ */ import_react168.default.createElement(
+      FeaturedGrid,
+      {
+        alignment: "left",
+        items: [
+          /* @__PURE__ */ import_react168.default.createElement(Card, { data: featuredCardData2, cardSize: "featured" }),
+          /* @__PURE__ */ import_react168.default.createElement(
+            Card,
+            {
+              data: data2[1],
+              displayThumbnail: displayConfiguration.displayThumbnails,
+              displayDescription: displayConfiguration.displayDescriptions,
+              cardSize: "small"
+            }
+          ),
+          /* @__PURE__ */ import_react168.default.createElement(
+            Card,
+            {
+              data: data2[2],
+              displayThumbnail: displayConfiguration.displayThumbnails,
+              displayDescription: displayConfiguration.displayDescriptions,
+              cardSize: "small"
+            }
+          )
+        ],
+        isNested: true
+      }
+    )))));
+  }
+
+  // components/combined-content-grid/client.jsx
+  (function() {
+    const componentName = "combined-content-grid";
+    const combinedGrid = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!combinedGrid)
+      return;
+    hydrateComponent({ Component: FeaturedContent2, componentName });
   })();
 
   // components/acknowledgement/Component.jsx
