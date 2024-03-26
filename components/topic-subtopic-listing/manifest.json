@@ -33,6 +33,18 @@
               "searchQuery": {
                 "title": "Search query",
                 "type": "string"
+              },
+              "displayStyle": {
+                "title": "Topic list display",
+                "type": "string",
+                "default": "Default",
+                "enum": [
+                  "Default",
+                  "Press Center",
+                  "Announcements",
+                  "In the News",
+                  "Leadership Messages"
+                ]
               }
             }
           }
@@ -69,6 +81,58 @@
           "inputData": {
             "type": "file",
             "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "presscenter": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "presscenter.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "announcements": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "announcements.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "inthenews": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "inthenews.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "leadershipmessages": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "leadershipmessages.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
