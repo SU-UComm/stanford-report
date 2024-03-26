@@ -19,6 +19,13 @@ module.exports = {
   theme: {
     extend: {
       colors: require(`${dir}/theme/colors.js`)(),
+      textShadow: {
+        sm: "0 1px 2px var(--tw-shadow-color)",
+        DEFAULT: "0 2px 4px var(--tw-shadow-color)",
+        lg: "0 8px 16px var(--tw-shadow-color)",
+        heading:
+          "1px 0px 100px var(--tw-shadow-color), 0px 1px 1px var(--tw-shadow-color), 2px 1px 1px var(--tw-shadow-color), 1px 2px 1px var(--tw-shadow-color), 3px 2px 10px var(--tw-shadow-color),-1px 0px 10px var(--tw-shadow-color), 0px -1px 5px var(--tw-shadow-color), -3px -1px 5px var(--tw-shadow-color), -1px -2px 5px var(--tw-shadow-color), -3px -2px 5px var(--tw-shadow-color)",
+      },
     },
   },
 
@@ -26,5 +33,17 @@ module.exports = {
   // Tailwind that can be used to generate extra utilities, components, base
   // styles, or custom variants.
   // https://tailwindcss.com/docs/configuration/#plugins
-  plugins: [require(`${dir}/base/base.js`)()],
+  plugins: [
+    require(`${dir}/base/base.js`)(),
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "text-shadow": (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme("textShadow") }
+      );
+    }),
+  ],
 };

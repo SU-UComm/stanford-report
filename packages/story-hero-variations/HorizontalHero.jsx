@@ -47,7 +47,7 @@ export default function HorizontalHero({ data }) {
               <h1
                 className={[
                   titleSize,
-                  "su-relative md:su-max-h-[6em] su-z-10 su-text-right su-ml-auto su-mt-0 su-break-words su-font-bold font-serif-4 su-col-span-5 md:su-col-span-8 lg:su-col-span-7 su-col-start-2 md:su-col-start-5 lg:su-col-start-4",
+                  "su-text-shadow-heading su-shadow-white dark:su-shadow-black-true selection:su-relative md:su-max-h-[6em] su-z-10 su-text-right su-ml-auto su-mt-0 su-break-words su-font-bold font-serif-4 su-col-span-5 md:su-col-span-8 lg:su-col-span-7 su-col-start-2 md:su-col-start-5 lg:su-col-start-4",
                   titleWordsCount > 7 ? "su-mb-[-1.75em]" : "su-mb-[-.5em]",
                 ].join(" ")}
               >
