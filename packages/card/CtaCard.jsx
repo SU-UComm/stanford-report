@@ -34,7 +34,7 @@ export default function CtaCard({
   return (
     <article
       className={cnb(
-        "su-group su-relative su-w-full su-flex su-flex-col su-break-words su-rounded-[8px] su-rs-pt-5 su-rs-px-4 su-max-w-900 su-mx-auto su-transition-shadow su-border-2 su-border-black-30/30 dark:su-border-black su-shadow dark:su-shadow-black-90 su-bg-white dark:su-bg-black su-text-black dark:su-text-white",
+        "su-group su-relative su-w-full su-flex su-flex-col su-break-words su-rounded-[8px] su-rs-pt-5 su-rs-px-4 su-max-w-900 su-mx-auto su-transition-shadow su-border dark:su-border-2 su-border-black-30/30 dark:su-border-black su-shadow dark:su-shadow-black/80 su-bg-white dark:su-bg-black-true su-text-black dark:su-text-white",
         internalUrl || externalUrl
           ? "hover:su-shadow-md focus-within:su-shadow-md"
           : "",
