@@ -15,6 +15,8 @@ export default function FeaturedMetadata({ data }) {
     related,
   } = data;
 
+  console.log(campus);
+
   const [copyLinkTitle, setCopyLinkTitle] = useState("Copy link");
 
   const copyLink = () => {
@@ -275,7 +277,10 @@ export default function FeaturedMetadata({ data }) {
               {campus.asset_name}
             </div>
           ) : (
-            <a href={campus.asset_name}>
+            <a
+              href={campus.asset_url}
+              className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-19 su-font-semibold"
+            >
               <div className="su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
                 {campus.asset_name}
               </div>
