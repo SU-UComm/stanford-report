@@ -208,7 +208,10 @@ export default function BasicMetadata({ data }) {
 
       {related && related.length ? (
         <div className="su-border-t border-t-black-20">
-          <BasicFields title="Related topics">
+          <BasicFields
+            title="Related topics"
+            contentCSS="md:su-flex-row md:su-gap-27 md:su-flex-wrap"
+          >
             {related.map(
               (item) =>
                 item && (
