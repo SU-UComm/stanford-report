@@ -3047,54 +3047,6 @@ Single image/video component
   width: 0;
   height: 0;
 }
-.su-wysiwyg-content ul{
-  list-style-type: none;
-  padding-left: 0;
-}
-.su-wysiwyg-content ul > li{
-  position: relative;
-  padding-left: 3rem;
-}
-.su-wysiwyg-content ul > li::before{
-  position: absolute;
-  top: .6em;
-  left: 1.2rem;
-  height: 4.5px;
-  width: 4.5px;
-  content: var(--tw-content);
-  border-radius: 9999px;
-  background-color: currentColor;
-}
-.su-horizontal-image-first {
-  grid-column: 1;
-  grid-row: 1 / span 1;
-  height: 100%;
-}
-.su-horizontal-image-second {
-  grid-column: 1;
-  grid-row: 2 / span 1;
-  height: 100%;
-}
-.su-horizontal-image-third {
-  grid-column: 2;
-  grid-row: 1 / span 1;
-  height: 100%;
-}
-.su-horizontal-image-fourth {
-  grid-column: 2;
-  grid-row: 2 / span 1;
-  height: 100%;
-}
-.su-vertical-image-first {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  height: 100%;
-}
-.su-vertical-image-second {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  height: 100%;
-}
 .su-bg-gradient-reverse,
 .su-bg-gradient-before-reverse:before{
   background-image: linear-gradient(to left, var(--tw-gradient-stops));
@@ -3156,6 +3108,54 @@ Single image/video component
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
     --tw-gradient-to: #8F993E var(--tw-gradient-to-position);
   }
+}
+.su-wysiwyg-content ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+.su-wysiwyg-content ul > li{
+  position: relative;
+  padding-left: 3rem;
+}
+.su-wysiwyg-content ul > li::before{
+  position: absolute;
+  top: .6em;
+  left: 1.2rem;
+  height: 4.5px;
+  width: 4.5px;
+  content: var(--tw-content);
+  border-radius: 9999px;
+  background-color: currentColor;
+}
+.su-horizontal-image-first {
+  grid-column: 1;
+  grid-row: 1 / span 1;
+  height: 100%;
+}
+.su-horizontal-image-second {
+  grid-column: 1;
+  grid-row: 2 / span 1;
+  height: 100%;
+}
+.su-horizontal-image-third {
+  grid-column: 2;
+  grid-row: 1 / span 1;
+  height: 100%;
+}
+.su-horizontal-image-fourth {
+  grid-column: 2;
+  grid-row: 2 / span 1;
+  height: 100%;
+}
+.su-vertical-image-first {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  height: 100%;
+}
+.su-vertical-image-second {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  height: 100%;
 }
 .decoration-top{
   padding-top: 9rem;
