@@ -85,5 +85,8 @@ export default function _preferencesSettings() {
         process.env.NODE_ENV === "production"
       );
     });
+
+    // custom event for state updates
+    document.personaChangeEvent = new Event("personaChange");
   }
 }

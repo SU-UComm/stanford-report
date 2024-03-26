@@ -80,6 +80,7 @@ export default function Header({
     setCookie("preferences_personalisation", persona);
     setDisplayConsentBanner(false);
     setAudience(persona);
+    document.dispatchEvent(document.personaChangeEvent);
   };
 
   useEffect(() => {
