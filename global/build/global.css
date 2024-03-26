@@ -2898,11 +2898,6 @@ Single image/video component
     }
   }
 }
-.su-play-scale:is(:hover, :focus) .su-play-btn{
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
 /* 
   single featured content
   these styles will only target single featured content components
@@ -2952,6 +2947,11 @@ Single image/video component
     font-size: 2.1rem;
     line-height: 125%;
   }
+}
+.su-play-scale:is(:hover, :focus) .su-play-btn{
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 @media (min-width: 992px){
   .su-component-container .component-slider{
@@ -3047,6 +3047,24 @@ Single image/video component
   width: 0;
   height: 0;
 }
+.su-wysiwyg-content ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+.su-wysiwyg-content ul > li{
+  position: relative;
+  padding-left: 3rem;
+}
+.su-wysiwyg-content ul > li::before{
+  position: absolute;
+  top: .6em;
+  left: 1.2rem;
+  height: 4.5px;
+  width: 4.5px;
+  content: var(--tw-content);
+  border-radius: 9999px;
+  background-color: currentColor;
+}
 .su-bg-gradient-reverse,
 .su-bg-gradient-before-reverse:before{
   background-image: linear-gradient(to left, var(--tw-gradient-stops));
@@ -3108,24 +3126,6 @@ Single image/video component
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
     --tw-gradient-to: #8F993E var(--tw-gradient-to-position);
   }
-}
-.su-wysiwyg-content ul{
-  list-style-type: none;
-  padding-left: 0;
-}
-.su-wysiwyg-content ul > li{
-  position: relative;
-  padding-left: 3rem;
-}
-.su-wysiwyg-content ul > li::before{
-  position: absolute;
-  top: .6em;
-  left: 1.2rem;
-  height: 4.5px;
-  width: 4.5px;
-  content: var(--tw-content);
-  border-radius: 9999px;
-  background-color: currentColor;
 }
 .su-horizontal-image-first {
   grid-column: 1;
@@ -3331,6 +3331,34 @@ Single image/video component
   background-color: rgb(236 9 9 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.su-reading-time-separator:empty{
+  display: none;
+}
+.su-reading-time-separator:not(:empty)::before {
+  content: "|";
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+}
+.component-slider-controls{
+  margin-top: 3rem !important;
+}
+@media (min-width: 768px){
+  .component-slider-controls{
+    margin-left: 8.333% !important;
+    width: 83.333% !important;
+  }
+}
+@media (min-width: 992px){
+  .component-slider-controls{
+    margin-top: 3.6rem !important;
+  }
+}
+.su-video-trigger:is(:hover, :focus)
+  .su-play-button-icon-hero{
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .su-button{
   font-family: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -3767,6 +3795,19 @@ Single image/video component
 @media (min-width: 1500px){
   .su-basefont-21{
     font-size: 2.1rem;
+  }
+}
+.su-basefont-23{
+  font-size: 1.8rem;
+}
+@media (min-width: 768px){
+  .su-basefont-23{
+    font-size: 2.1rem;
+  }
+}
+@media (min-width: 1500px){
+  .su-basefont-23{
+    font-size: 2.3rem;
   }
 }
 .su-pointer-events-none{
@@ -4675,6 +4716,9 @@ Single image/video component
 .su-gap-3{
   gap: 0.3rem;
 }
+.su-gap-30{
+  gap: 3rem;
+}
 .su-gap-32{
   gap: 3.2rem;
 }
@@ -5399,6 +5443,9 @@ Single image/video component
 .su-leading-\[125\.28\%\]{
   line-height: 125.28%;
 }
+.su-leading-\[130\%\]{
+  line-height: 130%;
+}
 .su-leading-\[130\.245\%\]{
   line-height: 130.245%;
 }
@@ -5428,6 +5475,12 @@ Single image/video component
 }
 .su-leading-\[2\.25rem\]{
   line-height: 2.25rem;
+}
+.su-leading-\[2\.3rem\]{
+  line-height: 2.3rem;
+}
+.su-leading-\[2\.4rem\]{
+  line-height: 2.4rem;
 }
 .su-leading-\[2\.6rem\]{
   line-height: 2.6rem;
@@ -5655,34 +5708,6 @@ Single image/video component
 }
 .\[transform\:rotateY\(180deg\)_translate\(100\%\2c 0\)\]{
   transform: rotateY(180deg) translate(100%,0);
-}
-.su-reading-time-separator:empty{
-  display: none;
-}
-.su-reading-time-separator:not(:empty)::before {
-  content: "|";
-  margin-left: 0.1rem;
-  margin-right: 0.1rem;
-}
-.component-slider-controls{
-  margin-top: 3rem !important;
-}
-@media (min-width: 768px){
-  .component-slider-controls{
-    margin-left: 8.333% !important;
-    width: 83.333% !important;
-  }
-}
-@media (min-width: 992px){
-  .component-slider-controls{
-    margin-top: 3.6rem !important;
-  }
-}
-.su-video-trigger:is(:hover, :focus)
-  .su-play-button-icon-hero{
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .report-header {
   width: 100%;
@@ -9865,6 +9890,9 @@ button.swiper-pagination-bullet {
   .lg\:su-col-start-2{
     grid-column-start: 2;
   }
+  .lg\:su-col-start-3{
+    grid-column-start: 3;
+  }
   .lg\:su-col-start-4{
     grid-column-start: 4;
   }
@@ -10189,6 +10217,9 @@ button.swiper-pagination-bullet {
   .lg\:su-gap-48{
     gap: 4.8rem;
   }
+  .lg\:su-gap-61{
+    gap: 6.1rem;
+  }
   .lg\:su-gap-9{
     gap: 0.9rem;
   }
@@ -10392,6 +10423,9 @@ button.swiper-pagination-bullet {
   }
   .lg\:su-leading-\[2\.625rem\]{
     line-height: 2.625rem;
+  }
+  .lg\:su-leading-\[2\.7rem\]{
+    line-height: 2.7rem;
   }
   .lg\:su-leading-\[21\.6px\]{
     line-height: 21.6px;
@@ -10627,6 +10661,9 @@ button.swiper-pagination-bullet {
 .\[\&\>\*\:last-child\]\:after\:su-content-\[\'\201D\'\]>*:last-child::after{
   --tw-content: '”';
   content: var(--tw-content);
+}
+.\[\&\>\*\]\:su-inline-block>*{
+  display: inline-block;
 }
 .\[\&\>\*\]\:su-justify-center>*{
   justify-content: center;
