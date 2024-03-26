@@ -70,9 +70,11 @@ export default function NarrowHorizontalCard({
     >
       <div className="su-flex su-flex-col su-gap-12 su-col-start-1 su-col-span-full lg:su-col-span-6 lg:su-col-start-3">
         {displayConfiguration === "In the News" && storySource && (
-          <p className="su-text-16 lg:su-text-18 su-leading-[130%] su-font-semibold su-my-0">
-            {storySource}
-          </p>
+          <XssSafeContent
+            className="su-text-16 lg:su-text-18 su-leading-[130%] su-font-semibold su-my-0"
+            content={storySource}
+            elementType="p"
+          />
         )}
 
         {displayConfiguration === "Announcements" &&
@@ -95,7 +97,7 @@ export default function NarrowHorizontalCard({
             className="su-group hocus:su-text-digital-red hocus:su-underline su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
             href={liveUrl}
           >
-            {title}
+            <XssSafeContent content={title} elementType="span" />
             {isExternalLink === true && (
               <span className="su-translate-x-0 su-translate-y-0 su-transition group-hocus:su-translate-y-[-.1em] group-hocus:su-translate-x-[.1em] su-inline-block [&>*]:su-inline-block">
                 <ExternalArrow />
@@ -135,11 +137,13 @@ export default function NarrowHorizontalCard({
           </div>
         )}
 
-        {date && displayConfiguration !== "Leadership Messages" && (
-          <p className="su-text-black-70 dark:su-text-black-60 su-text-16 lg:su-text-18 su-leading-[130%] su-font-semibold su-my-0">
-            {formatNewsDate(date)}
-          </p>
-        )}
+        {date &&
+          displayConfiguration !== "Leadership Messages" &&
+          displayConfiguration !== "In the News" && (
+            <p className="su-text-black-70 dark:su-text-black-60 su-text-16 lg:su-text-18 su-leading-[130%] su-font-semibold su-my-0">
+              {formatNewsDate(date)}
+            </p>
+          )}
       </div>
     </article>
   );
