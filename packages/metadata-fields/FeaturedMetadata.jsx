@@ -270,9 +270,17 @@ export default function FeaturedMetadata({ data }) {
             Campus Unit
           </h3>
 
-          <div className="su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
-            {campus.asset_name}
-          </div>
+          {!campus.asset_url ? (
+            <div className="su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
+              {campus.asset_name}
+            </div>
+          ) : (
+            <a href={campus.asset_name}>
+              <div className="su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
+                {campus.asset_name}
+              </div>
+            </a>
+          )}
         </div>
       ) : (
         ""
