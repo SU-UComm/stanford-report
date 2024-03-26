@@ -27,7 +27,7 @@ export function LinkButton({
   // Additional className that will be added to the button, e.g., spacing
   className,
 }) {
-  // Check extenalUrl field to see if it is actually external
+  // Check externalUrl field to see if it is actually external
   // Do not add external arrow and rel attributes if link has news.stanford.edu
   const isRealExternalLink =
     !!externalUrl && !externalUrl?.includes("news.stanford.edu");

@@ -26,7 +26,7 @@ export default function CtaCard({
   isNewWindow,
 }) {
   const hasLink = !!internalUrl || !!externalUrl;
-  // Check extenalUrl field to see if it is actually external
+  // Check externalUrl field to see if it is actually external
   // Do not use external arrow and rel attributes if link has news.stanford.edu
   const isRealExternalLink =
     !!externalUrl && !externalUrl?.includes("news.stanford.edu");
@@ -34,7 +34,7 @@ export default function CtaCard({
   return (
     <article
       className={cnb(
-        "su-group su-relative su-w-full su-flex su-flex-col su-break-words su-bg-white su-rounded-[8px] su-rs-pt-5 su-rs-px-4 su-max-w-900 su-mx-auto su-transition-shadow su-border su-border-black-30/30 su-shadow",
+        "su-group su-relative su-w-full su-flex su-flex-col su-break-words su-rounded-[8px] su-rs-pt-5 su-rs-px-4 su-max-w-900 su-mx-auto su-transition-shadow su-border-2 su-border-black-30/30 dark:su-border-black su-shadow dark:su-shadow-black-90 su-bg-white dark:su-bg-black su-text-black dark:su-text-white",
         internalUrl || externalUrl
           ? "hover:su-shadow-md focus-within:su-shadow-md"
           : "",
@@ -42,6 +42,12 @@ export default function CtaCard({
       )}
     >
       {eyebrow && (
+        /**
+         * This is a SODA recommended pattern for accessibility.
+         * When there is an eyebrow, we aria-hidden it from screen readers,
+         * and then add the eyebrow text as a visually hidden span for screen readers inside the h2 heading below.
+         * This way we don't get an orphaned span that appears before the heading in the card.
+         */
         <span
           aria-hidden
           className="su-type-1 su-text-black-60 su-font-semibold su-rs-mb-1"
@@ -49,14 +55,14 @@ export default function CtaCard({
           {eyebrow}
         </span>
       )}
-      <h2 className="su-type-5 md:su-type-4 2xl:su-type-3 su-mb-0 su-font-sans su-text-black">
+      <h2 className="su-type-5 md:su-type-4 2xl:su-type-3 su-mb-0 su-font-sans su-text-black dark:su-text-white">
         {hasLink ? (
           // eslint-disable-next-line react/jsx-no-target-blank
           <a
             href={internalUrl || externalUrl}
             target={isNewWindow ? "_blank" : undefined}
             rel={isRealExternalLink ? "noopener nofollow" : undefined}
-            className="group-hocus-within:su-underline su-stretched-link su-text-black group-hocus-within:su-text-digital-red"
+            className="group-hocus-within:su-underline su-stretched-link su-text-black dark:su-text-white group-hocus-within:su-text-digital-red dark:group-hocus-within:su-text-digital-red-light"
           >
             {eyebrow && <span className="su-sr-only">{`${eyebrow}:`}</span>}
             {title}
@@ -72,7 +78,7 @@ export default function CtaCard({
         <div className="su-grow">
           <XssSafeContent
             data-test="cta-card-content"
-            className="su-text-black su-big-paragraph su-rs-mt-4 *:su-leading-snug *:last:su-mb-0"
+            className="su-text-black dark:su-text-white su-big-paragraph su-rs-mt-4 *:su-leading-snug *:last:su-mb-0"
             content={description}
           />
         </div>
@@ -81,7 +87,7 @@ export default function CtaCard({
         <div className="su-mt-auto">
           <div
             className={cnb(
-              "su-flex su-rs-mt-1 su-transition-transform su-items-center su-justify-center su-size-50 md:su-size-70 su-rounded-full su-bg-gradient-to-r su-from-digital-red-light su-to-cardinal-red-dark su-ml-auto",
+              "su-flex su-rs-mt-1 su-transition-transform su-items-center su-justify-center su-size-50 md:su-size-70 su-rounded-full su-bg-gradient-to-r su-from-digital-red-light su-to-cardinal-red-dark dark:su-from-olive dark:su-to-palo-verde su-ml-auto",
               isRealExternalLink
                 ? "group-hocus-within:su-translate-x-02em group-hocus-within:su--translate-y-02em"
                 : "group-hocus-within:su-translate-x-03em"
