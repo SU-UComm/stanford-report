@@ -1,6 +1,6 @@
 {
   "displayConfiguration": {
-    "searchQuery": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search&log=false&isTeaser=true&meta_taxonomyContentTypeId=28210&sort=date",
+    "searchQuery": "?collection=sug~sp-stanford-report-search&profile=default&log=false&isTeaser=true&meta_taxonomyContentTypeId=28210&sort=date",
     "displayStyle": "Announcements"
   }
 }
