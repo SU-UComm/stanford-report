@@ -27287,7 +27287,12 @@
 
   // packages/metadata-fields/BasicField.jsx
   var import_react135 = __toESM(require_react(), 1);
-  function BasicFields({ title, children: children2, alignment = "left" }) {
+  function BasicFields({
+    title,
+    children: children2,
+    alignment = "left",
+    contentCSS = ""
+  }) {
     const alignMap = /* @__PURE__ */ new Map();
     alignMap.set("left", "su-justify-left");
     alignMap.set("center", "su-justify-center");
@@ -27299,7 +27304,7 @@
         )}`
       },
       /* @__PURE__ */ import_react135.default.createElement("h3", { className: "su-text-23 su-font-bold su-leading-[27.6px] su-font-sans !su-m-0 md:su-leading-[27.7px] " }, title),
-      /* @__PURE__ */ import_react135.default.createElement("div", { className: "su-flex su-flex-col su-gap-6 su-text-21" }, children2)
+      /* @__PURE__ */ import_react135.default.createElement("div", { className: `su-flex su-flex-col su-gap-6 su-text-21 ${contentCSS}` }, children2)
     );
   }
 
@@ -27406,23 +27411,30 @@
         },
         item.asset_metadata_personEmail
       )))
-    ))) : "", campus && typeof campus.asset_assetid !== "undefined" ? /* @__PURE__ */ import_react136.default.createElement("div", { className: "su-border-t border-t-black-20" }, /* @__PURE__ */ import_react136.default.createElement(BasicFields, { title: "Campus unit" }, /* @__PURE__ */ import_react136.default.createElement(
+    ))) : "", campus && !["undefined", void 0, null, ""].includes(campus.asset_assetid) ? /* @__PURE__ */ import_react136.default.createElement("div", { className: "su-border-t border-t-black-20" }, /* @__PURE__ */ import_react136.default.createElement(BasicFields, { title: "Campus unit" }, /* @__PURE__ */ import_react136.default.createElement(
       "a",
       {
         href: campus.asset_url,
         className: "su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18 su-leading-[26.25px]"
       },
       campus.asset_name
-    ))) : "", related && related.length ? /* @__PURE__ */ import_react136.default.createElement("div", { className: "su-border-t border-t-black-20" }, /* @__PURE__ */ import_react136.default.createElement(BasicFields, { title: "Related topics" }, related.map(
-      (item) => item && /* @__PURE__ */ import_react136.default.createElement("div", { className: "", key: item.asset_assetid }, /* @__PURE__ */ import_react136.default.createElement(
-        "a",
-        {
-          href: item.asset_url,
-          className: "su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18 su-leading-[26.25px]"
-        },
-        item.asset_name
-      ))
-    ))) : "", /* @__PURE__ */ import_react136.default.createElement("div", { className: "su-border-t border-t-black-20" }, /* @__PURE__ */ import_react136.default.createElement(BasicFields, { title: "Share this story" }, /* @__PURE__ */ import_react136.default.createElement(
+    ))) : "", related && related.length ? /* @__PURE__ */ import_react136.default.createElement("div", { className: "su-border-t border-t-black-20" }, /* @__PURE__ */ import_react136.default.createElement(
+      BasicFields,
+      {
+        title: "Related topics",
+        contentCSS: "md:su-flex-row md:su-gap-27 md:su-flex-wrap"
+      },
+      related.map(
+        (item) => item && /* @__PURE__ */ import_react136.default.createElement("div", { className: "", key: item.asset_assetid }, /* @__PURE__ */ import_react136.default.createElement(
+          "a",
+          {
+            href: item.asset_url,
+            className: "su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18 su-leading-[26.25px]"
+          },
+          item.asset_name
+        ))
+      )
+    )) : "", /* @__PURE__ */ import_react136.default.createElement("div", { className: "su-border-t border-t-black-20" }, /* @__PURE__ */ import_react136.default.createElement(BasicFields, { title: "Share this story" }, /* @__PURE__ */ import_react136.default.createElement(
       "button",
       {
         onClick: copyLink,
@@ -27516,7 +27528,7 @@
       "hr",
       {
         "aria-hidden": "true",
-        className: "su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
+        className: "su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
       }
     ), /* @__PURE__ */ import_react138.default.createElement(
       "div",
@@ -27540,13 +27552,7 @@
         },
         meta.items.asset_name
       ))))
-    ), /* @__PURE__ */ import_react138.default.createElement(
-      "hr",
-      {
-        "aria-hidden": "true",
-        className: "su-hidden su-grow su-rotate-180 su-border-none su-w-70 su-w-auto su-h-2 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-block md:su-h-3"
-      }
-    )) : "", otherRows.length > 0 ? /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-flex su-w-full su-flex-col su-justify-center su-items-center su-mt-32 md:su-mt-61 md:su-flex-row md:su-gap-20 lg:su-gap-40" }, /* @__PURE__ */ import_react138.default.createElement(
+    ), /* @__PURE__ */ import_react138.default.createElement("hr", { className: "su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0" })) : "", otherRows.length > 0 ? /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-flex su-w-full su-flex-col su-justify-center su-items-center su-mt-32 md:su-mt-61 md:su-flex-row md:su-gap-20 lg:su-gap-40" }, /* @__PURE__ */ import_react138.default.createElement(
       "hr",
       {
         "aria-hidden": "true",
@@ -27589,7 +27595,7 @@
         "hr",
         {
           "aria-hidden": "true",
-          className: "su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
+          className: "su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
         }
       ) : "",
       /* @__PURE__ */ import_react138.default.createElement(
@@ -27629,14 +27635,14 @@
           )
         )) : ""
       ),
-      firstRow.length === 0 ? /* @__PURE__ */ import_react138.default.createElement("hr", { className: "su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0" }) : ""
+      firstRow.length === 0 ? /* @__PURE__ */ import_react138.default.createElement("hr", { className: "su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0" }) : ""
     ), firstRow.length > 0 ? /* @__PURE__ */ import_react138.default.createElement(
       "hr",
       {
         "aria-hidden": "true",
-        className: "su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
+        className: "su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
       }
-    ) : "", campus && ![null, void 0, "undefined", ""].includes(campus.asset_assetid) ? /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-text-center su-flex su-flex-col su-gap-20 md:su-gap-26" }, /* @__PURE__ */ import_react138.default.createElement("h3", { className: "su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans !su-m-0" }, "Campus Unit"), /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center" }, campus.asset_name)) : "", related && related.length ? /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-text-center su-mt-34 md:su-mt-58 lg:su-mt-61 su-flex su-flex-col su-gap-20 md:su-gap-26" }, /* @__PURE__ */ import_react138.default.createElement("h3", { className: "su-text-18 su-font-bold su-leading-[22.5px] su-font-sans !su-m-0" }, "Related topics"), /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center" }, related.map(
+    ) : "", campus && ![null, void 0, "undefined", ""].includes(campus.asset_assetid) ? /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-text-center su-flex su-flex-col su-gap-20 md:su-gap-26" }, /* @__PURE__ */ import_react138.default.createElement("h3", { className: "su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans !su-m-0" }, "Campus Unit"), !campus.asset_url ? /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center" }, campus.asset_name) : /* @__PURE__ */ import_react138.default.createElement("a", { href: campus.asset_name }, /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center" }, campus.asset_name))) : "", related && related.length ? /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-text-center su-mt-34 md:su-mt-58 lg:su-mt-61 su-flex su-flex-col su-gap-20 md:su-gap-26" }, /* @__PURE__ */ import_react138.default.createElement("h3", { className: "su-text-18 su-font-bold su-leading-[22.5px] su-font-sans !su-m-0" }, "Related topics"), /* @__PURE__ */ import_react138.default.createElement("div", { className: "su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center" }, related.map(
       (item) => item ? /* @__PURE__ */ import_react138.default.createElement("div", { key: item.asset_assetid }, /* @__PURE__ */ import_react138.default.createElement(
         "a",
         {
@@ -28841,37 +28847,71 @@
     hydrateComponent({ Component: FeatureStoryHero, componentName });
   })();
 
-  // components/fact-callout/Component.jsx
+  // components/events-section/Component.jsx
   var import_react159 = __toESM(require_react(), 1);
+  function EventsSection({
+    headingData,
+    displayConfiguration,
+    data: data2
+  }) {
+    const noOfCards = Number(displayConfiguration.numberOfEvents);
+    const cards = [];
+    data2.forEach((card) => {
+      cards.push(/* @__PURE__ */ import_react159.default.createElement(Card, { data: card, cardType: "horizontal" }));
+    });
+    return cards.length > 0 ? /* @__PURE__ */ import_react159.default.createElement(Container, { width: "large", "data-component": "events-section" }, /* @__PURE__ */ import_react159.default.createElement(
+      LinkedHeading,
+      {
+        title: headingData.title,
+        ctaText: headingData.ctaText,
+        ctaLink: headingData.ctaLink,
+        ctaNewWindow: headingData.ctaNewWindow
+      }
+    ), /* @__PURE__ */ import_react159.default.createElement(HorizontalCardGrid, { items: cards, maximumItems: noOfCards })) : "";
+  }
+
+  // components/events-section/client.jsx
+  (function() {
+    const componentName = "events-section";
+    const eventsSection = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!eventsSection)
+      return;
+    hydrateComponent({ Component: EventsSection, componentName });
+  })();
+
+  // components/fact-callout/Component.jsx
+  var import_react160 = __toESM(require_react(), 1);
   function FactCallout({ displayConfiguration }) {
     const { icon, factText, indicatorPosition, width: width2 } = displayConfiguration;
     const svgMap = /* @__PURE__ */ new Map();
     const indicatorMap = /* @__PURE__ */ new Map();
     svgMap.set("pie chart", {
-      light: /* @__PURE__ */ import_react159.default.createElement(PieChart, { variant: "light" }),
-      dark: /* @__PURE__ */ import_react159.default.createElement(PieChart, { variant: "dark" })
+      light: /* @__PURE__ */ import_react160.default.createElement(PieChart, { variant: "light" }),
+      dark: /* @__PURE__ */ import_react160.default.createElement(PieChart, { variant: "dark" })
     });
     svgMap.set("bar graph", {
-      light: /* @__PURE__ */ import_react159.default.createElement(BarGraph, { variant: "light" }),
-      dark: /* @__PURE__ */ import_react159.default.createElement(BarGraph, { variant: "dark" })
+      light: /* @__PURE__ */ import_react160.default.createElement(BarGraph, { variant: "light" }),
+      dark: /* @__PURE__ */ import_react160.default.createElement(BarGraph, { variant: "dark" })
     });
     indicatorMap.set("top", "fact-wrapper__decoration-top");
     indicatorMap.set("bottom", "fact-wrapper__decoration-bottom");
     const indicator = indicatorMap.get(indicatorPosition) ? indicatorMap.get(indicatorPosition) : "fact-wrapper__decoration-top";
-    return /* @__PURE__ */ import_react159.default.createElement("div", { className: `decoration-${indicatorPosition}` }, /* @__PURE__ */ import_react159.default.createElement(Container, { width: width2 }, /* @__PURE__ */ import_react159.default.createElement("section", { className: "fact-wrapper su-col-span-full su-w-full su-relative su-h-auto su-p-3 su-bg-gradient-light-red-h-reverse" }, /* @__PURE__ */ import_react159.default.createElement(
+    return /* @__PURE__ */ import_react160.default.createElement("div", { className: `decoration-${indicatorPosition}` }, /* @__PURE__ */ import_react160.default.createElement(Container, { width: width2 }, /* @__PURE__ */ import_react160.default.createElement("section", { className: "fact-wrapper su-col-span-full su-w-full su-relative su-h-auto su-p-3 su-bg-gradient-light-red-h-reverse" }, /* @__PURE__ */ import_react160.default.createElement(
       "div",
       {
         className: `${indicator} su-absolute su-left-1/2 su-right-1/2 su-flex su-items-center su-justify-start su-w-24 su-h-90`
       },
-      /* @__PURE__ */ import_react159.default.createElement("div", { className: "su-w-3 su-h-72 lg:su-h-60 su-bg-gradient-light-red-h-reverse" }),
-      /* @__PURE__ */ import_react159.default.createElement("div", { className: "su-size-24 su-rounded-full su-bg-gradient-light-red-h-reverse su-flex su-items-center su-justify-center" }, /* @__PURE__ */ import_react159.default.createElement("div", { className: "su-size-18 su-rounded-full su-bg-white dark:su-bg-black-true" }))
-    ), /* @__PURE__ */ import_react159.default.createElement(
+      /* @__PURE__ */ import_react160.default.createElement("div", { className: "su-w-3 su-h-72 lg:su-h-60 su-bg-gradient-light-red-h-reverse" }),
+      /* @__PURE__ */ import_react160.default.createElement("div", { className: "su-size-24 su-rounded-full su-bg-gradient-light-red-h-reverse su-flex su-items-center su-justify-center" }, /* @__PURE__ */ import_react160.default.createElement("div", { className: "su-size-18 su-rounded-full su-bg-white dark:su-bg-black-true" }))
+    ), /* @__PURE__ */ import_react160.default.createElement(
       "div",
       {
         className: `su-px-38 ${width2 === "Wide" ? "md:su-px-[12.1rem]" : ""} su-py-38 md:su-py-61 su-size-full su-bg-white dark:su-bg-black-true su-flex su-flex-col su-items-center su-justify-center su-gap-10 lg:su-flex-row lg:su-gap-38`
       },
-      svgMap.get(icon) && "light" in svgMap.get(icon) && "dark" in svgMap.get(icon) && /* @__PURE__ */ import_react159.default.createElement(import_react159.default.Fragment, null, /* @__PURE__ */ import_react159.default.createElement("span", { "data-test": "icon", className: "dark:su-hidden" }, svgMap.get(icon).light), /* @__PURE__ */ import_react159.default.createElement("span", { "data-test": "icon", className: "su-hidden dark:su-block" }, svgMap.get(icon).dark)),
-      /* @__PURE__ */ import_react159.default.createElement("p", { className: "su-font-serif su-m-0" }, factText)
+      svgMap.get(icon) && "light" in svgMap.get(icon) && "dark" in svgMap.get(icon) && /* @__PURE__ */ import_react160.default.createElement(import_react160.default.Fragment, null, /* @__PURE__ */ import_react160.default.createElement("span", { "data-test": "icon", className: "dark:su-hidden" }, svgMap.get(icon).light), /* @__PURE__ */ import_react160.default.createElement("span", { "data-test": "icon", className: "su-hidden dark:su-block" }, svgMap.get(icon).dark)),
+      /* @__PURE__ */ import_react160.default.createElement("p", { className: "su-font-serif su-m-0" }, factText)
     ))));
   }
 
@@ -28884,40 +28924,6 @@
     if (!target)
       return;
     hydrateComponent({ Component: FactCallout, componentName });
-  })();
-
-  // components/events-section/Component.jsx
-  var import_react160 = __toESM(require_react(), 1);
-  function EventsSection({
-    headingData,
-    displayConfiguration,
-    data: data2
-  }) {
-    const noOfCards = Number(displayConfiguration.numberOfEvents);
-    const cards = [];
-    data2.forEach((card) => {
-      cards.push(/* @__PURE__ */ import_react160.default.createElement(Card, { data: card, cardType: "horizontal" }));
-    });
-    return cards.length > 0 ? /* @__PURE__ */ import_react160.default.createElement(Container, { width: "large", "data-component": "events-section" }, /* @__PURE__ */ import_react160.default.createElement(
-      LinkedHeading,
-      {
-        title: headingData.title,
-        ctaText: headingData.ctaText,
-        ctaLink: headingData.ctaLink,
-        ctaNewWindow: headingData.ctaNewWindow
-      }
-    ), /* @__PURE__ */ import_react160.default.createElement(HorizontalCardGrid, { items: cards, maximumItems: noOfCards })) : "";
-  }
-
-  // components/events-section/client.jsx
-  (function() {
-    const componentName = "events-section";
-    const eventsSection = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!eventsSection)
-      return;
-    hydrateComponent({ Component: EventsSection, componentName });
   })();
 
   // components/content-carousel/Component.jsx
@@ -29233,11 +29239,130 @@
     hydrateComponent({ Component: Button, componentName });
   })();
 
-  // components/basic-hero/Component.jsx
+  // components/basic-story-hero/Component.jsx
   var import_react167 = __toESM(require_react(), 1);
+  function readingTime4(text2) {
+    if (!text2)
+      return 0;
+    const wpm = 225;
+    const words = text2.trim().split(/\s+/).length;
+    const time = Math.ceil(words / wpm);
+    return time;
+  }
+  function basicStoryHero(props) {
+    const { title, media, summary, pubDateFormatted, topic, mediaType } = props;
+    const [readingTimeValue, setReadingTime] = (0, import_react167.useState)(0);
+    (0, import_react167.useEffect)(() => {
+      const content = document.querySelector(".su-page-content");
+      if (content) {
+        setReadingTime(() => readingTime4(content.innerText));
+      }
+    });
+    return /* @__PURE__ */ import_react167.default.createElement(Container, { width: "wide" }, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-grid su-gap su-grid-cols-6 md:su-grid-cols-12" }, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-10 md:su-col-start-2" }, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-flex su-gap-y-8 su-gap-x-16 su-justify-between su-flex-wrap su-text-16 md:su-basefont-23" }, /* @__PURE__ */ import_react167.default.createElement("span", { className: "su-flex su-items-center su-justify-center" }, /* @__PURE__ */ import_react167.default.createElement("time", { className: "su-m-0 su-mr-4 su-font-semibold" }, pubDateFormatted), /* @__PURE__ */ import_react167.default.createElement("span", { className: "su-reading-time su-reading-time-separator" }), "|", " ", `${readingTimeValue} min read`), topic.asset_name && /* @__PURE__ */ import_react167.default.createElement(
+      "a",
+      {
+        href: topic.asset_url !== "" ? topic.asset_url : "#",
+        className: "su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline"
+      },
+      topic.asset_name
+    )), /* @__PURE__ */ import_react167.default.createElement("h1", { className: "su-font-bold su-rs-mt-4 su-font-serif su-mb-0 xl:su-text-[6.4rem]" }, title), /* @__PURE__ */ import_react167.default.createElement(
+      XssSafeContent_default,
+      {
+        className: [
+          "su-font-serif su-intro-text su-mb-0 su-rs-mt-2 su-text-21 su-leading-[27.35px] md:su-text-28 md:su-leading-[36.47px]",
+          ""
+        ].join(" "),
+        content: summary,
+        elementType: "p"
+      }
+    )), /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4" }, /* @__PURE__ */ import_react167.default.createElement(
+      "figure",
+      {
+        className: `basic-story__header-image su-col-span-full su-relative su-z-0 ${mediaType === "image" ? "dark:su-bg-black" : ""}`
+      },
+      /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-relative su-w-full" }, /* @__PURE__ */ import_react167.default.createElement(
+        Thumbnail,
+        {
+          url: media.featureImage.url,
+          alt: media.featureImage.alt,
+          video: media.featureVideo.id,
+          type: mediaType,
+          carousel: media.carousel
+        }
+      ), /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" })),
+      mediaType !== "carousel" && (media.caption || media.credit) && /* @__PURE__ */ import_react167.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, media.caption, " ", media.caption && media.credit && ` | `, media.credit)
+    ))));
+  }
+  function Thumbnail({ url, alt, video, type, carousel }) {
+    const [isModalOpen, setIsModalOpen] = (0, import_react167.useState)(false);
+    const slides = [];
+    const handleClick = () => {
+      setIsModalOpen(true);
+    };
+    const handleCloseModal = () => {
+      setIsModalOpen(false);
+    };
+    if (type === "image") {
+      return /* @__PURE__ */ import_react167.default.createElement(
+        "img",
+        {
+          src: "https://picsum.photos/350/200",
+          alt,
+          className: "su-relative su-w-full su-max-w-full"
+        }
+      );
+    }
+    if (type === "carousel") {
+      carousel.forEach((slide) => {
+        slides.push(
+          /* @__PURE__ */ import_react167.default.createElement(import_react167.default.Fragment, null, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-aspect-[3/2] su-relative su-bg-fog-light dark:su-bg-black" }, /* @__PURE__ */ import_react167.default.createElement(
+            "img",
+            {
+              src: slide.asset_url,
+              alt: slide.asset_attribute_alt,
+              className: "su-absolute su-top-0 su-left-0 su-w-full su-h-full su-object-scale-down su-object-center"
+            }
+          )), slide.asset_attribute_caption && /* @__PURE__ */ import_react167.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, slide.asset_attribute_caption))
+        );
+      });
+      return /* @__PURE__ */ import_react167.default.createElement(Carousel, { slides, variant: "basicstory" });
+    }
+    return /* @__PURE__ */ import_react167.default.createElement(import_react167.default.Fragment, null, /* @__PURE__ */ import_react167.default.createElement(
+      "button",
+      {
+        type: "button",
+        "aria-haspopup": "dialog",
+        className: "su-w-full su-aspect-[16/9] su-video-trigger",
+        onClick: handleClick
+      },
+      /* @__PURE__ */ import_react167.default.createElement(
+        "img",
+        {
+          src: url,
+          alt,
+          className: "su-w-full su-h-full su-absolute su-top-0 su-left-0 su-object-cover su-object-center"
+        }
+      ),
+      /* @__PURE__ */ import_react167.default.createElement("span", { className: "su-play-button-icon-hero su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px]" }, /* @__PURE__ */ import_react167.default.createElement(VideoPlay, null))
+    ), isModalOpen && /* @__PURE__ */ import_react167.default.createElement(ModalWrapper_default, { onClose: handleCloseModal }, /* @__PURE__ */ import_react167.default.createElement(EmbedVideo, { videoId: video })));
+  }
+
+  // components/basic-story-hero/client.jsx
+  (function() {
+    const componentName = "basic-story-hero";
+    const target = document.querySelector(
+      `[data-hydration-component="${componentName}"]`
+    );
+    if (!target)
+      return;
+    hydrateComponent({ Component: basicStoryHero, componentName });
+  })();
+
+  // components/basic-hero/Component.jsx
+  var import_react168 = __toESM(require_react(), 1);
   function BasicHero(props) {
     const { title, titleAlignment } = props;
-    return /* @__PURE__ */ import_react167.default.createElement(Container, null, /* @__PURE__ */ import_react167.default.createElement("div", { className: "su-flex su-justify-between su-flex-wrap su-rs-mt-6 su-rs-mb-5" }, /* @__PURE__ */ import_react167.default.createElement(
+    return /* @__PURE__ */ import_react168.default.createElement(Container, null, /* @__PURE__ */ import_react168.default.createElement("div", { className: "su-flex su-justify-between su-flex-wrap su-rs-mt-6 su-rs-mb-5" }, /* @__PURE__ */ import_react168.default.createElement(
       "h1",
       {
         className: cnb(
@@ -29258,125 +29383,6 @@
     if (!target)
       return;
     hydrateComponent({ Component: BasicHero, componentName });
-  })();
-
-  // components/basic-story-hero/Component.jsx
-  var import_react168 = __toESM(require_react(), 1);
-  function readingTime4(text2) {
-    if (!text2)
-      return 0;
-    const wpm = 225;
-    const words = text2.trim().split(/\s+/).length;
-    const time = Math.ceil(words / wpm);
-    return time;
-  }
-  function basicStoryHero(props) {
-    const { title, media, summary, pubDateFormatted, topic, mediaType } = props;
-    const [readingTimeValue, setReadingTime] = (0, import_react168.useState)(0);
-    (0, import_react168.useEffect)(() => {
-      const content = document.querySelector(".su-page-content");
-      if (content) {
-        setReadingTime(() => readingTime4(content.innerText));
-      }
-    });
-    return /* @__PURE__ */ import_react168.default.createElement(Container, { width: "wide" }, /* @__PURE__ */ import_react168.default.createElement("div", { className: "su-grid su-gap su-grid-cols-6 md:su-grid-cols-12" }, /* @__PURE__ */ import_react168.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-10 md:su-col-start-2" }, /* @__PURE__ */ import_react168.default.createElement("div", { className: "su-flex su-gap-y-8 su-gap-x-16 su-justify-between su-flex-wrap su-text-16 md:su-basefont-23" }, /* @__PURE__ */ import_react168.default.createElement("span", { className: "su-flex su-items-center su-justify-center" }, /* @__PURE__ */ import_react168.default.createElement("time", { className: "su-m-0 su-mr-4 su-font-semibold" }, pubDateFormatted), /* @__PURE__ */ import_react168.default.createElement("span", { className: "su-reading-time su-reading-time-separator" }), "|", " ", `${readingTimeValue} min read`), topic.asset_name && /* @__PURE__ */ import_react168.default.createElement(
-      "a",
-      {
-        href: topic.asset_url !== "" ? topic.asset_url : "#",
-        className: "su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline"
-      },
-      topic.asset_name
-    )), /* @__PURE__ */ import_react168.default.createElement("h1", { className: "su-font-bold su-rs-mt-4 su-font-serif su-mb-0 xl:su-text-[6.4rem]" }, title), /* @__PURE__ */ import_react168.default.createElement(
-      XssSafeContent_default,
-      {
-        className: [
-          "su-font-serif su-intro-text su-mb-0 su-rs-mt-2 su-text-21 su-leading-[27.35px] md:su-text-28 md:su-leading-[36.47px]",
-          ""
-        ].join(" "),
-        content: summary,
-        elementType: "p"
-      }
-    )), /* @__PURE__ */ import_react168.default.createElement("div", { className: "su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4" }, /* @__PURE__ */ import_react168.default.createElement(
-      "figure",
-      {
-        className: `basic-story__header-image su-col-span-full su-relative su-z-0 ${mediaType === "image" ? "dark:su-bg-black" : ""}`
-      },
-      /* @__PURE__ */ import_react168.default.createElement("div", { className: "su-relative su-w-full" }, /* @__PURE__ */ import_react168.default.createElement(
-        Thumbnail,
-        {
-          url: media.featureImage.url,
-          alt: media.featureImage.alt,
-          video: media.featureVideo.id,
-          type: mediaType,
-          carousel: media.carousel
-        }
-      ), /* @__PURE__ */ import_react168.default.createElement("div", { className: "su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" })),
-      mediaType !== "carousel" && (media.caption || media.credit) && /* @__PURE__ */ import_react168.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, media.caption, " ", media.caption && media.credit && ` | `, media.credit)
-    ))));
-  }
-  function Thumbnail({ url, alt, video, type, carousel }) {
-    const [isModalOpen, setIsModalOpen] = (0, import_react168.useState)(false);
-    const slides = [];
-    const handleClick = () => {
-      setIsModalOpen(true);
-    };
-    const handleCloseModal = () => {
-      setIsModalOpen(false);
-    };
-    if (type === "image") {
-      return /* @__PURE__ */ import_react168.default.createElement(
-        "img",
-        {
-          src: "https://picsum.photos/350/200",
-          alt,
-          className: "su-relative su-w-full su-max-w-full"
-        }
-      );
-    }
-    if (type === "carousel") {
-      carousel.forEach((slide) => {
-        slides.push(
-          /* @__PURE__ */ import_react168.default.createElement(import_react168.default.Fragment, null, /* @__PURE__ */ import_react168.default.createElement("div", { className: "su-aspect-[3/2] su-relative su-bg-fog-light dark:su-bg-black" }, /* @__PURE__ */ import_react168.default.createElement(
-            "img",
-            {
-              src: slide.asset_url,
-              alt: slide.asset_attribute_alt,
-              className: "su-absolute su-top-0 su-left-0 su-w-full su-h-full su-object-scale-down su-object-center"
-            }
-          )), slide.asset_attribute_caption && /* @__PURE__ */ import_react168.default.createElement("figcaption", { className: "su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white" }, slide.asset_attribute_caption))
-        );
-      });
-      return /* @__PURE__ */ import_react168.default.createElement(Carousel, { slides, variant: "basicstory" });
-    }
-    return /* @__PURE__ */ import_react168.default.createElement(import_react168.default.Fragment, null, /* @__PURE__ */ import_react168.default.createElement(
-      "button",
-      {
-        type: "button",
-        "aria-haspopup": "dialog",
-        className: "su-w-full su-aspect-[16/9] su-video-trigger",
-        onClick: handleClick
-      },
-      /* @__PURE__ */ import_react168.default.createElement(
-        "img",
-        {
-          src: url,
-          alt,
-          className: "su-w-full su-h-full su-absolute su-top-0 su-left-0 su-object-cover su-object-center"
-        }
-      ),
-      /* @__PURE__ */ import_react168.default.createElement("span", { className: "su-play-button-icon-hero su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px]" }, /* @__PURE__ */ import_react168.default.createElement(VideoPlay, null))
-    ), isModalOpen && /* @__PURE__ */ import_react168.default.createElement(ModalWrapper_default, { onClose: handleCloseModal }, /* @__PURE__ */ import_react168.default.createElement(EmbedVideo, { videoId: video })));
-  }
-
-  // components/basic-story-hero/client.jsx
-  (function() {
-    const componentName = "basic-story-hero";
-    const target = document.querySelector(
-      `[data-hydration-component="${componentName}"]`
-    );
-    if (!target)
-      return;
-    hydrateComponent({ Component: basicStoryHero, componentName });
   })();
 
   // components/acknowledgement/Component.jsx
