@@ -1858,6 +1858,10 @@ h6{
   bottom: 2.7rem;
 }
 
+.su-bottom-38{
+  bottom: 3.8rem;
+}
+
 .su-bottom-4{
   bottom: 0.4rem;
 }
@@ -1892,6 +1896,10 @@ h6{
 
 .su-left-3{
   left: 0.3rem;
+}
+
+.su-left-38{
+  left: 3.8rem;
 }
 
 .su-left-8{
@@ -2148,6 +2156,11 @@ h6{
   margin-right: 0;
 }
 
+.su-mx-50{
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
 .su-mx-\[-20px\]{
   margin-left: -20px;
   margin-right: -20px;
@@ -2331,6 +2344,10 @@ h6{
   margin-left: 0.4rem;
 }
 
+.su-ml-8{
+  margin-left: 0.8rem;
+}
+
 .su-ml-\[-\.5rem\]{
   margin-left: -.5rem;
 }
@@ -2447,6 +2464,10 @@ h6{
   margin-top: 3.4rem;
 }
 
+.su-mt-36{
+  margin-top: 3.6rem;
+}
+
 .su-mt-38{
   margin-top: 3.8rem;
 }
@@ -2555,9 +2576,19 @@ h6{
   aspect-ratio: 3/2;
 }
 
+.su-size-100{
+  width: 10rem;
+  height: 10rem;
+}
+
 .su-size-13{
   width: 1.3rem;
   height: 1.3rem;
+}
+
+.su-size-14{
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 .su-size-150{
@@ -3306,6 +3337,18 @@ h6{
   gap: 2rem;
 }
 
+.su-gap-22{
+  gap: 2.2rem;
+}
+
+.su-gap-25{
+  gap: 2.5rem;
+}
+
+.su-gap-26{
+  gap: 2.6rem;
+}
+
 .su-gap-27{
   gap: 2.7rem;
 }
@@ -3332,6 +3375,10 @@ h6{
 
 .su-gap-38{
   gap: 3.8rem;
+}
+
+.su-gap-40{
+  gap: 4rem;
 }
 
 .su-gap-42{
@@ -3438,6 +3485,11 @@ h6{
        column-gap: 3.1em;
 }
 
+.su-gap-x-40{
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+}
+
 .su-gap-x-\[0\.691rem\]{
   -moz-column-gap: 0.691rem;
        column-gap: 0.691rem;
@@ -3451,12 +3503,20 @@ h6{
   row-gap: 1.1rem;
 }
 
+.su-gap-y-12{
+  row-gap: 1.2rem;
+}
+
 .su-gap-y-45{
   row-gap: 4.5rem;
 }
 
 .su-gap-y-6{
   row-gap: 0.6rem;
+}
+
+.su-gap-y-70{
+  row-gap: 7rem;
 }
 
 .su-gap-y-8{
@@ -3618,6 +3678,10 @@ h6{
 .su-border-b-black-70{
   --tw-border-opacity: 1;
   border-bottom-color: rgb(109 108 105 / var(--tw-border-opacity));
+}
+
+.su-border-b-transparent{
+  border-bottom-color: transparent;
 }
 
 .su-border-r-black-30{
@@ -3829,6 +3893,10 @@ h6{
   padding: 0.3rem;
 }
 
+.su-p-36{
+  padding: 3.6rem;
+}
+
 .su-p-38{
   padding: 3.8rem;
 }
@@ -3893,6 +3961,11 @@ h6{
 .su-px-50{
   padding-left: 5rem;
   padding-right: 5rem;
+}
+
+.su-px-65{
+  padding-left: 6.5rem;
+  padding-right: 6.5rem;
 }
 
 .su-py-0{
@@ -4188,6 +4261,10 @@ h6{
 
 .su-pt-38{
   padding-top: 3.8rem;
+}
+
+.su-pt-45{
+  padding-top: 4.5rem;
 }
 
 .su-pt-49{
