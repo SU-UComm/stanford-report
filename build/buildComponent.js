@@ -14,18 +14,19 @@ export async function buildComponent(componentPath, minify) {
 
   // Check that we have at least one client entry point
   if (clientEntryPoints.length > 0) {
-    console.log(`⚡️⚡️ building client side bundle`);
+    // console.log(`⚡️⚡️ building client side bundle`);
     // Build our client bundle
     await esbuild.build(
       esbuildClientOptions(componentPath, clientEntryPoints, minify)
     );
   }
 
-  console.log(`⚡️⚡️ building tailwind css bundle`);
+  // console.log(`⚡️⚡️ building tailwind css bundle`);
   // Build the tailwind bundle for the component
-  await buildCSS(tailwindEntryPoints, clientEntryPoints, componentPath);
+  // disabled, as the global bundler takes care of this
+  // await buildCSS(tailwindEntryPoints, clientEntryPoints, componentPath);
 
-  console.log(`⚡️⚡️ building server bundle`);
+  // console.log(`⚡️⚡️ building server bundle`);
   // Build our server bundle (we must always have a server entry point)
   await esbuild.build(
     esbuildServerOptions(componentPath, serverEntryPoints, minify)

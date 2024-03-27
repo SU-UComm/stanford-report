@@ -42,7 +42,7 @@ const { watch, minify } = args.parse(process.argv);
     const componentFolder = componentPath.split("/").at(-1);
 
     // Log that we are building
-    console.log(`Building for ${componentFolder}: \n`);
+    // console.log(`Building for ${componentFolder}: \n`);
 
     // Define an array of our components promises
     const componentBuildPromises = [];
@@ -67,37 +67,37 @@ const { watch, minify } = args.parse(process.argv);
 
     // Wait for all the promises to resolve before we log that the component has finished building
     Promise.all(componentBuildPromises).then(() => {
-      console.log(`Build for ${componentFolder} complete \n`);
+      // console.log(`Build for ${componentFolder} complete \n`);
     });
   }
 
   // When all promises have resolved then log that we have succeeded with the build
   Promise.all(allBuildPromises).then(async () => {
-    await jsBundler();
-    await cssGenerator();
+    // await jsBundler();
+    // await cssGenerator();
 
-    const components = globSync(path.join(".", "components", "*/"));
-    for (let i = 0; i < components.length; i++) {
-      // Get the current component path
-      const distPath = `${components[i]}/dist/`;
+    // const components = globSync(path.join(".", "components", "*/"));
+    // for (let i = 0; i < components.length; i++) {
+    //   // Get the current component path
+    //   const distPath = `${components[i]}/dist/`;
 
-      const pathExists = fs.existsSync(distPath);
+    //   const pathExists = fs.existsSync(distPath);
 
-      if (!pathExists) {
-        // console.log(`Destination directory does not exist for ${components[i]}`);
-      } else {
-        fs.copyFile(globalOutputCss, `${distPath}global.css`, (err) => {
-          if (err) {
-            console.log(`Operation Failed for for ${components[i]}:  ${err}`);
-          }
-        });
-        fs.copyFile(globalOutputJs, `${distPath}global.js`, (err) => {
-          if (err) {
-            console.log(`Operation Failed for for ${components[i]}:  ${err}`);
-          }
-        });
-      }
-    }
+    //   if (!pathExists) {
+    //     // console.log(`Destination directory does not exist for ${components[i]}`);
+    //   } else {
+    //     fs.copyFile(globalOutputCss, `${distPath}global.css`, (err) => {
+    //       if (err) {
+    //         console.log(`Operation Failed for for ${components[i]}:  ${err}`);
+    //       }
+    //     });
+    //     fs.copyFile(globalOutputJs, `${distPath}global.js`, (err) => {
+    //       if (err) {
+    //         console.log(`Operation Failed for for ${components[i]}:  ${err}`);
+    //       }
+    //     });
+    //   }
+    // }
 
     console.log("✅ build has completed successfully");
   });

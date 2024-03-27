@@ -28,7 +28,7 @@ export async function jsBundler() {
       entryPoints: [globalInputJs],
       bundle: true,
       outfile: globalOutputJs,
-      minify: false,
+      minify: true,
       treeShaking: false,
       sourcemap: "external",
       format: "iife",
@@ -41,11 +41,8 @@ export async function jsBundler() {
         }),
       ],
     });
-
-    // Log success message
-    console.log(`Bundled successfully.`);
   } catch (error) {
     // Log any errors
-    console.error("Build failed:", error);
+    console.error("Bundle failed: ", error);
   }
 }

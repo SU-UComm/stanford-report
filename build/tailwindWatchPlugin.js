@@ -9,7 +9,8 @@ export const tailwindWatchPlugin = (
   name: "build-tailwind",
   setup(build) {
     build.onStart(() => {
-      buildCSS(tailwindEntryPoints, entryPoints, componentPath);
+      // buildCSS(tailwindEntryPoints, entryPoints, componentPath);
+      // console.log("rebuild global");
     });
   },
 });
