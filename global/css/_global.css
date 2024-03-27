@@ -676,6 +676,14 @@ audio::-webkit-media-controls-panel {
   @apply su-mx-20 md:su-mx-50 lg:su-mx-0 md:su-px-[7.65%] lg:su-px-0 lg:su-ml-auto lg:su-w-1/4 lg:su-mr-[8.33%] su-w-full lg:su-max-w-[29.8rem] su-mt-38 md:su-mt-110 lg:su-mt-0;
 }
 
+.su-page-has-sidebar .su-page-sidebar [data-component] + [data-component] {
+  @apply su-rs-mt-4;
+}
+
+.su-page-has-sidebar .su-page-sidebar [data-component="link-list"] {
+  @apply lg:su-mt-[60rem] !important;
+}
+
 .su-page-story-featured .su-upper-content,
 .su-page-story-featured [data-component="feature-story-hero"] {
   @apply su-mt-0 !important;
@@ -867,6 +875,7 @@ WYSIWYG formatting styles
 */
 /* Use decanter styles for WYSIWYG elements */
 .su-wysiwyg-content,
+.su-page-content > span,
 .container > span,
 .su-page-content > *:not([data-component], .container, .site-search) {
   @apply su-wysiwyg;
@@ -885,6 +894,10 @@ WYSIWYG formatting styles
 .container > span ul ol,
 .container > span ol ol,
 .container > span ol ul,
+.su-page-content > span ul ul,
+.su-page-content > span ul ol,
+.su-page-content > span ol ol,
+.su-page-content > span ol ul,
 .su-page-content > *:not([data-component], .container, .site-search) ul ul,
 .su-page-content > *:not([data-component], .container, .site-search) ul ol,
 .su-page-content > *:not([data-component], .container, .site-search) ol ol,
@@ -904,6 +917,7 @@ WYSIWYG formatting styles
 /* Set HR margins to match paragraphs etc */
 .su-wysiwyg-content hr,
 .container > span hr,
+.su-page-content > span hr,
 .su-page-content > *:not([data-component], .container) hr {
   margin-bottom: 1.6em;
 }
@@ -911,6 +925,7 @@ WYSIWYG formatting styles
 /* Custom styles for the disc */
 .su-wysiwyg-content ul,
 .container > span ul,
+.su-page-content > span ul,
 .su-page-content > div:not([data-component]) ul,
 .su-page-content > ul {
   @apply su-list-none su-pl-0;
@@ -918,6 +933,7 @@ WYSIWYG formatting styles
 
 .su-wysiwyg-content ol,
 .container > span ol,
+.su-page-content > span ol,
 .su-page-content > div:not([data-component], .site-search) ol,
 .su-page-content > ol {
   @apply su-relative su-pl-30;
@@ -925,6 +941,7 @@ WYSIWYG formatting styles
 
 .su-wysiwyg-content ul > li,
 .container > span ul > li,
+.su-page-content > span ul > li,
 .su-page-content > div:not([data-component], .site-search) ul > li,
 .su-page-content > ul > li {
   @apply su-relative su-pl-30 before:su-absolute before:su-top-[.6em] before:su-size-[0.45rem] before:su-left-12 before:su-rounded-full;
@@ -932,6 +949,7 @@ WYSIWYG formatting styles
 
 .su-wysiwyg-content ul > li::before,
 .container > span ul > li::before,
+.su-page-content > span ul > li:before,
 .su-page-content > div:not([data-component], .site-search) ul > li::before,
 .su-page-content > ul > li::before {
   background-color: currentColor;
@@ -939,6 +957,8 @@ WYSIWYG formatting styles
 
 .container > span .bold,
 .container > span strong,
+.su-page-content > span .bold,
+.su-page-content > span strong,
 .su-wysiwyg-content .bold,
 .su-wysiwyg-content strong,
 .su-page-content > div:not([data-component]) .bold,
@@ -947,16 +967,16 @@ WYSIWYG formatting styles
 }
 
 .container > span > *:last-child,
-.container > span > *:last-child,
+.su-page-content > span > *:last-child,
 .su-wysiwyg-content > *:last-child,
-.su-wysiwyg-content > *:last-child,
-.su-page-content > div:not([data-component], .container) > *:last-child,
 .su-page-content > div:not([data-component], .container) > *:last-child {
   @apply su-mb-0;
 }
 
 .container > span .italics,
 .container > span em,
+.su-page-content > span .italics,
+.su-page-content > span em,
 .su-wysiwyg-content .italics,
 .su-wysiwyg-content em,
 .su-page-content > div:not([data-component]) .italics,
@@ -966,6 +986,8 @@ WYSIWYG formatting styles
 
 .container > span .underline,
 .container > span u,
+.su-page-content > span .underline,
+.su-page-content > span u,
 .su-wysiwyg-content .underline,
 .su-wysiwyg-content u,
 .su-page-content > div:not([data-component]) .underline,
@@ -974,24 +996,28 @@ WYSIWYG formatting styles
 }
 
 .container > span .justify,
+.su-page-content > span .justify,
 .su-wysiwyg-content .justify,
 .su-page-content > div:not([data-component]) .justify {
   @apply su-text-justify;
 }
 
 .container > span .left,
+.su-page-content > span .left,
 .su-wysiwyg-content .left,
 .su-page-content > div:not([data-component]) .left {
   @apply su-text-left;
 }
 
 .container > span .right,
+.su-page-content > span .right,
 .su-wysiwyg-content .right,
 .su-page-content > div:not([data-component]) .right {
   @apply su-text-right;
 }
 
 .container > span .center,
+.su-page-content > span .center,
 .su-wysiwyg-content .center,
 .su-page-content > div:not([data-component]) .center {
   @apply su-text-center;
