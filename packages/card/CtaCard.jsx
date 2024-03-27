@@ -97,14 +97,14 @@ export default function CtaCard({
               <ExternalArrowUnstyled
                 title="link is external"
                 strokeWidth={3}
-                className="su-inline-block su-w-20 md:su-w-30 su-text-white *:su-stroke-3"
+                className="su-inline-block su-w-20 md:su-w-30 su-text-white dark:su-text-black-true *:su-stroke-3"
               />
             ) : (
               <ChevronRight
                 aria-hidden
                 width={undefined}
                 height={undefined}
-                className="su-fill-transparent su-stroke-current su-inline-block su-w-22 md:su-w-36 su-text-white *:su-stroke-3"
+                className="su-fill-transparent su-stroke-current su-inline-block su-w-22 md:su-w-36 su-text-white dark:su-text-black-true *:su-stroke-3"
               />
             )}
           </div>
