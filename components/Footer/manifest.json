@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "footer-component",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "namespace": "stanford-components",
   "description": "Stanford university Footer component.",
   "displayName": "Footer",
