@@ -233,7 +233,7 @@ export default function BasicMetadata({ data }) {
             onClick={copyLink}
             data-role="copy-link"
             type="button"
-            className="su-text-digital-blue su-text-21 su-font-semibold su-mr-auto su-leading-[26.25px]"
+            className="su-text-digital-blue dark:su-text-digital-blue-vivid su-text-21 su-font-semibold su-mr-auto su-leading-[125%]"
           >
             {copyLinkTitle}
 
