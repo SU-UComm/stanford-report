@@ -1,18 +1,13 @@
-import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
+import hydrateComponent from "../../packages/utils/hydrate-component";
 import Component from "./Component";
 
-(function () {
-  const componentName = "subtopic-subnav-component";
+(async function () {
+  const target = "subtopic-subnav-component";
   const element = document.querySelector(
-    `[data-hydration-component="${componentName}"]`
+    `[data-hydration-component="${target}"]`
   );
   if (!element) return;
 
-  // Get our current props
-  // const props = JSON.parse(element.getAttribute("data-hydration-props"));
-
-  // const root = createRoot(target);
-  // root.render(<Component data={props} />);
   // Hydrate the component
-  hydrateComponent({ Component, componentName });
+  hydrateComponent({ Component, componentName: target });
 })();
