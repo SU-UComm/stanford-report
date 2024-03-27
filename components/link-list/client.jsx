@@ -9,18 +9,18 @@ import Component from "./Component";
 //   storyLayout: "Basic",
 // };
 
-window.pageController = {
-  id: 129627,
-  title: "IA Basic Story Test",
-  isStory: true,
-  mainTopic: "",
-  storyLayout: "Basic",
-  search: {
-    endpoint: "https://dxp-us-search.funnelback.squiz.cloud/s/search.html",
-    collection: "sug~sp-stanford-report-search",
-    profile: "stanford-report-push-search",
-  },
-};
+// window.pageController = {
+//   id: 129627,
+//   title: "IA Basic Story Test",
+//   isStory: true,
+//   mainTopic: "",
+//   storyLayout: "Basic",
+//   search: {
+//     endpoint: "https://dxp-us-search.funnelback.squiz.cloud/s/search.html",
+//     collection: "sug~sp-stanford-report-search",
+//     profile: "stanford-report-push-search",
+//   },
+// };
 
 (function () {
   const linkListWrapper = document.querySelector(
