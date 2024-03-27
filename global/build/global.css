@@ -2245,6 +2245,11 @@ h6{
   margin-right: 0;
 }
 
+.su-mx-50{
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
 .su-mx-\[-20px\]{
   margin-left: -20px;
   margin-right: -20px;
@@ -4003,6 +4008,10 @@ h6{
   padding: 0.3rem;
 }
 
+.su-p-36{
+  padding: 3.6rem;
+}
+
 .su-p-38{
   padding: 3.8rem;
 }
@@ -4067,6 +4076,11 @@ h6{
 .su-px-50{
   padding-left: 5rem;
   padding-right: 5rem;
+}
+
+.su-px-65{
+  padding-left: 6.5rem;
+  padding-right: 6.5rem;
 }
 
 .su-py-0{
