@@ -23,8 +23,8 @@ module.exports = {
         sm: "0 1px 2px var(--tw-shadow-color)",
         DEFAULT: "0 2px 4px var(--tw-shadow-color)",
         lg: "0 8px 16px var(--tw-shadow-color)",
-        heading:
-          "1px 0px 100px var(--tw-shadow-color), 0px 1px 1px var(--tw-shadow-color), 2px 1px 1px var(--tw-shadow-color), 1px 2px 1px var(--tw-shadow-color), 3px 2px 10px var(--tw-shadow-color),-1px 0px 10px var(--tw-shadow-color), 0px -1px 5px var(--tw-shadow-color), -3px -1px 5px var(--tw-shadow-color), -1px -2px 5px var(--tw-shadow-color), -3px -2px 5px var(--tw-shadow-color)",
+        title:
+          "0px 0px 30px var(--tw-shadow-color), 0px 0px 30px var(--tw-shadow-color)",
       },
     },
   },

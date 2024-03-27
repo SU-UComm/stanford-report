@@ -47,7 +47,7 @@ export default function HorizontalHero({ data }) {
               <h1
                 className={[
                   titleSize,
-                  "su-text-shadow-heading su-shadow-white dark:su-shadow-black-true selection:su-relative md:su-max-h-[6em] su-z-10 su-text-right su-ml-auto su-mt-0 su-break-words su-font-bold font-serif-4 su-col-span-5 md:su-col-span-8 lg:su-col-span-7 su-col-start-2 md:su-col-start-5 lg:su-col-start-4",
+                  "su-text-shadow-title su-shadow-white dark:su-shadow-black-true selection:su-relative md:su-max-h-[6em] su-z-10 su-text-right su-ml-auto su-mt-0 su-break-words su-font-bold font-serif-4 su-col-span-5 md:su-col-span-8 lg:su-col-span-7 su-col-start-2 md:su-col-start-5 lg:su-col-start-4",
                   titleWordsCount > 7 ? "su-mb-[-1.75em]" : "su-mb-[-.5em]",
                 ].join(" ")}
               >
@@ -82,6 +82,7 @@ export default function HorizontalHero({ data }) {
                     alt={media.featureImage.alt}
                     className="su-relative su-w-full su-max-w-none"
                   />
+                  <div className="su-bg-gradient-to-b su-from-white su-via-[rgb(255_255_255/.5)_8%] dark:su-from-black-true dark:su-via-[rgb(0_0_0/.5)_8%] su-to-50% su-opacity-75 su-absolute su-w-full su-h-full su-bottom-0 su-left-0" />
                 </div>
                 {(media.caption || media.credit) && (
                   <div className="su-rs-pb-9 su-relative">
