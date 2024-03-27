@@ -62,7 +62,7 @@ export default function SubtopicSubnav({
   children = null,
   isTopLevel = null,
 }) {
-  const [topics, setTopics] = useState(null);
+  const [topics, setTopics] = useState(children);
   const [isClient, setClient] = useState(false);
   useEffect(() => {
     setClient(true);
