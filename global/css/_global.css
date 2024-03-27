@@ -677,7 +677,7 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-page-has-sidebar .su-page-sidebar [data-component] + [data-component] {
-  @apply su-rs-mt-4;
+  @apply su-rs-mt-5;
 }
 
 .su-page-has-sidebar .su-page-sidebar [data-component="link-list"] {
