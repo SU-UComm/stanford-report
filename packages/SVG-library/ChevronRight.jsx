@@ -5,7 +5,7 @@ import React from "react";
  *
  * @return {JSX.Element}
  */
-export default function ChevronRight() {
+export default function ChevronRight(props) {
   return (
     <svg
       className="su-fill-transparent su-stroke-current"
@@ -15,6 +15,7 @@ export default function ChevronRight() {
       height="19"
       viewBox="0 0 18 19"
       fill="none"
+      {...props}
     >
       <path
         d="M6.75 4.25L12 9.5L6.75 14.75"
