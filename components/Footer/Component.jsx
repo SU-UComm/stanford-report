@@ -32,9 +32,10 @@ export default function Footer({ site, navigation }) {
 
   return (
     <footer className="su-shadow-[0px_-3px_6px_0px_rgba(0,0,0,0.1)] su-pt-70 lg:su-pt-[17.5rem]">
-      {isClient && (
+      {isClient && audience && (
         <TopBar audience={audience} site={site} navigation={navigation} />
       )}
+
       <BottomBar site={site} navigation={navigation} />
     </footer>
   );
