@@ -1,10 +1,10 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "footer-component",
-  "version": "0.0.24",
+  "name": "templating-component",
+  "version": "0.0.1",
   "namespace": "stanford-components",
-  "description": "Stanford university Footer component.",
-  "displayName": "Footer",
+  "description": "Test templating component",
+  "displayName": "Templating",
   "mainFunction": "main",
   "environment": [
     {
@@ -21,10 +21,10 @@
     }
   ],
   "icon": {
-    "id": "foundation",
+    "id": "explore",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "orange"
     }
   },
   "functions": [
@@ -56,7 +56,7 @@
             "location": "footer",
             "file": {
               "type": "js",
-              "filepath": "client.js"
+              "filepath": "global.js"
             }
           }
         ]

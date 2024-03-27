@@ -20,6 +20,14 @@ export default function Footer({ site, navigation }) {
     if (audienceCookie) {
       setAudience(audienceCookie);
     }
+    document.addEventListener(
+      "personaChange",
+      () => {
+        // set audience state
+        setAudience(getCookie("preferences_personalisation"));
+      },
+      false
+    );
   }, []);
 
   return (
