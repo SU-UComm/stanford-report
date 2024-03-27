@@ -188,6 +188,18 @@
   color: #fff;
 }
 
+.su-dark .report-header__pref-toggle:hover svg {
+  color: #000000;
+}
+
+.su-dark .report-header__pref-toggle[aria-pressed="true"] svg {
+  fill: transparent;
+}
+
+.su-dark .report-header__pref-toggle[aria-pressed="true"] .icon-detail svg {
+  fill: #000000;
+}
+
 .report-header__pref-toggle[aria-pressed="true"]:hover svg,
 .report-header__pref-toggle[aria-pressed="true"] svg {
   /* @apply su-stroke-digital-red; */
