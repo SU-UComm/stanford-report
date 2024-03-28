@@ -1,6 +1,3 @@
-@tailwind components;
-@tailwind utilities;
-
 .decoration-top {
   @apply su-pt-90;
 }

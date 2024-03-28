@@ -1,6 +1,3 @@
-@tailwind components;
-@tailwind utilities;
-
 .pre-footer-links-wrapper {
   align-items: flex-start;
   justify-content: space-between;

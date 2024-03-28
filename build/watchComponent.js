@@ -57,15 +57,15 @@ export async function watchComponent(componentPath) {
     promises.push(serverCtx.watch());
   }
 
-  console.log(
-    `watching for changes to ${listFormatter.format(tailwindEntryPoints)}`
-  );
-  console.log(
-    `watching for changes to ${listFormatter.format(serverEntryPoints)}`
-  );
-  console.log(
-    `watching for changes to ${listFormatter.format(tailwindEntryPoints)}`
-  );
+  // console.log(
+  //   `watching for changes to ${listFormatter.format(tailwindEntryPoints)}`
+  // );
+  // console.log(
+  //   `watching for changes to ${listFormatter.format(serverEntryPoints)}`
+  // );
+  // console.log(
+  //   `watching for changes to ${listFormatter.format(tailwindEntryPoints)}`
+  // );
 
   return Promise.all(promises);
 }

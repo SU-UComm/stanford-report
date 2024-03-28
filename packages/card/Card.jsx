@@ -6,6 +6,7 @@ import HorizontalCard from "./HorizontalCard";
 import TeaserCard from "./TeaserCard";
 import MediaCard from "./MediaCard";
 import AvatarCard from "./AvatarCard";
+import NarrowHorizontalCard from "./NarrowHorizontalCard";
 
 /**
  * This component orchestrates the type of card
@@ -50,6 +51,8 @@ export default function Card({
       return <PullQuoteCard data={data} />;
     case "media":
       return <MediaCard data={data} />;
+    case "narrowhorizontal":
+      return <NarrowHorizontalCard data={data} />;
     default:
       return (
         <VerticalCard
