@@ -6,14 +6,18 @@ const topicFormatter = async (topics) => {
   if (!topics || topics.length === 0) {
     return null;
   }
-  const formatted = topics.map(
+  const formatted = topics.filter(
     ({
       taxonomyFeaturedUnitText = null,
       taxonomyFeaturedUnitLandingPageUrl = null,
-    }) => ({
-      asset_name: taxonomyFeaturedUnitText,
-      asset_url: taxonomyFeaturedUnitLandingPageUrl,
-    })
+    }) => {
+      return taxonomyFeaturedUnitText && taxonomyFeaturedUnitLandingPageUrl
+        ? {
+            asset_name: taxonomyFeaturedUnitText,
+            asset_url: taxonomyFeaturedUnitLandingPageUrl,
+          }
+        : null;
+    }
   );
 
   return formatted;
