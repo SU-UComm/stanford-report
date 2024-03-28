@@ -72,7 +72,7 @@ export default function MediaCard({
                 href={liveUrl}
                 className="su-text-black su-transition dark:su-text-white hocus:su-text-digital-red dark:hocus:su-text-dark-mode-red"
               >
-                {title}
+                <XssSafeContent content={title} elementType="span" />
                 <span className="su-inline-block *:su-inline-block *:su-w-42 *:su-h-42 su-ml-[-42px] su-translate-x-[42px]">
                   <ExternalArrow />
                 </span>

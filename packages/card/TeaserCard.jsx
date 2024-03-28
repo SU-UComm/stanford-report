@@ -21,9 +21,11 @@ export default function TeaserCard({ credit, data }) {
           {source}
         </div>
 
-        <h2 className="su-font-bold su-leading-display su-text-24 su-m-0 md:su-pb-9">
-          {title}
-        </h2>
+        <XssSafeContent
+          className="su-font-bold su-leading-display su-text-24 su-m-0 md:su-pb-9"
+          content={title}
+          elementType="h2"
+        />
 
         <div className="su-flex su-flex-col su-text-16 su-text-black-70">
           <div>
