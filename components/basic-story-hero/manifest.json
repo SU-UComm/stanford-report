@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "basic-story-hero",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "namespace": "stanford-components",
   "description": "The basic story hero appears on basic story pages",
   "displayName": "Basic story hero",
