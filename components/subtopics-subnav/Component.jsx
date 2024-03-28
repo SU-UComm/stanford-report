@@ -6,20 +6,20 @@ const topicFormatter = async (topics) => {
   if (!topics || topics.length === 0) {
     return null;
   }
-  const formatted = topics.filter(
-    ({
-      taxonomyFeaturedUnitText = null,
-      taxonomyFeaturedUnitLandingPageUrl = null,
-    }) => {
-      return taxonomyFeaturedUnitText && taxonomyFeaturedUnitLandingPageUrl
-        ? {
-            asset_name: taxonomyFeaturedUnitText,
-            asset_url: taxonomyFeaturedUnitLandingPageUrl,
-          }
-        : null;
-    }
-  );
 
+  const formatted = [];
+  topics.forEach((obj) => {
+    const dataset = obj.listMetadata;
+    if (
+      dataset.taxonomyFeaturedUnitText?.[0] &&
+      dataset.taxonomyFeaturedUnitLandingPageUrl?.[0]
+    ) {
+      formatted.push({
+        asset_name: dataset.taxonomyFeaturedUnitText[0],
+        asset_url: dataset.taxonomyFeaturedUnitLandingPageUrl[0],
+      });
+    }
+  });
   return formatted;
 };
 
