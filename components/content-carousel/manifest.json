@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "content-carousel",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "namespace": "stanford-components",
   "description": "A carousel of slides that contain WYSIWYG content.",
   "displayName": "Content Carousel",
@@ -32,7 +32,9 @@
             "minItems": 1,
             "maxItems": 5,
             "items": {
-              "required": ["content"],
+              "required": [
+                "content"
+              ],
               "type": "object",
               "properties": {
                 "content": {
@@ -52,7 +54,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
+              "filepath": "global.css"
             }
           },
           {

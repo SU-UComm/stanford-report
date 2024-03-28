@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "cta-cards-block",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "namespace": "stanford-components",
   "description": "Add up to 3 CTA cards in this block.",
   "displayName": "CTA cards block",
@@ -80,7 +80,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
+              "filepath": "global.css"
             }
           },
           {

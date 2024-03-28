@@ -1,27 +1,6 @@
 import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
 import Component from "./Component";
 
-// window.pageController = {
-//   id: 129627,
-//   title: "IA Basic Story Test",
-//   isStory: true,
-//   mainTopic: "Campus &amp; facilities",
-//   storyLayout: "Basic",
-// };
-
-// window.pageController = {
-//   id: 129627,
-//   title: "IA Basic Story Test",
-//   isStory: true,
-//   mainTopic: "",
-//   storyLayout: "Basic",
-//   search: {
-//     endpoint: "https://dxp-us-search.funnelback.squiz.cloud/s/search.html",
-//     collection: "sug~sp-stanford-report-search",
-//     profile: "stanford-report-push-search",
-//   },
-// };
-
 (function () {
   const linkListWrapper = document.querySelector(
     `[data-role="link-list-wrapper"]`
