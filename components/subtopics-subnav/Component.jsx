@@ -9,14 +9,15 @@ const topicFormatter = async (topics) => {
 
   const formatted = [];
   topics.forEach((obj) => {
-    const dataset = obj.listMetadata;
+    const dataset = obj?.listMetadata;
     if (
+      dataset &&
       dataset.taxonomyFeaturedUnitText?.[0] &&
       dataset.taxonomyFeaturedUnitLandingPageUrl?.[0]
     ) {
       formatted.push({
-        asset_name: dataset.taxonomyFeaturedUnitText[0],
-        asset_url: dataset.taxonomyFeaturedUnitLandingPageUrl[0],
+        asset_name: dataset.taxonomyFeaturedUnitText?.[0],
+        asset_url: dataset.taxonomyFeaturedUnitLandingPageUrl?.[0],
       });
     }
   });
