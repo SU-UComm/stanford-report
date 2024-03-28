@@ -2971,6 +2971,10 @@ Single image/video component
     width: 60px;
   }
 }
+.scrollable-list__item::after{
+  display: inline-block;
+  vertical-align: middle;
+}
 [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{
   float: left;
   margin-top: 0.2rem;
@@ -3007,10 +3011,6 @@ Single image/video component
       margin-top: 0.5rem;
     }
   }
-}
-.scrollable-list__item::after{
-  display: inline-block;
-  vertical-align: middle;
 }
 .su-play-scale:is(:hover, :focus) .su-play-btn{
   --tw-scale-x: 1.1;
