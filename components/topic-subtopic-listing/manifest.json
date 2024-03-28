@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "topic-subtopic-listing",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "namespace": "stanford-components",
   "description": "Listing of stories as cards with pagination.",
   "displayName": "Topic / subtopic listing",
