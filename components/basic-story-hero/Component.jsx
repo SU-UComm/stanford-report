@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../../packages/grids/Container";
-import Modal from "../../packages/modal/ModalWrapper";
 import EmbedVideo from "../../packages/media/EmbedVideo";
-import VideoPlay from "../../packages/SVG-library/VideoPlay";
 import { Carousel } from "../../packages/carousels/Carousels";
 
 /**
@@ -107,17 +105,7 @@ export default function basicStoryHero(props) {
 
 function Thumbnail({ url, alt, video, type, carousel }) {
   // state
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const slides = [];
-
-  // events
-  const handleClick = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
 
   if (type === "image") {
     return (
@@ -153,29 +141,11 @@ function Thumbnail({ url, alt, video, type, carousel }) {
   }
 
   return (
-    <>
-      <button
-        type="button"
-        aria-haspopup="dialog"
-        className="su-w-full su-aspect-[16/9] su-video-trigger"
-        onClick={handleClick}
-      >
-        <img
-          src={url}
-          alt={alt}
-          className="su-w-full su-h-full su-absolute su-top-0 su-left-0 su-object-cover su-object-center"
-        />
-
-        <span className="su-play-button-icon-hero su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px]">
-          <VideoPlay />
-        </span>
-      </button>
-
-      {isModalOpen && (
-        <Modal onClose={handleCloseModal}>
-          <EmbedVideo videoId={video} />
-        </Modal>
-      )}
-    </>
+    <div className="su-relative su-max-w-full su-h-0 su-pb-[56.25%] su-overflow-hidden">
+      <EmbedVideo
+        className="su-absolute su-top-0 su-left-0 su-w-full su-h-full"
+        videoId={video}
+      />
+    </div>
   );
 }
