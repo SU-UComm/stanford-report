@@ -11,7 +11,6 @@ import ReportHeader from "./scripts/reportHeader";
   const element = document.querySelector(
     `[data-hydration-component="${target}"]`
   );
-
   if (!element) return;
 
   // const props = JSON.parse(element.getAttribute("data-hydration-props"));
@@ -31,14 +30,9 @@ import ReportHeader from "./scripts/reportHeader";
     props.audienceData = null;
   }
   if (pageData?.isStory) {
-    const fbStoryData = await relatedStoryData(
-      pageData,
-      props.search,
-      audienceData
-    );
+    const fbStoryData = await relatedStoryData(pageData, audienceData);
     props.relatedStoryData = fbStoryData;
   }
-
   // set the props we need, to a window variable
   window.suHeaderProps = props;
   // update the props
@@ -47,7 +41,9 @@ import ReportHeader from "./scripts/reportHeader";
   // Hydrate the component
   hydrateComponent({ Component, componentName: target });
 
-  const headerDom = document.querySelector(".report-header");
-  const initHeader = new ReportHeader(headerDom);
-  _preferencesSettings();
+  setTimeout(() => {
+    const headerDom = document.querySelector(".report-header");
+    const initHeader = new ReportHeader(headerDom);
+    _preferencesSettings();
+  }, "100");
 })();

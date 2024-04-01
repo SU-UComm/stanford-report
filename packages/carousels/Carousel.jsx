@@ -17,7 +17,12 @@ import "swiper/css/pagination";
  * @returns {JSX.Element}
  * @constructor
  */
-export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
+export function Carousel({
+  slides,
+  variant = "single",
+  uniqueClass = "",
+  isDark = false,
+}) {
   const swiperRef = useRef();
   const hasSlides = slides.length > 0;
 
@@ -27,77 +32,117 @@ export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
       0: {
         slidesPerView: 1.5,
         spaceBetween: 40,
+        centeredSlides: true,
       },
       768: {
         slidesPerView: 3,
         spaceBetween: 72,
+        centeredSlides: false,
       },
       992: {
         slidesPerView: 3,
         spaceBetween: 102,
+        centeredSlides: false,
       },
     },
     slidesPerView: 1.5,
     spaceBetween: 40,
     variantClassName: "component-slider-cards component-slider-peek",
+    loop: true,
   });
   variants.set("media", {
     breakpoints: {
       0: {
         slidesPerView: 1.4,
         spaceBetween: 0,
+        centeredSlides: true,
+        initialSlide: 0,
       },
       768: {
         slidesPerView: 1.1,
         spaceBetween: 0,
+        centeredSlides: true,
+        initialSlide: 0,
       },
       992: {
         slidesPerView: 1,
         spaceBetween: 0,
+        centeredSlides: false,
+        initialSlide: 0,
       },
     },
-    slidesPerView: 1.4,
+    slidesPerView: 1,
     variantClassName: "component-slider-single component-slider-peek",
+    loop: false,
+  });
+  variants.set("basicstory", {
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        centeredSlides: false,
+      },
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        centeredSlides: false,
+      },
+      992: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        centeredSlides: false,
+      },
+    },
+    slidesPerView: 1,
+    variantClassName: "component-slider-single",
+    loop: true,
   });
   variants.set("imagegallery", {
     breakpoints: {
       0: {
         slidesPerView: 1,
         spaceBetween: 0,
+        centeredSlides: false,
       },
       768: {
         slidesPerView: 1,
         spaceBetween: 0,
+        centeredSlides: false,
       },
       992: {
         slidesPerView: 1,
         spaceBetween: 0,
+        centeredSlides: false,
       },
     },
     slidesPerView: 1,
     variantClassName: "component-slider-imagegallery",
+    loop: true,
   });
   variants.set("content", {
     breakpoints: {
       0: {
         slidesPerView: 1,
+        centeredSlides: false,
       },
       768: {
         slidesPerView: 1,
+        centeredSlides: false,
       },
       992: {
         slidesPerView: 1,
+        centeredSlides: false,
       },
     },
     slidesPerView: 1,
     variantClassName: "component-slider-single",
+    loop: true,
   });
 
   return hasSlides ? (
-    <div className="component-slider">
+    <div className={`component-slider ${isDark ? "su-slider-dark" : ""}`}>
       <Swiper
-        centeredSlides
-        loopAdditionalSlides={4}
+        loopAdditionalSlides={0}
         slidesPerGroup={1}
         pagination={{
           el: `.component-slider-pagination-${uniqueClass}`,
@@ -141,7 +186,7 @@ export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
           swiperRef.current = swiper;
         }}
         watchSlidesProgress
-        loop
+        loop={variants.get(variant).loop}
         breakpoints={variants.get(variant).breakpoints}
         modules={[Pagination]}
         className={["", variants.get(variant).variantClassName].join(" ")}
@@ -151,7 +196,7 @@ export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
         ))}
       </Swiper>
       {slides.length > 1 && (
-        <div className="component-slider-controls su-flex su-mt-[45px] lg:su-mt-[48px] su-items-center su-content-center">
+        <div className="component-slider-controls su-flex su-mt-45 lg:su-mt-48 su-items-center su-content-center">
           <div
             aria-label="Slide Navigation"
             className={`component-slider-pagination component-slider-pagination-${uniqueClass} su-mr-full`}
@@ -172,7 +217,9 @@ export function Carousel({ slides, variant = "single", uniqueClass = "" }) {
           <button
             className="component-slider-btn component-slider-next"
             type="button"
-            onClick={() => swiperRef.current?.slideNext()}
+            onClick={() => {
+              swiperRef.current?.slideNext();
+            }}
           >
             <span className="sr-only">Next</span>
             <span

@@ -43,9 +43,7 @@ export default function ImageMosaic({ data, remainingImageCount }) {
 
     articleClass =
       orientation === "h"
-        ? `${
-            horizontalPositions[hasVertical ? images.length + 1 : i]
-          } su-aspect-[50/33]`
+        ? `${horizontalPositions[hasVertical ? images.length + 1 : i]} `
         : articleClass;
 
     images.push(
@@ -60,7 +58,7 @@ export default function ImageMosaic({ data, remainingImageCount }) {
           <div className="su-bg-black/[0.33] su-w-full su-h-full su-absolute su-top-0 su-left-0 su-flex su-justify-center su-items-center su-z-[1]">
             <span
               className={[
-                "su-text-[white] su-relative su-z-[2] su-font-bold su-text-[4.8rem] su-leading-[5.76rem]",
+                "su-text-white su-relative su-z-[2] su-font-bold su-text-[4.8rem] su-leading-[5.76rem]",
                 "md:su-text-[10rem] md:su-leading-[11.941rem]",
               ].join(" ")}
             >
@@ -73,6 +71,62 @@ export default function ImageMosaic({ data, remainingImageCount }) {
       </article>
     );
   });
+
+  return images;
+}
+
+/**
+ * This is a recursive function that pre-screens the
+ * mosaic images to see if the pattern is correct
+ * if it is not, the image data will be shifted about
+ *
+ * @param {array} images
+ * the image data array
+ *
+ * @param {string} pattern
+ * invalid pattern types
+ *
+ * @returns {array}
+ */
+function preScreenPattern(images, pattern) {
+  const patterns = pattern.replace(/\n+|\t+| {2,}/gm, "");
+  const invalidReg = new RegExp(patterns, "gm");
+
+  let patternFormation = "{";
+  let patternFormationEnd = "";
+  let invalidPatternFound = false;
+  let imagesProcessed = [];
+
+  // loop through all images
+  images.forEach((card) => {
+    if (patternFormationEnd.match(invalidReg)) invalidPatternFound = true;
+
+    // if no invalid pattern has been found continue the loop
+    if (!invalidPatternFound) {
+      patternFormationEnd = "";
+      patternFormation += `${card.orientation}:`;
+      patternFormationEnd = `${patternFormation.replace(/:$/, "")}}`;
+    }
+  });
+
+  // re-sort the array
+  if (patternFormationEnd.match(invalidReg)) {
+    const index = Math.floor(Math.random() * images.length);
+    const pushing = images[index];
+
+    imagesProcessed = images.filter((image, i) => i !== index);
+
+    imagesProcessed.push(pushing);
+
+    // if after a re-sort the array remains the same, sort again.
+    if (JSON.stringify(imagesProcessed) === JSON.stringify(images)) {
+      const reScreenPattern = preScreenPattern(imagesProcessed, pattern);
+
+      imagesProcessed = [...reScreenPattern];
+    }
+
+    return imagesProcessed;
+  }
 
   return images;
 }
@@ -91,14 +145,16 @@ export default function ImageMosaic({ data, remainingImageCount }) {
  * 
  * @returns {array}
  */
-export function mosaic(images, pattern) {
+export function mosaic(images, pattern, invalidPattern) {
   const patterns = pattern.replace(/\n+|\t+| {2,}/gm, "");
-  const preview = [];
+  let preview = [];
 
   let complete = false;
   let patternFormation = "{";
 
-  images.forEach((card) => {
+  const imageData = preScreenPattern(images, invalidPattern);
+
+  imageData.forEach((card) => {
     if (complete) return;
 
     const patRegEnd = new RegExp(
@@ -109,6 +165,15 @@ export function mosaic(images, pattern) {
       `${patternFormation}${card.orientation}:`,
       "gm"
     );
+
+    if (
+      !patterns.match(patRegCurrent) &&
+      !patterns.match(patRegEnd) &&
+      preview.length === 1
+    ) {
+      preview = [];
+      patternFormation = "{";
+    }
 
     if (patterns.match(patRegEnd)) {
       preview.push(card);

@@ -16,21 +16,21 @@ export default function MediaRatio({
 
   return (
     <span
-      className={`su-component-media-ratio su-overflow-hidden su-relative su-w-full su-block ${aspectRatioMap.get(
+      className={`su-component-media-ratio su-overflow-hidden su-relative su-w-full su-block su-w-full su-h-full ${aspectRatioMap.get(
         aspectRatio
       )}`}
     >
       {videoUrl && (
         // This is temporary and is likely to move to YouTube embeds
         // eslint-disable-next-line jsx-a11y/media-has-caption
-        <video className="su-absolute su-object-cover su-object-center su-w-full su-h-full">
+        <video className="su-absolute su-object-cover su-object-center su-size-full">
           <source src={videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       )}
       {imageUrl && (
         <img
-          className="su-absolute su-object-cover su-object-center su-w-full su-h-full"
+          className="su-absolute su-object-cover su-object-center su-size-full su-w-full su-h-full"
           src={imageUrl}
           alt={imageAlt}
         />

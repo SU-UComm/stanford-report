@@ -1,0 +1,119 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "interactive-photo-card",
+  "version": "0.0.3",
+  "namespace": "stanford-components",
+  "description": "2 side by side cards with 1 being a photo and 1 being a fact with the ability to flip the card over for additional information.",
+  "displayName": "Interactive Photo Card",
+  "mainFunction": "main",
+  "icon": {
+    "id": "cached",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "title": "Title",
+            "type": "string",
+            "default": "Card title"
+          },
+          "eyebrow": {
+            "title": "Eyebrow",
+            "description": "This is the superheading above the title.",
+            "type": "string",
+            "default": "Eyebrow"
+          },
+          "content": {
+            "title": "Content",
+            "description": "This is the text that goes on the flip side of the content card.",
+            "type": "FormattedText"
+          },
+          "image": {
+            "title": "Image",
+            "type": "string",
+            "format": "matrix-asset-uri"
+          },
+          "imageAlignment": {
+            "title": "Image Alignment",
+            "type": "string",
+            "default": "right",
+            "enum": [
+              "left",
+              "right"
+            ]
+          }
+        },
+        "required": [
+          "title",
+          "content",
+          "image"
+        ]
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}

@@ -38,47 +38,59 @@ export default function Base({
   };
 
   // testing data
-  // const testImages = [
-  //   {
-  //     orientation: "v",
-  //     alt: "",
-  //     url: "https://picsum.photos/800/950",
-  //     caption:
-  //       "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
-  //   },
-  //   { orientation: "h", alt: "", url: "https://picsum.photos/850/350" },
-  //   {
-  //     orientation: "h",
-  //     alt: "",
-  //     url: "https://picsum.photos/800/350",
-  //     caption:
-  //       "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
-  //   },
-  //   {
-  //     orientation: "h",
-  //     alt: "",
-  //     url: "https://picsum.photos/700/450",
-  //     caption:
-  //       "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
-  //   },
-  //   { orientation: "h", alt: "", url: "https://picsum.photos/730/450" },
-  //   { orientation: "v", alt: "", url: "https://picsum.photos/900/1050" },
-  // ];
+  const testImages = [
+    {
+      orientation: "h",
+      alt: "",
+      url: "https://picsum.photos/400/350",
+      caption:
+        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
+    },
+    { orientation: "h", alt: "", url: "https://picsum.photos/350/250" },
+    {
+      orientation: "h",
+      alt: "",
+      url: "https://picsum.photos/350/210",
+      caption:
+        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
+    },
+    { orientation: "v", alt: "", url: "https://picsum.photos/300/550" },
+    { orientation: "h", alt: "", url: "https://picsum.photos/730/450" },
+    {
+      orientation: "v",
+      alt: "",
+      url: "https://picsum.photos/300/550",
+      caption:
+        "orem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus erat, mattis porttitor sollicitudin quis, sollicitudin et lectus. Ut leo purus, iaculis ac",
+    },
+    { orientation: "v", alt: "", url: "https://picsum.photos/300/500" },
+    { orientation: "v", alt: "", url: "https://picsum.photos/250/550" },
+  ];
 
   // place testData in this param to debug
   const modalImages = carouselImages(data);
+  // const modalImages = carouselImages(testImages);
 
   // generate the preview images
   // replace first param with testImages to debug
   const previewData = mosaic(
     data,
+    // testImages,
     `
-    {v:v}
-    {h:h:h:h}
-    {h:h:v}
-    {v:h:h}
-  `
+      {v:v}
+      {h:h:h:h}
+      {h:h:v}
+      {v:h:h}
+    `,
+    `
+      {h:h:h:v}
+    `
   );
+
+  const width =
+    displayConfiguration.width === "Wide"
+      ? displayConfiguration.width
+      : "content";
 
   // caption & credit
   const captionCredit =
@@ -88,6 +100,7 @@ export default function Base({
 
   // change {testImages} back to {data}
   const leftOverImages = data.length - previewData.length;
+  // const leftOverImages = testImages.length - previewData.length;
 
   return (
     <>
@@ -98,7 +111,7 @@ export default function Base({
             : "",
         ].join(" ")}
       >
-        <Container width="wide">
+        <Container width={width}>
           <div className="su-w-[100%] md:su-max-w-[60.7rem] lg:su-max-w-[63.6rem] su-mx-auto">
             <div
               className={[
@@ -147,7 +160,7 @@ export default function Base({
             aria-label="Open image gallery"
             type="button"
             className={[
-              "su-grid su-grid-cols-2 su-grid-rows-2 su-max-w-[1312px] su-gap-x-[0.691rem] su-gap-y-[0.572rem] su-mt-[3.2rem] su-pb-[1rem]",
+              "su-grid su-grid-cols-2 su-mx-auto su-grid-rows-2 su-max-w-[1312px] su-gap-x-[0.691rem] su-gap-y-[0.572rem] su-mt-[3.2rem] su-pb-[1rem]",
               "md:su-mt-[4.8rem] md:su-gap-x-[1.448rem] md:su-gap-y-[1.199rem]",
               "lg:su-gap-x-[2.589rem] lg:su-gap-y-[2.143rem]",
             ].join(" ")}
@@ -158,8 +171,8 @@ export default function Base({
             />
           </button>
 
-          <div className="su-text-[1.5rem] su-w-full su-text-center dark:su-text-[white]">
-            {captionCredit}
+          <div className="su-text-[1.5rem] su-w-full su-text-center dark:su-text-white md:su-max-w-[482px] lg:su-max-w-[633px] su-mx-auto">
+            <p className="su-m-0 su-text-left">{captionCredit}</p>
           </div>
         </Container>
       </div>
@@ -172,7 +185,7 @@ export default function Base({
         >
           {/* use {data} instead of {testImages} here */}
           <div>
-            <Carousel slides={modalImages} variant="imagegallery" />
+            <Carousel slides={modalImages} variant="imagegallery" isDark />
           </div>
         </Modal>
       )}

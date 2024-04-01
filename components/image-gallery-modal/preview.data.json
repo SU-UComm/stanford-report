@@ -28,11 +28,12 @@
         "caption": "This is a caption for the image."
       }
     ],
-    "caption": "This is an optional caption for the whole gallery",
+    "caption": "This is an optional caption for the whole gallery This is an optional caption for the whole gallery This is an optional caption for the whole gallery This is an optional caption for the whole gallery This is an optional caption for the whole gallery This is an optional caption for the whole gallery",
     "credit": "Isaac Astley"
   },
   "displayConfiguration": {
     "displayIconHeading": true,
-    "backgroundColor": "Grey"
+    "backgroundColor": "Grey",
+    "width": "Wide"
   }
 }

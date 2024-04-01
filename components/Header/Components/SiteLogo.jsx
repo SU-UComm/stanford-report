@@ -9,10 +9,10 @@ import React from "react";
 //
 export default function SiteLogo({ url = "", logo = null, logoLight = null }) {
   return (
-    <div className="report-header__logo su-py-[20px] md:su-pt-[21px] md:su-pb-[16px] lg:su-pt-[27px] lg:su-pb-[16px] su-z-40 su-relative">
+    <div className="report-header__logo su-py-20 su-relative su-flex md:su-pt-21 md:su-ml-19 md:su-mr-13 lg:su-ml-26 lg:su-mr-36 md:su-pb-20 lg:su-pb-[8.75px] lg:su-pt-27 su-z-40">
       <a href={url} className="dark:su-hidden" data-ga-action="logo">
         <img
-          className="img-responsive su-w-[226px] md:su-w-[278px] lg:su-w-[406px]"
+          className="img-responsive su-w-[22.6rem] md:su-w-[27.8rem] lg:su-w-[40.6rem]"
           width="406"
           height="62"
           src={logo.url}
@@ -22,7 +22,7 @@ export default function SiteLogo({ url = "", logo = null, logoLight = null }) {
 
       <a href={url} className="su-hidden dark:su-flex" data-ga-action="logo">
         <img
-          className="img-responsive su-w-[226px] md:su-w-[278px] lg:su-w-[406px]"
+          className="img-responsive su-w-[22.6rem] md:su-w-[27.8rem] lg:su-w-[40.6rem]"
           width="406"
           height="62"
           src={logoLight.url}

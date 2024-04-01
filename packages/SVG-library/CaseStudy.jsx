@@ -66,8 +66,6 @@ export default function CaseStudy({ variant }) {
     </svg>
   );
 
-  console.log(variant);
-
   if (variant && variantsMap.get(variant)) return variantsMap.get(variant);
 
   return (

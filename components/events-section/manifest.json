@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "events-section",
-  "version": "0.0.13",
+  "version": "0.0.17",
   "namespace": "stanford-components",
   "description": "Stanford Events Section is a grid featuring 3, 6, or 9 events",
   "displayName": "Events Section",
@@ -60,7 +60,9 @@
             "title": "Events section core configuration",
             "description": "The main purpose for these settings is to source the events API for the component.",
             "type": "object",
-            "required": ["eventsUrl"],
+            "required": [
+              "eventsUrl"
+            ],
             "properties": {
               "eventsUrl": {
                 "title": "Events API Endpiont",
@@ -77,7 +79,11 @@
               "numberOfEvents": {
                 "title": "Number of Events",
                 "default": 6,
-                "enum": [3, 6, 9],
+                "enum": [
+                  3,
+                  6,
+                  9
+                ],
                 "type": "integer"
               }
             }
@@ -91,7 +97,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
+              "filepath": "global.css"
             }
           },
           {

@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "in-the-news",
-  "version": "0.0.11",
+  "version": "0.0.19",
   "namespace": "stanford-components",
   "description": "This component contains one featured quote and two supplementary teasers.",
   "displayName": "In the news",
@@ -69,12 +69,18 @@
                 "format": "matrix-asset-uri",
                 "type": "string"
               },
+              "personHeadshot": {
+                "title": "Quotee headshot",
+                "type": "string",
+                "format": "matrix-asset-uri",
+                "description": "Please use image assets for the person headshot."
+              },
               "featuredQuote": {
                 "title": "Featured Quote",
                 "type": "string"
               },
               "featuredTeaserDescription": {
-                "title": "Feature Teaser description",
+                "title": "Featured Scholar attribution",
                 "type": "string"
               },
               "featuredCtaText": {
@@ -92,7 +98,7 @@
                 "type": "string"
               },
               "teaserOneDescription": {
-                "title": "Teaser One description",
+                "title": "Featured Scholar attribution",
                 "type": "string"
               }
             }
@@ -106,7 +112,7 @@
                 "type": "string"
               },
               "teaserTwoDescription": {
-                "title": "Teaser Two description",
+                "title": "Featured Scholar attribution",
                 "type": "string"
               }
             }
@@ -120,7 +126,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
+              "filepath": "global.css"
             }
           },
           {

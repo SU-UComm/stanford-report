@@ -9,6 +9,6 @@ import React from "react";
  */
 export function HorizontalCardGridContent({ children }) {
   return (
-    <div className={["su-relative su-flex-grow"].join(" ")}>{children}</div>
+    <div className={["su-relative su-grow"].join(" ")}>{children}</div>
   );
 }

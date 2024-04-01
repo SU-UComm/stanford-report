@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "acknowledgement",
-  "version": "0.0.8",
+  "version": "0.0.11",
   "namespace": "stanford-components",
   "description": "A basic WYSIWYG to place an acknowledgement.",
   "displayName": "Acknowledgement",
@@ -22,7 +22,7 @@
         "properties": {
           "title": {
             "title": "Acknowledgement Title",
-            "default": "Story Acknowledgement",
+            "default": "For more information",
             "description": "This title is read out for screen readers, to provide context and is not displayed visually.",
             "type": "string"
           },
@@ -31,7 +31,10 @@
             "type": "FormattedText"
           }
         },
-        "required": ["content", "title"]
+        "required": [
+          "content",
+          "title"
+        ]
       },
       "output": {
         "responseType": "html",
@@ -40,7 +43,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
+              "filepath": "global.css"
             }
           },
           {

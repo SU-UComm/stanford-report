@@ -10,7 +10,7 @@ export default function BurgerBar() {
     <svg
       aria-hidden="true"
       focusable="false"
-      className="md:su-hidden su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2"
+      className="md:su-hidden su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
       width="28"
       height="21"
       viewBox="0 0 28 21"
