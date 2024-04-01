@@ -3173,24 +3173,6 @@ Single image/video component
   width: 0;
   height: 0;
 }
-.su-wysiwyg-content ul{
-  list-style-type: none;
-  padding-left: 0;
-}
-.su-wysiwyg-content ul > li{
-  position: relative;
-  padding-left: 3rem;
-}
-.su-wysiwyg-content ul > li::before{
-  position: absolute;
-  top: .6em;
-  left: 1.2rem;
-  height: 4.5px;
-  width: 4.5px;
-  content: var(--tw-content);
-  border-radius: 9999px;
-  background-color: currentColor;
-}
 .su-bg-gradient-reverse,
 .su-bg-gradient-before-reverse:before{
   background-image: linear-gradient(to left, var(--tw-gradient-stops));
@@ -3282,6 +3264,24 @@ Single image/video component
   grid-column: 2;
   grid-row: 1 / span 2;
   height: 100%;
+}
+.su-wysiwyg-content ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+.su-wysiwyg-content ul > li{
+  position: relative;
+  padding-left: 3rem;
+}
+.su-wysiwyg-content ul > li::before{
+  position: absolute;
+  top: .6em;
+  left: 1.2rem;
+  height: 4.5px;
+  width: 4.5px;
+  content: var(--tw-content);
+  border-radius: 9999px;
+  background-color: currentColor;
 }
 .decoration-top{
   padding-top: 9rem;
@@ -6191,6 +6191,15 @@ Single image/video component
   /* stroke: #fff !important; */
   color: #fff;
 }
+.su-dark .report-header__pref-toggle:hover svg {
+  color: #000000;
+}
+.su-dark .report-header__pref-toggle[aria-pressed="true"] svg {
+  fill: transparent;
+}
+.su-dark .report-header__pref-toggle[aria-pressed="true"] .icon-detail svg {
+  fill: #000000;
+}
 .report-header__pref-toggle[aria-pressed="true"]:hover svg,
 .report-header__pref-toggle[aria-pressed="true"] svg {
   /* @apply su-stroke-digital-red; */
@@ -6718,15 +6727,6 @@ Single image/video component
 .report-header__pref-toggle:hover svg {
   /* stroke: #fff !important; */
   color: #fff;
-}
-.su-dark .report-header__pref-toggle:hover svg {
-  color: #000000;
-}
-.su-dark .report-header__pref-toggle[aria-pressed="true"] svg {
-  fill: transparent;
-}
-.su-dark .report-header__pref-toggle[aria-pressed="true"] .icon-detail svg {
-  fill: #000000;
 }
 .report-header__pref-toggle[aria-pressed="true"]:hover svg,
 .report-header__pref-toggle[aria-pressed="true"] svg {
