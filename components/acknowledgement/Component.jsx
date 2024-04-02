@@ -19,7 +19,7 @@ export default function Acknowledgement({ title, content }) {
     <Container width="narrow">
       <hr
         aria-hidden="true"
-        className="su-mb-36 su-border-none su-w-100 su-h-6 lg:su-h-9 su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive"
+        className="su-mb-36 su-border-none su-w-100 su-h-6 lg:su-h-9 su-bg-gradient-to-r su-from-digital-red su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive"
       />
       {title && <h2 className="sr-only">{title}</h2>}
       <XssSafeContent

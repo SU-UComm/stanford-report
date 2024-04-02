@@ -33,7 +33,7 @@ export default function VerticalHero({ data }) {
         <div className="su-relative su-w-full su-z-10">
           <h1
             className={[
-              "su-mt-0 su-break-words su-font-bold su-leading-[119.4%] md:su-leading-leading su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.6rem] font-serif-4 su-w-[83.333%] md:su-w-[66.666%] lg:su-w-[70%] su-pr-20",
+              "su-text-shadow-title su-shadow-white dark:su-shadow-black-true su-mt-0 su-break-words su-font-bold su-leading-[119.4%] md:su-leading-leading su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.6rem] font-serif-4 su-w-[83.333%] md:su-w-[66.666%] lg:su-w-[70%] su-pr-20",
               titleWordsCount > 5 ? "su-mb-[-1.75em]" : "su-mb-[-.5em]",
             ].join(" ")}
           >
@@ -73,6 +73,7 @@ export default function VerticalHero({ data }) {
                 {media.credit}
               </figcaption>
             )}
+            <div className="su-bg-gradient-to-b su-from-white su-via-[rgb(255_255_255/.5)_8%] dark:su-from-black-true dark:su-via-[rgb(0_0_0/.5)_8%] su-to-50% su-opacity-75 su-absolute su-w-full su-h-full su-bottom-0 su-left-0" />
           </figure>
 
           <XssSafeContent
