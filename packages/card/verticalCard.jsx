@@ -212,12 +212,12 @@ export default function VerticalCard({
         <h2
           className={`su-w-full ${titleSize(cardSize)} su-font-serif su-my-0`}
         >
-          <a
-            href={liveUrl}
+          <XssSafeContent
             className="focus:su-outline-0 focus:before:su-ring hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
-          >
-            {title}
-          </a>
+            content={title}
+            href={liveUrl}
+            elementType="a"
+          />
         </h2>
 
         {type && (

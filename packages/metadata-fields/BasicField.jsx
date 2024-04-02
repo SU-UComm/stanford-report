@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function BasicFields({ title, children, alignment = "left" }) {
+export default function BasicFields({
+  title,
+  children,
+  alignment = "left",
+  contentCSS = "",
+}) {
   const alignMap = new Map();
 
   alignMap.set("left", "su-justify-left");
@@ -16,7 +21,9 @@ export default function BasicFields({ title, children, alignment = "left" }) {
         {title}
       </h3>
 
-      <div className="su-flex su-flex-col su-gap-6 su-text-21">{children}</div>
+      <div className={`su-flex su-flex-col su-gap-6 su-text-21 ${contentCSS}`}>
+        {children}
+      </div>
     </div>
   );
 }

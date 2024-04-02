@@ -1,4 +1,5 @@
 import React from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Avatar } from "../quotes/Avatar";
 
 /**
@@ -31,12 +32,12 @@ export default function AvatarCard({
       className="su-component-card su-relative su-w-full md:su-basis-1/3 su-flex su-flex-wrap su-gap-10 lg:su-content-start lg:su-max-w-[293px]"
     >
       <h3 className="su-text-21 lg:su-text-24 su-leading-[25.2px] lg:su-leading-[28.8px] su-flex-grow su-my-0 su-font-serif su-w-full">
-        <a
-          href={liveUrl}
+        <XssSafeContent
           className="focus:su-outline-0 focus:su-ring su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-font-bold su-no-underline hover:su-text-digital-red dark:su-text-white dark:hover:su-text-dark-mode-red"
-        >
-          {title}
-        </a>
+          content={title}
+          href={liveUrl}
+          elementType="a"
+        />
       </h3>
       {authorDisplayName && (
         <div

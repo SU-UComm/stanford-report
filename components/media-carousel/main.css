@@ -1,42 +1,45 @@
-@tailwind components;
-@tailwind utilities;
-
-.su-component-container .component-slider {
+[data-component="media-carousel"] .su-component-container .component-slider {
   @apply lg:su-mx-auto;
 }
 
-.swiper-slide-visible .su-media-card-thumb {
+[data-component="media-carousel"] .swiper-slide-visible .su-media-card-thumb {
   @apply su-transition;
 }
 
-.swiper-slide-prev.swiper-slide-visible .su-media-card-thumb {
+[data-component="media-carousel"]
+  .swiper-slide-prev.swiper-slide-visible
+  .su-media-card-thumb {
   @apply su-object-[right_center] lg:su-object-center;
 }
 
-.swiper-slide-next.swiper-slide-visible .su-media-card-thumb {
+[data-component="media-carousel"]
+  .swiper-slide-next.swiper-slide-visible
+  .su-media-card-thumb {
   @apply su-object-[left_center] lg:su-object-center;
 }
 
-.swiper-slide-active .su-component-card-media {
+[data-component="media-carousel"]
+  .swiper-slide-active
+  .su-component-card-media {
   @apply md:su-px-44 lg:su-px-38;
 }
 
-.swiper-slide-prev .su-media-card-text,
-.swiper-slide-next .su-media-card-text {
+[data-component="media-carousel"] .swiper-slide-prev .su-media-card-text,
+[data-component="media-carousel"] .swiper-slide-next .su-media-card-text {
   @apply su-opacity-0 lg:su-opacity-100 su-transition;
 }
 
-.swiper-slide-prev,
-.swiper-slide-next {
+[data-component="media-carousel"] .swiper-slide-prev,
+[data-component="media-carousel"] .swiper-slide-next {
   @apply lg:su-opacity-0 su-transition;
 }
 
-.swiper-slide-prev.swiper-slide-visible,
-.swiper-slide-next.swiper-slide-visible {
+[data-component="media-carousel"] .swiper-slide-prev.swiper-slide-visible,
+[data-component="media-carousel"] .swiper-slide-next.swiper-slide-visible {
   @apply lg:su-opacity-100;
 }
 
-.swiper-slide {
+[data-component="media-carousel"] .swiper-slide {
   @apply su-h-full;
 }
 

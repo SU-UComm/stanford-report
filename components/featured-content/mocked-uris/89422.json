@@ -3,8 +3,8 @@
   "type": "page_standard",
   "type_name": "Standard Page",
   "version": "0.1.1",
-  "name": "Give and Go program finds new purpose for tons of unwanted items",
-  "short_name": "Give and Go program finds new purpose for tons of unwanted items",
+  "name": "Give &amp; Go program finds new purpose for tons of unwanted items",
+  "short_name": "Give & Go program finds new purpose for tons of unwanted items",
   "status": { "id": 16, "code": "live", "name": "Live" },
   "created": { "date": "2023-12-04T00:34:28-08:00", "user_id": "32242" },
   "updated": { "date": "2023-12-05T00:24:06-08:00", "user_id": "32242" },
@@ -15,8 +15,8 @@
   ],
   "url": "https://sug-web.matrix.squiz.cloud/report/stories/give-and-go-program-finds-new-purpose-for-tons-of-unwanted-items",
   "attributes": {
-    "short_name": "Give and Go program finds new purpose for tons of unwanted items",
-    "name": "Give and Go program finds new purpose for tons of unwanted items"
+    "short_name": "Give & Go program finds new purpose for tons of unwanted items",
+    "name": "Give & Go program finds new purpose for tons of unwanted items"
   },
   "metadata": {
     "csFeaturedImageUrl": [

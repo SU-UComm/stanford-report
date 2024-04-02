@@ -211,12 +211,12 @@ export default function HorizontalCard({
             cardSize
           )} ${cardTitleFont(cardSize)} su-font-sans su-my-0`}
         >
-          <a
+          <XssSafeContent
             className="hocus:su-text-digital-red hocus:su-underline su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
+            content={title}
             href={liveUrl}
-          >
-            {title}
-          </a>
+            elementType="a"
+          />
         </h2>
 
         {/* only small cards will have the date */}

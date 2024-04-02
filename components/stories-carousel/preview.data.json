@@ -5,6 +5,6 @@
     "ctaUrl": "matrix-asset://api-identifier/89422"
   },
   "contentConfiguration": {
-    "searchQuery": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&log=false&query=!null"
+    "searchQuery": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&num_ranks=6&log=false&query=!null"
   }
 }
