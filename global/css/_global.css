@@ -48,7 +48,7 @@ svg {
 .su-bg-gradient,
 .su-bg-gradient-before:before,
 .su-bg-gradient-after:after {
-  @apply su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive;
+  @apply su-bg-gradient-to-r su-from-digital-red su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive;
 }
 
 .su-bg-gradient-report {
@@ -56,7 +56,7 @@ svg {
 }
 
 .su-bg-gradient-b {
-  @apply su-bg-gradient-to-b su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive;
+  @apply su-bg-gradient-to-b su-from-digital-red su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive;
 }
 
 .su-bg-gradient-light-red,
@@ -159,7 +159,7 @@ svg {
 
 .su-dark .report-header__pref-toggle[aria-pressed="true"]:hover svg,
 .su-dark .report-header__pref-toggle[aria-pressed="true"] svg {
-  color:#000 !important;
+  color: #000 !important;
 }
 
 /*
