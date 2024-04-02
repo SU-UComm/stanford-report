@@ -4,7 +4,6 @@ import fs from "fs";
 import { globSync } from "glob";
 
 const entryPoints = await globSync("./components/*/client.+(jsx|js)");
-console.log("entry", entryPoints);
 const buildPath = "./global/build";
 const globalInputJs = "./global/js/_global.js";
 const globalOutputJs = `${buildPath}/global.js`;
