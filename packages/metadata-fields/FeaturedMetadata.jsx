@@ -327,7 +327,7 @@ export default function FeaturedMetadata({ data }) {
           onClick={copyLink}
           type="button"
           data-role="copy-link"
-          className="su-text-digital-blue su-text-21 su-font-semibold su-mx-auto"
+          className="su-text-digital-blue dark:su-text-digital-blue-vivid su-text-21 su-font-semibold su-mx-auto hocus:su-underline"
         >
           {copyLinkTitle}
 
