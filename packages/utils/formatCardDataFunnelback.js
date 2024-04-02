@@ -10,6 +10,7 @@
 export default function formatCardDataFunnelback({
   title,
   listMetadata: {
+    assetTypeCode,
     teaserPlain,
     summary,
     image,
@@ -28,6 +29,7 @@ export default function formatCardDataFunnelback({
     author,
     isTeaser,
     storySource,
+    canonical,
   },
   date,
   liveUrl,
@@ -60,6 +62,10 @@ export default function formatCardDataFunnelback({
   if (!type && contentCategory) {
     type =
       contentCategory instanceof Array ? contentCategory[0] : contentCategory;
+  }
+
+  if (canonical && assetTypeCode[0] === "link") {
+    liveUrl = canonical;
   }
 
   return {
