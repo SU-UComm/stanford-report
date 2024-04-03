@@ -39,7 +39,7 @@ export default function TopBar({ site, navigation, audience }) {
 
         <div className="pre-footer-bottom-section su-flex su-flex-col lg:su-flex-row su-flex-wrap lg:su-flex-nowrap lg:su-gap-x-20">
           <MinorNav navigation={minor} />
-          <ContactNav navigation={contacts} />
+          {audience === "external" && <ContactNav navigation={contacts} />}
         </div>
 
         <ExternalNav navigation={externalData} audience={audience} />
