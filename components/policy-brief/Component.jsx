@@ -71,6 +71,7 @@ export default function PolicyBriefComponent({ data, contentConfiguration }) {
               <span className="su-transition group-hocus:su--translate-y-01em group-hocus:su-translate-x-01em [&>svg]:su-translate-y-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
+                  className="su-stroke-digital-red dark:su-stroke-dark-mode-red"
                   width="23"
                   height="23"
                   viewBox="0 0 23 23"
@@ -78,7 +79,7 @@ export default function PolicyBriefComponent({ data, contentConfiguration }) {
                 >
                   <path
                     d="M8.95664 7.42241L15.5563 7.42241M15.5563 7.42241L15.5563 14.0221M15.5563 7.42241L7.07102 15.9077"
-                    stroke="#B1040E"
+                    stroke=""
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
