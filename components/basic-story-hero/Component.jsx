@@ -183,6 +183,7 @@ function Thumbnail({ url, alt, video, type, carousel }) {
         <EmbedVideo
           className="su-absolute su-top-0 su-left-0 su-w-full su-h-full"
           videoId={video}
+          noAutoPlay
         />
       </div>
     );
