@@ -2975,6 +2975,43 @@ Single image/video component
   display: inline-block;
   vertical-align: middle;
 }
+[data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{
+  float: left;
+  margin-top: 0.2rem;
+  margin-right: 0.9rem;
+  padding: 0;
+  font-family: "Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif;
+  font-size: 7.2rem;
+  font-weight: 700;
+  line-height: 35px;
+}
+@media (min-width: 768px){
+  [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{
+    margin-top: 1rem;
+    font-size: 85px;
+  }
+}
+@media (min-width: 992px){
+  [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{
+    margin-top: 1.6rem;
+  }
+}
+/* Firefox treats first letters differently, change margins here */
+@-moz-document url-prefix() {
+  [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{
+    margin-top: 0;
+  }
+  @media (min-width: 768px){
+    [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{
+      margin-top: 0.5rem;
+    }
+  }
+  @media (min-width: 992px){
+    [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{
+      margin-top: 0.5rem;
+    }
+  }
+}
 .su-play-scale:is(:hover, :focus) .su-play-btn{
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
@@ -3028,43 +3065,6 @@ Single image/video component
   .su-single-featured-content div > p{
     font-size: 2.1rem;
     line-height: 125%;
-  }
-}
-[data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{
-  float: left;
-  margin-top: 0.2rem;
-  margin-right: 0.9rem;
-  padding: 0;
-  font-family: "Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif;
-  font-size: 7.2rem;
-  font-weight: 700;
-  line-height: 35px;
-}
-@media (min-width: 768px){
-  [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{
-    margin-top: 1rem;
-    font-size: 85px;
-  }
-}
-@media (min-width: 992px){
-  [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{
-    margin-top: 1.6rem;
-  }
-}
-/* Firefox treats first letters differently, change margins here */
-@-moz-document url-prefix() {
-  [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{
-    margin-top: 0;
-  }
-  @media (min-width: 768px){
-    [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{
-      margin-top: 0.5rem;
-    }
-  }
-  @media (min-width: 992px){
-    [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{
-      margin-top: 0.5rem;
-    }
   }
 }
 @media (min-width: 992px){
@@ -3173,24 +3173,6 @@ Single image/video component
   width: 0;
   height: 0;
 }
-.su-wysiwyg-content ul{
-  list-style-type: none;
-  padding-left: 0;
-}
-.su-wysiwyg-content ul > li{
-  position: relative;
-  padding-left: 3rem;
-}
-.su-wysiwyg-content ul > li::before{
-  position: absolute;
-  top: .6em;
-  left: 1.2rem;
-  height: 4.5px;
-  width: 4.5px;
-  content: var(--tw-content);
-  border-radius: 9999px;
-  background-color: currentColor;
-}
 .su-bg-gradient-reverse,
 .su-bg-gradient-before-reverse:before{
   background-image: linear-gradient(to left, var(--tw-gradient-stops));
@@ -3282,6 +3264,24 @@ Single image/video component
   grid-column: 2;
   grid-row: 1 / span 2;
   height: 100%;
+}
+.su-wysiwyg-content ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+.su-wysiwyg-content ul > li{
+  position: relative;
+  padding-left: 3rem;
+}
+.su-wysiwyg-content ul > li::before{
+  position: absolute;
+  top: .6em;
+  left: 1.2rem;
+  height: 4.5px;
+  width: 4.5px;
+  content: var(--tw-content);
+  border-radius: 9999px;
+  background-color: currentColor;
 }
 .decoration-top{
   padding-top: 9rem;
@@ -4509,6 +4509,9 @@ Single image/video component
 }
 .su-h-\[165px\]{
   height: 165px;
+}
+.su-h-\[186px\]{
+  height: 186px;
 }
 .su-h-\[218px\]{
   height: 218px;
@@ -6624,8 +6627,7 @@ Single image/video component
 }
 .report-header__pref-toggle{
   position: relative;
-  width: 100%;
-  height: 100%;
+  height: 186px;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-top: 2.6rem;
