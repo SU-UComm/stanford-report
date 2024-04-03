@@ -26,12 +26,12 @@
 
 [data-component="media-carousel"] .swiper-slide-prev .su-media-card-text,
 [data-component="media-carousel"] .swiper-slide-next .su-media-card-text {
-  @apply su-opacity-0 lg:su-opacity-100 su-transition;
+  @apply su-opacity-0 md:su-hidden lg:su-opacity-100 su-transition;
 }
 
 [data-component="media-carousel"] .swiper-slide-prev,
 [data-component="media-carousel"] .swiper-slide-next {
-  @apply lg:su-opacity-0 su-transition;
+  @apply md:su-opacity-[0.27] lg:su-opacity-0 su-transition;
 }
 
 [data-component="media-carousel"] .swiper-slide-prev.swiper-slide-visible,
