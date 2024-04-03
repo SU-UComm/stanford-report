@@ -17,7 +17,7 @@ export default function BasicFields({
         alignment
       )}`}
     >
-      <h3 className="su-text-23 su-font-bold su-leading-[27.6px] su-font-sans !su-m-0 md:su-leading-[27.7px] ">
+      <h3 className="su-text-23 su-font-bold su-leading-[27.6px] su-font-sans !su-m-0">
         {title}
       </h3>
 
