@@ -24,7 +24,7 @@ export default function TopicSubtopicListing({
   endpoint,
 }) {
   let cards = [];
-  const { searchQuery } = displayConfiguration;
+  const { searchQuery, displayStyle } = displayConfiguration;
 
   // state
   const [pageNo, setPageNo] = useState(pageNumber);
@@ -47,7 +47,10 @@ export default function TopicSubtopicListing({
           });
           // update subnav listing
           document.topicsChangeEvent = new CustomEvent("topicLoader", {
-            detail: cards,
+            detail: {
+              displayStyle,
+              cards,
+            },
           });
           document.dispatchEvent(document.topicsChangeEvent);
 

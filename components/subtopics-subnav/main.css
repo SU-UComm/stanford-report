@@ -1,3 +1,8 @@
 .scrollable-list__item::after {
   @apply su-inline-block su-align-middle;
 }
+
+[data-component="subtopic-subnav-component"]
+  + [data-component="topic-subtopic-listing"] {
+  @apply su-rs-mt-4;
+}
