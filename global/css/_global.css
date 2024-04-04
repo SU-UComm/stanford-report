@@ -881,6 +881,11 @@ WYSIWYG formatting styles
   @apply su-wysiwyg;
 }
 
+/* STANFORD-819 */
+.su-page-content p a:focus {
+  text-decoration: none;
+}
+
 /* Set specfic spacing for paragraphs */
 [data-component="text-callout"] .su-wysiwyg-content p {
   @apply su-mb-20 md:su-mb-26 xl:su-mb-27;
