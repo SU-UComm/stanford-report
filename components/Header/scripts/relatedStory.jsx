@@ -40,8 +40,6 @@ export default async function relatedStoryData(pageData = null, audience = "") {
       story = storyResultData.response?.resultPacket?.results?.[0] || null;
     }
 
-    console.log(story);
-
     return story;
   }
 
