@@ -3173,24 +3173,6 @@ Single image/video component
   width: 0;
   height: 0;
 }
-.su-wysiwyg-content ul{
-  list-style-type: none;
-  padding-left: 0;
-}
-.su-wysiwyg-content ul > li{
-  position: relative;
-  padding-left: 3rem;
-}
-.su-wysiwyg-content ul > li::before{
-  position: absolute;
-  top: .6em;
-  left: 1.2rem;
-  height: 4.5px;
-  width: 4.5px;
-  content: var(--tw-content);
-  border-radius: 9999px;
-  background-color: currentColor;
-}
 .su-horizontal-image-first {
   grid-column: 1;
   grid-row: 1 / span 1;
@@ -3220,6 +3202,24 @@ Single image/video component
   grid-column: 2;
   grid-row: 1 / span 2;
   height: 100%;
+}
+.su-wysiwyg-content ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+.su-wysiwyg-content ul > li{
+  position: relative;
+  padding-left: 3rem;
+}
+.su-wysiwyg-content ul > li::before{
+  position: absolute;
+  top: .6em;
+  left: 1.2rem;
+  height: 4.5px;
+  width: 4.5px;
+  content: var(--tw-content);
+  border-radius: 9999px;
+  background-color: currentColor;
 }
 .su-bg-gradient-reverse,
 .su-bg-gradient-before-reverse:before{
@@ -3937,6 +3937,9 @@ Single image/video component
 }
 .su-relative{
   position: relative;
+}
+.su--bottom-1{
+  bottom: -0.1rem;
 }
 .su--left-80{
   left: -8rem;
@@ -5557,6 +5560,9 @@ Single image/video component
 }
 .su-to-olive{
   --tw-gradient-to: #8F993E var(--tw-gradient-to-position);
+}
+.su-to-plum{
+  --tw-gradient-to: #620059 var(--tw-gradient-to-position);
 }
 .su-to-50\%{
   --tw-gradient-to-position: 50%;

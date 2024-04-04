@@ -3,6 +3,8 @@ import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Book, ExternalArrow, Podcast } from "../SVG-library/SVG";
 import { SidebarHeading } from "../headings/Heading";
 
+// TODO: Clean up TW classes with px, and properties with more than one value, e.g., md:su-gap-36 md:su-gap-48
+
 /**
  * Returns a card featuring media (book or podcast)
  *
@@ -40,10 +42,13 @@ export default function MediaCard({
   iconMap.set("Featured reading", <Book variant="outline" />);
   iconMap.set("Featured audio", <Podcast variant="outline" />);
 
+  const isRealExternalLink =
+    !!liveUrl && !liveUrl?.includes("news.stanford.edu");
+
   return title ? (
     <article
       data-test="media-card"
-      className="su-component-card-media md:su-min-h-[384px] su-relative su-w-full md:su-px-0 su-flex su-flex-wrap su-justify-center su-gap-20 md:su-gap-36 md:su-gap-48 md:su-flex-nowrap su-items-center su-justify-center"
+      className="su-component-card-media md:su-min-h-[384px] su-relative su-w-full md:su-px-0 su-flex su-flex-wrap su-justify-center su-gap-20 md:su-gap-36 md:su-gap-48 md:su-flex-nowrap su-items-center"
     >
       {imageUrl && (
         <div className="su-relative su-w-full su-px-20 md:su-px-0 su-h-[342px] lg:su-h-[373px] lg:su-h-[572px] lg:su-py-30 su-min-w-[249px] md:su-min-w-[249px] lg:su-min-w-[382px] lg:su-max-w-[382px] su-flex su-items-center su-justify-center">
@@ -68,14 +73,17 @@ export default function MediaCard({
         {title && (
           <h2 className="su-text-[35px] su-mb-5 su-leading[110%] md:su-text-[40px] lg:su-text-[43px]">
             {liveUrl && (
+              // eslint-disable-next-line jsx-a11y/control-has-associated-label
               <a
                 href={liveUrl}
                 className="su-text-black su-transition dark:su-text-white hocus:su-text-digital-red dark:hocus:su-text-dark-mode-red"
               >
                 <XssSafeContent content={title} elementType="span" />
-                <span className="su-inline-block *:su-inline-block *:su-w-42 *:su-h-42 su-ml-[-42px] su-translate-x-[42px]">
-                  <ExternalArrow />
-                </span>
+                {isRealExternalLink && (
+                  <span className="su-inline-block *:su-inline-block *:su-w-42 *:su-h-42 su-ml-[-42px] su-translate-x-[42px]">
+                    <ExternalArrow />
+                  </span>
+                )}
               </a>
             )}
             {(liveUrl === "" || liveUrl === undefined || liveUrl === null) && (
