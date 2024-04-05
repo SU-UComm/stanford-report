@@ -6,8 +6,7 @@ import { SidebarHeading } from "../../packages/headings/Heading";
 import {
   Podcast,
   ExternalArrow,
-  Book,
-  FeaturedReading,
+  BookOpenCover,
 } from "../../packages/SVG-library/SVG";
 
 /**
@@ -77,11 +76,11 @@ function MediaType({ type }) {
   const iconMap = new Map();
 
   iconMap.set("Podcast", <Podcast variant="outline" />);
-  iconMap.set("Book", <Book variant="outline" />);
+  iconMap.set("Book", <BookOpenCover className="su-w-[1.2em]" aria-hidden />);
 
   return (
     <>
-      <span className="*:su-h-20 *:su-w-20">{iconMap.get(type)}</span>
+      <span className="*:su-size-20">{iconMap.get(type)}</span>
       {type}
     </>
   );
