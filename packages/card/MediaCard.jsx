@@ -39,7 +39,7 @@ export default function MediaCard({
   const iconMap = new Map();
   iconMap.set(
     "Featured reading",
-    <BookOpenCover className="su-text-black-70 su-w-[1.2em]" aria-hidden />
+    <BookOpenCover className="su-w-[1.2em]" aria-hidden />
   );
   iconMap.set("Featured audio", <Podcast variant="outline" />);
 

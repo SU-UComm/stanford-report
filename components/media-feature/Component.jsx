@@ -77,7 +77,7 @@ function MediaType({ type }) {
   const iconMap = new Map();
 
   iconMap.set("Podcast", <Podcast variant="outline" />);
-  iconMap.set("Book", <BookOpenCover className="su-text-black-70" />);
+  iconMap.set("Book", <BookOpenCover className="su-w-[1.2em]" aria-hidden />);
 
   return (
     <>

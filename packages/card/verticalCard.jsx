@@ -26,7 +26,6 @@ import {
   QuestionAnswer,
   Video,
   Podcast,
-  Book,
   BookOpenCover,
 } from "../SVG-library/SVG";
 import CardThumbnail from "./CardThumbnail";
@@ -172,7 +171,10 @@ export default function VerticalCard({
   SVGMap.set("q&nbsp;&amp;&nbsp;a", <QuestionAnswer />);
   SVGMap.set("video", <Video />);
   SVGMap.set("podcast", <Podcast />);
-  SVGMap.set("book", <BookOpenCover className="su-text-black-70" />);
+  SVGMap.set(
+    "book",
+    <BookOpenCover className="su-text-black-70 su-w-[1.2em]" aria-hidden />
+  );
 
   const cardThumb = imageUrl || "https://sug-web.matrix.squiz.cloud/?a=130443";
 

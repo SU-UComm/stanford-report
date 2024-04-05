@@ -27,7 +27,6 @@ import {
   QuestionAnswer,
   Video,
   Podcast,
-  Book,
   BookOpenCover,
 } from "../SVG-library/SVG";
 
@@ -142,7 +141,7 @@ export default function HorizontalCard({
   SVGMap.set("q&nbsp;&amp;&nbsp;a", <QuestionAnswer />);
   SVGMap.set("video", <Video />);
   SVGMap.set("podcast", <Podcast />);
-  SVGMap.set("book", <BookOpenCover className="su-text-black-70" />);
+  SVGMap.set("book", <BookOpenCover className="su-w-[1.2em]" aria-hidden />);
 
   // gap for the card <article> element
   const cardGap = new Map();
