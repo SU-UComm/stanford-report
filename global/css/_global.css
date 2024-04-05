@@ -24,7 +24,7 @@ svg {
 }
 
 .su-dark figcaption {
-  @apply su-bg-black-true su-text-white;
+  @apply su-text-white;
 }
 
 .sr-only {
