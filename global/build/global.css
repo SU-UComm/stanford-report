@@ -3455,3 +3455,85 @@ Single image/video component
     width: 60px;
   }
 }
+
+.marketo-sr-subscribe-form input label {
+  /* max-width: 46rem in Decanter but we're
+   getting some weird wrapping on the checkbox labels so we'll make everything just a tad wider.*/
+  max-width: 55rem;
+}
+
+.marketo-sr-subscribe-form input,
+  .marketo-sr-subscribe-form textarea,
+  .marketo-sr-subscribe-form select {
+  border-color: #6b7280;
+}
+
+/* Adjust :focus to remove Decanter v6 large box-shadow.
+     Style simpler with wider blue outline.*/
+
+.marketo-sr-subscribe-form input:focus,
+  .marketo-sr-subscribe-form textarea:focus,
+  .marketo-sr-subscribe-form select:focus{
+  --tw-border-opacity: 1;
+  border-color: rgb(5 151 255 / var(--tw-border-opacity));
+  border-width: 2px;
+  box-shadow: none;
+}
+
+/* Checkboxes are added with ::before pseudo elements.*/
+
+.marketo-sr-subscribe-form [type='checkbox'] + label::before {
+  border: 1px solid #6b7280;
+  border-radius: 0;
+  box-shadow: none;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+/* Focus state for checkboxes.*/
+
+.marketo-sr-subscribe-form [type='checkbox']:focus + label::before {
+  box-shadow: rgba(255, 255, 255, 1) 0px 0px 0px 2px, rgba(245, 245, 247, 1) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+
+/* Styles for checked checkboxes.*/
+
+.marketo-sr-subscribe-form [type='checkbox']:checked + label::before{
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 151 255 / var(--tw-bg-opacity));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-color: transparent;
+}
+
+/* Marketo puts the asterisk before the label text(?) so
+// we use flexbox to switch the order and put the asterisk
+// after the label text.*/
+
+.marketo-sr-subscribe-form .mktoLabel {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* Make required asterisk red and give it a little margin.*/
+
+.marketo-sr-subscribe-form .mktoAsterix{
+  --tw-text-opacity: 1;
+  color: rgb(177 4 14 / var(--tw-text-opacity));
+  margin-inline-start: 0.2rem;
+}
+
+/* Add more margin above the submit button at the bottom.*/
+
+.marketo-sr-subscribe-form .mktoButtonRow {
+  margin-top: 3rem;
+}
+
+/* Make validation error text red.*/
+
+.marketo-sr-subscribe-form .mktoError{
+  --tw-text-opacity: 1;
+  color: rgb(177 4 14 / var(--tw-text-opacity));
+}
