@@ -3456,6 +3456,10 @@ Single image/video component
   }
 }
 
+/*
+Subscribe to Stanford Report Marketo form styles
+*/
+
 .marketo-sr-subscribe-form input label {
   /* max-width: 46rem in Decanter but we're
    getting some weird wrapping on the checkbox labels so we'll make everything just a tad wider.*/
