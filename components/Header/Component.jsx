@@ -229,7 +229,7 @@ export default function Header({
             </div>
           </div>
         </header>
-
+      )}
       {isClient && displayConsentBanner && (
         <CookieConsentBanner
           consentClickHandler={handleConsent}
