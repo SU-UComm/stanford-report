@@ -73,7 +73,7 @@ export function Carousel({
     },
     slidesPerView: 1,
     variantClassName: "component-slider-single component-slider-peek",
-    loop: false,
+    loop: true,
   });
   variants.set("basicstory", {
     breakpoints: {

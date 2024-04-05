@@ -1,6 +1,6 @@
 import React from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
-import { Book, ExternalArrow, Podcast } from "../SVG-library/SVG";
+import { BookOpenCover, ExternalArrow, Podcast } from "../SVG-library/SVG";
 import { SidebarHeading } from "../headings/Heading";
 
 // TODO: Clean up TW classes with px, and properties with more than one value, e.g., md:su-gap-36 md:su-gap-48
@@ -39,7 +39,10 @@ export default function MediaCard({
   },
 }) {
   const iconMap = new Map();
-  iconMap.set("Featured reading", <Book variant="outline" />);
+  iconMap.set(
+    "Featured reading",
+    <BookOpenCover className="su-w-[1.2em]" aria-hidden />
+  );
   iconMap.set("Featured audio", <Podcast variant="outline" />);
 
   const isRealExternalLink =
@@ -99,17 +102,9 @@ export default function MediaCard({
           </div>
         )}
         {type && (
-          <div className="su-text-18 md:su-text-16 su-mb-15 md:su-mb-19 su-gap-6 su-text-black-70 dark:su-text-black-50 su-flex su-nowrap">
-            <span
-              className={[
-                type === "Book"
-                  ? "*:su-fill-transparent *:su-stroke-current"
-                  : "",
-              ].join(" ")}
-            >
-              {iconMap.get(taxonomy)}
-            </span>
-            {type}
+          <div className="su-text-18 md:su-text-16 su-mb-15 md:su-mb-19 su-gap-6 su-text-black-70 dark:su-text-black-50 su-flex su-nowrap su-items-center su-leading-snug">
+            <span>{iconMap.get(taxonomy)}</span>
+            <span className="su-font-semibold">{type}</span>
           </div>
         )}
         {description && (
