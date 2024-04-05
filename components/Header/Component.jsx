@@ -84,8 +84,7 @@ export default function Header({
   };
 
   useEffect(() => {
-    setClient(true);
-    if (typeof window.suHeaderProps !== "undefined") {
+    if (isClient && typeof window.suHeaderProps !== "undefined") {
       setRelatedStoryData(window.suHeaderProps?.relatedStoryData);
       setPageControls(window.suHeaderProps?.pageData);
       setAudience(window.suHeaderProps?.audienceData);
@@ -93,6 +92,8 @@ export default function Header({
       setDisplayConsentBanner(
         typeof window.suHeaderProps?.consentData === "undefined"
       );
+    } else {
+      setClient(true);
     }
   }, []);
 
