@@ -23,6 +23,10 @@ svg {
   @apply su-bg-black-true su-text-white;
 }
 
+.su-dark figcaption {
+  @apply su-bg-black-true su-text-white;
+}
+
 .sr-only {
   @apply su-sr-only;
 }
