@@ -15,8 +15,6 @@ export default function FeaturedMetadata({ data }) {
     related,
   } = data;
 
-  console.log(campus);
-
   const [copyLinkTitle, setCopyLinkTitle] = useState("Copy link");
 
   const copyLink = () => {
@@ -102,7 +100,7 @@ export default function FeaturedMetadata({ data }) {
     <section className="su-flex su-flex-col su-items-center">
       {firstRow.length > 0 ? (
         <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center md:su-flex-row md:su-gap-20 lg:su-gap-40">
-          <hr
+          <div
             aria-hidden="true"
             className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
           />
@@ -138,7 +136,7 @@ export default function FeaturedMetadata({ data }) {
             ))}
           </div>
 
-          <hr
+          <div
             aria-hidden="true"
             className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
           />
@@ -148,7 +146,7 @@ export default function FeaturedMetadata({ data }) {
       )}
       {otherRows.length > 0 ? (
         <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center su-mt-32 md:su-mt-61 md:su-flex-row md:su-gap-20 lg:su-gap-40">
-          <hr
+          <div
             aria-hidden="true"
             className="su-border-none su-w-70 su-h-2 su-bg-transparent md:su-w-auto su-grow md:su-h-3"
           />
@@ -183,7 +181,7 @@ export default function FeaturedMetadata({ data }) {
               </div>
             ))}
           </div>
-          <hr
+          <div
             aria-hidden="true"
             className="su-hidden su-border-none su-w-70 su-h-2 su-bg-transparent md:su-w-auto su-grow md:su-h-3 md:su-block"
           />
@@ -198,7 +196,7 @@ export default function FeaturedMetadata({ data }) {
         }`}
       >
         {firstRow.length === 0 ? (
-          <hr
+          <div
             aria-hidden="true"
             className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
           />
@@ -253,7 +251,7 @@ export default function FeaturedMetadata({ data }) {
         </div>
 
         {firstRow.length === 0 ? (
-          <hr
+          <div
             aria-hidden="true"
             className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
           />
