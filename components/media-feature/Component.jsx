@@ -6,7 +6,6 @@ import { SidebarHeading } from "../../packages/headings/Heading";
 import {
   Podcast,
   ExternalArrow,
-  // Book,
   BookOpenCover,
 } from "../../packages/SVG-library/SVG";
 
