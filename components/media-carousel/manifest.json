@@ -34,10 +34,7 @@
                   "type": "string",
                   "title": "Type",
                   "default": "Book",
-                  "enum": [
-                    "Book",
-                    "Podcast"
-                  ]
+                  "enum": ["Book", "Podcast"]
                 },
                 "image": {
                   "type": "string",
@@ -62,11 +59,7 @@
                   "title": "Link Url"
                 }
               },
-              "required": [
-                "cardType",
-                "image",
-                "title"
-              ]
+              "required": ["cardType", "image", "title"]
             }
           }
         },
