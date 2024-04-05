@@ -92,10 +92,13 @@ export default function Header({
       setDisplayConsentBanner(
         typeof window.suHeaderProps?.consentData === "undefined"
       );
+
+      console.log("Rendering client side");
     } else {
       setClient(true);
+      console.log("Setting the client, first pass");
     }
-  }, []);
+  }, [isClient]);
 
   return (
     <>
