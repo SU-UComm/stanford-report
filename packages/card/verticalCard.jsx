@@ -26,7 +26,7 @@ import {
   QuestionAnswer,
   Video,
   Podcast,
-  Book,
+  BookOpenCover,
 } from "../SVG-library/SVG";
 import CardThumbnail from "./CardThumbnail";
 
@@ -171,7 +171,10 @@ export default function VerticalCard({
   SVGMap.set("q&nbsp;&amp;&nbsp;a", <QuestionAnswer />);
   SVGMap.set("video", <Video />);
   SVGMap.set("podcast", <Podcast />);
-  SVGMap.set("book", <Book />);
+  SVGMap.set(
+    "book",
+    <BookOpenCover className="su-text-black-70 su-w-[1.2em]" aria-hidden />
+  );
 
   const cardThumb = imageUrl || "https://sug-web.matrix.squiz.cloud/?a=130443";
 
@@ -212,12 +215,12 @@ export default function VerticalCard({
         <h2
           className={`su-w-full ${titleSize(cardSize)} su-font-serif su-my-0`}
         >
-          <a
-            href={liveUrl}
+          <XssSafeContent
             className="focus:su-outline-0 focus:before:su-ring hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
-          >
-            {title}
-          </a>
+            content={title}
+            href={liveUrl}
+            elementType="a"
+          />
         </h2>
 
         {type && (

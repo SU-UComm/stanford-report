@@ -26,7 +26,7 @@ export default function SingleImageVideo({
 }) {
   let captionCredit;
   // const { url, attributes } = imageData;
-  const { vimeoid, youtubeid } = video;
+  // const { vimeoid, youtubeid } = video;
 
   if (caption && credit) {
     captionCredit = `${caption} | ${credit}`;
@@ -63,8 +63,6 @@ export default function SingleImageVideo({
     if (iframeNode && !iframeNode.dataset.loaded) {
       setTimeout(() => {
         const { top } = iframeNode.getBoundingClientRect();
-
-        // console.log(top);
 
         if (top < window.innerHeight) {
           setVideoPlaying("play");
@@ -117,10 +115,12 @@ export default function SingleImageVideo({
       <section className="su-flex su-flex-col su-items-center su-gap-8 su-gap-15">
         <div
           className={`su-relative${
-            !youtubeid ? " su-w-full" : " su-w-full su-aspect-[16/9]"
+            video && !video.youtubeid
+              ? " su-w-full"
+              : " su-w-full su-aspect-[16/9]"
           }`}
         >
-          {!youtubeid || !vimeoid ? (
+          {!video ? (
             <img
               // src="https://picsum.photos/800"
               src={imageData.url}
@@ -138,7 +138,7 @@ export default function SingleImageVideo({
               onClick={() => handleClick()}
             >
               <Video
-                id={vimeoid}
+                id={video.vimeoid}
                 thumbnail={imageData}
                 handleIframeLoad={handleIframeLoad}
               />
@@ -161,7 +161,7 @@ export default function SingleImageVideo({
             </p>
           </div>
 
-          {youtubeid && vimeoid && (
+          {video && video.youtubeid && video.vimeoid && (
             <button
               data-role="video-control"
               type="button"
@@ -190,7 +190,7 @@ export default function SingleImageVideo({
             title="Modal"
             onClose={handleCloseModal}
           >
-            <EmbedVideo videoId={youtubeid} />
+            <EmbedVideo videoId={video.youtubeid} />
           </Modal>
         )}
       </section>

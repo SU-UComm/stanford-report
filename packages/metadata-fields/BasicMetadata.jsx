@@ -190,7 +190,8 @@ export default function BasicMetadata({ data }) {
         ""
       )}
 
-      {campus && typeof campus.asset_assetid !== "undefined" ? (
+      {campus &&
+      !["undefined", undefined, null, ""].includes(campus.asset_assetid) ? (
         <div className="su-border-t border-t-black-20">
           <BasicFields title="Campus unit">
             <a
@@ -207,7 +208,10 @@ export default function BasicMetadata({ data }) {
 
       {related && related.length ? (
         <div className="su-border-t border-t-black-20">
-          <BasicFields title="Related topics">
+          <BasicFields
+            title="Related topics"
+            contentCSS="md:su-flex-row md:su-gap-27 md:su-flex-wrap"
+          >
             {related.map(
               (item) =>
                 item && (
@@ -233,7 +237,7 @@ export default function BasicMetadata({ data }) {
             onClick={copyLink}
             data-role="copy-link"
             type="button"
-            className="su-text-digital-blue su-text-21 su-font-semibold su-mr-auto su-leading-[26.25px]"
+            className="su-text-digital-blue dark:su-text-digital-blue-vivid su-text-21 su-font-semibold su-mr-auto hocus:su-underline su-leading-[125%]"
           >
             {copyLinkTitle}
 

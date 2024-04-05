@@ -1,6 +1,3 @@
-@tailwind components;
-@tailwind utilities;
-
 .su-linklist-mob-width {
   width: calc(100% - 60px);
 }
@@ -8,6 +5,12 @@
 @media screen and (min-width: 768px) {
   .su-linklist-mob-width {
     width: calc(100% - 352px);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .su-linklist-mob-width {
+    width: 100%;
   }
 }
 

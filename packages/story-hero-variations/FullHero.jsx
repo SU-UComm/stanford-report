@@ -36,14 +36,14 @@ export default function FullHero({ data }) {
             src={media.featureImage.url}
             alt={media.featureImage.alt}
           />
-          <div className="su-bg-gradient-header-1 dark:su-bg-gradient-header-1-dark su-absolute su-w-full su-h-[101%] su--bottom-1 su-left-0" />
+          <div className="su-bg-gradient-to-t su-from-white su-via-[rgb(255_255_255/.5)_8%] dark:su-from-black-true dark:su-via-[rgb(0_0_0/.5)_8%] su-to-50% su-absolute su-w-full su-h-full su-bottom-0 su-left-0" />
         </div>
 
-        <div className="su-mt-45 md:su-mt-0 su-grid su-grid-cols-6 md:su-items-center md:su-grid-cols-12 su-gap-y-0 su-grid-gap md:su-px-0 su-flex-wrap su-mx-auto">
+        <div className="su-relative su-z-10 -su-mt-48 su-grid su-grid-cols-6 md:su-items-center md:su-grid-cols-12 su-gap-y-0 su-grid-gap md:su-px-0 su-flex-wrap su-mx-auto">
           <div className="su-col-span-6 md:su-col-span-7 md:su-col-start-1 lg:su-col-span-8 lg:su-col-start-1 lg:su-pr-30">
             <h1
               className={[
-                "su-text-left su-w-full su-break-words su-my-0 md:su-rs-py-6 lg:su-rs-py-5 md:su-text-right su-font-serif su-w-full",
+                "su-text-shadow-title su-shadow-white dark:su-shadow-black-true su-text-left su-w-full su-break-words su-my-0 md:su-rs-py-6 lg:su-rs-py-5 md:su-text-right su-font-serif",
                 titleSize,
               ].join(" ")}
             >
@@ -58,7 +58,7 @@ export default function FullHero({ data }) {
               <div className="md:su-hidden su-absolute su-bg-gradient-light-red su-h-full su-w-3 su-left-0 su-top-0 lg:su-block" />
               <XssSafeContent
                 className={[
-                  "lg:su-max-w-[29.2rem] su-m-0 su-font-serif su-text-20 su-leading-[119.4%] su-mb-rs-5 md:su-text-21 md:su-leading-[130.245%] md:su-pb-72 lg:su-text-24 su-font-semibold",
+                  "su-text-shadow-title su-shadow-white dark:su-shadow-black-true lg:su-max-w-[29.2rem] su-m-0 su-font-serif su-text-20 su-leading-[119.4%] su-mb-rs-5 md:su-text-21 md:su-leading-[130.245%] md:su-pb-72 lg:su-text-24 su-font-semibold",
                   "su-pb-80 md:su-pb-0",
                 ].join(" ")}
                 content={summary}

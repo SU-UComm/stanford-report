@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../../packages/grids/Container";
-import Modal from "../../packages/modal/ModalWrapper";
 import EmbedVideo from "../../packages/media/EmbedVideo";
-import VideoPlay from "../../packages/SVG-library/VideoPlay";
 import { Carousel } from "../../packages/carousels/Carousels";
+import Modal from "../../packages/modal/ModalWrapper";
+import VideoPlay from "../../packages/SVG-library/VideoPlay";
 
 /**
  * Base component
@@ -40,7 +40,7 @@ export default function basicStoryHero(props) {
 
   return (
     <Container width="wide">
-      <div className="su-grid su-gap su-grid-cols-6 md:su-grid-cols-12">
+      <div className="su-grid su-gap su-grid-cols-6 md:su-grid-cols-12 su-">
         <div className="su-col-span-6 su-col-start-1 md:su-col-span-10 md:su-col-start-2">
           <div className="su-flex su-gap-y-8 su-gap-x-16 su-justify-between su-flex-wrap su-text-16 md:su-basefont-23">
             <span className="su-flex su-items-center su-justify-center">
@@ -74,31 +74,32 @@ export default function basicStoryHero(props) {
           />
         </div>
 
-        <div className="su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4">
-          <figure
-            className={`basic-story__header-image su-col-span-full su-relative su-z-0 ${
-              mediaType === "image" ? "dark:su-bg-black" : ""
-            }`}
-          >
-            <div className="su-relative su-w-full">
-              <Thumbnail
-                url={media.featureImage.url}
-                alt={media.featureImage.alt}
-                video={media.featureVideo.id}
-                type={mediaType}
-                carousel={media.carousel}
-              />
+        {/* If no media asset(s) are added, do not display this <div> */}
+        {media.featureImage.id ||
+        media.featureVideo.id ||
+        media.carousel !== null ? (
+          <div className="su-col-span-6 su-col-start-1 md:su-col-span-12 md:su-col-start-1 su-w-full swiper basic-story__header-slider su-overflow-visible su-rs-mt-4">
+            <figure className="basic-story__header-image su-col-span-full su-relative su-z-0">
+              <div className="su-relative su-w-full">
+                <Thumbnail
+                  url={media.featureImage.url}
+                  alt={media.featureImage.alt}
+                  video={media.featureVideo.id}
+                  type={mediaType}
+                  carousel={media.carousel}
+                />
 
-              <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" />
-            </div>
-            {mediaType !== "carousel" && (media.caption || media.credit) && (
-              <figcaption className="su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white">
-                {media.caption} {media.caption && media.credit && ` | `}
-                {media.credit}
-              </figcaption>
-            )}
-          </figure>
-        </div>
+                <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" />
+              </div>
+              {mediaType !== "carousel" && (media.caption || media.credit) && (
+                <figcaption className="su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white">
+                  {media.caption} {media.caption && media.credit && ` | `}
+                  {media.credit}
+                </figcaption>
+              )}
+            </figure>
+          </div>
+        ) : null}
       </div>
     </Container>
   );
@@ -106,10 +107,8 @@ export default function basicStoryHero(props) {
 
 function Thumbnail({ url, alt, video, type, carousel }) {
   // state
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const slides = [];
-
-  type = "video";
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // events
   const handleClick = () => {
@@ -123,10 +122,9 @@ function Thumbnail({ url, alt, video, type, carousel }) {
   if (type === "image") {
     return (
       <img
-        // src={url}
-        src="https://picsum.photos/350/200"
+        src={url}
         alt={alt}
-        className="su-relative su-w-full su-max-w-full"
+        className="su-relative su-w-full su-max-w-full dark:su-bg-black"
       />
     );
   }
@@ -154,30 +152,40 @@ function Thumbnail({ url, alt, video, type, carousel }) {
     return <Carousel slides={slides} variant="basicstory" />;
   }
 
-  return (
-    <>
-      <button
-        type="button"
-        aria-haspopup="dialog"
-        className="su-w-full su-aspect-[16/9] su-video-trigger"
-        onClick={handleClick}
-      >
-        <img
-          src={url}
-          alt={alt}
-          className="su-w-full su-h-full su-absolute su-top-0 su-left-0 su-object-cover su-object-center"
+  if (type === "video") {
+    return url !== "" ? (
+      <>
+        <button
+          type="button"
+          aria-haspopup="dialog"
+          className="su-w-full su-aspect-[16/9] su-video-trigger"
+          onClick={handleClick}
+        >
+          <img
+            src={url}
+            alt={alt}
+            className="su-w-full su-h-full su-absolute su-top-0 su-left-0 su-object-cover su-object-center"
+          />
+
+          <span className="su-play-button-icon-hero su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px]">
+            <VideoPlay />
+          </span>
+        </button>
+
+        {isModalOpen && (
+          <Modal onClose={handleCloseModal}>
+            <EmbedVideo videoId={video} />
+          </Modal>
+        )}
+      </>
+    ) : (
+      <div className="su-relative su-max-w-full su-h-0 su-pb-[56.25%] su-overflow-hidden">
+        <EmbedVideo
+          className="su-absolute su-top-0 su-left-0 su-w-full su-h-full"
+          videoId={video}
+          noAutoPlay
         />
-
-        <span className="su-play-button-icon-hero su-transition-all su-absolute su-bottom-20 su-left-20 *:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px]">
-          <VideoPlay />
-        </span>
-      </button>
-
-      {isModalOpen && (
-        <Modal onClose={handleCloseModal}>
-          <EmbedVideo videoId={video} />
-        </Modal>
-      )}
-    </>
-  );
+      </div>
+    );
+  }
 }

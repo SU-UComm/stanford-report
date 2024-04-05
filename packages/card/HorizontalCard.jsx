@@ -27,7 +27,7 @@ import {
   QuestionAnswer,
   Video,
   Podcast,
-  Book,
+  BookOpenCover,
 } from "../SVG-library/SVG";
 
 import EventStartEndDate from "./EventStartEndDate";
@@ -141,7 +141,7 @@ export default function HorizontalCard({
   SVGMap.set("q&nbsp;&amp;&nbsp;a", <QuestionAnswer />);
   SVGMap.set("video", <Video />);
   SVGMap.set("podcast", <Podcast />);
-  SVGMap.set("book", <Book />);
+  SVGMap.set("book", <BookOpenCover className="su-w-[1.2em]" aria-hidden />);
 
   // gap for the card <article> element
   const cardGap = new Map();
@@ -211,12 +211,12 @@ export default function HorizontalCard({
             cardSize
           )} ${cardTitleFont(cardSize)} su-font-sans su-my-0`}
         >
-          <a
+          <XssSafeContent
             className="hocus:su-text-digital-red hocus:su-underline su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
+            content={title}
             href={liveUrl}
-          >
-            {title}
-          </a>
+            elementType="a"
+          />
         </h2>
 
         {/* only small cards will have the date */}

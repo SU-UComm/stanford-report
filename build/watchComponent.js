@@ -1,8 +1,8 @@
 import * as esbuild from "esbuild";
 import { getEntryPoints } from "./getEntryPoints.js";
 import { esbuildClientOptions, esbuildServerOptions } from "./config.js";
-import { listFormatter } from "./listFormatter.js";
-import { reloadLogPlugin } from "./reloadLogPlugin.js";
+// import { listFormatter } from "./listFormatter.js";
+// import { reloadLogPlugin } from "./reloadLogPlugin.js";
 import { tailwindWatchPlugin } from "./tailwindWatchPlugin.js";
 
 /**
@@ -28,7 +28,7 @@ export async function watchComponent(componentPath) {
       ...clientOptions,
       plugins: [
         ...(clientOptions.plugins || []),
-        reloadLogPlugin(componentPath, "client"),
+        // reloadLogPlugin(componentPath, "client"),
       ],
     });
   }
@@ -43,7 +43,7 @@ export async function watchComponent(componentPath) {
         clientEntryPoints,
         componentPath
       ),
-      reloadLogPlugin(componentPath, "server"),
+      // reloadLogPlugin(componentPath, "server"),
     ],
   });
 
@@ -57,15 +57,15 @@ export async function watchComponent(componentPath) {
     promises.push(serverCtx.watch());
   }
 
-  console.log(
-    `watching for changes to ${listFormatter.format(tailwindEntryPoints)}`
-  );
-  console.log(
-    `watching for changes to ${listFormatter.format(serverEntryPoints)}`
-  );
-  console.log(
-    `watching for changes to ${listFormatter.format(tailwindEntryPoints)}`
-  );
+  // console.log(
+  //   `watching for changes to ${listFormatter.format(tailwindEntryPoints)}`
+  // );
+  // console.log(
+  //   `watching for changes to ${listFormatter.format(serverEntryPoints)}`
+  // );
+  // console.log(
+  //   `watching for changes to ${listFormatter.format(tailwindEntryPoints)}`
+  // );
 
   return Promise.all(promises);
 }
