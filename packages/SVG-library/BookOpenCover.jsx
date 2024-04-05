@@ -12,6 +12,7 @@ export default function BookOpenCover(props) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 18 15"
+      data-testid="svg-book-open-cover"
       fill="currentColor"
       {...props}
     >
