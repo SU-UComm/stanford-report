@@ -31,6 +31,7 @@ export { default as TypeAnnouncement } from "./TypeAnnouncement";
 export { default as CaseStudy } from "./CaseStudy";
 export { default as News } from "./News";
 export { default as Book } from "./Book";
+export { default as BookOpenCover } from "./BookOpenCover";
 export { default as Event } from "./Event";
 export { default as EventsCalendar } from "./EventsCalendar";
 export { default as Feature } from "./Feature";
