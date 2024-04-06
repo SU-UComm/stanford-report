@@ -19,6 +19,8 @@ import MobileBurgerBar from "../../packages/SVG-library/MobileBurgerBar";
 import SearchIcon from "../../packages/SVG-library/Search";
 import CloseIcon from "../../packages/SVG-library/Close";
 
+import _preferencesSettings from "./scripts/preferenceSettings";
+import ReportHeader from "./scripts/reportHeader";
 /**
  * Header component
  *
@@ -27,15 +29,7 @@ import CloseIcon from "../../packages/SVG-library/Close";
  * @constructor
  */
 
-export default function Header({
-  site,
-  navigation,
-  search,
-  pageData = null,
-  audienceData = null,
-  relatedStoryData = null,
-  consentData = true,
-}) {
+export default function Header({ site, navigation, search }) {
   const [isClient, setIsClient] = useState(false);
   // has the user given consent?
   const [consent, setConsent] = useState(false);
@@ -86,7 +80,6 @@ export default function Header({
 
   useEffect(() => {
     if (isClient && typeof window.suHeaderProps !== "undefined") {
-      console.log("second pass");
       setRelatedStoryData(window.suHeaderProps?.relatedStoryData);
       setPageControls(window.suHeaderProps?.pageData);
       setAudience(window.suHeaderProps?.audienceData);
@@ -94,11 +87,15 @@ export default function Header({
       setDisplayConsentBanner(
         typeof window.suHeaderProps?.consentData === "undefined"
       );
+      // This is legacy code, however, it works
+      const headerDom = document.querySelector(".report-header");
+      // eslint-disable-next-line no-unused-vars
+      const reportHeaderInit = new ReportHeader(headerDom);
+      _preferencesSettings();
     } else {
-      console.log("first pass");
       setIsClient(true);
     }
-  }, []);
+  }, [isClient]);
 
   return (
     <>
@@ -148,20 +145,18 @@ export default function Header({
                   </span>
                 </button>
 
-                {isClient && (
-                  <MobileNav
-                    site={site}
-                    navigation={navigation}
-                    search={search}
-                    audience={audience}
-                  />
-                )}
+                <MobileNav
+                  site={site}
+                  navigation={navigation}
+                  search={search}
+                  audience={audience}
+                />
 
                 <span className="su-absolute">
                   <span
                     data-tp-to="submit-btn"
                     data-role="search-focus-trap"
-                    tabIndex="0"
+                    // tabIndex="0"
                     className="su-hidden"
                   />
                 </span>
@@ -210,18 +205,17 @@ export default function Header({
                 logoLight={site?.logoLight}
               />
 
-              {isClient && pageControls?.isStory && (
+              {/* {isClient && pageControls?.isStory && ( */}
+              {pageControls?.isStory && (
                 <CurrentStoryHeadline
                   title={pageControls?.title}
                   story={relatedStory}
                 />
               )}
-              {isClient && (
-                <PreferencesTray
-                  audience={audience}
-                  personaClickHandler={handlePersona}
-                />
-              )}
+              <PreferencesTray
+                audience={audience}
+                personaClickHandler={handlePersona}
+              />
             </div>
             <MainNav
               major={navigation?.major}
