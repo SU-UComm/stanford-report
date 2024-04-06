@@ -42,6 +42,7 @@ import ReportHeader from "./scripts/reportHeader";
   hydrateComponent({ Component, componentName: target });
 
   setTimeout(() => {
+    console.log("setTimeout ran");
     const headerDom = document.querySelector(".report-header");
     const initHeader = new ReportHeader(headerDom);
     _preferencesSettings();
