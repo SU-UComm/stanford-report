@@ -1,9 +1,9 @@
 import * as esbuild from "esbuild";
 import GlobalsPlugin from "esbuild-plugin-globals";
 import fs from "fs";
-import { glob } from "glob";
+import { globSync } from "glob";
 
-const entryPoints = await glob("./components/*/client.+(jsx|js)");
+const entryPoints = await globSync("./components/*/client.+(jsx|js)");
 const buildPath = "./global/build";
 const globalInputJs = "./global/js/_global.js";
 const globalOutputJs = `${buildPath}/global.js`;
