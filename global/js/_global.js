@@ -36,6 +36,5 @@ import '../../components/basic-story-hero/client.jsx';
 import '../../components/basic-hero/client.jsx';
 import '../../components/acknowledgement/client.jsx';
 import '../../components/__su_base/client.jsx';
-import '../../components/__01-Templates/client.jsx';
 import '../../components/Header/client.jsx';
 import '../../components/Footer/client.jsx';
