@@ -20,10 +20,11 @@ const processCSS = async (css) => {
 export async function cssGenerator() {
   // now find all main main.css component files and lib client css files
   const mainCSS = await glob("./components/*/*.css");
-  const libCSS = await glob("./components/*/dist/client.css");
+  // const libCSS = await glob("./components/*/dist/client.css");
   // Combine
   let combinedContent = "";
-  [globalInputCss, ...mainCSS, ...libCSS].forEach((file) => {
+  // [globalInputCss, ...mainCSS, ...libCSS].forEach((file) => {
+  [globalInputCss, ...mainCSS].forEach((file) => {
     combinedContent += `${fs.readFileSync(file, "utf8")}\n`;
   });
   const processedCSS = await processCSS(combinedContent);
