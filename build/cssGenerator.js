@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 import fs from "fs";
-import { glob } from "glob";
+import { globSync } from "glob";
 import postcss from "postcss";
 import postcssImport from "postcss-import";
 import tailwindcss from "tailwindcss";
@@ -19,7 +19,7 @@ const processCSS = async (css) => {
 
 export async function cssGenerator() {
   // now find all main main.css component files and lib client css files
-  const mainCSS = await glob("./components/*/*.css");
+  const mainCSS = globSync("./components/*/*.css");
   // const libCSS = await glob("./components/*/dist/client.css");
   // Combine
   let combinedContent = "";
