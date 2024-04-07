@@ -2,13 +2,26 @@ import React, { useState, useEffect } from "react";
 import { decode } from "html-entities";
 import { Container } from "../../packages/grids/Container";
 
+function removeDuplicates(arr) {
+  return arr.filter(
+    (obj, index) =>
+      index ===
+      arr.findIndex(
+        (topic) =>
+          topic.taxonomyFeaturedUnitText?.[0] ===
+          obj.taxonomyFeaturedUnitText?.[0]
+      )
+  );
+}
+
 const topicFormatter = async (topics) => {
   if (!topics || topics.length === 0) {
     return null;
   }
-
+  // Remove all duplicates
+  const uniqueTopics = removeDuplicates(topics);
   const formatted = [];
-  topics.forEach((obj) => {
+  uniqueTopics.forEach((obj) => {
     const dataset = obj;
     if (dataset && dataset.taxonomyFeaturedUnitText?.[0]) {
       formatted.push({
