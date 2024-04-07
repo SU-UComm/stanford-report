@@ -45,11 +45,14 @@ export default function TopicSubtopicListing({
           resData.response.resultPacket.results.forEach((cardItem) => {
             cards.push(formatCardDataFunnelback(cardItem));
           });
-          // update subnav listing
-          document.topicsChangeEvent = new CustomEvent("topicLoader", {
-            detail: cards,
-          });
-          document.dispatchEvent(document.topicsChangeEvent);
+          // dont run for content topics
+          if (displayConfiguration.displayStyle !== "Default") {
+            // update subnav listing
+            document.topicsChangeEvent = new CustomEvent("topicLoader", {
+              detail: cards,
+            });
+            document.dispatchEvent(document.topicsChangeEvent);
+          }
 
           const visitedPage = {};
 
