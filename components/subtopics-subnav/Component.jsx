@@ -9,11 +9,11 @@ const topicFormatter = async (topics) => {
 
   const formatted = [];
   topics.forEach((obj) => {
-    const dataset = obj?.listMetadata;
+    const dataset = obj;
     if (dataset && dataset.taxonomyFeaturedUnitText?.[0]) {
       formatted.push({
         asset_name: dataset.taxonomyFeaturedUnitText?.[0],
-        asset_url: dataset.taxonomyFeaturedUnitLandingPageUrl?.[0],
+        asset_url: dataset.taxonomyFeaturedUnitLandingPageUrl?.[0] || "",
       });
     }
   });
