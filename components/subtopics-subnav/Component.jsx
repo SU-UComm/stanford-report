@@ -39,7 +39,7 @@ function Subnav({ navigation }) {
   const aClass =
     "su-text-inherit su-text-black su-font-semi-bold su-text-16 lg:su-text-18 lg:su-leading-[21.6px] su-no-underline hover:su-underline dark:su-text-white hover:su-text-digital-red dark:hover:su-text-dark-mode-red";
   return (
-    <div className="scrollable-list su-w-full md:su-justify-center su-flex su-nowrap su-mb-15 md:su-mb-25 lg:su-mb-41">
+    <div className="scrollable-list su-w-full md:su-justify-center su-flex su-nowrap su-mt-15 md:su-mt-26 lg:su-mt-19">
       <ul className="scrollable-list__items su-w-[calc(100%+40px)] md:su-w-auto su-flex md:su-justify-center su-mb-0 su-whitespace-nowrap su-flex-nowrap md:su-flex-wrap su-overflow-x-scroll md:su-overflow-visible su-list-none su-mx-[-20px] md:su-mr-0 su-px-20 su-mb-0 su-pb-12 lg:su-pb-0">
         {navigation.map((item, i, row) => {
           const title = decode(item.asset_name);
@@ -85,7 +85,7 @@ export default function SubtopicSubnav({
       async (evt) => {
         // set topic state
         if (evt.detail) {
-          const newTopics = await topicFormatter(evt.detail);
+          const newTopics = await topicFormatter(evt.detail.cards);
           setTopics(newTopics);
         }
       },
@@ -122,7 +122,7 @@ export default function SubtopicSubnav({
               </p>
             )}
             {title && (
-              <h1 className="su-text-black su-font-bold su-font-serif dark:su-text-white su-text-center su-text-[39px] md:su-text-[54px] lg:su-text-[70px] su-mb-15 md:su-mb-26 lg:su-mb-19 su-leading-[46.57px] md:su-leading-[64.8px] lg:su-leading-[84px]">
+              <h1 className="su-text-black su-font-bold su-font-serif dark:su-text-white su-text-center su-text-[39px] md:su-text-[54px] lg:su-text-[70px] su-leading-[46.57px] md:su-leading-[64.8px] lg:su-leading-[84px] su-mb-0">
                 {decode(title)}
               </h1>
             )}

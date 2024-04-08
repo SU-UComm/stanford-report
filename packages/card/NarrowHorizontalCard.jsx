@@ -38,7 +38,7 @@ export default function NarrowHorizontalCard({
   },
 }) {
   const authorDate = (
-    <time className="su-text-black-70 dark:su-text-black-60">
+    <time className="su-text-black-70 dark:su-text-black-60 su-font-semibold">
       {authorDisplayName ? (
         <XssSafeContent
           content={` &nbsp;|&nbsp; ${formatNewsDate(date)}`}

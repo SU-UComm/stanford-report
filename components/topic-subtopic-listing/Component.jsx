@@ -16,6 +16,22 @@ import formatCardDataFunnelback from "../../packages/utils/formatCardDataFunnelb
  * @constructor
  */
 
+function maybeUpdateSubnavLinks(cards, displayStyle) {
+  // Check if we need to update the hero topics
+  if (
+    displayStyle === "Leadership Messages" ||
+    displayStyle === "Announcements"
+  ) {
+    // update subnav listing
+    document.topicsChangeEvent = new CustomEvent("topicLoader", {
+      detail: {
+        cards,
+      },
+    });
+    document.dispatchEvent(document.topicsChangeEvent);
+  }
+}
+
 export default function TopicSubtopicListing({
   data,
   resultsSummary,
@@ -24,7 +40,7 @@ export default function TopicSubtopicListing({
   endpoint,
 }) {
   let cards = [];
-  const { searchQuery } = displayConfiguration;
+  const { searchQuery, displayStyle } = displayConfiguration;
 
   // state
   const [pageNo, setPageNo] = useState(pageNumber);
@@ -45,17 +61,10 @@ export default function TopicSubtopicListing({
           resData.response.resultPacket.results.forEach((cardItem) => {
             cards.push(formatCardDataFunnelback(cardItem));
           });
-          // dont run for content topics
-          if (displayConfiguration.displayStyle !== "Default") {
-            // update subnav listing
-            document.topicsChangeEvent = new CustomEvent("topicLoader", {
-              detail: cards,
-            });
-            document.dispatchEvent(document.topicsChangeEvent);
-          }
+
+          maybeUpdateSubnavLinks(cards, displayStyle);
 
           const visitedPage = {};
-
           visitedPage[pageNo] = cards;
 
           // update card data state
@@ -63,7 +72,6 @@ export default function TopicSubtopicListing({
 
           // save the current page's data in cache
           setCache((visited) => ({ ...visited, ...visitedPage }));
-
           window.scrollTo({ top: 0, behavior: "smooth" });
         })
         .catch((err) => {
@@ -73,21 +81,24 @@ export default function TopicSubtopicListing({
       return;
     }
 
+    const cachedValues = cache[pageNo];
+
     // if the paginated page is cached, get the cached page
-    setResults(cache[pageNo]);
+    setResults(cachedValues);
+    maybeUpdateSubnavLinks(cachedValues, displayStyle);
 
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pageNo]);
 
   results.forEach((card) => {
     if (
-      displayConfiguration.displayStyle === "Press Center" ||
-      displayConfiguration.displayStyle === "Leadership Messages" ||
-      displayConfiguration.displayStyle === "Announcements" ||
-      displayConfiguration.displayStyle === "In the News"
+      displayStyle === "Press Center" ||
+      displayStyle === "Leadership Messages" ||
+      displayStyle === "Announcements" ||
+      displayStyle === "In the News"
     ) {
       const cardData = card;
-      cardData.displayConfiguration = displayConfiguration.displayStyle;
+      cardData.displayConfiguration = displayStyle;
       cards.push(<Card data={cardData} cardType="narrowhorizontal" />);
     } else {
       cards.push(<Card data={card} cardType="horizontal" cardSize="large" />);
