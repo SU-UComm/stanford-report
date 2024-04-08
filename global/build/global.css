@@ -3933,9 +3933,6 @@ Single image/video component
 .su-relative{
   position: relative;
 }
-.su--bottom-1{
-  bottom: -0.1rem;
-}
 .su--left-80{
   left: -8rem;
 }
@@ -4772,9 +4769,6 @@ Single image/video component
 .su-w-100{
   width: 10rem;
 }
-.su-w-1em{
-  width: 1em;
-}
 .su-w-2{
   width: 0.2rem;
 }
@@ -5570,9 +5564,6 @@ Single image/video component
 .su-to-olive{
   --tw-gradient-to: #8F993E var(--tw-gradient-to-position);
 }
-.su-to-plum{
-  --tw-gradient-to: #620059 var(--tw-gradient-to-position);
-}
 .su-to-50\%{
   --tw-gradient-to-position: 50%;
 }
@@ -5584,9 +5575,6 @@ Single image/video component
 }
 .su-bg-repeat{
   background-repeat: repeat;
-}
-.su-fill-current{
-  fill: currentColor;
 }
 .su-fill-none{
   fill: none;
@@ -6259,10 +6247,6 @@ Single image/video component
 .su-tracking-normal{
   letter-spacing: 0em;
 }
-.\!su-text-digital-red{
-  --tw-text-opacity: 1 !important;
-  color: rgb(177 4 14 / var(--tw-text-opacity)) !important;
-}
 .su-text-black{
   --tw-text-opacity: 1;
   color: rgb(46 45 41 / var(--tw-text-opacity));
@@ -6844,6 +6828,15 @@ Single image/video component
   /* stroke: #fff !important; */
   color: #fff;
 }
+.su-dark .report-header__pref-toggle:hover svg {
+  color: #000000;
+}
+.su-dark .report-header__pref-toggle[aria-pressed="true"] svg {
+  fill: transparent;
+}
+.su-dark .report-header__pref-toggle[aria-pressed="true"] .icon-detail svg {
+  fill: #000000;
+}
 .report-header__pref-toggle[aria-pressed="true"]:hover svg,
 .report-header__pref-toggle[aria-pressed="true"] svg {
   /* @apply su-stroke-digital-red; */
@@ -7291,15 +7284,6 @@ Single image/video component
 .report-header__pref-toggle:hover svg {
   /* stroke: #fff !important; */
   color: #fff;
-}
-.su-dark .report-header__pref-toggle:hover svg {
-  color: #000000;
-}
-.su-dark .report-header__pref-toggle[aria-pressed="true"] svg {
-  fill: transparent;
-}
-.su-dark .report-header__pref-toggle[aria-pressed="true"] .icon-detail svg {
-  fill: #000000;
 }
 .report-header__pref-toggle[aria-pressed="true"]:hover svg,
 .report-header__pref-toggle[aria-pressed="true"] svg {
