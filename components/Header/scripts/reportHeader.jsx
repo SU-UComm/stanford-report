@@ -21,8 +21,10 @@ export default class ReportHeader {
 
     const mainNavList = document.querySelector(`[data-role="header-main-nav"]`);
 
-    mainNavList.classList.remove("su-opacity-0");
-    mainNavList.classList.add("su-opacity-1");
+    if (mainNavList) {
+      mainNavList.classList.remove("su-opacity-0");
+      mainNavList.classList.add("su-opacity-1");
+    }
   }
 
   // focus trapping
