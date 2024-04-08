@@ -96,7 +96,7 @@ export default function SubtopicSubnav({
   return (
     isClient && (
       <Container width="large">
-        <section className="listing">
+        <section className="listing su-rs-mb-4">
           <div className="listing__header">
             {!isTopLevel && (
               <p className="listing__back-link su-flex su-justify-center su-mb-15 md:su-mb-18 lg:su-mb-10">
