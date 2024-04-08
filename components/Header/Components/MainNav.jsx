@@ -38,7 +38,10 @@ export default function MainNav({ major, currentPage }) {
       aria-label="Secondary"
       className="report-header__nav su-hidden md:su-block su-w-full before:su-h-2 before:su-block before:su-w-full before:su-bg-black-10 before:su-mx-auto before:su-w-full dark:before:su-bg-black lg:before:su-max-w-[858px]"
     >
-      <ul className="su-list-none su-pl-0 su-ml-0 su-flex su-justify-center su-gap-60 su-mb-0">
+      <ul
+        data-role="header-main-nav"
+        className="su-list-none su-pl-0 su-ml-0 su-flex su-justify-center su-gap-60 su-mb-0 su-opacity-0 su-transition"
+      >
         {generateItems(major, currentPage)}
       </ul>
     </nav>
