@@ -2059,6 +2059,7 @@ Single image/video component
 .su-fixed{position:fixed}
 .su-absolute{position:absolute}
 .su-relative{position:relative}
+.su--bottom-1{bottom:-0.1rem}
 .su--left-80{left:-8rem}
 .su-bottom-0{bottom:0}
 .su-bottom-13{bottom:1.3rem}
@@ -2573,6 +2574,7 @@ Single image/video component
 .su-to-digital-red-dark{--tw-gradient-to:#820000 var(--tw-gradient-to-position)}
 .su-to-digital-red-light{--tw-gradient-to:#E50808 var(--tw-gradient-to-position)}
 .su-to-olive{--tw-gradient-to:#8F993E var(--tw-gradient-to-position)}
+.su-to-plum{--tw-gradient-to:#620059 var(--tw-gradient-to-position)}
 .su-to-50\%{--tw-gradient-to-position:50%}
 .su-bg-cover{background-size:cover}
 .su-bg-center{background-position:center}
@@ -2700,6 +2702,7 @@ Single image/video component
 .su-align-middle{vertical-align:middle}
 .su-font-sans{font-family:"Source Sans 3", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif}
 .su-font-serif{font-family:"Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif}
+.\!su-text-19{font-size:1.9rem !important}
 .\!su-text-23{font-size:2.3rem !important}
 .su-text-12{font-size:1.2rem}
 .su-text-14{font-size:1.4rem}
@@ -3776,11 +3779,13 @@ Single image/video component
 .md\:su-mx-50{margin-left:5rem;margin-right:5rem}
 .md\:su-mx-\[8\.33\%\]{margin-left:8.33%;margin-right:8.33%}
 .md\:su-my-27{margin-top:2.7rem;margin-bottom:2.7rem}
+.md\:su-my-72{margin-top:7.2rem;margin-bottom:7.2rem}
 .md\:su-mb-0{margin-bottom:0}
 .md\:su-mb-10{margin-bottom:1rem}
 .md\:su-mb-11{margin-bottom:1.1rem}
 .md\:su-mb-18{margin-bottom:1.8rem}
 .md\:su-mb-19{margin-bottom:1.9rem}
+.md\:su-mb-25{margin-bottom:2.5rem}
 .md\:su-mb-26{margin-bottom:2.6rem}
 .md\:su-mb-27{margin-bottom:2.7rem}
 .md\:su-mb-30{margin-bottom:3rem}
@@ -3991,6 +3996,7 @@ Single image/video component
 .md\:su-leading-\[25\.2px\]{line-height:25.2px}
 .md\:su-leading-\[26\.25px\]{line-height:26.25px}
 .md\:su-leading-\[26px\]{line-height:26px}
+.md\:su-leading-\[27\.7px\]{line-height:27.7px}
 .md\:su-leading-\[28\.75px\]{line-height:28.75px}
 .md\:su-leading-\[36\.47px\]{line-height:36.47px}
 .md\:su-leading-\[4\.776rem\]{line-height:4.776rem}
@@ -4058,12 +4064,14 @@ Single image/video component
 .lg\:su-col-start-9{grid-column-start:9}
 .lg\:su-mx-0{margin-left:0;margin-right:0}
 .lg\:su-mx-auto{margin-left:auto;margin-right:auto}
+.lg\:su-my-76{margin-top:7.6rem;margin-bottom:7.6rem}
 .lg\:su-mb-10{margin-bottom:1rem}
 .lg\:su-mb-12{margin-bottom:1.2rem}
 .lg\:su-mb-15{margin-bottom:1.5rem}
 .lg\:su-mb-19{margin-bottom:1.9rem}
 .lg\:su-mb-27{margin-bottom:2.7rem}
 .lg\:su-mb-38{margin-bottom:3.8rem}
+.lg\:su-mb-41{margin-bottom:4.1rem}
 .lg\:su-mb-58{margin-bottom:5.8rem}
 .lg\:su-mb-8{margin-bottom:0.8rem}
 .lg\:su-mb-9{margin-bottom:0.9rem}

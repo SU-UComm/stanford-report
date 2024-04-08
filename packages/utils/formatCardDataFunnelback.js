@@ -29,10 +29,7 @@ export default function formatCardDataFunnelback({
     author,
     isTeaser,
     storySource,
-    canonical,
-    c,
-    videoCategory,
-    videoId,
+    assetHref,
   },
   date,
   liveUrl,
@@ -41,9 +38,9 @@ export default function formatCardDataFunnelback({
   const authorAvatar = authorImage !== "" ? authorImage : undefined;
 
   const imageUrl = image;
-  const videoUrl = featuredVideo || videoId;
+  const videoUrl = featuredVideo;
 
-  const description = teaserPlain || summary || (c instanceof Array ? c[0] : c);
+  const description = teaserPlain || summary;
 
   // taxonomy
   let taxonomy = taxonomyContentMainTopicText;
@@ -65,12 +62,10 @@ export default function formatCardDataFunnelback({
   if (!type && contentCategory) {
     type =
       contentCategory instanceof Array ? contentCategory[0] : contentCategory;
-  } else if (!type && videoCategory) {
-    type = "Video";
   }
 
-  if (canonical && assetTypeCode?.[0] === "link") {
-    liveUrl = canonical;
+  if (assetHref && assetTypeCode[0] === "link") {
+    liveUrl = assetHref;
   }
 
   return {
