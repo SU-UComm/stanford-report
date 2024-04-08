@@ -192,7 +192,7 @@ export default function FeaturedMetadata({ data }) {
 
       <div
         className={`su-flex su-w-full su-flex-col su-justify-center su-items-center md:su-flex-row md:su-gap-20 lg:su-gap-40 ${
-          firstRow.length > 0 ? "su-mt-32 md:su-mt-[61px]" : ""
+          firstRow.length > 0 ? "su-rs-mt-4" : ""
         }`}
       >
         {firstRow.length === 0 ? (
@@ -262,7 +262,7 @@ export default function FeaturedMetadata({ data }) {
 
       {campus &&
       ![null, undefined, "undefined", ""].includes(campus.asset_assetid) ? (
-        <div className="su-text-center su-mt-34 md:su-mt-58 lg:su-mt-61 su-flex su-flex-col su-gap-20 md:su-gap-26">
+        <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
           <h3 className="su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans !su-m-0">
             Campus unit
           </h3>
@@ -287,7 +287,7 @@ export default function FeaturedMetadata({ data }) {
       )}
 
       {related && related.length ? (
-        <div className="su-text-center su-mt-34 md:su-mt-58 lg:su-mt-61 su-flex su-flex-col su-gap-20 md:su-gap-26">
+        <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
           <h3 className="su-text-18 su-font-bold su-leading-[22.5px] su-font-sans !su-m-0">
             Related topics
           </h3>
@@ -313,7 +313,7 @@ export default function FeaturedMetadata({ data }) {
         ""
       )}
 
-      <div className="su-text-center su-mt-34 md:su-mt-58 lg:su-mt-61 su-flex su-flex-col su-gap-20 md:su-gap-26">
+      <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
         <h3 className="su-text-18 su-font-bold su-leading-[22.5px] !su-m-0 su-font-sans">
           Share this story
         </h3>
