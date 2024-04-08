@@ -24,7 +24,7 @@ export default async function relatedStoryData(pageData = null, audience = "") {
     )}?profile=${pageData.search.profile}&query=%21null&collection=${
       pageData.search.collection
     }&meta_taxonomyContentTypeText_not=Leadership%20messages+News+Announcements
-    &num_ranks=12&meta_notisTeaser=true&sort=date&meta_id_not=${
+    &num_ranks=1&meta_notisTeaser=true&sort=date&meta_id_not=${
       pageData.search.currentPage
     }`;
 
