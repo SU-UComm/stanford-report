@@ -212,7 +212,7 @@ export default function MobileNav({ navigation, search, audience }) {
             >
               <svg
                 aria-hidden="true"
-                className="su-size-30 su-mt-2 su-ml-4 su-text-digital-red"
+                className="su-size-30 su-mt-2 su-ml-4 su-text-digital-red dark:su-text-dark-mode-red"
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
                 height="30"
@@ -282,7 +282,10 @@ export default function MobileNav({ navigation, search, audience }) {
             <span id="close-menu" hidden>
               Close menu
             </span>
-            <span className="su-text-12 su-block" aria-hidden="true">
+            <span
+              className="su-text-[1.433rem] su-block su-font-semibold"
+              aria-hidden="true"
+            >
               Close
             </span>
           </button>

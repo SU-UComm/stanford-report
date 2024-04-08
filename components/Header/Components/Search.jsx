@@ -57,7 +57,7 @@ export default function Search({ endpoint, collection, profile, resultPage }) {
           >
             <svg
               aria-hidden="true"
-              className="su-size-30 su-mt-2 su-ml-4 su-text-digital-red"
+              className="su-size-30 su-mt-2 su-ml-4 su-text-digital-red dark:su-text-dark-mode-red"
               xmlns="http://www.w3.org/2000/svg"
               width="30"
               height="30"

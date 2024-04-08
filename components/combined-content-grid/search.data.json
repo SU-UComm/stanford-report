@@ -19,7 +19,7 @@
   },
   "announcementsConfiguration": {
     "heading": "Announcements",
-    "endPoint": "?profile=stanford-report-push-search&query=%21null&num_ranks=3&collection=sug~sp-stanford-report-search&sort=date&meta_taxonomyContentTypeText=Announcement",
+    "endPoint": "?profile=stanford-report-push-search_preview&query=%21null&num_ranks=3&collection=sug~sp-stanford-report-search&sort=date&meta_taxonomyContentTypeText=Announcement&meta_taxonomyAudienceText=Student",
     "numberOfItems": 3,
     "linkUrl": "matrix-asset://api-identifier/89422"
   }

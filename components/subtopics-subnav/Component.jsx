@@ -2,32 +2,32 @@ import React, { useState, useEffect } from "react";
 import { decode } from "html-entities";
 import { Container } from "../../packages/grids/Container";
 
+function removeDuplicates(arr) {
+  return arr.filter(
+    (obj, index) =>
+      index ===
+      arr.findIndex(
+        (topic) =>
+          topic.taxonomyFeaturedUnitText?.[0] ===
+          obj.taxonomyFeaturedUnitText?.[0]
+      )
+  );
+}
+
 const topicFormatter = async (topics) => {
   if (!topics || topics.length === 0) {
     return null;
   }
-
+  // Remove all duplicates
+  const uniqueTopics = removeDuplicates(topics);
   const formatted = [];
-  const checkNames = [];
-  topics.forEach((obj) => {
+  uniqueTopics.forEach((obj) => {
     const dataset = obj;
-
-    if (
-      dataset &&
-      dataset.taxonomyFeaturedUnitText?.[0] &&
-      dataset.taxonomyFeaturedUnitLandingPageUrl?.[0]
-    ) {
-      const alreadyExistsIndex = checkNames.indexOf(
-        dataset.taxonomyFeaturedUnitText?.[0]
-      );
-
-      if (alreadyExistsIndex < 0) {
-        checkNames.push(dataset.taxonomyFeaturedUnitText?.[0]);
-        formatted.push({
-          asset_name: dataset.taxonomyFeaturedUnitText?.[0],
-          asset_url: dataset.taxonomyFeaturedUnitLandingPageUrl?.[0],
-        });
-      }
+    if (dataset && dataset.taxonomyFeaturedUnitText?.[0]) {
+      formatted.push({
+        asset_name: dataset.taxonomyFeaturedUnitText?.[0],
+        asset_url: dataset.taxonomyFeaturedUnitLandingPageUrl?.[0] || "",
+      });
     }
   });
   return formatted;
@@ -85,17 +85,8 @@ export default function SubtopicSubnav({
       async (evt) => {
         // set topic state
         if (evt.detail) {
-          // Only update the topics if on an appropriate listing
-          if (
-            evt.detail.displayStyle === "Leadership Messages" ||
-            evt.detail.displayStyle === "Announcements"
-          ) {
-            const newTopics = await topicFormatter(
-              evt.detail.cards,
-              evt.detail.displayStyle
-            );
-            setTopics(newTopics);
-          }
+          const newTopics = await topicFormatter(evt.detail.cards);
+          setTopics(newTopics);
         }
       },
       false

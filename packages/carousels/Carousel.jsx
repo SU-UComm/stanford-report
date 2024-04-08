@@ -3,13 +3,6 @@ import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ChevronRight from "../SVG-library/ChevronRight";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-// // import required modules
-// import { Pagination } from "swiper/modules";
-
 /**
  * Carousel package
  *
