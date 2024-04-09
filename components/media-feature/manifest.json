@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "media-feature",
-  "version": "0.0.2",
+  "version": "0.0.10",
   "namespace": "stanford-components",
   "description": "THe media feature component is used to feature a singluar podcast or book.",
   "displayName": "Media Feature",
@@ -41,10 +41,7 @@
               },
               "mediaType": {
                 "title": "Media type",
-                "enum": [
-                  "Podcast",
-                  "Book"
-                ],
+                "enum": ["Podcast", "Book"],
                 "type": "string",
                 "default": "Podcast"
               },

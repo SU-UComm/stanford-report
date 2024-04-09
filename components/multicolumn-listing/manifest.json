@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "multicolumn-listing",
-  "version": "0.0.3",
+  "version": "0.0.31",
   "namespace": "stanford-components",
   "description": "",
   "displayName": "Multicolumn Listing",

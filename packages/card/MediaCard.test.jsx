@@ -63,8 +63,8 @@ describe("Media Card", () => {
     const gradientBookIcon = document.querySelector(
       '[data-testid="svg-featuredreading-light"]'
     );
-    const outlineBookIcon = document.querySelector(
-      '[data-testid="svg-book-outline"]'
+    const openCoverBookIcon = document.querySelector(
+      '[data-testid="svg-book-open-cover"]'
     );
     const author = document.querySelector('[data-test="mediacard-author"]');
     const image = document.querySelector(".su-media-card-thumb");
@@ -73,7 +73,7 @@ describe("Media Card", () => {
     expect(element).toBeInTheDocument();
     expect(description).toBeInTheDocument();
     expect(gradientBookIcon).toBeInTheDocument();
-    expect(outlineBookIcon).toBeInTheDocument();
+    expect(openCoverBookIcon).toBeInTheDocument();
     expect(author).toBeInTheDocument();
   });
 

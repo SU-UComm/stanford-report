@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "featured-content",
-  "version": "0.0.2",
+  "version": "0.0.26",
   "namespace": "stanford-components",
   "description": "",
   "displayName": "Featured content",
@@ -68,17 +68,12 @@
             "title": "Grid Content",
             "description": "The cards to display in the grid area of the component. The featured card appears larger than the supplementary cards. When manually selecting cards, at least three must be selected for the grid to display.",
             "type": "object",
-            "required": [
-              "source"
-            ],
+            "required": ["source"],
             "properties": {
               "source": {
                 "title": "Content source",
                 "default": "Search",
-                "enum": [
-                  "Search",
-                  "Select"
-                ],
+                "enum": ["Search", "Select"],
                 "type": "string"
               }
             },
@@ -93,9 +88,7 @@
                   }
                 },
                 "then": {
-                  "required": [
-                    "searchQuery"
-                  ],
+                  "required": ["searchQuery"],
                   "properties": {
                     "searchQuery": {
                       "type": "string",
@@ -115,9 +108,7 @@
                   }
                 },
                 "then": {
-                  "required": [
-                    "cards"
-                  ],
+                  "required": ["cards"],
                   "properties": {
                     "cards": {
                       "title": "Cards",
@@ -134,9 +125,7 @@
                             "title": "Card Asset"
                           }
                         },
-                        "required": [
-                          "cardAsset"
-                        ]
+                        "required": ["cardAsset"]
                       }
                     },
                     "featuredDescription": {
@@ -159,10 +148,7 @@
                 "title": "Featured Card: Alignment",
                 "description": "The position of the featured card on larger screens.",
                 "default": "left",
-                "enum": [
-                  "left",
-                  "right"
-                ]
+                "enum": ["left", "right"]
               },
               "displayThumbnails": {
                 "title": "Display Supplementary Thumbnails",
