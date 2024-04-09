@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable no-param-reassign */
@@ -144,7 +145,7 @@ const updateVersionInManifest = (newData) => {
 };
 
 /**
- * Pick between going back to main screen or exit
+ * Screen to pick between going back to main screen or exit
  */
 const resetQuit = () => {
   inquirer
@@ -171,6 +172,10 @@ const resetQuit = () => {
     });
 };
 
+/**
+ * Screen for "Run custom command"
+ * @param {array} data component data array
+ */
 const execCommand = (data) => {
   inquirer
     .prompt([
@@ -291,10 +296,10 @@ const modifyVersion = (type, data) => {
 };
 
 /**
- *
- * @param {*} command
- * @param {*} folder
- * @returns
+ * Run a command in a given folder
+ * @param {string} command command to execute
+ * @param {string} folder folder to run it in
+ * @returns {void}
  */
 const executeCommandInFolder = (command, folder) => {
   return new Promise((resolve, reject) => {
@@ -314,8 +319,8 @@ const executeCommandInFolder = (command, folder) => {
 };
 
 /**
- *
- * @param {*} folderPaths
+ * Prompt for command to run
+ * @param {array} components data array to pass through
  */
 const promptAndExecuteCommand = async (components) => {
   try {
