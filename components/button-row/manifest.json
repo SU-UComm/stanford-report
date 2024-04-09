@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "button-row",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "namespace": "stanford-components",
   "description": "Add up to 3 buttons in this row component.",
   "displayName": "Button row",
