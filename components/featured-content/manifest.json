@@ -1,6 +1,6 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "development-featured-content",
+  "name": "featured-content",
   "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "",

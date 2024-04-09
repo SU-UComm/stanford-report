@@ -1,6 +1,6 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "development-image-quote",
+  "name": "image-quote",
   "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "An image with an associated quote.",

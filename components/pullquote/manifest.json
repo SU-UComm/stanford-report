@@ -1,6 +1,6 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "development-pullquote",
+  "name": "pullquote",
   "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "Displays a quote for a story page along with details of the quote",

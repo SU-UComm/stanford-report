@@ -1,6 +1,6 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "development-story-lead",
+  "name": "story-lead",
   "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "Introduction to a story, with a decorative first letter.",

@@ -1,6 +1,6 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "development-media-carousel",
+  "name": "media-carousel",
   "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "Links to media, displayed as cards in a carousel.",

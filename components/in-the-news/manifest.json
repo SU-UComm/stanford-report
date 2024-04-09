@@ -1,6 +1,6 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "development-in-the-news",
+  "name": "in-the-news",
   "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "This component contains one featured quote and two supplementary teasers.",

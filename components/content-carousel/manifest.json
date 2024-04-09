@@ -1,6 +1,6 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "development-content-carousel",
+  "name": "content-carousel",
   "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "A carousel of slides that contain WYSIWYG content.",

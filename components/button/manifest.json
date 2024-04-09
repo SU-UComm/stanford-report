@@ -1,6 +1,6 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "development-button",
+  "name": "button",
   "version": "0.0.1",
   "namespace": "stanford-components",
   "description": "A button that can be linked to internal or external pages.",

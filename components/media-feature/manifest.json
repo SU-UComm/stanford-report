@@ -1,6 +1,6 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "development-media-feature",
+  "name": "media-feature",
   "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "THe media feature component is used to feature a singluar podcast or book.",

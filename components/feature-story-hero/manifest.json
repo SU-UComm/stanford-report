@@ -1,6 +1,6 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "development-feature-story-hero",
+  "name": "feature-story-hero",
   "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "Hero that appears at the top of Featured Stories.",
