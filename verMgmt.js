@@ -94,7 +94,7 @@ const getNewVersion = (incDec, changeType, oldValue) => {
           ? newValue[1] + 1
           : newValue[1] - 1 > 0
           ? newValue[1] - 1
-          : 1
+          : 0
       }.${newValue[2]}`;
     case 2:
       return `${
@@ -102,7 +102,7 @@ const getNewVersion = (incDec, changeType, oldValue) => {
           ? newValue[0] + 1
           : newValue[0] - 1 > 0
           ? newValue[0] - 1
-          : 1
+          : 0
       }.${newValue[1]}.${newValue[2]}`;
     default:
       throw new Error(
