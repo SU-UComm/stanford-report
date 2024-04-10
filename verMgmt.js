@@ -18,6 +18,8 @@ import path from "path";
     displayName: 'Story Lead',
     version: '0.0.13',
     manifestPath: 'components/story-lead/manifest.json',
+    componentPath: 'components/story-lead',
+    sortingTs: 17985476618
     lastModified: '4/9/2024, 5:44:12 PM'
   }
  */
