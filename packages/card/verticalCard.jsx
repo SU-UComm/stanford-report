@@ -212,7 +212,7 @@ export default function VerticalCard({
       )}
 
       <div className={`su-flex su-flex-wrap ${gapSize(cardSize)}`}>
-        <h2
+        <h3
           className={`su-w-full ${titleSize(cardSize)} su-font-serif su-my-0`}
         >
           <XssSafeContent
@@ -221,7 +221,7 @@ export default function VerticalCard({
             href={liveUrl}
             elementType="a"
           />
-        </h2>
+        </h3>
 
         {type && (
           <p

@@ -49,7 +49,7 @@ export default function CardThumbnail({
       >
         <MediaRatio
           imageUrl={imageUrl}
-          imageAlt={alt}
+          imageAlt={`${alt} (opens in a modal)`}
           aspectRatio={aspectRatio}
         >
           {videoUrl && (

@@ -45,7 +45,7 @@ export default function CtaCard({
         /**
          * This is a SODA recommended pattern for accessibility.
          * When there is an eyebrow, we aria-hidden it from screen readers,
-         * and then add the eyebrow text as a visually hidden span for screen readers inside the h2 heading below.
+         * and then add the eyebrow text as a visually hidden span for screen readers inside the h3 heading below.
          * This way we don't get an orphaned span that appears before the heading in the card.
          */
         <span
@@ -55,7 +55,7 @@ export default function CtaCard({
           {eyebrow}
         </span>
       )}
-      <h2 className="su-type-5 md:su-type-4 2xl:su-type-3 su-mb-0 su-font-sans su-text-black dark:su-text-white">
+      <h3 className="su-type-5 md:su-type-4 2xl:su-type-3 su-mb-0 su-font-sans su-text-black dark:su-text-white">
         {hasLink ? (
           // eslint-disable-next-line react/jsx-no-target-blank
           <a
@@ -73,7 +73,7 @@ export default function CtaCard({
             {title}
           </>
         )}
-      </h2>
+      </h3>
       {!!description && (
         <div className="su-grow">
           <XssSafeContent
