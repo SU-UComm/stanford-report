@@ -47,7 +47,7 @@ export default function Search({ endpoint, collection, profile, resultPage }) {
             Clear <span className="sr-only">Search</span>
           </button>
           <hr
-            className="su-absolute su-right-60 su-w-2 su-h-32 su-top-10 su-border-none su-bg-black-30 su-top-[calc(50%-1.5rem)]"
+            className="su-absolute dark:su-bg-black-60 su-right-60 su-w-2 su-h-32 su-top-10 su-border-none su-bg-black-30 su-top-[calc(50%-1.5rem)]"
             aria-hidden="true"
           />
           <button
