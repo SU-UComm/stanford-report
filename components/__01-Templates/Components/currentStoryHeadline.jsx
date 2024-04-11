@@ -30,7 +30,7 @@ export default function CurrentStoryHeadline({ title = null, story = null }) {
             <p className="su-m-0 su-text-inherit">
               <a
                 href={story.displayUrl}
-                className="su-m-0 su-text-inherit su-no-underline hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
+                className="su-m-0 su-text-inherit su-no-underline hocus:underline hocus:su-text-digital-red dark:hocus:su-text-dark-mode-red"
               >
                 {story.title}
               </a>
