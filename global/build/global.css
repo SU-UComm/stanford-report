@@ -2053,6 +2053,7 @@ Single image/video component
 .su-fixed{position:fixed}
 .su-absolute{position:absolute}
 .su-relative{position:relative}
+.su--bottom-1{bottom:-0.1rem}
 .su--left-80{left:-8rem}
 .su-bottom-0{bottom:0}
 .su-bottom-13{bottom:1.3rem}
@@ -2097,6 +2098,7 @@ Single image/video component
 .su-top-\[1\.75em\]{top:1.75em}
 .su-top-\[50\%\]{top:50%}
 .su-top-\[80px\]{top:80px}
+.su-top-\[calc\(50\%-1\.5rem\)\]{top:calc(50% - 1.5rem)}
 .su-top-auto{top:auto}
 .su-z-0{z-index:0}
 .su-z-10{z-index:10}
@@ -2570,6 +2572,7 @@ Single image/video component
 .su-to-digital-red-dark{--tw-gradient-to:#820000 var(--tw-gradient-to-position)}
 .su-to-digital-red-light{--tw-gradient-to:#E50808 var(--tw-gradient-to-position)}
 .su-to-olive{--tw-gradient-to:#8F993E var(--tw-gradient-to-position)}
+.su-to-plum{--tw-gradient-to:#620059 var(--tw-gradient-to-position)}
 .su-to-50\%{--tw-gradient-to-position:50%}
 .su-bg-cover{background-size:cover}
 .su-bg-center{background-position:center}
@@ -3137,6 +3140,13 @@ Single image/video component
   outline: none;
   box-shadow: none;
   outline-offset: 0;
+  font-size: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .report-header input[type="search"] {
+    height: 60px;
+    padding-left: 36px;
+  }
 }
 .report-header .report-header__clear {
   display: none;
@@ -3569,7 +3579,6 @@ Single image/video component
 .focus\:su-text-digital-red:focus{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
 .focus\:su-text-white:focus{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .focus\:\!su-underline:focus{text-decoration-line:underline !important}
-.focus\:su-underline:focus{text-decoration-line:underline}
 .focus\:su-outline-0:focus{outline-width:0px}
 .focus\:su-ring:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}
 .focus\:before\:su-ring:focus::before{content:var(--tw-content);--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}
