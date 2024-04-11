@@ -171,10 +171,7 @@ export default function VerticalCard({
   SVGMap.set("q&nbsp;&amp;&nbsp;a", <QuestionAnswer />);
   SVGMap.set("video", <Video />);
   SVGMap.set("podcast", <Podcast />);
-  SVGMap.set(
-    "book",
-    <BookOpenCover className="su-text-black-70 su-w-[1.2em]" aria-hidden />
-  );
+  SVGMap.set("book", <BookOpenCover className="su-w-[1.2em]" aria-hidden />);
 
   const cardThumb = imageUrl || "https://sug-web.matrix.squiz.cloud/?a=130443";
 
@@ -203,7 +200,7 @@ export default function VerticalCard({
           )}`} // size
         >
           <XssSafeContent
-            className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
+            className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hocus:su-text-black dark:su-text-dark-mode-red hocus:dark:su-text-white hocus:su-underline"
             content={taxonomy}
             href={taxonomyUrl}
             elementType="a"
@@ -216,7 +213,7 @@ export default function VerticalCard({
           className={`su-w-full ${titleSize(cardSize)} su-font-serif su-my-0`}
         >
           <XssSafeContent
-            className="focus:su-outline-0 focus:before:su-ring hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
+            className="focus:su-outline-0 focus-visible:before:su-ring hocus:su-text-digital-red hocus:su-underline su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
             content={title}
             href={liveUrl}
             elementType="a"
