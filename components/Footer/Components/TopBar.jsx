@@ -12,7 +12,8 @@ import ExternalNav from "./ExternalNav";
  */
 
 export default function TopBar({ site, navigation, audience }) {
-  const { major, minor, contacts, external } = navigation;
+  const { major, minor, contacts, external, contactsStudent, contactsStaff } =
+    navigation;
 
   let externalData = [];
   switch (audience) {
@@ -25,6 +26,8 @@ export default function TopBar({ site, navigation, audience }) {
     default:
       externalData = external.anonymous;
   }
+
+  console.log(contactsStudent);
 
   return (
     <div className="dark:su-bg-black-true dark:su-text-white su-flex lg:su-items-center lg:su-justify-center su-bg-white">
@@ -40,6 +43,10 @@ export default function TopBar({ site, navigation, audience }) {
         <div className="pre-footer-bottom-section su-flex su-flex-col lg:su-flex-row su-flex-wrap lg:su-flex-nowrap lg:su-gap-x-20">
           <MinorNav navigation={minor} />
           {audience === "external" && <ContactNav navigation={contacts} />}
+          {audience === "student" && (
+            <ContactNav navigation={contactsStudent} />
+          )}
+          {audience === "faculty" && <ContactNav navigation={contactsStaff} />}
         </div>
 
         <ExternalNav navigation={externalData} audience={audience} />
