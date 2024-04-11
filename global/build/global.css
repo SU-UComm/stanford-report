@@ -3147,7 +3147,7 @@ Single image/video component
 }
 @media only screen and (min-width: 768px) {
   .report-header input[type="search"] {
-    height: 60px;
+    height: 66px;
     padding-left: 36px;
   }
 }
