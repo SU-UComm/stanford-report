@@ -276,6 +276,14 @@
   outline: none;
   box-shadow: none;
   outline-offset: 0;
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .report-header input[type="search"] {
+    height: 60px;
+    padding-left: 36px;
+  }
 }
 
 .report-header .report-header__clear {

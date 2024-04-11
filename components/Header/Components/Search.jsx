@@ -42,16 +42,16 @@ export default function Search({ endpoint, collection, profile, resultPage }) {
           <button
             type="button"
             data-role="clear-search"
-            className="report-header__clear su-hidden su-h-48 su-absolute su-top-2 su-right-70 su-text-digital-blue su-text-20"
+            className="report-header__clear su-hidden su-h-48 su-absolute su-top-2 su-right-70 su-text-digital-blue su-text-20 su-top-[50%] su-translate-y-[-50%]"
           >
             Clear <span className="sr-only">Search</span>
           </button>
           <hr
-            className="su-absolute su-right-60 su-w-2 su-h-32 su-top-10 su-border-none su-bg-black-30"
+            className="su-absolute dark:su-bg-black-60 su-right-60 su-w-2 su-h-32 su-top-10 su-border-none su-bg-black-30 su-top-[calc(50%-1.5rem)]"
             aria-hidden="true"
           />
           <button
-            className="su-absolute su-size-40 su-right-10 su-top-5"
+            className="su-absolute su-size-40 su-right-10 su-top-5 su-top-[50%] su-translate-y-[-50%]"
             type="submit"
             data-location="submit-btn"
           >
