@@ -15,14 +15,14 @@ export default function TeaserCard({ credit, data }) {
     <article>
       <a
         href={liveUrl}
-        className="su-no-underline su-flex su-flex-col su-gap-11 md:su-gap-0"
+        className="su-no-underline su-group su-flex su-flex-col su-gap-11 md:su-gap-0"
       >
         <div className="su-text-18 su-leading-snug su-font-semibold md:su-pb-13">
           {source}
         </div>
 
         <XssSafeContent
-          className="su-font-bold su-leading-display su-text-24 su-m-0 md:su-pb-9"
+          className="su-font-bold group-hocus:su-underline su-leading-display su-text-24 su-m-0 md:su-pb-9 group-hocus:su-text-digital-red dark:group-hocus:su-text-dark-mode-red"
           content={title}
           elementType="h2"
         />

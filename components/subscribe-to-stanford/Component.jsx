@@ -57,7 +57,7 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
         {title}
       </h2>
 
-      <p className="su-m-0 su-font-normal su-text-16 su-leading-[1.25] dark:su-text-white">
+      <p className="su-m-0 su-font-normal su-text-16 su-leading-[125%] dark:su-text-white">
         {summary}
       </p>
 
@@ -67,7 +67,7 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
         placeholder="Email address"
         title="Subscription Email"
         aria-label="Subscription Email"
-        className="su-rounded su-p-12 su-text-16 su-leading-[1.25] su-text-black placeholder:su-text-black su-font-normal su-border-black-20 su-border su-border-b-black-70 su-border-b-2  dark:su-bg-black-90 dark:su-text-white dark:placeholder:su-text-white"
+        className="su-rounded su-p-12 su-text-16 su-leading-[125%] su-text-black placeholder:su-text-black su-font-normal su-border-black-20 su-border su-border-b-black-70 su-border-b-2  dark:su-bg-black-90 dark:su-text-white dark:placeholder:su-text-white"
         onKeyUp={emailInputEvent}
       />
 
