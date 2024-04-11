@@ -43,16 +43,19 @@ export default function MediaFeature({
               <FeaturedHeading type={mediaType} />
             </div>
 
-            <a href={linkUrl} className="su-no-underline">
-              <h3 className="su-text-[35px] su-font-bold su-leading-tight su-m-0 su-pb-8 su-text-black md:su-pb-19 md:su-text-[40px] lg:su-text-[43px]">
+            <h3 className="su-text-[3.5rem] su-font-bold su-leading-tight su-m-0 su-pb-8 su-text-black md:su-pb-19 md:su-text-[4rem] lg:su-text-[4.3rem]">
+              <a
+                href={linkUrl}
+                className="su-group su-no-underline hocus:su-underline su-stretched-link su-text-black hocus:su-text-digital-red dark:su-text-black dark:hocus:su-text-digital-red"
+              >
                 {title}
-                <span className="su-hidden lg:su-inline-block su-relative su-top-12">
-                  <ExternalArrow size="large" />
+                <span className="su-hidden lg:su-inline-block su-relative su-top-12 group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform">
+                  <ExternalArrow size="large" title="link is external" />
                 </span>
-              </h3>
-            </a>
+              </a>
+            </h3>
 
-            <div className="su-w-full su-flex su-gap-[0.6rem] su-text-18 su-text-black-70 su-font-semibold su-items-center su-pb-15 su-leading-snug md:su-pb-19 md:su-text-16">
+            <div className="su-w-full su-flex su-gap-6 su-text-18 su-text-black-70 su-font-semibold su-items-center su-pb-15 su-leading-snug md:su-pb-19 md:su-text-16">
               <MediaType type={mediaType} />
             </div>
 
@@ -66,6 +69,7 @@ export default function MediaFeature({
           // src="https://picsum.photos/1300/"
           src={bgImageData.url}
           className="su-absolute su-size-full su-object-cover su-left-0 su-top-0 su-z-[1]"
+          alt={bgImageData.attributes?.alt || ""}
         />
       </section>
     </Container>

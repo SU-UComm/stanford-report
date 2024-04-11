@@ -46,11 +46,6 @@ function cardTitleFont(size) {
   return "";
 }
 
-function mediaContainerSize(size) {
-  if (size === "large")
-    return "listing-item__media su-w-[103px] su-h-[69px] md:su-w-[169px] md:su-h-[113px] lg:su-w-[292px] lg:su-h-[193px]";
-}
-
 /**
  * Horizontal package
  *
@@ -157,9 +152,9 @@ export default function HorizontalCard({
   const titleSize = new Map();
   titleSize.set(
     "large",
-    "su-text-18 md:su-text-21 lg:su-text-23 su-font-bold su-leading-[21.6px] md:su-leading-[25.2px] lg:su-leading-[27.6px]"
+    "su-text-18 md:su-text-21 lg:su-text-23 su-font-bold su-leading-display"
   );
-  titleSize.set("small", "su-text-18 su-font-semibold su-leading-[21.495px]");
+  titleSize.set("small", "su-text-18 su-font-semibold su-leading-display");
 
   return (
     <article
@@ -198,7 +193,7 @@ export default function HorizontalCard({
             data-testid="horizontal-card-taxonomy"
           >
             <XssSafeContent
-              className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red su-block su-mt-[-6px]"
+              className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hocus:su-underline hocus:su-text-digital-red dark:su-text-dark-mode-red hocus:dark:su-text-dark-mode-red su-block su--mt-6"
               content={taxonomy}
               href={taxonomyUrl}
               elementType="a"

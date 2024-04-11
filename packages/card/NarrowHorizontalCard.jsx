@@ -71,7 +71,7 @@ export default function NarrowHorizontalCard({
       <div className="su-flex su-flex-col su-gap-12 su-col-start-1 su-col-span-full lg:su-col-span-6 lg:su-col-start-3">
         {displayConfiguration === "In the News" && storySource && (
           <XssSafeContent
-            className="su-text-16 lg:su-text-18 su-leading-[130%] su-font-semibold su-my-0"
+            className="su-text-16 lg:su-text-18 su-leading-snug su-font-semibold su-my-0"
             content={storySource}
             elementType="p"
           />
@@ -84,7 +84,7 @@ export default function NarrowHorizontalCard({
               className="su-relative su-text-16 su-leading-[2.3rem] lg:su-text-18 su-z-10 su-mb-0 su-font-semibold" // size
             >
               <XssSafeContent
-                className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
+                className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hocus:su-underline hocus:su-text-digital-red dark:su-text-dark-mode-red hocus:dark:su-text-dark-mode-red"
                 content={taxonomyFeaturedUnitText}
                 href={taxonomyFeaturedUnitLandingPageUrl || undefined}
                 elementType={taxonomyFeaturedUnitLandingPageUrl ? "a" : "span"}
