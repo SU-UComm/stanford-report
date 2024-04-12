@@ -148,7 +148,8 @@ function ExternalLinks({ items }) {
  * @constructor
  */
 export default function MobileNav({ navigation, search, audience }) {
-  const { major, minor, contacts, external } = navigation;
+  const { major, minor, contacts, external, contactsStudent, contactsStaff } =
+    navigation;
   const { endpoint, collection, profile, resultPage } = search;
 
   let externalData = [];
@@ -247,6 +248,28 @@ export default function MobileNav({ navigation, search, audience }) {
           {audience === "external" && (
             <>
               <ContactLinks items={contacts} />
+
+              <hr
+                aria-hidden="true"
+                className="su-block su-order-2 su-my-20 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
+              />
+            </>
+          )}
+
+          {audience === "student" && (
+            <>
+              <ContactLinks items={contactsStudent} />
+
+              <hr
+                aria-hidden="true"
+                className="su-block su-order-2 su-my-20 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
+              />
+            </>
+          )}
+
+          {audience === "faculty" && (
+            <>
+              <ContactLinks items={contactsStaff} />
 
               <hr
                 aria-hidden="true"
