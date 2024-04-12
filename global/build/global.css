@@ -2099,7 +2099,6 @@ Single image/video component
 .su-top-\[1\.75em\]{top:1.75em}
 .su-top-\[50\%\]{top:50%}
 .su-top-\[80px\]{top:80px}
-.su-top-\[calc\(50\%-1\.5rem\)\]{top:calc(50% - 1.5rem)}
 .su-top-auto{top:auto}
 .\!su-z-\[1\]{z-index:1 !important}
 .su-z-0{z-index:0}
@@ -2309,6 +2308,7 @@ Single image/video component
 .su-h-\[34\.2rem\]{height:34.2rem}
 .su-h-\[56px\]{height:56px}
 .su-h-\[60\%\]{height:60%}
+.su-h-\[66px\]{height:66px}
 .su-h-\[69px\]{height:69px}
 .su-h-\[73px\]{height:73px}
 .su-h-\[calc\(100\%\+12\.3rem\+1em\)\]{height:calc(100% + 12.3rem + 1em)}
@@ -2482,6 +2482,7 @@ Single image/video component
 .su-gap-80{gap:8rem}
 .su-gap-9{gap:0.9rem}
 .su-gap-\[0\.6rem\]{gap:0.6rem}
+.su-gap-\[18px\]{gap:18px}
 .su-gap-\[2\.1rem\]{gap:2.1rem}
 .su-gap-\[68px\]{gap:68px}
 .su-gap-\[7px\]{gap:7px}
@@ -2931,6 +2932,9 @@ Single image/video component
   border-radius: 3px;
   border: none !important;
 }
+.report-header__menu-tray .tt-menu {
+  top: 50% !important;
+}
 @media screen and (min-width: 768px) {
   .report-header .tt-menu {
     padding-top: 27px;
@@ -3155,7 +3159,8 @@ Single image/video component
   display: none;
 }
 .report-header input:required:valid + .report-header__clear,
-.report-header .input-has-value + .report-header__clear {
+.report-header .input-has-value + .report-header__clear,
+.report-header .input-has-value + .report-header__desktop-search-controls .report-header__clear {
   display: block;
 }
 .report-header [aria-controls="search"][aria-expanded="true"] .icon-search,
