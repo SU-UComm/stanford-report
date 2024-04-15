@@ -84,7 +84,7 @@ export default function NarrowHorizontalCard({
               className="su-relative su-text-16 su-leading-[2.3rem] lg:su-text-18 su-z-10 su-mb-0 su-font-semibold" // size
             >
               <XssSafeContent
-                className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
+                className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red hocus:su-underline"
                 content={taxonomyFeaturedUnitText}
                 href={taxonomyFeaturedUnitLandingPageUrl || undefined}
                 elementType={taxonomyFeaturedUnitLandingPageUrl ? "a" : "span"}
