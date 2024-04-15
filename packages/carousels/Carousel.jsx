@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import hash from "object-hash";
 import ChevronRight from "../SVG-library/ChevronRight";
-
 /**
  * Carousel package
  *
@@ -185,7 +185,13 @@ export function Carousel({
         className={["", variants.get(variant).variantClassName].join(" ")}
       >
         {slides.map((slide) => (
-          <SwiperSlide key={slide}>{slide}</SwiperSlide>
+          <SwiperSlide
+            key={hash.MD5(
+              JSON.stringify(slide) + hash.MD5(JSON.stringify(slide))
+            )}
+          >
+            {slide}
+          </SwiperSlide>
         ))}
       </Swiper>
       {slides.length > 1 && (
