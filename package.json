@@ -16,7 +16,8 @@
     "test:eslint": "eslint .",
     "test:unit": "jest",
     "test:coverage": "jest --coverage",
-    "export": "node ./build/css-js-exporter.js"
+    "export": "node ./build/css-js-exporter.js",
+    "manifest-namespace": "node ./build/manifest-namespace.js"
   },
   "author": "",
   "license": "ISC",
