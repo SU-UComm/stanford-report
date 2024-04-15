@@ -76,7 +76,7 @@ export default function Header({ site, navigation, search }) {
         persona = personaVal;
       }
     }
-    cdpSetPersona("persona-selector", persona);
+    await cdpSetPersona("persona-selector", persona);
     setCookie("preferences_personalisation", persona);
     setDisplayConsentBanner(false);
     setAudience(persona);
