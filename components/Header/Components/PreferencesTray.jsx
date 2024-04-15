@@ -331,7 +331,7 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                   }`}
                   aria-pressed={!audience ? "true" : "false"}
                   disabled={audience === "external" ? "disabled" : ""}
-                  onClick={() => personaClickHandler("external")}
+                  onClick={() => personaClickHandler("external", true)}
                 >
                   Clear all personalization
                 </button>

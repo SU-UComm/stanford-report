@@ -54,13 +54,18 @@ export default function Header({ site, navigation, search }) {
     setDisplayConsentBanner(false);
   };
 
-  const handlePersona = async (personaVal) => {
+  const handlePersona = async (personaVal, removeConsent = false) => {
     // check if we have consent first, if not, we need to set it
     let persona = null;
-    if (!consent) {
+    if (!consent && removeConsent === false) {
       // if no consent previously given
       await cdpSetConsent(1);
       setConsent(true);
+    }
+    // Remove consent if clearing all personalization
+    if (removeConsent === true) {
+      await cdpSetConsent(0);
+      setConsent(false);
     }
     if (personaVal) {
       if (audience === personaVal) {
