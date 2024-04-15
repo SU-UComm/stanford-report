@@ -1,0 +1,64 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "subtopic-subnav-component",
+  "version": "0.0.13",
+  "namespace": "stanford-components",
+  "description": "Stanford university Subtopic Subnav component.",
+  "displayName": "Subtopic Subnav",
+  "mainFunction": "main",
+  "icon": {
+    "id": "category",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/frontend.html"
+          }
+        }
+      }
+    }
+  }
+}

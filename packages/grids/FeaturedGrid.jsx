@@ -30,7 +30,7 @@ export function FeaturedGrid({
     <div className="su-w-full su-component-featured-grid">
       <div
         className={[
-          "su-flex su-flex-wrap su-gap-[68px] md:su-gap-[72px] md:su-flex-nowrap",
+          "su-flex su-flex-wrap su-gap-[68px] md:su-gap-72 md:su-flex-nowrap",
           isNested ? "lg:su-flex-wrap lg:su-gap-[76px]" : "lg:su-gap-[160px]",
         ].join(" ")}
       >
@@ -41,12 +41,12 @@ export function FeaturedGrid({
         )}
         <div
           className={[
-            "su-relative su-flex su-flex-wrap su-flex-grow before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black",
-            "su-gap-[80px] md:su-gap-[72px] lg:su-gap-[76px]",
-            "before:md:su-w-[1px] before:su-h-[1px] before:md:su-h-full",
+            "su-relative su-flex su-flex-wrap su-grow before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black",
+            "su-gap-80 md:su-gap-72 lg:su-gap-[76px]",
+            "before:md:su-w-px before:su-h-px before:md:su-h-full",
             "md:su-basis-[39.5%] lg:su-basis-[30%]",
             isNested
-              ? "lg:before:su-w-full lg:before:su-h-[1px] before:su-left-0 before:su-top-[-40px] before:md:su-top-0 lg:before:su-top-[-38px] before:md:su-left-[-36px] before:lg:su-left-0"
+              ? "lg:before:su-w-full lg:before:su-h-px before:su-left-0 before:su-top-[-40px] before:md:su-top-0 lg:before:su-top-[-38px] before:md:su-left-[-36px] before:lg:su-left-0"
               : "",
             isNested
               ? "md:su-flex-wrap lg:su-flex-nowrap"

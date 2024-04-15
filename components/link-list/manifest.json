@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "link-list",
-  "version": "0.0.8",
+  "version": "0.0.16",
   "namespace": "stanford-components",
   "description": "Recommended stories are shown in this component as a vertical list.",
   "displayName": "Link List",
@@ -34,21 +34,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+              "filepath": "global.css"
             }
           },
           {
@@ -74,7 +60,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/basicstory.html"
+            "path": "../../packages/__globalPreview/sidebar.html"
           }
         }
       }

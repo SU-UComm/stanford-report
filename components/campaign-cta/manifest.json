@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "campaign-cta",
-  "version": "0.0.12",
+  "version": "0.0.18",
   "namespace": "stanford-components",
   "description": "This component serves as a preview & to promote campaign pages.",
   "displayName": "Campaign CTA",
@@ -24,7 +24,9 @@
           "displayConfiguration": {
             "title": "Campaign CTA configuration",
             "description": "These options will output to the frontend of the Campaign CTA component",
-            "required": ["image"],
+            "required": [
+              "image"
+            ],
             "properties": {
               "image": {
                 "title": "Background image",
@@ -67,21 +69,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+              "filepath": "global.css"
             }
           },
           {
@@ -178,6 +166,19 @@
   },
   "previews": {
     "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/basicstory.html"
+          }
+        }
+      }
+    },
+    "featuredstory": {
       "functionData": {
         "main": {
           "inputData": {

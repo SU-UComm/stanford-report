@@ -1,5 +1,6 @@
 {
     "contentConfiguration" : {
-        "story": "matrix-asset://api-identifier/89422"
+        "story": "matrix-asset://api-identifier/89422",
+        "descriptionOverride": "This is overriding the description"
     }
 }

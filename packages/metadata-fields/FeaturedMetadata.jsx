@@ -80,33 +80,33 @@ export default function FeaturedMetadata({ data }) {
     });
   }
 
-  if (
-    campus &&
-    ![null, undefined, "undefined", ""].includes(campus.asset_assetid)
-  ) {
-    metaMap.push({
-      name: "Campus unit",
-      items: campus,
-    });
-  }
+  // if (
+  //   campus &&
+  //   ![null, undefined, "undefined", ""].includes(campus.asset_assetid)
+  // ) {
+  //   metaMap.push({
+  //     name: "Campus unit",
+  //     items: campus,
+  //   });
+  // }
 
   const firstRow = metaMap.slice(0, metaMap.length > 3 ? 3 : metaMap.length);
   const otherRows = metaMap.slice(3, metaMap.length);
 
   const gridSettings =
-    "md:su-gap-x-[20px] md:su-gap-y-[70px] lg:su-gap-x-[40px] lg:su-gap-y-[61px]";
+    "md:su-gap-x-20 md:su-gap-y-70 lg:su-gap-x-40 lg:su-gap-y-[61px]";
 
   return (
     <section className="su-flex su-flex-col su-items-center">
       {firstRow.length > 0 ? (
-        <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center md:su-flex-row md:su-gap-[20px] lg:su-gap-[40px]">
-          <hr
+        <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center md:su-flex-row md:su-gap-20 lg:su-gap-40">
+          <div
             aria-hidden="true"
-            className="su-border-none su-flex-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mb-[38px] md:su-mb-0"
+            className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
           />
 
           <div
-            className={`su-flex su-flex-col md:su-flex-row su-gap-[32px] su-pt-0 ${gridSettings}`}
+            className={`su-flex su-flex-col md:su-flex-row su-gap-32 su-pt-0 ${gridSettings}`}
           >
             {firstRow.map((meta) => (
               <div className="su-w-full md:su-w-auto md:su-min-w-[170px]">
@@ -116,7 +116,7 @@ export default function FeaturedMetadata({ data }) {
                       (item) =>
                         item && (
                           <p
-                            className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal md:su-text-[21px] md:su-leading-[26.25px]"
+                            className="!su-m-0 su-text-16 su-leading-[125%] su-font-normal md:su-text-21"
                             key={item.asset_assetid}
                           >
                             {item.asset_name}
@@ -126,7 +126,7 @@ export default function FeaturedMetadata({ data }) {
                   ) : (
                     <a
                       href={meta.items.asset_url}
-                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[18px] su-leading-[26.25px]"
+                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18"
                     >
                       {meta.items.asset_name}
                     </a>
@@ -136,23 +136,23 @@ export default function FeaturedMetadata({ data }) {
             ))}
           </div>
 
-          <hr
+          <div
             aria-hidden="true"
-            className="su-hidden su-flex-grow su-rotate-180 su-border-none su-w-[70px] su-w-auto su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-block md:su-h-[3px]"
+            className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
           />
         </div>
       ) : (
         ""
       )}
       {otherRows.length > 0 ? (
-        <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center su-mt-[32px] md:su-mt-[61px] md:su-flex-row md:su-gap-[20px] lg:su-gap-[40px]">
-          <hr
+        <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center su-mt-32 md:su-mt-61 md:su-flex-row md:su-gap-20 lg:su-gap-40">
+          <div
             aria-hidden="true"
-            className="su-border-none su-w-[70px] su-h-[2px] su-bg-transparent md:su-w-auto su-flex-grow md:su-h-[3px]"
+            className="su-border-none su-w-70 su-h-2 su-bg-transparent md:su-w-auto su-grow md:su-h-3"
           />
 
           <div
-            className={`su-flex su-flex-col md:su-flex-row su-gap-[32px] ${gridSettings}`}
+            className={`su-flex su-flex-col md:su-flex-row su-gap-32 ${gridSettings}`}
           >
             {otherRows.map((meta) => (
               <div className="su-w-full md:su-w-auto md:su-min-w-[170px]">
@@ -162,7 +162,7 @@ export default function FeaturedMetadata({ data }) {
                       (item) =>
                         item && (
                           <p
-                            className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal md:su-text-[21px] md:su-leading-[26.25px]"
+                            className="!su-m-0 su-text-16 su-leading-[125%] su-font-normal md:su-text-21"
                             key={item.asset_assetid}
                           >
                             {item.asset_name}
@@ -172,7 +172,7 @@ export default function FeaturedMetadata({ data }) {
                   ) : (
                     <a
                       href={meta.items.asset_url}
-                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[18px] su-leading-[26.25px]"
+                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18"
                     >
                       {meta.items.asset_name}
                     </a>
@@ -181,9 +181,9 @@ export default function FeaturedMetadata({ data }) {
               </div>
             ))}
           </div>
-          <hr
+          <div
             aria-hidden="true"
-            className="su-hidden su-border-none su-w-[70px] su-h-[2px] su-bg-transparent md:su-w-auto su-flex-grow md:su-h-[3px] md:su-block"
+            className="su-hidden su-border-none su-w-70 su-h-2 su-bg-transparent md:su-w-auto su-grow md:su-h-3 md:su-block"
           />
         </div>
       ) : (
@@ -191,20 +191,20 @@ export default function FeaturedMetadata({ data }) {
       )}
 
       <div
-        className={`su-flex su-w-full su-flex-col su-justify-center su-items-center md:su-flex-row md:su-gap-[20px] lg:su-gap-[40px] ${
-          firstRow.length > 0 ? "su-mt-[32px] md:su-mt-[61px]" : ""
+        className={`su-flex su-w-full su-flex-col su-justify-center su-items-center md:su-flex-row md:su-gap-20 lg:su-gap-40 ${
+          firstRow.length > 0 ? "su-rs-mt-4" : ""
         }`}
       >
         {firstRow.length === 0 ? (
-          <hr
+          <div
             aria-hidden="true"
-            className="su-border-none su-flex-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mb-[38px] md:su-mb-0"
+            className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
           />
         ) : (
           ""
         )}
         <div
-          className={`su-flex su-flex-col md:su-flex-row su-gap-[32px] su-pt-0 ${gridSettings}`}
+          className={`su-flex su-flex-col md:su-flex-row su-gap-32 su-pt-0 ${gridSettings}`}
         >
           {media && media.length ? (
             <div>
@@ -216,14 +216,14 @@ export default function FeaturedMetadata({ data }) {
                   className={`md:su-grid ${
                     media >= 3
                       ? gridSettings
-                      : "su-flex su-gap-[10px] su-flex-col md:su-gap-[20px]"
+                      : "su-flex su-gap-15 su-flex-col md:su-gap-25"
                   }`}
                 >
                   {media.map(
                     (item) =>
                       item && (
                         <div
-                          className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-normal su-flex su-flex-col su-gap-[10px] md:su-text-[21px] md:su-leading-[26.25px]"
+                          className="su-m-0 su-text-16 su-leading-[125%] su-font-normal su-flex su-flex-col su-gap-3 md:su-text-21"
                           key={item.asset_assetid}
                         >
                           {item.asset_name}
@@ -233,7 +233,7 @@ export default function FeaturedMetadata({ data }) {
                                 <br />
                                 <a
                                   href={`mailto:${item.asset_metadata_personEmail}`}
-                                  className="su-m-0 su-text-[16px] su-leading-[19.1px] su-font-semibold su-mt-[13px] md:su-text-[21px] md:su-leading-[23.75px]"
+                                  className="hocus:su-no-underline"
                                 >
                                   {item.asset_metadata_personEmail}
                                 </a>
@@ -251,37 +251,54 @@ export default function FeaturedMetadata({ data }) {
         </div>
 
         {firstRow.length === 0 ? (
-          <hr
+          <div
             aria-hidden="true"
-            className="su-border-none su-flex-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mt-[38px] md:su-mt-0"
+            className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
           />
         ) : (
           ""
         )}
       </div>
 
-      {firstRow.length > 0 ? (
-        <hr
-          aria-hidden="true"
-          className="su-border-none su-flex-grow su-w-[70px] su-h-[2px] su-bg-gradient-to-r su-from-digital-red su-to-plum dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-[3px] su-mt-[38px] md:su-mt-0"
-        />
+      {campus &&
+      ![null, undefined, "undefined", ""].includes(campus.asset_assetid) ? (
+        <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
+          <h3 className="su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans !su-m-0">
+            Campus unit
+          </h3>
+
+          {!campus.asset_url ? (
+            <div className="su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
+              {campus.asset_name}
+            </div>
+          ) : (
+            <a
+              href={campus.asset_url}
+              className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-19 su-font-semibold"
+            >
+              <div className="su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
+                {campus.asset_name}
+              </div>
+            </a>
+          )}
+        </div>
       ) : (
         ""
       )}
 
       {related && related.length ? (
-        <div className="su-text-center su-mt-[34px] md:su-mt-[58px] lg:su-mt-[61px] su-flex su-flex-col su-gap-[20px] md:su-gap-[26px]">
-          <h3 className="su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans su-m-0">
+        <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
+          <h3 className="su-text-18 su-font-bold su-leading-[22.5px] su-font-sans !su-m-0">
             Related topics
           </h3>
 
-          <div className="su-flex su-gap-[20px] su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-[12px] md:su-flex-row md:su-flex-wrap md:su-justify-center">
+          <div className="su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
             {related.map((item) =>
               item ? (
                 <div key={item.asset_assetid}>
                   <a
                     href={item.asset_url}
-                    className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-[19px] su-font-semibold"
+                    className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-19 su-font-semibold"
                   >
                     {item.asset_name}
                   </a>
@@ -296,8 +313,8 @@ export default function FeaturedMetadata({ data }) {
         ""
       )}
 
-      <div className="su-text-center su-mt-[34px] md:su-mt-[58px] lg:su-mt-[61px] su-flex su-flex-col su-gap-[20px] md:su-gap-[26px]">
-        <h3 className="su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans su-m-0">
+      <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
+        <h3 className="su-text-18 su-font-bold su-leading-[22.5px] !su-m-0 su-font-sans">
           Share this story
         </h3>
 
@@ -305,11 +322,11 @@ export default function FeaturedMetadata({ data }) {
           onClick={copyLink}
           type="button"
           data-role="copy-link"
-          className="su-text-digital-blue su-text-[21px] su-font-semibold su-mx-auto"
+          className="su-text-digital-blue dark:su-text-digital-blue-vivid su-text-21 su-font-semibold su-mx-auto hocus:su-underline"
         >
           {copyLinkTitle}
 
-          <span className="[&>*]:su-inline-block [&>*]:su-ml-[8px]">
+          <span className="*:su-inline-block *:su-ml-8">
             <ShareLink />
           </span>
         </button>

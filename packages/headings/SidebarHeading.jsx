@@ -5,7 +5,7 @@ import {
   BullseyePointer,
   FeaturedReading,
   FeaturedAudio,
-  TrendingUp,
+  MediaGallery,
 } from "../SVG-library/SVG";
 
 /**
@@ -52,30 +52,30 @@ export function SidebarHeading({
     light: <FeaturedAudio variant="light" />,
     dark: <FeaturedAudio variant="dark" />,
   });
-  iconMap.set("trendingup", {
-    light: <TrendingUp variant="light" />,
-    dark: <TrendingUp variant="dark" />,
+  iconMap.set("mediagallery", {
+    light: <MediaGallery variant="light" />,
+    dark: <MediaGallery variant="dark" />,
   });
 
   const colorClassMap = new Map();
   colorClassMap.set(
     "grey",
-    "su-text-black-90 dark:su-text-white su-font-semibold su-text-[18px] su-items-end"
+    "su-text-black-90 dark:su-text-white su-font-semibold su-text-18 su-items-end"
   );
   colorClassMap.set(
     "black",
-    "su-text-black dark:su-text-white su-font-bold su-text-[20px] md:su-text-[28px] su-items-start"
+    "su-text-black dark:su-text-white su-font-bold su-text-20 md:su-text-28 su-items-start"
   );
   colorClassMap.set(
     "media",
-    "su-text-black-90 dark:su-text-black-20 su-font-semibold su-text-[18px] su-items-center"
+    "su-text-black-90 dark:su-text-black-20 su-font-semibold su-text-18 su-items-center"
   );
 
   const Tag = headingSize;
   return title !== "" ? (
     <Tag
       className={[
-        "su-component-sidebar-heading su-w-full su-flex su-flex-wrap su-gap-[6px] su-my-0 su-font-sans",
+        "su-component-sidebar-heading su-w-full su-flex su-flex-wrap su-gap-6 su-my-0 su-font-sans",
         colorClassMap.get(color),
       ].join(" ")}
     >

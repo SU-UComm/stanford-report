@@ -10,7 +10,7 @@ export default function Solutions() {
     <svg
       aria-hidden="true"
       focusable="false"
-      className="su-absolute su-top-1/2 su-left-1/2 su-transform -su-translate-x-1/2 -su-translate-y-1/2"
+      className="su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
       width="26"
       height="26"
       viewBox="0 0 26 26"

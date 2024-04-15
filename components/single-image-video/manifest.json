@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "single-image-video",
-  "version": "0.0.6",
+  "version": "0.0.18",
   "namespace": "stanford-components",
   "description": "Stanford university Base component.",
   "displayName": "Single image or video",
@@ -36,18 +36,16 @@
           },
           "width": {
             "title": "Width",
-            "enum": ["Wide", "Narrow"],
+            "enum": [
+              "Wide",
+              "Narrow"
+            ],
             "default": "Wide",
             "type": "string"
           },
           "video": {
             "required": [],
             "properties": {
-              "autoplay": {
-                "title": "Autoplay",
-                "description": "This will enable the video auto play once scrolled into view",
-                "type": "boolean"
-              },
               "vimeoid": {
                 "title": "Vimeo video ID",
                 "description": "Provide the Vimeo autoplay video id here, this is the muted looped video that appears in the component.",
@@ -61,7 +59,7 @@
             }
           }
         },
-        "required": ["image"]
+        "required": []
       },
       "output": {
         "responseType": "html",
@@ -70,21 +68,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+              "filepath": "global.css"
             }
           },
           {
@@ -125,6 +109,19 @@
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "basic": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/basicstory.html"
           }
         }
       }

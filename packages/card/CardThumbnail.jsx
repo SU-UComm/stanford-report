@@ -14,19 +14,19 @@ export default function CardThumbnail({
   const videoPlayClasses = new Map();
   videoPlayClasses.set(
     "featured",
-    "su-left-[27px] su-bottom-[27px] [&>svg]:su-w-[40px] [&>svg]:su-h-[40px] [&>svg]:md:su-w-[60px] [&>svg]:md:su-h-[60px]"
+    "su-left-27 su-bottom-27 [&>svg]:su-w-40 [&>svg]:su-h-40 [&>svg]:md:su-w-60 [&>svg]:md:su-h-60"
   );
   videoPlayClasses.set(
     "large",
-    "su-left-[13px] su-bottom-[13px] [&>svg]:su-w-[40px] [&>svg]:su-h-[40px]"
+    "su-left-13 su-bottom-13 [&>svg]:su-w-40 [&>svg]:su-h-40"
   );
   videoPlayClasses.set(
     "medium",
-    "su-left-[27px] su-bottom-[27px] [&>svg]:su-w-[40px] [&>svg]:su-h-[40px] [&>svg]:md:su-w-[60px] [&>svg]:md:su-h-[60px]"
+    "su-left-27 su-bottom-27 [&>svg]:su-w-40 [&>svg]:su-h-40 [&>svg]:md:su-w-60 [&>svg]:md:su-h-60"
   );
   videoPlayClasses.set(
     "small",
-    "su-left-[13px] su-bottom-[13px] [&>svg]:su-w-[40px] [&>svg]:su-h-[40px]"
+    "su-left-13 su-bottom-13 [&>svg]:su-w-40 [&>svg]:su-h-40"
   );
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -42,7 +42,7 @@ export default function CardThumbnail({
   return videoUrl ? (
     <>
       <button
-        className="su-component-card-thumbnail su-block su-relative su-z-10 su-w-full su-h-full"
+        className="su-component-card-thumbnail su-block su-relative su-z-10 su-size-full"
         type="button"
         aria-haspopup="dialog"
         onClick={() => handleClick()}
@@ -70,7 +70,7 @@ export default function CardThumbnail({
       )}
     </>
   ) : (
-    <div className="su-component-card-thumbnail">
+    <div className="su-component-card-thumbnail su-w-full su-h-full">
       <MediaRatio
         imageUrl={imageUrl}
         imageAlt={alt}

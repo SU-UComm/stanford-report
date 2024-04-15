@@ -1,10 +1,17 @@
 #!/usr/bin/env node
+import fs from "fs";
 import { globSync } from "glob";
 import args from "args";
 import path from "path";
 import { cleanDist } from "./cleanDist.js";
 import { buildComponent } from "./buildComponent.js";
 import { watchComponent } from "./watchComponent.js";
+import { cssGenerator } from "./cssGenerator.js";
+import { jsBundler } from "./jsBundler.js";
+
+const buildPath = "./global/build";
+const globalOutputCss = `${buildPath}/global.css`;
+const globalOutputJs = `${buildPath}/global.js`;
 
 // Setup our args
 args
@@ -35,13 +42,13 @@ const { watch, minify } = args.parse(process.argv);
     const componentFolder = componentPath.split("/").at(-1);
 
     // Log that we are building
-    console.log(`Building for ${componentFolder}: \n`);
+    // console.log(`Building for ${componentFolder}: \n`);
 
     // Define an array of our components promises
     const componentBuildPromises = [];
 
     // Clean the previously built files
-    const cleanDistPromise = await cleanDist(componentPath);
+    // const cleanDistPromise = await cleanDist(componentPath);
 
     let buildPromise = null;
 
@@ -54,18 +61,19 @@ const { watch, minify } = args.parse(process.argv);
     }
 
     // Push our promises to the component array
-    componentBuildPromises.push(cleanDistPromise, buildPromise);
+    // cleanDistPromise, buildPromise
+    componentBuildPromises.push(buildPromise);
     // Push the promises to the all build promises array
-    allBuildPromises.push(cleanDistPromise, buildPromise);
+    allBuildPromises.push(buildPromise);
 
     // Wait for all the promises to resolve before we log that the component has finished building
     Promise.all(componentBuildPromises).then(() => {
-      console.log(`Build for ${componentFolder} complete \n`);
+      // console.log(`Build for ${componentFolder} complete \n`);
     });
   }
 
   // When all promises have resolved then log that we have succeeded with the build
-  Promise.all(allBuildPromises).then(() => {
+  Promise.all(allBuildPromises).then(async () => {
     console.log("✅ build has completed successfully");
   });
 })();

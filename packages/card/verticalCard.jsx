@@ -26,7 +26,7 @@ import {
   QuestionAnswer,
   Video,
   Podcast,
-  Book,
+  BookOpenCover,
 } from "../SVG-library/SVG";
 import CardThumbnail from "./CardThumbnail";
 
@@ -46,44 +46,41 @@ function titleSize(size) {
   if (size === "featured")
     return "su-text-[35px] md:su-text-[40px] lg:su-text-[43px] su-leading-[42px] md:su-leading-[48px] lg:su-leading-[51.6px]";
   if (size === "medium")
-    return "su-text-[21px] lg:su-text-[33px] su-leading-[25.2px] lg:su-leading-[39.6px]";
-  return "su-text-[21px] lg:su-text-[24px] su-leading-[25.2px] lg:su-leading-[28.8px]";
+    return "su-text-21 lg:su-text-[33px] su-leading-[25.2px] lg:su-leading-[39.6px]";
+  return "su-text-21 lg:su-text-24 su-leading-[25.2px] lg:su-leading-[28.8px]";
 }
 
 function descriptionSize(size) {
   if (size === "featured")
-    return "[&>*]:su-text-[18px] su-text-[18px] [&>*]:md:su-text-[19px] md:su-text-[19px] [&>*]:su-leading-[22.5px] su-leading-[22.5px] [&>*]:md:su-leading-[23.75px] md:su-leading-[23.75px] [&>*]:su-mt-[4px] [&>*]:md:su-mt-[14px]";
-  return "[&>*]:su-text-[19px] [&>*]:su-leading-[23.75px] su-text-[19px] su-leading-[23.75px]";
+    return "*:su-text-18 su-text-18 *:md:su-text-19 md:su-text-19 *:su-leading-[22.5px] su-leading-[22.5px] *:md:su-leading-[23.75px] md:su-leading-[23.75px] *:su-mt-4 *:md:su-mt-14";
+  return "*:su-text-19 *:su-leading-[23.75px] su-text-19 su-leading-[23.75px]";
 }
 
 function gapSize(size) {
-  if (size === "featured")
-    return "su-gap-[11px] md:su-gap-[13px] lg:su-gap-[13px]";
-  return "su-gap-[11px] md:su-gap-[12px] lg:su-gap-[9px]";
+  if (size === "featured") return "su-gap-11 md:su-gap-13 lg:su-gap-13";
+  return "su-gap-11 md:su-gap-12 lg:su-gap-9";
 }
 
 function imageMargin(size) {
-  if (size === "featured")
-    return "su-mb-[15px] md:su-mb-[26px] lg:su-mb-[38px]";
-  return "su-mb-[15px] md:su-mb-[18px] lg:su-mb-[19px]";
+  if (size === "featured") return "su-mb-15 md:su-mb-26 lg:su-mb-38";
+  return "su-mb-15 md:su-mb-18 lg:su-mb-19";
 }
 
 function taxonomySize(size) {
-  if (size === "featured")
-    return "su-text-[20px] md:su-text-[20px] su-leading-[26px]";
+  if (size === "featured") return "su-text-20 md:su-text-20 su-leading-[26px]";
   if (size === "medium")
-    return "su-text-[16px] md:su-text-[16px] md:su-text-[20px] su-leading-[20.8px] md:su-leading-[26px]";
+    return "su-text-16 md:su-text-16 md:su-text-20 su-leading-[20.8px] md:su-leading-[26px]";
 
-  return "su-text-[18px] su-leading-[23.4px]";
+  return "su-text-18 su-leading-[23.4px]";
 }
 
 function typeSize(size) {
   if (size === "featured")
-    return "su-text-[18px] su-leading-[23.4px] md:su-text-[20px] md:su-leading-[26px] lg:su-text-[20px] lg:su-leading-[26px]";
+    return "su-text-18 su-leading-[23.4px] md:su-text-20 md:su-leading-[26px] lg:su-text-20 lg:su-leading-[26px]";
   if (size === "medium")
-    return "su-text-[16px] su-leading-[20.8px] lg:su-text-[18px] lg:su-leading-[23.4px]";
+    return "su-text-16 su-leading-[20.8px] lg:su-text-18 lg:su-leading-[23.4px]";
 
-  return "su-text-[16px] su-leading-[20.8px]";
+  return "su-text-16 su-leading-[20.8px]";
 }
 
 /**
@@ -174,17 +171,22 @@ export default function VerticalCard({
   SVGMap.set("q&nbsp;&amp;&nbsp;a", <QuestionAnswer />);
   SVGMap.set("video", <Video />);
   SVGMap.set("podcast", <Podcast />);
-  SVGMap.set("book", <Book />);
+  SVGMap.set(
+    "book",
+    <BookOpenCover className="su-text-black-70 su-w-[1.2em]" aria-hidden />
+  );
+
+  const cardThumb = imageUrl || "https://sug-web.matrix.squiz.cloud/?a=130443";
 
   return (
     <article
       className="su-component-card su-relative su-w-full"
       data-testid="vertical-card"
     >
-      {displayThumbnail && imageUrl && (
+      {displayThumbnail && (
         <div className={`${imageMargin(cardSize)}`}>
           <CardThumbnail
-            imageUrl={imageUrl}
+            imageUrl={cardThumb}
             alt={imageAlt}
             aspectRatio={`card-${cardSize}`}
             videoUrl={type === "Video" ? videoUrl : ""}
@@ -196,12 +198,12 @@ export default function VerticalCard({
       {taxonomy && (
         <p
           data-testid="vertical-card-taxonomy"
-          className={`su-relative su-z-10 su-mb-[13px] su-font-semibold ${taxonomySize(
+          className={`su-relative su-z-10 su-mb-13 su-font-semibold ${taxonomySize(
             cardSize
           )}`} // size
         >
           <XssSafeContent
-            className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
+            className="hocus:su-underline focus:!su-underline focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
             content={taxonomy}
             href={taxonomyUrl}
             elementType="a"
@@ -213,18 +215,18 @@ export default function VerticalCard({
         <h2
           className={`su-w-full ${titleSize(cardSize)} su-font-serif su-my-0`}
         >
-          <a
-            href={liveUrl}
+          <XssSafeContent
             className="focus:su-outline-0 focus:before:su-ring hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
-          >
-            {title}
-          </a>
+            content={title}
+            href={liveUrl}
+            elementType="a"
+          />
         </h2>
 
         {type && (
           <p
             data-testid="vertical-card-type"
-            className={`su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-[6px] su-flex-nowrap su-items-center ${typeSize(
+            className={`su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-6 su-flex-nowrap su-items-center ${typeSize(
               cardSize
             )}`}
           >

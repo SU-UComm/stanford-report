@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "single-featured-content",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "namespace": "stanford-components",
   "description": "Stanford university single featured content component",
   "displayName": "Single featured content",
@@ -37,22 +37,35 @@
                 "description": "The heading text",
                 "type": "string"
               },
+              "ctaUrl": {
+                "title": "Matrix Asset Link",
+                "type": "string",
+                "description": "Select an asset to link to. If this field is filled out, it will be used instead of the manual link",
+                "format": "matrix-asset-uri"
+              },
+              "ctaManualUrl": {
+                "title": "Manual Link",
+                "type": "string",
+                "description": "Enter the full URL, including https://"
+              },
               "ctaText": {
                 "title": "Link text",
                 "type": "string",
                 "default": "View all"
               },
-              "ctaUrl": {
-                "title": "Link URL",
-                "type": "string",
-                "format": "matrix-asset-uri"
+              "ctaNewWindow": {
+                "title": "Open link in a new window",
+                "type": "boolean",
+                "default": false
               }
             }
           },
           "contentConfiguration": {
             "title": "Single featured content inner content",
             "description": "The featured content to display in the component",
-            "required": ["source"],
+            "required": [
+              "source"
+            ],
             "properties": {
               "source": {
                 "title": "Featured content",
@@ -71,21 +84,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+              "filepath": "global.css"
             }
           },
           {

@@ -1,7 +1,34 @@
 import React, { Fragment } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import CardThumbnail from "./CardThumbnail";
-import { News, QuestionAnswer, Video, Podcast, Book } from "../SVG-library/SVG";
+import {
+  Alert,
+  AnalysisAndInsights,
+  CaseStudy,
+  Event,
+  EventHighlights,
+  Feature,
+  Infographic,
+  InTheNews,
+  LeadershipMessages,
+  Obituary,
+  Opinion,
+  Photo,
+  PolicyBrief,
+  PollQuiz,
+  Profile,
+  Research,
+  Solutions,
+  Survey,
+  Timeline,
+  TipsAndTakeaways,
+  TypeAnnouncement,
+  News,
+  QuestionAnswer,
+  Video,
+  Podcast,
+  BookOpenCover,
+} from "../SVG-library/SVG";
 
 import EventStartEndDate from "./EventStartEndDate";
 
@@ -73,39 +100,73 @@ export default function HorizontalCard({
   cardSize = "small",
 }) {
   const SVGMap = new Map();
+  SVGMap.set("alert", <Alert />);
+  SVGMap.set("analysis & insights", <AnalysisAndInsights />);
+  SVGMap.set("analysis &amp; insights", <AnalysisAndInsights />);
+  SVGMap.set("analysis&nbsp;&amp;&nbsp;insights", <AnalysisAndInsights />);
+  SVGMap.set("case study", <CaseStudy />);
+  SVGMap.set("case&nbsp;study", <CaseStudy />);
+  SVGMap.set("casestudy", <CaseStudy />);
+  SVGMap.set("event", <Event />);
+  SVGMap.set("event&nbsp;highlights", <EventHighlights />);
+  SVGMap.set("event highlights", <EventHighlights />);
+  SVGMap.set("feature", <Feature />);
+  SVGMap.set("infographic", <Infographic />);
+  SVGMap.set("in&nbsp;the&nbsp;news", <InTheNews />);
+  SVGMap.set("in the news", <InTheNews />);
+  SVGMap.set("inthenews", <InTheNews />);
+  SVGMap.set("leadership&nbsp;messages", <LeadershipMessages />);
+  SVGMap.set("leadership messages", <LeadershipMessages />);
+  SVGMap.set("obituary", <Obituary />);
+  SVGMap.set("opinion", <Opinion />);
+  SVGMap.set("photo", <Photo />);
+  SVGMap.set("policy&nbsp;brief", <PolicyBrief />);
+  SVGMap.set("policy brief", <PolicyBrief />);
+  SVGMap.set("poll/quiz", <PollQuiz />);
+  SVGMap.set("poll / quiz", <PollQuiz />);
+  SVGMap.set("poll&nbsp;/&nbsp;quiz", <PollQuiz />);
+  SVGMap.set("profile", <Profile />);
+  SVGMap.set("research", <Research />);
+  SVGMap.set("solutions", <Solutions />);
+  SVGMap.set("survey", <Survey />);
+  SVGMap.set("timeline", <Timeline />);
+  SVGMap.set("tips & takeaways", <TipsAndTakeaways />);
+  SVGMap.set("tips &amp; takeaways", <TipsAndTakeaways />);
+  SVGMap.set("tips&nbsp;&amp;&nbsp;takeaways", <TipsAndTakeaways />);
+  SVGMap.set("announcement", <TypeAnnouncement />);
   SVGMap.set("news", <News />);
   SVGMap.set("q&amp;a", <QuestionAnswer />);
+  SVGMap.set("q&a", <QuestionAnswer />);
+  SVGMap.set("q & a", <QuestionAnswer />);
+  SVGMap.set("q&nbsp;&amp;&nbsp;a", <QuestionAnswer />);
   SVGMap.set("video", <Video />);
   SVGMap.set("podcast", <Podcast />);
-  SVGMap.set("book", <Book />);
+  SVGMap.set("book", <BookOpenCover className="su-w-[1.2em]" aria-hidden />);
 
   // gap for the card <article> element
   const cardGap = new Map();
-  cardGap.set("large", "su-gap-[20px] lg:su-gap-[48px]");
-  cardGap.set("small", "su-gap-[19px]");
+  cardGap.set("large", "su-gap-20 lg:su-gap-48");
+  cardGap.set("small", "su-gap-19");
 
   // gap for the <div> node that holds info, like description & title
   const contentGap = new Map();
-  contentGap.set("large", "su-gap-[9px] lg:su-gap-[12px]");
-  contentGap.set("small", "su-gap-[6px]");
+  contentGap.set("large", "su-gap-9 lg:su-gap-12");
+  contentGap.set("small", "su-gap-6");
 
   // gap for the <div> node that holds info, like description & title
   const titleSize = new Map();
   titleSize.set(
     "large",
-    "su-text-[18px] md:su-text-[21px] lg:su-text-[23px] su-font-bold su-leading-[21.6px] md:su-leading-[25.2px] lg:su-leading-[27.6px]"
+    "su-text-18 md:su-text-21 lg:su-text-23 su-font-bold su-leading-[21.6px] md:su-leading-[25.2px] lg:su-leading-[27.6px]"
   );
-  titleSize.set(
-    "small",
-    "su-text-[18px] su-font-semibold su-leading-[21.495px]"
-  );
+  titleSize.set("small", "su-text-18 su-font-semibold su-leading-[21.495px]");
 
   return (
     <article
       className={`listing-item su-flex ${cardGap.get(cardSize)}`}
       data-testid="horizontal-card"
     >
-      {cardSize === "large" && (
+      {cardSize === "large" && imageUrl && (
         <div className="su-shrink-0 su-w-[103px] su-h-[69px] md:su-w-[169px] md:su-h-[113px] lg:su-w-[292px] lg:su-h-[193px]">
           <CardThumbnail
             imageUrl={imageUrl}
@@ -118,8 +179,8 @@ export default function HorizontalCard({
         </div>
       )}
 
-      {cardSize === "small" && (
-        <div className="su-shrink-0 su-w-[73px] su-h-[73px]">
+      {cardSize === "small" && imageUrl && (
+        <div className="su-shrink-0 su-w-[73px] su-h-[73px] su-relative">
           <CardThumbnail
             imageUrl={imageUrl}
             alt={imageAlt}
@@ -133,11 +194,11 @@ export default function HorizontalCard({
       <div className={`su-flex su-flex-col ${contentGap.get(cardSize)}`}>
         {cardSize === "small" && taxonomy && (
           <p
-            className="su-mb-0 su-text-[16px] su-font-semibold su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
+            className="su-mb-0 su-text-16 su-font-semibold su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
             data-testid="horizontal-card-taxonomy"
           >
             <XssSafeContent
-              className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
+              className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red su-block su-mt-[-6px]"
               content={taxonomy}
               href={taxonomyUrl}
               elementType="a"
@@ -148,14 +209,14 @@ export default function HorizontalCard({
         <h2
           className={`${cardTitleFont(cardSize)} ${titleSize.get(
             cardSize
-          )} ${cardTitleFont(cardSize)} su-my-0`}
+          )} ${cardTitleFont(cardSize)} su-font-sans su-my-0`}
         >
-          <a
-            className="hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red"
+          <XssSafeContent
+            className="hocus:su-text-digital-red hocus:su-underline su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
+            content={title}
             href={liveUrl}
-          >
-            {title}
-          </a>
+            elementType="a"
+          />
         </h2>
 
         {/* only small cards will have the date */}
@@ -168,11 +229,11 @@ export default function HorizontalCard({
         {cardSize === "large" && type && (
           <p
             data-testid="horizontal-card-type"
-            className="su-text-black-70 dark:su-text-black-30 su-w-full su-text-[14px] lg:su-text-[16px] su-mt-[9px] md:su-mt-[12px] su-mb-0 su-flex su-gap-[6px] su-items-center su-justify-start"
+            className="su-text-black-70 dark:su-text-black-30 su-w-full su-text-14 lg:su-text-16 su-mt-9 md:su-mt-12 su-mb-0 su-flex su-gap-6 su-items-center su-justify-start"
           >
             {SVGMap.get(type.toLowerCase()) || Fragment}
             <XssSafeContent
-              className="su-font-semibold su-text-[14px] md:su-text-[16px] su-leading-4"
+              className="su-font-semibold su-text-14 md:su-text-16 su-leading-4"
               content={type}
               elementType="span"
             />
@@ -182,7 +243,7 @@ export default function HorizontalCard({
         {cardSize === "large" && (
           <div
             data-testid="horizontal-card-description"
-            className="su-hidden md:su-block su-text-[16px] lg:su-text-[18px] su-mt-[9px] md:su-mt-[12px] su-mb-0"
+            className="su-hidden md:su-block su-text-16 lg:su-text-18 su-mt-9 md:su-mt-12 su-mb-0"
           >
             <XssSafeContent
               className={["su-mb-0 su-w-full [&>*:last-child]:su-mb-0"].join(

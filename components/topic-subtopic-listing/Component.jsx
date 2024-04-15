@@ -16,6 +16,22 @@ import formatCardDataFunnelback from "../../packages/utils/formatCardDataFunnelb
  * @constructor
  */
 
+function maybeUpdateSubnavLinks(cards, displayStyle) {
+  // Check if we need to update the hero topics
+  if (
+    displayStyle === "Leadership Messages" ||
+    displayStyle === "Announcements"
+  ) {
+    // update subnav listing
+    document.topicsChangeEvent = new CustomEvent("topicLoader", {
+      detail: {
+        cards,
+      },
+    });
+    document.dispatchEvent(document.topicsChangeEvent);
+  }
+}
+
 export default function TopicSubtopicListing({
   data,
   resultsSummary,
@@ -24,7 +40,7 @@ export default function TopicSubtopicListing({
   endpoint,
 }) {
   let cards = [];
-  const { searchQuery } = displayConfiguration;
+  const { searchQuery, displayStyle } = displayConfiguration;
 
   // state
   const [pageNo, setPageNo] = useState(pageNumber);
@@ -46,8 +62,9 @@ export default function TopicSubtopicListing({
             cards.push(formatCardDataFunnelback(cardItem));
           });
 
-          const visitedPage = {};
+          maybeUpdateSubnavLinks(cards, displayStyle);
 
+          const visitedPage = {};
           visitedPage[pageNo] = cards;
 
           // update card data state
@@ -55,6 +72,7 @@ export default function TopicSubtopicListing({
 
           // save the current page's data in cache
           setCache((visited) => ({ ...visited, ...visitedPage }));
+          window.scrollTo({ top: 0, behavior: "smooth" });
         })
         .catch((err) => {
           throw new Error(err);
@@ -63,18 +81,34 @@ export default function TopicSubtopicListing({
       return;
     }
 
+    const cachedValues = cache[pageNo];
+
     // if the paginated page is cached, get the cached page
-    setResults(cache[pageNo]);
+    setResults(cachedValues);
+    maybeUpdateSubnavLinks(cachedValues, displayStyle);
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pageNo]);
 
   results.forEach((card) => {
-    cards.push(<Card data={card} cardType="horizontal" cardSize="large" />);
+    if (
+      displayStyle === "Press Center" ||
+      displayStyle === "Leadership Messages" ||
+      displayStyle === "Announcements" ||
+      displayStyle === "In the News"
+    ) {
+      const cardData = card;
+      cardData.displayConfiguration = displayStyle;
+      cards.push(<Card data={cardData} cardType="narrowhorizontal" />);
+    } else {
+      cards.push(<Card data={card} cardType="horizontal" cardSize="large" />);
+    }
   });
 
   return (
     <Container>
       <HorizontalCardGrid
-        orientation="vertical"
+        orientation="topiclisting"
         items={cards}
         maximumItems={10}
       />
@@ -83,7 +117,9 @@ export default function TopicSubtopicListing({
         allResults={resultsSummary.totalMatching}
         resultsPerPage={resultsSummary.numRanks}
         paginationRange={4}
-        onPageChange={(number) => setPageNo(number)}
+        onPageChange={(number) => {
+          setPageNo(number);
+        }}
       />
     </Container>
   );

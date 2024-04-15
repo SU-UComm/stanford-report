@@ -1,51 +1,133 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../grids/Container";
+
+function readingTime(text) {
+  if (!text) return 0;
+
+  const wpm = 225;
+  const words = text.trim().split(/\s+/).length;
+  const time = Math.ceil(words / wpm);
+  return time;
+}
 
 export default function HorizontalHero({ data }) {
   const { title, pubDateFormatted, media, summary } = data;
   const titleWordsCount = title.split(" ").length;
+  const titleSize =
+    "su-leading-[119.4%] md:su-leading-display su-text-[4.6rem] sm:su-text-[6.1rem] lg:su-text-[9.5rem]";
+
+  // state
+  const [readingTimeValue, setReadingTime] = useState(0);
+
+  useEffect(() => {
+    const content = document.querySelector(".su-page-content");
+
+    if (content) {
+      setReadingTime(() => readingTime(content.innerText));
+    }
+  });
 
   return (
-    <Container>
-      <header className="basic-story__header su-relative su-w-full su-max-w-[1512px] su-mx-auto su-grid su-grid-cols-6 sm:su-grid-cols-12">
-        <div className="su-relative su-pr-[20px] sm:su-pl-[20px] lg:su-pl-[20px] sm:su-pr-0 su-flex su-col-span-5 su-col-start-2 sm:su-col-span-6 sm:su-col-start-6">
-          <h1 className="su-z-10 su-relative su-text-[46px] md:su-text-[80px] lg:su-text-[128px] su-font-serif su-text-right su-leading-[54.92px] md:su-leading-[96px] lg:su-leading-[153.6px]">
-            {title}
-          </h1>
-        </div>
-        <div className="su-w-[2px] su-h-[60%] su-absolute su-left-[20px] sm:su-left-[10%] su-top-[80px] lg:su-top-[240px] su-bg-gradient su-z-0" />
-        <div className="su-w-[10%] sm:su-w-[25%] su-h-[2px] su-absolute su-left-[20px] sm:su-left-[10%] su-top-[80px] lg:su-top-[239px] su-bg-gradient su-z-0" />
-        <div className="su-w-[2px] su-h-[60%] su-absolute su-right-[20px] sm:su-right-[10%] su-bottom-0 su-bg-gradient su-z-0" />
+    <header className="basic-story__header su-rs-pt-8 su-relative su-w-full">
+      <Container>
+        <div className="su-relative">
+          <div className="su-relative">
+            <div
+              className={[
+                titleSize,
+                "su-w-2 su-z-0 md:su-w-3 lg:su-w-4 su-absolute su-rotate-180 su-top-[1.75em] su-left-0 su-bg-gradient-light-red",
+                "md:su-hidden",
+                media.caption || media.credit
+                  ? "su-h-[calc(100%-2.25em)]"
+                  : "su-h-[calc(100%-1em)]",
+              ].join(" ")}
+            />
+            <div className="su-relative su-grid su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-grid-gap">
+              <h1
+                className={[
+                  titleSize,
+                  "su-text-shadow-title su-shadow-white dark:su-shadow-black-true selection:su-relative md:su-max-h-[6em] su-z-10 su-text-right su-ml-auto su-mt-0 su-break-words su-font-bold font-serif-4 su-col-span-5 md:su-col-span-8 lg:su-col-span-7 su-col-start-2 md:su-col-start-5 lg:su-col-start-4",
+                  titleWordsCount > 7 ? "su-mb-[-1.75em]" : "su-mb-[-.5em]",
+                ].join(" ")}
+              >
+                {title}
+              </h1>
+              <div
+                className={[
+                  titleSize,
+                  "su-absolute su-w-full su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-z-0",
+                  "su-top-[1.75em] md:su-top-auto md:su-bottom-[12.3rem] lg:su-bottom-[15.5rem]",
+                ].join(" ")}
+              >
+                <div className="su-col-span-1 md:su-col-span-4 lg:su-col-span-3 su-h-[2px] md:su-h-[3px] lg:su-h-[4px] su-bg-gradient-light-red-h su-rotate-180" />
+              </div>
+            </div>
 
-        <figure className="basic-story__header-image su-flex su-flex-col su-gap-[6px] su-col-span-full su-relative su-translate-y-[-110px] sm:su-translate-y-[-130px] lg:su-translate-y-[-200px] xl:su-translate-y-[-220px] su-z-0 md:su-gap-[18px] lg:su-gap-[15px]">
+            <div className="su-relative">
+              <div
+                className={[
+                  titleSize,
+                  "su-w-[2px] su-z-0 md:su-w-[3px] lg:su-w-[4px] su-absolute su-top-[1.75em] su-left-0 su-bg-gradient-light-red dark:su-rotate-180",
+                  "su-hidden md:su-top-auto md:su-block",
+                  media.caption || media.credit
+                    ? "su-h-[calc(100%+12.3rem-.5em)] lg:su-h-[calc(100%+15.5rem-.5em)] md:su-bottom-[.5em]"
+                    : "su-h-[calc(100%+12.3rem+1em)] lg:su-h-[calc(100%+15.5rem+1em)] md:su-bottom-[-1em]",
+                ].join(" ")}
+              />
+              <figure className="basic-story__header-image su-gap-6 su-col-span-full su-z-0 md:su-gap-18 lg:su-gap-15">
+                <div className="su-relative su-w-screen su-left-1/2 su-translate-x-[-50%] su-max-w-1500">
+                  <img
+                    src={media.featureImage.url}
+                    alt={media.featureImage.alt}
+                    className="su-relative su-w-full su-max-w-none"
+                  />
+                  <div className="su-bg-gradient-to-b su-from-white su-via-[rgb(255_255_255/.5)_8%] dark:su-from-black-true dark:su-via-[rgb(0_0_0/.5)_8%] su-to-50% su-opacity-75 su-absolute su-w-full su-h-full su-bottom-0 su-left-0" />
+                </div>
+                {(media.caption || media.credit) && (
+                  <div className="su-rs-pb-9 su-relative">
+                    <div
+                      aria-hidden="true"
+                      className="su-w-[2px] md:su-w-[3px] lg:su-w-[4px] su-h-full su-absolute su-right-0 su-bg-digital-red-light dark:su-bg-olive su-z-0"
+                    />
+                    <figcaption className="su-text-inherit su-pb-[1.1rem] md:su-pb-[1.3rem] su-pt-[.9rem] su-mt-0 su-mb-0 su-w-[calc(100%-40px)] md:su-w-[83.333%] lg:su-w-[50%] lg:su-max-w-[633px] su-mx-auto su-text-center su-text-[1.4rem] md:su-text-[1.6rem]">
+                      {media.caption} {media.caption && media.credit && ` | `}
+                      {media.credit}
+                    </figcaption>
+                  </div>
+                )}
+              </figure>
+            </div>
+          </div>
+
           <div
             className={`su-relative ${
-              titleWordsCount <= 5 ? "su-mt-[85px] lg:su-mt-[230px]" : ""
+              media.caption || media.credit ? "" : "su-rs-pt-9"
             }`}
           >
-            <img
-              src={media.featureImage.url}
-              alt={media.featureImage.alt}
-              className="su-relative su-w-full su-h-[300px] sm:su-h-[500px] lg:su-h-[764px] su-object-cover su-object-center"
+            <div
+              aria-hidden="true"
+              className="su-w-2 md:su-w-3 lg:su-w-4 su-h-full su-absolute su-top-0 su-right-0 su-bg-gradient-light-red dark:su-rotate-180 su-z-0"
             />
-            <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover" />
+            <div className="su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-20 md:su-px-0">
+              <XssSafeContent
+                className="su-font-semibold su-text-left su-col-span-6 md:su-col-span-10 md:su-col-start-2 lg:su-col-span-6 lg:su-col-start-2 font-serif-4 su-text-21 su-leading-[125.28%] md:su-text-25 lg:su-text-32 su-mb-0"
+                content={summary}
+                elementType="p"
+              />
+            </div>
+
+            <div className="su-grid su-grid-gap su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-px-20 md:su-px-0">
+              <span className="su-col-span-6 md:su-col-span-10 md:su-col-start-2 lg:su-col-span-8 lg:su-col-start-2 su-rs-mt-5 su-text-right su-text-1">
+                <time className="su-m-0 md:su-mt-0 md:su-mr-4 su-font-semibold">
+                  {pubDateFormatted}
+                </time>{" "}
+                |{` ${readingTimeValue} min read`}
+              </span>
+            </div>
           </div>
-          <figcaption className="su-text-[14px] su-w-3/4 su-mx-auto su-text-center su-m-0 su-leading-[16.72px] md:su-text-[16px] md:su-leading-[19.11px]">
-            {media.caption} | {media.credit}
-          </figcaption>
-        </figure>
-
-        <p className="su-col-span-5 su-col-start-2 sm:su-col-span-6 sm:su-col-start-3 su-pr-[40px] sm:su-pr-[20px] su-h-min su-mx-auto su-font-semibold su-text-left font-serif-4 su-text-[20px] su-leading-[23.88px] md:su-text-[23px] md:su-leading-[28.75px] lg:su-text-[32px] lg:su-leading-[41.68px]">
-          {summary}
-        </p>
-
-        <span className="su-col-span-full su-pr-[40px] su-col-start-2 sm:su-col-span-4 sm:su-col-start-7 su-mt-[71px] su-flex su-items-start su-flex-row md:su-flex-row su-justify-end su-text-[16px] su-leading-[19.1px] md:su-text-[23px] md:su-leading-[28.75px] md:su-basefont-23">
-          <time className="su-m-0 md:su-mt-0 md:su-mr-[4px] su-font-semibold">
-            {pubDateFormatted}
-          </time>
-          {/* | {read time here} */}
-        </span>
-      </header>
-    </Container>
+        </div>
+      </Container>
+    </header>
   );
 }

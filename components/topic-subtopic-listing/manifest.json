@@ -1,9 +1,9 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "topic-subtopic-listing",
-  "version": "0.0.4",
+  "version": "0.0.14",
   "namespace": "stanford-components",
-  "description": "Stanford university Base component.",
+  "description": "Listing of stories as cards with pagination.",
   "displayName": "Topic / subtopic listing",
   "mainFunction": "main",
   "environment": [
@@ -33,6 +33,19 @@
               "searchQuery": {
                 "title": "Search query",
                 "type": "string"
+              },
+              "displayStyle": {
+                "title": "Topic list display",
+                "type": "string",
+                "default": "Default",
+                "enum": [
+                  "Default",
+                  "News Archive",
+                  "Press Center",
+                  "Announcements",
+                  "In the News",
+                  "Leadership Messages"
+                ]
               }
             }
           }
@@ -45,21 +58,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+              "filepath": "global.css"
             }
           },
           {
@@ -83,6 +82,58 @@
           "inputData": {
             "type": "file",
             "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "presscenter": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "presscenter.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "announcements": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "announcements.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "inthenews": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "inthenews.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "leadershipmessages": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "leadershipmessages.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"

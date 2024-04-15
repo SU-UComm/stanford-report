@@ -14,7 +14,7 @@ export default function Pagination({
   const pages = Math.ceil(allResults / resultsPerPage);
   const forwardRangeNum = pageNumber + paginationRange * resultsPerPage;
   const backwardRangeNum = pageNumber - paginationRange * resultsPerPage;
-  const activeClass = "su-bg-digital-red su-rounded-[100px] su-text-[white]";
+  const activeClass = "su-bg-digital-red su-rounded-[100px] su-text-white";
   const nonActiveClass = "su-text-black ";
   const prevPage = pageNumber - resultsPerPage;
   const nextPage = pageNumber + resultsPerPage;
@@ -31,7 +31,7 @@ export default function Pagination({
       buttons.push(
         <button
           data-offset={offsetNum}
-          className={`su-w-[24px] su-h-[24px] su-font-serif su-flex su-items-center su-justify-center su-text-[18px] dark:su-text-[white] ${
+          className={`su-size-24 su-font-serif su-flex su-items-center su-justify-center su-text-18 dark:su-text-white ${
             offsetNum === pageNumber ? activeClass : nonActiveClass
           }`}
           disabled={offsetNum === pageNumber}
@@ -45,12 +45,12 @@ export default function Pagination({
     }
   }
 
-  return (
+  return pages > 1 ? (
     <Container>
-      <div className="su-flex su-gap-[9px] su-items-center su-justify-center">
+      <div className="su-flex su-gap-9 su-items-center su-justify-center su-rs-mt-4 lg:su-rs-mt-7">
         <button
           type="button"
-          className={`su-w-[24px] su-h-[24px] su-font-serif su-flex su-items-center su-justify-center dark:su-text-[white] ${
+          className={`su-size-24 su-font-serif su-flex su-items-center su-justify-center dark:su-text-white ${
             prevPage < 1 ? finalPageClass : ""
           }`}
           disabled={prevPage < 1}
@@ -68,7 +68,7 @@ export default function Pagination({
 
         <button
           type="button"
-          className={`su-w-[24px] su-h-[24px] su-font-serif su-flex su-items-center su-justify-center dark:su-text-[white] ${
+          className={`su-size-24 su-font-serif su-flex su-items-center su-justify-center dark:su-text-white ${
             nextPage > offsets[offsets.length - 1] ? finalPageClass : ""
           }`}
           disabled={nextPage > offsets[offsets.length - 1]}
@@ -87,5 +87,7 @@ export default function Pagination({
         </button>
       </div>
     </Container>
+  ) : (
+    ""
   );
 }

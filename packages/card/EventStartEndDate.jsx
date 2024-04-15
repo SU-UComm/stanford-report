@@ -67,7 +67,7 @@ export default function EventStartEndDate({ start, end }) {
   // single date for matching dates
   if (matchingDates) {
     return (
-      <span data-testid="event-date" className="su-mb-0 su-text-[16px]">
+      <span data-testid="event-date" className="su-mb-0 su-text-16">
         {startDateFull.replace(/, /, " | ")}
       </span>
     );
@@ -77,7 +77,7 @@ export default function EventStartEndDate({ start, end }) {
   fullDate += `${startDateFull} - ${endDateFull}`;
 
   return (
-    <span data-testid="event-date" className="su-mb-0 su-text-[16px]">
+    <span data-testid="event-date" className="su-mb-0 su-text-16">
       {fullDate}
     </span>
   );

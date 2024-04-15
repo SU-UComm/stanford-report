@@ -1,14 +1,6 @@
 import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
 import Component from "./Component";
 
-// window.pageController = {
-//   id: 129627,
-//   title: "IA Basic Story Test",
-//   isStory: true,
-//   mainTopic: "Campus &amp; facilities",
-//   storyLayout: "Basic",
-// };
-
 (function () {
   const linkListWrapper = document.querySelector(
     `[data-role="link-list-wrapper"]`

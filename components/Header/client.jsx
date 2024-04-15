@@ -1,18 +1,38 @@
 import hydrateComponent from "../../packages/utils/hydrate-component";
 import Component from "./Component";
-import _preferencesSettings from "./scripts/preferenceSettings";
-import ReportHeader from "./scripts/reportHeader";
+import getCookie from "../../packages/utils/cookieGet";
+import relatedStoryData from "./scripts/relatedStory";
 
-(function () {
-  const componentName = "header-component";
-  const target = document.querySelector(
-    `[data-hydration-component="${componentName}"]`
+// eslint-disable-next-line func-names
+(async function () {
+  const target = "header-component";
+  const element = document.querySelector(
+    `[data-hydration-component="${target}"]`
   );
+  if (!element) return;
 
-  if (!target) return;
+  const props = {};
 
-  const headerDom = document.querySelector(".report-header");
-  const initHeader = new ReportHeader(headerDom);
-  _preferencesSettings();
-  hydrateComponent({ Component, componentName });
+  const pageData =
+    typeof window.pageController !== "undefined" ? window.pageController : null;
+  props.pageData = pageData;
+
+  const cdpConsentCookie = JSON.parse(getCookie("squiz.cdp.consent"));
+  // do we have consent data
+  props.consentData = cdpConsentCookie?.CDPConsent;
+
+  const audienceData = getCookie("preferences_personalisation");
+  props.audienceData = audienceData;
+  if (audienceData === "null") {
+    props.audienceData = null;
+  }
+  if (pageData?.isStory) {
+    const fbStoryData = await relatedStoryData(pageData, audienceData);
+    props.relatedStoryData = fbStoryData;
+  }
+  // set the props we need, to a window variable
+  window.suHeaderProps = props;
+
+  // Hydrate the component
+  hydrateComponent({ Component, componentName: target });
 })();

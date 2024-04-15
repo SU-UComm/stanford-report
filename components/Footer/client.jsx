@@ -1,12 +1,12 @@
-import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
+import hydrateComponent from "../../packages/utils/hydrate-component";
 import Component from "./Component";
 
 (function () {
-  const componentName = "footer-component";
-  const target = document.querySelector(
-    `[data-hydration-component="${componentName}"]`
+  const target = "footer-component";
+  const element = document.querySelector(
+    `[data-hydration-component="${target}"]`
   );
 
-  if (!target) return;
-  hydrateComponent({ Component, componentName });
+  if (!element) return;
+  hydrateComponent({ Component, componentName: target });
 })();

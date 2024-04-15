@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "stories-carousel",
-  "version": "0.0.6",
+  "version": "0.0.22",
   "namespace": "stanford-components",
   "description": "Links to stories displayed as cards in a carousel.",
   "displayName": "Stories carousel",
@@ -41,15 +41,26 @@
                 "type": "string",
                 "default": "Recent Stories"
               },
+              "ctaUrl": {
+                "title": "Matrix Asset Link",
+                "type": "string",
+                "description": "Select an asset to link to. If this field is filled out, it will be used instead of the manual link",
+                "format": "matrix-asset-uri"
+              },
+              "ctaManualUrl": {
+                "title": "Manual Link",
+                "type": "string",
+                "description": "Enter the full URL, including https://"
+              },
               "ctaText": {
                 "title": "Link text",
                 "type": "string",
                 "default": "View all"
               },
-              "ctaUrl": {
-                "title": "Link URL",
-                "type": "string",
-                "format": "matrix-asset-uri"
+              "ctaNewWindow": {
+                "title": "Open link in a new window",
+                "type": "boolean",
+                "default": false
               }
             }
           },
@@ -62,7 +73,7 @@
               "searchQuery": {
                 "type": "string",
                 "title": "The Funnelback search query",
-                "default": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search&log=false&query=!null&sort=date&meta_isTeaser=&num_ranks=6"
+                "default": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search&log=false&query=!null&sort=date&meta_isTeaser=false&meta_taxonomyContentTypeText_not=Announcement+Leadership%20Messages&num_ranks=6"
               }
             }
           }
@@ -76,7 +87,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
+              "filepath": "global.css"
             }
           },
           {
@@ -84,20 +95,6 @@
             "file": {
               "type": "css",
               "filepath": "client.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
             }
           },
           {

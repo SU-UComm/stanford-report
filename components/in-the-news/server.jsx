@@ -3,21 +3,27 @@ import Component from "./Component";
 import MatrixCardService from "../../packages/utils/MatrixCardService";
 import CardDataAdapter from "../../packages/utils/CardDataAdapter";
 import linkedHeadingService from "../../packages/utils/linkedHeadingService";
+import basicAssetUri from "../../packages/utils/basicAssetUri";
 
 export default async (args, info) => {
   const { featuredContent, supplementaryTeaserOne, supplementaryTeaserTwo } =
     args;
-  const { featuredTeaser } = featuredContent;
-  const { teaserOne } = supplementaryTeaserOne;
-  const { teaserTwo } = supplementaryTeaserTwo;
+  const { featuredTeaser, personHeadshot } = featuredContent;
+  const teaserOne = supplementaryTeaserOne?.teaserOne;
+  const teaserTwo = supplementaryTeaserTwo?.teaserTwo;
   const { API_IDENTIFIER } = info.set.environment;
   const { ctx } = info;
   const adapter = new CardDataAdapter();
   const cards = [];
 
+  let headshotData = null;
   let data = null;
 
   const service = new MatrixCardService({ ctx, API_IDENTIFIER });
+
+  if (personHeadshot) {
+    headshotData = await basicAssetUri(ctx, personHeadshot);
+  }
 
   if (featuredTeaser) {
     cards.push({ cardAsset: featuredTeaser });
@@ -46,6 +52,7 @@ export default async (args, info) => {
     ...args,
     data,
     headingData,
+    headshotData,
   };
 
   return renderComponent({
