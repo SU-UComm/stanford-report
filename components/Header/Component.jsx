@@ -62,11 +62,6 @@ export default function Header({ site, navigation, search }) {
       await cdpSetConsent(1);
       setConsent(true);
     }
-    // Remove consent if clearing all personalization
-    if (removeConsent === true) {
-      await cdpSetConsent(0);
-      setConsent(false);
-    }
     if (personaVal) {
       if (audience === personaVal) {
         // if we've selected the same option again, we need to un-check it
@@ -77,6 +72,11 @@ export default function Header({ site, navigation, search }) {
       }
     }
     await cdpSetPersona("persona-selector", persona);
+    // Remove consent if clearing all personalization
+    if (removeConsent === true) {
+      await cdpSetConsent(0);
+      setConsent(false);
+    }
     setCookie("preferences_personalisation", persona);
     setDisplayConsentBanner(false);
     setAudience(persona);
