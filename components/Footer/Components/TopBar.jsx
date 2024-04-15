@@ -27,8 +27,6 @@ export default function TopBar({ site, navigation, audience }) {
       externalData = external.anonymous;
   }
 
-  console.log(contactsStudent);
-
   return (
     <div className="dark:su-bg-black-true dark:su-text-white su-flex lg:su-items-center lg:su-justify-center su-bg-white">
       <section className="pre-footer su-pl-20 su-pr-20 md:su-pl-50 md:su-pr-50 su-max-w-[1412px]">
