@@ -81,6 +81,7 @@ export default function Header({ site, navigation, search }) {
     setDisplayConsentBanner(false);
     setAudience(persona);
     document.dispatchEvent(document.personaChangeEvent);
+    location.reload();
   };
 
   useEffect(() => {
