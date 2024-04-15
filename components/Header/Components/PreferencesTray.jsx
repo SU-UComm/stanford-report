@@ -344,7 +344,7 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                 className="su-border-none su-p-0 su-whitespace-nowrap"
                 role="radiogroup"
               >
-                <legend className="su-text-18 su-font-semibold su-mb-27 su-leading-[2.25rem]">
+                <legend className="su-text-18 su-font-semibold su-mb-27 su-leading-[2.25rem] su-text-black dark:su-text-white su-border-none">
                   Appearance preference:
                 </legend>
                 <input
