@@ -65,6 +65,7 @@ export default function formatCardDataFunnelback({
   }
 
   if (assetHref && assetTypeCode[0] === "link") {
+    // eslint-disable-next-line no-param-reassign
     liveUrl = assetHref;
   }
 
