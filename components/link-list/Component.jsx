@@ -41,11 +41,6 @@ export default function LinkList({ search }) {
     relatedStoryData.forEach((link) => {
       links.push(<LinkListItem title={link.title} url={link.indexUrl} />);
     });
-
-    // testing stuff
-    // links.push(<LinkListItem title="Item one" url="#" />);
-    // links.push(<LinkListItem title="Item two" url="#" />);
-    // links.push(<LinkListItem title="Item three" url="#" />);
   }
 
   // effects

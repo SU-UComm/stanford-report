@@ -2,9 +2,24 @@
   width: calc(100% - 60px);
 }
 
+.su-link-list-no-stories {
+  display: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+[data-component="link-list"] {
+  position: absolute;
+}
+
 @media screen and (min-width: 768px) {
   .su-linklist-mob-width {
     width: calc(100% - 352px);
+  }
+
+  [data-component="link-list"] {
+    position: unset;
   }
 }
 
@@ -12,11 +27,4 @@
   .su-linklist-mob-width {
     width: 100%;
   }
-}
-
-.su-link-list-no-stories {
-  display: none;
-  position: absolute;
-  width: 0;
-  height: 0;
 }
