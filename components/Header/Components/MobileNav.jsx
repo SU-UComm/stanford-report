@@ -195,6 +195,7 @@ export default function MobileNav({ navigation, search, audience }) {
               id="mobile_search_query"
               data-role="search-query"
               required
+              data-location="mobile-search-input"
             />
             <button
               type="reset"
@@ -313,8 +314,16 @@ export default function MobileNav({ navigation, search, audience }) {
               Close
             </span>
           </button>
-
-          <span tabIndex="0" data-tp-to="main-nav:a:0" />
+          <span
+            tabIndex="0"
+            data-tp-to="mobile-search-input"
+            className="md:su-hidden"
+          />
+          <span
+            tabIndex="0"
+            data-tp-to="main-nav:a:0"
+            className="su-hidden md:su-inline"
+          />
         </div>
       </div>
     </nav>
