@@ -38,8 +38,8 @@ export default async (args, info) => {
     const urlFetch = await adapter.fetch();
     const urls = [];
 
-    urlFetch.data.clicksAndCounts.forEach((click) => {
-      urls.push(click.targetUrl);
+    urlFetch.data.clicksAndCounts.forEach((click, i) => {
+      if (i <= 5) urls.push(click.targetUrl);
     });
 
     data = await popularStoriesFetcher(urls, FB_API_TOKEN);
