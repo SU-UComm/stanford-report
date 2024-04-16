@@ -180,6 +180,7 @@ export default function MobileNav({ navigation, search, audience }) {
             method="get"
             role="search"
             className="su-mb-32 su--mx-18 md:su-hidden su-grow su-flex su-flex-wrap su-order-1 su-relative"
+            data-location="mobile-search:input:3"
           >
             <label className="sr-only" htmlFor="mobile_search_query">
               Search query
@@ -195,7 +196,6 @@ export default function MobileNav({ navigation, search, audience }) {
               id="mobile_search_query"
               data-role="search-query"
               required
-              data-location="mobile-search-input"
             />
             <button
               type="reset"
@@ -316,7 +316,7 @@ export default function MobileNav({ navigation, search, audience }) {
           </button>
           <span
             tabIndex="0"
-            data-tp-to="mobile-search-input"
+            data-tp-to="mobile-search:input:3"
             className="md:su-hidden"
           />
           <span
