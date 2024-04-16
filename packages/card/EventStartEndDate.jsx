@@ -39,7 +39,7 @@ export default function EventStartEndDate({ start, end }) {
     month: "short",
     hour12: true,
     time: "long",
-    timeZone: "PST",
+    timeZone: "America/Los_Angeles",
     hour: "numeric",
     minute: "numeric",
   };
