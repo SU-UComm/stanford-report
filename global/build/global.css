@@ -1063,11 +1063,11 @@ audio::-webkit-media-controls-panel {
 .su-page-has-sidebar .su-page-content .su-container-px{padding-left:0;padding-right:0}}
 @media (min-width: 992px){
 .su-page-has-sidebar .su-page-content .su-container-px{padding-left:0;padding-right:0}}
-.su-page-has-sidebar .su-page-sidebar{margin-left:2rem;margin-right:2rem;margin-top:3.8rem;display:flex;width:100%;flex-direction:column;justify-content:space-between;gap:3.2rem}
+.su-page-has-sidebar .su-page-sidebar{margin-left:2rem;margin-right:2rem;margin-top:3.8rem;margin-bottom:10rem;display:flex;width:100%;flex-direction:column;justify-content:space-between;gap:3.2rem}
 @media (min-width: 768px){
-.su-page-has-sidebar .su-page-sidebar{margin-left:5rem;margin-right:5rem;margin-top:11rem;flex-direction:row;gap:8.4rem;padding-left:7.65%;padding-right:7.65%}}
+.su-page-has-sidebar .su-page-sidebar{margin-left:5rem;margin-right:5rem;margin-top:11rem;margin-bottom:16.2rem;flex-direction:row;gap:8.4rem;padding-left:7.65%;padding-right:7.65%}}
 @media (min-width: 992px){
-.su-page-has-sidebar .su-page-sidebar{margin-left:0;margin-right:0;margin-left:auto;margin-right:8.33%;margin-top:0;max-height:230rem;width:25%;max-width:29.8rem;flex-direction:column;gap:9.5rem;padding-left:0;padding-right:0}}
+.su-page-has-sidebar .su-page-sidebar{margin-left:0;margin-right:0;margin-left:auto;margin-right:8.33%;margin-top:0;margin-bottom:0;max-height:230rem;width:25%;max-width:29.8rem;flex-direction:column;gap:9.5rem;padding-left:0;padding-right:0}}
 .su-page-story-featured .su-upper-content,
 .su-page-story-featured [data-component="feature-story-hero"]{margin-top:0 !important}
 /*
@@ -1756,6 +1756,15 @@ Single image/video component
 .su-linklist-mob-width {
   width: calc(100% - 60px);
 }
+.su-link-list-no-stories {
+  display: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+[data-component="link-list"] {
+  position: absolute;
+}
 @media screen and (min-width: 768px) {
   .su-linklist-mob-width {
     width: calc(100% - 352px);
@@ -1765,12 +1774,10 @@ Single image/video component
   .su-linklist-mob-width {
     width: 100%;
   }
-}
-.su-link-list-no-stories {
-  display: none;
-  position: absolute;
-  width: 0;
-  height: 0;
+
+  [data-component="link-list"] {
+    position: unset;
+  }
 }
 .su-wysiwyg-content ul{list-style-type:none;padding-left:0}
 .su-wysiwyg-content ul > li{position:relative;padding-left:3rem}
