@@ -186,10 +186,16 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
         <div className="report-header__preferences su-overflow-hidden su-h-screen su-bg-white dark:su-bg-black-true su-absolute su-top-0 su-right-0 su-w-full md:su-w-[398px] su-flex su-flex-wrap su-overflow-y-auto su-pb-32 md:su-pb-[64px] su-pt-[115px] md:su-pt-[167px] su-px-38">
           <div className="report-header__preference-content su-transition su-text-black dark:su-text-white">
             <div className="su-gap-27 su-flex su-flex-wrap">
-              <h2 className="su-text-18 su-font-semibold su-mb-0 su-font-sans su-leading-[2.25rem]">
+              <h2
+                className="su-text-18 su-font-semibold su-mb-0 su-font-sans su-leading-[2.25rem]"
+                id="tray-group-label"
+              >
                 Along with Stanford news and stories, show me:
               </h2>
-              <ul className="su-flex su-list-none su-pl-0 su-gap-18 su-w-full">
+              <ul
+                className="su-flex su-list-none su-pl-0 su-gap-18 su-w-full"
+                aria-labelledby="tray-group-label"
+              >
                 <li className="su-mb-0 su-w-1/2">
                   <span tabIndex="0" data-tp-to="close-prefs" />
 
