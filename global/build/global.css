@@ -3077,6 +3077,14 @@ Subscribe to Stanford Report Marketo form styles
   --tw-text-opacity: 1;
   color: rgb(177 4 14 / var(--tw-text-opacity));
 }
+<<<<<<< Updated upstream
+=======
+.marketo-sr-subcribe-form.mktoForm .mktoCheckboxList > label {
+  display: block;
+  min-height: 1.2rem;
+  background-color: pink;
+}
+>>>>>>> Stashed changes
 .scrollable-list__item::after{
   display: inline-block;
   vertical-align: middle;
@@ -3389,6 +3397,48 @@ Subscribe to Stanford Report Marketo form styles
   grid-row: 1 / span 2;
   height: 100%;
 }
+<<<<<<< Updated upstream
+=======
+.decoration-top{
+  padding-top: 9rem;
+}
+.decoration-bottom{
+  padding-bottom: 9rem;
+}
+.fact-wrapper__decoration-top {
+  top: 0;
+  flex-direction: column-reverse;
+  transform: translateY(-90px);
+}
+.fact-wrapper__decoration-bottom {
+  bottom: 0;
+  flex-direction: column;
+  transform: translateY(90px);
+}
+.su-bg-gradient-light-red-h-reverse{
+  background-image: linear-gradient(to left, var(--tw-gradient-stops));
+  --tw-gradient-from: #820000 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(130 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #E50808 var(--tw-gradient-to-position);
+}
+:is(.su-dark .su-bg-gradient-light-red-h-reverse){
+  background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  --tw-gradient-from: #279989 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(39 153 137 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(39 153 137 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #279989 var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-to: #8F993E var(--tw-gradient-to-position);
+}
+.su-input{
+  display: block;
+  border-color: #D5D5D4;
+  color: #2E2D29;
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+>>>>>>> Stashed changes
 .su-button{
   font-family: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   cursor: pointer;
@@ -5010,6 +5060,9 @@ Subscribe to Stanford Report Marketo form styles
 }
 .su-max-w-160{
   max-width: 16rem;
+}
+.su-max-w-550{
+  max-width: 55rem;
 }
 .su-max-w-900{
   max-width: 90rem;
@@ -6673,6 +6726,7 @@ Subscribe to Stanford Report Marketo form styles
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+<<<<<<< Updated upstream
 .decoration-top{
   padding-top: 9rem;
 }
@@ -6705,6 +6759,8 @@ Subscribe to Stanford Report Marketo form styles
   --tw-gradient-stops: var(--tw-gradient-from), #279989 var(--tw-gradient-via-position), var(--tw-gradient-to);
   --tw-gradient-to: #8F993E var(--tw-gradient-to-position);
 }
+=======
+>>>>>>> Stashed changes
 .su-reading-time-separator:empty{
   display: none;
 }
@@ -10816,9 +10872,6 @@ button.swiper-pagination-bullet {
   }
   .md\:su-mt-\[4\.8rem\]{
     margin-top: 4.8rem;
-  }
-  .md\:su-mt-\[61px\]{
-    margin-top: 61px;
   }
   .md\:su-mt-auto{
     margin-top: auto;
