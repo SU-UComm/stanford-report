@@ -364,6 +364,7 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                   className="su-inline-block su-leading-2 su-relative su-pr-50 su-z-20 after:su-border-palo-verde peer-checked/light:after:su-border-digital-red peer-checked/light:su-text-digital-red su-text-black-50 peer-checked/light:su-z-10 before:su-w-42 before:su-h-15 su-bg-gradient-before before:su-bg-gradient-light-red-h peer-checked/light:before:su-rotate-180 before:su-rounded-[12px] before:su-absolute before:su-right-0 before:su-top-6 after:su-transition after:su-top-2 after:su-shadow-sm after:su-bg-white after:su-border-2 after:su-bg-digital-red after:su-rounded-full after:su-size-24 after:su-translate-x-0 after:su-absolute after:su-right-0 peer-checked/light:after:su-translate-x-[-2rem]"
                   htmlFor="light-theme"
                   data-theme="light-theme"
+                  aria-label="Light mode enabled"
                 >
                   <span className="su-inline-block su-align-middle su-mr-6 su-text-18 su-leading-[2.25rem]">
                     Light
@@ -552,6 +553,7 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                   className="su-inline-block su-leading-2 su-relative su-align-middle su-z-20 peer-checked/dark:su-z-10 su-pl-50 su--ml-44 peer-checked/dark:su-text-digital-red dark:peer-checked/dark:su-text-palo-verde su-text-black-50"
                   htmlFor="dark-theme"
                   data-theme="dark-theme"
+                  aria-label="Dark mode enabled"
                 >
                   <span
                     aria-hidden="true"
