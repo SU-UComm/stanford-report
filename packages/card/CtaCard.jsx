@@ -33,6 +33,7 @@ export default function CtaCard({
 
   return (
     <article
+      aria-label={title}
       className={cnb(
         "su-group su-relative su-w-full su-flex su-flex-col su-break-words su-rounded-[8px] su-rs-pt-5 su-rs-px-4 su-max-w-900 su-mx-auto su-transition-shadow su-border dark:su-border-2 su-border-black-30/30 dark:su-border-black su-shadow dark:su-shadow-black/80 su-bg-white dark:su-bg-black-true su-text-black dark:su-text-white",
         internalUrl || externalUrl
@@ -45,7 +46,7 @@ export default function CtaCard({
         /**
          * This is a SODA recommended pattern for accessibility.
          * When there is an eyebrow, we aria-hidden it from screen readers,
-         * and then add the eyebrow text as a visually hidden span for screen readers inside the h2 heading below.
+         * and then add the eyebrow text as a visually hidden span for screen readers inside the h3 heading below.
          * This way we don't get an orphaned span that appears before the heading in the card.
          */
         <span
@@ -55,7 +56,7 @@ export default function CtaCard({
           {eyebrow}
         </span>
       )}
-      <h2 className="su-type-5 md:su-type-4 2xl:su-type-3 su-mb-0 su-font-sans su-text-black dark:su-text-white">
+      <h3 className="su-type-5 md:su-type-4 2xl:su-type-3 su-mb-0 su-font-sans su-text-black dark:su-text-white">
         {hasLink ? (
           // eslint-disable-next-line react/jsx-no-target-blank
           <a
@@ -73,7 +74,7 @@ export default function CtaCard({
             {title}
           </>
         )}
-      </h2>
+      </h3>
       {!!description && (
         <div className="su-grow">
           <XssSafeContent
