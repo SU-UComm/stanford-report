@@ -216,6 +216,7 @@ export default function Header({ site, navigation, search }) {
                 <CurrentStoryHeadline
                   title={pageControls?.title}
                   story={relatedStory}
+                  contentType={pageControls?.contentType}
                 />
               )}
               <PreferencesTray

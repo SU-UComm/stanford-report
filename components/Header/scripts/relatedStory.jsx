@@ -28,6 +28,11 @@ export default async function relatedStoryData(pageData = null, audience = "") {
       pageData.search.currentPage
     }`;
 
+    if (pageData.search.contentType === "Video") {
+      fallbackFbUrl += "&meta_taxonomyContentTypeText=Video";
+      fbUrl += "&meta_taxonomyContentTypeText=Video";
+    }
+
     adapter.url = fbUrl;
 
     let storyResultData = await adapter.fetch();
