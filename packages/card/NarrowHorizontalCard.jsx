@@ -2,7 +2,7 @@ import React from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import formatNewsDate from "../utils/formatNewsDate";
 import { Avatar } from "../quotes/Avatar";
-import { ExternalArrow } from "../SVG-library/SVG";
+import { ArrowRight } from "../SVG-library/SVG";
 
 /**
  * Narrow horizontal card package
@@ -38,7 +38,7 @@ export default function NarrowHorizontalCard({
   },
 }) {
   const authorDate = (
-    <time className="su-text-black-70 dark:su-text-black-60">
+    <time className="su-text-black-70 dark:su-text-black-60 su-font-semibold">
       {authorDisplayName ? (
         <XssSafeContent
           content={` &nbsp;|&nbsp; ${formatNewsDate(date)}`}
@@ -84,7 +84,7 @@ export default function NarrowHorizontalCard({
               className="su-relative su-text-16 su-leading-[2.3rem] lg:su-text-18 su-z-10 su-mb-0 su-font-semibold" // size
             >
               <XssSafeContent
-                className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
+                className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red hocus:su-underline"
                 content={taxonomyFeaturedUnitText}
                 href={taxonomyFeaturedUnitLandingPageUrl || undefined}
                 elementType={taxonomyFeaturedUnitLandingPageUrl ? "a" : "span"}
@@ -99,8 +99,10 @@ export default function NarrowHorizontalCard({
           >
             <XssSafeContent content={title} elementType="span" />
             {isExternalLink === true && (
-              <span className="su-translate-x-0 su-translate-y-0 su-transition group-hocus:su-translate-y-[-.1em] group-hocus:su-translate-x-[.1em] su-inline-block [&>*]:su-inline-block">
-                <ExternalArrow />
+              <span className="su-text-digital-red dark:su-text-dark-mode-red su-translate-x-0 su-translate-y-0 su-transition group-hocus:su-translate-y-[-.1em] group-hocus:su-translate-x-[.1em] su-inline-block">
+                <span className="[&>*]:su-inline-block [&>*]:su-stroke-current [&>*]:su-w-24 [&>*]:su-h-23 [&>*]:su-rotate-[-45deg] [&>*]:su-translate-x-[.12em] [&>*]:su-translate-y-[-.08em]">
+                  <ArrowRight />
+                </span>
               </span>
             )}
           </a>

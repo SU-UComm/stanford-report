@@ -67,3 +67,4 @@ export { default as BarGraph } from "./BarGraph";
 export { default as ShareLink } from "./ShareLink";
 export { default as Pause } from "./Pause";
 export { default as Play } from "./Play";
+export { default as ArrowRight } from "./ArrowRight";
