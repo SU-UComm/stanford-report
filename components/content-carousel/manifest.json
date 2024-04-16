@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "content-carousel",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "namespace": "stanford-components",
   "description": "A carousel of slides that contain WYSIWYG content.",
   "displayName": "Content Carousel",
@@ -32,9 +32,7 @@
             "minItems": 1,
             "maxItems": 5,
             "items": {
-              "required": [
-                "content"
-              ],
+              "required": ["content"],
               "type": "object",
               "properties": {
                 "content": {
