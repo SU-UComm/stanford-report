@@ -13,10 +13,10 @@
     }
   ],
   "icon": {
-    "id": "foundation",
+    "id": "trending_up",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "purple"
     }
   },
   "functions": [
@@ -26,12 +26,6 @@
       "input": {
         "type": "object",
         "properties": {
-          "title": {
-            "title": "Heading",
-            "description": "The heading text",
-            "type": "string",
-            "default": "Lorem ipsum dolor"
-          }
         },
         "required": []
       },

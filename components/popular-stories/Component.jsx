@@ -5,12 +5,11 @@ import { Container } from "../../packages/grids/Container";
 import { SidebarHeading } from "../../packages/headings/Heading";
 
 function StoryLink({ url, title }) {
-  console.log(url);
   return (
     <li>
       <a
         href={url}
-        className="su-no-underline su-font-normal dark:su-text-[white]"
+        className="su-no-underline su-font-normal dark:su-text-[white] hocus:su-underline hocus:su-text-digital-red hocus:dark:su-text-dark-mode-red"
       >
         {title}
       </a>
