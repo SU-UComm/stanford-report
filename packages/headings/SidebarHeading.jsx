@@ -6,6 +6,7 @@ import {
   FeaturedReading,
   FeaturedAudio,
   MediaGallery,
+  TrendingUp,
 } from "../SVG-library/SVG";
 
 /**
@@ -55,6 +56,10 @@ export function SidebarHeading({
   iconMap.set("mediagallery", {
     light: <MediaGallery variant="light" />,
     dark: <MediaGallery variant="dark" />,
+  });
+  iconMap.set("trendingup", {
+    light: <TrendingUp variant="light" />,
+    dark: <TrendingUp variant="dark" />,
   });
 
   const colorClassMap = new Map();
