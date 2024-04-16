@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // import specific templates for the component
 import hash from "object-hash";
@@ -16,14 +16,19 @@ import Card from "../../packages/card/Card";
  */
 
 export default function StoriesCarousel({ data }) {
-  const cards = [];
+  const [cards, setCards] = useState([]);
+  const cardData = [];
   const uniqueClass = hash.MD5(JSON.stringify(data));
 
   data.forEach((card) => {
-    cards.push(
+    cardData.push(
       <Card cardType="media" data={card} displayDescription={false} />
     );
   });
+
+  useEffect(() => {
+    setCards(cardData);
+  }, []);
 
   return (
     <Container width="large">
