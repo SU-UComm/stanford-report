@@ -590,7 +590,7 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-dark .section-summary {
-  @apply su-text-black-20;
+  @apply !su-text-black-20;
 }
 
 /*
