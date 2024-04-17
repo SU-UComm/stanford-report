@@ -38,6 +38,7 @@ export default function Card({
   cardSize = "small",
   displayDescription = true,
   displayThumbnail = true,
+  headingLvl = 2,
 }) {
   // orchestrate the type of card to output
   switch (cardType) {
@@ -60,6 +61,7 @@ export default function Card({
           cardSize={cardSize}
           displayDescription={displayDescription}
           displayThumbnail={displayThumbnail}
+          headingLvl={headingLvl}
         />
       );
   }
