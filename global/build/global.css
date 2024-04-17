@@ -949,6 +949,15 @@ audio::-webkit-media-controls-panel {
   display: none;
 }
 /*
+* Section page summary
+*/
+.section-summary{margin-left:auto !important;margin-right:auto !important;margin-top:-3.4rem !important;padding-top:1.1rem !important;text-align:center !important;font-family:"Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif !important;font-size:1.8rem !important;font-style:italic !important;line-height:2.715rem !important;--tw-text-opacity:1 !important;color:rgb(67 66 62 / var(--tw-text-opacity)) !important}
+@media (min-width: 768px){
+.section-summary{margin-top:-5.8rem !important;padding-top:0.9rem !important;font-size:2.4rem !important;line-height:3.62rem !important}}
+@media (min-width: 992px){
+.section-summary{margin-top:-6.1rem !important;padding-top:0.8rem !important;font-size:2.8rem !important;line-height:4.224rem !important}}
+.su-dark .section-summary{--tw-text-opacity:1;color:rgb(213 213 212 / var(--tw-text-opacity))}
+/*
 * Main page wrapper
 */
 .su-page{width:100%;overflow:hidden}
@@ -1078,14 +1087,17 @@ audio::-webkit-media-controls-panel {
 .su-container-narrow{width:84.75%}}
 .su-page-has-sidebar .su-page-content > .container .su-container-narrow,
 .su-page-has-sidebar .su-page-content .su-container-narrow{width:100%}
-.su-container-large{width:100%;max-width:118.6rem}
+.su-container-large,
+.section-summary{width:100%;max-width:118.6rem}
 .su-container-wide{width:100%;max-width:141.2rem}
 /* Site search same as container wide */
 .site-search{width:100% !important;max-width:1412px !important}
 .su-container-full{width:100%;max-width:none}
-.su-container-px{padding-left:2rem;padding-right:2rem}
+.su-container-px,
+.section-summary{padding-left:2rem;padding-right:2rem}
 @media (min-width: 768px){
-.su-container-px{padding-left:5rem;padding-right:5rem}}
+.su-container-px,
+.section-summary{padding-left:5rem;padding-right:5rem}}
 /*
 * Contextual styles
 */
