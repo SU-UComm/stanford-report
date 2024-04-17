@@ -52,11 +52,12 @@ export default function LinkList({ search }) {
 
     if (relatedStoryData && !linkItems.length) setLinkItems(links);
 
-    const pageData =
-      typeof window.pageController !== "undefined"
-        ? window.pageController
-        : null;
-
+    // const pageData =
+    //   typeof window.pageController !== "undefined"
+    //     ? window.pageController
+    //     : null;
+    const pageData = window.pageController;
+       
     if (!relatedStoryData) {
       getFB(pageData);
     }
