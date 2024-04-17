@@ -19,6 +19,8 @@ import MobileBurgerBar from "../../packages/SVG-library/MobileBurgerBar";
 import SearchIcon from "../../packages/SVG-library/Search";
 import CloseIcon from "../../packages/SVG-library/Close";
 
+import _preferencesSettings from "./scripts/preferenceSettings";
+import ReportHeader from "./scripts/reportHeader";
 /**
  * Header component
  *
@@ -27,16 +29,8 @@ import CloseIcon from "../../packages/SVG-library/Close";
  * @constructor
  */
 
-export default function Header({
-  site,
-  navigation,
-  search,
-  pageData = null,
-  audienceData = null,
-  relatedStoryData = null,
-  consentData = true,
-}) {
-  const [isClient, setClient] = useState(false);
+export default function Header({ site, navigation, search }) {
+  const [isClient, setIsClient] = useState(false);
   // has the user given consent?
   const [consent, setConsent] = useState(false);
   // has the user given consent?
@@ -59,10 +53,11 @@ export default function Header({
     // hide consent banner
     setDisplayConsentBanner(false);
   };
-  const handlePersona = async (personaVal) => {
+
+  const handlePersona = async (personaVal, removeConsent = false) => {
     // check if we have consent first, if not, we need to set it
     let persona = null;
-    if (!consent) {
+    if (!consent && removeConsent === false) {
       // if no consent previously given
       await cdpSetConsent(1);
       setConsent(true);
@@ -76,16 +71,21 @@ export default function Header({
         persona = personaVal;
       }
     }
-    cdpSetPersona("persona-selector", persona);
+    await cdpSetPersona("persona-selector", persona);
+    // Remove consent if clearing all personalization
+    if (removeConsent === true) {
+      await cdpSetConsent(0);
+      setConsent(false);
+    }
     setCookie("preferences_personalisation", persona);
     setDisplayConsentBanner(false);
     setAudience(persona);
     document.dispatchEvent(document.personaChangeEvent);
+    location.reload();
   };
 
   useEffect(() => {
-    setClient(true);
-    if (typeof window.suHeaderProps !== "undefined") {
+    if (isClient && typeof window.suHeaderProps !== "undefined") {
       setRelatedStoryData(window.suHeaderProps?.relatedStoryData);
       setPageControls(window.suHeaderProps?.pageData);
       setAudience(window.suHeaderProps?.audienceData);
@@ -93,39 +93,52 @@ export default function Header({
       setDisplayConsentBanner(
         typeof window.suHeaderProps?.consentData === "undefined"
       );
+      // This is legacy code, however, it works
+      const headerDom = document.querySelector(".report-header");
+      // eslint-disable-next-line no-unused-vars
+      const reportHeaderInit = new ReportHeader(headerDom);
+      _preferencesSettings();
+    } else {
+      setIsClient(true);
     }
-  }, []);
+  }, [isClient]);
 
   return (
     <>
-      {isClient && (
-        <header
-          className={`${
-            pageControls?.isStory ? "report-header--story" : ""
-          } report-header su-pb-[13.9rem] md:su-pb-[16.6rem] lg:su-pb-[18.9rem]`}
-        >
-          <div className="su-shadow dark:su-shadow-[0_3px_6px_0_rgba(46,45,41,0.5)] su-fixed su-top-0 su-left-0 su-w-full su-bg-white dark:su-bg-black-true su-z-50">
-            <TopBar
-              // url={site?.url}
-              url="https://www.stanford.edu/"
-              logo={site?.logoTopBar}
-            />
+      <header
+        className={`${
+          pageControls?.isStory ? "report-header--story" : ""
+        } report-header su-pb-[13.9rem] md:su-pb-[16.6rem] lg:su-pb-[18.9rem]`}
+      >
+        <div className="su-shadow dark:su-shadow-[0_3px_6px_0_rgba(46,45,41,0.5)] su-fixed su-top-0 su-left-0 su-w-full su-bg-white dark:su-bg-black-true su-z-50">
+          <TopBar
+            // url={site?.url}
+            url="https://www.stanford.edu/"
+            logo={site?.logoTopBar}
+          />
 
-            <div className="su-w-full su-max-w-[141.2rem] su-px-20 md:su-px-49 su-mx-auto">
-              {/* <div className="report-header__main su-flex su-items-center su-justify-between su-gap-20"> */}
-              <div className="report-header__main su-flex su-items-center lg:su-items-end su-justify-between md:su-pb-[10px] lg:su-pb-[11px]">
-                <div className="su-flex su-items-center su-gap-20 lg:su-gap-27 su-w-32 md:su-w-85 lg:su-w-[9.1rem]">
-                  <button
-                    className="su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
-                    aria-controls="menu"
-                    aria-expanded="false"
-                    aria-labelledby="toggle-menu"
-                    type="button"
+          <div className="su-w-full su-max-w-[141.2rem] su-px-20 md:su-px-49 su-mx-auto">
+            {/* <div className="report-header__main su-flex su-items-center su-justify-between su-gap-20"> */}
+            <div className="report-header__main su-flex su-items-center lg:su-items-end su-justify-between md:su-pb-[10px] lg:su-pb-[11px]">
+              <div className="su-flex su-items-center su-gap-20 lg:su-gap-27 su-w-32 md:su-w-85 lg:su-w-[9.1rem]">
+                <button
+                  className="su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
+                  aria-controls="menu"
+                  aria-expanded="false"
+                  aria-labelledby="toggle-menu"
+                  type="button"
+                >
+                  <span className="su-relative su-size-32">
+                    <BurgerBar />
+                    <MobileBurgerBar />
+                  </span>
+                  <span id="toggle-menu" hidden>
+                    Menu
+                  </span>
+                  <span
+                    className="su-text-12 su-hidden md:su-block"
+                    aria-hidden="true"
                   >
-                    <span className="su-relative su-size-32">
-                      <BurgerBar />
-                      <MobileBurgerBar />
-                    </span>
                     <span id="toggle-menu" hidden>
                       Menu
                     </span>
@@ -133,103 +146,90 @@ export default function Header({
                       className="su-text-12 su-hidden md:su-block"
                       aria-hidden="true"
                     >
-                      <span id="toggle-menu" hidden>
-                        Menu
-                      </span>
-                      <span
-                        className="su-text-12 su-hidden md:su-block"
-                        aria-hidden="true"
-                      >
-                        Menu
-                      </span>
+                      Menu
                     </span>
-                  </button>
-
-                  {isClient && (
-                    <MobileNav
-                      site={site}
-                      navigation={navigation}
-                      search={search}
-                      audience={audience}
-                    />
-                  )}
-
-                  <span className="su-absolute">
-                    <span
-                      data-tp-to="submit-btn"
-                      data-role="search-focus-trap"
-                      tabIndex="0"
-                      className="su-hidden"
-                    />
                   </span>
+                </button>
 
-                  <button
-                    type="button"
-                    className="su-hidden su-relative su-z-40 su-order-3 su-w-32 md:su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
-                    aria-controls="search"
-                    aria-expanded="false"
-                    aria-labelledby="toggle-search"
-                    data-location="close-search"
-                  >
-                    <span className="icon-search su-relative su-size-32">
-                      <SearchIcon />
-                    </span>
-                    <span className="icon-close su-hidden su-relative su-size-32">
-                      <CloseIcon />
-                    </span>
-                    <span id="toggle-search" hidden>
-                      Toggle Search
-                    </span>
-                    <span
-                      className="text-search su-text-12 su-hidden md:su-block"
-                      aria-hidden="true"
-                    >
-                      Search
-                    </span>
-                    <span
-                      className="text-close su-text-12 su-hidden"
-                      aria-hidden="true"
-                    >
-                      Close
-                    </span>
-                  </button>
-                  <Search
-                    endpoint={search?.endpoint}
-                    collection={search?.collection}
-                    profile={search?.profile}
-                    resultPage={search?.resultPage}
-                  />
-                </div>
-
-                <SiteLogo
-                  url={site?.url}
-                  logo={site?.logo}
-                  logoLight={site?.logoLight}
+                <MobileNav
+                  site={site}
+                  navigation={navigation}
+                  search={search}
+                  audience={audience}
                 />
 
-                {isClient && pageControls?.isStory && (
-                  <CurrentStoryHeadline
-                    title={pageControls?.title}
-                    story={relatedStory}
+                <span className="su-absolute">
+                  <span
+                    data-tp-to="submit-btn"
+                    data-role="search-focus-trap"
+                    // tabIndex="0"
+                    className="su-hidden"
                   />
-                )}
-                {isClient && (
-                  <PreferencesTray
-                    audience={audience}
-                    personaClickHandler={handlePersona}
-                  />
-                )}
+                </span>
+
+                <button
+                  type="button"
+                  className="su-hidden su-relative su-z-40 su-order-3 su-w-32 md:su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
+                  aria-controls="search"
+                  aria-expanded="false"
+                  aria-labelledby="toggle-search"
+                  data-location="close-search"
+                >
+                  <span className="icon-search su-relative su-size-32">
+                    <SearchIcon />
+                  </span>
+                  <span className="icon-close su-hidden su-relative su-size-32">
+                    <CloseIcon />
+                  </span>
+                  <span id="toggle-search" hidden>
+                    Toggle Search
+                  </span>
+                  <span
+                    className="text-search su-text-12 su-hidden md:su-block"
+                    aria-hidden="true"
+                  >
+                    Search
+                  </span>
+                  <span
+                    className="text-close su-text-12 su-hidden"
+                    aria-hidden="true"
+                  >
+                    Close
+                  </span>
+                </button>
+                <Search
+                  endpoint={search?.endpoint}
+                  collection={search?.collection}
+                  profile={search?.profile}
+                  resultPage={search?.resultPage}
+                />
               </div>
-              {isClient && (
-                <MainNav
-                  major={navigation?.major}
-                  currentPage={pageControls?.id ? pageControls.id : null}
+
+              <SiteLogo
+                url={site?.url}
+                logo={site?.logo}
+                logoLight={site?.logoLight}
+              />
+
+              {/* {isClient && pageControls?.isStory && ( */}
+              {pageControls?.isStory && (
+                <CurrentStoryHeadline
+                  title={pageControls?.title}
+                  story={relatedStory}
                 />
               )}
+              <PreferencesTray
+                audience={audience}
+                personaClickHandler={handlePersona}
+              />
             </div>
+            <MainNav
+              major={navigation?.major}
+              currentPage={pageControls?.id ? pageControls.id : null}
+            />
           </div>
-        </header>
-      )}
+        </div>
+      </header>
       {isClient && displayConsentBanner && (
         <CookieConsentBanner
           consentClickHandler={handleConsent}

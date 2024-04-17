@@ -15,8 +15,6 @@ export default function FeaturedMetadata({ data }) {
     related,
   } = data;
 
-  console.log(campus);
-
   const [copyLinkTitle, setCopyLinkTitle] = useState("Copy link");
 
   const copyLink = () => {
@@ -102,7 +100,7 @@ export default function FeaturedMetadata({ data }) {
     <section className="su-flex su-flex-col su-items-center">
       {firstRow.length > 0 ? (
         <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center md:su-flex-row md:su-gap-20 lg:su-gap-40">
-          <hr
+          <div
             aria-hidden="true"
             className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
           />
@@ -118,7 +116,7 @@ export default function FeaturedMetadata({ data }) {
                       (item) =>
                         item && (
                           <p
-                            className="!su-m-0 su-text-16 su-leading-[19.1px] su-font-normal md:su-text-21 md:su-leading-[26.25px]"
+                            className="!su-m-0 su-text-16 su-leading-[125%] su-font-normal md:su-text-21"
                             key={item.asset_assetid}
                           >
                             {item.asset_name}
@@ -128,7 +126,7 @@ export default function FeaturedMetadata({ data }) {
                   ) : (
                     <a
                       href={meta.items.asset_url}
-                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18 su-leading-[26.25px]"
+                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18"
                     >
                       {meta.items.asset_name}
                     </a>
@@ -138,14 +136,17 @@ export default function FeaturedMetadata({ data }) {
             ))}
           </div>
 
-          <hr className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0" />
+          <div
+            aria-hidden="true"
+            className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
+          />
         </div>
       ) : (
         ""
       )}
       {otherRows.length > 0 ? (
         <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center su-mt-32 md:su-mt-61 md:su-flex-row md:su-gap-20 lg:su-gap-40">
-          <hr
+          <div
             aria-hidden="true"
             className="su-border-none su-w-70 su-h-2 su-bg-transparent md:su-w-auto su-grow md:su-h-3"
           />
@@ -161,7 +162,7 @@ export default function FeaturedMetadata({ data }) {
                       (item) =>
                         item && (
                           <p
-                            className="!su-m-0 su-text-16 su-leading-[19.1px] su-font-normal md:su-text-21 md:su-leading-[26.25px]"
+                            className="!su-m-0 su-text-16 su-leading-[125%] su-font-normal md:su-text-21"
                             key={item.asset_assetid}
                           >
                             {item.asset_name}
@@ -171,7 +172,7 @@ export default function FeaturedMetadata({ data }) {
                   ) : (
                     <a
                       href={meta.items.asset_url}
-                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18 su-leading-[26.25px]"
+                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18"
                     >
                       {meta.items.asset_name}
                     </a>
@@ -180,7 +181,7 @@ export default function FeaturedMetadata({ data }) {
               </div>
             ))}
           </div>
-          <hr
+          <div
             aria-hidden="true"
             className="su-hidden su-border-none su-w-70 su-h-2 su-bg-transparent md:su-w-auto su-grow md:su-h-3 md:su-block"
           />
@@ -191,11 +192,11 @@ export default function FeaturedMetadata({ data }) {
 
       <div
         className={`su-flex su-w-full su-flex-col su-justify-center su-items-center md:su-flex-row md:su-gap-20 lg:su-gap-40 ${
-          firstRow.length > 0 ? "su-mt-32 md:su-mt-[61px]" : ""
+          firstRow.length > 0 ? "su-rs-mt-4" : ""
         }`}
       >
         {firstRow.length === 0 ? (
-          <hr
+          <div
             aria-hidden="true"
             className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
           />
@@ -222,7 +223,7 @@ export default function FeaturedMetadata({ data }) {
                     (item) =>
                       item && (
                         <div
-                          className="su-m-0 su-text-16 su-leading-[19.1px] su-font-normal su-flex su-flex-col su-gap-3 md:su-text-21 md:su-leading-[125%]"
+                          className="su-m-0 su-text-16 su-leading-[125%] su-font-normal su-flex su-flex-col su-gap-3 md:su-text-21"
                           key={item.asset_assetid}
                         >
                           {item.asset_name}
@@ -232,7 +233,7 @@ export default function FeaturedMetadata({ data }) {
                                 <br />
                                 <a
                                   href={`mailto:${item.asset_metadata_personEmail}`}
-                                  className=""
+                                  className="hocus:su-no-underline"
                                 >
                                   {item.asset_metadata_personEmail}
                                 </a>
@@ -250,26 +251,20 @@ export default function FeaturedMetadata({ data }) {
         </div>
 
         {firstRow.length === 0 ? (
-          <hr className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0" />
+          <div
+            aria-hidden="true"
+            className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
+          />
         ) : (
           ""
         )}
       </div>
 
-      {firstRow.length > 0 ? (
-        <hr
-          aria-hidden="true"
-          className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
-        />
-      ) : (
-        ""
-      )}
-
       {campus &&
       ![null, undefined, "undefined", ""].includes(campus.asset_assetid) ? (
-        <div className="su-text-center su-flex su-flex-col su-gap-20 md:su-gap-26">
+        <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
           <h3 className="su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans !su-m-0">
-            Campus Unit
+            Campus unit
           </h3>
 
           {!campus.asset_url ? (
@@ -292,7 +287,7 @@ export default function FeaturedMetadata({ data }) {
       )}
 
       {related && related.length ? (
-        <div className="su-text-center su-mt-34 md:su-mt-58 lg:su-mt-61 su-flex su-flex-col su-gap-20 md:su-gap-26">
+        <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
           <h3 className="su-text-18 su-font-bold su-leading-[22.5px] su-font-sans !su-m-0">
             Related topics
           </h3>
@@ -318,7 +313,7 @@ export default function FeaturedMetadata({ data }) {
         ""
       )}
 
-      <div className="su-text-center su-mt-34 md:su-mt-58 lg:su-mt-61 su-flex su-flex-col su-gap-20 md:su-gap-26">
+      <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
         <h3 className="su-text-18 su-font-bold su-leading-[22.5px] !su-m-0 su-font-sans">
           Share this story
         </h3>

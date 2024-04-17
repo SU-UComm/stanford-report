@@ -1,6 +1,7 @@
 /** Source Sans 3, Source Serif 4, Roboto Slab, Roboto Mono (regular only) */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab:wght@300;400;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap");
-
+@import "swiper/swiper.min.css";
+@import "swiper/modules/pagination/pagination.min.css";
 @font-face {
   font-family: "Stanford";
   src: url("https://www-media.stanford.edu/assets/fonts/stanford.woff")
@@ -677,15 +678,7 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-page-has-sidebar .su-page-sidebar {
-  @apply su-mx-20 md:su-mx-50 lg:su-mx-0 md:su-px-[7.65%] lg:su-px-0 lg:su-ml-auto lg:su-w-1/4 lg:su-mr-[8.33%] su-w-full lg:su-max-w-[29.8rem] su-mt-38 md:su-mt-110 lg:su-mt-0;
-}
-
-.su-page-has-sidebar .su-page-sidebar [data-component] + [data-component] {
-  @apply su-rs-mt-5;
-}
-
-.su-page-has-sidebar .su-page-sidebar [data-component="link-list"] {
-  @apply lg:su-mt-[60rem] !important;
+  @apply su-flex su-flex-col md:su-flex-row lg:su-flex-col su-justify-between su-gap-32 md:su-gap-[8.4rem] lg:su-gap-95 lg:su-max-h-[230rem] su-mx-20 md:su-mx-50 lg:su-mx-0 md:su-px-[7.65%] lg:su-px-0 lg:su-ml-auto lg:su-w-1/4 lg:su-mr-[8.33%] su-w-full lg:su-max-w-[29.8rem] su-mt-38 md:su-mt-110 lg:su-mt-0;
 }
 
 .su-page-story-featured .su-upper-content,
@@ -883,6 +876,11 @@ WYSIWYG formatting styles
 .container > span,
 .su-page-content > *:not([data-component], .container, .site-search) {
   @apply su-wysiwyg;
+}
+
+/* STANFORD-819 */
+.su-page-content p a:focus {
+  text-decoration: none;
 }
 
 /* Set specfic spacing for paragraphs */

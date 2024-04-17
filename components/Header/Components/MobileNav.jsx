@@ -148,7 +148,8 @@ function ExternalLinks({ items }) {
  * @constructor
  */
 export default function MobileNav({ navigation, search, audience }) {
-  const { major, minor, contacts, external } = navigation;
+  const { major, minor, contacts, external, contactsStudent, contactsStaff } =
+    navigation;
   const { endpoint, collection, profile, resultPage } = search;
 
   let externalData = [];
@@ -187,7 +188,7 @@ export default function MobileNav({ navigation, search, audience }) {
             <input type="hidden" value={profile} name="profile" />
             <input
               type="search"
-              className="su-w-full su-h-50 su-rounded-full dark:su-text-black su-text-20 su-leading-[2.6rem] su-py-10 su-pl-15 su-pr-120 su-border-2 su-border-black-30 dark:su-border-black-60 hover:su-border-black-40 dark:focus:su-border-digital-blue-vivid focus:su-border-digital-blue"
+              className="su-w-full su-h-50 su-rounded-full su-mb-[3.2rem] dark:su-text-black su-text-20 su-leading-[2.6rem] su-py-10 su-pl-15 su-pr-120 su-border-2 su-border-black-30 dark:su-border-black-60 hover:su-border-black-40 dark:focus:su-border-digital-blue-vivid focus:su-border-digital-blue"
               name="query"
               defaultValue=""
               placeholder="Search"
@@ -202,8 +203,9 @@ export default function MobileNav({ navigation, search, audience }) {
             >
               Clear <span className="sr-only">Search</span>
             </button>
+
             <hr
-              className="su-absolute su-right-60 su-w-2 su-h-32 su-top-10 su-border-none su-bg-black-30"
+              className="!su-absolute !su-z-[1] dark:su-bg-black-60 su-right-60 su-w-2 su-h-32 su-top-10 su-border-none su-bg-black-30"
               aria-hidden="true"
             />
             <button
@@ -212,7 +214,7 @@ export default function MobileNav({ navigation, search, audience }) {
             >
               <svg
                 aria-hidden="true"
-                className="su-size-30 su-mt-2 su-ml-4 su-text-digital-red"
+                className="su-size-30 su-mt-2 su-ml-4 su-text-digital-red dark:su-text-dark-mode-red"
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
                 height="30"
@@ -254,6 +256,28 @@ export default function MobileNav({ navigation, search, audience }) {
             </>
           )}
 
+          {audience === "student" && (
+            <>
+              <ContactLinks items={contactsStudent} />
+
+              <hr
+                aria-hidden="true"
+                className="su-block su-order-2 su-my-20 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
+              />
+            </>
+          )}
+
+          {audience === "faculty" && (
+            <>
+              <ContactLinks items={contactsStaff} />
+
+              <hr
+                aria-hidden="true"
+                className="su-block su-order-2 su-my-20 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
+              />
+            </>
+          )}
+
           <ExternalLinks items={externalData} audience={audience} />
 
           <button
@@ -282,7 +306,10 @@ export default function MobileNav({ navigation, search, audience }) {
             <span id="close-menu" hidden>
               Close menu
             </span>
-            <span className="su-text-12 su-block" aria-hidden="true">
+            <span
+              className="su-text-[1.433rem] su-block su-font-semibold"
+              aria-hidden="true"
+            >
               Close
             </span>
           </button>

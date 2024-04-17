@@ -18,6 +18,13 @@ export default class ReportHeader {
     this.handleHeaderScroll();
     this.handleHeaderToggles();
     this.handleSearchInputs();
+
+    const mainNavList = document.querySelector(`[data-role="header-main-nav"]`);
+
+    if (mainNavList) {
+      mainNavList.classList.remove("su-opacity-0");
+      mainNavList.classList.add("su-opacity-1");
+    }
   }
 
   // focus trapping
@@ -81,7 +88,8 @@ export default class ReportHeader {
     if (clearButton.length) {
       clearButton.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-          const inputWrapper = btn.parentNode.querySelector(`.input-has-value`);
+          const inputWrapper =
+            btn.parentNode.parentNode.querySelector(`.input-has-value`);
 
           inputWrapper.classList.remove("input-has-value");
 

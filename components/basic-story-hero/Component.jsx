@@ -88,8 +88,6 @@ export default function basicStoryHero(props) {
                   type={mediaType}
                   carousel={media.carousel}
                 />
-
-                <div className="su-absolute su-top-[-1%] dark:su-top-0 su-left-0 su-h-[101%] su-w-full su-bg-repeat su-bg-center su-bg-cover su-pointer-events-none" />
               </div>
               {mediaType !== "carousel" && (media.caption || media.credit) && (
                 <figcaption className="su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white">
@@ -124,7 +122,7 @@ function Thumbnail({ url, alt, video, type, carousel }) {
       <img
         src={url}
         alt={alt}
-        className="su-relative su-w-full su-max-w-full dark:su-bg-black"
+        className="su-relative su-w-full su-max-w-full"
       />
     );
   }
@@ -133,7 +131,7 @@ function Thumbnail({ url, alt, video, type, carousel }) {
     carousel.forEach((slide) => {
       slides.push(
         <>
-          <div className="su-aspect-[3/2] su-relative su-bg-fog-light dark:su-bg-black">
+          <div className="su-aspect-[3/2] su-relative">
             <img
               src={slide.asset_url}
               alt={slide.asset_attribute_alt}
