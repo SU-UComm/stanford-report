@@ -1,7 +1,13 @@
-import { fetchTopicData, prepareData } from "./operations.js";
+import { fetchTopicData, filterData, preparedData, writeTopicBackup, patchTopicData } from "./operations.js";
 
 (async () => {
-  
+  const MGT_API = "https://sug-web.matrix.squiz.cloud/__management_api/v1/assets/";
+  const REQUEST_PROPS_GET = {
+    method: "GET",
+    headers: {
+      Authorization: "Bearer 653d5ade6d4f19fa7dfc885d7a1e6cc9",
+    },
+  }
   //
   // special handling for Topic pages
   //
@@ -9,9 +15,30 @@ import { fetchTopicData, prepareData } from "./operations.js";
   // the batching requires an array of IDs
   // the topicData objects contain a target_id that are the IDs we need (they are the pages we want to update)
   const topicData = await fetchTopicData();
-  const dataArray = await prepareData(topicData);
-  console.log(dataArray.length);
+  let filteredTopicData = await filterData(topicData);
+  filteredTopicData = filteredTopicData.slice(0, 10);
+  // console.log(filteredTopicData);
 
+  let apiPageData = await preparedData(filteredTopicData, MGT_API, REQUEST_PROPS, true);
+
+  await writeTopicBackup(apiPageData);
+
+  // now merge the data
+  apiPageData.forEach(topic => {
+    topic.attributes.dxp_page_content.layouts[0].content.main[0].contentItem.content.displayConfiguration.searchQuery = topic.newQuery;
+    delete topic.newQuery;
+    console.log(topic.attributes.dxp_page_content.layouts[0].content.main[0].contentItem.content.displayConfiguration.searchQuery);
+  });
+
+  // const patchData = await patchTopicData(apiPageData, MGT_API, REQUEST_PROPS, true, "PATCH");
+
+
+
+
+
+
+
+  
 
   // Are we setting a version or content?
   const UPDATEVERSION = false;
