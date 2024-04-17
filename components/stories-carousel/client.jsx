@@ -40,7 +40,7 @@ import getCookie from "../../packages/utils/cookieGet";
       fallbackFbUrl = `${props.search.endpoint?.replace(
         "search.html",
         "search.json"
-      )}?profile=${props.search.profile}&query=%21null&collection=${
+      )}?profile=${props.search.profile}&collection=${
         props.search.collection
       }&meta_taxonomyContentTypeId_not=28210&meta_taxonomyContentTypeId_not=28216&meta_taxonomyContentTypeId_not=28201
       &num_ranks=12&sort=date&meta_id_not=${props.search.currentPage}`;
