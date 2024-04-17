@@ -45,10 +45,13 @@ export function LinkButton({
     >
       {buttonText}
       {isRealExternalLink && (
-        <ExternalArrowUnstyled
-          title="link is external"
-          className="su-inline-block su-text-white group-hocus:su-text-white group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-ml-05em su-w-08em su-transition-transform"
-        />
+        <>
+          <span className="su-sr-only">(link is external)</span>
+          <ExternalArrowUnstyled
+            aria-hidden
+            className="su-inline-block su-text-white group-hocus:su-text-white group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-ml-05em su-w-08em su-transition-transform"
+          />
+        </>
       )}
     </a>
   ) : (

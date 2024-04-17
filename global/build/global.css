@@ -2155,6 +2155,7 @@ Single image/video component
 .su--ml-3{margin-left:-0.3rem}
 .su--ml-44{margin-left:-4.4rem}
 .su--ml-5{margin-left:-0.5rem}
+.su--mt-01em{margin-top:-0.1em}
 .su--mt-2{margin-top:-0.2rem}
 .su--mt-6{margin-top:-0.6rem}
 .su-mb-0{margin-bottom:0}
@@ -2216,6 +2217,7 @@ Single image/video component
 .su-mr-8{margin-right:0.8rem}
 .su-mr-auto{margin-right:auto}
 .su-mt-0{margin-top:0}
+.su-mt-01em{margin-top:0.1em}
 .su-mt-10{margin-top:1rem}
 .su-mt-11{margin-top:1.1rem}
 .su-mt-12{margin-top:1.2rem}
@@ -2455,6 +2457,7 @@ Single image/video component
 .su-justify-between{justify-content:space-between}
 .su-justify-evenly{justify-content:space-evenly}
 .su-gap-0{gap:0}
+.su-gap-02em{gap:0.2em}
 .su-gap-10{gap:1rem}
 .su-gap-11{gap:1.1rem}
 .su-gap-12{gap:1.2rem}
@@ -3525,7 +3528,6 @@ Single image/video component
 .before\:su--mt-30::before{content:var(--tw-content);margin-top:-3rem}
 .before\:su-mr-6::before{content:var(--tw-content);margin-right:0.6rem}
 .before\:su-block::before{content:var(--tw-content);display:block}
-.before\:su-size-full::before{content:var(--tw-content);width:100%;height:100%}
 .before\:su-h-15::before{content:var(--tw-content);height:1.5rem}
 .before\:su-h-2::before{content:var(--tw-content);height:0.2rem}
 .before\:su-h-4::before{content:var(--tw-content);height:0.4rem}
@@ -3647,7 +3649,6 @@ Single image/video component
 .su-group:focus .group-hocus\:su-translate-x-\[\.1em\]{--tw-translate-x:.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:focus .group-hocus\:su-translate-x-\[1\.1em\]{--tw-translate-x:1.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:focus .group-hocus\:su-translate-y-\[-\.1em\]{--tw-translate-y:-.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
-.su-group:focus .group-hocus\:su-text-dark-mode-red{--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
 .su-group:focus .group-hocus\:su-text-digital-red{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
 .su-group:focus .group-hocus\:su-text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .su-group:focus .group-hocus\:su-underline{text-decoration-line:underline}
@@ -3656,7 +3657,6 @@ Single image/video component
 .su-group:hover .group-hocus\:su-translate-x-\[\.1em\]{--tw-translate-x:.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:hover .group-hocus\:su-translate-x-\[1\.1em\]{--tw-translate-x:1.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:hover .group-hocus\:su-translate-y-\[-\.1em\]{--tw-translate-y:-.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
-.su-group:hover .group-hocus\:su-text-dark-mode-red{--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
 .su-group:hover .group-hocus\:su-text-digital-red{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
 .su-group:hover .group-hocus\:su-text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .su-group:hover .group-hocus\:su-underline{text-decoration-line:underline}
