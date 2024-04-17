@@ -589,7 +589,7 @@ audio::-webkit-media-controls-panel {
   @apply su-mx-auto su-mt-[-3.4rem] md:su-mt-[-5.8rem] lg:su-mt-[-6.1rem] su-pt-11 md:su-pt-9 lg:su-pt-8 su-font-serif su-italic su-text-18 su-leading-[2.715rem] md:su-text-24 md:su-leading-[3.62rem] lg:su-text-28 lg:su-leading-[4.224rem] su-text-black-90 su-text-center !important;
 }
 
-.secton-summary p {
+.section-summary p {
   @apply !su-leading-[2.715rem];
   
 }
