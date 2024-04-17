@@ -33,13 +33,6 @@
             }
           },
           {
-            "location": "header",
-            "file": {
-              "type": "css",
-              "filepath": "client.css"
-            }
-          },
-          {
             "location": "footer",
             "file": {
               "type": "js",
