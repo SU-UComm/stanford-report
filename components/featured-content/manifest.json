@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "featured-content",
-  "version": "0.1.0",
+  "name": "development-featured-content",
+  "version": "0.1.1",
   "namespace": "stanford-components",
   "description": "",
   "displayName": "Featured content",
@@ -286,6 +286,19 @@
           "inputData": {
             "type": "file",
             "path": "select.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "noHeading": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "noHeading.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
