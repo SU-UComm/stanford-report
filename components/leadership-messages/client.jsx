@@ -28,7 +28,7 @@ import getCookie from "../../packages/utils/cookieGet";
         "search.json"
       )}?profile=${props.search.profile}&query=%21null&collection=${
         props.search.collection
-      }&meta_taxonomyContentTypeText=Leadership%20messages&sort=date&meta_taxonomyAudienceText=${audience}&num_ranks=6&meta_id_not=${
+      }&meta_taxonomyContentTypeId=28201&sort=date&meta_taxonomyAudienceText=${audience}&num_ranks=6&meta_id_not=${
         props.search.currentPage
       }`;
     }
