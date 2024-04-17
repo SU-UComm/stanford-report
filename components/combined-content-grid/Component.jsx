@@ -88,6 +88,7 @@ export default function FeaturedContent({
                 ctaText="See all events"
                 ctaUrl={eventsConfiguration.linkUrl}
                 ctaIcon="externalarrow"
+                headingLvl={headingData.title ? "h3" : "h2"}
               >
                 <HorizontalCardGrid
                   items={eventCards}
@@ -102,6 +103,7 @@ export default function FeaturedContent({
                 icon="announcement"
                 ctaText="See all announcements"
                 ctaUrl={announcementLink}
+                headingLvl={headingData.title ? "h3" : "h2"}
               >
                 <HorizontalCardGrid
                   items={announcementCards}
@@ -117,18 +119,24 @@ export default function FeaturedContent({
             <FeaturedGrid
               alignment="left"
               items={[
-                <Card data={featuredCardData} cardSize="featured" />,
+                <Card
+                  data={featuredCardData}
+                  cardSize="featured"
+                  headingLvl={headingData.title ? 3 : 2}
+                />,
                 <Card
                   data={data[1]}
                   displayThumbnail={displayConfiguration.displayThumbnails}
                   displayDescription={displayConfiguration.displayDescriptions}
                   cardSize="small"
+                  headingLvl={headingData.title ? 3 : 2}
                 />,
                 <Card
                   data={data[2]}
                   displayThumbnail={displayConfiguration.displayThumbnails}
                   displayDescription={displayConfiguration.displayDescriptions}
                   cardSize="small"
+                  headingLvl={headingData.title ? 3 : 2}
                 />,
               ]}
               isNested
