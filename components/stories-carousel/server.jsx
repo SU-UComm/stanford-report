@@ -6,7 +6,8 @@ import linkedHeadingService from "../../packages/utils/linkedHeadingService";
 
 export default async (args, info) => {
   // eslint-disable-next-line no-unused-vars
-  const { FB_JSON_URL, API_IDENTIFIER } = info.set.environment;
+  const { FB_JSON_URL, BASE_DOMAIN, BASE_PATH, NEWS_ARCHIVE_PATH } =
+    info.set.environment;
   const { ctx } = info;
   const adapter = new CardDataAdapter();
   let data = null;
@@ -33,6 +34,10 @@ export default async (args, info) => {
     ctx,
     args.headingConfiguration
   );
+
+  if (!headingData.ctaLink) {
+    headingData.ctaLink = `${BASE_DOMAIN}${BASE_PATH}${NEWS_ARCHIVE_PATH}`;
+  }
 
   const renderProps = {
     ...args,

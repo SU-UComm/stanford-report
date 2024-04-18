@@ -8,6 +8,18 @@
   "mainFunction": "main",
   "environment": [
     {
+      "name": "NEWS_ARCHIVE_PATH",
+      "required": true
+    },
+    {
+      "name": "BASE_PATH",
+      "required": true
+    },
+    {
+      "name": "BASE_DOMAIN",
+      "required": true
+    },
+    {
       "name": "API_IDENTIFIER",
       "required": true
     },
@@ -88,13 +100,6 @@
             "file": {
               "type": "css",
               "filepath": "global.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "css",
-              "filepath": "client.css"
             }
           },
           {
