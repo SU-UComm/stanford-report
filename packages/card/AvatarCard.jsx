@@ -28,6 +28,7 @@ export default function AvatarCard({
 }) {
   return title ? (
     <article
+      aria-label={title}
       data-test="avatar-card"
       className="su-component-card su-relative su-w-full md:su-basis-1/3 su-flex su-flex-wrap su-gap-10 lg:su-content-start lg:su-max-w-[293px]"
     >

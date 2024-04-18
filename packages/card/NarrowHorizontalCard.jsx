@@ -65,6 +65,7 @@ export default function NarrowHorizontalCard({
 
   return (
     <article
+      aria-label={title}
       className="su-grid su-grid-gap su-grid-cols-6 lg:su-grid-cols-10"
       data-testid="narrow-horizontal-card"
     >
@@ -92,7 +93,7 @@ export default function NarrowHorizontalCard({
             </p>
           )}
 
-        <h2 className="su-font-serif su-basefont-23 su-my-0">
+        <h3 className="su-font-serif su-basefont-23 su-my-0">
           <a
             className="su-group hocus:su-text-digital-red hocus:su-underline su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
             href={liveUrl}
@@ -106,7 +107,7 @@ export default function NarrowHorizontalCard({
               </span>
             )}
           </a>
-        </h2>
+        </h3>
 
         {description && (
           <div
