@@ -293,6 +293,19 @@
         }
       }
     },
+    "noHeading": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "noHeading.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
     "search": {
       "functionData": {
         "main": {

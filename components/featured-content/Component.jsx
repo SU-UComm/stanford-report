@@ -44,18 +44,24 @@ export default function FeaturedContent({
       <FeaturedGrid
         alignment={displayConfiguration.alignment}
         items={[
-          <Card data={featuredCardData} cardSize="featured" />,
+          <Card
+            data={featuredCardData}
+            cardSize="featured"
+            headingLvl={headingData.title ? 3 : 2}
+          />,
           <Card
             data={data[1]}
             displayThumbnail={displayConfiguration.displayThumbnails}
             displayDescription={displayConfiguration.displayDescriptions}
             cardSize="small"
+            headingLvl={headingData.title ? 3 : 2}
           />,
           <Card
             data={data[2]}
             displayThumbnail={displayConfiguration.displayThumbnails}
             displayDescription={displayConfiguration.displayDescriptions}
             cardSize="small"
+            headingLvl={headingData.title ? 3 : 2}
           />,
         ]}
       />
