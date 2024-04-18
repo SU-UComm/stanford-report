@@ -1065,3 +1065,11 @@ Single image/video component
 .su-page-story-basic .su-play-button-icon svg {
   @apply su-w-[40px] su-h-[40px] su-left-[20px] su-bottom-[20px] md:su-w-[60px] md:su-h-[60px] md:su-left-[26px] md:su-bottom-[26px];
 }
+
+/*
+Light/Dark mode toggle WCAG
+*/
+#dark-theme:focus + label,
+#light-theme:focus + label {
+  outline: 2px solid #006cb8;
+}
