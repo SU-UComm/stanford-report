@@ -1167,12 +1167,8 @@ Subscribe to Stanford Report Marketo form styles
 .marketo-sr-subscribe-form.mktoForm .mktoError {
   @apply su-text-digital-red;
 }
-<<<<<<< Updated upstream
-=======
 
 .marketo-sr-subcribe-form.mktoForm .mktoCheckboxList > label {
   display: block;
   min-height: 1.2rem;
-  background-color: pink;
 }
->>>>>>> Stashed changes
