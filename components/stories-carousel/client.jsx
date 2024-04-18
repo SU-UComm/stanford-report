@@ -50,6 +50,11 @@ import getCookie from "../../packages/utils/cookieGet";
       &num_ranks=12&meta_notisTeaser=true&sort=date&meta_id_not=${
         props.search.currentPage
       }`;
+
+      if (props.search.contentType === "Video") {
+        fallbackFbUrl += "&meta_taxonomyContentTypeText=Video";
+        fbUrl += "&meta_taxonomyContentTypeText=Video";
+      }
     }
 
     // Check if we have a URL to fetch data from
