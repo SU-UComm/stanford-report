@@ -19,16 +19,18 @@ dotenv.config();
   // the topicData objects contain a target_id that are the IDs we need (they are the pages we want to update)
   const topicData = await fetchTopicData();
    // type = ["content_type", "featured_unit", "content_topic"]
-  let filteredTopicData = await filterData(topicData, "featured_unit");
-  // filteredTopicData = filteredTopicData.slice(0, 10);
-  filteredTopicData = [
-    { target_id: "142706" },
-    { target_id: "134217" },
-    { target_id: "134236" },
-    { target_id: "142945" }
-  ];
+  let activeFilter = "featured_unit";
+  let filteredTopicData = await filterData(topicData, activeFilter);
+  
+  filteredTopicData = filteredTopicData.slice(50, 100);
+  // filteredTopicData = [
+  //   { target_id: "142706" },
+  //   { target_id: "134217" },
+  //   { target_id: "134236" },
+  //   { target_id: "142945" }
+  // ];
 
-  console.log(filteredTopicData.length + " results");
+  console.log(filteredTopicData.length + " results to process for " + activeFilter);
 
   // prepare the data that we will eventally send
   let apiPageData = await prepareData(filteredTopicData, MGT_API, REQUEST_PROPS, true);
@@ -71,10 +73,11 @@ dotenv.config();
   // so, make sure you have the correct data before enabling this line of code
   // 
   // 
-  console.log(`About to update ${apiPageData.length} assets.`);
-  console.log("...");
-  const patchData = await patchTopicData(apiPageData, MGT_API, REQUEST_PROPS);
-  console.log(`Patched ${patchData.length} items`);
+  
+  // console.log(`About to update ${apiPageData.length} assets.`);
+  // console.log("...");
+  // const patchData = await patchTopicData(apiPageData, MGT_API, REQUEST_PROPS);
+  // console.log(`Patched ${patchData.length} items`);
 
 
 

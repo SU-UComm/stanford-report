@@ -29,9 +29,7 @@ export async function filterData(topics, type = null) {
       } else {
         output.push(value);
       }
-      
-
-
+    
     }
   });
 
