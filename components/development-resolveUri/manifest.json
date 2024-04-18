@@ -4,7 +4,7 @@
   "namespace": "stanford-components",
   "displayName": "[Development] Resolve URI",
   "description": "This component is used to resolve the URI of an asset so in development we can work with accurate demo data",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "mainFunction": "main",
   "icon": {
     "id": "fiber_new",
