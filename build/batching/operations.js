@@ -19,7 +19,7 @@ export async function filterData(topics, type = null) {
     // MAKE SURE WE DO NOT OVERRIDE SECTION PAGES (the main top level pages)
     // Each section page has a group value of 28170
     // 
-    if(value.group !== "28170"){
+    if(value.group !== "28170" || value.target_id !== "141561"){
 
       // if we have passed a type filter in, we only want to return that type
       if( type ) {
@@ -46,7 +46,6 @@ export async function writeTopicBackup(jsonData) {
   });
 }
 
-
 export async function prepareData(topicsArr, mgt_api, requestProps) {
       // create a promise array
       const promises = topicsArr.map(async (topic) => {
@@ -56,7 +55,7 @@ export async function prepareData(topicsArr, mgt_api, requestProps) {
           throw new Error(error);
         });
         const json = await res.json();
-
+        
         // filter out and rework the FB queries
         const query = json.attributes?.dxp_page_content?.layouts[0]?.content?.main[0]?.contentItem?.content?.displayConfiguration?.searchQuery;
         let cleanQuery = query
@@ -89,19 +88,24 @@ export async function prepareData(topicsArr, mgt_api, requestProps) {
 export async function patchTopicData(topicsArr, mgt_api, requestProps) {
       // create a promise array
       requestProps.method = "PATCH";
+      const results = [];
 
-      const promises = topicsArr.map(async (topic) => {
+      for (const topic of topicsArr) {  
         const url = `${mgt_api}${topic.id}`;
 
         requestProps.body = JSON.stringify(topic);
-         const res = await fetch(url, requestProps).catch((error) => {
-           throw new Error(error);
-         });
+        
+        const res = await fetch(url, requestProps).catch((error) => {
+          throw new Error(error);
+        });
         const json = await res.json();
+        results.push(json);
         console.log(`${topic.id} written.`);
-        return json;
-      });
+        await new Promise(resolve => setTimeout(resolve, 5000)); // Add delay
+      };
 
       // Wait for all promises to resolve before continuing
-      return Promise.all(promises);
+      // return Promise.all(promises);
+      return results;
 }
+

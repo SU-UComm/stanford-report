@@ -19,17 +19,17 @@ dotenv.config();
   // the topicData objects contain a target_id that are the IDs we need (they are the pages we want to update)
   const topicData = await fetchTopicData();
    // type = ["content_type", "featured_unit", "content_topic"]
-  let activeFilter = "featured_unit";
+  let activeFilter = "content_topic";
   let filteredTopicData = await filterData(topicData, activeFilter);
-  
-  filteredTopicData = filteredTopicData.slice(50, 100);
+  console.log("Total of " + filteredTopicData.length + " results to process for " + activeFilter);
+  filteredTopicData = filteredTopicData.slice(236, 250);
   // filteredTopicData = [
   //   { target_id: "142706" },
   //   { target_id: "134217" },
   //   { target_id: "134236" },
   //   { target_id: "142945" }
   // ];
-
+  console.log(filteredTopicData);
   console.log(filteredTopicData.length + " results to process for " + activeFilter);
 
   // prepare the data that we will eventally send
@@ -51,11 +51,11 @@ dotenv.config();
     delete topic.newQuery;
 
     // set the versioning
-    contentBlockTarget.componentId = `${COMPONENT}/${VERSION}`;
-    contentBlockTarget.contentItem.schemaName = `${COMPONENT}/${VERSION}/main`;
+    // contentBlockTarget.componentId = `${COMPONENT}/${VERSION}`;
+    //contentBlockTarget.contentItem.schemaName = `${COMPONENT}/${VERSION}/main`;
 
-    // console.log(topic.attributes.dxp_page_content.layouts[0].content.main[0].contentItem);
-    // console.log(contentBlockTarget.contentItem.content);
+    //  console.log(topic.attributes.dxp_page_content.layouts[0].content.main[0].contentItem);
+    //  console.log(contentBlockTarget.contentItem.content);
   });
 
   
@@ -74,10 +74,15 @@ dotenv.config();
   // 
   // 
   
+
+
+  
   // console.log(`About to update ${apiPageData.length} assets.`);
   // console.log("...");
   // const patchData = await patchTopicData(apiPageData, MGT_API, REQUEST_PROPS);
+  
   // console.log(`Patched ${patchData.length} items`);
+
 
 
 
