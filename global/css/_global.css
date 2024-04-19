@@ -591,7 +591,6 @@ audio::-webkit-media-controls-panel {
 
 .section-summary p {
   @apply !su-leading-[2.715rem];
-  
 }
 .su-dark .section-summary {
   @apply !su-text-black-20;

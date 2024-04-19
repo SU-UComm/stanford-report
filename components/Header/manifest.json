@@ -1,6 +1,6 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "development-header-component",
+  "name": "header-component",
   "version": "0.1.1",
   "namespace": "stanford-components",
   "description": "Stanford university Header component.",
