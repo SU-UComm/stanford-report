@@ -1072,76 +1072,38 @@ Subscribe to Stanford Report Marketo form styles
 
 .marketo-sr-subscribe-form.mktoForm * {
   @apply su-font-sans su-text-20;
-  }
+}
+
+.marketo-sr-subscribe-form.mktoForm .mktoFormRow {
+  @apply su-rs-mb-3;
+}
+
 .marketo-sr-subscribe-form.mktoForm .mktoLabel {
-  @apply su-pb-2;
-  }
+  @apply su-pb-2 su-font-semibold su-float-none su-text-18;
+}
 
-  .marketo-sr-subscribe-form.mktoForm input.mktoField {
-    @apply su-input su-p-10 su-max-w-550 su-w-full;
-  }
+.marketo-sr-subscribe-form.mktoForm input.mktoField {
+  @apply su-input su-p-10 su-max-w-550 su-w-full;
+}
 
-  .marketo-sr-subscribe-form.mktoForm input.mktoField[type='checkbox'] {
-    @apply su-w-auto su-text-digital-blue-vivid;
-  }
+.marketo-sr-subscribe-form.mktoForm input[type="text"],
+.marketo-sr-subscribe-form.mktoForm input[type="email"],
+.marketo-sr-subscribe-form.mktoForm textarea {
+  @apply su-border-black-20 su-rounded su-border-b-2 su-border-b-black-70 su-p-12 focus:su-border-digital-blue-vivid focus:su-border focus:su-border-b-2 focus:su-ring-4 focus:su-ring-digital-blue-vivid/20;
+}
 
-  .marketo-sr-subscribe-form.mktoForm .mktoCheckboxList {
-    @apply su-mt-30 su-p-0;
-  }
+/* Checkbox styles */
+.marketo-sr-subscribe-form.mktoForm .mktoCheckboxList {
+  @apply su-grid su-grid-cols-[auto_1fr] su-gap-x-14 su-gap-y-24 su-mt-20 su-p-0;
+}
 
-  .marketo-sr-subscribe-form.mktoForm .mktoLabel {
-    @apply su-float-none;
-  }
+.marketo-sr-subscribe-form.mktoForm .mktoCheckboxList label {
+  @apply su-text-18 su-mt-01em su-leading-display su-cursor-pointer peer-hover:su-underline;
+}
 
-  .marketo-sr-subscribe-form.mktoForm .mktoCheckboxList label {
-    @apply su-mb-30;
-  }
-
-  .marketo-sr-subscribe-form.mktoForm[type='checkbox']:checked + label::before {
-    @apply su-bg-digital-blue-vivid;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    border-color: transparent;
-  }
-
-  .marketo-sr-subscribe-form.mktoForm input,
-  .marketo-sr-subscribe-form.mktoForm textarea,
-  .marketo-sr-subscribe-form.mktoForm select {
-    border-color: #6b7280;
-  }
-    /* Adjust :focus to remove Decanter v6 large box-shadow.
-     Style simpler with wider blue outline.*/
-  .marketo-sr-subscribe-form.mktoForm input:focus,
-  .marketo-sr-subscribe-form.mktoForm textarea:focus,
-  .marketo-sr-subscribe-form.mktoForm select:focus {
-    @apply su-border-digital-blue-vivid;
-    border-width: 2px;
-    box-shadow: none;
-  }
-
-  /* Checkboxes are added with ::before pseudo elements.*/
-  .marketo-sr-subscribe-form.mktoForm [type='checkbox'] + label::before {
-    border: 1px solid #6b7280;
-    border-radius: 0;
-    box-shadow: none;
-    width: 2.4rem;
-    height: 2.4rem;
-  }
-
-  /* Focus state for checkboxes.*/
-  .marketo-sr-subscribe-form.mktoForm [type='checkbox']:focus + label::before {
-    box-shadow: rgba(255, 255, 255, 1) 0px 0px 0px 2px, rgba(245, 245, 247, 1) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
-  }
-
-  /* Styles for checked checkboxes.*/
-  .marketo-sr-subscribe-form.mktoForm [type='checkbox']:checked + label::before {
-    @apply su-bg-digital-blue-vivid;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    border-color: transparent;
-  }
+.marketo-sr-subscribe-form.mktoForm input[type="checkbox"] {
+  @apply su-w-auto su-text-digital-blue su-cursor-pointer hocus:su-ring-digital-blue-light/40 hocus:su-ring-4 su-border-black-50 su-border-2 su-rounded hocus:su-border-digital-blue checked:su-border-digital-blue-light focus:su-ring-offset-0 focus:su-outline-none checked:hover:su-bg-digital-blue-dark;
+}
 
 /* Marketo puts the asterisk before the label text(?) so
 // we use flexbox to switch the order and put the asterisk
@@ -1154,21 +1116,17 @@ Subscribe to Stanford Report Marketo form styles
 
 /* Make required asterisk red and give it a little margin.*/
 .marketo-sr-subscribe-form.mktoForm .mktoAsterix {
-  @apply su-text-digital-red;
+  @apply su-text-digital-red-light dark:su-text-dark-mode-red;
   margin-inline-start: 0.2rem;
+}
+
+/* Error messages */
+.marketo-sr-subscribe-form.mktoForm .mktoErrorMsg, 
+.marketo-sr-subscribe-form.mktoForm .mktoErrorDetail {
+  @apply su-text-digital-red-light dark:su-text-dark-mode-red su-text-16 su-mt-10;
 }
 
 /* Add more margin above the submit button at the bottom.*/
 .marketo-sr-subscribe-form.mktoForm .mktoButtonRow {
   margin-top: 3rem;
-}
-
-/* Make validation error text red.*/
-.marketo-sr-subscribe-form.mktoForm .mktoError {
-  @apply su-text-digital-red;
-}
-
-.marketo-sr-subcribe-form.mktoForm .mktoCheckboxList > label {
-  display: block;
-  min-height: 1.2rem;
 }
