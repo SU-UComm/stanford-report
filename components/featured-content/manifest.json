@@ -318,19 +318,6 @@
           }
         }
       }
-    },
-    "search2": {
-      "functionData": {
-        "main": {
-          "inputData": {
-            "type": "file",
-            "path": "search2.data.json"
-          },
-          "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
-          }
-        }
-      }
     }
   }
 }

@@ -38,8 +38,6 @@ export default function formatCardDataFunnelback({
   const authorAvatar = authorImage !== "" ? authorImage : undefined;
 
   const imageUrl = image;
-  // eslint-disable-next-line no-param-reassign
-  imageAlt = image ? imageAlt : "Default image alt";
   const videoUrl = featuredVideo;
 
   const description = teaserPlain || summary;
