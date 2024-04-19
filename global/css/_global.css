@@ -895,8 +895,11 @@ WYSIWYG formatting styles
 }
 
 /* STANFORD-819 */
-.su-page-content p a:focus {
-  text-decoration: none;
+.su-wysiwyg-content a,
+.su-page-content > span a,
+.container > span a,
+.su-page-content > *:not([data-component], .container, .site-search) a {
+  @apply hocus:su-no-underline;
 }
 
 /* Set specfic spacing for paragraphs */
