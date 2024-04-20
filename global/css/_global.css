@@ -1063,7 +1063,7 @@ WYSIWYG formatting styles
 Single image/video component
 */
 .su-page-story-basic .su-play-button-icon svg {
-  @apply su-w-[40px] su-h-[40px] su-left-[20px] su-bottom-[20px] md:su-w-[60px] md:su-h-[60px] md:su-left-[26px] md:su-bottom-[26px];
+  @apply su-size-40 su-left-20 su-bottom-20 md:su-size-60 md:su-left-26 md:su-bottom-26;
 }
 
 /*
@@ -1089,7 +1089,7 @@ Subscribe to Stanford Report Marketo form styles
 .marketo-sr-subscribe-form.mktoForm input[type="text"],
 .marketo-sr-subscribe-form.mktoForm input[type="email"],
 .marketo-sr-subscribe-form.mktoForm textarea {
-  @apply su-border-black-20 su-rounded su-border-b-2 su-border-b-black-70 su-p-12 focus:su-border-digital-blue-vivid focus:su-border focus:su-border-b-2 focus:su-ring-4 focus:su-ring-digital-blue-vivid/20;
+  @apply su-border-black-20 dark:su-border-black-50 dark:su-bg-black-90 dark:su-text-white su-mt-6 su-rounded su-border-b-2 su-border-b-black-70 dark:su-border-b-black-30 su-px-16 su-py-12 focus:su-border-digital-blue-vivid focus:su-border-b-digital-blue dark:focus:su-border-digital-blue-vivid focus:su-border focus:su-border-b-2 focus:su-ring-4 focus:su-ring-digital-blue-vivid/20 dark:focus:su-ring-digital-blue-vivid/40;
 }
 
 /* Checkbox styles */
@@ -1109,9 +1109,7 @@ Subscribe to Stanford Report Marketo form styles
 // we use flexbox to switch the order and put the asterisk
 // after the label text.*/
 .marketo-sr-subscribe-form.mktoForm .mktoLabel {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
+  @apply su-flex su-flex-row-reverse su-justify-end;
 }
 
 /* Make required asterisk red and give it a little margin.*/
@@ -1128,5 +1126,9 @@ Subscribe to Stanford Report Marketo form styles
 
 /* Add more margin above the submit button at the bottom.*/
 .marketo-sr-subscribe-form.mktoForm .mktoButtonRow {
-  margin-top: 3rem;
+  @apply su-rs-mt-3;
+}
+
+.marketo-sr-subscribe-form.mktoForm .mktoButton {
+  @apply su-button hocus:su-underline md:su-px-30 md:su-pt-12 md:su-pb-13 su-text-18 md:su-text-20 su-transition-colors dark:hocus:su-ring-1 dark:hocus:su-ring-white;
 }

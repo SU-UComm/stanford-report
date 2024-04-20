@@ -35,7 +35,7 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
     if (!email || !email.match(/\w+@\w+\.\w+/)) {
       setSubscriptionError(
         () =>
-          `<span class="su-block su-text-16 su-font-normal su-text-digital-red">Please enter a valid email address.</span>`
+          `<span class="su-block su-text-16 su-font-normal su-text-digital-red-light">Please enter a valid email address.</span>`
       );
 
       return;
@@ -73,7 +73,7 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
 
       <button
         type="submit"
-        className="su-mr-auto su-text-white su-bg-digital-red su-text-16 su-font-normal su-px-22 su-pt-9 su-pb-11 hover:su-bg-black su-transition"
+        className="su-mr-auto su-text-white su-bg-digital-red su-text-16 su-font-normal su-px-22 su-pt-9 su-pb-11 hocus:su-bg-black hocus:su-underline su-transition"
       >
         Sign up
       </button>
