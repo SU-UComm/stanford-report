@@ -1089,7 +1089,7 @@ Subscribe to Stanford Report Marketo form styles
 .marketo-sr-subscribe-form.mktoForm input[type="text"],
 .marketo-sr-subscribe-form.mktoForm input[type="email"],
 .marketo-sr-subscribe-form.mktoForm textarea {
-  @apply su-border-black-20 dark:su-border-black-50 dark:su-bg-black-90 dark:su-text-white su-mt-6 su-rounded su-border-b-2 su-border-b-black-70 dark:su-border-b-black-30 su-px-16 su-py-12 focus:su-border-digital-blue-vivid focus:su-border-b-digital-blue dark:focus:su-border-digital-blue-vivid focus:su-border focus:su-border-b-2 focus:su-ring-4 focus:su-ring-digital-blue-vivid/20 dark:focus:su-ring-digital-blue-vivid/40;
+  @apply su-border-black-20 dark:su-border-black-60 dark:su-bg-black-90 dark:su-text-white su-mt-6 su-rounded su-border-b-2 su-border-b-black-70 dark:su-border-b-black-30 su-px-16 su-py-12 focus:su-border-digital-blue-vivid focus:su-border-b-digital-blue dark:focus:su-border-digital-blue-light/80 dark:focus:su-border-b-digital-blue-light focus:su-border focus:su-border-b-2 focus:su-ring-4 focus:su-ring-digital-blue-vivid/20 dark:focus:su-ring-digital-blue-vivid/50;
 }
 
 /* Checkbox styles */

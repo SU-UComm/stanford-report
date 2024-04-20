@@ -53,11 +53,11 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
       onSubmit={submitSubscription}
       method="POST"
     >
-      <h2 className="su-m-0 su-font-bold su-text-18 su-leading-[2.16rem] dark:su-text-white su-font-sans">
+      <h2 className="su-m-0 su-font-bold su-text-18 su-leading-display dark:su-text-white su-font-sans">
         {title}
       </h2>
 
-      <p className="su-m-0 su-font-normal su-text-16 su-leading-[1.25] dark:su-text-white">
+      <p className="su-m-0 su-text-16 su-leading-[125%] dark:su-text-white">
         {summary}
       </p>
 
@@ -67,13 +67,13 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
         placeholder="Email address"
         title="Subscription Email"
         aria-label="Subscription Email"
-        className="su-rounded su-p-12 su-text-16 su-leading-[1.25] su-text-black placeholder:su-text-black su-font-normal su-border-black-20 su-border su-border-b-black-70 su-border-b-2  dark:su-bg-black-90 dark:su-text-white dark:placeholder:su-text-white"
+        className="su-rounded su-p-12 su-text-16 su-leading-[125%] su-text-black placeholder:su-text-black su-font-normal su-border su-border-b-2 su-border-black-20 su-border-b-black-70 dark:su-border-black-60 dark:su-border-b-black-30 focus:su-border-digital-blue-vivid focus:su-border-b-digital-blue dark:focus:su-border-digital-blue-light/80 dark:focus:su-border-b-digital-blue-light focus:su-ring-4 focus:su-ring-digital-blue-vivid/20 dark:focus:su-ring-digital-blue-vivid/50 dark:su-bg-black-90 dark:su-text-white dark:placeholder:su-text-white"
         onKeyUp={emailInputEvent}
       />
 
       <button
         type="submit"
-        className="su-mr-auto su-text-white su-bg-digital-red su-text-16 su-font-normal su-px-22 su-pt-9 su-pb-11 hocus:su-bg-black hocus:su-underline su-transition"
+        className="su-mr-auto su-text-white su-bg-digital-red su-text-16 su-font-normal su-px-22 su-pt-9 su-pb-11 hocus:su-bg-black dark:hocus:su-ring-1 dark:hocus:su-ring-white hocus:su-underline su-transition"
       >
         Sign up
       </button>
