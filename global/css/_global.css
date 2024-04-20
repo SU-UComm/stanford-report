@@ -1075,7 +1075,7 @@ Subscribe to Stanford Report Marketo form styles
 }
 
 .marketo-sr-subscribe-form.mktoForm .mktoFormRow {
-  @apply su-rs-mb-3;
+  @apply su-mb-50;
 }
 
 .marketo-sr-subscribe-form.mktoForm .mktoLabel {
@@ -1089,7 +1089,7 @@ Subscribe to Stanford Report Marketo form styles
 .marketo-sr-subscribe-form.mktoForm input[type="text"],
 .marketo-sr-subscribe-form.mktoForm input[type="email"],
 .marketo-sr-subscribe-form.mktoForm textarea {
-  @apply su-border-black-20 dark:su-border-black-60 dark:su-bg-black-90 dark:su-text-white su-mt-6 su-rounded su-border-b-2 su-border-b-black-70 dark:su-border-b-black-30 su-px-16 su-py-12 focus:su-border-digital-blue-vivid focus:su-border-b-digital-blue dark:focus:su-border-digital-blue-light/80 dark:focus:su-border-b-digital-blue-light focus:su-border focus:su-border-b-2 focus:su-ring-4 focus:su-ring-digital-blue-vivid/20 dark:focus:su-ring-digital-blue-vivid/50;
+  @apply su-border-black-20 dark:su-border-black-60 dark:su-bg-black-90 dark:su-text-white su-mt-6 su-rounded su-border su-border-b-2 su-border-b-black-70 dark:su-border-b-black-30 su-px-16 su-py-12 hocus:su-border-digital-blue-vivid hocus:su-border-b-digital-blue dark:hocus:su-border-digital-blue-light/80 dark:hocus:su-border-b-digital-blue-light focus:su-ring-4 focus:su-ring-digital-blue-vivid/20 dark:focus:su-ring-digital-blue-vivid/50 su-transition-colors;
 }
 
 /* Checkbox styles */
@@ -1121,7 +1121,12 @@ Subscribe to Stanford Report Marketo form styles
 /* Error messages */
 .marketo-sr-subscribe-form.mktoForm .mktoErrorMsg, 
 .marketo-sr-subscribe-form.mktoForm .mktoErrorDetail {
-  @apply su-text-digital-red-light dark:su-text-dark-mode-red su-text-16 su-mt-10;
+  @apply su-text-digital-red-light dark:su-text-dark-mode-red su-text-16 su-mt-8;
+}
+
+/* This shift the error message up so when it's displayed, so it doesn't cause the input field to shift position */
+.marketo-sr-subscribe-form.mktoForm .mktoError {
+  @apply su--mb-26;
 }
 
 /* Add more margin above the submit button at the bottom.*/
@@ -1130,5 +1135,5 @@ Subscribe to Stanford Report Marketo form styles
 }
 
 .marketo-sr-subscribe-form.mktoForm .mktoButton {
-  @apply su-button hocus:su-underline md:su-px-30 md:su-pt-12 md:su-pb-13 su-text-18 md:su-text-20 su-transition-colors dark:hocus:su-ring-1 dark:hocus:su-ring-white;
+  @apply su-button hocus:su-underline su-leading-display md:su-px-30 md:su-pt-12 md:su-pb-14 su-text-18 md:su-text-20 su-transition-colors dark:hocus:su-ring-1 dark:hocus:su-ring-white;
 }

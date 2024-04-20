@@ -14,6 +14,8 @@ import { LinkedHeading } from "../../packages/headings/Heading";
  * @constructor
  */
 
+// TODO: The h2 "Subscribe to Stanford Report" might be better as a label for the email input field instead
+
 export default function SubscribeToStanfordReport({ contentConfiguration }) {
   const { actionLink, title, summary } = contentConfiguration;
 
@@ -35,7 +37,7 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
     if (!email || !email.match(/\w+@\w+\.\w+/)) {
       setSubscriptionError(
         () =>
-          `<span class="su-block su-text-16 su-font-normal su-text-digital-red-light">Please enter a valid email address.</span>`
+          `<span id="subscription-error" class="su-block su-text-16 su-font-normal su-text-digital-red-light">Please enter a valid email address.</span>`
       );
 
       return;
@@ -63,10 +65,11 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
 
       <input
         type="email"
-        name="subsciption-email"
+        name="subscription-email"
         placeholder="Email address"
         title="Subscription Email"
         aria-label="Subscription Email"
+        aria-describedby={subscriptionError ? "subscription-error" : undefined}
         className="su-rounded su-p-12 su-text-16 su-leading-[125%] su-text-black placeholder:su-text-black su-font-normal su-border su-border-b-2 su-border-black-20 su-border-b-black-70 dark:su-border-black-60 dark:su-border-b-black-30 focus:su-border-digital-blue-vivid focus:su-border-b-digital-blue dark:focus:su-border-digital-blue-light/80 dark:focus:su-border-b-digital-blue-light focus:su-ring-4 focus:su-ring-digital-blue-vivid/20 dark:focus:su-ring-digital-blue-vivid/50 dark:su-bg-black-90 dark:su-text-white dark:placeholder:su-text-white"
         onKeyUp={emailInputEvent}
       />
