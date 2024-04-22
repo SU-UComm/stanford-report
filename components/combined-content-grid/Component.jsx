@@ -64,7 +64,8 @@ export default function FeaturedContent({
           <span className="su-sr-only">(link is external)</span>
           <ExternalArrowUnstyled
             aria-hidden
-            className="su-transition group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-w-08em su-text-digital-blue group-hocus:su-text-digital-red dark:su-text-digital-blue-vivid dark:group-hocus:su-text-dark-mode-red su-mt-01em"
+            strokeWidth={3.5}
+            className="su-transition su-will-change-transform group-hocus:su-translate-x-02em group-hocus:su--translate-y-02em su-w-08em su-text-digital-blue group-hocus:su-text-digital-red dark:su-text-digital-blue-vivid dark:group-hocus:su-text-dark-mode-red su-mt-0"
           />
         </a>
       </article>
