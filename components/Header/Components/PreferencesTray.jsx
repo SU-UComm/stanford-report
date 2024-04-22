@@ -178,7 +178,6 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
 
       <div
         id="preferences"
-        aria-label="Preferences"
         aria-hidden="true"
         className="su-hidden report-header__preferences-tray su-shadow su-z-50 su-fixed su-right-0 su-top-0 su-size-full"
       >
