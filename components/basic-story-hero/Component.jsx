@@ -88,6 +88,7 @@ export default function basicStoryHero(props) {
                   type={mediaType}
                   carousel={media.carousel}
                   captions={media.captions}
+                  name={title}
                 />
               </div>
               {(media.caption || media.credit) && (
@@ -104,7 +105,7 @@ export default function basicStoryHero(props) {
   );
 }
 
-function Thumbnail({ url, alt, video, type, carousel, captions }) {
+function Thumbnail({ url, alt, video, type, carousel, captions, name = "" }) {
   // state
   const slides = [];
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -178,7 +179,7 @@ function Thumbnail({ url, alt, video, type, carousel, captions }) {
 
         {isModalOpen && (
           <Modal onClose={handleCloseModal}>
-            <EmbedVideo videoId={video} />
+            <EmbedVideo videoId={video} title={`Watch ${name}`} />
           </Modal>
         )}
       </>
@@ -188,6 +189,7 @@ function Thumbnail({ url, alt, video, type, carousel, captions }) {
           className="su-absolute su-top-0 su-left-0 su-w-full su-h-full"
           videoId={video}
           noAutoPlay
+          title={`Watch ${name}`}
         />
       </div>
     );
