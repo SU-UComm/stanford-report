@@ -88,7 +88,7 @@ export default function basicStoryHero(props) {
                   type={mediaType}
                   carousel={media.carousel}
                   captions={media.captions}
-                  name={media.name}
+                  name={title}
                 />
               </div>
               {(media.caption || media.credit) && (
@@ -189,6 +189,7 @@ function Thumbnail({ url, alt, video, type, carousel, captions, name = "" }) {
           className="su-absolute su-top-0 su-left-0 su-w-full su-h-full"
           videoId={video}
           noAutoPlay
+          title={`Watch ${name}`}
         />
       </div>
     );
