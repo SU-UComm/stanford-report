@@ -94,9 +94,7 @@ export default function FeaturedMetadata({ data }) {
   const otherRows = metaMap.slice(3, metaMap.length);
 
   const gridSettings =
-    "md:su-gap-x-20 md:su-gap-y-70 lg:su-gap-x-40 lg:su-gap-y-[61px]";
-
-  console.log(media);
+    "md:su-gap-x-20 md:su-gap-y-70 lg:su-gap-x-40 lg:su-gap-y-[6.1rem]";
 
   return (
     <section className="su-flex su-flex-col su-items-center">
@@ -111,7 +109,7 @@ export default function FeaturedMetadata({ data }) {
             className={`su-flex su-flex-col md:su-flex-row su-gap-32 su-pt-0 ${gridSettings}`}
           >
             {firstRow.map((meta) => (
-              <div className="su-w-full md:su-w-auto md:su-min-w-[170px]">
+              <div className="su-w-full md:su-w-auto md:su-min-w-[17rem]">
                 <FeaturedField title={meta.name} alignment="center">
                   {meta.name !== "Campus unit" ? (
                     meta.items.map(
@@ -264,12 +262,12 @@ export default function FeaturedMetadata({ data }) {
       {campus &&
       ![null, undefined, "undefined", ""].includes(campus.asset_assetid) ? (
         <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
-          <h3 className="su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans !su-m-0">
+          <h3 className="su-text-18 su-font-bold su-leading-[125%] su-font-sans !su-m-0">
             Campus unit
           </h3>
 
           {!campus.asset_url ? (
-            <div className="su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
+            <div className="su-flex su-gap-20 su-max-w-[71.9rem] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
               {campus.asset_name}
             </div>
           ) : (
@@ -277,7 +275,7 @@ export default function FeaturedMetadata({ data }) {
               href={campus.asset_url}
               className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-19 su-font-semibold"
             >
-              <div className="su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
+              <div className="su-flex su-gap-20 su-max-w-[71.9rem] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
                 {campus.asset_name}
               </div>
             </a>
@@ -289,11 +287,11 @@ export default function FeaturedMetadata({ data }) {
 
       {related && related.length ? (
         <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
-          <h3 className="su-text-18 su-font-bold su-leading-[22.5px] su-font-sans !su-m-0">
+          <h3 className="su-text-18 su-font-bold su-leading-[125%] su-font-sans !su-m-0">
             Related topics
           </h3>
 
-          <div className="su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
+          <div className="su-flex su-gap-20 su-max-w-[71.9rem] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
             {related.map((item) =>
               item ? (
                 <div key={item.asset_assetid}>
@@ -315,7 +313,7 @@ export default function FeaturedMetadata({ data }) {
       )}
 
       <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
-        <h3 className="su-text-18 su-font-bold su-leading-[22.5px] !su-m-0 su-font-sans">
+        <h3 className="su-text-18 su-font-bold su-leading-[125%] !su-m-0 su-font-sans">
           Share this story
         </h3>
 
