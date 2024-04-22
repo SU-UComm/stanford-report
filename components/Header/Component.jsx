@@ -132,23 +132,8 @@ export default function Header({ site, navigation, search }) {
                     <BurgerBar />
                     <MobileBurgerBar />
                   </span>
-                  <span id="toggle-menu" hidden>
-                    Menu
-                  </span>
-                  <span
-                    className="su-text-12 su-hidden md:su-block"
-                    aria-hidden="true"
-                  >
-                    <span id="toggle-menu" hidden>
-                      Menu
-                    </span>
-                    <span
-                      className="su-text-12 su-hidden md:su-block"
-                      aria-hidden="true"
-                    >
-                      Menu
-                    </span>
-                  </span>
+
+                  <span className="su-text-12 su-hidden md:su-block">Menu</span>
                 </button>
 
                 <MobileNav

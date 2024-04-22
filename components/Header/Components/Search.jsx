@@ -30,7 +30,7 @@ export default function Search({ endpoint, collection, profile, resultPage }) {
           <input type="hidden" value={profile} name="profile" />
           <input
             type="search"
-            className="su-w-full su-h-50 dark:su-text-black su-rounded-full su-text-20 su-leading-[26px] su-py-10 su-pl-15 su-pr-120 su-border-2 su-border-black-30 hover:su-border-black-40 focus:su-border-digital-blue dark:su-border-black-60 dark:focus:su-border-digital-blue-vivid focus:su-border-digital-blue"
+            className="su-w-full su-h-50 dark:su-text-black su-rounded-full su-text-20 su-leading-[26px] su-py-10 su-pl-15 su-pr-120 su-border-2 su-border-black-60 hover:su-border-black-70 focus:su-border-digital-blue dark:su-border-black-20 dark:focus:su-border-digital-blue-vivid focus:su-border-digital-blue"
             name="query"
             defaultValue=""
             placeholder="Search"
