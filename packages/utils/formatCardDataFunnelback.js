@@ -39,7 +39,7 @@ export default function formatCardDataFunnelback({
 
   const imageUrl = image;
   // eslint-disable-next-line no-param-reassign
-  imageAlt = image ? imageAlt : "Default image alt";
+  imageAlt = image && imageAlt ? imageAlt : "";
   const videoUrl = featuredVideo;
 
   const description = teaserPlain || summary;
