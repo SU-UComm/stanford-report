@@ -151,7 +151,7 @@ svg {
 }
 
 .report-header input[type="search"]::placeholder {
-  @apply su-text-black-30 dark:su-text-black-50;
+  @apply su-text-black-60 dark:su-text-black-20;
 }
 
 .report-header .tt-menu {

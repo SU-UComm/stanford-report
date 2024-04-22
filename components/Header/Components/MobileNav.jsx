@@ -188,7 +188,7 @@ export default function MobileNav({ navigation, search, audience }) {
             <input type="hidden" value={profile} name="profile" />
             <input
               type="search"
-              className="su-w-full su-h-50 su-rounded-full su-mb-[3.2rem] dark:su-text-black su-text-20 su-leading-[2.6rem] su-py-10 su-pl-15 su-pr-120 su-border-2 su-border-black-30 dark:su-border-black-60 hover:su-border-black-40 dark:focus:su-border-digital-blue-vivid focus:su-border-digital-blue"
+              className="su-w-full su-h-50 su-rounded-full su-mb-[3.2rem] dark:su-text-black su-text-20 su-leading-[2.6rem] su-py-10 su-pl-15 su-pr-120 su-border-2 su-border-black-60 dark:su-border-black-20 hover:su-border-black-70 dark:focus:su-border-digital-blue-vivid focus:su-border-digital-blue"
               name="query"
               defaultValue=""
               placeholder="Search"
