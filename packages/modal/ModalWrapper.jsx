@@ -35,7 +35,6 @@ export function ModalWrapper({
   return (
     <OverlayContainer className="su-modal">
       <FocusScope contain restoreFocus autoFocus>
-        <CloseButton clickHandler={onClose} />
         <Modal
           titleId={titleId}
           title={title}
@@ -44,6 +43,7 @@ export function ModalWrapper({
         >
           {children}
         </Modal>
+        <CloseButton clickHandler={onClose} />
       </FocusScope>
     </OverlayContainer>
   );
