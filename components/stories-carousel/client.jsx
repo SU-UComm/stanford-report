@@ -30,7 +30,7 @@ import getCookie from "../../packages/utils/cookieGet";
         "search.json"
       )}?profile=${props.search.profile}&collection=${props.search.collection}${
         props.search.maintopic?.asset_name !== ""
-          ? `&meta_taxonomyContentMainTopicText=${props.search.maintopic?.asset_name}`
+          ? `&meta_taxonomyContentMainTopicId=${props.search.maintopic?.asset_id}`
           : ""
       }&meta_taxonomyAudienceText=${audience}&meta_taxonomyContentTypeId_not=28210&meta_taxonomyContentTypeId_not=28216&meta_taxonomyContentTypeId_not=28201
       &num_ranks=${MAX_CARDS}&sort=date&meta_id_not=${

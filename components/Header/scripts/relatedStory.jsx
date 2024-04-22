@@ -12,8 +12,8 @@ export default async function relatedStoryData(pageData = null, audience = "") {
       "search.json"
     )}?profile=${pageData.search.profile}&collection=${
       pageData.search.collection
-    }&meta_taxonomyContentMainTopicText=${
-      pageData.mainTopic
+    }&meta_taxonomyContentMainTopicId=${
+      pageData.mainTopicId
     }&meta_taxonomyAudienceText=${translatePersonalisationProfile(
       audience
     )}&meta_taxonomyContentTypeId_not=28210&meta_taxonomyContentTypeId_not=28216&meta_taxonomyContentTypeId_not=28201&sort=date&num_ranks=1&meta_id_not=${

@@ -115,6 +115,10 @@ export default class ReportHeader {
         this.parent.classList.remove("report-header--primary-nav-open");
         menu.setAttribute("aria-hidden", "true");
 
+        if (window.innerWidth < 768) {
+          document.body.style.cssText += `overflow: auto;`;
+        }
+
         setTimeout(() => {
           menu.classList.remove("su-hidden");
           menu.classList.add("su-block");
@@ -122,6 +126,10 @@ export default class ReportHeader {
       } else {
         // initial toggle
         menu.classList.remove("su-hidden");
+
+        if (window.innerWidth < 768) {
+          document.body.style.cssText += `overflow: hidden;`;
+        }
 
         setTimeout(() => {
           this.menuCloseToggle[1].focus();
@@ -140,6 +148,10 @@ export default class ReportHeader {
         this.parent.classList.remove("report-header--primary-nav-open");
         menu.setAttribute("aria-hidden", "true");
         this.menuToggle.focus();
+
+        if (window.innerWidth < 768) {
+          document.body.style.cssText += `overflow: auto;`;
+        }
 
         setTimeout(() => {
           menu.classList.remove("su-block");
@@ -205,10 +217,15 @@ export default class ReportHeader {
     this.preferencesToggle.addEventListener("click", () => {
       const preferences = this.parent.querySelector("#preferences");
       const isToggled = this.preferencesToggle.getAttribute("aria-expanded");
+
       if (isToggled === "true") {
         this.preferencesToggle.setAttribute("aria-expanded", "false");
         this.parent.classList.remove("report-header--preferences-open");
         preferences.setAttribute("aria-hidden", "true");
+
+        if (window.innerWidth < 768) {
+          document.body.style.cssText += `overflow: auto;`;
+        }
 
         setTimeout(() => {
           preferences.classList.remove("su-hidden");
@@ -217,6 +234,10 @@ export default class ReportHeader {
       } else {
         preferences.classList.remove("su-hidden");
         this.preferencesCloseToggle[1].focus();
+
+        if (window.innerWidth < 768) {
+          document.body.style.cssText += `overflow: hidden;`;
+        }
 
         setTimeout(() => {
           this.preferencesToggle.setAttribute("aria-expanded", "true");
@@ -233,6 +254,10 @@ export default class ReportHeader {
         this.parent.classList.remove("report-header--preferences-open");
         preferences.setAttribute("aria-hidden", "true");
         this.preferencesToggle.focus();
+
+        if (window.innerWidth < 768) {
+          document.body.style.cssText += `overflow: auto;`;
+        }
 
         setTimeout(() => {
           preferences.classList.remove("su-block");
