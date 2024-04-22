@@ -154,7 +154,6 @@ export function Carousel({
           /*
            * Focus on first active slide
            */
-
           // Remove tabindex from old current
           const oldSlide = swiper.$wrapperEl?.[0].querySelector(
             ".swiper-slide-active"
@@ -162,16 +161,21 @@ export function Carousel({
           if (oldSlide) {
             oldSlide.removeAttribute("tabindex");
           }
-
           // Set focus on new current
           if (sliderInit) {
             setTimeout(() => {
               const slide = swiper.$wrapperEl?.[0].querySelector(
                 ".swiper-slide-active"
               );
-              slide.setAttribute("tabindex", "-1");
-              slide.focus();
-            }, 0);
+              const slideTarget = slide.querySelector("h2 a, h3 a")
+                ? slide.querySelector("h2 a, h3 a")
+                : (() => {
+                    slide.setAttribute("tabindex", "-1");
+                    return slide;
+                  })();
+
+              slideTarget.focus();
+            }, 300);
           }
 
           // Flag to avoid focus on init
