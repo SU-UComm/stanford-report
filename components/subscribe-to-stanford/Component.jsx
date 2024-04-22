@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 
-// import specific templates for the component
-import { Container } from "../../packages/grids/Container";
-import { LinkedHeading } from "../../packages/headings/Heading";
-
 /**
  * Base component
  *
