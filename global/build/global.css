@@ -1686,7 +1686,7 @@ Subscribe to Stanford Report Marketo form styles
 .marketo-sr-subscribe-form.mktoForm textarea){border-color:rgb(118 118 116 / var(--tw-border-opacity));--tw-border-opacity:1;border-bottom-color:rgb(192 192 191 / var(--tw-border-opacity));--tw-bg-opacity:1;background-color:rgb(67 66 62 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 :is(.su-dark .marketo-sr-subscribe-form.mktoForm input[type="text"]:focus),:is(.su-dark 
 .marketo-sr-subscribe-form.mktoForm input[type="email"]:focus),:is(.su-dark 
-.marketo-sr-subscribe-form.mktoForm textarea:focus){--tw-ring-color:rgb(5 151 255 / 0.5)}
+.marketo-sr-subscribe-form.mktoForm textarea:focus){--tw-ring-color:rgb(5 151 255 / 0.6)}
 :is(.su-dark .marketo-sr-subscribe-form.mktoForm input[type="text"]:hover),:is(.su-dark 
 .marketo-sr-subscribe-form.mktoForm input[type="email"]:hover),:is(.su-dark 
 .marketo-sr-subscribe-form.mktoForm textarea:hover){border-color:rgb(133 204 255 / 0.8);--tw-border-opacity:1;border-bottom-color:rgb(133 204 255 / var(--tw-border-opacity))}
@@ -1699,10 +1699,17 @@ Subscribe to Stanford Report Marketo form styles
 .su-peer:hover ~ .marketo-sr-subscribe-form.mktoForm .mktoCheckboxList label{text-decoration-line:underline}
 .marketo-sr-subscribe-form.mktoForm input[type="checkbox"]{width:auto;cursor:pointer;border-radius:0.3rem;border-width:2px;--tw-border-opacity:1;border-color:rgb(151 150 148 / var(--tw-border-opacity));--tw-text-opacity:1;color:rgb(0 108 184 / var(--tw-text-opacity))}
 .marketo-sr-subscribe-form.mktoForm input[type="checkbox"]:checked{--tw-border-opacity:1;border-color:rgb(133 204 255 / var(--tw-border-opacity))}
-.marketo-sr-subscribe-form.mktoForm input[type="checkbox"]:hover:checked{--tw-bg-opacity:1;background-color:rgb(0 84 143 / var(--tw-bg-opacity))}
 .marketo-sr-subscribe-form.mktoForm input[type="checkbox"]:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-offset-width:0px}
 .marketo-sr-subscribe-form.mktoForm input[type="checkbox"]:hover{--tw-border-opacity:1;border-color:rgb(0 108 184 / var(--tw-border-opacity));--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);--tw-ring-color:rgb(133 204 255 / 0.4)}
+.marketo-sr-subscribe-form.mktoForm input[type="checkbox"]:hover:checked{--tw-bg-opacity:1;background-color:rgb(0 84 143 / var(--tw-bg-opacity))}
 .marketo-sr-subscribe-form.mktoForm input[type="checkbox"]:focus{--tw-border-opacity:1;border-color:rgb(0 108 184 / var(--tw-border-opacity));--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);--tw-ring-color:rgb(133 204 255 / 0.4)}
+.marketo-sr-subscribe-form.mktoForm input[type="checkbox"]:focus:checked{--tw-bg-opacity:1;background-color:rgb(0 84 143 / var(--tw-bg-opacity))}
+:is(.su-dark .marketo-sr-subscribe-form.mktoForm input[type="checkbox"]){--tw-border-opacity:1;border-color:rgb(192 192 191 / var(--tw-border-opacity));--tw-bg-opacity:1;background-color:rgb(67 66 62 / var(--tw-bg-opacity))}
+:is(.su-dark .marketo-sr-subscribe-form.mktoForm input[type="checkbox"]:checked){--tw-border-opacity:1;border-color:rgb(133 204 255 / var(--tw-border-opacity));--tw-bg-opacity:1;background-color:rgb(0 108 184 / var(--tw-bg-opacity))}
+:is(.su-dark .marketo-sr-subscribe-form.mktoForm input[type="checkbox"]:hover){--tw-border-opacity:1;border-color:rgb(133 204 255 / var(--tw-border-opacity));--tw-ring-color:rgb(5 151 255 / 0.6)}
+:is(.su-dark .marketo-sr-subscribe-form.mktoForm input[type="checkbox"]:hover:checked){--tw-bg-opacity:1;background-color:rgb(5 151 255 / var(--tw-bg-opacity))}
+:is(.su-dark .marketo-sr-subscribe-form.mktoForm input[type="checkbox"]:focus){--tw-border-opacity:1;border-color:rgb(133 204 255 / var(--tw-border-opacity));--tw-ring-color:rgb(5 151 255 / 0.6)}
+:is(.su-dark .marketo-sr-subscribe-form.mktoForm input[type="checkbox"]:focus:checked){--tw-bg-opacity:1;background-color:rgb(5 151 255 / var(--tw-bg-opacity))}
 /* Marketo puts the asterisk before the label text(?) so
 // we use flexbox to switch the order and put the asterisk
 // after the label text.*/
@@ -3823,7 +3830,7 @@ Subscribe to Stanford Report Marketo form styles
 :is(.su-dark .dark\:focus\:su-border-digital-blue-light\/80:focus){border-color:rgb(133 204 255 / 0.8)}
 :is(.su-dark .dark\:focus\:su-border-digital-blue-vivid:focus){--tw-border-opacity:1;border-color:rgb(5 151 255 / var(--tw-border-opacity))}
 :is(.su-dark .dark\:focus\:su-border-b-digital-blue-light:focus){--tw-border-opacity:1;border-bottom-color:rgb(133 204 255 / var(--tw-border-opacity))}
-:is(.su-dark .dark\:focus\:su-ring-digital-blue-vivid\/50:focus){--tw-ring-color:rgb(5 151 255 / 0.5)}
+:is(.su-dark .dark\:focus\:su-ring-digital-blue-vivid\/60:focus){--tw-ring-color:rgb(5 151 255 / 0.6)}
 :is(.su-dark .su-peer\/dark:checked ~ .dark\:peer-checked\/dark\:su-text-palo-verde){--tw-text-opacity:1;color:rgb(39 153 137 / var(--tw-text-opacity))}
 :is(.su-dark .dark\:aria-pressed\:su-bg-transparent[aria-pressed="true"]){background-color:transparent}
 :is(.su-dark .aria-pressed\:dark\:su-text-white)[aria-pressed="true"]{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
