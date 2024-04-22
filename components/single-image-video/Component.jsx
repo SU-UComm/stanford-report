@@ -110,6 +110,8 @@ export default function SingleImageVideo({
       ? "*:su-w-[40px] *:su-h-[40px] *:md:su-w-[60px] *:md:su-h-[60px] *:lg:su-w-[100px] *:lg:su-h-[100px] *:lg:su-size-100 lg:su-bottom-38 lg:su-left-38"
       : "*:su-w-[40px] *:md:su-w-[60px]";
 
+  const videoTitle = video?.heading ? video.heading : "";
+
   return (
     <Container width={width}>
       <section className="su-flex su-flex-col su-items-center su-gap-8 su-gap-15">
@@ -141,6 +143,7 @@ export default function SingleImageVideo({
                 id={video.vimeoid}
                 thumbnail={imageData}
                 handleIframeLoad={handleIframeLoad}
+                heading={videoTitle}
               />
 
               <div
@@ -190,7 +193,10 @@ export default function SingleImageVideo({
             title="Modal"
             onClose={handleCloseModal}
           >
-            <EmbedVideo videoId={video.youtubeid} />
+            <EmbedVideo
+              videoId={video.youtubeid}
+              title={`Watch ${videoTitle}`}
+            />
           </Modal>
         )}
       </section>
@@ -198,7 +204,7 @@ export default function SingleImageVideo({
   );
 }
 
-function Video({ id, thumbnail, handleIframeLoad }) {
+function Video({ id, thumbnail, handleIframeLoad, heading }) {
   if (id) {
     return (
       <iframe
@@ -207,7 +213,7 @@ function Video({ id, thumbnail, handleIframeLoad }) {
         allow="autoplay; fullscreen"
         data-role="video-player"
         onLoad={handleIframeLoad}
-        title="Video Player"
+        title={`Watch ${heading}`}
       />
     );
   }

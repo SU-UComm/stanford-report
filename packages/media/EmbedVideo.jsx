@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function EmbedVideo(props) {
-  const { videoId, className, noAutoPlay } = props;
+  const { videoId, className, noAutoPlay, title } = props;
 
   return (
     <iframe
@@ -11,7 +11,7 @@ export default function EmbedVideo(props) {
       src={`https://www.youtube.com/embed/${videoId}?si=vYU81uVmaV7GSju2&amp;autoplay=${
         noAutoPlay ? 0 : 1
       }&amp;controls=1&amp;rel=0`}
-      title="YouTube video player"
+      title={`Watch ${title}`}
       frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen

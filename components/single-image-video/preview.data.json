@@ -1,10 +1,11 @@
 {
-    "image": "matrix-asset://api-identifier/99100",
-    "caption": "Caption text goes here lorem ipsum dolor sit amet",
-    "credit": "Credit goes here lorem ipsum lorem ipsum lorem ipsum lorem dolor site amit",
-    "width": "Wide",
-    "video": {
-        "vimeoid": "908030173",
-        "youtubeid": "dYdi0Aek664"
-    }
+  "image": "matrix-asset://api-identifier/99100",
+  "caption": "Caption text goes here lorem ipsum dolor sit amet",
+  "credit": "Credit goes here lorem ipsum lorem ipsum lorem ipsum lorem dolor site amit",
+  "width": "Wide",
+  "video": {
+    "heading": "",
+    "vimeoid": "908030173",
+    "youtubeid": "dYdi0Aek664"
+  }
 }
