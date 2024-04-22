@@ -11,6 +11,10 @@
   display: block !important;
 }
 
+.twitter-typeahead input[type="search"][readonly] {
+  display: none;
+}
+
 .report-header .tt-menu {
   padding-top: 42px;
   padding-left: 15px;
