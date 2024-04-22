@@ -549,7 +549,7 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                   id="dark-theme"
                 />
                 <label
-                  className="su-inline-block su-leading-2 su-relative su-align-middle su-z-20 peer-checked/dark:su-z-10 su-pl-50 su--ml-44 peer-checked/dark:su-text-digital-red dark:peer-checked/dark:su-text-palo-verde su-text-black-50"
+                  className="su-inline-block su-leading-2 su-relative su-align-middle su-z-20 peer-checked/dark:su-z-10 su-pl-50 su--ml-44 peer-checked/dark:su-text-digital-red dark:peer-checked/dark:su-text-palo-verde su-text-black-70"
                   htmlFor="dark-theme"
                   data-theme="dark-theme"
                   aria-label="Dark mode enabled"
