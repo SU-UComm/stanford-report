@@ -2416,6 +2416,7 @@ Subscribe to Stanford Report Marketo form styles
 .su-max-h-\[103px\]{max-height:103px}
 .su-min-h-\[56px\]{min-height:56px}
 .su-w-08em{width:0.8em}
+.su-w-09em{width:0.9em}
 .su-w-1{width:0.1rem}
 .su-w-1\/2{width:50%}
 .su-w-100{width:10rem}
@@ -2935,8 +2936,10 @@ Subscribe to Stanford Report Marketo form styles
 .su-transition-colors{transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 .su-transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 .su-transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
+.su-duration-100{transition-duration:100ms}
 .su-duration-1000{transition-duration:1000ms}
 .su-ease-in-out{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)}
+.su-will-change-auto{will-change:auto}
 .su-will-change-transform{will-change:transform}
 .su-backface-hidden{backface-visibility:hidden}
 .su-break-words{word-break:break-word}
@@ -3687,8 +3690,6 @@ Subscribe to Stanford Report Marketo form styles
 .hover\:su-underline:hover{text-decoration-line:underline}
 .hover\:su-shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}
 .focus\:su-border-digital-blue:focus{--tw-border-opacity:1;border-color:rgb(0 108 184 / var(--tw-border-opacity))}
-.focus\:su-border-digital-blue-vivid:focus{--tw-border-opacity:1;border-color:rgb(5 151 255 / var(--tw-border-opacity))}
-.focus\:su-border-b-digital-blue:focus{--tw-border-opacity:1;border-bottom-color:rgb(0 108 184 / var(--tw-border-opacity))}
 .focus\:su-bg-black:focus{--tw-bg-opacity:1;background-color:rgb(46 45 41 / var(--tw-bg-opacity))}
 .focus\:su-bg-digital-red:focus{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity))}
 .focus\:su-text-digital-red:focus{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
@@ -3717,8 +3718,10 @@ Subscribe to Stanford Report Marketo form styles
 .aria-pressed\:su-text-white[aria-pressed="true"]{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .su-group\/front[aria-hidden="true"] .group-aria-hidden\/front\:su-opacity-0{opacity:0}
 .hocus\:su-border-black:hover{--tw-border-opacity:1;border-color:rgb(46 45 41 / var(--tw-border-opacity))}
+.hocus\:su-border-digital-blue-vivid:hover{--tw-border-opacity:1;border-color:rgb(5 151 255 / var(--tw-border-opacity))}
 .hocus\:su-border-digital-green-bright:hover{--tw-border-opacity:1;border-color:rgb(0 155 118 / var(--tw-border-opacity))}
 .hocus\:su-border-digital-red:hover{--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity))}
+.hocus\:su-border-b-digital-blue:hover{--tw-border-opacity:1;border-bottom-color:rgb(0 108 184 / var(--tw-border-opacity))}
 .hocus\:su-bg-black:hover{--tw-bg-opacity:1;background-color:rgb(46 45 41 / var(--tw-bg-opacity))}
 .hocus\:su-bg-digital-green-bright:hover{--tw-bg-opacity:1;background-color:rgb(0 155 118 / var(--tw-bg-opacity))}
 .hocus\:su-bg-digital-red:hover{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity))}
@@ -3727,8 +3730,10 @@ Subscribe to Stanford Report Marketo form styles
 .hocus\:su-underline:hover{text-decoration-line:underline}
 .hocus\:su-no-underline:hover{text-decoration-line:none}
 .hocus\:su-border-black:focus{--tw-border-opacity:1;border-color:rgb(46 45 41 / var(--tw-border-opacity))}
+.hocus\:su-border-digital-blue-vivid:focus{--tw-border-opacity:1;border-color:rgb(5 151 255 / var(--tw-border-opacity))}
 .hocus\:su-border-digital-green-bright:focus{--tw-border-opacity:1;border-color:rgb(0 155 118 / var(--tw-border-opacity))}
 .hocus\:su-border-digital-red:focus{--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity))}
+.hocus\:su-border-b-digital-blue:focus{--tw-border-opacity:1;border-bottom-color:rgb(0 108 184 / var(--tw-border-opacity))}
 .hocus\:su-bg-black:focus{--tw-bg-opacity:1;background-color:rgb(46 45 41 / var(--tw-bg-opacity))}
 .hocus\:su-bg-digital-green-bright:focus{--tw-bg-opacity:1;background-color:rgb(0 155 118 / var(--tw-bg-opacity))}
 .hocus\:su-bg-digital-red:focus{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity))}
@@ -3827,20 +3832,22 @@ Subscribe to Stanford Report Marketo form styles
 :is(.su-dark .dark\:hover\:su-text-dark-mode-red:hover){--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
 :is(.su-dark .dark\:hover\:su-text-white:hover){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 :is(.su-dark .hover\:dark\:su-text-dark-mode-red):hover{--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
-:is(.su-dark .dark\:focus\:su-border-digital-blue-light\/80:focus){border-color:rgb(133 204 255 / 0.8)}
 :is(.su-dark .dark\:focus\:su-border-digital-blue-vivid:focus){--tw-border-opacity:1;border-color:rgb(5 151 255 / var(--tw-border-opacity))}
-:is(.su-dark .dark\:focus\:su-border-b-digital-blue-light:focus){--tw-border-opacity:1;border-bottom-color:rgb(133 204 255 / var(--tw-border-opacity))}
 :is(.su-dark .dark\:focus\:su-ring-digital-blue-vivid\/60:focus){--tw-ring-color:rgb(5 151 255 / 0.6)}
 :is(.su-dark .su-peer\/dark:checked ~ .dark\:peer-checked\/dark\:su-text-palo-verde){--tw-text-opacity:1;color:rgb(39 153 137 / var(--tw-text-opacity))}
 :is(.su-dark .dark\:aria-pressed\:su-bg-transparent[aria-pressed="true"]){background-color:transparent}
 :is(.su-dark .aria-pressed\:dark\:su-text-white)[aria-pressed="true"]{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 :is(.su-dark .dark\:aria-pressed\:su-text-black-true[aria-pressed="true"]){--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}
 :is(.su-dark .dark\:aria-pressed\:su-text-white[aria-pressed="true"]){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
+:is(.su-dark .dark\:hocus\:su-border-digital-blue-light\/80:hover){border-color:rgb(133 204 255 / 0.8)}
+:is(.su-dark .dark\:hocus\:su-border-b-digital-blue-light:hover){--tw-border-opacity:1;border-bottom-color:rgb(133 204 255 / var(--tw-border-opacity))}
 :is(.su-dark .dark\:hocus\:su-bg-dark-mode-red:hover){--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
 :is(.su-dark .dark\:hocus\:su-text-dark-mode-red:hover){--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
 :is(.su-dark .dark\:hocus\:su-text-white:hover){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 :is(.su-dark .dark\:hocus\:su-ring-1:hover){--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}
 :is(.su-dark .dark\:hocus\:su-ring-white:hover){--tw-ring-opacity:1;--tw-ring-color:rgb(255 255 255 / var(--tw-ring-opacity))}
+:is(.su-dark .dark\:hocus\:su-border-digital-blue-light\/80:focus){border-color:rgb(133 204 255 / 0.8)}
+:is(.su-dark .dark\:hocus\:su-border-b-digital-blue-light:focus){--tw-border-opacity:1;border-bottom-color:rgb(133 204 255 / var(--tw-border-opacity))}
 :is(.su-dark .dark\:hocus\:su-bg-dark-mode-red:focus){--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
 :is(.su-dark .dark\:hocus\:su-text-dark-mode-red:focus){--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
 :is(.su-dark .dark\:hocus\:su-text-white:focus){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
