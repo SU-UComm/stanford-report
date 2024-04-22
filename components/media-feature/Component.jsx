@@ -27,8 +27,6 @@ export default function MediaFeature({
 
   const thumbMap = new Map();
 
-  console.log(mediaType);
-
   thumbMap.set(
     "Book",
     "su-shadow-[0px_4px_7px_0px_rgba(0,0,0,0.15)] su-size-full su-object-scale-down su-object-center"
@@ -47,7 +45,9 @@ export default function MediaFeature({
             className={`${
               mediaType === "Podcast" &&
               "su-w-[224px] md:su-w-[182px] lg:su-w-[292px]"
-            } su-h-[224px] md:su-h-[182px] lg:su-h-[292px] su-relative su-shrink-0`}
+            } su-h-[224px] md:su-h-[182px] lg:su-h-[292px] su-relative su-shrink-0 ${
+              mediaType === "Book" && "media-feature__thumb"
+            }`}
           >
             <img
               // src="https://picsum.photos/600/250"
