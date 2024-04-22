@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import hash from "object-hash";
@@ -17,6 +17,7 @@ export function Carousel({
   isDark = false,
 }) {
   const swiperRef = useRef();
+  const [sliderInit, setSliderInit] = useState(false); // Flag slider initiated
   const hasSlides = slides.length > 0;
 
   const variants = new Map();
@@ -150,6 +151,33 @@ export function Carousel({
           },
         }}
         onSlideChange={(swiper) => {
+          /*
+           * Focus on first active slide
+           */
+
+          // Remove tabindex from old current
+          const oldSlide = swiper.$wrapperEl?.[0].querySelector(
+            ".swiper-slide-active"
+          );
+          if (oldSlide) {
+            oldSlide.removeAttribute("tabindex");
+          }
+
+          // Set focus on new current
+          if (sliderInit) {
+            setTimeout(() => {
+              const slide = swiper.$wrapperEl?.[0].querySelector(
+                ".swiper-slide-active"
+              );
+              slide.setAttribute("tabindex", "-1");
+              slide.focus();
+            }, 0);
+          }
+
+          // Flag to avoid focus on init
+          setSliderInit(true);
+          /***/
+
           // Prevent tab focus on out of view slides
           swiper.slides.forEach((slide) => {
             if (slide.classList.contains("swiper-slide-visible")) {
