@@ -17,19 +17,19 @@ import formatCardDataFunnelback from "../../packages/utils/formatCardDataFunnelb
  */
 
 function maybeUpdateSubnavLinks(cards, displayStyle) {
-  // Check if we need to update the hero topics
-  if (
-    displayStyle === "Leadership Messages" ||
-    displayStyle === "Announcements"
-  ) {
-    // update subnav listing
-    document.topicsChangeEvent = new CustomEvent("topicLoader", {
-      detail: {
-        cards,
-      },
-    });
-    document.dispatchEvent(document.topicsChangeEvent);
-  }
+  // // Check if we need to update the hero topics
+  // if (
+  //   displayStyle === "Leadership Messages" ||
+  //   displayStyle === "Announcements"
+  // ) {
+  //   // update subnav listing
+  //   document.topicsChangeEvent = new CustomEvent("topicLoader", {
+  //     detail: {
+  //       cards,
+  //     },
+  //   });
+  //   document.dispatchEvent(document.topicsChangeEvent);
+  // }
 }
 
 export default function TopicSubtopicListing({
