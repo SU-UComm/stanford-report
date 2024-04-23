@@ -2898,8 +2898,8 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
   transition: all 0.25s ease;
   pointer-events: none;
 }
-.report-header__menu-tray[aria-hidden="false"],
-.report-header__preferences-tray[aria-hidden="false"] {
+.report-header__menu-tray[aria-hidden="false"] .report-header__primary-nav,
+.report-header__preferences-tray[aria-hidden="false"] .report-header__preferences {
   height: 100dvh !important;
 }
 .report-header__primary-nav {
