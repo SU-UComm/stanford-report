@@ -145,7 +145,7 @@ export default function FeaturedMetadata({ data }) {
         ""
       )}
       {otherRows.length > 0 ? (
-        <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center su-mt-32 md:su-mt-61 md:su-flex-row md:su-gap-20 lg:su-gap-40">
+        <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center su-rs-mt-4 md:su-flex-row md:su-gap-20 lg:su-gap-40">
           <div
             aria-hidden="true"
             className="su-border-none su-w-70 su-h-2 su-bg-transparent md:su-w-auto su-grow md:su-h-3"
