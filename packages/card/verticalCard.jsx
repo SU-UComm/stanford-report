@@ -128,6 +128,7 @@ export default function VerticalCard({
   cardSize = "small",
   displayDescription = true,
   displayThumbnail = true,
+  headingLvl = 2,
 }) {
   const SVGMap = new Map();
   SVGMap.set("alert", <Alert />);
@@ -180,6 +181,7 @@ export default function VerticalCard({
 
   return (
     <article
+      aria-label={title}
       className="su-component-card su-relative su-w-full"
       data-testid="vertical-card"
     >
@@ -212,16 +214,30 @@ export default function VerticalCard({
       )}
 
       <div className={`su-flex su-flex-wrap ${gapSize(cardSize)}`}>
-        <h2
-          className={`su-w-full ${titleSize(cardSize)} su-font-serif su-my-0`}
-        >
-          <XssSafeContent
-            className="focus:su-outline-0 focus:before:su-ring hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
-            content={title}
-            href={liveUrl}
-            elementType="a"
-          />
-        </h2>
+        {headingLvl === 2 && (
+          <h2
+            className={`su-w-full ${titleSize(cardSize)} su-font-serif su-my-0`}
+          >
+            <XssSafeContent
+              className="focus:su-outline-0 focus:before:su-ring hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
+              content={title}
+              href={liveUrl}
+              elementType="a"
+            />
+          </h2>
+        )}
+        {headingLvl === 3 && (
+          <h3
+            className={`su-w-full ${titleSize(cardSize)} su-font-serif su-my-0`}
+          >
+            <XssSafeContent
+              className="focus:su-outline-0 focus:before:su-ring hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
+              content={title}
+              href={liveUrl}
+              elementType="a"
+            />
+          </h3>
+        )}
 
         {type && (
           <p

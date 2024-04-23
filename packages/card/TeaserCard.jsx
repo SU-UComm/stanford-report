@@ -12,7 +12,7 @@ export default function TeaserCard({ credit, data }) {
   } = data;
 
   return (
-    <article>
+    <article aria-label={title}>
       <a
         href={liveUrl}
         className="su-no-underline su-flex su-flex-col su-gap-11 md:su-gap-0"
@@ -24,7 +24,7 @@ export default function TeaserCard({ credit, data }) {
         <XssSafeContent
           className="su-font-bold su-leading-display su-text-24 su-m-0 md:su-pb-9"
           content={title}
-          elementType="h2"
+          elementType="h3"
         />
 
         <div className="su-flex su-flex-col su-text-16 su-text-black-70">

@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "interactive-photo-card",
-  "version": "0.0.4",
+  "version": "0.1.1",
   "namespace": "stanford-components",
   "description": "2 side by side cards with 1 being a photo and 1 being a fact with the ability to flip the card over for additional information.",
   "displayName": "Interactive Photo Card",
@@ -45,17 +45,10 @@
             "title": "Image Alignment",
             "type": "string",
             "default": "right",
-            "enum": [
-              "left",
-              "right"
-            ]
+            "enum": ["left", "right"]
           }
         },
-        "required": [
-          "title",
-          "content",
-          "image"
-        ]
+        "required": ["title", "content", "image"]
       },
       "output": {
         "responseType": "html",

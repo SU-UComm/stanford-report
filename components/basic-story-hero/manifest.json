@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "basic-story-hero",
-  "version": "0.0.19",
+  "version": "0.1.1",
   "namespace": "stanford-components",
   "description": "The basic story hero appears on basic story pages",
   "displayName": "Basic story hero",
@@ -30,13 +30,6 @@
             "file": {
               "type": "css",
               "filepath": "global.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "css",
-              "filepath": "client.css"
             }
           },
           {

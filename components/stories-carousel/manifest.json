@@ -1,12 +1,24 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "stories-carousel",
-  "version": "0.0.22",
+  "version": "0.1.1",
   "namespace": "stanford-components",
   "description": "Links to stories displayed as cards in a carousel.",
   "displayName": "Stories carousel",
   "mainFunction": "main",
   "environment": [
+    {
+      "name": "NEWS_ARCHIVE_PATH",
+      "required": true
+    },
+    {
+      "name": "BASE_PATH",
+      "required": true
+    },
+    {
+      "name": "BASE_DOMAIN",
+      "required": true
+    },
     {
       "name": "API_IDENTIFIER",
       "required": true
@@ -88,13 +100,6 @@
             "file": {
               "type": "css",
               "filepath": "global.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "css",
-              "filepath": "client.css"
             }
           },
           {

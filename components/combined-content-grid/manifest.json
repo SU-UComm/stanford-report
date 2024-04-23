@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "combined-content-grid",
-  "version": "0.0.19",
+  "version": "0.1.1",
   "namespace": "stanford-components",
   "description": "A featured content grid combined with announcements and events",
   "displayName": "Combined content grid",
@@ -340,6 +340,19 @@
           "inputData": {
             "type": "file",
             "path": "select.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "noHeading": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "noHeading.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"

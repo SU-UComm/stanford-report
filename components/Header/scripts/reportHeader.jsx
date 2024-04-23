@@ -88,7 +88,8 @@ export default class ReportHeader {
     if (clearButton.length) {
       clearButton.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-          const inputWrapper = btn.parentNode.querySelector(`.input-has-value`);
+          const inputWrapper =
+            btn.parentNode.parentNode.querySelector(`.input-has-value`);
 
           inputWrapper.classList.remove("input-has-value");
 

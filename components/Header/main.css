@@ -20,6 +20,10 @@
   border: none !important;
 }
 
+.report-header__menu-tray .tt-menu {
+  top: 50% !important;
+}
+
 @media screen and (min-width: 768px) {
   .report-header .tt-menu {
     padding-top: 27px;
@@ -291,7 +295,8 @@
 }
 
 .report-header input:required:valid + .report-header__clear,
-.report-header .input-has-value + .report-header__clear {
+.report-header .input-has-value + .report-header__clear,
+.report-header .input-has-value + .report-header__desktop-search-controls .report-header__clear {
   display: block;
 }
 

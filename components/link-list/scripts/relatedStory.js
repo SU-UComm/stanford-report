@@ -12,9 +12,9 @@ export default async function relatedStory(
     const fbUrl = `
       ${search.endpoint?.replace(/\.html/g, ".json")}
       ?profile=${search.profile}
-      &query=%21null
       &collection=${search.collection}
       &meta_taxonomyContentMainTopicText=${pageData.mainTopic}
+      &meta_taxonomyContentTypeId_not=28210&meta_taxonomyContentTypeId_not=28216&meta_taxonomyContentTypeId_not=28201
       &meta_taxonomyAudienceText=${translatePersonalisationProfile(
         personalisation
       )}&num_ranks=3

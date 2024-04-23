@@ -583,6 +583,20 @@ audio::-webkit-media-controls-panel {
 }
 
 /*
+* Section page summary
+*/
+.section-summary {
+  @apply su-mx-auto su-mt-[-3.4rem] md:su-mt-[-5.8rem] lg:su-mt-[-6.1rem] su-pt-11 md:su-pt-9 lg:su-pt-8 su-font-serif su-italic su-text-18 su-leading-[2.715rem] md:su-text-24 md:su-leading-[3.62rem] lg:su-text-28 lg:su-leading-[4.224rem] su-text-black-90 su-text-center !important;
+}
+
+.section-summary p {
+  @apply !su-leading-[2.715rem];
+}
+.su-dark .section-summary {
+  @apply !su-text-black-20;
+}
+
+/*
 * Main page wrapper
 */
 .su-page {
@@ -678,7 +692,7 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-page-has-sidebar .su-page-sidebar {
-  @apply su-flex su-flex-col md:su-flex-row lg:su-flex-col su-justify-between su-gap-32 md:su-gap-[8.4rem] lg:su-gap-95 lg:su-max-h-[230rem] su-mx-20 md:su-mx-50 lg:su-mx-0 md:su-px-[7.65%] lg:su-px-0 lg:su-ml-auto lg:su-w-1/4 lg:su-mr-[8.33%] su-w-full lg:su-max-w-[29.8rem] su-mt-38 md:su-mt-110 lg:su-mt-0;
+  @apply su-flex su-flex-col md:su-flex-row lg:su-flex-col su-justify-between su-gap-32 md:su-gap-[8.4rem] lg:su-gap-95 lg:su-max-h-[230rem] su-mx-20 md:su-mx-50 lg:su-mx-0 md:su-px-[7.65%] lg:su-px-0 lg:su-ml-auto lg:su-w-1/4 lg:su-mr-[8.33%] su-w-full lg:su-max-w-[29.8rem] su-mt-38 md:su-mt-110 lg:su-mt-0 su-mb-[10rem] md:su-mb-[16.2rem] lg:su-mb-0;
 }
 
 .su-page-story-featured .su-upper-content,
@@ -697,7 +711,8 @@ audio::-webkit-media-controls-panel {
   @apply su-w-full;
 }
 
-.su-container-large {
+.su-container-large,
+.section-summary {
   @apply su-w-full su-max-w-[118.6rem];
 }
 
@@ -713,7 +728,8 @@ audio::-webkit-media-controls-panel {
   @apply su-w-full su-max-w-none;
 }
 
-.su-container-px {
+.su-container-px,
+.section-summary {
   @apply su-px-20 md:su-px-50;
 }
 
@@ -1064,4 +1080,36 @@ Single image/video component
 */
 .su-page-story-basic .su-play-button-icon svg {
   @apply su-w-[40px] su-h-[40px] su-left-[20px] su-bottom-[20px] md:su-w-[60px] md:su-h-[60px] md:su-left-[26px] md:su-bottom-[26px];
+}
+
+/*
+Light/Dark mode toggle WCAG
+*/
+#dark-theme:focus + label,
+#light-theme:focus + label {
+  outline: 2px solid #006cb8;
+}
+
+/*
+Skiplink
+*/
+.skiplink {
+  position: relative;
+  z-index: 500;
+  background: #2e2d29;
+  padding: 1rem;
+  font-size: 14px;
+  text-decoration: none;
+  left: 1rem;
+  top: 1rem;
+  border-radius: 1rem;
+  color: #fff !important;
+  transition: all 0.5s ease;
+  transform: translateY(-150%);
+  display: inline-block;
+  opacity: 0;
+}
+.skiplink:focus {
+  transform: translateY(0%);
+  opacity: 1;
 }

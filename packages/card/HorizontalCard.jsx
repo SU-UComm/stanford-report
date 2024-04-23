@@ -33,7 +33,7 @@ import {
 import EventStartEndDate from "./EventStartEndDate";
 
 /**
- * Adds a serif font family to the <h2> node
+ * Adds a serif font family to the <h3> node
  *
  * @param {string} size
  * The card size, either "large" or "small"
@@ -163,6 +163,7 @@ export default function HorizontalCard({
 
   return (
     <article
+      aria-label={title}
       className={`listing-item su-flex ${cardGap.get(cardSize)}`}
       data-testid="horizontal-card"
     >
@@ -206,7 +207,7 @@ export default function HorizontalCard({
           </p>
         )}
 
-        <h2
+        <h3
           className={`${cardTitleFont(cardSize)} ${titleSize.get(
             cardSize
           )} ${cardTitleFont(cardSize)} su-font-sans su-my-0`}
@@ -217,7 +218,7 @@ export default function HorizontalCard({
             href={liveUrl}
             elementType="a"
           />
-        </h2>
+        </h3>
 
         {/* only small cards will have the date */}
         {cardSize === "small" && (

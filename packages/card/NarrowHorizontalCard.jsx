@@ -65,6 +65,7 @@ export default function NarrowHorizontalCard({
 
   return (
     <article
+      aria-label={title}
       className="su-grid su-grid-gap su-grid-cols-6 lg:su-grid-cols-10"
       data-testid="narrow-horizontal-card"
     >
@@ -84,7 +85,7 @@ export default function NarrowHorizontalCard({
               className="su-relative su-text-16 su-leading-[2.3rem] lg:su-text-18 su-z-10 su-mb-0 su-font-semibold" // size
             >
               <XssSafeContent
-                className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
+                className="focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red hocus:su-underline"
                 content={taxonomyFeaturedUnitText}
                 href={taxonomyFeaturedUnitLandingPageUrl || undefined}
                 elementType={taxonomyFeaturedUnitLandingPageUrl ? "a" : "span"}
@@ -92,7 +93,7 @@ export default function NarrowHorizontalCard({
             </p>
           )}
 
-        <h2 className="su-font-serif su-basefont-23 su-my-0">
+        <h3 className="su-font-serif su-basefont-23 su-my-0">
           <a
             className="su-group hocus:su-text-digital-red hocus:su-underline su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
             href={liveUrl}
@@ -106,7 +107,7 @@ export default function NarrowHorizontalCard({
               </span>
             )}
           </a>
-        </h2>
+        </h3>
 
         {description && (
           <div
