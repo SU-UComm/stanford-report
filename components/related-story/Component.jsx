@@ -28,7 +28,10 @@ export default function RelatedStory({ data, contentConfiguration }) {
           color="black"
         />
 
-        <a className="su-text-black su-no-underline" href={liveUrl}>
+        <a
+          className="su-text-black hocus:su-text-black su-no-underline su-group"
+          href={liveUrl}
+        >
           <div className="su-flex su-gap-20 sm:su-gap-40 su-mt-30 lg:su-mt-36 lg:su-mt-38">
             <img
               className="su-object-cover su-h-auto su-max-h-[103px] su-max-w-[103px] md:su-max-h-[168px] md:su-max-w-[168px] lg:su-max-h-[185px] lg:su-max-w-[185px] su-object-center"
@@ -37,7 +40,7 @@ export default function RelatedStory({ data, contentConfiguration }) {
             />
 
             <div className="">
-              <h4 className="su-text-20 dark:su-text-white sm:su-text-24 su-font-serif !su-font-bold su-leading-display su-mb-9">
+              <h4 className="su-transition group-hocus:su-underline group-hocus:su-text-digital-red dark:group-hocus:su-text-dark-mode-red su-text-20 dark:su-text-white sm:su-text-24 su-font-serif !su-font-bold su-leading-display su-mb-9">
                 {title}
               </h4>
 
