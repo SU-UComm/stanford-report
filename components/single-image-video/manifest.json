@@ -43,6 +43,11 @@
           "video": {
             "required": [],
             "properties": {
+              "heading": {
+                "title": "Accessible video heading",
+                "description": "This is not displayed visually, but is used for accessibility in the format: 'Watch [heading]'",
+                "type": "string"
+              },
               "vimeoid": {
                 "title": "Vimeo video ID",
                 "description": "Provide the Vimeo autoplay video id here, this is the muted looped video that appears in the component.",

@@ -10,6 +10,7 @@ export default function CardThumbnail({
   aspectRatio,
   videoUrl,
   size = "small",
+  title = "",
 }) {
   const videoPlayClasses = new Map();
   videoPlayClasses.set(
@@ -65,7 +66,7 @@ export default function CardThumbnail({
           title="Modal"
           onClose={handleCloseModal}
         >
-          <EmbedVideo videoId={videoUrl} />
+          <EmbedVideo videoId={videoUrl} title={`Watch ${title}`} />
         </Modal>
       )}
     </>
