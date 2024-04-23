@@ -11,6 +11,10 @@
   display: block !important;
 }
 
+.twitter-typeahead input[type="search"][readonly] {
+  display: none;
+}
+
 .report-header .tt-menu {
   padding-top: 42px;
   padding-left: 15px;
@@ -133,8 +137,8 @@
   pointer-events: none;
 }
 
-.report-header__menu-tray[aria-hidden="false"],
-.report-header__preferences-tray[aria-hidden="false"] {
+.report-header__menu-tray[aria-hidden="false"] .report-header__primary-nav,
+.report-header__preferences-tray[aria-hidden="false"] .report-header__preferences {
   height: 100dvh !important;
 }
 
