@@ -177,11 +177,13 @@ export default function VerticalCard({
     <BookOpenCover className="su-text-black-70 su-w-[1.2em]" aria-hidden />
   );
 
-  const cardThumb =
-    imageUrl ||
-    `${
+  let cardThumb = imageUrl;
+
+  if (!cardThumb && liveUrl) {
+    cardThumb = `${
       liveUrl.match(/https:\/\/.*?\//)[0]
     }__data/assets/image/0015/130443/Quad-Arch-Close.png`;
+  }
 
   return (
     <article
