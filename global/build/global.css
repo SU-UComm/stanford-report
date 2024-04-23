@@ -610,8 +610,8 @@ h6{font-family:"Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roma
 .su-dark .report-header .input-has-value input[type="search"] {
   box-shadow: 0 0 38px 0 rgba(46, 45, 41, 1);
 }
-.report-header input[type="search"]::placeholder{--tw-text-opacity:1;color:rgb(192 192 191 / var(--tw-text-opacity))}
-:is(.su-dark .report-header input[type="search"])::placeholder{--tw-text-opacity:1;color:rgb(151 150 148 / var(--tw-text-opacity))}
+.report-header input[type="search"]::placeholder{--tw-text-opacity:1;color:rgb(118 118 116 / var(--tw-text-opacity))}
+:is(.su-dark .report-header input[type="search"])::placeholder{--tw-text-opacity:1;color:rgb(213 213 212 / var(--tw-text-opacity))}
 .report-header .tt-menu {
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
 }
@@ -1449,9 +1449,14 @@ WYSIWYG formatting styles
 .su-page-content > *:not([data-component], .container, .site-search) h4 + h5:not(:first-child),
 .su-page-content > *:not([data-component], .container, .site-search) h5 + h6:not(:first-child){margin-top:1em}
 /* STANFORD-819 */
-.su-page-content p a:focus {
-  text-decoration: none;
-}
+.su-wysiwyg-content a:hover,
+.su-page-content > span a:hover,
+.container > span a:hover,
+.su-page-content > *:not([data-component], .container, .site-search) a:hover{text-decoration-line:none}
+.su-wysiwyg-content a:focus,
+.su-page-content > span a:focus,
+.container > span a:focus,
+.su-page-content > *:not([data-component], .container, .site-search) a:focus{text-decoration-line:none}
 /* Set specfic spacing for paragraphs */
 [data-component="text-callout"] .su-wysiwyg-content p{margin-bottom:2rem}
 @media (min-width: 768px){
@@ -2892,6 +2897,10 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
   opacity: 0;
   transition: all 0.25s ease;
   pointer-events: none;
+}
+.report-header__menu-tray[aria-hidden="false"],
+.report-header__preferences-tray[aria-hidden="false"] {
+  height: 100dvh !important;
 }
 .report-header__primary-nav {
   transform: translateX(-100%);

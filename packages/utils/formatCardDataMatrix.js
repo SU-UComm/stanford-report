@@ -27,7 +27,7 @@ function dataStringChecker(str) {
  */
 export default function formatCardDataMatrix(props) {
   const { attributes, metadata, url } = props;
-  const title = attributes.name;
+  const title = attributes.short_name || attributes.name;
   const liveUrl = url;
   const description = dataChecker(metadata.teaser);
   const imageUrl = dataChecker(metadata.featuredImage)?.url;

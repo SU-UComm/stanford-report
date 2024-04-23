@@ -87,6 +87,7 @@ export default function MediaFeature({
           // src="https://picsum.photos/1300/"
           src={bgImageData.url}
           className="su-absolute su-size-full su-object-cover su-left-0 su-top-0 su-z-[1]"
+          alt=""
         />
       </section>
     </Container>
