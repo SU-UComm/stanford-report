@@ -1748,6 +1748,9 @@ Skiplink
 
   .su-single-featured-content div > p{font-size:2.1rem;line-height:125%}
 }
+_::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
+  width: auto !important;
+}
 @media (min-width: 992px){
 [data-component="media-carousel"] .su-component-container .component-slider{margin-left:auto;margin-right:auto}}
 [data-component="media-carousel"] .swiper-slide-visible .su-media-card-thumb{transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
@@ -2104,6 +2107,7 @@ Skiplink
 .\!su-absolute{position:absolute !important}
 .su-absolute{position:absolute}
 .su-relative{position:relative}
+.su--bottom-1{bottom:-0.1rem}
 .su--left-80{left:-8rem}
 .su-bottom-0{bottom:0}
 .su-bottom-13{bottom:1.3rem}
@@ -2628,6 +2632,7 @@ Skiplink
 .su-to-digital-red-dark{--tw-gradient-to:#820000 var(--tw-gradient-to-position)}
 .su-to-digital-red-light{--tw-gradient-to:#E50808 var(--tw-gradient-to-position)}
 .su-to-olive{--tw-gradient-to:#8F993E var(--tw-gradient-to-position)}
+.su-to-plum{--tw-gradient-to:#620059 var(--tw-gradient-to-position)}
 .su-to-50\%{--tw-gradient-to-position:50%}
 .su-bg-cover{background-size:cover}
 .su-bg-center{background-position:center}
