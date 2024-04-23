@@ -2984,6 +2984,9 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
   width: 100%;
   display: block !important;
 }
+.twitter-typeahead input[type="search"][readonly] {
+  display: none;
+}
 .report-header .tt-menu {
   padding-top: 42px;
   padding-left: 15px;
