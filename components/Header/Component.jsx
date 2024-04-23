@@ -125,7 +125,6 @@ export default function Header({ site, navigation, search }) {
                   className="su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
                   aria-controls="menu"
                   aria-expanded="false"
-                  aria-labelledby="toggle-menu"
                   type="button"
                 >
                   <span className="su-relative su-size-32">
