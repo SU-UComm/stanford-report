@@ -39,10 +39,12 @@ export default function formatCardDataFunnelback({
 
   const imageUrl = image;
   // eslint-disable-next-line no-param-reassign
-  imageAlt =
-    image && imageAlt
-      ? imageAlt
-      : "a close up image of an intricate stone arch";
+  imageAlt = image && imageAlt ? imageAlt : "";
+
+  if (!imageAlt && !imageUrl) {
+    imageAlt = "a close up image of an intricate stone arch";
+  }
+
   const videoUrl = featuredVideo;
 
   const description = teaserPlain || summary;
