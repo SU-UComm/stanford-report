@@ -177,7 +177,11 @@ export default function VerticalCard({
     <BookOpenCover className="su-text-black-70 su-w-[1.2em]" aria-hidden />
   );
 
-  const cardThumb = imageUrl || "https://sug-web.matrix.squiz.cloud/?a=130443";
+  const cardThumb =
+    imageUrl ||
+    `${
+      liveUrl.match(/https:\/\/.*?\//)[0]
+    }__data/assets/image/0015/130443/Quad-Arch-Close.png`;
 
   return (
     <article
