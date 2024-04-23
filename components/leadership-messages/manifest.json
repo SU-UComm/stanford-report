@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "leadership-messages",
-  "version": "0.1.1",
+  "name": "development-leadership-messages",
+  "version": "0.0.4",
   "namespace": "stanford-components",
   "description": "Links to leadership messages displayed in a grid.",
   "displayName": "Leadership messages",
@@ -64,7 +64,9 @@
             "title": "Grid Content",
             "description": "The cards to display in the grid area of the component.",
             "type": "object",
-            "required": ["searchQuery"],
+            "required": [
+              "searchQuery"
+            ],
             "properties": {
               "searchQuery": {
                 "type": "string",

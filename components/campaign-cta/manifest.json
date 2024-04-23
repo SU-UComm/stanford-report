@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "campaign-cta",
-  "version": "0.1.1",
+  "name": "development-campaign-cta",
+  "version": "0.0.6",
   "namespace": "stanford-components",
   "description": "This component serves as a preview & to promote campaign pages.",
   "displayName": "Campaign CTA",
@@ -24,7 +24,9 @@
           "displayConfiguration": {
             "title": "Campaign CTA configuration",
             "description": "These options will output to the frontend of the Campaign CTA component",
-            "required": ["image"],
+            "required": [
+              "image"
+            ],
             "properties": {
               "image": {
                 "title": "Background image",

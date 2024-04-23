@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "subscribe-to-stanford-report",
-  "version": "0.1.1",
+  "name": "development-subscribe-to-stanford-report",
+  "version": "0.0.5",
   "namespace": "stanford-components",
   "description": "Allows users to be able to subscribe to Stanford Report newsletters",
   "displayName": "Subscribe to Stanford Report",

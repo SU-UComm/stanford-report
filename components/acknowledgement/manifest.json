@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "acknowledgement",
-  "version": "0.1.1",
+  "name": "development-acknowledgement",
+  "version": "1.4.0",
   "namespace": "stanford-components",
   "description": "A basic WYSIWYG to place an acknowledgement.",
   "displayName": "Acknowledgement",
@@ -31,7 +31,10 @@
             "type": "FormattedText"
           }
         },
-        "required": ["content", "title"]
+        "required": [
+          "content",
+          "title"
+        ]
       },
       "output": {
         "responseType": "html",

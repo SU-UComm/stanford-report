@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "image-gallery-modal",
-  "version": "0.1.1",
+  "name": "development-image-gallery-modal",
+  "version": "0.0.4",
   "namespace": "stanford-components",
   "description": "An image gallery that opens in a modal.",
   "displayName": "Image gallery with modal",
@@ -33,7 +33,10 @@
               "layout": {
                 "title": "Layout",
                 "type": "string",
-                "enum": ["Title & Content", "Content Only"],
+                "enum": [
+                  "Title & Content",
+                  "Content Only"
+                ],
                 "default": "Title & Content"
               },
               "caption": {
@@ -54,7 +57,9 @@
                 "maxItems": 10,
                 "items": {
                   "type": "object",
-                  "required": ["image"],
+                  "required": [
+                    "image"
+                  ],
                   "properties": {
                     "image": {
                       "title": "Image asset",
@@ -107,14 +112,20 @@
               },
               "backgroundColor": {
                 "title": "Background Color",
-                "enum": ["Grey", "Transparent"],
+                "enum": [
+                  "Grey",
+                  "Transparent"
+                ],
                 "type": "string",
                 "default": "Grey"
               },
               "width": {
                 "title": "Width",
                 "type": "string",
-                "enum": ["Wide", "Content"],
+                "enum": [
+                  "Wide",
+                  "Content"
+                ],
                 "default": "Wide"
               }
             }
