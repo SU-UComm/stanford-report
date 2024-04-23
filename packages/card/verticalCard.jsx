@@ -179,7 +179,7 @@ export default function VerticalCard({
 
   let cardThumb = imageUrl;
 
-  if (!cardThumb && liveUrl) {
+  if (!cardThumb && liveUrl && !(liveUrl instanceof Array)) {
     cardThumb = `${
       liveUrl.match(/https:\/\/.*?\//)[0]
     }__data/assets/image/0015/130443/Quad-Arch-Close.png`;
