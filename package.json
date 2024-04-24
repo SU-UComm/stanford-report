@@ -66,6 +66,7 @@
     "ally.js": "^1.4.1",
     "chokidar": "^3.6.0",
     "cnbuilder": "^3.1.0",
+    "dotenv": "^16.4.5",
     "focus-trap": "^7.5.4",
     "html-entities": "^2.4.0",
     "object-hash": "^3.0.0",
