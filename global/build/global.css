@@ -2053,7 +2053,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\!su-absolute{position:absolute !important}
 .su-absolute{position:absolute}
 .su-relative{position:relative}
-.su--bottom-1{bottom:-0.1rem}
 .su--left-80{left:-8rem}
 .su-bottom-0{bottom:0}
 .su-bottom-13{bottom:1.3rem}
@@ -2578,7 +2577,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-to-digital-red-dark{--tw-gradient-to:#820000 var(--tw-gradient-to-position)}
 .su-to-digital-red-light{--tw-gradient-to:#E50808 var(--tw-gradient-to-position)}
 .su-to-olive{--tw-gradient-to:#8F993E var(--tw-gradient-to-position)}
-.su-to-plum{--tw-gradient-to:#620059 var(--tw-gradient-to-position)}
 .su-to-50\%{--tw-gradient-to-position:50%}
 .su-bg-cover{background-size:cover}
 .su-bg-center{background-position:center}
