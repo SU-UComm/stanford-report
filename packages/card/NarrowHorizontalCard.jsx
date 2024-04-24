@@ -27,6 +27,7 @@ export default function NarrowHorizontalCard({
     title,
     description,
     liveUrl,
+    imageUrl,
     date,
     authorAvatar,
     authorDisplayName,
@@ -37,6 +38,10 @@ export default function NarrowHorizontalCard({
     storySource,
   },
 }) {
+  imageUrl = imageUrl instanceof Array ? imageUrl[0] : imageUrl;
+
+  const avatar = authorAvatar || imageUrl;
+
   const authorDate = (
     <time className="su-text-black-70 dark:su-text-black-60 su-font-semibold">
       {authorDisplayName ? (
@@ -126,12 +131,12 @@ export default function NarrowHorizontalCard({
         {displayConfiguration === "Leadership Messages" && (
           <div
             className={`su-flex su-w-full su-min-h-[56px] su-self-end lg:su-self-start su-items-center su-gap-10 ${
-              authorAvatar ? "su-ml-[-3px] su-mb-[-3px]" : ""
+              avatar ? "su-ml-[-3px] su-mb-[-3px]" : ""
             } su-text-black dark:su-text-white su-text-16 su-leading-[19.106px]`}
           >
-            {authorAvatar && (
+            {avatar && (
               <Avatar
-                image={authorAvatar}
+                image={avatar}
                 avatarSize="small"
                 alt={`Photo of ${authorDisplayName}`}
               />
