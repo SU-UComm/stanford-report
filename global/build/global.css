@@ -2978,12 +2978,14 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
     cursor: pointer;
   }
 }
-.report-header .tt-suggestion:hover {
+.report-header .tt-suggestion:hover,
+.twitter-typeahead .tt-cursor {
   background-color: transparent;
   color: #b1040e;
   text-decoration: underline;
 }
-.su-dark .report-header .tt-suggestion:hover {
+.su-dark .report-header .tt-suggestion:hover,
+.su-dark .twitter-typeahead .tt-cursor {
   color: #ec0909;
 }
 .report-header .report-header__search-tray .tt-menu {

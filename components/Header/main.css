@@ -70,13 +70,15 @@
   }
 }
 
-.report-header .tt-suggestion:hover {
+.report-header .tt-suggestion:hover,
+.twitter-typeahead .tt-cursor {
   background-color: transparent;
   color: #b1040e;
   text-decoration: underline;
 }
 
-.su-dark .report-header .tt-suggestion:hover {
+.su-dark .report-header .tt-suggestion:hover,
+.su-dark .twitter-typeahead .tt-cursor {
   color: #ec0909;
 }
 
