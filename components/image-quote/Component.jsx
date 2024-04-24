@@ -56,7 +56,7 @@ export default function ImageQuote({ displayConfiguration, data }) {
           <img
             src={data.url}
             className="su-z-10 su-w-full su-h-auto su-object-center su-object-cover"
-            alt=""
+            alt={data.attributes.alt}
           />
           <figcaption className="dark:su-text-white su-text-14 su-font-normal su-mt-8 md:su-text-16">
             {captionCredit}

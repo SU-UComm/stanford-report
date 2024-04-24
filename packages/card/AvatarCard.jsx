@@ -24,8 +24,12 @@ import { Avatar } from "../quotes/Avatar";
  */
 
 export default function AvatarCard({
-  data: { title, liveUrl, authorDisplayName, authorAvatar },
+  data: { title, liveUrl, imageUrl, authorDisplayName, authorAvatar },
 }) {
+  imageUrl = imageUrl instanceof Array ? imageUrl[0] : imageUrl;
+
+  const avatar = authorAvatar || imageUrl;
+
   return title ? (
     <article
       aria-label={title}
@@ -46,9 +50,9 @@ export default function AvatarCard({
             authorAvatar ? "su-ml-[-3px] su-mb-[-3px]" : ""
           } su-text-black dark:su-text-white su-text-16 su-leading-[19.106px]`}
         >
-          {authorAvatar && (
+          {avatar && (
             <Avatar
-              image={authorAvatar}
+              image={avatar}
               avatarSize="small"
               alt={`Photo of ${authorDisplayName}`}
             />
