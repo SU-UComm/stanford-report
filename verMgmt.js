@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable consistent-return */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-nested-ternary */
@@ -10,6 +11,7 @@ import { glob } from "glob";
 import { readFileSync, writeFileSync } from "node:fs";
 import { exec } from "child_process";
 import path from "path";
+import config from "./verMgmt.config.js";
 
 /**
  * Get data about components from manifest.json
@@ -25,7 +27,7 @@ import path from "path";
  */
 const getDataObject = () => {
   return glob
-    .sync("components/*/manifest.json")
+    .sync(config.manifestGlob)
     .map((manifestPath) => {
       const sortingTs = fs.statSync(manifestPath).mtime.getTime();
       const lastModified = new Date(sortingTs).toLocaleString();
@@ -328,9 +330,10 @@ const promptAndExecuteCommand = async (components) => {
   try {
     const answers = await inquirer.prompt([
       {
-        type: "input",
+        type: "list",
         name: "command",
-        message: "Enter the command to execute (e.g., ls):",
+        message: "Pick the command to execute:",
+        choices: config.customCommands,
       },
     ]);
 
