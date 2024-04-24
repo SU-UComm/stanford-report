@@ -7,7 +7,11 @@ import { decode } from "html-entities";
  * @constructor
  */
 
-export default function CurrentStoryHeadline({ title = null, story = null }) {
+export default function CurrentStoryHeadline({
+  title = null,
+  story = null,
+  contentType = null,
+}) {
   return (
     (title || story) && (
       // <div className="report-header__story su-z-40 su-hidden md:su-flex su-flex-grow su-items-center">
@@ -25,7 +29,7 @@ export default function CurrentStoryHeadline({ title = null, story = null }) {
           // <div className="report-header__next su-text-12 lg:su-text-14 su-font-bold su-border-l-2 su-border-black-10 dark:su-border-black su-pl-13 lg:su-pl-27 su-ml-13 lg:su-ml-38 su-min-w-160 xl:su-min-w-[35.9rem] su-max-w-160 lg:su-max-w-[35.9rem] su-opacity-0">
           <div className="report-header__next su-text-12 lg:su-text-14 su-font-bold su-border-l-2 su-border-black-10 dark:su-border-black su-pl-13 lg:su-pl-27 su-ml-13 lg:su-ml-38 su-min-w-160 md:su-mb-[3px] xl:su-min-w-[35.9rem] su-max-w-160 lg:su-max-w-[35.9rem] lg:su-mb-[4px] su-opacity-0">
             <h2 className="su-m-0 su-text-digital-red dark:su-text-dark-mode-red su-font-sans su-text-12 lg:su-text-14">
-              Read next:
+              {contentType === "Video" ? "Watch next:" : "Read next:"}
             </h2>
             <p className="su-m-0 su-text-inherit">
               <a
