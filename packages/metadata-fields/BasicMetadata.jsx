@@ -44,7 +44,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="!su-m-0 su-text-21 su-leading-[1.25]"
+                    className="!su-m-0 su-text-21 su-leading-[125%]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -64,7 +64,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="!su-m-0 su-text-21 su-leading-[1.25]"
+                    className="!su-m-0 su-text-21 su-leading-[125%]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -84,7 +84,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="!su-m-0 su-text-21 su-leading-[1.25]"
+                    className="!su-m-0 su-text-21 su-leading-[125%]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -104,7 +104,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="!su-m-0 su-text-21 su-leading-[1.25]"
+                    className="!su-m-0 su-text-21 su-leading-[125%]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -126,7 +126,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="!su-m-0 su-text-21 su-leading-[1.25]"
+                    className="!su-m-0 su-text-21 su-leading-[125%]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -148,7 +148,7 @@ export default function BasicMetadata({ data }) {
               (item) =>
                 item && (
                   <p
-                    className="!su-m-0 su-text-21 su-leading-[1.25]"
+                    className="!su-m-0 su-text-21 su-leading-[125%]"
                     key={item.asset_assetid}
                   >
                     {item.asset_name}
@@ -175,7 +175,7 @@ export default function BasicMetadata({ data }) {
                           <br />
                           <a
                             href={`mailto:${item.asset_metadata_personEmail}`}
-                            className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18 su-leading-[26.25px]"
+                            className="su-no-underline su-leading-[125%] hocus:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hocus:su-text-dark-mode-red hocus:su-text-digital-red su-text-18 su-leading-[26.25px]"
                           >
                             {item.asset_metadata_personEmail}
                           </a>
@@ -190,13 +190,14 @@ export default function BasicMetadata({ data }) {
         ""
       )}
 
+      {/* TODO: there are 2 leading classes here - do we actually want 125% or 26.25px? Same for line 222 */}
       {campus &&
       !["undefined", undefined, null, ""].includes(campus.asset_assetid) ? (
         <div className="su-border-t border-t-black-20">
           <BasicFields title="Campus unit">
             <a
               href={campus.asset_url}
-              className="su-no-underline su-leading-[22.5px] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18 su-leading-[26.25px]"
+              className="su-no-underline su-leading-[125%] hocus:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hocus:su-text-dark-mode-red hocus:su-text-digital-red su-text-18 su-leading-[26.25px]"
             >
               {campus.asset_name}
             </a>
@@ -218,7 +219,7 @@ export default function BasicMetadata({ data }) {
                   <div className="" key={item.asset_assetid}>
                     <a
                       href={item.asset_url}
-                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18 su-leading-[26.25px]"
+                      className="su-no-underline su-leading-[125%] hocus:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hocus:su-text-dark-mode-red hocus:su-text-digital-red su-text-18 su-leading-[26.25px]"
                     >
                       {item.asset_name}
                     </a>
