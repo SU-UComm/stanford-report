@@ -1,4 +1,5 @@
 import { updateManifestFiles,fetchData } from "./operations.js";
+import versionData from "./versionData.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -17,7 +18,7 @@ dotenv.config();
   
 
   // fetch the latest version data
-  const versionData = await fetchData(VERSION_API, REQUEST_PROPS);
+  // const versionData = await fetchData(VERSION_API, REQUEST_PROPS);
   // now find our manifest files and update them
 
   // Components directory
