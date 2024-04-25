@@ -21,11 +21,19 @@ dotenv.config();
   // const versionData = await fetchData(VERSION_API, REQUEST_PROPS);
   // now find our manifest files and update them
 
-  // Components directory
-  const manifestDir = '/components';
-  
-  const updatedManifests = await updateManifestFiles(manifestDir, versionData);
+  const config = {
+    "componentsDirectory": "components",
+    "latestData": versionData.data,
+    "reporting": true,
+    "forcedVersioning": false,
+    "forcedVersion": "0.2.1",
+    "applyPrefix": false,
+    "prefix": "development-",
+    "runUpdate": false,
+  }
 
+ 
+  const updatedManifests = await updateManifestFiles(config);
   console.log(updatedManifests);
 
 

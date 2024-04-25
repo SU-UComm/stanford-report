@@ -1,4 +1,4 @@
-module.exports = {
+const versionData = {
   "description": "Latest component versions for su-cs-global and su-cs component sets.",
   "data": [
     {
@@ -190,4 +190,6 @@ module.exports = {
       "latest": "0.1.0"
     }
   ]
-}
+};
+
+export default versionData;
