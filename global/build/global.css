@@ -2860,7 +2860,6 @@ Subscribe to Stanford Report Marketo form styles
 .su-leading-\[19\.106px\]{line-height:19.106px}
 .su-leading-\[19\.11px\]{line-height:19.11px}
 .su-leading-\[19\.1px\]{line-height:19.1px}
-.su-leading-\[2\.16rem\]{line-height:2.16rem}
 .su-leading-\[2\.25rem\]{line-height:2.25rem}
 .su-leading-\[2\.3rem\]{line-height:2.3rem}
 .su-leading-\[2\.4rem\]{line-height:2.4rem}
@@ -3617,7 +3616,6 @@ Subscribe to Stanford Report Marketo form styles
 .before\:su--mt-30::before{content:var(--tw-content);margin-top:-3rem}
 .before\:su-mr-6::before{content:var(--tw-content);margin-right:0.6rem}
 .before\:su-block::before{content:var(--tw-content);display:block}
-.before\:su-size-full::before{content:var(--tw-content);width:100%;height:100%}
 .before\:su-h-15::before{content:var(--tw-content);height:1.5rem}
 .before\:su-h-2::before{content:var(--tw-content);height:0.2rem}
 .before\:su-h-4::before{content:var(--tw-content);height:0.4rem}
@@ -4463,7 +4461,6 @@ Subscribe to Stanford Report Marketo form styles
 @media (min-width: 768px){
 .md\:\[\&\>p\]\:\!su-text-19>p{font-size:1.9rem !important}}
 .\[\&\>svg\]\:su-mt-3>svg{margin-top:0.3rem}
-.\[\&\>svg\]\:su-size-16>svg{width:1.6rem;height:1.6rem}
 .\[\&\>svg\]\:su-h-40>svg{height:4rem}
 .\[\&\>svg\]\:su-h-43>svg{height:4.3rem}
 .\[\&\>svg\]\:su-w-40>svg{width:4rem}
