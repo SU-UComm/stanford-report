@@ -4,9 +4,20 @@ import dotenv from "dotenv";
 dotenv.config();
 
 (async () => {
+  const config = {
+    "componentsDirectory": "components",
+    "latestData": versionData.data,
+    "reporting": true,
+    "forcedVersioning": false,
+    "forcedVersion": "0.1.0",
+    "applyPrefix": true,
+    "prefix": "development-",
+    "runUpdate": true,
+  }
+
   const VERSION_API = "https://sug-web.matrix.squiz.cloud/_designs/component-service/reporting/prod-sets";
-//  https://sug-web.matrix.squiz.cloud/_designs/component-service/reporting/squiz-release-set/_nocache
-// https://sug-web.matrix.squiz.cloud/_designs/component-service/reporting/prod-sets/_nocache
+  //  https://sug-web.matrix.squiz.cloud/_designs/component-service/reporting/squiz-release-set/_nocache
+  // https://sug-web.matrix.squiz.cloud/_designs/component-service/reporting/prod-sets/_nocache
 
   const REQUEST_PROPS = {
     method: "GET",
@@ -15,26 +26,11 @@ dotenv.config();
       'Content-Type': 'application/json'
     }
   }
-  
-
   // fetch the latest version data
-  // const versionData = await fetchData(VERSION_API, REQUEST_PROPS);
-  // now find our manifest files and update them
+  // const externalVersionData = await fetchData(VERSION_API, REQUEST_PROPS);
+  // console.log(externalVersionData);
 
-  const config = {
-    "componentsDirectory": "components",
-    "latestData": versionData.data,
-    "reporting": true,
-    "forcedVersioning": false,
-    "forcedVersion": "0.2.1",
-    "applyPrefix": false,
-    "prefix": "development-",
-    "runUpdate": false,
-  }
 
- 
   const updatedManifests = await updateManifestFiles(config);
-  console.log(updatedManifests);
-
 
 })();
