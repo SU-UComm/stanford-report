@@ -1,6 +1,7 @@
 /** Source Sans 3, Source Serif 4, Roboto Slab, Roboto Mono (regular only) */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab:wght@300;400;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap");
-
+@import "swiper/swiper.min.css";
+@import "swiper/modules/pagination/pagination.min.css";
 @font-face {
   font-family: "Stanford";
   src: url("https://www-media.stanford.edu/assets/fonts/stanford.woff")
@@ -877,6 +878,11 @@ WYSIWYG formatting styles
   @apply su-wysiwyg;
 }
 
+/* STANFORD-819 */
+.su-page-content p a:focus {
+  text-decoration: none;
+}
+
 /* Set specfic spacing for paragraphs */
 [data-component="text-callout"] .su-wysiwyg-content p {
   @apply su-mb-20 md:su-mb-26 xl:su-mb-27;
@@ -1057,5 +1063,77 @@ WYSIWYG formatting styles
 Single image/video component
 */
 .su-page-story-basic .su-play-button-icon svg {
-  @apply su-w-[40px] su-h-[40px] su-left-[20px] su-bottom-[20px] md:su-w-[60px] md:su-h-[60px] md:su-left-[26px] md:su-bottom-[26px];
+  @apply su-size-40 su-left-20 su-bottom-20 md:su-size-60 md:su-left-26 md:su-bottom-26;
+}
+
+/*
+Subscribe to Stanford Report Marketo form styles
+*/
+
+.marketo-sr-subscribe-form.mktoForm * {
+  @apply su-font-sans su-text-20;
+}
+
+.marketo-sr-subscribe-form.mktoForm .mktoFormRow {
+  @apply su-mb-50;
+}
+
+.marketo-sr-subscribe-form.mktoForm .mktoLabel {
+  @apply su-pb-2 su-font-semibold su-float-none su-text-18;
+}
+
+.marketo-sr-subscribe-form.mktoForm input.mktoField {
+  @apply su-input su-p-10 su-max-w-550 su-w-full;
+}
+
+.marketo-sr-subscribe-form.mktoForm input[type="text"],
+.marketo-sr-subscribe-form.mktoForm input[type="email"],
+.marketo-sr-subscribe-form.mktoForm textarea {
+  @apply su-border-black-20 dark:su-border-black-60 dark:su-bg-black-90 dark:su-text-white su-mt-6 su-rounded su-border su-border-b-2 su-border-b-black-70 dark:su-border-b-black-30 su-px-16 su-py-12 hocus:su-border-digital-blue-vivid hocus:su-border-b-digital-blue dark:hocus:su-border-digital-blue-light/80 dark:hocus:su-border-b-digital-blue-light focus:su-ring-4 focus:su-ring-digital-blue-vivid/20 dark:focus:su-ring-digital-blue-vivid/60 su-transition-colors;
+}
+
+/* Checkbox styles */
+.marketo-sr-subscribe-form.mktoForm .mktoCheckboxList {
+  @apply su-grid su-grid-cols-[auto_1fr] su-gap-x-14 su-gap-y-24 su-mt-20 su-p-0;
+}
+
+.marketo-sr-subscribe-form.mktoForm .mktoCheckboxList label {
+  @apply su-text-18 su-mt-01em su-leading-display su-cursor-pointer peer-hover:su-underline;
+}
+
+.marketo-sr-subscribe-form.mktoForm input[type="checkbox"] {
+  @apply su-w-auto su-text-digital-blue su-cursor-pointer hocus:su-ring-digital-blue-light/40 dark:hocus:su-ring-digital-blue-vivid/60 hocus:su-ring-4 su-border-black-50 dark:su-border-black-30 dark:hocus:su-border-digital-blue-light dark:su-bg-black-90 dark:checked:su-bg-digital-blue su-border-2 su-rounded hocus:su-border-digital-blue checked:su-border-digital-blue-light dark:checked:su-border-digital-blue-light focus:su-ring-offset-0 focus:su-outline-none checked:hocus:su-bg-digital-blue-dark dark:checked:hocus:su-bg-digital-blue-vivid;
+}
+
+/* Marketo puts the asterisk before the label text(?) so
+// we use flexbox to switch the order and put the asterisk
+// after the label text.*/
+.marketo-sr-subscribe-form.mktoForm .mktoLabel {
+  @apply su-flex su-flex-row-reverse su-justify-end;
+}
+
+/* Make required asterisk red and give it a little margin.*/
+.marketo-sr-subscribe-form.mktoForm .mktoAsterix {
+  @apply su-text-digital-red-light dark:su-text-dark-mode-red;
+  margin-inline-start: 0.2rem;
+}
+
+/* Error messages */
+.marketo-sr-subscribe-form.mktoForm .mktoErrorMsg, 
+.marketo-sr-subscribe-form.mktoForm .mktoErrorDetail {
+  @apply su-text-digital-red-light dark:su-text-dark-mode-red su-text-16 su-mt-8;
+}
+
+/* This shift the error message up so when it's displayed, so it doesn't cause the input field to shift position */
+.marketo-sr-subscribe-form.mktoForm .mktoError {
+  @apply su--mb-26;
+}
+
+/* Add more margin above the submit button at the bottom.*/
+.marketo-sr-subscribe-form.mktoForm .mktoButtonRow {
+  @apply su-rs-mt-3;
+}
+
+.marketo-sr-subscribe-form.mktoForm .mktoButton {
+  @apply su-button hocus:su-underline su-leading-display md:su-px-30 md:su-pt-12 md:su-pb-14 su-text-18 md:su-text-20 su-transition-colors dark:hocus:su-ring-1 dark:hocus:su-ring-white;
 }

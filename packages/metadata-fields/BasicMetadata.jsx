@@ -190,6 +190,7 @@ export default function BasicMetadata({ data }) {
         ""
       )}
 
+      {/* TODO: there are 2 leading classes here - do we actually want 125% or 26.25px? Same for line 222 */}
       {campus &&
       !["undefined", undefined, null, ""].includes(campus.asset_assetid) ? (
         <div className="su-border-t border-t-black-20">
