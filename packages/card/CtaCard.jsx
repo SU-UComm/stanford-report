@@ -66,7 +66,9 @@ export default function CtaCard({
           >
             {eyebrow && <span className="su-sr-only">{`${eyebrow}:`}</span>}
             {title}
-            <span className="su-sr-only">(link is external)</span>
+            {isRealExternalLink && (
+              <span className="su-sr-only">(link is external)</span>
+            )}
           </a>
         ) : (
           <>
