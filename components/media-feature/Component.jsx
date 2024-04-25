@@ -50,7 +50,8 @@ export default function MediaFeature({
               >
                 {title}
                 <span className="su-hidden lg:su-inline-block su-relative su-top-12 group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform">
-                  <ExternalArrow size="large" title="link is external" />
+                  <ExternalArrow aria-hidden size="large" />
+                  <span className="su-sr-only">(link is external)</span>
                 </span>
               </a>
             </h3>
