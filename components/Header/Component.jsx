@@ -196,7 +196,7 @@ export default function Header({ site, navigation, search }) {
               />
 
               {/* {pageControls?.isStory && ( */}
-              {isClient && pageControls?.isStory && (
+              {isClient && relatedStory && (
                 <CurrentStoryHeadline
                   title={pageControls?.title}
                   story={relatedStory}
