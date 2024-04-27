@@ -12,7 +12,7 @@ dotenv.config();
     "forcedVersion": "1.0.0",
     "applyPrefix": false,
     "prefix": "development-",
-    "runUpdate": false,
+    "runUpdate": true,
   }
 
   const VERSION_API = "https://sug-web.matrix.squiz.cloud/_designs/component-service/reporting/prod-sets";

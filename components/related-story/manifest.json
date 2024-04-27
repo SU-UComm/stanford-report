@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "related-story",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "namespace": "stanford-components",
   "description": "Displays a related story on a featured story",
   "displayName": "Related story",
@@ -35,7 +35,9 @@
             "title": "Related story content",
             "description": "Select an asset ID to be featured as a related story.",
             "type": "object",
-            "required": ["story"],
+            "required": [
+              "story"
+            ],
             "properties": {
               "story": {
                 "title": "Related story",
