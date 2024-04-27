@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 
-// import specific templates for the component
-import { Container } from "../../packages/grids/Container";
-import { LinkedHeading } from "../../packages/headings/Heading";
-
 /**
  * Base component
  *
@@ -13,6 +9,8 @@ import { LinkedHeading } from "../../packages/headings/Heading";
  * @returns {JSX.Element}
  * @constructor
  */
+
+// TODO: The h2 "Subscribe to Stanford Report" might be better as a label for the email input field instead
 
 export default function SubscribeToStanfordReport({ contentConfiguration }) {
   const { actionLink, title, summary } = contentConfiguration;
@@ -35,7 +33,7 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
     if (!email || !email.match(/\w+@\w+\.\w+/)) {
       setSubscriptionError(
         () =>
-          `<span class="su-block su-text-16 su-font-normal su-text-digital-red">Please enter a valid email address.</span>`
+          `<span id="subscription-error" class="su-block su-text-16 su-font-normal su-text-digital-red-light">Please enter a valid email address.</span>`
       );
 
       return;
@@ -53,27 +51,28 @@ export default function SubscribeToStanfordReport({ contentConfiguration }) {
       onSubmit={submitSubscription}
       method="POST"
     >
-      <h2 className="su-m-0 su-font-bold su-text-18 su-leading-[2.16rem] dark:su-text-white su-font-sans">
+      <h2 className="su-m-0 su-font-bold su-text-18 su-leading-display dark:su-text-white su-font-sans">
         {title}
       </h2>
 
-      <p className="su-m-0 su-font-normal su-text-16 su-leading-[1.25] dark:su-text-white">
+      <p className="su-m-0 su-text-16 su-leading-[125%] dark:su-text-white">
         {summary}
       </p>
 
       <input
         type="email"
-        name="subsciption-email"
+        name="subscription-email"
         placeholder="Email address"
         title="Subscription Email"
         aria-label="Subscription Email"
-        className="su-rounded su-p-12 su-text-16 su-leading-[1.25] su-text-black placeholder:su-text-black su-font-normal su-border-black-20 su-border su-border-b-black-70 su-border-b-2  dark:su-bg-black-90 dark:su-text-white dark:placeholder:su-text-white"
+        aria-describedby={subscriptionError ? "subscription-error" : undefined}
+        className="su-rounded su-p-12 su-text-16 su-leading-[125%] su-text-black placeholder:su-text-black su-font-normal su-border su-border-b-2 su-border-black-20 su-border-b-black-70 dark:su-border-black-60 dark:su-border-b-black-30 hocus:su-border-digital-blue-vivid hocus:su-border-b-digital-blue dark:hocus:su-border-digital-blue-light/80 dark:hocus:su-border-b-digital-blue-light focus:su-ring-4 focus:su-ring-digital-blue-vivid/20 dark:focus:su-ring-digital-blue-vivid/60 dark:su-bg-black-90 dark:su-text-white dark:placeholder:su-text-white"
         onKeyUp={emailInputEvent}
       />
 
       <button
         type="submit"
-        className="su-mr-auto su-text-white su-bg-digital-red su-text-16 su-font-normal su-px-22 su-pt-9 su-pb-11 hover:su-bg-black su-transition"
+        className="su-mr-auto su-text-white su-bg-digital-red su-text-16 su-font-normal su-px-22 su-pt-9 su-pb-11 hocus:su-bg-black dark:hocus:su-ring-1 dark:hocus:su-ring-white hocus:su-underline su-transition"
       >
         Sign up
       </button>
