@@ -42,6 +42,7 @@ export default function formatCardDataFunnelback({
   imageAlt = image && imageAlt ? imageAlt : "";
 
   if (!imageAlt && !imageUrl) {
+    // eslint-disable-next-line no-param-reassign
     imageAlt = "a close up image of an intricate stone arch";
   }
 
