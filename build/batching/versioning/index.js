@@ -8,11 +8,11 @@ dotenv.config();
     "componentsDirectory": "components",
     "latestData": versionData.data,
     "reporting": true,
-    "forcedVersioning": false,
-    "forcedVersion": "0.1.0",
-    "applyPrefix": true,
+    "forcedVersioning": true,
+    "forcedVersion": "1.0.0",
+    "applyPrefix": false,
     "prefix": "development-",
-    "runUpdate": true,
+    "runUpdate": false,
   }
 
   const VERSION_API = "https://sug-web.matrix.squiz.cloud/_designs/component-service/reporting/prod-sets";
