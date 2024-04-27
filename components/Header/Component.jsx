@@ -36,7 +36,7 @@ export default function Header({ site, navigation, search }) {
   // has the user given consent?
   const [displayConsentBanner, setDisplayConsentBanner] = useState(false);
   // if any, what audience value is set
-  const [audience, setAudience] = useState(null);
+  const [audience, setAudience] = useState("external");
   // page specific data
   const [pageControls, setPageControls] = useState(null);
   // related story display
