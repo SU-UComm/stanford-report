@@ -67,6 +67,9 @@ export default function CtaCard({
           >
             {eyebrow && <span className="su-sr-only">{`${eyebrow}:`}</span>}
             {title}
+            {isRealExternalLink && (
+              <span className="su-sr-only">(link is external)</span>
+            )}
           </a>
         ) : (
           <>
@@ -96,7 +99,7 @@ export default function CtaCard({
           >
             {isRealExternalLink ? (
               <ExternalArrowUnstyled
-                title="link is external"
+                aria-hidden
                 strokeWidth={3}
                 className="su-inline-block su-w-20 md:su-w-30 su-text-white dark:su-text-black-true *:su-stroke-3"
               />

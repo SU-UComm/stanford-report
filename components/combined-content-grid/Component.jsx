@@ -7,7 +7,10 @@ import { LinkedHeading } from "../../packages/headings/Heading";
 import { FeaturedGrid, HorizontalCardGrid } from "../../packages/grids/Grids";
 import { Container } from "../../packages/grids/Container";
 import { SidebarList } from "../../packages/sidebar/SidebarList";
-import { ChevronRight } from "../../packages/SVG-library/SVG";
+import {
+  ChevronRight,
+  ExternalArrowUnstyled,
+} from "../../packages/SVG-library/SVG";
 
 /**
  * Featured content component
@@ -58,12 +61,24 @@ export default function FeaturedContent({
         <a
           href={card.liveUrl}
           aria-labelledby={`aria-announcement-${i}`}
-          className="su-group su-transition dark:su-text-digital-blue-vivid su-text-digital-blue su-flex su-flex-nowrap su-gap-2 su-items-center su-leading-[125%] su-text-16 su-font-semibold su-no-underline before:su-size-full before:su-top-0 before:su-left-0 before:su-absolute [&>svg]:su-size-16"
+          className="su-group su-transition dark:su-text-digital-blue-vivid su-text-digital-blue su-flex su-flex-nowrap su-gap-02em su-items-center su-leading-[125%] su-text-16 su-font-semibold su-no-underline su-stretched-link"
         >
           <span className="group-hocus:su-underline">Read more</span>
-          <span className="su-transition group-hocus:su-translate-x-01em">
-            <ChevronRight />
-          </span>
+          {!!card.liveUrl && !card.liveUrl.includes("news.stanford.edu") ? (
+            <>
+              <span className="su-sr-only">(link is external)</span>
+              <ExternalArrowUnstyled
+                aria-hidden
+                strokeWidth={3.5}
+                className="su-transition su-will-change-transform group-hocus:su-translate-x-02em group-hocus:su--translate-y-02em su-w-08em su-text-digital-blue group-hocus:su-text-digital-red dark:su-text-digital-blue-vivid dark:group-hocus:su-text-dark-mode-red su-mt-0"
+              />
+            </>
+          ) : (
+            <ChevronRight
+              aria-hidden
+              className="su-fill-transparent su-stroke-current su-transition group-hocus:su-translate-x-01em"
+            />
+          )}
         </a>
       </article>
     );
