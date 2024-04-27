@@ -1916,7 +1916,6 @@ Subscribe to Stanford Report Marketo form styles
 }
 .su-bg-gradient-light-red-h-reverse{background-image:linear-gradient(to left, var(--tw-gradient-stops));--tw-gradient-from:#820000 var(--tw-gradient-from-position);--tw-gradient-to:rgb(130 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to);--tw-gradient-to:#E50808 var(--tw-gradient-to-position)}
 :is(.su-dark .su-bg-gradient-light-red-h-reverse){background-image:linear-gradient(to top left, var(--tw-gradient-stops));--tw-gradient-from:#279989 var(--tw-gradient-from-position);--tw-gradient-to:rgb(39 153 137 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to);--tw-gradient-to:rgb(39 153 137 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #279989 var(--tw-gradient-via-position), var(--tw-gradient-to);--tw-gradient-to:#8F993E var(--tw-gradient-to-position)}
-.su-input{display:block;border-color:#D5D5D4;color:#2E2D29;font-size:1.8rem;line-height:1.3}
 .su-button{font-family:"Source Sans 3", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;cursor:pointer;display:inline-block;border:none;font-weight:400;line-height:1;text-align:center;text-decoration:none;width:auto;transition:background-color 0.25s ease-in-out, color 0.25s ease-in-out;padding:1rem 2rem;background-color:#B1040E;color:#fff;}
 .su-button:active, .su-button:hover, .su-button:focus{text-decoration:underline}
 .su-button:hover, .su-button:focus{background-color:#2E2D29;color:#fff}
@@ -2166,7 +2165,6 @@ Subscribe to Stanford Report Marketo form styles
 .su-right-48{right:4.8rem}
 .su-right-60{right:6rem}
 .su-right-70{right:7rem}
-.su-right-auto{right:auto}
 .su-top-0{top:0}
 .su-top-1{top:0.1rem}
 .su-top-1\/2{top:50%}
@@ -2226,7 +2224,6 @@ Subscribe to Stanford Report Marketo form styles
 .su-mx-\[-20px\]{margin-left:-20px;margin-right:-20px}
 .su-mx-auto{margin-left:auto;margin-right:auto}
 .su-my-0{margin-top:0;margin-bottom:0}
-.su-my-15{margin-top:1.5rem;margin-bottom:1.5rem}
 .su-my-20{margin-top:2rem;margin-bottom:2rem}
 .su-my-27{margin-top:2.7rem;margin-bottom:2.7rem}
 .su-my-38{margin-top:3.8rem;margin-bottom:3.8rem}
@@ -2235,10 +2232,14 @@ Subscribe to Stanford Report Marketo form styles
 .su-my-auto{margin-top:auto;margin-bottom:auto}
 .\!su-mb-0{margin-bottom:0 !important}
 .-su-mt-48{margin-top:-4.8rem}
+.su--mb-3{margin-bottom:-0.3rem}
 .su--ml-1em{margin-left:-1em}
+.su--ml-3{margin-left:-0.3rem}
 .su--ml-44{margin-left:-4.4rem}
 .su--ml-5{margin-left:-0.5rem}
+.su--mt-01em{margin-top:-0.1em}
 .su--mt-2{margin-top:-0.2rem}
+.su--mt-6{margin-top:-0.6rem}
 .su-mb-0{margin-bottom:0}
 .su-mb-10{margin-bottom:1rem}
 .su-mb-11{margin-bottom:1.1rem}
@@ -2257,6 +2258,7 @@ Subscribe to Stanford Report Marketo form styles
 .su-mb-36{margin-bottom:3.6rem}
 .su-mb-37{margin-bottom:3.7rem}
 .su-mb-38{margin-bottom:3.8rem}
+.su-mb-4{margin-bottom:0.4rem}
 .su-mb-41{margin-bottom:4.1rem}
 .su-mb-45{margin-bottom:4.5rem}
 .su-mb-5{margin-bottom:0.5rem}
@@ -2272,6 +2274,8 @@ Subscribe to Stanford Report Marketo form styles
 .su-mb-\[3\.2rem\]{margin-bottom:3.2rem}
 .su-mb-auto{margin-bottom:auto}
 .su-ml-0{margin-left:0}
+.su-ml-01em{margin-left:0.1em}
+.su-ml-02em{margin-left:0.2em}
 .su-ml-05em{margin-left:0.5em}
 .su-ml-1{margin-left:0.1rem}
 .su-ml-13{margin-left:1.3rem}
@@ -2364,6 +2368,7 @@ Subscribe to Stanford Report Marketo form styles
 .su-h-2{height:0.2rem}
 .su-h-20{height:2rem}
 .su-h-21{height:2.1rem}
+.su-h-23{height:2.3rem}
 .su-h-28{height:2.8rem}
 .su-h-3{height:0.3rem}
 .su-h-32{height:3.2rem}
@@ -2412,9 +2417,11 @@ Subscribe to Stanford Report Marketo form styles
 .su-max-h-\[103px\]{max-height:103px}
 .su-min-h-\[56px\]{min-height:56px}
 .su-w-08em{width:0.8em}
+.su-w-09em{width:0.9em}
 .su-w-1{width:0.1rem}
 .su-w-1\/2{width:50%}
 .su-w-100{width:10rem}
+.su-w-1em{width:1em}
 .su-w-2{width:0.2rem}
 .su-w-20{width:2rem}
 .su-w-22{width:2.2rem}
@@ -2466,7 +2473,6 @@ Subscribe to Stanford Report Marketo form styles
 .su-min-w-full{min-width:100%}
 .su-max-w-1500{max-width:150rem}
 .su-max-w-160{max-width:16rem}
-.su-max-w-550{max-width:55rem}
 .su-max-w-900{max-width:90rem}
 .su-max-w-\[1026px\]{max-width:1026px}
 .su-max-w-\[103px\]{max-width:103px}
@@ -2624,6 +2630,7 @@ Subscribe to Stanford Report Marketo form styles
 .su-border-black-20{--tw-border-opacity:1;border-color:rgb(213 213 212 / var(--tw-border-opacity))}
 .su-border-black-30{--tw-border-opacity:1;border-color:rgb(192 192 191 / var(--tw-border-opacity))}
 .su-border-black-30\/30{border-color:rgb(192 192 191 / 0.3)}
+.su-border-black-50{--tw-border-opacity:1;border-color:rgb(151 150 148 / var(--tw-border-opacity))}
 .su-border-digital-blue{--tw-border-opacity:1;border-color:rgb(0 108 184 / var(--tw-border-opacity))}
 .su-border-digital-blue-light{--tw-border-opacity:1;border-color:rgb(133 204 255 / var(--tw-border-opacity))}
 .su-border-digital-green-dark{--tw-border-opacity:1;border-color:rgb(0 111 84 / var(--tw-border-opacity))}
@@ -2670,6 +2677,7 @@ Subscribe to Stanford Report Marketo form styles
 .su-bg-cover{background-size:cover}
 .su-bg-center{background-position:center}
 .su-bg-repeat{background-repeat:repeat}
+.su-fill-current{fill:currentColor}
 .su-fill-none{fill:none}
 .su-fill-transparent{fill:transparent}
 .su-fill-white{fill:#fff}
@@ -2694,7 +2702,6 @@ Subscribe to Stanford Report Marketo form styles
 .su-p-7{padding:0.7rem}
 .su-p-9{padding:0.9rem}
 .su-px-0{padding-left:0;padding-right:0}
-.su-px-18{padding-left:1.8rem;padding-right:1.8rem}
 .su-px-20{padding-left:2rem;padding-right:2rem}
 .su-px-22{padding-left:2.2rem;padding-right:2.2rem}
 .su-px-29{padding-left:2.9rem;padding-right:2.9rem}
@@ -2718,6 +2725,7 @@ Subscribe to Stanford Report Marketo form styles
 .su-py-61{padding-top:6.1rem;padding-bottom:6.1rem}
 .su-py-72{padding-top:7.2rem;padding-bottom:7.2rem}
 .su-pb-0{padding-bottom:0}
+.su-pb-1{padding-bottom:0.1rem}
 .su-pb-108{padding-bottom:10.8rem}
 .su-pb-11{padding-bottom:1.1rem}
 .su-pb-12{padding-bottom:1.2rem}
@@ -2726,6 +2734,7 @@ Subscribe to Stanford Report Marketo form styles
 .su-pb-15{padding-bottom:1.5rem}
 .su-pb-16{padding-bottom:1.6rem}
 .su-pb-19{padding-bottom:1.9rem}
+.su-pb-2{padding-bottom:0.2rem}
 .su-pb-20{padding-bottom:2rem}
 .su-pb-22{padding-bottom:2.2rem}
 .su-pb-25{padding-bottom:2.5rem}
@@ -2794,7 +2803,6 @@ Subscribe to Stanford Report Marketo form styles
 .su-align-middle{vertical-align:middle}
 .su-font-sans{font-family:"Source Sans 3", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif}
 .su-font-serif{font-family:"Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif}
-.\!su-text-19{font-size:1.9rem !important}
 .\!su-text-23{font-size:2.3rem !important}
 .su-text-12{font-size:1.2rem}
 .su-text-14{font-size:1.4rem}
@@ -2852,7 +2860,6 @@ Subscribe to Stanford Report Marketo form styles
 .su-leading-\[19\.106px\]{line-height:19.106px}
 .su-leading-\[19\.11px\]{line-height:19.11px}
 .su-leading-\[19\.1px\]{line-height:19.1px}
-.su-leading-\[2\.16rem\]{line-height:2.16rem}
 .su-leading-\[2\.25rem\]{line-height:2.25rem}
 .su-leading-\[2\.3rem\]{line-height:2.3rem}
 .su-leading-\[2\.4rem\]{line-height:2.4rem}
@@ -2921,6 +2928,7 @@ Subscribe to Stanford Report Marketo form styles
 .su-shadow-black-60{--tw-shadow-color:#767674;--tw-shadow:var(--tw-shadow-colored)}
 .su-shadow-black-60\/50{--tw-shadow-color:rgb(118 118 116 / 0.5);--tw-shadow:var(--tw-shadow-colored)}
 .su-shadow-white{--tw-shadow-color:#fff;--tw-shadow:var(--tw-shadow-colored)}
+.su-ring-digital-blue-light{--tw-ring-opacity:1;--tw-ring-color:rgb(133 204 255 / var(--tw-ring-opacity))}
 .su-ring-digital-blue-vivid{--tw-ring-opacity:1;--tw-ring-color:rgb(5 151 255 / var(--tw-ring-opacity))}
 .su-drop-shadow-\[0px_14px_28px_rgba\(0\,0\,0\,0\.20\)\]{--tw-drop-shadow:drop-shadow(0px 14px 28px rgba(0,0,0,0.20));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}
 .su-transition{transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
@@ -2928,8 +2936,11 @@ Subscribe to Stanford Report Marketo form styles
 .su-transition-colors{transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 .su-transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 .su-transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
+.su-duration-100{transition-duration:100ms}
 .su-duration-1000{transition-duration:1000ms}
 .su-ease-in-out{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)}
+.su-will-change-auto{will-change:auto}
+.su-will-change-transform{will-change:transform}
 .su-backface-hidden{backface-visibility:hidden}
 .su-break-words{word-break:break-word}
 .su-text-shadow-title{text-shadow:0px 0px 30px var(--tw-shadow-color), 0px 0px 30px var(--tw-shadow-color)}
@@ -3605,7 +3616,6 @@ Subscribe to Stanford Report Marketo form styles
 .before\:su--mt-30::before{content:var(--tw-content);margin-top:-3rem}
 .before\:su-mr-6::before{content:var(--tw-content);margin-right:0.6rem}
 .before\:su-block::before{content:var(--tw-content);display:block}
-.before\:su-size-full::before{content:var(--tw-content);width:100%;height:100%}
 .before\:su-h-15::before{content:var(--tw-content);height:1.5rem}
 .before\:su-h-2::before{content:var(--tw-content);height:0.2rem}
 .before\:su-h-4::before{content:var(--tw-content);height:0.4rem}
@@ -3731,17 +3741,23 @@ Subscribe to Stanford Report Marketo form styles
 .hocus\:su-underline:focus{text-decoration-line:underline}
 .hocus\:su-no-underline:focus{text-decoration-line:none}
 .su-group:focus .group-hocus\:su--translate-y-01em{--tw-translate-y:-0.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+.su-group:focus .group-hocus\:su--translate-y-02em{--tw-translate-y:-0.2em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:focus .group-hocus\:su-translate-x-01em{--tw-translate-x:0.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+.su-group:focus .group-hocus\:su-translate-x-02em{--tw-translate-x:0.2em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:focus .group-hocus\:su-translate-x-\[\.1em\]{--tw-translate-x:.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:focus .group-hocus\:su-translate-x-\[1\.1em\]{--tw-translate-x:1.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:focus .group-hocus\:su-translate-y-\[-\.1em\]{--tw-translate-y:-.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+.su-group:focus .group-hocus\:su-text-digital-red{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
 .su-group:focus .group-hocus\:su-text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .su-group:focus .group-hocus\:su-underline{text-decoration-line:underline}
 .su-group:hover .group-hocus\:su--translate-y-01em{--tw-translate-y:-0.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+.su-group:hover .group-hocus\:su--translate-y-02em{--tw-translate-y:-0.2em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:hover .group-hocus\:su-translate-x-01em{--tw-translate-x:0.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+.su-group:hover .group-hocus\:su-translate-x-02em{--tw-translate-x:0.2em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:hover .group-hocus\:su-translate-x-\[\.1em\]{--tw-translate-x:.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:hover .group-hocus\:su-translate-x-\[1\.1em\]{--tw-translate-x:1.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:hover .group-hocus\:su-translate-y-\[-\.1em\]{--tw-translate-y:-.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+.su-group:hover .group-hocus\:su-text-digital-red{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
 .su-group:hover .group-hocus\:su-text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .su-group:hover .group-hocus\:su-underline{text-decoration-line:underline}
 .su-group:focus-within .group-hocus-within\:su--translate-y-02em{--tw-translate-y:-0.2em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
@@ -3842,6 +3858,8 @@ Subscribe to Stanford Report Marketo form styles
 :is(.su-dark .dark\:hocus\:su-text-white:focus){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 :is(.su-dark .dark\:hocus\:su-ring-1:focus){--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}
 :is(.su-dark .dark\:hocus\:su-ring-white:focus){--tw-ring-opacity:1;--tw-ring-color:rgb(255 255 255 / var(--tw-ring-opacity))}
+:is(.su-dark .su-group:focus .dark\:group-hocus\:su-text-dark-mode-red){--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
+:is(.su-dark .su-group:hover .dark\:group-hocus\:su-text-dark-mode-red){--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
 :is(.su-dark .su-group:focus-within .dark\:group-hocus-within\:su-text-digital-red-light){--tw-text-opacity:1;color:rgb(229 8 8 / var(--tw-text-opacity))}
 :is(.su-dark .su-group:hover .dark\:group-hocus-within\:su-text-digital-red-light){--tw-text-opacity:1;color:rgb(229 8 8 / var(--tw-text-opacity))}
 @media (min-width: 576px){
@@ -4443,7 +4461,6 @@ Subscribe to Stanford Report Marketo form styles
 @media (min-width: 768px){
 .md\:\[\&\>p\]\:\!su-text-19>p{font-size:1.9rem !important}}
 .\[\&\>svg\]\:su-mt-3>svg{margin-top:0.3rem}
-.\[\&\>svg\]\:su-size-16>svg{width:1.6rem;height:1.6rem}
 .\[\&\>svg\]\:su-h-40>svg{height:4rem}
 .\[\&\>svg\]\:su-h-43>svg{height:4.3rem}
 .\[\&\>svg\]\:su-w-40>svg{width:4rem}
