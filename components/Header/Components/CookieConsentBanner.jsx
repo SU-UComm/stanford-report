@@ -34,7 +34,7 @@ export default function CookieConsentBanner({
           <button
             type="button"
             id="reject-cdp-cookie"
-            className="su-transition su-border su-border-digital-red su-bg-transparent su-text-digital-red hocus:su-text-white hocus:su-border-digital-red hocus:su-bg-digital-red su-py-10 md:su-py-15 su-px-30 su-leading-[20px]"
+            className="su-transition su-border su-border-digital-red su-bg-transparent su-text-digital-red hocus:su-text-white hocus:su-border-digital-red hocus:su-bg-digital-red su-py-10 md:su-py-15 su-px-30 su-leading-[20px] dark:su-text-dark-mode-red dark:su-border-dark-mode-red dark:hocus:su-bg-dark-mode-red dark:hocus:su-text-white"
             onClick={() => consentClickHandler(0)}
           >
             Decline

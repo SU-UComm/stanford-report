@@ -180,6 +180,7 @@ export default function MobileNav({ navigation, search, audience }) {
             method="get"
             role="search"
             className="su-mb-32 su--mx-18 md:su-hidden su-grow su-flex su-flex-wrap su-order-1 su-relative"
+            data-location="mobile-search:input:3"
           >
             <label className="sr-only" htmlFor="mobile_search_query">
               Search query
@@ -188,7 +189,7 @@ export default function MobileNav({ navigation, search, audience }) {
             <input type="hidden" value={profile} name="profile" />
             <input
               type="search"
-              className="su-w-full su-h-50 su-rounded-full su-mb-[3.2rem] dark:su-text-black su-text-20 su-leading-[2.6rem] su-py-10 su-pl-15 su-pr-120 su-border-2 su-border-black-30 dark:su-border-black-60 hover:su-border-black-40 dark:focus:su-border-digital-blue-vivid focus:su-border-digital-blue"
+              className="su-w-full su-h-50 su-rounded-full su-mb-[3.2rem] dark:su-text-black su-text-20 su-leading-[2.6rem] su-py-10 su-pl-15 su-pr-120 su-border-2 su-border-black-60 dark:su-border-black-20 hover:su-border-black-70 dark:focus:su-border-digital-blue-vivid focus:su-border-digital-blue"
               name="query"
               defaultValue=""
               placeholder="Search"
@@ -313,8 +314,16 @@ export default function MobileNav({ navigation, search, audience }) {
               Close
             </span>
           </button>
-
-          <span tabIndex="0" data-tp-to="main-nav:a:0" />
+          <span
+            tabIndex="0"
+            data-tp-to="mobile-search:input:3"
+            className="md:su-hidden"
+          />
+          <span
+            tabIndex="0"
+            data-tp-to="main-nav:a:0"
+            className="su-hidden md:su-inline"
+          />
         </div>
       </div>
     </nav>

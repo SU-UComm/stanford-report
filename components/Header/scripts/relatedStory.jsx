@@ -10,23 +10,23 @@ export default async function relatedStoryData(pageData = null, audience = "") {
     fbUrl = `${pageData.search.endpoint?.replace(
       "search.html",
       "search.json"
-    )}?profile=${pageData.search.profile}&query=%21null&collection=${
+    )}?profile=${pageData.search.profile}&collection=${
       pageData.search.collection
-    }&meta_taxonomyContentMainTopicText=${
-      pageData.mainTopic
+    }&meta_taxonomyContentMainTopicId=${
+      pageData.mainTopicId
     }&meta_taxonomyAudienceText=${translatePersonalisationProfile(
       audience
-    )}&num_ranks=1&meta_id_not=${pageData.id}`;
+    )}&meta_taxonomyContentTypeId_not=28210&meta_taxonomyContentTypeId_not=28216&meta_taxonomyContentTypeId_not=28201&sort=date&num_ranks=1&meta_id_not=${
+      pageData.id
+    }`;
 
     fallbackFbUrl = `${pageData.search.endpoint?.replace(
       "search.html",
       "search.json"
     )}?profile=${pageData.search.profile}&query=%21null&collection=${
       pageData.search.collection
-    }&meta_taxonomyContentTypeText_not=Leadership%20messages+News+Announcements
-    &num_ranks=1&meta_notisTeaser=true&sort=date&meta_id_not=${
-      pageData.search.currentPage
-    }`;
+    }&meta_taxonomyContentTypeId_not=28210&meta_taxonomyContentTypeId_not=28216&meta_taxonomyContentTypeId_not=28201
+    &num_ranks=1&sort=date&meta_id_not=${pageData.search.currentPage}`;
 
     if (pageData.search.contentType === "Video") {
       fallbackFbUrl += "&meta_taxonomyContentTypeText=Video";

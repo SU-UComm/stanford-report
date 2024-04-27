@@ -87,9 +87,11 @@ export default function basicStoryHero(props) {
                   video={media.featureVideo.id}
                   type={mediaType}
                   carousel={media.carousel}
+                  captions={media.captions}
+                  name={title}
                 />
               </div>
-              {mediaType !== "carousel" && (media.caption || media.credit) && (
+              {(media.caption || media.credit) && (
                 <figcaption className="su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white">
                   {media.caption} {media.caption && media.credit && ` | `}
                   {media.credit}
@@ -103,7 +105,7 @@ export default function basicStoryHero(props) {
   );
 }
 
-function Thumbnail({ url, alt, video, type, carousel }) {
+function Thumbnail({ url, alt, video, type, carousel, captions, name = "" }) {
   // state
   const slides = [];
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -128,7 +130,12 @@ function Thumbnail({ url, alt, video, type, carousel }) {
   }
 
   if (type === "carousel") {
-    carousel.forEach((slide) => {
+    carousel.forEach((slide, i) => {
+      const captionCredit =
+        captions[i].caption && captions[i].credit
+          ? `${captions[i].caption} | ${captions[i].credit}`
+          : captions[i].caption || captions[i].credit;
+
       slides.push(
         <>
           <div className="su-aspect-[3/2] su-relative">
@@ -138,9 +145,9 @@ function Thumbnail({ url, alt, video, type, carousel }) {
               className="su-absolute su-top-0 su-left-0 su-w-full su-h-full su-object-scale-down su-object-center"
             />
           </div>
-          {slide.asset_attribute_caption && (
+          {captionCredit && (
             <figcaption className="su-text-16 su-text-black su-mb-0 su-rs-mt-neg1 dark:su-text-white">
-              {slide.asset_attribute_caption}
+              {captionCredit}
             </figcaption>
           )}
         </>
@@ -172,7 +179,7 @@ function Thumbnail({ url, alt, video, type, carousel }) {
 
         {isModalOpen && (
           <Modal onClose={handleCloseModal}>
-            <EmbedVideo videoId={video} />
+            <EmbedVideo videoId={video} title={`Watch ${name}`} />
           </Modal>
         )}
       </>
@@ -182,6 +189,7 @@ function Thumbnail({ url, alt, video, type, carousel }) {
           className="su-absolute su-top-0 su-left-0 su-w-full su-h-full"
           videoId={video}
           noAutoPlay
+          title={`Watch ${name}`}
         />
       </div>
     );

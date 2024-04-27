@@ -66,7 +66,7 @@ export default function TextCallout({
         </div>
 
         {image && (
-          <div
+          <figure
             className={`su-order-${
               imagePlacement === "Above content"
                 ? "1 su-pb-20 md:su-pb-12 lg:su-pb-27"
@@ -75,14 +75,14 @@ export default function TextCallout({
           >
             <img
               src={imageData.url}
-              alt={imageData.attributes.alt}
+              alt={imageData.attributes.alt || ""}
               className="su-w-full"
             />
 
-            <p className="su-m-0 su-text-14 su-leading-[1.672rem] md:su-leading-[1.911rem] md:su-text-16 su-mt-8 md:su-mt-12">
+            <figcaption className="su-m-0 su-text-14 su-leading-[1.672rem] md:su-leading-[1.911rem] md:su-text-16 su-mt-8 md:su-mt-12">
               {captionCredit}
-            </p>
-          </div>
+            </figcaption>
+          </figure>
         )}
         {buttonText && (
           <LinkButton

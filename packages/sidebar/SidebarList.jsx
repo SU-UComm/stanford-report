@@ -33,6 +33,7 @@ export function SidebarList({
   ctaUrl,
   ctaText = "See all",
   ctaIcon = "chevronright",
+  headingLvl = "h2",
 }) {
   const iconMap = new Map();
   iconMap.set("chevronright", <ChevronRight />);
@@ -53,7 +54,9 @@ export function SidebarList({
         "su-component-sidebar-list su-flex su-flex-wrap su-gap-27",
       ].join(" ")}
     >
-      {title && <SidebarHeading title={title} icon={icon} />}
+      {title && (
+        <SidebarHeading title={title} icon={icon} headingSize={headingLvl} />
+      )}
       {children}
       {ctaUrl && (
         <a

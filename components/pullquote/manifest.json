@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "pullquote",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "namespace": "stanford-components",
   "description": "Displays a quote for a story page along with details of the quote",
   "displayName": "Pullquote",
@@ -57,7 +57,10 @@
               "width": {
                 "title": "Width",
                 "description": "The width of the pullquote, this option will only take effect on featured story pages, not basic story pages.",
-                "enum": ["Narrow", "Large"],
+                "enum": [
+                  "Narrow",
+                  "Large"
+                ],
                 "type": "string",
                 "default": "Narrow"
               }

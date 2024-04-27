@@ -1,0 +1,86 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "popular-stories",
+  "version": "0.0.1",
+  "namespace": "stanford-components",
+  "description": "Displays a list of popular stories.",
+  "displayName": "Popular Stories",
+  "mainFunction": "main",
+  "environment": [
+    {
+      "name": "FB_API_TOKEN",
+      "required": true
+    }
+  ],
+  "icon": {
+    "id": "trending_up",
+    "color": {
+      "type": "enum",
+      "value": "purple"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {
+        },
+        "required": []
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/basicstory.html"
+          }
+        }
+      }
+    }
+  }
+}
+

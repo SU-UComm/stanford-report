@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "subtopic-subnav-component",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "namespace": "stanford-components",
   "description": "Stanford university Subtopic Subnav component.",
   "displayName": "Subtopic Subnav",

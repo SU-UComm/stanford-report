@@ -11,7 +11,7 @@ import getCookie from "../../packages/utils/cookieGet";
  */
 
 export default function Footer({ site, navigation }) {
-  const [audience, setAudience] = useState(null);
+  const [audience, setAudience] = useState("external");
   const [isClient, setIsClient] = useState(false);
   const audienceCookie = getCookie("preferences_personalisation");
 
