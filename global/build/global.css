@@ -3301,6 +3301,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
   width: calc(100% - 340px);
   transition: all 0.25s ease;
   opacity: 0;
+  z-index: 0;
 }
 .report-header--story .report-header__story > * {
   /* transform: translateY(1rem); */
