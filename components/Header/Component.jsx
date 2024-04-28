@@ -9,6 +9,7 @@ import SiteLogo from "./Components/SiteLogo";
 import CurrentStoryHeadline from "./Components/currentStoryHeadline";
 import CookieConsentBanner from "./Components/CookieConsentBanner";
 
+import relatedStoryData from "./scripts/relatedStory";
 import cdpSetConsent from "../../packages/utils/cdpSetConsent";
 import cdpSetPersona from "../../packages/utils/cdpSetPersona";
 import setCookie from "../../packages/utils/cookieSet";
@@ -93,6 +94,18 @@ export default function Header({ site, navigation, search }) {
       setDisplayConsentBanner(
         typeof window.suHeaderProps?.consentData === "undefined"
       );
+
+      if (window.suHeaderProps?.pageData?.isStory) {
+        const fetchRelatedStoryData = async () => {
+          const fbStoryData = await relatedStoryData(
+            window.suHeaderProps.pageData,
+            window.suHeaderProps.audienceData
+          );
+          setRelatedStoryData(fbStoryData);
+        };
+        fetchRelatedStoryData();
+      }
+
       // This is legacy code, however, it works
       const headerDom = document.querySelector(".report-header");
       // eslint-disable-next-line no-unused-vars
