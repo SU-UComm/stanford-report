@@ -2378,7 +2378,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-h-90{height:9rem}
 .su-h-\[101\%\]{height:101%}
 .su-h-\[165px\]{height:165px}
-.su-h-\[186px\]{height:186px}
+.su-h-\[18\.6rem\]{height:18.6rem}
 .su-h-\[218px\]{height:218px}
 .su-h-\[224px\]{height:224px}
 .su-h-\[233px\]{height:233px}
@@ -2698,6 +2698,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-px-38{padding-left:3.8rem;padding-right:3.8rem}
 .su-px-44{padding-left:4.4rem;padding-right:4.4rem}
 .su-px-49{padding-left:4.9rem;padding-right:4.9rem}
+.su-px-5{padding-left:0.5rem;padding-right:0.5rem}
 .su-px-50{padding-left:5rem;padding-right:5rem}
 .su-px-65{padding-left:6.5rem;padding-right:6.5rem}
 .su-py-0{padding-top:0;padding-bottom:0}
@@ -3132,7 +3133,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
   transform: translateX(100%);
   transition: all 0.25s ease;
 }
-.report-header__pref-toggle{position:relative;height:186px;--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity));padding-top:2.6rem;padding-bottom:2.6rem;padding-left:2.9rem;padding-right:2.9rem;text-align:center;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
+.report-header__pref-toggle{position:relative;height:18.6rem;--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity));padding-top:2.6rem;padding-bottom:2.6rem;padding-left:0.5rem;padding-right:0.5rem;text-align:center;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 .report-header__pref-toggle::before{position:absolute;top:0;bottom:0;right:0;left:0;z-index:-10;margin:-0.2rem;content:var(--tw-content);transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 .report-header__pref-toggle::after{position:absolute;top:0;bottom:0;right:0;left:0;z-index:-10;content:var(--tw-content);transition-property:none}
 .report-header__pref-toggle:hover{background-color:transparent}
