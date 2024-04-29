@@ -53,6 +53,7 @@ export default function Pagination({
     const offsetNum = i * resultsPerPage + 1;
 
     // if (offsetNum >= backwardRangeNum && offsetNum <= forwardRangeNum) {
+
     if (i <= initialRange && currentPage <= initialRange * 0.5) {
       buttons.push(
         <PaginationButtons
