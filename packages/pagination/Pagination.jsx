@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import hash from "object-hash";
 import { Container } from "../grids/Container";
 import ChevronRight from "../SVG-library/ChevronRight";
 import ChevronLeft from "../SVG-library/ChevronLeft";
+
+function PaginationButtons({ offsetNum, pageNumber, index, onPaginate }) {
+  const activeClass = "su-bg-digital-red su-rounded-[100px] su-text-white";
+  const nonActiveClass = "su-text-black ";
+
+  return (
+    <button
+      data-offset={offsetNum}
+      className={`su-size-24 su-font-serif su-flex su-items-center su-justify-center su-text-18 dark:su-text-white ${
+        offsetNum === pageNumber ? activeClass : nonActiveClass
+      }`}
+      disabled={offsetNum === pageNumber}
+      type="button"
+      onClick={onPaginate}
+    >
+      {index + 1}
+    </button>
+  );
+}
 
 export default function Pagination({
   pageNumber,
@@ -12,36 +31,58 @@ export default function Pagination({
   onPageChange,
 }) {
   const pages = Math.ceil(allResults / resultsPerPage);
-  const forwardRangeNum = pageNumber + paginationRange * resultsPerPage;
-  const backwardRangeNum = pageNumber - paginationRange * resultsPerPage;
-  const activeClass = "su-bg-digital-red su-rounded-[100px] su-text-white";
-  const nonActiveClass = "su-text-black ";
+  // const forwardRangeNum = pageNumber + paginationRange * resultsPerPage;
+  // const backwardRangeNum = pageNumber - paginationRange * resultsPerPage;
+  const initialRange = paginationRange;
+  // const activeClass = "su-bg-digital-red su-rounded-[100px] su-text-white";
+  // const nonActiveClass = "su-text-black ";
+
+  const prevRange = pageNumber - 10 * (paginationRange * 0.5);
+  const nextRange = pageNumber + 10 * (paginationRange * 0.5);
+
   const prevPage = pageNumber - resultsPerPage;
   const nextPage = pageNumber + resultsPerPage;
   const finalPageClass = "su-text-black-50";
   const buttons = [];
   const offsets = [];
 
+  // state
+  const [currentPage, setCurrentPage] = useState(1);
+
   for (let i = 0; i < pages; i++) {
     const offsetNum = i * resultsPerPage + 1;
 
-    offsets.push(offsetNum);
-
-    if (offsetNum >= backwardRangeNum && offsetNum <= forwardRangeNum) {
+    // if (offsetNum >= backwardRangeNum && offsetNum <= forwardRangeNum) {
+    if (i <= initialRange && currentPage <= initialRange * 0.5) {
       buttons.push(
-        <button
-          data-offset={offsetNum}
-          className={`su-size-24 su-font-serif su-flex su-items-center su-justify-center su-text-18 dark:su-text-white ${
-            offsetNum === pageNumber ? activeClass : nonActiveClass
-          }`}
-          disabled={offsetNum === pageNumber}
+        <PaginationButtons
+          offsetNum={offsetNum}
+          pageNumber={pageNumber}
+          index={i}
           key={hash.MD5(offsetNum)}
-          type="button"
-          onClick={({ target }) => onPageChange(target.dataset.offset)}
-        >
-          {i + 1}
-        </button>
+          onPaginate={({ target }) => {
+            onPageChange(target.dataset.offset);
+            setCurrentPage(i + 1);
+          }}
+        />
       );
+    }
+
+    if (currentPage > initialRange * 0.5) {
+      if (offsetNum >= prevRange && offsetNum <= nextRange) {
+        buttons.push(
+          <PaginationButtons
+            offsetNum={offsetNum}
+            pageNumber={pageNumber}
+            index={i}
+            key={hash.MD5(offsetNum)}
+            onPaginate={({ target }) => {
+              onPageChange(target.dataset.offset);
+              setCurrentPage(i + 1);
+            }}
+          />
+        );
+      }
     }
   }
 
