@@ -90,6 +90,18 @@ export default function FeaturedMetadata({ data }) {
   //   });
   // }
 
+  const relatedTopics = [];
+
+  const relatedFiltered = related.filter((item) => {
+    if (!relatedTopics.includes(item.asset_name)) {
+      relatedTopics.push(item.asset_name);
+
+      return item;
+    }
+
+    return null;
+  });
+
   const firstRow = metaMap.slice(0, metaMap.length > 3 ? 3 : metaMap.length);
   const otherRows = metaMap.slice(3, metaMap.length);
 
@@ -285,14 +297,14 @@ export default function FeaturedMetadata({ data }) {
         ""
       )}
 
-      {related && related.length ? (
+      {relatedFiltered && relatedFiltered.length ? (
         <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
           <h3 className="su-text-18 su-font-bold su-leading-[125%] su-font-sans !su-m-0">
             Related topics
           </h3>
 
           <div className="su-flex su-gap-20 su-max-w-[71.9rem] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
-            {related.map((item) =>
+            {relatedFiltered.map((item) =>
               item ? (
                 <div key={item.asset_assetid}>
                   <a
