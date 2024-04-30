@@ -1,4 +1,5 @@
 import React from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../grids/Container";
 
 export default function BasicHero({ data }) {
@@ -8,9 +9,11 @@ export default function BasicHero({ data }) {
     <Container>
       <header className="basic-story__header su-relative su-w-full su-max-w-[1512px] su-mx-auto su-grid su-grid-cols-6 sm:su-grid-cols-12">
         <div className="su-relative su-pr-20 sm:su-pl-20 lg:su-pl-20 sm:su-pr-0 su-flex su-col-span-5 su-col-start-2 sm:su-col-span-6 sm:su-col-start-6">
-          <h1 className="su-z-10 su-relative su-text-[46px] md:su-text-[80px] lg:su-text-[128px] su-font-serif su-text-right su-leading-[54.92px] md:su-leading-[96px] lg:su-leading-[153.6px]">
-            {title}
-          </h1>
+          <XssSafeContent
+            className="su-z-10 su-relative su-text-[46px] md:su-text-[80px] lg:su-text-[128px] su-font-serif su-text-right su-leading-[54.92px] md:su-leading-[96px] lg:su-leading-[153.6px]"
+            content={title}
+            elementType="h1"
+          />
         </div>
         <div className="su-w-2 su-h-[60%] su-absolute su-left-20 sm:su-left-[10%] su-top-[80px] lg:su-top-[240px] su-bg-gradient su-z-0" />
         <div className="su-w-[10%] sm:su-w-[25%] su-h-2 su-absolute su-left-20 sm:su-left-[10%] su-top-[80px] lg:su-top-[239px] su-bg-gradient su-z-0" />

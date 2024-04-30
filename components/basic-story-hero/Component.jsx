@@ -60,10 +60,11 @@ export default function basicStoryHero(props) {
               </a>
             )}
           </div>
-
-          <h1 className="su-font-bold su-rs-mt-4 su-font-serif su-mb-0 xl:su-text-[6.4rem]">
-            {title}
-          </h1>
+          <XssSafeContent
+            className="su-font-bold su-rs-mt-4 su-font-serif su-mb-0 xl:su-text-[6.4rem]"
+            content={title}
+            elementType="h1"
+          />
           <XssSafeContent
             className={[
               "su-font-serif su-intro-text su-mb-0 su-rs-mt-2 su-text-21 su-leading-[27.35px] md:su-text-28 md:su-leading-[36.47px]",
