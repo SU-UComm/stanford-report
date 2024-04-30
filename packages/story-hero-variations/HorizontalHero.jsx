@@ -44,15 +44,15 @@ export default function HorizontalHero({ data }) {
               ].join(" ")}
             />
             <div className="su-relative su-grid su-grid-cols-6 md:su-grid-cols-12 lg:su-grid-cols-10 su-grid-gap">
-              <h1
+              <XssSafeContent
                 className={[
                   titleSize,
                   "su-text-shadow-title su-shadow-white dark:su-shadow-black-true selection:su-relative md:su-max-h-[6em] su-z-10 su-text-right su-ml-auto su-mt-0 su-break-words su-font-bold font-serif-4 su-col-span-5 md:su-col-span-8 lg:su-col-span-7 su-col-start-2 md:su-col-start-5 lg:su-col-start-4",
                   titleWordsCount > 7 ? "su-mb-[-1.75em]" : "su-mb-[-.5em]",
                 ].join(" ")}
-              >
-                {title}
-              </h1>
+                content={title}
+                elementType="h1"
+              />
               <div
                 className={[
                   titleSize,
