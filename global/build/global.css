@@ -4047,6 +4047,7 @@ Single image/video component
 .md\:before\:su-w-full::before{content:var(--tw-content);width:100%}
 .md\:before\:su-w-px::before{content:var(--tw-content);width:1px}
 .md\:before\:su-text-\[73px\]::before{content:var(--tw-content);font-size:73px}
+.md\:after\:su-h-\[calc\(100\%-30\%\)\]::after{content:var(--tw-content);height:calc(100% - 30%)}
 :is(.su-dark .dark\:md\:su-from-olive){--tw-gradient-from:#8F993E var(--tw-gradient-from-position);--tw-gradient-to:rgb(143 153 62 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
 :is(.su-dark .dark\:md\:su-from-palo-verde){--tw-gradient-from:#279989 var(--tw-gradient-from-position);--tw-gradient-to:rgb(39 153 137 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}}
 @media (min-width: 992px){
