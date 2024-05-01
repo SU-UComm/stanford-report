@@ -4,9 +4,10 @@
 @import "swiper/modules/pagination/pagination.min.css";
 @font-face {
   font-family: "Stanford";
-  src:
-    url("https://www-media.stanford.edu/assets/fonts/stanford.woff") format("woff"),
-    url("https://www-media.stanford.edu/assets/fonts/stanford.ttf") format("truetype");
+  src: url("https://www-media.stanford.edu/assets/fonts/stanford.woff")
+      format("woff"),
+    url("https://www-media.stanford.edu/assets/fonts/stanford.ttf")
+      format("truetype");
   font-weight: 300;
   font-display: swap;
 }
@@ -109,7 +110,11 @@ svg {
 }
 
 .su-bg-gradient-header-dark {
-  background: linear-gradient(180deg, rgba(1, 50, 107, 0.9) 0.11%, rgba(0, 0, 0, 0) 50%);
+  background: linear-gradient(
+    180deg,
+    rgba(1, 50, 107, 0.9) 0.11%,
+    rgba(0, 0, 0, 0) 50%
+  );
 }
 
 .su-bg-gradient-header-white {
@@ -167,7 +172,7 @@ svg {
 */
 
 .component-slider-cards .swiper-slide {
-  @apply su-transition su-relative su-h-auto before:su-absolute before:su-bg-black-30 before:su-h-full before:su-w-2 before:su-top-0 before:su--left-20 md:before:su--left-36 lg:before:su--left-50;
+  @apply su-transition su-relative su-h-auto before:su-absolute before:su-bg-black-30 before:dark:su-bg-black before:su-h-full before:su-w-1 before:su-top-0 before:su--left-20 md:before:su--left-36 lg:before:su--left-50;
 }
 
 .component-slider .swiper-slide:not(.swiper-slide-visible) {
@@ -220,7 +225,9 @@ svg {
   @apply su-flex-wrap;
 }
 
-.component-slider .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+.component-slider
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
   --swiper-pagination-bullet-horizontal-gap: 0;
   margin: 0 !important;
 }
@@ -239,7 +246,8 @@ svg {
   @apply su-bg-digital-red dark:su-bg-dark-mode-red su-border-digital-red dark:su-border-dark-mode-red;
 }
 
-.component-slider.su-slider-dark .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.component-slider.su-slider-dark
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
   @apply su-bg-dark-mode-red su-border-dark-mode-red;
 }
 
@@ -597,8 +605,17 @@ audio::-webkit-media-controls-panel {
 
 .su-page:not(.su-page-has-sidebar)
   .su-page-content
-  > *:not([data-component], .container, .su-lower-content, .su-above-footer, .su-upper-content),
-.su-page:not(.su-page-has-sidebar) .su-page-content > .container > *:not([data-component]),
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ),
+.su-page:not(.su-page-has-sidebar)
+  .su-page-content
+  > .container
+  > *:not([data-component]),
 .su-page:not(.su-page-has-sidebar) .su-page-content > span {
   @apply su-max-w-[73.2rem] md:su-w-[84.75%] su-mx-auto su-px-20 md:su-px-50;
 }
@@ -719,7 +736,9 @@ audio::-webkit-media-controls-panel {
 /*
 * Contextual styles
 */
-.su-page-content > *:not(.container, .su-lower-content) + *:not(.container, .su-lower-content),
+.su-page-content
+  > *:not(.container, .su-lower-content)
+  + *:not(.container, .su-lower-content),
 .su-page-content > .container > * + * {
   @apply su-rs-mt-2;
 }
@@ -751,11 +770,15 @@ audio::-webkit-media-controls-panel {
   @apply su--mx-20 md:su-mx-[calc(-7.65%+50px)] lg:su-mx-0 md:su-w-[calc(121.5%+100px)] md:su-ml-[calc(calc(-10.75%-50px))] lg:su-w-full;
 }
 
-.su-page-has-sidebar [data-component="campaign-cta"] .su-component-campaigncta-wrap {
+.su-page-has-sidebar
+  [data-component="campaign-cta"]
+  .su-component-campaigncta-wrap {
   @apply su-w-full su-px-20 md:su-px-50 lg:su-px-60 lg:su-flex-col;
 }
 
-.su-page-has-sidebar [data-component="campaign-cta"] .su-component-campaigncta-content {
+.su-page-has-sidebar
+  [data-component="campaign-cta"]
+  .su-component-campaigncta-content {
   @apply lg:su-border-none lg:su-mr-0;
 }
 
@@ -823,8 +846,10 @@ audio::-webkit-media-controls-panel {
 
 /* Where multicolumn listing follows featured content grid, remove margins to accommodate the line */
 [data-component="featured-content"] + [data-component="multicolumn-listing"],
-[data-component="combined-content-grid"] + [data-component="multicolumn-listing"],
-[data-component="single-featured-content"] + [data-component="multicolumn-listing"],
+[data-component="combined-content-grid"]
+  + [data-component="multicolumn-listing"],
+[data-component="single-featured-content"]
+  + [data-component="multicolumn-listing"],
 [data-component="fact-callout"] + * {
   @apply su-mt-0 !important;
 }
@@ -846,7 +871,9 @@ audio::-webkit-media-controls-panel {
   @apply su-block su-w-full su-h-px su-bg-black-30 dark:su-bg-black su-rs-my-5;
 }
 
-[data-component="featured-content"] + [data-component="multicolumn-listing"] .component-multicolumn-listing.has-title,
+[data-component="featured-content"]
+  + [data-component="multicolumn-listing"]
+  .component-multicolumn-listing.has-title,
 [data-component="combined-content-grid"]
   + [data-component="multicolumn-listing"]
   .component-multicolumn-listing.has-title,
@@ -1027,7 +1054,10 @@ WYSIWYG formatting styles
 }
 
 /* Acknowledgement */
-.su-page-story-basic [data-component="acknowledgement"] .su-component-container > hr {
+.su-page-story-basic
+  [data-component="acknowledgement"]
+  .su-component-container
+  > hr {
   @apply su-h-5 !important;
 }
 
@@ -1042,7 +1072,9 @@ WYSIWYG formatting styles
 }
 
 /* Metadata */
-.su-page:not(.su-page-has-sidebar) .su-lower-content [data-component="metadata-fields"] {
+.su-page:not(.su-page-has-sidebar)
+  .su-lower-content
+  [data-component="metadata-fields"] {
   @apply su-rs-mt-5 su-rs-mb-9 !important;
 }
 
@@ -1087,7 +1119,8 @@ Skiplink
 
 /* Search header */
 .su-light .report-header input[type="search"] {
-  background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255 255 255) !important;
+  background: none 0% 0% / auto repeat scroll padding-box border-box
+    rgb(255 255 255) !important;
 }
 /*
 Subscribe to Stanford Report Marketo form styles
@@ -1142,7 +1175,7 @@ Subscribe to Stanford Report Marketo form styles
 }
 
 /* Error messages */
-.marketo-sr-subscribe-form.mktoForm .mktoErrorMsg, 
+.marketo-sr-subscribe-form.mktoForm .mktoErrorMsg,
 .marketo-sr-subscribe-form.mktoForm .mktoErrorDetail {
   @apply su-text-digital-red-light dark:su-text-dark-mode-red su-text-16 su-mt-8;
 }
