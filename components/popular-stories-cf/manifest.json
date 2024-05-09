@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "popular-stories-cf",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "namespace": "stanford-components",
   "description": "Displays a list of popular stories.",
   "displayName": "Popular Stories",
@@ -45,8 +45,7 @@
       "entry": "./dist/server.cjs",
       "input": {
         "type": "object",
-        "properties": {
-        },
+        "properties": {},
         "required": []
       },
       "output": {
@@ -103,4 +102,3 @@
     }
   }
 }
-
