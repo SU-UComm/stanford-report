@@ -43,6 +43,39 @@ export default function FeaturedContent({
     featuredCardData.description = contentConfiguration.featuredDescription;
   }
 
+  const gridCards = [];
+  if (featuredCardData !== undefined) {
+    gridCards.push(
+      <Card
+        data={featuredCardData}
+        cardSize="featured"
+        headingLvl={headingData.title ? 3 : 2}
+      />
+    );
+  }
+  if (data[1] !== undefined) {
+    gridCards.push(
+      <Card
+        data={data[1]}
+        displayThumbnail={displayConfiguration.displayThumbnails}
+        displayDescription={displayConfiguration.displayDescriptions}
+        cardSize="small"
+        headingLvl={headingData.title ? 3 : 2}
+      />
+    );
+  }
+  if (data[2] !== undefined) {
+    gridCards.push(
+      <Card
+        data={data[2]}
+        displayThumbnail={displayConfiguration.displayThumbnails}
+        displayDescription={displayConfiguration.displayDescriptions}
+        cardSize="small"
+        headingLvl={headingData.title ? 3 : 2}
+      />
+    );
+  }
+
   const eventCards = [];
   eventData.forEach((card) => {
     eventCards.push(<Card data={card} cardType="horizontal" />);
@@ -131,31 +164,9 @@ export default function FeaturedContent({
             </div>
           </div>
           <div className="md:su-basis-[58.333%] lg:su-basis-[64.5%] su-grow">
-            <FeaturedGrid
-              alignment="left"
-              items={[
-                <Card
-                  data={featuredCardData}
-                  cardSize="featured"
-                  headingLvl={headingData.title ? 3 : 2}
-                />,
-                <Card
-                  data={data[1]}
-                  displayThumbnail={displayConfiguration.displayThumbnails}
-                  displayDescription={displayConfiguration.displayDescriptions}
-                  cardSize="small"
-                  headingLvl={headingData.title ? 3 : 2}
-                />,
-                <Card
-                  data={data[2]}
-                  displayThumbnail={displayConfiguration.displayThumbnails}
-                  displayDescription={displayConfiguration.displayDescriptions}
-                  cardSize="small"
-                  headingLvl={headingData.title ? 3 : 2}
-                />,
-              ]}
-              isNested
-            />
+            {data !== undefined && data.length > 0 && (
+              <FeaturedGrid alignment="left" items={gridCards} isNested />
+            )}
           </div>
         </div>
       </div>

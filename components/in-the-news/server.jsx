@@ -11,7 +11,7 @@ export default async (args, info) => {
   const { featuredTeaser, personHeadshot } = featuredContent;
   const teaserOne = supplementaryTeaserOne?.teaserOne;
   const teaserTwo = supplementaryTeaserTwo?.teaserTwo;
-  const { API_IDENTIFIER } = info.set.environment;
+  const { API_IDENTIFIER, BASE_DOMAIN } = info.set.environment;
   const { ctx } = info;
   const adapter = new CardDataAdapter();
   const cards = [];
@@ -19,7 +19,7 @@ export default async (args, info) => {
   let headshotData = null;
   let data = null;
 
-  const service = new MatrixCardService({ ctx, API_IDENTIFIER });
+  const service = new MatrixCardService({ BASE_DOMAIN, API_IDENTIFIER });
 
   if (personHeadshot) {
     headshotData = await basicAssetUri(ctx, personHeadshot);

@@ -26,7 +26,7 @@ export function FeaturedGrid({
     "before:su-right-0 before:su-top-[-35px] before:md:su-top-0 before:md:su-right-[-36px] before:lg:su-right-[-80px]"
   );
 
-  return items.length > 1 ? (
+  return items.length >= 1 ? (
     <div className="su-w-full su-component-featured-grid">
       <div
         className={[
