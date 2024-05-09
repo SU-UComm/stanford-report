@@ -6,6 +6,7 @@ export default async function popularStoriesFetcher(urls, { FB_JSON_URL }) {
   const assets = [];
 
   for (let i = 0; i < urls.length; i++) {
+    // eslint-disable-next-line security/detect-object-injection
     if (assets.length <= 4) assets.push(`${urls[i]}`);
   }
 
@@ -14,14 +15,5 @@ export default async function popularStoriesFetcher(urls, { FB_JSON_URL }) {
   )}]`;
 
   const data = await adapter.fetch();
-
-  if (data) {
-    return new Promise((resolve) => {
-      resolve(data);
-    })
-      .then((item) => item.response.resultPacket.results)
-      .catch((er) => {
-        throw new Error(er);
-      });
-  }
+  return data?.response?.resultPacket?.results;
 }

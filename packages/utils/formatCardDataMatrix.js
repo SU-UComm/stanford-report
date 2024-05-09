@@ -4,17 +4,17 @@
  * @param {array} arr A matrix metadata field array. Eg: "featuredVideo": [],
  * @returns {string|null}
  */
-function dataChecker(arr) {
-  return typeof arr !== "undefined" && arr.length > 0 && arr[0] !== ""
-    ? arr[0]
-    : null;
-}
+// function dataChecker(arr) {
+//   return typeof arr !== "undefined" && arr.length > 0 && arr[0] !== ""
+//     ? arr[0]
+//     : null;
+// }
 
-function dataStringChecker(str) {
-  return typeof str !== "undefined" && str.length > 0 && str[0] !== ""
-    ? str
-    : null;
-}
+// function dataStringChecker(str) {
+//   return typeof str !== "undefined" && str.length > 0 && str[0] !== ""
+//     ? str
+//     : null;
+// }
 
 /**
  * Card Data formatter - Matrix
