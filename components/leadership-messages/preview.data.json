@@ -5,6 +5,6 @@
     "ctaUrl": "matrix-asset://api-identifier/89422"
   },
   "contentConfiguration": {
-    "searchQuery": "?f.Content+Type%7CtaxonomyContentTypeText=Leadership+messages&log=false&taxonomyContentTypeText=Leadership+Messages&profile=stanford-report-push-search_preview&query=%21null&collection=sug~sp-stanford-report-search&num_ranks=3"
+    "searchQuery": "?profile=stanford-report-push-search&num_ranks=3&collection=sug~sp-stanford-report-search&sort=date&meta_taxonomyContentTypeText=Leadership%20messages"
   }
 }

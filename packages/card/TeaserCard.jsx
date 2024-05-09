@@ -17,9 +17,11 @@ export default function TeaserCard({ credit, data }) {
         href={liveUrl}
         className="su-no-underline su-flex su-flex-col su-gap-11 md:su-gap-0"
       >
-        <div className="su-text-18 su-leading-snug su-font-semibold md:su-pb-13">
-          {source}
-        </div>
+        {source !== null && source !== undefined && source !== "null" && (
+          <div className="su-text-18 su-leading-snug su-font-semibold md:su-pb-13">
+            {source}
+          </div>
+        )}
 
         <XssSafeContent
           className="su-font-bold su-leading-display su-text-24 su-m-0 md:su-pb-9"

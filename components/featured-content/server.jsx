@@ -7,7 +7,7 @@ import linkedHeadingService from "../../packages/utils/linkedHeadingService";
 
 export default async (args, info) => {
   // eslint-disable-next-line no-unused-vars
-  const { FB_JSON_URL, API_IDENTIFIER } = info.set.environment;
+  const { FB_JSON_URL, API_IDENTIFIER, BASE_DOMAIN } = info.set.environment;
   const { ctx } = info;
   const adapter = new CardDataAdapter();
   let data = null;
@@ -28,7 +28,7 @@ export default async (args, info) => {
     // Get our card URI's from the args object
     const { cards } = args.contentConfiguration;
     // Create our service
-    const service = new MatrixCardService({ ctx, API_IDENTIFIER });
+    const service = new MatrixCardService({ BASE_DOMAIN, API_IDENTIFIER });
 
     // Set our card service
     adapter.setCardService(service);

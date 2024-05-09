@@ -26,21 +26,27 @@ function dataStringChecker(str) {
  * @returns {object}
  */
 export default function formatCardDataMatrix(props) {
-  const { attributes, metadata, url } = props;
-  const title = attributes.short_name || attributes.name;
-  const liveUrl = url;
-  const description = dataChecker(metadata.teaser);
-  const imageUrl = dataChecker(metadata.featuredImage)?.url;
-  const imageAlt = dataChecker(metadata.featuredImage)?.attributes?.alt;
-  const taxonomy = dataStringChecker(
-    metadata.srContentMainTopic[0]?.short_name
-  );
-  const taxonomyUrl = dataStringChecker(metadata.taxonomyPageData[0]?.url);
-  const type = dataChecker(metadata.srContentType)?.name;
-  const videoUrl = dataChecker(metadata.featuredVideo);
-  const date = dataChecker(metadata.publishedDate);
-  const source = dataChecker(metadata.storySource);
-  const author = dataChecker(metadata.contributorsAuthors);
+  const { type } = props;
+  const { title } = props;
+  const { liveUrl } = props;
+  const { description } = props;
+
+  let { imageUrl } = props;
+  let { imageAlt } = props;
+
+  if (imageUrl === "" || imageUrl === null) {
+    imageUrl = props.imageUrlDefault;
+    imageAlt = props.imageAltDefault;
+  }
+
+  const { taxonomy } = props;
+  const { taxonomyUrl } = props;
+  const { videoUrl } = props;
+  const { date } = props;
+  const { source } = props;
+  const { authorName } = props;
+  const { authorEmail } = props;
+
   const returnData = {
     type,
     title,
@@ -53,24 +59,9 @@ export default function formatCardDataMatrix(props) {
     videoUrl,
     date,
     source,
-    authorName: null,
-    authorEmail: null,
+    authorName,
+    authorEmail,
   };
-
-  if (author && type === "link") {
-    const avatar = dataStringChecker(author?.metadata?.personHeadshot[0]?.url);
-    const avatarAlt = dataStringChecker(
-      author?.metadata?.personHeadshot[0]?.attributes?.alt
-    );
-    const name = dataStringChecker(author?.name);
-
-    const email = dataStringChecker(author?.metadata?.personEmail);
-
-    returnData.imageUrl = avatar || imageUrl;
-    returnData.imageAlt = avatarAlt || imageAlt;
-    returnData.authorName = name;
-    returnData.authorEmail = email;
-  }
 
   return returnData;
 }
