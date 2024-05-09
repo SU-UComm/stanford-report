@@ -78,11 +78,11 @@ export default function Header({ site, navigation, search }) {
       await cdpSetConsent(0);
       setConsent(false);
     }
-    setCookie("preferences_personalisation", persona);
+    setCookie("preferences_personalisation", persona, true, 130);
     setDisplayConsentBanner(false);
     setAudience(persona);
     document.dispatchEvent(document.personaChangeEvent);
-    location.reload();
+    window.location.reload();
   };
 
   useEffect(() => {
