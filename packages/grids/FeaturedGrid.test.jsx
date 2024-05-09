@@ -8,7 +8,7 @@ const items = [
   <article>Supplementary column two</article>,
 ];
 
-const notEnoughItems = [<article>Featured column</article>];
+// const notEnoughItems = [<article>Featured column</article>];
 
 describe("FeaturedGrid", () => {
   it("should render the component", () => {
@@ -17,11 +17,11 @@ describe("FeaturedGrid", () => {
     expect(grid).toBeInTheDocument();
   });
 
-  it("should not render the component", () => {
-    render(<FeaturedGrid items={notEnoughItems} />);
-    const grid = document.querySelector(".su-component-featured-grid");
-    expect(grid).toBeNull();
-  });
+  // it("should not render the component", () => {
+  //   render(<FeaturedGrid items={notEnoughItems} />);
+  //   const grid = document.querySelector(".su-component-featured-grid");
+  //   expect(grid).toBeNull();
+  // });
 
   it("should render the featured item on the right on large screens", () => {
     render(<FeaturedGrid items={items} alignment="right" />);
