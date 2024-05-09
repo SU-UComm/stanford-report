@@ -38,6 +38,20 @@ export default function basicStoryHero(props) {
     }
   });
 
+  const hasTopicLink = !!(
+    topic &&
+    topic.asset_url !== null &&
+    topic.asset_url !== undefined &&
+    topic.asset_url !== ""
+  );
+  const hasTopicText = !!(
+    topic &&
+    topic.asset_name !== null &&
+    topic.asset_name !== undefined &&
+    topic.asset_name !== ""
+  );
+  const TopicTag = hasTopicLink ? "a" : "span";
+
   return (
     <Container width="wide">
       <div className="su-grid su-gap su-grid-cols-6 md:su-grid-cols-12 su-">
@@ -51,13 +65,16 @@ export default function basicStoryHero(props) {
               {`${readingTimeValue} min read`}
             </span>
 
-            {topic.asset_name && (
-              <a
-                href={topic.asset_url !== "" ? topic.asset_url : "#"}
-                className="su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline"
+            {hasTopicText && (
+              <TopicTag
+                className={[
+                  "su-font-semibold su-text-digital-red dark:su-text-dark-mode-red su-no-underline ",
+                  hasTopicLink ? "hocus:su-underline" : "",
+                ].join(" ")}
+                href={hasTopicLink ? topic.asset_url : false}
               >
                 {topic.asset_name}
-              </a>
+              </TopicTag>
             )}
           </div>
 
