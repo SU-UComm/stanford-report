@@ -1,3 +1,4 @@
+import fetch from "node-fetch";
 import renderComponent from "../../packages/utils/render-component";
 import Component from "./Component";
 import FetchAdapter from "../../packages/utils/fetchAdapter";
@@ -22,14 +23,7 @@ function getDateRange(range) {
 
 export default async (args, info) => {
   const adapter = new FetchAdapter();
-  const {
-    FB_API_TOKEN,
-    FB_JSON_URL,
-    MGT_API,
-    CF_ANALYTICS_API,
-    BASE_DOMAIN,
-    BASE_PATH,
-  } = info.set.environment;
+  const { FB_JSON_URL, MGT_API, CF_ANALYTICS_API } = info.set.environment;
 
   // 2024-05-01T00:00:00.000Z
 
@@ -66,7 +60,7 @@ export default async (args, info) => {
   let data = null;
   const urls = [];
 
-  if (FB_API_TOKEN) {
+  if (MGT_API && CF_ANALYTICS_API) {
     const REQUEST_PROPS = {
       method: "POST",
       headers: {
@@ -74,12 +68,10 @@ export default async (args, info) => {
       },
       body: JSON.stringify(payload),
     };
+    adapter.url = MGT_API;
+    adapter.requestProps = REQUEST_PROPS;
 
-    const res = await fetch(MGT_API, REQUEST_PROPS).catch((er) => {
-      throw new Error(er);
-    });
-
-    data = await res.json();
+    data = await adapter.fetch();
 
     data.data.viewer.zones[0].httpRequestsAdaptiveGroups.forEach(
       ({ dimensions }) => {
@@ -89,9 +81,6 @@ export default async (args, info) => {
 
     data = await popularStoriesFetcher(urls, {
       FB_JSON_URL,
-      FB_API_TOKEN,
-      BASE_DOMAIN,
-      BASE_PATH,
     });
   } else {
     data = [];

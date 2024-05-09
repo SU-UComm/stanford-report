@@ -1,11 +1,8 @@
 import FetchAdapter from "../../../packages/utils/fetchAdapter";
 
-export default async function popularStoriesFetcher(
-  urls,
-  { FB_JSON_URL, FB_API_TOKEN, BASE_DOMAIN, BASE_PATH }
-) {
+export default async function popularStoriesFetcher(urls, { FB_JSON_URL }) {
   const adapter = new FetchAdapter();
-  let data = [];
+  // let data = [];
   const assets = [];
 
   for (let i = 0; i < urls.length; i++) {
@@ -16,11 +13,9 @@ export default async function popularStoriesFetcher(
     ","
   )}]`;
 
-  const fbData = adapter.fetch();
+  const data = await adapter.fetch();
 
-  if (fbData) {
-    data = fbData;
-
+  if (data) {
     return new Promise((resolve) => {
       resolve(data);
     })
