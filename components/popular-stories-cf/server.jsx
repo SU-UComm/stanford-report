@@ -47,10 +47,6 @@ export default async (args, info) => {
                       AND: [
                           { clientRequestPath_like: "/stories/%" }
                           { clientRequestPath_notlike: "%/_admin%" }
-                          { clientRequestPath_notlike: "%/devreport%" }
-                          { clientRequestPath_notlike: "%/releasereport%" }
-                          { clientRequestPath_notlike: "%/squizdevreport%" }
-                          { clientRequestPath_notlike: "%/squizreleasereport%" }
                       ]
                   }
                   orderBy: [count_DESC]
