@@ -14,6 +14,10 @@
     {
       "name": "FB_JSON_URL",
       "required": true
+    },
+    {
+      "name": "BASE_DOMAIN",
+      "required": true
     }
   ],
   "icon": {
@@ -35,9 +39,7 @@
             "title": "Related story content",
             "description": "Select an asset ID to be featured as a related story.",
             "type": "object",
-            "required": [
-              "story"
-            ],
+            "required": ["story"],
             "properties": {
               "story": {
                 "title": "Related story",

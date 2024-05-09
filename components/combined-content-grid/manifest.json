@@ -14,6 +14,10 @@
     {
       "name": "FB_JSON_URL",
       "required": true
+    },
+    {
+      "name": "BASE_DOMAIN",
+      "required": true
     }
   ],
   "icon": {
@@ -68,17 +72,12 @@
             "title": "Grid Content",
             "description": "The cards to display in the grid area of the component. The featured card appears larger than the supplementary cards. When manually selecting cards, at least three must be selected for the grid to display.",
             "type": "object",
-            "required": [
-              "source"
-            ],
+            "required": ["source"],
             "properties": {
               "source": {
                 "title": "Content source",
                 "default": "Search",
-                "enum": [
-                  "Search",
-                  "Select"
-                ],
+                "enum": ["Search", "Select"],
                 "type": "string"
               }
             },
@@ -93,9 +92,7 @@
                   }
                 },
                 "then": {
-                  "required": [
-                    "searchQuery"
-                  ],
+                  "required": ["searchQuery"],
                   "properties": {
                     "searchQuery": {
                       "type": "string",
@@ -115,9 +112,7 @@
                   }
                 },
                 "then": {
-                  "required": [
-                    "cards"
-                  ],
+                  "required": ["cards"],
                   "properties": {
                     "cards": {
                       "title": "Cards",
@@ -134,9 +129,7 @@
                             "title": "Card Asset"
                           }
                         },
-                        "required": [
-                          "cardAsset"
-                        ]
+                        "required": ["cardAsset"]
                       }
                     },
                     "featuredDescription": {
@@ -170,10 +163,7 @@
           "eventsConfiguration": {
             "title": "Events Configuration",
             "type": "object",
-            "required": [
-              "endPoint",
-              "numberOfItems"
-            ],
+            "required": ["endPoint", "numberOfItems"],
             "properties": {
               "heading": {
                 "title": "Heading",
@@ -191,12 +181,7 @@
                 "description": "The number of events to display",
                 "type": "number",
                 "default": 3,
-                "enum": [
-                  3,
-                  4,
-                  5,
-                  6
-                ]
+                "enum": [3, 4, 5, 6]
               },
               "linkUrl": {
                 "title": "Events Link",
@@ -208,10 +193,7 @@
           "announcementsConfiguration": {
             "title": "Announcements Configuration",
             "type": "object",
-            "required": [
-              "endPoint",
-              "numberOfItems"
-            ],
+            "required": ["endPoint", "numberOfItems"],
             "properties": {
               "heading": {
                 "title": "Heading",
@@ -229,12 +211,7 @@
                 "description": "The number of announcements to display",
                 "type": "number",
                 "default": 3,
-                "enum": [
-                  3,
-                  4,
-                  5,
-                  6
-                ]
+                "enum": [3, 4, 5, 6]
               },
               "linkUrl": {
                 "title": "Announcements Link",

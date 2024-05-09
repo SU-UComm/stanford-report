@@ -40,6 +40,9 @@ export default function Card({
   displayThumbnail = true,
   headingLvl = 2,
 }) {
+  if (data === undefined) {
+    return "";
+  }
   // orchestrate the type of card to output
   switch (cardType) {
     case "horizontal":
