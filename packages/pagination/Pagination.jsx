@@ -52,9 +52,12 @@ export default function Pagination({
   for (let i = 0; i < pages; i++) {
     const offsetNum = i * resultsPerPage + 1;
 
-    // if (offsetNum >= backwardRangeNum && offsetNum <= forwardRangeNum) {
+    offsets.push(offsetNum);
 
-    if (i <= initialRange && currentPage <= initialRange * 0.5) {
+    if (
+      (i <= initialRange && currentPage <= initialRange * 0.5) ||
+      pages <= initialRange
+    ) {
       buttons.push(
         <PaginationButtons
           offsetNum={offsetNum}
@@ -69,7 +72,7 @@ export default function Pagination({
       );
     }
 
-    if (currentPage > initialRange * 0.5) {
+    if (pages > initialRange && currentPage > initialRange * 0.5) {
       if (offsetNum >= prevRange && offsetNum <= nextRange) {
         buttons.push(
           <PaginationButtons
