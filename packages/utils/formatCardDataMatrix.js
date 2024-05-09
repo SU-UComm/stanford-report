@@ -26,21 +26,27 @@ function dataStringChecker(str) {
  * @returns {object}
  */
 export default function formatCardDataMatrix(props) {
-  const {
-    title,
-    liveUrl,
-    description,
-    imageUrl,
-    imageAlt,
-    taxonomy,
-    taxonomyUrl,
-    type,
-    videoUrl,
-    date,
-    source,
-    authorName,
-    authorEmail,
-  } = props;
+  const { type } = props;
+  const { title } = props;
+  const { liveUrl } = props;
+  const { description } = props;
+
+  let { imageUrl } = props;
+  let { imageAlt } = props;
+
+  if (imageUrl === "" || imageUrl === null) {
+    imageUrl = props.imageUrlDefault;
+    imageAlt = props.imageAltDefault;
+  }
+
+  const { taxonomy } = props;
+  const { taxonomyUrl } = props;
+  const { videoUrl } = props;
+  const { date } = props;
+  const { source } = props;
+  const { authorName } = props;
+  const { authorEmail } = props;
+
   const returnData = {
     type,
     title,
