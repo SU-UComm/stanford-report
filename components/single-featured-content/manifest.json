@@ -10,6 +10,10 @@
     {
       "name": "API_IDENTIFIER",
       "required": true
+    },
+    {
+      "name": "BASE_DOMAIN",
+      "required": true
     }
   ],
   "icon": {
@@ -63,9 +67,7 @@
           "contentConfiguration": {
             "title": "Single featured content inner content",
             "description": "The featured content to display in the component",
-            "required": [
-              "source"
-            ],
+            "required": ["source"],
             "properties": {
               "source": {
                 "title": "Featured content",

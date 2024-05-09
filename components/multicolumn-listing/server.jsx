@@ -54,8 +54,9 @@ export default async (args, info) => {
   else if (args.contentConfiguration.source.toLowerCase() === "select") {
     // Get our card URI's from the args object
     const { cards } = args.contentConfiguration;
+
     // Create our service
-    const service = new MatrixCardService({ ctx, API_IDENTIFIER });
+    const service = new MatrixCardService({ BASE_DOMAIN, API_IDENTIFIER });
 
     // Set our card service
     adapter.setCardService(service);

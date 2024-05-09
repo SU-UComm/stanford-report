@@ -5,7 +5,7 @@ import MatrixCardService from "../../packages/utils/MatrixCardService";
 import linkedHeadingService from "../../packages/utils/linkedHeadingService";
 
 export default async (args, info) => {
-  const { API_IDENTIFIER } = info.set.environment;
+  const { API_IDENTIFIER, BASE_DOMAIN } = info.set.environment;
   const { ctx } = info;
   const adapter = new CardDataAdapter();
   const featured = args.contentConfiguration.source;
@@ -14,7 +14,7 @@ export default async (args, info) => {
 
   if (featured) {
     // Create our service
-    const service = new MatrixCardService({ ctx, API_IDENTIFIER });
+    const service = new MatrixCardService({ BASE_DOMAIN, API_IDENTIFIER });
 
     // Set our card service
     adapter.setCardService(service);
