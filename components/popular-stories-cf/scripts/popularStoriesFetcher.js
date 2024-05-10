@@ -10,7 +10,7 @@ export default async function popularStoriesFetcher(urls, { FB_JSON_URL }) {
     if (assets.length <= 4) assets.push(`assetHref:"${urls[i]}"`);
   }
 
-  adapter.url = `${FB_JSON_URL}?profile=stanford-report-push-search&collection=sug~sp-stanford-report-search&query=[${assets.join(
+  adapter.url = `${FB_JSON_URL}?profile=stanford-report-push-search&collection=sug~sp-stanford-report-search&num_ranks=5&query=[${assets.join(
     " "
   )}]`;
 
