@@ -219,6 +219,7 @@ export default function Header({ site, navigation, search }) {
               <PreferencesTray
                 audience={audience}
                 personaClickHandler={handlePersona}
+                consent={consent}
               />
             </div>
             <MainNav
