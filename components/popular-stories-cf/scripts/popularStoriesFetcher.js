@@ -7,13 +7,14 @@ export default async function popularStoriesFetcher(urls, { FB_JSON_URL }) {
 
   for (let i = 0; i < urls.length; i++) {
     // eslint-disable-next-line security/detect-object-injection
-    if (assets.length <= 4) assets.push(`${urls[i]}`);
+    if (assets.length <= 4) assets.push(`assetHref:"${urls[i]}"`);
   }
 
-  adapter.url = `${FB_JSON_URL}?profile=stanford-report-push-search&collection=sug~sp-stanford-report-search&meta_assetHref=[${assets.join(
-    ","
+  adapter.url = `${FB_JSON_URL}?profile=stanford-report-push-search&collection=sug~sp-stanford-report-search&query=[${assets.join(
+    " "
   )}]`;
 
   const data = await adapter.fetch();
+
   return data?.response?.resultPacket?.results;
 }
