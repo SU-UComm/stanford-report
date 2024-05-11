@@ -40,8 +40,8 @@ export default function LinkList({ search }) {
           setRelatedStoryData(fbData);
           fbData.forEach((link) => {
             links.push(<LinkListItem title={link.title} url={link.indexUrl} />);
-            setLinkItems(links);
           });
+          setLinkItems(links);
         };
         asyncFetch();
       }
