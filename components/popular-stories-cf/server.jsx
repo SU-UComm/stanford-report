@@ -35,7 +35,7 @@ export default async (args, info) => {
                   filter: {
                       datetime_gt: "${getDateRange(7)}"
                       datetime_lt: "${getDateRange()}"
-                      clientRefererHost: "news.stanford.edu"
+                      clientRequestHTTPHost: "news.stanford.edu"
                       requestSource: "eyeball"
                       edgeResponseStatus_lt: 300
                       AND: [
