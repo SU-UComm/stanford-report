@@ -13,12 +13,16 @@ export default async function relatedStory(
       ${search.endpoint?.replace(/\.html/g, ".json")}
       ?profile=${search.profile}
       &collection=${search.collection}
-      &meta_taxonomyContentMainTopicText=${pageData.mainTopic}
+      &query=[taxonomyContentMainTopicId:${
+        pageData.mainTopicId
+      } taxonomyContentTopicsId:${
+      pageData.mainTopicId
+    } taxonomyContentSubtopicsId:${pageData.mainTopicId}]
       &meta_taxonomyContentTypeId_not=28210&meta_taxonomyContentTypeId_not=28216&meta_taxonomyContentTypeId_not=28201
       &meta_taxonomyAudienceText=${translatePersonalisationProfile(
         personalisation
       )}&num_ranks=3
-      &meta_id_not=${pageData.id}
+      &meta_id_not=${pageData.id}&sort=date&log=false
     `;
 
     // uglify the URL

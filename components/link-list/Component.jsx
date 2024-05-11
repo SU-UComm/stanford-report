@@ -16,52 +16,39 @@ import LinkListItem from "./components/LinkListItem";
  * @constructor
  */
 export default function LinkList({ search }) {
-  // const [isClient, setIsClient] = useState(false);
-
-  // const isClient = !(typeof window === "undefined");
-  // const pageData =
-  //   isClient && typeof window.pageController !== "undefined"
-  //     ? window.pageController
-  //     : null;
-  const audienceCookie = getCookie("preferences_personalisation");
-  const links = [];
-
-  // state
+  const [isClient, setIsClient] = useState(false);
   const [relatedStoryData, setRelatedStoryData] = useState(null);
   const [personalisation, setPersonalisation] = useState(null);
   const [linkItems, setLinkItems] = useState([]);
+  const links = [];
 
   // get FB data
   const getFB = async (pageData) => {
-    const data = await relatedStory(search, pageData, audienceCookie);
-
-    setRelatedStoryData(data);
+    const data = await relatedStory(search, pageData, personalisation);
+    return data;
   };
-
-  // generate the links
-  if (relatedStoryData) {
-    relatedStoryData.forEach((link) => {
-      links.push(<LinkListItem title={link.title} url={link.indexUrl} />);
-    });
-  }
 
   // effects
   useEffect(() => {
-    // setIsClient(true);
-    if (audienceCookie) setPersonalisation(audienceCookie);
-
-    if (relatedStoryData && !linkItems.length) setLinkItems(links);
-
-    // const pageData =
-    //   typeof window.pageController !== "undefined"
-    //     ? window.pageController
-    //     : null;
-    const pageData = window.pageController;
-       
-    if (!relatedStoryData) {
-      getFB(pageData);
+    if (isClient && typeof window.pageController !== "undefined") {
+      const pageData = window.pageController;
+      const audienceCookie = getCookie("preferences_personalisation");
+      if (audienceCookie) setPersonalisation(audienceCookie);
+      if (!relatedStoryData) {
+        const asyncFetch = async () => {
+          const fbData = await getFB(pageData);
+          setRelatedStoryData(fbData);
+          fbData.forEach((link) => {
+            links.push(<LinkListItem title={link.title} url={link.indexUrl} />);
+          });
+          setLinkItems(links);
+        };
+        asyncFetch();
+      }
+    } else {
+      setIsClient(true);
     }
-  }, [personalisation, relatedStoryData]);
+  }, [isClient]);
 
   return (
     <div
