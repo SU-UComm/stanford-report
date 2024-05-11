@@ -18,13 +18,12 @@ import LinkListItem from "./components/LinkListItem";
 export default function LinkList({ search }) {
   const [isClient, setIsClient] = useState(false);
   const [relatedStoryData, setRelatedStoryData] = useState(null);
-  const [personalisation, setPersonalisation] = useState(null);
   const [linkItems, setLinkItems] = useState([]);
   const links = [];
-
+  const audienceCookie = getCookie("preferences_personalisation");
   // get FB data
   const getFB = async (pageData) => {
-    const data = await relatedStory(search, pageData, personalisation);
+    const data = await relatedStory(search, pageData, audienceCookie);
     return data;
   };
 
@@ -32,8 +31,6 @@ export default function LinkList({ search }) {
   useEffect(() => {
     if (isClient && typeof window.pageController !== "undefined") {
       const pageData = window.pageController;
-      const audienceCookie = getCookie("preferences_personalisation");
-      if (audienceCookie) setPersonalisation(audienceCookie);
       if (!relatedStoryData) {
         const asyncFetch = async () => {
           const fbData = await getFB(pageData);
