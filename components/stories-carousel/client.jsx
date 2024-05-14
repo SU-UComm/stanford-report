@@ -30,20 +30,20 @@ import getCookie from "../../packages/utils/cookieGet";
         "search.json"
       )}?profile=${props.search.profile}&collection=${props.search.collection}${
         props.search.maintopic?.asset_name !== ""
-          ? `&meta_taxonomyContentMainTopicId=${props.search.maintopic?.asset_assetid}`
+          ? `&query=[taxonomyContentMainTopicId:${props.search.maintopic?.asset_assetid} taxonomyContentTopicsId:${props.search.maintopic?.asset_assetid} taxonomyContentSubtopicsId:${props.search.maintopic?.asset_assetid}]`
           : ""
-      }&meta_taxonomyAudienceText=${audience}&meta_taxonomyContentTypeId_not=28210&meta_taxonomyContentTypeId_not=28216&meta_taxonomyContentTypeId_not=28201
-      &num_ranks=${MAX_CARDS}&sort=date&meta_id_not=${
+      }&meta_taxonomyAudienceText=${audience}&query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 taxonomyContentTypeId:28201 id:${
         props.search.currentPage
-      }`;
+      }]&num_ranks=${MAX_CARDS}&sort=date`;
 
       fallbackFbUrl = `${props.search.endpoint?.replace(
         "search.html",
         "search.json"
       )}?profile=${props.search.profile}&collection=${
         props.search.collection
-      }&meta_taxonomyContentTypeId_not=28210&meta_taxonomyContentTypeId_not=28216&meta_taxonomyContentTypeId_not=28201
-      &num_ranks=12&sort=date&meta_id_not=${props.search.currentPage}`;
+      }&query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 taxonomyContentTypeId:28201 id:${
+        props.search.currentPage
+      }]&num_ranks=12&sort=date`;
     }
 
     // Check if we have a URL to fetch data from

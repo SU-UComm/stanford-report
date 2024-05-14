@@ -18,11 +18,12 @@ export default async function relatedStory(
       } taxonomyContentTopicsId:${
       pageData.mainTopicId
     } taxonomyContentSubtopicsId:${pageData.mainTopicId}]
-      &meta_taxonomyContentTypeId_not=28210&meta_taxonomyContentTypeId_not=28216&meta_taxonomyContentTypeId_not=28201
+      &query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 taxonomyContentTypeId:28201 id:${
+        pageData.id
+      }]
       &meta_taxonomyAudienceText=${translatePersonalisationProfile(
         personalisation
-      )}&num_ranks=3
-      &meta_id_not=${pageData.id}&sort=date&log=false
+      )}&num_ranks=3&sort=date&log=false
     `;
 
     // uglify the URL

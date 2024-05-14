@@ -33,7 +33,7 @@ export function MultiColumnGrid({ items, separator = false }) {
     items.length > MAXIMUM_ITEMS ? items.slice(0, MAXIMUM_ITEMS - 1) : items;
   const totalColumns = items.length;
 
-  return gridItems.length > MINIMUM_ITEMS ? (
+  return gridItems.length >= MINIMUM_ITEMS ? (
     <div className="su-w-full su-component-multicolumn">
       <div
         className={[
