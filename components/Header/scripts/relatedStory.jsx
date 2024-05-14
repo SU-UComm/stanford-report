@@ -12,13 +12,17 @@ export default async function relatedStoryData(pageData = null, audience = "") {
       "search.json"
     )}?profile=${pageData.search.profile}&collection=${
       pageData.search.collection
-    }&meta_taxonomyContentMainTopicId=${
+    }&query=[taxonomyContentMainTopicId:${
       pageData.mainTopicId
-    }&meta_taxonomyAudienceText=${translatePersonalisationProfile(
+    } taxonomyContentTopicsId:${
+      pageData.mainTopicId
+    } taxonomyContentSubtopicsId:${
+      pageData.mainTopicId
+    }]&meta_taxonomyAudienceText=${translatePersonalisationProfile(
       audience
     )}&query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 taxonomyContentTypeId:28201 id:${
       pageData.id
-    }]&sort=date&num_ranks=1`;
+    }]&sort=date&num_ranks=1&log=false`;
 
     fallbackFbUrl = `${pageData.search.endpoint?.replace(
       "search.html",
@@ -27,7 +31,7 @@ export default async function relatedStoryData(pageData = null, audience = "") {
       pageData.search.collection
     }&query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 taxonomyContentTypeId:28201 id:${
       pageData.id
-    }]&sort=date&num_ranks=1`;
+    }]&sort=date&num_ranks=1&log=false`;
 
     if (pageData.search.contentType === "Video") {
       fallbackFbUrl += "&meta_taxonomyContentTypeText=Video";
