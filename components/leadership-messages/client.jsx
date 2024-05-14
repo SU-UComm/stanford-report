@@ -32,7 +32,7 @@ import getCookie from "../../packages/utils/cookieGet";
         audience
       )}&query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 id:${
         props.search.currentPage
-      }]&sort=date&num_ranks=6&log=false`;
+      }]&sort=date&num_ranks=3&log=false`;
     }
 
     // Check if we have a URL to fetch data from
