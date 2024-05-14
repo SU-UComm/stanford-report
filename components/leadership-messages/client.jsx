@@ -26,11 +26,11 @@ import getCookie from "../../packages/utils/cookieGet";
       fbUrl = `${props.search.endpoint?.replace(
         "search.html",
         "search.json"
-      )}?profile=${props.search.profile}&query=%21null&collection=${
+      )}?profile=${props.search.profile}&collection=${
         props.search.collection
       }&query=[taxonomyContentTypeId:28201]&meta_taxonomyAudienceText=${translatePersonalisationProfile(
         audience
-      )}&query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 taxonomyContentTypeId:28201 id:${
+      )}&query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 id:${
         props.search.currentPage
       }]&sort=date&num_ranks=6&log=false`;
     }
