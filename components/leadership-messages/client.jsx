@@ -28,9 +28,7 @@ import getCookie from "../../packages/utils/cookieGet";
         "search.json"
       )}?profile=${props.search.profile}&collection=${
         props.search.collection
-      }&query=[taxonomyContentTypeId:28201]&meta_taxonomyAudienceText=${translatePersonalisationProfile(
-        audience
-      )}&query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 id:${
+      }&query=[taxonomyContentTypeId:28201]&meta_taxonomyAudienceText=${audience}&query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 id:${
         props.search.currentPage
       }]&sort=date&num_ranks=3&log=false`;
     }
