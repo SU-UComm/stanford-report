@@ -1,30 +1,42 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "footer-component",
+  "name": "popular-stories-cf",
   "version": "2.0.0",
   "namespace": "stanford-components",
-  "description": "Stanford university Footer component.",
-  "displayName": "Footer",
+  "description": "Displays a list of popular stories.",
+  "displayName": "Popular Stories",
   "mainFunction": "main",
   "environment": [
     {
-      "name": "CONTENT_API",
-      "required": true
-    },
-    {
-      "name": "CONTENT_API_KEY",
+      "name": "FB_API_TOKEN",
       "required": true
     },
     {
       "name": "FB_JSON_URL",
       "required": true
+    },
+    {
+      "name": "MGT_API",
+      "required": true
+    },
+    {
+      "name": "CF_ANALYTICS_API",
+      "required": true
+    },
+    {
+      "name": "BASE_DOMAIN",
+      "required": true
+    },
+    {
+      "name": "BASE_PATH",
+      "required": true
     }
   ],
   "icon": {
-    "id": "foundation",
+    "id": "trending_up",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "purple"
     }
   },
   "functions": [
@@ -33,14 +45,8 @@
       "entry": "./dist/server.cjs",
       "input": {
         "type": "object",
-        "properties": {
-          "dataUrl": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "dataUrl"
-        ]
+        "properties": {},
+        "required": []
       },
       "output": {
         "responseType": "html",
@@ -50,6 +56,20 @@
             "file": {
               "type": "css",
               "filepath": "global.css"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
+            }
+          },
+          {
+            "location": "header",
+            "file": {
+              "type": "js",
+              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
             }
           },
           {
@@ -75,7 +95,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/outerlayout.html"
+            "path": "../../packages/__globalPreview/basicstory.html"
           }
         }
       }

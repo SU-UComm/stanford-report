@@ -4,7 +4,7 @@ import CardDataAdapter from "../../packages/utils/CardDataAdapter";
 import MatrixCardService from "../../packages/utils/MatrixCardService";
 
 export default async (args, info) => {
-  const { API_IDENTIFIER } = info.set.environment;
+  const { API_IDENTIFIER, BASE_DOMAIN } = info.set.environment;
   const { contentConfiguration } = args;
   const { story } = contentConfiguration;
   const { ctx } = info;
@@ -12,7 +12,7 @@ export default async (args, info) => {
   let data = null;
 
   if (story) {
-    const service = new MatrixCardService({ ctx, API_IDENTIFIER });
+    const service = new MatrixCardService({ BASE_DOMAIN, API_IDENTIFIER });
 
     adapter.setCardService(service);
 
