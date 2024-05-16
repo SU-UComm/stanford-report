@@ -90,11 +90,23 @@ export default function FeaturedMetadata({ data }) {
   //   });
   // }
 
+  const relatedTopics = [];
+
+  const relatedFiltered = related.filter((item) => {
+    if (!relatedTopics.includes(item.asset_name)) {
+      relatedTopics.push(item.asset_name);
+
+      return item;
+    }
+
+    return null;
+  });
+
   const firstRow = metaMap.slice(0, metaMap.length > 3 ? 3 : metaMap.length);
   const otherRows = metaMap.slice(3, metaMap.length);
 
   const gridSettings =
-    "md:su-gap-x-20 md:su-gap-y-70 lg:su-gap-x-40 lg:su-gap-y-[61px]";
+    "md:su-gap-x-20 md:su-gap-y-70 lg:su-gap-x-40 lg:su-gap-y-[6.1rem]";
 
   return (
     <section className="su-flex su-flex-col su-items-center">
@@ -109,7 +121,7 @@ export default function FeaturedMetadata({ data }) {
             className={`su-flex su-flex-col md:su-flex-row su-gap-32 su-pt-0 ${gridSettings}`}
           >
             {firstRow.map((meta) => (
-              <div className="su-w-full md:su-w-auto md:su-min-w-[170px]">
+              <div className="su-w-full md:su-w-auto md:su-min-w-[17rem]">
                 <FeaturedField title={meta.name} alignment="center">
                   {meta.name !== "Campus unit" ? (
                     meta.items.map(
@@ -145,7 +157,7 @@ export default function FeaturedMetadata({ data }) {
         ""
       )}
       {otherRows.length > 0 ? (
-        <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center su-mt-32 md:su-mt-61 md:su-flex-row md:su-gap-20 lg:su-gap-40">
+        <div className="su-flex su-w-full su-flex-col su-justify-center su-items-center su-rs-mt-4 md:su-flex-row md:su-gap-20 lg:su-gap-40">
           <div
             aria-hidden="true"
             className="su-border-none su-w-70 su-h-2 su-bg-transparent md:su-w-auto su-grow md:su-h-3"
@@ -189,24 +201,24 @@ export default function FeaturedMetadata({ data }) {
       ) : (
         ""
       )}
-
-      <div
-        className={`su-flex su-w-full su-flex-col su-justify-center su-items-center md:su-flex-row md:su-gap-20 lg:su-gap-40 ${
-          firstRow.length > 0 ? "su-rs-mt-4" : ""
-        }`}
-      >
-        {firstRow.length === 0 ? (
-          <div
-            aria-hidden="true"
-            className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
-          />
-        ) : (
-          ""
-        )}
+      {media && media.length > 0 ? (
         <div
-          className={`su-flex su-flex-col md:su-flex-row su-gap-32 su-pt-0 ${gridSettings}`}
+          className={`media-contacts su-flex su-w-full su-flex-col su-justify-center su-items-center md:su-flex-row md:su-gap-20 lg:su-gap-40 ${
+            firstRow.length > 0 ? "su-rs-mt-4" : ""
+          }`}
         >
-          {media && media.length ? (
+          {firstRow.length === 0 ? (
+            <div
+              aria-hidden="true"
+              className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mb-38 md:su-mb-0"
+            />
+          ) : (
+            ""
+          )}
+
+          <div
+            className={`su-flex su-flex-col md:su-flex-row su-gap-32 su-pt-0 ${gridSettings}`}
+          >
             <div>
               <FeaturedField
                 title={`Media contact${media.length > 1 ? "s" : ""}`}
@@ -245,30 +257,29 @@ export default function FeaturedMetadata({ data }) {
                 </div>
               </FeaturedField>
             </div>
+          </div>
+
+          {firstRow.length === 0 ? (
+            <div
+              aria-hidden="true"
+              className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
+            />
           ) : (
             ""
           )}
         </div>
-
-        {firstRow.length === 0 ? (
-          <div
-            aria-hidden="true"
-            className="su-border-none su-grow su-w-70 su-h-2 su-bg-gradient-to-r su-from-digital-red-dark su-to-digital-red-light dark:su-from-palo-verde dark:su-to-olive md:su-w-auto md:su-h-3 su-mt-38 md:su-mt-0"
-          />
-        ) : (
-          ""
-        )}
-      </div>
-
+      ) : (
+        ""
+      )}
       {campus &&
       ![null, undefined, "undefined", ""].includes(campus.asset_assetid) ? (
         <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
-          <h3 className="su-text-[18px] su-font-bold su-leading-[22.5px] su-font-sans !su-m-0">
+          <h3 className="su-text-18 su-font-bold su-leading-[125%] su-font-sans !su-m-0">
             Campus unit
           </h3>
 
           {!campus.asset_url ? (
-            <div className="su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
+            <div className="su-flex su-gap-20 su-max-w-[71.9rem] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
               {campus.asset_name}
             </div>
           ) : (
@@ -276,7 +287,7 @@ export default function FeaturedMetadata({ data }) {
               href={campus.asset_url}
               className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-19 su-font-semibold"
             >
-              <div className="su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-[27px] md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
+              <div className="su-flex su-gap-20 su-max-w-[71.9rem] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
                 {campus.asset_name}
               </div>
             </a>
@@ -286,14 +297,14 @@ export default function FeaturedMetadata({ data }) {
         ""
       )}
 
-      {related && related.length ? (
+      {relatedFiltered && relatedFiltered.length ? (
         <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
-          <h3 className="su-text-18 su-font-bold su-leading-[22.5px] su-font-sans !su-m-0">
+          <h3 className="su-text-18 su-font-bold su-leading-[125%] su-font-sans !su-m-0">
             Related topics
           </h3>
 
-          <div className="su-flex su-gap-20 su-max-w-[719px] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
-            {related.map((item) =>
+          <div className="su-flex su-gap-20 su-max-w-[71.9rem] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
+            {relatedFiltered.map((item) =>
               item ? (
                 <div key={item.asset_assetid}>
                   <a
@@ -314,7 +325,7 @@ export default function FeaturedMetadata({ data }) {
       )}
 
       <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
-        <h3 className="su-text-18 su-font-bold su-leading-[22.5px] !su-m-0 su-font-sans">
+        <h3 className="su-text-18 su-font-bold su-leading-[125%] !su-m-0 su-font-sans">
           Share this story
         </h3>
 

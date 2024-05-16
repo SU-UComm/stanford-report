@@ -68,7 +68,8 @@ export default function _preferencesSettings() {
       setCookie(
         "preferences_theme",
         "light",
-        process.env.NODE_ENV === "production"
+        process.env.NODE_ENV === "production",
+        130
       );
     });
 
@@ -82,7 +83,8 @@ export default function _preferencesSettings() {
       setCookie(
         "preferences_theme",
         "dark",
-        process.env.NODE_ENV === "production"
+        process.env.NODE_ENV === "production",
+        130
       );
     });
 

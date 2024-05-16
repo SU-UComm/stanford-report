@@ -50,6 +50,7 @@ export default function MediaCard({
 
   return title ? (
     <article
+      aria-label={title}
       data-test="media-card"
       className="su-component-card-media md:su-min-h-[38.4rem] su-relative su-w-full md:su-px-0 su-flex su-flex-wrap su-justify-center su-gap-20 md:su-gap-36 md:su-gap-48 md:su-flex-nowrap su-items-center"
     >
@@ -74,7 +75,7 @@ export default function MediaCard({
           </div>
         )}
         {title && (
-          <h2 className="su-text-[3.5rem] su-mb-5 su-leading-tight md:su-text-[4rem] lg:su-text-[4.3rem]">
+          <h3 className="su-text-[3.5rem] su-mb-5 su-leading-tight md:su-text-[4rem] lg:su-text-[4.3rem]">
             {liveUrl && (
               // eslint-disable-next-line jsx-a11y/control-has-associated-label
               <a
@@ -94,7 +95,7 @@ export default function MediaCard({
                 {title}
               </span>
             )}
-          </h2>
+          </h3>
         )}
         {author && (
           <div data-test="mediacard-author" className="su-mb-15 md:su-mb-19">

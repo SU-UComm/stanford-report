@@ -28,28 +28,22 @@ import getCookie from "../../packages/utils/cookieGet";
       fbUrl = `${props.search.endpoint?.replace(
         "search.html",
         "search.json"
-      )}?profile=${props.search.profile}&query=%21null&collection=${
-        props.search.collection
-      }${
+      )}?profile=${props.search.profile}&collection=${props.search.collection}${
         props.search.maintopic?.asset_name !== ""
-          ? `&meta_taxonomyContentMainTopicText=${props.search.maintopic?.asset_name}`
+          ? `&meta_taxonomyContentMainTopicId=${props.search.maintopic?.asset_assetid}`
           : ""
-      }&meta_taxonomyAudienceText=${translatePersonalisationProfile(
-        audience
-      )}&meta_taxonomyContentTypeText_not=Leadership%20messages+News+Announcements
-      &num_ranks=${MAX_CARDS}&meta_notisTeaser=true&sort=date&meta_id_not=${
+      }&meta_taxonomyAudienceText=${audience}&meta_taxonomyContentTypeId_not=28210&meta_taxonomyContentTypeId_not=28216&meta_taxonomyContentTypeId_not=28201
+      &num_ranks=${MAX_CARDS}&sort=date&meta_id_not=${
         props.search.currentPage
       }`;
 
       fallbackFbUrl = `${props.search.endpoint?.replace(
         "search.html",
         "search.json"
-      )}?profile=${props.search.profile}&query=%21null&collection=${
+      )}?profile=${props.search.profile}&collection=${
         props.search.collection
-      }&meta_taxonomyContentTypeText_not=Leadership%20messages+News+Announcements
-      &num_ranks=12&meta_notisTeaser=true&sort=date&meta_id_not=${
-        props.search.currentPage
-      }`;
+      }&meta_taxonomyContentTypeId_not=28210&meta_taxonomyContentTypeId_not=28216&meta_taxonomyContentTypeId_not=28201
+      &num_ranks=12&sort=date&meta_id_not=${props.search.currentPage}`;
     }
 
     // Check if we have a URL to fetch data from

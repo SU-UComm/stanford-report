@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "single-featured-content",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "namespace": "stanford-components",
   "description": "Stanford university single featured content component",
   "displayName": "Single featured content",
@@ -9,6 +9,10 @@
   "environment": [
     {
       "name": "API_IDENTIFIER",
+      "required": true
+    },
+    {
+      "name": "BASE_DOMAIN",
       "required": true
     }
   ],
@@ -63,7 +67,9 @@
           "contentConfiguration": {
             "title": "Single featured content inner content",
             "description": "The featured content to display in the component",
-            "required": ["source"],
+            "required": [
+              "source"
+            ],
             "properties": {
               "source": {
                 "title": "Featured content",

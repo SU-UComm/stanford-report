@@ -11,6 +11,8 @@ const testData = {
   taxonomy: null,
   taxonomyUrl: null,
   type: null,
+  liveUrl:
+    "https://sug-web.matrix.squiz.cloud/report/stories/2024/04/stellar-axis-by-lita-albuquerque-at-stanford",
 };
 
 describe("Vertical Card", () => {

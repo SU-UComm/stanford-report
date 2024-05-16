@@ -37,6 +37,7 @@ export default function PullQuoteCard({
 }) {
   return quote ? (
     <article
+      aria-label={`Quote: ${quote}`}
       data-test="pullquote-card"
       className="su-component-card-pullquote su-relative su-w-full su-pl-0 lg:su-pl-[52px] su-flex su-flex-col su-justify-center su-items-center su-gap-27"
     >

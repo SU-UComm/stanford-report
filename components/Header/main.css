@@ -11,6 +11,10 @@
   display: block !important;
 }
 
+.twitter-typeahead input[type="search"][readonly] {
+  display: none;
+}
+
 .report-header .tt-menu {
   padding-top: 42px;
   padding-left: 15px;
@@ -66,13 +70,15 @@
   }
 }
 
-.report-header .tt-suggestion:hover {
+.report-header .tt-suggestion:hover,
+.twitter-typeahead .tt-cursor {
   background-color: transparent;
   color: #b1040e;
   text-decoration: underline;
 }
 
-.su-dark .report-header .tt-suggestion:hover {
+.su-dark .report-header .tt-suggestion:hover,
+.su-dark .twitter-typeahead .tt-cursor {
   color: #ec0909;
 }
 
@@ -133,6 +139,11 @@
   pointer-events: none;
 }
 
+.report-header__menu-tray[aria-hidden="false"] .report-header__primary-nav,
+.report-header__preferences-tray[aria-hidden="false"] .report-header__preferences {
+  height: 100dvh !important;
+}
+
 .report-header__primary-nav {
   transform: translateX(-100%);
   transition: all 0.25s ease;
@@ -144,7 +155,7 @@
 }
 
 .report-header__pref-toggle {
-  @apply su-py-26 su-px-29 su-h-[186px] su-bg-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent dark:hover:su-text-white aria-pressed:dark:su-text-white hover:su-bg-transparent dark:su-bg-black-true after:su-transition-none su-transition before:su-transition dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-text-center;
+  @apply su-py-26 su-px-5 su-h-[18.6rem] su-bg-white dark:aria-pressed:su-bg-transparent dark:hover:su-bg-transparent dark:hover:su-text-white aria-pressed:dark:su-text-white hover:su-bg-transparent dark:su-bg-black-true after:su-transition-none su-transition before:su-transition dark:after:su-rotate-180 before:su-absolute before:-su-z-10 before:-su-m-2 after:su-absolute after:-su-z-10 before:su-top-0 before:su-bottom-0 before:su-right-0 before:su-left-0 after:su-top-0 after:su-bottom-0 after:su-right-0 after:su-left-0 su-relative su-text-center;
   border-radius: 9px;
   background-clip: padding-box;
   border: 3px solid transparent;
@@ -351,6 +362,7 @@
   width: calc(100% - 340px);
   transition: all 0.25s ease;
   opacity: 0;
+  z-index: 0;
 }
 
 .report-header--story .report-header__story > * {

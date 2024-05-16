@@ -16,11 +16,13 @@ import LinkListItem from "./components/LinkListItem";
  * @constructor
  */
 export default function LinkList({ search }) {
-  const isClient = typeof window !== "undefined";
-  const pageData =
-    isClient && typeof window.pageController !== "undefined"
-      ? window.pageController
-      : null;
+  // const [isClient, setIsClient] = useState(false);
+
+  // const isClient = !(typeof window === "undefined");
+  // const pageData =
+  //   isClient && typeof window.pageController !== "undefined"
+  //     ? window.pageController
+  //     : null;
   const audienceCookie = getCookie("preferences_personalisation");
   const links = [];
 
@@ -30,7 +32,7 @@ export default function LinkList({ search }) {
   const [linkItems, setLinkItems] = useState([]);
 
   // get FB data
-  const getFB = async () => {
+  const getFB = async (pageData) => {
     const data = await relatedStory(search, pageData, audienceCookie);
 
     setRelatedStoryData(data);
@@ -41,21 +43,23 @@ export default function LinkList({ search }) {
     relatedStoryData.forEach((link) => {
       links.push(<LinkListItem title={link.title} url={link.indexUrl} />);
     });
-
-    // testing stuff
-    // links.push(<LinkListItem title="Item one" url="#" />);
-    // links.push(<LinkListItem title="Item two" url="#" />);
-    // links.push(<LinkListItem title="Item three" url="#" />);
   }
 
   // effects
   useEffect(() => {
+    // setIsClient(true);
     if (audienceCookie) setPersonalisation(audienceCookie);
 
     if (relatedStoryData && !linkItems.length) setLinkItems(links);
 
+    // const pageData =
+    //   typeof window.pageController !== "undefined"
+    //     ? window.pageController
+    //     : null;
+    const pageData = window.pageController;
+       
     if (!relatedStoryData) {
-      getFB();
+      getFB(pageData);
     }
   }, [personalisation, relatedStoryData]);
 

@@ -38,6 +38,14 @@ export default function formatCardDataFunnelback({
   const authorAvatar = authorImage !== "" ? authorImage : undefined;
 
   const imageUrl = image;
+  // eslint-disable-next-line no-param-reassign
+  imageAlt = image && imageAlt ? imageAlt : "";
+
+  if (!imageAlt && !imageUrl) {
+    // eslint-disable-next-line no-param-reassign
+    imageAlt = "a close up image of an intricate stone arch";
+  }
+
   const videoUrl = featuredVideo;
 
   const description = teaserPlain || summary;

@@ -7,7 +7,10 @@ import { LinkedHeading } from "../../packages/headings/Heading";
 import { FeaturedGrid, HorizontalCardGrid } from "../../packages/grids/Grids";
 import { Container } from "../../packages/grids/Container";
 import { SidebarList } from "../../packages/sidebar/SidebarList";
-import { ChevronRight } from "../../packages/SVG-library/SVG";
+import {
+  ChevronRight,
+  ExternalArrowUnstyled,
+} from "../../packages/SVG-library/SVG";
 
 /**
  * Featured content component
@@ -40,6 +43,39 @@ export default function FeaturedContent({
     featuredCardData.description = contentConfiguration.featuredDescription;
   }
 
+  const gridCards = [];
+  if (featuredCardData !== undefined) {
+    gridCards.push(
+      <Card
+        data={featuredCardData}
+        cardSize="featured"
+        headingLvl={headingData.title ? 3 : 2}
+      />
+    );
+  }
+  if (data[1] !== undefined) {
+    gridCards.push(
+      <Card
+        data={data[1]}
+        displayThumbnail={displayConfiguration.displayThumbnails}
+        displayDescription={displayConfiguration.displayDescriptions}
+        cardSize="small"
+        headingLvl={headingData.title ? 3 : 2}
+      />
+    );
+  }
+  if (data[2] !== undefined) {
+    gridCards.push(
+      <Card
+        data={data[2]}
+        displayThumbnail={displayConfiguration.displayThumbnails}
+        displayDescription={displayConfiguration.displayDescriptions}
+        cardSize="small"
+        headingLvl={headingData.title ? 3 : 2}
+      />
+    );
+  }
+
   const eventCards = [];
   eventData.forEach((card) => {
     eventCards.push(<Card data={card} cardType="horizontal" />);
@@ -58,12 +94,24 @@ export default function FeaturedContent({
         <a
           href={card.liveUrl}
           aria-labelledby={`aria-announcement-${i}`}
-          className="su-group su-transition dark:su-text-digital-blue-vivid su-text-digital-blue su-flex su-flex-nowrap su-gap-2 su-items-center su-leading-[125%] su-text-16 su-font-semibold su-no-underline before:su-size-full before:su-top-0 before:su-left-0 before:su-absolute [&>svg]:su-size-16"
+          className="su-group su-transition dark:su-text-digital-blue-vivid su-text-digital-blue su-flex su-flex-nowrap su-gap-02em su-items-center su-leading-[125%] su-text-16 su-font-semibold su-no-underline su-stretched-link"
         >
           <span className="group-hocus:su-underline">Read more</span>
-          <span className="su-transition group-hocus:su-translate-x-01em">
-            <ChevronRight />
-          </span>
+          {!!card.liveUrl && !card.liveUrl.includes("news.stanford.edu") ? (
+            <>
+              <span className="su-sr-only">(link is external)</span>
+              <ExternalArrowUnstyled
+                aria-hidden
+                strokeWidth={3.5}
+                className="su-transition su-will-change-transform group-hocus:su-translate-x-02em group-hocus:su--translate-y-02em su-w-08em su-text-digital-blue group-hocus:su-text-digital-red dark:su-text-digital-blue-vivid dark:group-hocus:su-text-dark-mode-red su-mt-0"
+              />
+            </>
+          ) : (
+            <ChevronRight
+              aria-hidden
+              className="su-fill-transparent su-stroke-current su-transition group-hocus:su-translate-x-01em"
+            />
+          )}
         </a>
       </article>
     );
@@ -88,6 +136,7 @@ export default function FeaturedContent({
                 ctaText="See all events"
                 ctaUrl={eventsConfiguration.linkUrl}
                 ctaIcon="externalarrow"
+                headingLvl={headingData.title ? "h3" : "h2"}
               >
                 <HorizontalCardGrid
                   items={eventCards}
@@ -102,6 +151,7 @@ export default function FeaturedContent({
                 icon="announcement"
                 ctaText="See all announcements"
                 ctaUrl={announcementLink}
+                headingLvl={headingData.title ? "h3" : "h2"}
               >
                 <HorizontalCardGrid
                   items={announcementCards}
@@ -114,25 +164,9 @@ export default function FeaturedContent({
             </div>
           </div>
           <div className="md:su-basis-[58.333%] lg:su-basis-[64.5%] su-grow">
-            <FeaturedGrid
-              alignment="left"
-              items={[
-                <Card data={featuredCardData} cardSize="featured" />,
-                <Card
-                  data={data[1]}
-                  displayThumbnail={displayConfiguration.displayThumbnails}
-                  displayDescription={displayConfiguration.displayDescriptions}
-                  cardSize="small"
-                />,
-                <Card
-                  data={data[2]}
-                  displayThumbnail={displayConfiguration.displayThumbnails}
-                  displayDescription={displayConfiguration.displayDescriptions}
-                  cardSize="small"
-                />,
-              ]}
-              isNested
-            />
+            {data !== undefined && data.length > 0 && (
+              <FeaturedGrid alignment="left" items={gridCards} isNested />
+            )}
           </div>
         </div>
       </div>

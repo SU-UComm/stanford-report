@@ -9,6 +9,7 @@ import SiteLogo from "./Components/SiteLogo";
 import CurrentStoryHeadline from "./Components/currentStoryHeadline";
 import CookieConsentBanner from "./Components/CookieConsentBanner";
 
+import relatedStoryData from "./scripts/relatedStory";
 import cdpSetConsent from "../../packages/utils/cdpSetConsent";
 import cdpSetPersona from "../../packages/utils/cdpSetPersona";
 import setCookie from "../../packages/utils/cookieSet";
@@ -36,7 +37,7 @@ export default function Header({ site, navigation, search }) {
   // has the user given consent?
   const [displayConsentBanner, setDisplayConsentBanner] = useState(false);
   // if any, what audience value is set
-  const [audience, setAudience] = useState(null);
+  const [audience, setAudience] = useState("external");
   // page specific data
   const [pageControls, setPageControls] = useState(null);
   // related story display
@@ -77,11 +78,11 @@ export default function Header({ site, navigation, search }) {
       await cdpSetConsent(0);
       setConsent(false);
     }
-    setCookie("preferences_personalisation", persona);
+    setCookie("preferences_personalisation", persona, true, 130);
     setDisplayConsentBanner(false);
     setAudience(persona);
     document.dispatchEvent(document.personaChangeEvent);
-    location.reload();
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -93,6 +94,18 @@ export default function Header({ site, navigation, search }) {
       setDisplayConsentBanner(
         typeof window.suHeaderProps?.consentData === "undefined"
       );
+
+      if (window.suHeaderProps?.pageData?.isStory) {
+        const fetchRelatedStoryData = async () => {
+          const fbStoryData = await relatedStoryData(
+            window.suHeaderProps.pageData,
+            window.suHeaderProps.audienceData
+          );
+          setRelatedStoryData(fbStoryData);
+        };
+        fetchRelatedStoryData();
+      }
+
       // This is legacy code, however, it works
       const headerDom = document.querySelector(".report-header");
       // eslint-disable-next-line no-unused-vars
@@ -125,30 +138,14 @@ export default function Header({ site, navigation, search }) {
                   className="su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
                   aria-controls="menu"
                   aria-expanded="false"
-                  aria-labelledby="toggle-menu"
                   type="button"
                 >
                   <span className="su-relative su-size-32">
                     <BurgerBar />
                     <MobileBurgerBar />
                   </span>
-                  <span id="toggle-menu" hidden>
-                    Menu
-                  </span>
-                  <span
-                    className="su-text-12 su-hidden md:su-block"
-                    aria-hidden="true"
-                  >
-                    <span id="toggle-menu" hidden>
-                      Menu
-                    </span>
-                    <span
-                      className="su-text-12 su-hidden md:su-block"
-                      aria-hidden="true"
-                    >
-                      Menu
-                    </span>
-                  </span>
+
+                  <span className="su-text-12 su-hidden md:su-block">Menu</span>
                 </button>
 
                 <MobileNav
@@ -211,11 +208,12 @@ export default function Header({ site, navigation, search }) {
                 logoLight={site?.logoLight}
               />
 
-              {/* {isClient && pageControls?.isStory && ( */}
-              {pageControls?.isStory && (
+              {/* {pageControls?.isStory && ( */}
+              {isClient && relatedStory && (
                 <CurrentStoryHeadline
                   title={pageControls?.title}
                   story={relatedStory}
+                  contentType={pageControls?.contentType}
                 />
               )}
               <PreferencesTray

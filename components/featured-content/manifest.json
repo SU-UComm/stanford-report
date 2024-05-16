@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "featured-content",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "namespace": "stanford-components",
   "description": "",
   "displayName": "Featured content",
@@ -13,6 +13,10 @@
     },
     {
       "name": "FB_JSON_URL",
+      "required": true
+    },
+    {
+      "name": "BASE_DOMAIN",
       "required": true
     }
   ],
@@ -68,12 +72,17 @@
             "title": "Grid Content",
             "description": "The cards to display in the grid area of the component. The featured card appears larger than the supplementary cards. When manually selecting cards, at least three must be selected for the grid to display.",
             "type": "object",
-            "required": ["source"],
+            "required": [
+              "source"
+            ],
             "properties": {
               "source": {
                 "title": "Content source",
                 "default": "Search",
-                "enum": ["Search", "Select"],
+                "enum": [
+                  "Search",
+                  "Select"
+                ],
                 "type": "string"
               }
             },
@@ -88,7 +97,9 @@
                   }
                 },
                 "then": {
-                  "required": ["searchQuery"],
+                  "required": [
+                    "searchQuery"
+                  ],
                   "properties": {
                     "searchQuery": {
                       "type": "string",
@@ -108,7 +119,9 @@
                   }
                 },
                 "then": {
-                  "required": ["cards"],
+                  "required": [
+                    "cards"
+                  ],
                   "properties": {
                     "cards": {
                       "title": "Cards",
@@ -125,7 +138,9 @@
                             "title": "Card Asset"
                           }
                         },
-                        "required": ["cardAsset"]
+                        "required": [
+                          "cardAsset"
+                        ]
                       }
                     },
                     "featuredDescription": {
@@ -148,7 +163,10 @@
                 "title": "Featured Card: Alignment",
                 "description": "The position of the featured card on larger screens.",
                 "default": "left",
-                "enum": ["left", "right"]
+                "enum": [
+                  "left",
+                  "right"
+                ]
               },
               "displayThumbnails": {
                 "title": "Display Supplementary Thumbnails",
@@ -293,12 +311,38 @@
         }
       }
     },
+    "noHeading": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "noHeading.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
     "search": {
       "functionData": {
         "main": {
           "inputData": {
             "type": "file",
             "path": "search.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "search2": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "search2.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"

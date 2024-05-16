@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "media-feature",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "namespace": "stanford-components",
   "description": "THe media feature component is used to feature a singluar podcast or book.",
   "displayName": "Media Feature",
@@ -41,7 +41,10 @@
               },
               "mediaType": {
                 "title": "Media type",
-                "enum": ["Podcast", "Book"],
+                "enum": [
+                  "Podcast",
+                  "Book"
+                ],
                 "type": "string",
                 "default": "Podcast"
               },
@@ -94,6 +97,10 @@
     "matrix-asset://api-identifier/125801": {
       "type": "file",
       "path": "mocked-uris/125801.json"
+    },
+    "matrix-asset://api-identifier/128612": {
+      "type": "file",
+      "path": "mocked-uris/128612.json"
     }
   },
   "previews": {

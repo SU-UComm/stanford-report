@@ -8,6 +8,8 @@ import '../../components/single-image-video/client.jsx';
 import '../../components/single-featured-content/client.jsx';
 import '../../components/related-story/client.jsx';
 import '../../components/pullquote/client.jsx';
+import '../../components/popular-stories-cf/client.jsx';
+import '../../components/popular-stories/client.jsx';
 import '../../components/policy-brief/client.jsx';
 import '../../components/multicolumn-listing/client.jsx';
 import '../../components/multicolumn-image/client.jsx';

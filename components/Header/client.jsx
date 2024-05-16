@@ -23,12 +23,12 @@ import relatedStoryData from "./scripts/relatedStory";
 
   const audienceData = getCookie("preferences_personalisation");
   props.audienceData = audienceData;
-  if (audienceData === "null") {
-    props.audienceData = null;
+  if (audienceData === "null" || !audienceData) {
+    props.audienceData = "external";
   }
   if (pageData?.isStory) {
-    const fbStoryData = await relatedStoryData(pageData, audienceData);
-    props.relatedStoryData = fbStoryData;
+    // const fbStoryData = await relatedStoryData(pageData, audienceData);
+    // props.relatedStoryData = fbStoryData;
   }
   // set the props we need, to a window variable
   window.suHeaderProps = props;

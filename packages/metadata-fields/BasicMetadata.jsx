@@ -35,6 +35,18 @@ export default function BasicMetadata({ data }) {
     });
   };
 
+  const relatedTopics = [];
+
+  const relatedFiltered = related.filter((item) => {
+    if (!relatedTopics.includes(item.asset_name)) {
+      relatedTopics.push(item.asset_name);
+
+      return item;
+    }
+
+    return null;
+  });
+
   return (
     <section className="su-border-b su-border-b-black-20 su-pt-32 su-mb-32 md:su-pt-36 lg:su-border-b-transparent lg:su-mb-[104px]">
       {authors && authors.length ? (
@@ -206,13 +218,13 @@ export default function BasicMetadata({ data }) {
         ""
       )}
 
-      {related && related.length ? (
+      {relatedFiltered && relatedFiltered.length ? (
         <div className="su-border-t border-t-black-20">
           <BasicFields
             title="Related topics"
             contentCSS="md:su-flex-row md:su-gap-27 md:su-flex-wrap"
           >
-            {related.map(
+            {relatedFiltered.map(
               (item) =>
                 item && (
                   <div className="" key={item.asset_assetid}>

@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "policy-brief",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "namespace": "stanford-components",
   "description": "This component allows a content manager to create a policy brief that can be externally linked to a policy brief or case study.",
   "displayName": "Policy brief",
@@ -39,7 +39,10 @@
               },
               "type": {
                 "title": "Type",
-                "enum": ["Policy Brief", "Case Study"],
+                "enum": [
+                  "Policy Brief",
+                  "Case Study"
+                ],
                 "default": "Policy Brief",
                 "type": "string"
               },
