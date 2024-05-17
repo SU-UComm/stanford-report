@@ -43,9 +43,9 @@ export default function ImageQuote({ displayConfiguration, data }) {
         className={[
           "story__quote su-relative",
           "su-flex su-flex-wrap lg:su-flex-nowrap lg:su-items-start",
-          "before:su-absolute before:su-h-4 before:su-top-[40%] md:before:su-top-[30%] lg:before:su-top-72 before:su-z-0 before:su-right-0 su-bg-gradient-before-reverse",
+          "before:su-absolute before:su-h-4 before:su-top-72 md:before:su-top-[30%] lg:before:su-top-72 before:su-z-0 before:su-right-0 su-bg-gradient-before-reverse",
           widthClasses.line,
-          "after:su-absolute after:su-w-4 after:su-z-[-10] after:su-top-[40%] md:after:su-top-[30%] lg:after:su-top-72 after:su-right-0 su-bg-gradient-after-reverse after:su-h-[calc(100%-45%)] md:after:su-h-[calc(100%-35%)] lg:after:su-h-[calc(100%-72px)] lg:after:su-hidden",
+          "after:su-absolute after:su-w-4 after:su-z-[-10] after:su-top-72 md:after:su-top-[30%] lg:after:su-top-72 after:su-right-0 su-bg-gradient-after-reverse after:su-h-[calc(100%-35%)] lg:after:su-h-[calc(100%-72px)] lg:after:su-hidden",
         ].join(" ")}
       >
         <figure
