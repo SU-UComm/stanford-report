@@ -22,7 +22,7 @@ export default function ImageQuote({ displayConfiguration, data }) {
 
   const imageWidthMaps = new Map();
   imageWidthMaps.set("landscape", {
-    image: "su-w-5/6 md:su-w-[75%] lg:su-w-[calc(50%-19px)]",
+    image: "su-w-5/6 md:su-w-[75%] lg:su-w-[calc(50%-1.9rem)]",
     quote: "lg:su-w-[62%] lg:su-ml-[-10%]",
     line: "before:su-w-[18%] md:before:su-w-[26%] lg:before:su-w-[52%] dark:before:su-rotate-180",
   });
@@ -68,13 +68,20 @@ export default function ImageQuote({ displayConfiguration, data }) {
         <figure
           className={cnb(
             "su-ml-0 md:su-w-[83.32%]]",
-            "su-pl-32 su-pr-45 md:su-pr-0 md:su-pl-[51px] md:su-mx-[8.33%] lg:su-mx-0 lg:su-pl-[17.7%] lg:su-mt-72 su-flex su-flex-col su-pt-49 lg:su-pt-[91px] su-gap-20 md:su-gap-26 lg:su-gap-27 lg:su-pr-72 su-relative",
+            "su-pl-32 su-pr-45 md:su-pr-0 md:su-pl-50 md:su-mx-[8.33%] lg:su-mx-0 lg:su-pl-[17.7%] lg:su-mt-72 su-flex su-flex-col su-pt-49 lg:su-pt-90 su-gap-20 md:su-gap-26 lg:su-gap-27 lg:su-pr-72 su-relative",
             widthClasses.quote,
             imageOrientation === "portrait" &&
               "after:su-hidden lg:after:su-block su-bg-gradient-after-reverse after:su-absolute after:su-w-4 after:su-z-[-10] after:su-h-[calc(100%-8.8rem)] after:su-right-0 after:su-top-0"
           )}
         >
-          <blockquote className="story__quote-target su-relative su-pl-0 su-flex su-m-0 su-items-start su-gap-6 su-text-black dark:su-text-white su-font-semibold su-text-24 md:su-text-[36px] font-serif-4 before:su-text-[59px] md:before:su-text-[73px] before:su-leading-[109.5px] lg:before:su-leading-[139.5px] lg:before:su-text-[93px] before:su-font-regular before:su--mt-30 md:before:su--mt-25 lg:before:su--mt-32 before:su-content-['“'] before:su-text-serif before:su-text-black before:su-absolute before:su-right-full before:su-mr-6 md:before:su-mr-13 dark:before:su-text-white">
+          <blockquote
+            className={cnb(
+              "story__quote-target su-relative su-pl-0 su-flex su-m-0 su-items-start su-gap-6",
+              "su-font-serif su-font-semibold su-text-black dark:su-text-white su-text-24 md:su-text-[3.6rem] su-leading-[1.5] lg:su-leading-[1.32]",
+              "before:su-content-['“'] before:su-absolute before:su-right-full before:su--mt-30 md:before:su--mt-25 lg:before:su--mt-32 before:su-mr-6 md:before:su-mr-13 ",
+              "before:su-font-serif before:su-text-black dark:before:su-text-white before:su-text-[5.9rem] md:before:su-text-[7.3rem] lg:before:su-text-[9.3rem] before:su-leading-[1.85] md:before:su-leading-[1.6] lg:before:su-leading-[1.4]"
+            )}
+          >
             {`${quote}”`}
           </blockquote>
 
