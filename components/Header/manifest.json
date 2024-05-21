@@ -38,9 +38,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "dataUrl"
-        ]
+        "required": ["dataUrl"]
       },
       "output": {
         "responseType": "html",
