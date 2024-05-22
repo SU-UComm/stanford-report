@@ -174,7 +174,7 @@ svg {
 */
 
 .component-slider-cards .swiper-slide {
-  @apply su-transition su-relative su-h-auto before:su-absolute before:su-bg-black-30 before:su-h-full before:su-w-2 before:su-top-0 before:su--left-20 md:before:su--left-36 lg:before:su--left-50;
+  @apply su-transition su-relative su-h-auto before:su-absolute before:su-bg-black-30 before:dark:su-bg-black before:su-h-full before:su-w-1 before:su-top-0 before:su--left-20 md:before:su--left-36 lg:before:su--left-50;
 }
 
 .component-slider .swiper-slide:not(.swiper-slide-visible) {
@@ -694,7 +694,7 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-page-has-sidebar .su-page-sidebar {
-  @apply su-flex su-flex-col md:su-flex-row lg:su-flex-col su-justify-between su-gap-32 md:su-gap-[8.4rem] lg:su-gap-95 lg:su-max-h-[230rem] su-mx-20 md:su-mx-50 lg:su-mx-0 md:su-px-[7.65%] lg:su-px-0 lg:su-ml-auto lg:su-w-1/4 lg:su-mr-[8.33%] su-w-full lg:su-max-w-[29.8rem] su-mt-38 md:su-mt-110 lg:su-mt-0 su-mb-[10rem] md:su-mb-[16.2rem] lg:su-mb-0;
+  @apply su-flex su-flex-col md:su-flex-row lg:su-flex-col su-justify-between su-gap-32 md:su-gap-[8.4rem] lg:su-gap-95 lg:su-max-h-[230rem] su-mx-20 md:su-mx-50 lg:su-mx-0 md:su-px-[7.65%] lg:su-px-0 lg:su-ml-auto lg:su-w-1/4 lg:su-mr-[8.33%] su-w-full lg:su-max-w-[29.8rem] su-mt-38 md:su-mt-110 lg:su-mt-0 su-mb-[10rem] md:su-mb-[16.2rem] lg:su-mb-95;
 }
 
 .su-page-story-featured .su-upper-content,
