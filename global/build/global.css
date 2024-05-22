@@ -3677,7 +3677,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .before\:su-h-15::before{content:var(--tw-content);height:1.5rem}
 .before\:su-h-2::before{content:var(--tw-content);height:0.2rem}
 .before\:su-h-4::before{content:var(--tw-content);height:0.4rem}
-.before\:su-h-\[2px\]::before{content:var(--tw-content);height:2px}
 .before\:su-h-\[4\.5px\]::before{content:var(--tw-content);height:4.5px}
 .before\:su-h-full::before{content:var(--tw-content);height:100%}
 .before\:su-h-px::before{content:var(--tw-content);height:1px}
@@ -4224,7 +4223,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .before\:md\:su-h-full::before{content:var(--tw-content);height:100%}
 .md\:before\:su-h-full::before{content:var(--tw-content);height:100%}
 .before\:md\:su-w-1::before{content:var(--tw-content);width:0.1rem}
-.before\:md\:su-w-\[2px\]::before{content:var(--tw-content);width:2px}
 .before\:md\:su-w-full::before{content:var(--tw-content);width:100%}
 .before\:md\:su-w-px::before{content:var(--tw-content);width:1px}
 .md\:before\:su-w-\[26\%\]::before{content:var(--tw-content);width:26%}
