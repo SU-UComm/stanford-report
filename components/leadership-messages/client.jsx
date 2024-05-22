@@ -26,11 +26,11 @@ import getCookie from "../../packages/utils/cookieGet";
       fbUrl = `${props.search.endpoint?.replace(
         "search.html",
         "search.json"
-      )}?profile=${props.search.profile}&query=%21null&collection=${
+      )}?profile=${props.search.profile}&collection=${
         props.search.collection
-      }&meta_taxonomyContentTypeId=28201&sort=date&meta_taxonomyAudienceText=${audience}&num_ranks=6&meta_id_not=${
+      }&query=[taxonomyContentTypeId:28201]&meta_taxonomyAudienceText=${audience}&query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 id:${
         props.search.currentPage
-      }`;
+      }]&sort=date&num_ranks=3&log=false`;
     }
 
     // Check if we have a URL to fetch data from
