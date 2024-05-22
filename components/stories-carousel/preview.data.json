@@ -5,6 +5,6 @@
     "ctaUrl": "matrix-asset://api-identifier/89422"
   },
   "contentConfiguration": {
-    "searchQuery": "?collection=sug~sp-stanford-report-search&profile=stanford-report-push-search_preview&num_ranks=6&log=false&query=!null"
+    "searchQuery": "?profile=stanford-report-push-search&collection=sug~sp-stanford-report-search&sort=date&query=taxonomyContentMainTopicId:28394&meta_taxonomyAudienceText=External&query_not=[taxonomyContentTypeId:28210%20taxonomyContentTypeId:28216%20taxonomyContentTypeId:28201%20id:135109]&num_ranks=6"
   }
 }

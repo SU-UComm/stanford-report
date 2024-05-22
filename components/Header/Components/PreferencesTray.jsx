@@ -7,7 +7,11 @@ import React from "react";
  * @constructor
  */
 
-export default function PreferencesTray({ audience, personaClickHandler }) {
+export default function PreferencesTray({
+  audience,
+  personaClickHandler,
+  consent,
+}) {
   return (
     <div className="su-flex su-items-center su-justify-end su-w-32 md:su-w-[85px] lg:su-w-[91px]">
       <button
@@ -330,12 +334,12 @@ export default function PreferencesTray({ audience, personaClickHandler }) {
                   type="button"
                   id="preference-reset"
                   className={`report-header__preferences-clear su-text-black-40 su-underline su-text-18 su-leading-[2.715rem] ${
-                    audience !== "external"
+                    consent
                       ? "su-text-digital-blue dark:su-text-digital-blue-vivid"
                       : ""
                   }`}
-                  aria-pressed={!audience ? "true" : "false"}
-                  disabled={audience === "external" ? "disabled" : ""}
+                  aria-pressed={!consent ? "true" : "false"}
+                  disabled={consent ? "" : "disabled"}
                   onClick={() => personaClickHandler("external", true)}
                 >
                   Clear all personalization
