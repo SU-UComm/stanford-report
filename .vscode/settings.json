@@ -12,5 +12,8 @@
   // Set Prettier as the default formatter
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   // Default the editor tab size to 4 (as defined by ES Lint / Style lint)
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }

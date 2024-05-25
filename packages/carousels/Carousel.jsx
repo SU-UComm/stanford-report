@@ -19,6 +19,8 @@ export function Carousel({
   const swiperRef = useRef();
   const [sliderInit, setSliderInit] = useState(false); // Flag slider initiated
   const hasSlides = slides.length > 0;
+  // const [useFocus, setUseFocus] = useState(false); // focus flag initiated
+  let focusFlag = false; // focus flag initiated
 
   const variants = new Map();
   variants.set("cards", {
@@ -174,7 +176,10 @@ export function Carousel({
                     return slide;
                   })();
 
-              slideTarget.focus();
+              console.log("focus flag: ", focusFlag);
+              if (focusFlag) {
+                slideTarget.focus();
+              }
             }, 300);
           }
 
@@ -210,6 +215,23 @@ export function Carousel({
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
+        onAfterInit={() => {
+          console.log("onINTI");
+          const btns = document.querySelectorAll(
+            "button.swiper-pagination-bullet"
+          );
+          btns.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              e.preventDefault();
+              console.log("BTNS e.detail:", e.detail);
+              if (e.detail) {
+                focusFlag = false;
+              } else {
+                focusFlag = true;
+              }
+            });
+          });
+        }}
         watchSlidesProgress
         loop={variants.get(variant).loop}
         breakpoints={variants.get(variant).breakpoints}
@@ -235,7 +257,17 @@ export function Carousel({
           <button
             className="component-slider-btn component-slider-prev"
             type="button"
-            onClick={() => swiperRef.current?.slidePrev()}
+            onClick={(e) => {
+              console.log("e.detail", e.detail);
+              if (e.detail) {
+                // setUseFocus(false);
+                focusFlag = false;
+              } else {
+                // setUseFocus(true);
+                focusFlag = true;
+              }
+              swiperRef.current?.slidePrev();
+            }}
           >
             <span className="sr-only">Previous</span>
             <span
@@ -248,7 +280,15 @@ export function Carousel({
           <button
             className="component-slider-btn component-slider-next"
             type="button"
-            onClick={() => {
+            onClick={(e) => {
+              console.log("e.detail", e.detail);
+              if (e.detail) {
+                // setUseFocus(false);
+                focusFlag = false;
+              } else {
+                // setUseFocus(true);
+                focusFlag = true;
+              }
               swiperRef.current?.slideNext();
             }}
           >
