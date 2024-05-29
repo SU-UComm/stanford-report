@@ -1141,7 +1141,7 @@ Subscribe to Stanford Report Marketo form styles
 .marketo-sr-subscribe-form.mktoForm input[type="text"],
 .marketo-sr-subscribe-form.mktoForm input[type="email"],
 .marketo-sr-subscribe-form.mktoForm textarea {
-  @apply su-border-black-20 dark:su-border-black-60 dark:su-bg-black-90 dark:su-text-white su-mt-6 su-rounded su-border su-border-b-2 su-border-b-black-70 dark:su-border-b-black-30 su-px-16 su-py-12 hocus:su-border-digital-blue-vivid hocus:su-border-b-digital-blue dark:hocus:su-border-digital-blue-light/80 dark:hocus:su-border-b-digital-blue-light focus:su-ring-4 focus:su-ring-digital-blue-vivid/20 dark:focus:su-ring-digital-blue-vivid/60 su-transition-colors;
+  @apply su-border-black-20 dark:su-border-black-60 dark:su-bg-black-true dark:su-text-white su-mt-6 su-rounded su-border su-border-b-2 su-border-b-black-70 dark:su-border-b-black-30 su-px-16 su-py-12 hocus:su-border-digital-blue-vivid hocus:su-border-b-digital-blue dark:hocus:su-border-digital-blue-light/80 dark:hocus:su-border-b-digital-blue-light focus:su-ring-4 focus:su-ring-digital-blue-vivid/20 dark:focus:su-ring-digital-blue-vivid/60 su-transition-colors;
 }
 
 /* Checkbox styles */
@@ -1154,7 +1154,7 @@ Subscribe to Stanford Report Marketo form styles
 }
 
 .marketo-sr-subscribe-form.mktoForm input[type="checkbox"] {
-  @apply su-w-auto su-text-digital-blue su-cursor-pointer hocus:su-ring-digital-blue-light/40 dark:hocus:su-ring-digital-blue-vivid/60 hocus:su-ring-4 su-border-black-50 dark:su-border-black-30 dark:hocus:su-border-digital-blue-light dark:su-bg-black-90 dark:checked:su-bg-digital-blue su-border-2 su-rounded hocus:su-border-digital-blue checked:su-border-digital-blue-light dark:checked:su-border-digital-blue-light focus:su-ring-offset-0 focus:su-outline-none checked:hocus:su-bg-digital-blue-dark dark:checked:hocus:su-bg-digital-blue-vivid;
+  @apply su-w-auto su-text-digital-blue su-cursor-pointer hocus:su-ring-digital-blue-light/40 dark:hocus:su-ring-digital-blue-vivid/60 hocus:su-ring-4 su-border-black-50 dark:su-border-black-30 dark:hocus:su-border-digital-blue-light dark:su-bg-black-true dark:checked:su-bg-digital-blue su-border-2 su-rounded hocus:su-border-digital-blue checked:su-border-digital-blue-light dark:checked:su-border-digital-blue-light focus:su-ring-offset-0 focus:su-outline-none checked:hocus:su-bg-digital-blue-dark dark:checked:hocus:su-bg-digital-blue-vivid;
 }
 
 /* Marketo puts the asterisk before the label text(?) so
