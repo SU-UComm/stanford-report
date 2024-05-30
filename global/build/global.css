@@ -3188,7 +3188,8 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
   pointer-events: none;
 }
 .report-header__menu-tray[aria-hidden="false"] .report-header__primary-nav,
-.report-header__preferences-tray[aria-hidden="false"] .report-header__preferences {
+.report-header__preferences-tray[aria-hidden="false"]
+  .report-header__preferences {
   height: 100dvh !important;
 }
 .report-header__primary-nav {
@@ -3324,7 +3325,10 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 }
 .report-header input:required:valid + .report-header__clear,
 .report-header .input-has-value + .report-header__clear,
-.report-header .input-has-value + .report-header__desktop-search-controls .report-header__clear {
+.report-header
+  .input-has-value
+  + .report-header__desktop-search-controls
+  .report-header__clear {
   display: block;
 }
 .report-header [aria-controls="search"][aria-expanded="true"] .icon-search,
@@ -3384,10 +3388,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
   .report-header.report-header--collapsed .report-header__logo img {
     max-width: 232px;
     width: 100%;
-  }
-
-  .report-header--story .report-header__logo img {
-    max-width: 278px;
   }
 
   .report-header--story.report-header--collapsed .report-header__logo img {
@@ -3475,11 +3475,11 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
   }
 }
 #cookie-consent-banner {
-  box-shadow: 0px -10px 35px -25px rgba(0,0,0,0.3);
-  -webkit-box-shadow: 0px -10px 35px -25px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px -10px 35px -25px rgba(0,0,0,0.3);
+  box-shadow: 0px -10px 35px -25px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px -10px 35px -25px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px -10px 35px -25px rgba(0, 0, 0, 0.3);
 }
-:is(.su-dark #cookie-consent-banner)  {
+:is(.su-dark #cookie-consent-banner) {
   box-shadow: 0px -10px 35px -25px rgba(255, 255, 255, 0.3);
   -webkit-box-shadow: 0px -10px 35px -25px rgba(255, 255, 255, 0.3);
   -moz-box-shadow: 0px -10px 35px -25px rgba(255, 255, 255, 0.3);
