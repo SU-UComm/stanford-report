@@ -180,6 +180,11 @@ export default function HorizontalCard({
         </div>
       )}
 
+      {/* For UCP-3251: Leave an empty <div> for the thumbnail if no image URL is found so right column doesn't go full width */}
+      {cardSize === "large" && !imageUrl && (
+        <div className="su-shrink-0 su-w-[103px] su-h-[69px] md:su-w-[169px] md:su-h-[113px] lg:su-w-[292px] lg:su-h-[193px]" />
+      )}
+
       {cardSize === "small" && imageUrl && (
         <div className="su-shrink-0 su-w-[73px] su-h-[73px] su-relative">
           <CardThumbnail
