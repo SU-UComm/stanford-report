@@ -62,7 +62,7 @@ export default function LinkList({ search }) {
         )}
 
         <button
-          className="su-text-digital-red su-rotate-[-90deg] lg:su-hidden"
+          className="su-text-digital-red dark:su-text-white su-rotate-[-90deg] lg:su-hidden"
           data-role="link-drawer-toggle"
           data-active="false"
           aria-controls="link-drawer"
