@@ -3,5 +3,5 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 }
 
 .su-media-feature-title-link {
-  @apply dark:su-text-black hocus:su-text-digital-red dark:hocus:su-text-dark-mode-red;
+  @apply su-no-underline hocus:su-underline dark:su-text-black hocus:su-text-digital-red dark:hocus:su-text-dark-mode-red;
 }

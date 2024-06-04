@@ -1837,8 +1837,9 @@ Subscribe to Stanford Report Marketo form styles
 _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
   width: auto !important;
 }
-.su-media-feature-title-link:hover{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
-.su-media-feature-title-link:focus{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
+.su-media-feature-title-link{text-decoration-line:none}
+.su-media-feature-title-link:hover{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity));text-decoration-line:underline}
+.su-media-feature-title-link:focus{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity));text-decoration-line:underline}
 :is(.su-dark .su-media-feature-title-link){--tw-text-opacity:1;color:rgb(46 45 41 / var(--tw-text-opacity))}
 :is(.su-dark .su-media-feature-title-link:hover){--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
 :is(.su-dark .su-media-feature-title-link:focus){--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
