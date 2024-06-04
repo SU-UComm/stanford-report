@@ -1837,6 +1837,11 @@ Subscribe to Stanford Report Marketo form styles
 _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
   width: auto !important;
 }
+.su-media-feature-title-link:hover{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
+.su-media-feature-title-link:focus{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
+:is(.su-dark .su-media-feature-title-link){--tw-text-opacity:1;color:rgb(46 45 41 / var(--tw-text-opacity))}
+:is(.su-dark .su-media-feature-title-link:hover){--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
+:is(.su-dark .su-media-feature-title-link:focus){--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
 @media (min-width: 992px){
 [data-component="media-carousel"] .su-component-container .component-slider{margin-left:auto;margin-right:auto}}
 [data-component="media-carousel"] .swiper-slide-visible .su-media-card-thumb{transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
@@ -3655,6 +3660,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-group:focus .group-hocus\:su-translate-x-\[\.1em\]{--tw-translate-x:.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:focus .group-hocus\:su-translate-x-\[1\.1em\]{--tw-translate-x:1.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:focus .group-hocus\:su-translate-y-\[-\.1em\]{--tw-translate-y:-.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+.su-group:focus .group-hocus\:su-text-dark-mode-red{--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
 .su-group:focus .group-hocus\:su-text-digital-red{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
 .su-group:focus .group-hocus\:su-text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .su-group:focus .group-hocus\:su-underline{text-decoration-line:underline}
@@ -3665,6 +3671,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-group:hover .group-hocus\:su-translate-x-\[\.1em\]{--tw-translate-x:.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:hover .group-hocus\:su-translate-x-\[1\.1em\]{--tw-translate-x:1.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:hover .group-hocus\:su-translate-y-\[-\.1em\]{--tw-translate-y:-.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+.su-group:hover .group-hocus\:su-text-dark-mode-red{--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
 .su-group:hover .group-hocus\:su-text-digital-red{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
 .su-group:hover .group-hocus\:su-text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .su-group:hover .group-hocus\:su-underline{text-decoration-line:underline}
@@ -4361,7 +4368,9 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\[\&\>\*\]\:su-rotate-\[-45deg\]>*{--tw-rotate:-45deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .\[\&\>\*\]\:su-justify-center>*{justify-content:center}
 .\[\&\>\*\]\:su-stroke-current>*{stroke:currentColor}
+.\[\&\>\*\]\:su-stroke-digital-red>*{stroke:#B1040E}
 .\[\&\>\*\]\:su-font-bold>*{font-weight:700}
+:is(.su-dark .dark\:\[\&\>\*\]\:su-stroke-dark-mode-red>*){stroke:#EC0909}
 .\[\&\>li\]\:su-m-0>li{margin:0}
 .\[\&\>p\]\:su-m-0>p{margin:0}
 .\[\&\>p\]\:\!su-mb-0>p{margin-bottom:0 !important}
