@@ -64,13 +64,10 @@ export default function MediaFeature({
               <FeaturedHeading type={mediaType} />
             </div>
 
-            <a
-              href={linkUrl}
-              className="su-no-underline su-text-black hocus:su-underline hocus:su-text-digital-red dark:group-hocus:su-text-dark-mode-red"
-            >
+            <a href={linkUrl} className="su-media-feature-title-link">
               <h3 className="su-text-[35px] su-font-bold su-leading-tight su-m-0 su-pb-8 md:su-pb-19 md:su-text-[40px] lg:su-text-[43px]">
                 {title}
-                <span className="su-hidden lg:su-inline-block su-relative su-top-12">
+                <span className="su-hidden lg:su-inline-block su-relative su-top-12 [&>*]:su-stroke-digital-red dark:[&>*]:su-stroke-dark-mode-red">
                   <ExternalArrow size="large" />
                 </span>
               </h3>
