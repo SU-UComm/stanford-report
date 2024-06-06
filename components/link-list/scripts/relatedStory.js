@@ -32,6 +32,8 @@ export default async function relatedStory(
     const storyResultData = await adapter.fetch();
     const story = storyResultData.response?.resultPacket?.results || null;
 
+    console.log(story);
+
     return story;
   }
 
