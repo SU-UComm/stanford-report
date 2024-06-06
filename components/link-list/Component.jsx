@@ -24,6 +24,7 @@ export default function LinkList({ search }) {
   // get FB data
   const getFB = async (pageData) => {
     const data = await relatedStory(search, pageData, audienceCookie);
+
     return data;
   };
 
@@ -31,15 +32,20 @@ export default function LinkList({ search }) {
   useEffect(() => {
     if (isClient && typeof window.pageController !== "undefined") {
       const pageData = window.pageController;
+
       if (!relatedStoryData) {
         const asyncFetch = async () => {
           const fbData = await getFB(pageData);
+
           setRelatedStoryData(fbData);
+
           fbData.forEach((link) => {
             links.push(<LinkListItem title={link.title} url={link.indexUrl} />);
           });
+
           setLinkItems(links);
         };
+
         asyncFetch();
       }
     } else {

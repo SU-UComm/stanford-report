@@ -38,7 +38,13 @@ import Component from "./Component";
   });
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY >= Math.round((30 / 100) * document.body.clientHeight)) {
+    const bodyHeight = document.body.getBoundingClientRect().height;
+    const scrollHeight = window.scrollY + window.innerHeight;
+
+    if (
+      window.scrollY >= Math.round((30 / 100) * document.body.clientHeight) &&
+      scrollHeight <= bodyHeight - 700
+    ) {
       linkListWrapper.classList.remove("su-opacity-[0]");
       linkListWrapper.classList.remove("su-bottom-[-100px]");
       linkListWrapper.classList.add("su-opacity-[1]");
