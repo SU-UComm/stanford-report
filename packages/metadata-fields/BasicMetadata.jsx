@@ -19,19 +19,12 @@ export default function BasicMetadata({ data }) {
   const [copyLinkTitle, setCopyLinkTitle] = useState("Copy link");
 
   const copyLink = () => {
-    const { origin, pathname } = window.location;
-    const url = origin + pathname;
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setCopyLinkTitle(() => "Copied");
 
-    navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
-      if (result.state === "granted" || result.state === "propmp") {
-        setCopyLinkTitle(() => "Copied");
-
-        navigator.clipboard.writeText(url);
-
-        setTimeout(() => {
-          setCopyLinkTitle(() => "Copy link");
-        }, 3000);
-      }
+      setTimeout(() => {
+        setCopyLinkTitle(() => "Copy link");
+      }, 3000);
     });
   };
 
