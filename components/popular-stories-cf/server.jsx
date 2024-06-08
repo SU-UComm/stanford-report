@@ -44,7 +44,7 @@ export default async (args, info) => {
                       ]
                   }
                   orderBy: [count_DESC]
-                  limit: 5
+                  limit: 10
               ) {
                   count
                   dimensions {
