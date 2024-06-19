@@ -1,5 +1,4 @@
 import formatMediaCardDataMatrix from "./formatMediaCardDataMatrix";
-import resolveMediaCardAssetUri from "./resolveMediaCardAssetUri";
 
 export default class MatrixMediaCardService {
   constructor({ ctx, API_IDENTIFIER }) {
@@ -7,28 +6,37 @@ export default class MatrixMediaCardService {
     this.API_IDENTIFIER = API_IDENTIFIER;
   }
 
+  formatMatrixURItoID(cards) {
+    const newCards = [];
+
+    cards.forEach((card) => {
+      newCards.push(
+        card.cardAsset.replace(`matrix-asset://${this.API_IDENTIFIER}/`, "")
+      );
+    });
+
+    return newCards;
+  }
+
+  formatCardIDsToCSV(cards) {
+    return cards.join(",");
+  }
+
   async getCards(cards) {
-    const cardsData = [];
-    // Resolve the data for each of the cards
-    for (let index = 0; index < cards.length; index++) {
-      // Get our current card
-      const card = cards[parseInt(index, 10)];
+    const cardIDsArray = this.formatMatrixURItoID(cards);
+    const cardIDs = this.formatCardIDsToCSV(cardIDsArray);
+    const query = `${this.BASE_DOMAIN}_api/mx/cards?cards=${cardIDs}`;
 
-      // Reassign the card data as our current card
-      cardsData[parseInt(index, 10)] = resolveMediaCardAssetUri({
-        ctx: this.ctx,
-        cardData: card,
-      });
-    }
+    const res = await fetch(query).catch((error) => {
+      throw new Error(error);
+    });
 
-    return Promise.all(cardsData)
-      .then((data) =>
-        data.map((cardData) => formatMediaCardDataMatrix(cardData))
-      )
+    const json = await res.json();
+    console.log(json);
+    return Promise.all(json)
+      .then((data) => data.map((card) => formatMediaCardDataMatrix(card)))
       .catch((error) => {
-        throw new Error(
-          `There was an error formatting the card data: ${error}`
-        );
+        throw new Error(error);
       });
   }
 }
