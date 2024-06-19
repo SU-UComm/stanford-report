@@ -57,7 +57,7 @@
                     },
                     "summary": {
                       "title": "Summary",
-                      "type": "string"
+                      "type": "multi-line"
                     }
                   }
                 }
