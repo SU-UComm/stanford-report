@@ -49,7 +49,7 @@
                   }
                 },
                 "then": {
-                  "required": ["title"],
+                  "required": [],
                   "properties": {
                     "title": {
                       "title": "Heading",
@@ -57,7 +57,8 @@
                     },
                     "summary": {
                       "title": "Summary",
-                      "type": "multi-line"
+                      "type": "string",
+                      "format": "multi-line"
                     }
                   }
                 }
