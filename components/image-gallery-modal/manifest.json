@@ -28,7 +28,7 @@
         "required": [],
         "properties": {
           "layoutConfiguration": {
-            "title": "Layout Configuration",
+            "title": "Layout Options",
             "required": [],
             "properties": {
               "layout": {
@@ -49,7 +49,7 @@
                   }
                 },
                 "then": {
-                  "required": ["title", "summary"],
+                  "required": ["title"],
                   "properties": {
                     "title": {
                       "title": "Heading",
