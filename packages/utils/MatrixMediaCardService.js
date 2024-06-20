@@ -1,4 +1,5 @@
 import formatMediaCardDataMatrix from "./formatMediaCardDataMatrix";
+import resolveMediaCardAssetUri from "./resolveMediaCardAssetUri";
 
 export default class MatrixMediaCardService {
   constructor({ ctx, API_IDENTIFIER }) {
@@ -6,55 +7,40 @@ export default class MatrixMediaCardService {
     this.API_IDENTIFIER = API_IDENTIFIER;
   }
 
-  formatMatrixURItoID(cards) {
-    const newCards = [];
+  formatMatrixURItoID(items) {
+    const newImages = items.map((item) =>
+      item.image.replace(`matrix-asset://${this.API_IDENTIFIER}/`, "")
+    );
 
-    cards.forEach((card) => {
-      newCards.push(
-        card.cardAsset.replace(`matrix-asset://${this.API_IDENTIFIER}/`, "")
-      );
-    });
-
-    return newCards;
+    return newImages;
   }
 
-  formatCardIDsToCSV(cards) {
-    return cards.join(",");
+  formatCardIDsToCSV(items) {
+    return items.join(",");
   }
 
   async getCards(cards) {
-    const cardIDsArray = this.formatMatrixURItoID(cards);
-    const cardIDs = this.formatCardIDsToCSV(cardIDsArray);
-    const query = `${this.BASE_DOMAIN}_api/mx/cards?cards=${cardIDs}`;
+    const cardsData = [];
+    // Resolve the data for each of the cards
+    for (let index = 0; index < cards.length; index++) {
+      // Get our current card
+      const card = cards[parseInt(index, 10)];
 
-    const res = await fetch(query).catch((error) => {
-      throw new Error(error);
-    });
-
-    const json = await res.json();
-    console.log(json);
-    return Promise.all(json)
-      .then((data) => data.map((card) => formatMediaCardDataMatrix(card)))
-      .catch((error) => {
-        throw new Error(error);
+      // Reassign the card data as our current card
+      cardsData[parseInt(index, 10)] = resolveMediaCardAssetUri({
+        ctx: this.ctx,
+        cardData: card,
       });
-  }
+    }
 
-  async getImages(cards) {
-    const cardIDsArray = this.formatMatrixURItoID(cards);
-    const cardIDs = this.formatCardIDsToCSV(cardIDsArray);
-    const query = `${this.BASE_DOMAIN}_api/mx/cards?cards=${cardIDs}`;
-
-    const res = await fetch(query).catch((error) => {
-      throw new Error(error);
-    });
-
-    const json = await res.json();
-    console.log(json);
-    return Promise.all(json)
-      .then((data) => data.map((card) => formatMediaCardDataMatrix(card)))
+    return Promise.all(cardsData)
+      .then((data) =>
+        data.map((cardData) => formatMediaCardDataMatrix(cardData))
+      )
       .catch((error) => {
-        throw new Error(error);
+        throw new Error(
+          `There was an error formatting the card data: ${error}`
+        );
       });
   }
 }

@@ -1,7 +1,7 @@
 import renderComponent from "../../packages/utils/render-component";
 import Component from "./Component";
 import CardDataAdapter from "../../packages/utils/CardDataAdapter";
-import MatrixMediaCardService from "../../packages/utils/MatrixCardService";
+import MatrixImageCardService from "../../packages/utils/MatrixImageCardService";
 import formatCardDataImage from "../../packages/utils/formatCardDataImage";
 
 export default async (args, info) => {
@@ -11,13 +11,13 @@ export default async (args, info) => {
   const { images } = args.contentConfiguration;
 
   // Create our service
-  const service = new MatrixMediaCardService({ BASE_DOMAIN, API_IDENTIFIER });
+  const service = new MatrixImageCardService({ BASE_DOMAIN, API_IDENTIFIER });
   // Set our card service
   adapter.setCardService(service);
 
   // get the cards data
-  data = await adapter.getImages(images);
-  console.log(JSON.stringify(data));
+  data = await adapter.getCards(images);
+  // console.log(JSON.stringify(data));
 
   const imageData = data.map((item) => formatCardDataImage(item));
 

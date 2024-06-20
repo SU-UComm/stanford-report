@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "image-gallery-modal",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "namespace": "stanford-components",
   "description": "An image gallery that opens in a modal.",
   "displayName": "Image gallery with modal",
@@ -9,6 +9,10 @@
   "environment": [
     {
       "name": "API_IDENTIFIER",
+      "required": true
+    },
+    {
+      "name": "BASE_DOMAIN",
       "required": true
     }
   ],
