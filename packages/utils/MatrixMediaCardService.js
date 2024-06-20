@@ -7,18 +7,6 @@ export default class MatrixMediaCardService {
     this.API_IDENTIFIER = API_IDENTIFIER;
   }
 
-  formatMatrixURItoID(items) {
-    const newImages = items.map((item) =>
-      item.image.replace(`matrix-asset://${this.API_IDENTIFIER}/`, "")
-    );
-
-    return newImages;
-  }
-
-  formatCardIDsToCSV(items) {
-    return items.join(",");
-  }
-
   async getCards(cards) {
     const cardsData = [];
     // Resolve the data for each of the cards
