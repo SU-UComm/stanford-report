@@ -16,13 +16,10 @@ export default async (args, info) => {
   adapter.setCardService(service);
 
   // get the cards data
-  data = await adapter.getCards(images);
+  data = await adapter.getImages(images);
+  console.log(JSON.stringify(data));
 
-  const imageData = [];
-
-  data.forEach((item) => {
-    imageData.push(formatCardDataImage(item));
-  });
+  const imageData = data.map((item) => formatCardDataImage(item));
 
   const renderProps = {
     ...args,

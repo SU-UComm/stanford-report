@@ -39,4 +39,22 @@ export default class MatrixMediaCardService {
         throw new Error(error);
       });
   }
+
+  async getImages(cards) {
+    const cardIDsArray = this.formatMatrixURItoID(cards);
+    const cardIDs = this.formatCardIDsToCSV(cardIDsArray);
+    const query = `${this.BASE_DOMAIN}_api/mx/cards?cards=${cardIDs}`;
+
+    const res = await fetch(query).catch((error) => {
+      throw new Error(error);
+    });
+
+    const json = await res.json();
+    console.log(json);
+    return Promise.all(json)
+      .then((data) => data.map((card) => formatMediaCardDataMatrix(card)))
+      .catch((error) => {
+        throw new Error(error);
+      });
+  }
 }
