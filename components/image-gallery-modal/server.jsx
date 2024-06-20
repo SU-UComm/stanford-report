@@ -4,13 +4,14 @@ import CardDataAdapter from "../../packages/utils/CardDataAdapter";
 import MatrixMediaCardService from "../../packages/utils/MatrixCardService";
 import formatCardDataImage from "../../packages/utils/formatCardDataImage";
 
-export default async (args) => {
+export default async (args, info) => {
+  const { API_IDENTIFIER, BASE_DOMAIN } = info.set.environment;
   const adapter = new CardDataAdapter();
   let data = null;
   const { images } = args.contentConfiguration;
 
   // Create our service
-  const service = new MatrixMediaCardService();
+  const service = new MatrixMediaCardService({ BASE_DOMAIN, API_IDENTIFIER });
   // Set our card service
   adapter.setCardService(service);
 
