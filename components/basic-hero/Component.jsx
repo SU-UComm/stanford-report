@@ -1,5 +1,6 @@
 import React from "react";
 import { cnb } from "cnbuilder";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 
 // import specific templates for the component
 import { Container } from "../../packages/grids/Container";
@@ -18,14 +19,14 @@ export default function BasicHero(props) {
   return (
     <Container>
       <div className="su-flex su-justify-between su-flex-wrap su-rs-mt-6 su-rs-mb-5">
-        <h1
+        <XssSafeContent
           className={cnb(
             "su-font-serif su-mb-0",
             titleAlignment === "center" && "su-text-center su-mx-auto"
           )}
-        >
-          {title}
-        </h1>
+          content={title}
+          elementType="h1"
+        />
       </div>
     </Container>
   );

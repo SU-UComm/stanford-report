@@ -1,5 +1,8 @@
 import React from "react";
 import { decode } from "html-entities";
+import { cnb } from "cnbuilder";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
+
 /**
  * Current Story Title and Next story link
  *
@@ -20,9 +23,11 @@ export default function CurrentStoryHeadline({
         {title && (
           // <h1 className="su-m-0 su-text-14 lg:su-text-16 lg:su-mb-[2.25px] lg:su-pb-[8.75px] su-font-bold su-flex-grow su-opacity-0 su-max-h-70 lg:su-max-h-[7.9rem] su-text-ellipsis su-overflow-hidden">
           // md:su-pb-[14px] md:su-mb-[6.05px] lg:su-mb-[2.25px] lg:su-pb-[8.75px] md:su-pb-[6.05px]
-          <h1 className="su-m-0 su-text-14 lg:su-text-16 md:su-leading-[16.72px] su-my-auto su-font-bold su-flex-grow su-opacity-0 su-max-h-70 lg:su-pb-[2px] md:su-pb-[1px] lg:su-max-h-[7.9rem] su-text-ellipsis su-overflow-hidden">
-            {decode(title)}
-          </h1>
+          <XssSafeContent
+            className="su-m-0 su-text-14 lg:su-text-16 md:su-leading-[16.72px] su-my-auto su-font-bold su-flex-grow su-opacity-0 su-max-h-70 lg:su-pb-[2px] md:su-pb-[1px] lg:su-max-h-[7.9rem] su-text-ellipsis su-overflow-hidden"
+            content={title}
+            elementType="h1"
+          />
         )}
 
         {story && (
@@ -32,12 +37,12 @@ export default function CurrentStoryHeadline({
               {contentType === "Video" ? "Watch next:" : "Read next:"}
             </h2>
             <p className="su-m-0 su-text-inherit">
-              <a
+              <XssSafeContent
                 href={story.displayUrl}
                 className="su-m-0 su-text-inherit su-no-underline hover:su-text-digital-red dark:hover:su-text-dark-mode-red su-font-normal"
-              >
-                {story.title}
-              </a>
+                content={story.title}
+                elementType="a"
+              />
             </p>
           </div>
         )}
