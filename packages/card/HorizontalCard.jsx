@@ -167,7 +167,7 @@ export default function HorizontalCard({
       className={`listing-item su-flex ${cardGap.get(cardSize)}`}
       data-testid="horizontal-card"
     >
-      {cardSize === "large" && imageUrl ? (
+      {cardSize === "large" && imageUrl && (
         <div className="su-shrink-0 su-w-[103px] su-h-[69px] md:su-w-[169px] md:su-h-[113px] lg:su-w-[292px] lg:su-h-[193px]">
           <CardThumbnail
             imageUrl={imageUrl}
@@ -178,7 +178,10 @@ export default function HorizontalCard({
             size={cardSize}
           />
         </div>
-      ) : (
+      )}
+
+      {/* For UCP-3251: Leave an empty <div> for the thumbnail if no image URL is found so right column doesn't go full width */}
+      {cardSize === "large" && !imageUrl && (
         <div className="su-shrink-0 su-w-[103px] su-h-[69px] md:su-w-[169px] md:su-h-[113px] lg:su-w-[292px] lg:su-h-[193px]" />
       )}
 
