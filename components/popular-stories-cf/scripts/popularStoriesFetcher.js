@@ -7,14 +7,13 @@ export default async function popularStoriesFetcher(urls, { FB_JSON_URL }) {
 
   for (let i = 0; i < urls.length; i++) {
     // eslint-disable-next-line security/detect-object-injection
-    if (assets.length <= 4) assets.push(`assetHref:"${urls[i]}"`);
+    assets.push(`assetHref:"${urls[i]}"`);
   }
 
-  adapter.url = `${FB_JSON_URL}?profile=stanford-report-push-search&collection=sug~sp-stanford-report-search&num_ranks=5&query=[${assets.join(
+  adapter.url = `${FB_JSON_URL}?profile=stanford-report-push-search&collection=sug~sp-stanford-report-search&num_ranks=10&query=[${assets.join(
     " "
-  )}]`;
-
+  )}]&query_not=[taxonomyContentTypeId:28201 taxonomyContentTypeId:28216 taxonomyContentTypeId:28210]`;
   const data = await adapter.fetch();
 
-  return data?.response?.resultPacket?.results;
+  return data?.response?.resultPacket?.results.slice(0, 5);
 }
