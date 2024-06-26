@@ -110,13 +110,13 @@ export default function TopicSubtopicListing({
       <HorizontalCardGrid
         orientation="topiclisting"
         items={cards}
-        maximumItems={10}
+        maximumItems={resultsSummary.numRanks}
       />
       <Pagination
         pageNumber={Number(pageNo)}
         allResults={resultsSummary.totalMatching}
         resultsPerPage={resultsSummary.numRanks}
-        paginationRange={4}
+        paginationRange={5}
         onPageChange={(number) => {
           setPageNo(number);
         }}
