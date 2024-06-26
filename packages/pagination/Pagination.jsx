@@ -18,7 +18,7 @@ function PaginationButtons({ offsetNum, pageNumber, index, onPaginate }) {
       type="button"
       onClick={onPaginate}
     >
-      {index + 1}
+      {index}
     </button>
   );
 }
@@ -31,6 +31,7 @@ export default function Pagination({
   onPageChange,
 }) {
   const pages = Math.ceil(allResults / resultsPerPage);
+
   // const forwardRangeNum = pageNumber + paginationRange * resultsPerPage;
   // const backwardRangeNum = pageNumber - paginationRange * resultsPerPage;
   const initialRange = paginationRange;
@@ -53,42 +54,73 @@ export default function Pagination({
     const offsetNum = i * resultsPerPage + 1;
 
     offsets.push(offsetNum);
+  }
 
-    if (
-      (i <= initialRange && currentPage <= initialRange * 0.5) ||
-      pages <= initialRange
-    ) {
-      buttons.push(
-        <PaginationButtons
-          offsetNum={offsetNum}
-          pageNumber={pageNumber}
-          index={i}
-          key={hash.MD5(offsetNum)}
-          onPaginate={({ target }) => {
-            onPageChange(target.dataset.offset);
-            setCurrentPage(i + 1);
-          }}
-        />
+  let rangeNextOffset = [...offsets];
+  let rangePrevOffset = [...offsets];
+  const currentIndex = offsets.indexOf(currentPage);
+  const rangeBuffer = Math.floor(initialRange * 0.5);
+
+  // if the current page index is less than the rage buffer (half the inital range)
+  // and if the number of pages matches the initial range
+  if (currentIndex < rangeBuffer || pages === initialRange) {
+    rangeNextOffset = rangeNextOffset.filter(
+      (item, i) => item > currentPage && i < initialRange
+    );
+    rangePrevOffset = rangePrevOffset.filter((item) => item < currentPage);
+  }
+
+  // if the current page index is greater than the range buffer (2)
+  // and if the number of pages do not match the initial range
+  if (currentIndex >= rangeBuffer && pages !== initialRange) {
+    rangeNextOffset = rangeNextOffset.filter(
+      (item, i) => item > currentPage && i <= currentIndex + rangeBuffer
+    );
+
+    if (rangeNextOffset.length === rangeBuffer) {
+      rangePrevOffset = rangePrevOffset.filter(
+        (item, i) => item < currentPage && i >= currentIndex - rangeBuffer
+      );
+    } else {
+      /**
+       * check how many items are in the range next offset and
+       * subtract the innitialRange by the number of range next items
+       *
+       * if there are no range next items left, we're going to provide
+       * the entire inital range to the previous range offset
+       */
+      const endBuffer = rangeNextOffset.length
+        ? initialRange - rangeNextOffset.length
+        : initialRange;
+
+      // if the current page item is less than the page in the filter
+      // and i is less than the current page index - the end buffer
+      // - we need to retain the same pagination range
+      rangePrevOffset = rangePrevOffset.filter(
+        (item, i) => item < currentPage && i > currentIndex - endBuffer
       );
     }
-
-    if (pages > initialRange && currentPage > initialRange * 0.5) {
-      if (offsetNum >= prevRange && offsetNum <= nextRange) {
-        buttons.push(
-          <PaginationButtons
-            offsetNum={offsetNum}
-            pageNumber={pageNumber}
-            index={i}
-            key={hash.MD5(offsetNum)}
-            onPaginate={({ target }) => {
-              onPageChange(target.dataset.offset);
-              setCurrentPage(i + 1);
-            }}
-          />
-        );
-      }
-    }
   }
+
+  const buttonRange = [...rangePrevOffset, currentPage, ...rangeNextOffset];
+  const buttonItems = buttonRange.map((item) => {
+    return { offset: item, index: offsets.indexOf(item) + 1 };
+  });
+
+  buttonItems.forEach(({ offset, index }, i) => {
+    buttons.push(
+      <PaginationButtons
+        offsetNum={offset}
+        pageNumber={pageNumber}
+        index={index}
+        key={hash.MD5(offset)}
+        onPaginate={() => {
+          onPageChange(offset);
+          setCurrentPage(offset);
+        }}
+      />
+    );
+  });
 
   return pages > 1 ? (
     <Container>
@@ -100,9 +132,10 @@ export default function Pagination({
           }`}
           disabled={prevPage < 1}
           data-offset={prevPage < 1 ? 1 : prevPage}
-          onClick={({ currentTarget }) =>
-            onPageChange(currentTarget.dataset.offset)
-          }
+          onClick={({ currentTarget }) => {
+            setCurrentPage(prevPage < 1 ? 1 : prevPage);
+            onPageChange(currentTarget.dataset.offset);
+          }}
           aria-label="Previous page"
           title="Previous page"
         >
@@ -122,9 +155,14 @@ export default function Pagination({
               ? offsets[offsets.length - 1]
               : nextPage
           }
-          onClick={({ currentTarget }) =>
-            onPageChange(currentTarget.dataset.offset)
-          }
+          onClick={({ currentTarget }) => {
+            setCurrentPage(
+              nextPage > offsets[offsets.length - 1]
+                ? offsets[offsets.length - 1]
+                : nextPage
+            );
+            onPageChange(currentTarget.dataset.offset);
+          }}
           aria-label="Next page"
           title="Next page"
         >
