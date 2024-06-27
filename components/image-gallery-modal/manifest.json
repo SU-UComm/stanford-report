@@ -27,7 +27,8 @@
         "type": "object",
         "required": [],
         "properties": {
-          "contentConfiguration": {
+          "layoutConfiguration": {
+            "title": "Layout Options",
             "required": [],
             "properties": {
               "layout": {
@@ -35,18 +36,57 @@
                 "type": "string",
                 "enum": ["Title & Content", "Content Only"],
                 "default": "Title & Content"
-              },
-              "caption": {
-                "title": "Gallery caption",
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "required": [],
+                  "properties": {
+                    "layout": {
+                      "const": "Title & Content"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [],
+                  "properties": {
+                    "title": {
+                      "title": "Heading",
+                      "type": "string"
+                    },
+                    "summary": {
+                      "title": "Summary",
+                      "type": "string",
+                      "format": "multi-line"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "displayConfiguration": {
+            "title": "Display Options",
+            "required": [],
+            "properties": {
+              "backgroundColor": {
+                "title": "Background Color",
+                "enum": ["Grey", "Transparent"],
                 "type": "string",
-                "format": "multi-line",
-                "default": ""
+                "default": "Grey"
               },
-              "credit": {
-                "title": "Gallery credit",
+              "width": {
+                "title": "Width",
                 "type": "string",
-                "default": ""
-              },
+                "enum": ["Wide", "Content"],
+                "default": "Wide"
+              }
+            }
+          },
+          "contentConfiguration": {
+            "title": "Gallery Configuration",
+            "required": [],
+            "properties": {
               "images": {
                 "title": "Images",
                 "type": "array",
@@ -69,53 +109,17 @@
                     }
                   }
                 }
-              }
-            },
-            "allOf": [
-              {
-                "if": {
-                  "required": [],
-                  "properties": {
-                    "layout": {
-                      "const": "Title & Content"
-                    }
-                  }
-                },
-                "then": {
-                  "required": [],
-                  "properties": {
-                    "title": {
-                      "title": "Heading",
-                      "type": "string"
-                    },
-                    "summary": {
-                      "title": "Summary",
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            ]
-          },
-          "displayConfiguration": {
-            "required": [],
-            "properties": {
-              "displayIconHeading": {
-                "title": "Show Icon Heading",
-                "type": "boolean",
-                "default": true
               },
-              "backgroundColor": {
-                "title": "Background Color",
-                "enum": ["Grey", "Transparent"],
+              "caption": {
+                "title": "Gallery caption",
                 "type": "string",
-                "default": "Grey"
+                "format": "multi-line",
+                "default": ""
               },
-              "width": {
-                "title": "Width",
+              "credit": {
+                "title": "Gallery credit",
                 "type": "string",
-                "enum": ["Wide", "Content"],
-                "default": "Wide"
+                "default": ""
               }
             }
           }
