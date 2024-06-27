@@ -39,7 +39,11 @@ export default function FullHero({ data }) {
           <div className="su-bg-gradient-to-t su-from-white su-via-[rgb(255_255_255/.5)_8%] dark:su-from-black-true dark:su-via-[rgb(0_0_0/.5)_8%] su-to-50% su-absolute su-w-full su-h-full su-bottom-0 su-left-0" />
         </div>
 
-        <div className="su-relative su-z-10 -su-mt-48 su-grid su-grid-cols-6 md:su-items-center md:su-grid-cols-12 su-gap-y-0 su-grid-gap md:su-px-0 su-flex-wrap su-mx-auto">
+        {/* id="main-content" is here for skip link to move user past Feature story's large hero images */}
+        <div
+          id="main-content"
+          className="su-relative su-z-10 -su-mt-48 su-grid su-grid-cols-6 md:su-items-center md:su-grid-cols-12 su-gap-y-0 su-grid-gap md:su-px-0 su-flex-wrap su-mx-auto"
+        >
           <div className="su-col-span-6 md:su-col-span-7 md:su-col-start-1 lg:su-col-span-8 lg:su-col-start-1 lg:su-pr-30">
             <h1
               className={[

@@ -602,7 +602,7 @@ audio::-webkit-media-controls-panel {
 * Main page wrapper
 */
 .su-page {
-  @apply su-w-full su-overflow-hidden;
+  @apply su-w-full;
 }
 
 .su-page:not(.su-page-has-sidebar)
@@ -641,7 +641,7 @@ audio::-webkit-media-controls-panel {
 }
 
 .su-page--top-margin .su-upper-content {
-  @apply su-rs-mt-5;
+  @apply su-rs-pt-7;
 }
 
 .su-upper-content > [data-component] + * {
@@ -650,10 +650,6 @@ audio::-webkit-media-controls-panel {
 
 [data-component="leadership-hero-hannah"] {
   @apply su-rs-mt-8 !important;
-}
-
-[data-component="basic-story-hero"] {
-  @apply su-rs-mt-6 !important;
 }
 
 [data-component="default-hero"],
