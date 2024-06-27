@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "image-gallery-modal",
-  "version": "2.0.1",
+  "version": "2.1.2",
   "namespace": "stanford-components",
   "description": "An image gallery that opens in a modal.",
   "displayName": "Image gallery with modal",
@@ -27,53 +27,15 @@
         "type": "object",
         "required": [],
         "properties": {
-          "contentConfiguration": {
+          "layoutConfiguration": {
+            "title": "Layout Options",
             "required": [],
             "properties": {
               "layout": {
                 "title": "Layout",
                 "type": "string",
-                "enum": [
-                  "Title & Content",
-                  "Content Only"
-                ],
+                "enum": ["Title & Content", "Content Only"],
                 "default": "Title & Content"
-              },
-              "caption": {
-                "title": "Gallery caption",
-                "type": "string",
-                "format": "multi-line",
-                "default": ""
-              },
-              "credit": {
-                "title": "Gallery credit",
-                "type": "string",
-                "default": ""
-              },
-              "images": {
-                "title": "Images",
-                "type": "array",
-                "minItems": 4,
-                "maxItems": 20,
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "image"
-                  ],
-                  "properties": {
-                    "image": {
-                      "title": "Image asset",
-                      "format": "matrix-asset-uri",
-                      "type": "string"
-                    },
-                    "caption": {
-                      "title": "Description",
-                      "description": "The image's caption",
-                      "type": "string",
-                      "format": "multi-line"
-                    }
-                  }
-                }
               }
             },
             "allOf": [
@@ -95,7 +57,8 @@
                     },
                     "summary": {
                       "title": "Summary",
-                      "type": "string"
+                      "type": "string",
+                      "format": "multi-line"
                     }
                   }
                 }
@@ -103,30 +66,60 @@
             ]
           },
           "displayConfiguration": {
+            "title": "Display Options",
             "required": [],
             "properties": {
-              "displayIconHeading": {
-                "title": "Show Icon Heading",
-                "type": "boolean",
-                "default": true
-              },
               "backgroundColor": {
                 "title": "Background Color",
-                "enum": [
-                  "Grey",
-                  "Transparent"
-                ],
+                "enum": ["Grey", "Transparent"],
                 "type": "string",
                 "default": "Grey"
               },
               "width": {
                 "title": "Width",
                 "type": "string",
-                "enum": [
-                  "Wide",
-                  "Content"
-                ],
+                "enum": ["Wide", "Content"],
                 "default": "Wide"
+              }
+            }
+          },
+          "contentConfiguration": {
+            "title": "Gallery Configuration",
+            "required": [],
+            "properties": {
+              "images": {
+                "title": "Images",
+                "type": "array",
+                "minItems": 4,
+                "maxItems": 20,
+                "items": {
+                  "type": "object",
+                  "required": ["image"],
+                  "properties": {
+                    "image": {
+                      "title": "Image asset",
+                      "format": "matrix-asset-uri",
+                      "type": "string"
+                    },
+                    "caption": {
+                      "title": "Description",
+                      "description": "The image's caption",
+                      "type": "string",
+                      "format": "multi-line"
+                    }
+                  }
+                }
+              },
+              "caption": {
+                "title": "Gallery caption",
+                "type": "string",
+                "format": "multi-line",
+                "default": ""
+              },
+              "credit": {
+                "title": "Gallery credit",
+                "type": "string",
+                "default": ""
               }
             }
           }

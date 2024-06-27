@@ -15,6 +15,8 @@ const testDataTwoColumns = [
 
 const testDataOneColumn = [<article>Column One</article>];
 
+const testDataZeroColumn = [];
+
 describe("MultiColumnGrid", () => {
   it("should render the component", () => {
     render(<MultiColumnGrid items={testDataThreeColumns} />);
@@ -22,8 +24,14 @@ describe("MultiColumnGrid", () => {
     expect(grid).toBeInTheDocument();
   });
 
-  it("should not render the component", () => {
+  it("should render the component with one item", () => {
     render(<MultiColumnGrid items={testDataOneColumn} />);
+    const grid = document.querySelector(".su-component-multicolumn");
+    expect(grid).toBeInTheDocument();
+  });
+
+  it("should not render the component", () => {
+    render(<MultiColumnGrid items={testDataZeroColumn} />);
     const grid = document.querySelector(".su-component-multicolumn");
     expect(grid).toBeNull();
   });

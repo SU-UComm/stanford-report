@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
+import { cnb } from "cnbuilder";
 
 // import specific templates for the component
 import { Container } from "../../packages/grids/Container";
@@ -21,8 +22,9 @@ import carouselImages from "./components/CarouselImages";
  */
 
 export default function Base({
-  contentConfiguration,
+  layoutConfiguration,
   displayConfiguration,
+  contentConfiguration,
   data,
 }) {
   // state
@@ -87,10 +89,7 @@ export default function Base({
     `
   );
 
-  const width =
-    displayConfiguration.width === "Wide"
-      ? displayConfiguration.width
-      : "content";
+  const width = displayConfiguration.width === "Wide" ? "full" : "narrow";
 
   // caption & credit
   const captionCredit =
@@ -105,65 +104,62 @@ export default function Base({
   return (
     <>
       <div
-        className={[
+        className={cnb(
           displayConfiguration.backgroundColor === "Grey"
             ? "su-bg-fog-light su-rs-pt-6 su-rs-pb-8 dark:su-bg-black/[0.5]"
-            : "",
-        ].join(" ")}
+            : ""
+        )}
       >
         <Container width={width}>
-          <div className="su-w-[100%] md:su-max-w-[60.7rem] lg:su-max-w-[63.6rem] su-mx-auto">
-            <div
-              className={[
-                "su-text-center [&>*]:su-justify-center [&>*]:su-rs-mb-0 su-flex su-flex-col su-gap-[2.1rem]",
-                "md:su-gap-[2.5rem]",
-              ]}
-            >
-              {displayConfiguration.displayIconHeading && (
+          {layoutConfiguration.layout === "Title & Content" && (
+            <div className="su-w-[100%] md:su-max-w-[60.7rem] lg:su-max-w-[63.6rem] su-mx-auto">
+              <div
+                className={cnb(
+                  "su-text-center [&>*]:su-justify-center [&>*]:su-rs-mb-0 su-flex su-flex-col su-gap-[2.1rem]",
+                  "md:su-gap-[2.5rem]"
+                )}
+              >
                 <SidebarHeading
                   color="media"
                   icon="mediagallery"
                   title="Media gallery"
                 />
-              )}
-
-              {contentConfiguration.layout === "Title & Content" && (
                 <h2
-                  className={[
+                  className={cnb(
                     "su-text-[3.5rem] su-leading-[4.179rem] su-font-bold",
                     "md:su-text-[4.0rem] md:su-leading-[4.776rem]",
-                    "lg:su-text-[4.9rem] lg:su-leading-[6.37rem]",
-                  ].join(" ")}
+                    "lg:su-text-[4.9rem] lg:su-leading-[6.37rem]"
+                  )}
                 >
-                  {contentConfiguration.title}
+                  {layoutConfiguration.title}
                 </h2>
+              </div>
+
+              {layoutConfiguration.summary && (
+                <XssSafeContent
+                  className={cnb(
+                    "su-wysiwyg-content su-rs-mt-0 su-text-[1.8rem] su-leading-[2.25rem] su-mt-[1.5rem]",
+                    "md:su-text-[1.9rem] md:su-leading-[2.375rem] md:su-mt-[1.9rem]",
+                    "lg:su-text-[2.1rem] lg:su-leading-[2.625rem]"
+                  )}
+                  elementType="div"
+                  data-test="component-story-lead"
+                  content={layoutConfiguration.summary}
+                />
               )}
             </div>
-
-            {contentConfiguration.layout === "Title & Content" && (
-              <XssSafeContent
-                className={[
-                  "su-wysiwyg-content su-rs-mt-0 su-text-[1.8rem] su-leading-[2.25rem] su-mt-[1.5rem]",
-                  "md:su-text-[1.9rem] md:su-leading-[2.375rem] md:su-mt-[1.9rem]",
-                  "lg:su-text-[2.1rem] lg:su-leading-[2.625rem]",
-                ].join(" ")}
-                elementType="div"
-                data-test="component-story-lead"
-                content={contentConfiguration.summary}
-              />
-            )}
-          </div>
+          )}
 
           <button
             onClick={() => handleClick()}
             title="Open image gallery"
             aria-label="Open image gallery"
             type="button"
-            className={[
+            className={cnb(
               "su-grid su-grid-cols-2 su-mx-auto su-grid-rows-2 su-max-w-[1312px] su-gap-x-[0.691rem] su-gap-y-[0.572rem] su-mt-[3.2rem] su-pb-[1rem]",
               "md:su-mt-[4.8rem] md:su-gap-x-[1.448rem] md:su-gap-y-[1.199rem]",
-              "lg:su-gap-x-[2.589rem] lg:su-gap-y-[2.143rem]",
-            ].join(" ")}
+              "lg:su-gap-x-[2.589rem] lg:su-gap-y-[2.143rem]"
+            )}
           >
             <ImageMosaic
               data={previewData}
