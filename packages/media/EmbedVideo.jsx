@@ -12,6 +12,7 @@ export default function EmbedVideo(props) {
         noAutoPlay ? 0 : 1
       }&amp;controls=1&amp;rel=0`}
       title={`${title}`}
+      aria-label={`${title}`}
       frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen
