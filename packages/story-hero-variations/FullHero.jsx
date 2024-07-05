@@ -42,7 +42,7 @@ export default function FullHero({ data }) {
         {/* id="main-content" is here for skip link to move user past Feature story's large hero images */}
         <div
           id="main-content"
-          className="su-relative su-z-10 -su-mt-48 su-grid su-grid-cols-6 md:su-items-center md:su-grid-cols-12 su-gap-y-0 su-grid-gap md:su-px-0 su-flex-wrap su-mx-auto"
+          className="su-relative su-z-10 su-grid su-grid-cols-6 md:su-items-center md:su-grid-cols-12 su-gap-y-0 su-grid-gap md:su-px-0 su-flex-wrap su-mx-auto su-pt-[11.4rem] -su-mt-[16.2rem]"
         >
           <div className="su-col-span-6 md:su-col-span-7 md:su-col-start-1 lg:su-col-span-8 lg:su-col-start-1 lg:su-pr-30">
             <h1
