@@ -56,9 +56,9 @@ export default function MissionLogo({ url, mission }) {
       </a>
 
       {mission && (
-        <p className="su-italic su-font-serif su-font-normal su-leading-[33.6px] su-text-28 su-mb-[0px] su-mt-11 md:su-mt-20 lg:su-mt-[0px]">
+        <span className="su-italic su-font-serif su-font-normal su-leading-[33.6px] su-text-28 su-mb-[0px] su-mt-11 md:su-mt-20 lg:su-mt-[0px]">
           {mission}
-        </p>
+        </span>
       )}
     </div>
   );
