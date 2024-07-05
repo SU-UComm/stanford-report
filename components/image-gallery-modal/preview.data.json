@@ -1,14 +1,8 @@
 {
-  "layoutConfiguration": {
-    "layout": "Title & Content",
-    "title": "Seeing the oceans in a new light!",
-    "summary": "<p>Halleh Balch, an experimental physicist in the Dionne lab at Stanford, has developed a thumbnail-sized optical sensor that can track the health of marine ecosystems in near-real time through quick detection of environmental DNA. It could be a critical tool for natural resource managers in the face of climate change impacts like coral bleaching, warming seas, and migration of species.</p>"
-  },
-  "displayConfiguration": {
-    "backgroundColor": "Grey",
-    "width": "Wide"
-  },
   "contentConfiguration": {
+    "title": "Seeing the oceans in a new light!",
+    "summary": "<p>Halleh Balch, an experimental physicist in the Dionne lab at Stanford, has developed a thumbnail-sized optical sensor that can track the health of marine ecosystems in near-real time through quick detection of environmental DNA. It could be a critical tool for natural resource managers in the face of climate change impacts like coral bleaching, warming seas, and migration of species.</p>",
+    "layout": "Title & Content",
     "images": [
       {
         "image": "matrix-asset://api-identifier/125801",
@@ -36,5 +30,10 @@
     ],
     "caption": "This is an optional caption for the whole gallery This is an optional caption for the whole gallery This is an optional caption for the whole gallery This is an optional caption for the whole gallery This is an optional caption for the whole gallery This is an optional caption for the whole gallery",
     "credit": "Isaac Astley"
+  },
+  "displayConfiguration": {
+    "displayIconHeading": true,
+    "backgroundColor": "Grey",
+    "width": "Wide"
   }
 }
