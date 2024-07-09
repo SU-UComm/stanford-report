@@ -1,3 +1,8 @@
 {
-    "title": "Welcome to Stanford University!"
+  "storiesCount": "5",
+  "APIrespCount": "30",
+  "sourcePath": "/stories/",
+  "assetExclusions": "",
+  "contentTypeExclusions": "28201,28216,28210",
+  "dateRange": "Past 6 months"
 }

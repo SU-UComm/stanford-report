@@ -21,6 +21,12 @@ function getDateRange(range) {
 export default async (args, info) => {
   const adapter = new FetchAdapter();
   const { FB_API_TOKEN } = info.set.environment;
+  //   let storiesCount = args.storiesCount;
+  //   let sourcePath = args.sourcePath;
+  //   let assetExclusions = args.assetExclusions;
+  //   let contentTypeExclusions = args.contentTypeExclusions;
+  //   let dateRange = args.dateRange;
+  //   let APIrespCount = args.APIrespCount;
 
   let data = null;
 

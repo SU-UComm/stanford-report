@@ -26,6 +26,44 @@
       "input": {
         "type": "object",
         "properties": {
+          "storiesCount": {
+            "title": "Number of stories",
+            "type": "string",
+            "default": "5",
+            "enum": ["5", "10", "15", "20"]
+          },
+          "APIrespCount": {
+            "title": "API Response Count",
+            "description": "Input for API response count",
+            "type": "string",
+            "default": "30",
+            "enum": ["30", "60", "90"]
+          },
+          "sourcePath": {
+            "title": "Source Path",
+            "description": "Input for API to source data from a certain path",
+            "type": "string",
+            "default": "/stories/%"
+          },
+          "assetExclusions": {
+            "title": "Asset ID Exclusions",
+            "description": "IDs of assets to exclude separated by commas",
+            "type": "string",
+            "default": ""
+          },
+          "contentTypeExclusions": {
+            "title": "Content Type Exclusions",
+            "description": "IDs of content types to exclude separated by commas. In The News (#28216) must be excluded from listings.",
+            "type": "string",
+            "default": "28201,28216,28210"
+          },
+          "dateRange": {
+            "title": "Date Range",
+            "description": "Timeframe for the stories.",
+            "type": "string",
+            "default": "Past 6 months",
+            "enum": ["Past 6 months", "Past 1 year", "Past 2 years"]
+          }
         },
         "required": []
       },
@@ -83,4 +121,3 @@
     }
   }
 }
-
