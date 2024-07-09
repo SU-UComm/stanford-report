@@ -14,6 +14,7 @@ export default function formatNewsDate(dateString) {
     month: "long",
     day: "numeric",
     year: "numeric",
+    timeZone: "UTC",
   }).format(sDate);
   return `${formattedDate}`;
 }
