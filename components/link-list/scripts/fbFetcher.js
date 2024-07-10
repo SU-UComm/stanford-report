@@ -1,7 +1,7 @@
 import FetchAdapter from "../../../packages/utils/fetchAdapter";
 import translatePersonalisationProfile from "../../../packages/utils/translatePersonalisationProfile";
 
-export default async function relatedStory(
+export default async function fbFetcher(
   search = null,
   pageData = null,
   personalisation = "",
@@ -11,7 +11,7 @@ export default async function relatedStory(
 
   if (pageData && search) {
     // default non-behavioural
-    let fbUrl = `
+    const defaultFbUrl = `
       ${search.endpoint?.replace(/\.html/g, ".json")}
       ?profile=${search.profile}
       &collection=${search.collection}
@@ -27,6 +27,7 @@ export default async function relatedStory(
         personalisation
       )}&num_ranks=3&sort=date&log=false
     `;
+    let fbUrl = defaultFbUrl;
 
     if (behaviouralData && behaviouralData?.behavioural) {
       fbUrl = `${search.endpoint?.replace(/\.html/g, ".json")}
@@ -40,7 +41,15 @@ export default async function relatedStory(
     adapter.url = fbUrl.replace(/\n+|\t+| {2,}/g, "");
 
     const storyResultData = await adapter.fetch();
-    const story = storyResultData.response?.resultPacket?.results || null;
+    let story = storyResultData.response?.resultPacket?.results || null;
+
+    // when behavioural and there is insufficient data returned (less than 3)
+    if (behaviouralData?.behavioural && story && story.length < 3) {
+      // run the default topic query
+      adapter.url = defaultFbUrl.replace(/\n+|\t+| {2,}/g, "");
+      const backupResultData = await adapter.fetch();
+      story = backupResultData.response?.resultPacket?.results || null;
+    }
 
     return story;
   }
