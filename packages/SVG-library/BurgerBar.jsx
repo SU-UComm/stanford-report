@@ -5,12 +5,12 @@ import React from "react";
  *
  * @return {JSX.Element}
  */
-export default function BurgerBar() {
+export default function BurgerBar({ className }) {
   return (
     <svg
       aria-hidden="true"
       focusable="false"
-      className="su-hidden md:su-block su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
+      className={className}
       width="32"
       height="32"
       viewBox="0 0 32 32"
