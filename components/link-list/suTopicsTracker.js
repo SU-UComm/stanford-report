@@ -65,14 +65,6 @@
         return "External";
     }
   }
-  // generate report
-  function suTrackerGenerateTopicsReport() {
-    console.log(window.pageController.myTopics);
-    console.log(
-      "My top topics",
-      getTopTopics(window.pageController.myTopics.data.topics)
-    );
-  }
 
   // generate the Funnelback query
   function suTrackerGenerateTopicsQuery() {
@@ -137,6 +129,19 @@
     return output;
   }
 
+  // generate report
+  function suTrackerGenerateTopicsReport() {
+    console.log(
+      "cookie: preferences_topics",
+      window.pageController.myTopics.data
+    );
+    console.log(
+      "My top topics",
+      getTopTopics(window.pageController.myTopics.data.topics)
+    );
+    console.log("Behavioural FB query", suTrackerGenerateTopicsQuery());
+  }
+
   // Function to initialize or update the suTopicTracker cookie
   function suTrackerSetTopics() {
     let hasViewedStory = false;
@@ -178,6 +183,7 @@
   // Run the function after the page has loaded
   // window.addEventListener("load", function () {
   if (window.pageController) {
+    window.pageController.myTopics = {};
     const cdpConsentCookie = JSON.parse(getCookie("squiz.cdp.consent"));
     // do we have consent data?
     const consented = cdpConsentCookie?.CDPConsent;
@@ -185,9 +191,7 @@
       suTrackerSetTopics();
     }
     window.pageController.topicsQuery = suTrackerGenerateTopicsQuery;
-    window.pageController.myTopics = {
-      report: suTrackerGenerateTopicsReport,
-    };
+    window.pageController.topicsReport = suTrackerGenerateTopicsReport;
   }
   // });
 })();
