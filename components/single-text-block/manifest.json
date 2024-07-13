@@ -27,13 +27,13 @@
             "default": "Eyebrow"
           },
           "title": {
-            "title": "Heading",
-            "description": "The heading text",
+            "title": "Title",
+            "description": "The title text",
             "type": "string",
             "default": "Lorem ipsum dolor"
           },
-          "content": {
-            "title": "Content",
+          "description": {
+            "title": "Description",
             "description": "This is the body text.",
             "type": "FormattedText"
           }
