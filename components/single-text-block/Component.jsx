@@ -14,14 +14,18 @@ import { Container } from "../../packages/grids/Container";
 
 export default function SingleTextBlock({ title, eyebrow, content }) {
   return (
-    <Container>
-      <span>{eyebrow}</span>
-      <h2>{title}</h2>
-      <XssSafeContent
-        data-test="single-text-block-content"
-        className="su-big-paragraph su-grow"
-        content={content}
-      />
-    </Container>
+    <div className="su-cc su-rs-my-10">
+      <div className="su-ml-0 su-max-w-[110rem] su-border-l-2 su-border-black-30 dark:su-border-black-60 su-rs-py-3 su-pl-38 md:su-pl-76 2xl:su-pl-170">
+        <span className="su-inline-block su-text-black-60 dark:su-text-black-30 su-font-semibold su-type-1 su-leading-display su-rs-mb-1">
+          {eyebrow}
+        </span>
+        <h2 className="su-type-5 su-rs-mb-5 dark:su-text-white">{title}</h2>
+        <XssSafeContent
+          data-test="single-text-block-content"
+          className="su-type-3 *:su-leading-snu *:last:su-mb-0 dark:su-text-white"
+          content={content}
+        />
+      </div>
+    </div>
   );
 }
