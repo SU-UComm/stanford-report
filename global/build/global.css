@@ -4558,10 +4558,10 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .xl\:su-min-w-\[35\.9rem\]{min-width:35.9rem}
 .xl\:su-translate-y-\[-220px\]{--tw-translate-y:-220px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .xl\:su-grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}
+.xl\:su-pl-170{padding-left:17rem}
 .xl\:su-text-\[6\.4rem\]{font-size:6.4rem}}
 @media (min-width: 1500px){
-.\32xl\:su-flex-row{flex-direction:row}
-.\32xl\:su-pl-170{padding-left:17rem}}
+.\32xl\:su-flex-row{flex-direction:row}}
 .\[\&\>\*\:last-child\]\:su-mb-0>*:last-child{margin-bottom:0}
 .\[\&\>\*\:last-child\]\:after\:su-content-\[\'\\u201D\'\]>*:last-child::after{--tw-content:'\u201D';content:var(--tw-content)}
 .\[\&\>\*\:last-child\]\:after\:su-content-\[\'\201D\'\]>*:last-child::after{--tw-content:'”';content:var(--tw-content)}

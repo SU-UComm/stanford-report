@@ -14,7 +14,7 @@ import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 export default function SingleTextBlock({ title, eyebrow, description }) {
   return (
     <div className="su-cc su-rs-my-10">
-      <div className="su-ml-0 su-max-w-[110rem] su-border-l-2 su-border-black-30 dark:su-border-black-60 su-rs-py-3 su-pl-38 md:su-pl-76 2xl:su-pl-170">
+      <div className="su-ml-0 su-max-w-[110rem] su-border-l-2 su-border-black-30 dark:su-border-black-60 su-rs-py-3 su-pl-38 md:su-pl-76 xl:su-pl-170">
         <span className="su-inline-block su-text-black-60 dark:su-text-black-40 su-font-semibold su-type-1 su-leading-display su-rs-mb-1">
           {eyebrow}
         </span>
