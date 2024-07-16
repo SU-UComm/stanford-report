@@ -3,7 +3,7 @@
   "name": "single-text-block",
   "version": "0.0.1",
   "namespace": "stanford-components",
-  "description": "A block of text with a heading and subheading.",
+  "description": "A block of text with a heading and eyebrow.",
   "displayName": "Single Text Block",
   "mainFunction": "main",
   "icon": {
@@ -28,7 +28,7 @@
           },
           "title": {
             "title": "Title",
-            "description": "The title text",
+            "description": "The title text.",
             "type": "string",
             "default": "Lorem ipsum dolor"
           },
@@ -73,7 +73,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "../../packages/__globalPreview/campaign.html"
           }
         }
       }
