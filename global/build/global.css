@@ -2449,6 +2449,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-h-\[2px\]{height:2px}
 .su-h-\[300px\]{height:300px}
 .su-h-\[34\.2rem\]{height:34.2rem}
+.su-h-\[5\.6rem\]{height:5.6rem}
 .su-h-\[56px\]{height:56px}
 .su-h-\[60\%\]{height:60%}
 .su-h-\[66px\]{height:66px}
@@ -2539,6 +2540,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-max-w-full{max-width:100%}
 .su-max-w-none{max-width:none}
 .su-flex-1{flex:1 1 0%}
+.su-flex-auto{flex:1 1 auto}
 .su-flex-shrink-0{flex-shrink:0}
 .su-shrink-0{flex-shrink:0}
 .su-flex-grow{flex-grow:1}
