@@ -1185,3 +1185,13 @@ Subscribe to Stanford Report Marketo form styles
 .marketo-sr-subscribe-form.mktoForm .mktoButton {
   @apply su-button hocus:su-underline su-leading-display md:su-px-30 md:su-pt-12 md:su-pb-14 su-text-18 md:su-text-20 su-transition-colors dark:hocus:su-ring-1 dark:hocus:su-ring-white;
 }
+
+/**
+ * Campaign page global styles
+ */
+.su-page-campaign {
+  @apply su-bg-fog-light;
+}
+.su-page-campaign body {
+  @apply su-bg-fog-light;
+}
