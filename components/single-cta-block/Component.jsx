@@ -21,7 +21,7 @@ export default function SingleCtaBlock({
     ctaConfiguration;
   return (
     <div className="su-cc">
-      <div className="su-bg-white su-rounded-[8px] su-rs-py-8 su-rs-px-4 su-break-words">
+      <div className="su-rounded-[8px] su-rs-py-8 su-rs-px-4 su-break-words su-transition-shadow su-border dark:su-border-2 su-border-black-30/30 dark:su-border-black su-shadow dark:su-shadow-black/80 su-bg-white dark:su-bg-black-true su-text-black dark:su-text-white">
         <span className="su-block su-mx-auto su-mb-02em su-text-center su-text-black-60 dark:su-text-black-40 su-font-semibold su-type-1 su-leading-display">
           {eyebrow}
         </span>
@@ -39,6 +39,8 @@ export default function SingleCtaBlock({
         />
         {ctaText && (
           <LinkButton
+            variant="gradient"
+            size="large"
             buttonText={ctaText}
             internalUrl={internalLinkUrl}
             externalUrl={externalUrl}

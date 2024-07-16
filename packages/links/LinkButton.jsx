@@ -17,6 +17,15 @@ import ExternalArrowUnstyled from "../SVG-library/ExternalArrowUnstyled";
  * @param {boolean} isNewWindow
  * Whether the link should open in a new window
  *
+ * @param {string} size
+ * Size of the button = "default" | "large"
+ *
+ * @param {string} variant
+ * Variant of the button = "default" | "gradient"
+ *
+ * @param {string} className
+ * Additional className that will be added to the button, e.g., spacing
+ *
  * @return {JSX.element}
  */
 export function LinkButton({
@@ -24,7 +33,8 @@ export function LinkButton({
   externalUrl,
   buttonText = "Button text",
   isNewWindow,
-  // Additional className that will be added to the button, e.g., spacing
+  variant = "default",
+  size = "default",
   className,
 }) {
   // Check externalUrl field to see if it is actually external
@@ -36,7 +46,13 @@ export function LinkButton({
     // eslint-disable-next-line react/jsx-no-target-blank
     <a
       className={cnb(
-        "su-group su-inline-block su-button hocus:su-underline md:su-px-30 md:su-pt-12 md:su-pb-14 su-text-18 md:su-text-20 su-transition-colors dark:hocus:su-ring-1 dark:hocus:su-ring-white",
+        "su-group su-inline-block su-button hocus:su-underline su-transition-colors dark:hocus:su-ring-1 dark:hocus:su-ring-white",
+        size === "large"
+          ? "su-rs-py-0 su-rs-px-4 su-font-semibold su-type-1"
+          : "md:su-px-30 md:su-pt-12 md:su-pb-14 su-text-18 md:su-text-20 ",
+        variant === "gradient"
+          ? "su-bg-gradient-to-r su-from-digital-red-light su-to-cardinal-red-dark dark:su-from-olive dark:su-to-palo-verde dark:su-text-black-true"
+          : "",
         className
       )}
       href={externalUrl || internalUrl}

@@ -2030,6 +2030,11 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-rs-mb-0{margin-bottom:1.8rem}}
 @media (min-width: 1500px){
 .su-rs-mb-0{margin-bottom:1.9rem}}
+.su-rs-py-0{padding-top:1.5rem;padding-bottom:1.5rem;}
+@media (min-width: 768px){
+.su-rs-py-0{padding-top:1.8rem;padding-bottom:1.8rem}}
+@media (min-width: 1500px){
+.su-rs-py-0{padding-top:1.9rem;padding-bottom:1.9rem}}
 .su-rs-mt-1{margin-top:2rem;}
 @media (min-width: 768px){
 .su-rs-mt-1{margin-top:2.6rem}}
@@ -3071,6 +3076,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-shadow-white{--tw-shadow-color:#fff;--tw-shadow:var(--tw-shadow-colored)}
 .su-ring-digital-blue-light{--tw-ring-opacity:1;--tw-ring-color:rgb(133 204 255 / var(--tw-ring-opacity))}
 .su-ring-digital-blue-vivid{--tw-ring-opacity:1;--tw-ring-color:rgb(5 151 255 / var(--tw-ring-opacity))}
+.su-ring-white{--tw-ring-opacity:1;--tw-ring-color:rgb(255 255 255 / var(--tw-ring-opacity))}
 .su-drop-shadow-\[0px_14px_28px_rgba\(0\,0\,0\,0\.20\)\]{--tw-drop-shadow:drop-shadow(0px 14px 28px rgba(0,0,0,0.20));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}
 .su-transition{transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 .su-transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
@@ -4217,6 +4223,8 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .md\:su-py-15{padding-top:1.5rem;padding-bottom:1.5rem}
 .md\:su-py-61{padding-top:6.1rem;padding-bottom:6.1rem}
 .md\:su-py-72{padding-top:7.2rem;padding-bottom:7.2rem}
+.md\:su-px-58{padding-left:5.8rem;padding-right:5.8rem}
+.md\:su-py-20{padding-top:2rem;padding-bottom:2rem}
 .md\:su-pb-0{padding-bottom:0}
 .md\:su-pb-12{padding-bottom:1.2rem}
 .md\:su-pb-13{padding-bottom:1.3rem}
