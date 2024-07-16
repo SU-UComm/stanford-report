@@ -76,16 +76,21 @@ export default function sidebarNavigation({
       {navOpen && (
         <nav className="" data-role="sidebar-navigation-wrapper">
           <ul className="su-list-none su-p-0">
-            <li>
-              <LinkItem url={asset_url} shortName={asset_short_name} />
+            <li className="su-m-0">
+              <LinkItem
+                level="one"
+                url={asset_url}
+                shortName={asset_short_name}
+              />
             </li>
             {menu && menu.length ? (
               <>
                 {menu.map(
                   (item) =>
                     item && (
-                      <li key={item.asset_assetid}>
+                      <li key={item.asset_assetid} className="su-m-0">
                         <LinkItem
+                          level="one"
                           url={item.asset_url}
                           shortName={item.asset_short_name}
                         />
@@ -95,7 +100,10 @@ export default function sidebarNavigation({
                               {item.asset_children.map(
                                 (subitem) =>
                                   item && (
-                                    <li key={subitem.asset_assetid}>
+                                    <li
+                                      key={subitem.asset_assetid}
+                                      className="su-m-0"
+                                    >
                                       <LinkItem
                                         level="two"
                                         url={subitem.asset_url}
