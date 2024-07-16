@@ -1196,5 +1196,5 @@ Subscribe to Stanford Report Marketo form styles
  * Campaign page global styles
  */
 .su-page-campaign, .su-page-campaign body {
-  @apply su-bg-fog-light;
+  @apply su-bg-campaign-fog;
 }
