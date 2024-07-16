@@ -4,6 +4,7 @@ import { cnb } from "cnbuilder";
 // import specific templates for the component
 import BurgerBar from "../../packages/SVG-library/BurgerBar";
 import Close from "../../packages/SVG-library/Close";
+import LinkItem from "./Components/LinkItem";
 
 /**
  * Base component
@@ -15,6 +16,7 @@ import Close from "../../packages/SVG-library/Close";
  */
 
 export default function sidebarNavigation({
+  asset_assetid,
   asset_short_name,
   asset_url,
   menu,
@@ -75,12 +77,7 @@ export default function sidebarNavigation({
         <nav className="" data-role="sidebar-navigation-wrapper">
           <ul className="su-list-none su-p-0">
             <li>
-              <a
-                className="su-p-10 su-border-l-5 su-no-underline su-border-white hocus:su-underline active:su-underline hocus:su-border-digital-red active:su-border-digital-red"
-                href={asset_url}
-              >
-                {asset_short_name}
-              </a>
+              <LinkItem url={asset_url} shortName={asset_short_name} />
             </li>
             {menu && menu.length ? (
               <>
@@ -88,12 +85,10 @@ export default function sidebarNavigation({
                   (item) =>
                     item && (
                       <li key={item.asset_assetid}>
-                        <a
-                          className="su-p-10 su-border-l-5 su-no-underline su-border-white hocus:su-underline active:su-underline hocus:su-border-digital-red active:su-border-digital-red"
-                          href={item.asset_url}
-                        >
-                          {item.asset_short_name}
-                        </a>
+                        <LinkItem
+                          url={item.asset_url}
+                          shortName={item.asset_short_name}
+                        />
                         {item.asset_children &&
                           item.asset_children !== null && (
                             <ul className="su-list-none su-p-0">
@@ -101,12 +96,11 @@ export default function sidebarNavigation({
                                 (subitem) =>
                                   item && (
                                     <li key={subitem.asset_assetid}>
-                                      <a
-                                        className="su-p-10 su-pl-25 su-border-l-5 su-no-underline su-border-white hocus:su-underline active:su-underline hocus:su-border-digital-red active:su-border-digital-red"
-                                        href={subitem.asset_url}
-                                      >
-                                        {subitem.asset_short_name}
-                                      </a>
+                                      <LinkItem
+                                        level="two"
+                                        url={subitem.asset_url}
+                                        shortName={subitem.asset_short_name}
+                                      />
                                     </li>
                                   )
                               )}
