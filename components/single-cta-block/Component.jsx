@@ -21,7 +21,7 @@ export default function SingleCtaBlock({
     ctaConfiguration;
   return (
     <div className="su-cc">
-      <div className="su-bg-white su-rounded-[8px] su-rs-py-8 su-rs-px-4">
+      <div className="su-bg-white su-rounded-[8px] su-rs-py-8 su-rs-px-4 su-break-words">
         <span className="su-block su-mx-auto su-mb-02em su-text-center su-text-black-60 dark:su-text-black-40 su-font-semibold su-type-1 su-leading-display">
           {eyebrow}
         </span>
@@ -30,7 +30,7 @@ export default function SingleCtaBlock({
           <h2 className="su-mx-auto su-text-center su-leading-tight su-type-4 dark:su-text-white su-mb-0">
             {title}
           </h2>
-          <div className="su-relative md:su-top-06em su-mx-auto su-min-w-100 su-grow su-shrink-0 su-w-180 su-h-4 su-bg-gradient-to-l md:su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto su-mb-20 md:su-mb-0" />
+          <div className="su-relative md:su-top-06em su-mx-auto su-min-w-100 su-grow su-shrink-0 su-w-180 su-h-4 su-bg-gradient-to-l su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive md:su-w-auto su-mb-20 md:su-mb-0" />
         </div>
         <XssSafeContent
           data-test="single-text-block-content"
