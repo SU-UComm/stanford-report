@@ -48,16 +48,16 @@
         "properties": {
           "storiesCount": {
             "title": "Number of stories",
-            "type": "string",
-            "default": "5",
-            "enum": ["5", "10", "15", "20"]
+            "type": "number",
+            "default": 5,
+            "enum": [5, 10, 15, 20]
           },
           "APIrespCount": {
             "title": "API Response Count",
             "description": "Input for API response count",
-            "type": "string",
-            "default": "30",
-            "enum": ["30", "60", "90"]
+            "type": "number",
+            "default": 30,
+            "enum": [30, 60, 90]
           },
           "sourcePath": {
             "title": "Source Path",
@@ -73,9 +73,9 @@
           },
           "contentTypeExclusions": {
             "title": "Content Type Exclusions",
-            "description": "IDs of content types to exclude separated by commas. In The News (#28216) must be excluded from listings.",
+            "description": "IDs of content types to exclude separated by commas. IDs 28201 (Leadership Messages), 28216 (In The News), 28210 (Announcement) are excluded from listings by default.",
             "type": "string",
-            "default": "28201,28216,28210"
+            "default": ""
           },
           "APIdateRange": {
             "title": "API Date Range",

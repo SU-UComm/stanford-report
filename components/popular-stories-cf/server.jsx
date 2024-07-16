@@ -6,15 +6,14 @@ import popularStoriesFetcher from "./scripts/popularStoriesFetcher";
 
 function getDateRange(range) {
   const date = new Date();
-
   if (range) {
     date.setDate(date.getDate() - range);
   }
 
-  const year = date.getFullYear();
-  const month =
-    date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth();
-  const day = date.getDate();
+  // const year = date.getFullYear();
+  // const month =
+  //   date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth();
+  // const day = date.getDate();
 
   return date.toISOString();
 
@@ -51,7 +50,7 @@ function getAPIDateRange(date) {
     "6 months": 180,
     "1 year": 365,
   };
-  return dateRangeMap(date);
+  return dateRangeMap[date];
 }
 
 function getMaxPublishedRange(date) {
@@ -60,7 +59,7 @@ function getMaxPublishedRange(date) {
     "Past 1 year": 1,
     "Past 2 years": 2,
   };
-  return dateRangeMap(date);
+  return dateRangeMap[date];
 }
 
 export default async (args, info) => {
@@ -77,12 +76,19 @@ export default async (args, info) => {
   } = args;
 
   const dateRangeNumeric = getAPIDateRange(APIdateRange);
-  const exclusionContentTypes = contentTypeExclusions.map((num) =>
-    `taxonomyContentTypeId:${num}`.join(" ")
-  );
+  let exclusionContentTypes = contentTypeExclusions
+    .split(",")
+    .map((num) => `taxonomyContentTypeId:${num}`)
+    .join(" ");
 
-  const exclusionIDs = assetExclusions.map((num) => `id:${num}`.join(" "));
+  // default exclusion types
+  exclusionContentTypes +=
+    " taxonomyContentTypeId:28201 taxonomyContentTypeId:28216 taxonomyContentTypeId:28210";
 
+  const exclusionIDs = assetExclusions
+    .split(",")
+    .map((num) => `id:${num}`)
+    .join(" ");
   const publishedDateRangeNumeric = getMaxPublishedRange(publishedDateMax);
 
   // Today's date
@@ -109,7 +115,7 @@ export default async (args, info) => {
                       requestSource: "eyeball"
                       edgeResponseStatus_lt: 300
                       AND: [
-                          { clientRequestPath_like: "${sourcePath}%" }
+                          { clientRequestPath_like: "${sourcePath}" }
                           { clientRequestPath_notlike: "%/_admin%" }
                       ]
                   }
