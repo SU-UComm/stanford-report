@@ -46,13 +46,13 @@ export function LinkButton({
     // eslint-disable-next-line react/jsx-no-target-blank
     <a
       className={cnb(
-        "su-group su-inline-block su-button hocus:su-underline su-transition-colors dark:hocus:su-ring-1 dark:hocus:su-ring-white",
+        "su-group su-inline-block su-button hocus:su-underline su-transition-color",
         size === "large"
-          ? "su-rs-py-0 su-rs-px-4 su-font-semibold su-type-1"
-          : "md:su-px-30 md:su-pt-12 md:su-pb-14 su-text-18 md:su-text-20 ",
+          ? "su-rs-py-0 su-rs-px-4 su-font-semibold su-type-1 dark:hocus:su-ring-2"
+          : "md:su-px-30 md:su-pt-12 md:su-pb-14 su-text-18 md:su-text-20 dark:hocus:su-ring-1",
         variant === "gradient"
-          ? "su-bg-gradient-to-r su-from-digital-red-light su-to-cardinal-red-dark dark:su-from-olive dark:su-to-palo-verde dark:su-text-black-true"
-          : "",
+          ? "su-bg-gradient-to-r su-from-digital-red-light su-to-cardinal-red-dark dark:su-from-olive dark:su-to-palo-verde dark:su-text-black-true dark:hocus:su-text-black-true dark:hocus:su-ring-bay-light"
+          : "dark:hocus:su-ring-white",
         className
       )}
       href={externalUrl || internalUrl}
@@ -65,7 +65,11 @@ export function LinkButton({
           <span className="su-sr-only">(link is external)</span>
           <ExternalArrowUnstyled
             aria-hidden
-            className="su-inline-block su-text-white group-hocus:su-text-white group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-ml-05em su-w-08em su-transition-transform"
+            className={cnb(
+              "su-inline-block su-text-white group-hocus:su-text-white group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-ml-05em su-w-08em su-transition-transform",
+              variant === "gradient" &&
+                "dark:su-text-black-true dark:group-hocus:su-text-black-true"
+            )}
           />
         </>
       )}
