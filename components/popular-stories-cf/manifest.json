@@ -45,7 +45,53 @@
       "entry": "./dist/server.cjs",
       "input": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "storiesCount": {
+            "title": "Number of stories",
+            "type": "string",
+            "default": "5",
+            "enum": ["5", "10", "15", "20"]
+          },
+          "APIrespCount": {
+            "title": "API Response Count",
+            "description": "Input for API response count",
+            "type": "string",
+            "default": "30",
+            "enum": ["30", "60", "90"]
+          },
+          "sourcePath": {
+            "title": "Source Path",
+            "description": "Input for API to source data from a certain path",
+            "type": "string",
+            "default": "/stories/%"
+          },
+          "assetExclusions": {
+            "title": "Asset ID Exclusions",
+            "description": "IDs of assets to exclude separated by commas",
+            "type": "string",
+            "default": ""
+          },
+          "contentTypeExclusions": {
+            "title": "Content Type Exclusions",
+            "description": "IDs of content types to exclude separated by commas. In The News (#28216) must be excluded from listings.",
+            "type": "string",
+            "default": "28201,28216,28210"
+          },
+          "APIdateRange": {
+            "title": "API Date Range",
+            "description": "Input for Cloudflare to source the most popular stories over the selected duration",
+            "type": "string",
+            "default": "Past 6 months",
+            "enum": ["1 week", "2 weeks", "1 month", "6 months", "1 year"]
+          },
+          "publishedDateMax": {
+            "title": "API Date Range",
+            "description": "Input to control the timeframe for the list.",
+            "type": "string",
+            "default": "Past 6 months",
+            "enum": ["Past 6 months", "Past 1 year", "Past 2 years"]
+          }
+        },
         "required": []
       },
       "output": {
