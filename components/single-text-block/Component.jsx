@@ -1,5 +1,6 @@
 import React from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
+import { Container } from "../../packages/grids/Container";
 
 /**
  * Single Text Block component
@@ -7,13 +8,19 @@ import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
  * @param {string} title The title of the text block
  * @param {string} eyebrow The eyebrow/superheading
  * @param {string} description The body content from the WYSIWYG
+ * @param {string} paddingY Responsive vertical padding of the container
  * @returns {JSX.Element}
  * @constructor
  */
 
-export default function SingleTextBlock({ title, eyebrow, description }) {
+export default function SingleTextBlock({
+  title,
+  eyebrow,
+  description,
+  paddingY = "10",
+}) {
   return (
-    <div className="su-cc su-rs-my-10">
+    <Container width="cc" paddingY={paddingY}>
       <div className="su-ml-0 su-max-w-[110rem] su-border-l-2 su-border-black-30 dark:su-border-black-60 su-rs-py-3 su-pl-38 md:su-pl-76 xl:su-pl-170">
         {eyebrow && (
           <span className="su-inline-block su-text-black-60 dark:su-text-black-40 su-font-semibold su-type-1 su-leading-display su-rs-mb-1">
@@ -31,6 +38,6 @@ export default function SingleTextBlock({ title, eyebrow, description }) {
           />
         )}
       </div>
-    </div>
+    </Container>
   );
 }
