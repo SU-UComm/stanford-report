@@ -42,6 +42,12 @@
             "type": "string",
             "format": "matrix-asset-uri"
           },
+          "isCard": {
+            "title": "Render content inside a card?",
+            "description": "If true, the content will be wrapped in a card with padding and background color.",
+            "type": "boolean",
+            "default": false
+          },
           "ctaConfiguration": {
             "title": "CTA configuration",
             "description": "Fields for the CTA at the bottom of the content.",
@@ -112,6 +118,10 @@
     "locationRoot": "./dist"
   },
   "mockedUris": {
+    "matrix-asset://api-identifier/28192": {
+      "type": "file",
+      "path": "mocked-uris/28192.json"
+    },
     "matrix-asset://api-identifier/128612": {
       "type": "file",
       "path": "mocked-uris/128612.json"

@@ -3,8 +3,11 @@
     "eyebrow": "Learn more",
     "description": "<p>Stanford is committed to a need-blind admission policy for U.S. citizens, undocumented students and permanent residents. Students are admitted without regard to their ability to pay. We encourage you to visit our net price calculator on our website to determine what level of financial aid you can expect.</p>",
     "image": "matrix-asset://api-identifier/128612",
+    "isCard": false,
     "ctaConfiguration": {
-    "ctaText": "CTA button",
-    "externalUrl": "https://google.com"
+        "ctaText": "CTA button",
+        "ctaType": "link",
+        "internalUrl": "matrix-asset://api-identifier/28192",
+        "externalUrl": "https://google.com"
     }
 }
