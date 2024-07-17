@@ -111,6 +111,12 @@
   "staticFiles": {
     "locationRoot": "./dist"
   },
+  "mockedUris": {
+    "matrix-asset://api-identifier/128612": {
+      "type": "file",
+      "path": "mocked-uris/128612.json"
+    }
+  },
   "previews": {
     "default": {
       "functionData": {
