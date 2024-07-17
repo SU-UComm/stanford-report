@@ -23,12 +23,24 @@ export default function SingleTextBlock({
     <Container width="cc" paddingY={paddingY}>
       <div className="su-ml-0 su-max-w-[110rem] su-border-l-2 su-border-black-30 dark:su-border-black-60 su-rs-py-3 su-pl-38 md:su-pl-76 xl:su-pl-170">
         {eyebrow && (
-          <span className="su-inline-block su-text-black-60 dark:su-text-black-40 su-font-semibold su-type-1 su-leading-display su-rs-mb-1">
+          /**
+           * This is a SODA recommended pattern for accessibility.
+           * When there is an eyebrow, we aria-hidden it from screen readers,
+           * then add the eyebrow text as a visually hidden span for screen readers inside the heading below.
+           * This way we don't get an orphaned span that appears before the heading in the card.
+           */
+          <span
+            aria-hidden
+            className="su-inline-block su-text-black-60 dark:su-text-black-40 su-font-semibold su-type-1 su-leading-display su-rs-mb-1"
+          >
             {eyebrow}
           </span>
         )}
         {title && (
-          <h2 className="su-type-5 su-mb-0 dark:su-text-white">{title}</h2>
+          <h2 className="su-type-5 su-mb-0 dark:su-text-white">
+            {eyebrow && <span className="su-sr-only">{`${eyebrow}:`}</span>}
+            {title}
+          </h2>
         )}
         {!!description && (
           <XssSafeContent
