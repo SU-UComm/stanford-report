@@ -52,6 +52,10 @@ svg {
  */
 @tailwind utilities;
 
+.su-dark .pswp__share-tooltip a {
+  color: black;
+}
+
 .su-bg-gradient,
 .su-bg-gradient-before:before,
 .su-bg-gradient-after:after {

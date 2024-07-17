@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { SidebarHeading } from "../../packages/headings/Heading";
 import ChevronRight from "../../packages/SVG-library/ChevronRight";
 import relatedStory from "./scripts/relatedStory";
+import fbBehavioural from "./scripts/fbBehavioural";
 import getCookie from "../../packages/utils/cookieGet";
 import LinkListItem from "./components/LinkListItem";
 
@@ -22,8 +23,13 @@ export default function LinkList({ search }) {
   const links = [];
   const audienceCookie = getCookie("preferences_personalisation");
   // get FB data
-  const getFB = async (pageData) => {
-    const data = await relatedStory(search, pageData, audienceCookie);
+  const getFB = async (pageData, behaviouralData = null) => {
+    const data = await relatedStory(
+      search,
+      pageData,
+      audienceCookie,
+      behaviouralData
+    );
 
     return data;
   };
@@ -31,11 +37,16 @@ export default function LinkList({ search }) {
   // effects
   useEffect(() => {
     if (isClient && typeof window.pageController !== "undefined") {
-      const pageData = window.pageController;
-
       if (!relatedStoryData) {
+        const pageData = window.pageController;
+
+        let behaviouralData = null;
+        if (pageData.topicsQuery) {
+          behaviouralData = pageData.topicsQuery();
+        }
+
         const asyncFetch = async () => {
-          const fbData = await getFB(pageData);
+          const fbData = await getFB(pageData, behaviouralData);
 
           setRelatedStoryData(fbData);
 

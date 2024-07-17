@@ -23,9 +23,16 @@
           "dataUrl": {
             "title": "dataUrl",
             "type": "string"
+          },
+          "title": {
+            "title": "Stories for you",
+            "type": "string"
           }
         },
-        "required": []
+        "required": [
+          "dataUrl",
+          "title"
+        ]
       },
       "output": {
         "responseType": "html",
@@ -35,6 +42,13 @@
             "file": {
               "type": "css",
               "filepath": "global.css"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "suTopicsTracker.js"
             }
           },
           {

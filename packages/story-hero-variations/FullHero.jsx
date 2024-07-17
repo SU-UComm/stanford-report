@@ -45,14 +45,14 @@ export default function FullHero({ data }) {
           className="su-relative su-z-10 su-grid su-grid-cols-6 md:su-items-center md:su-grid-cols-12 su-gap-y-0 su-grid-gap md:su-px-0 su-flex-wrap su-mx-auto su-pt-[11.4rem] -su-mt-[16.2rem]"
         >
           <div className="su-col-span-6 md:su-col-span-7 md:su-col-start-1 lg:su-col-span-8 lg:su-col-start-1 lg:su-pr-30">
-            <h1
+            <XssSafeContent
               className={[
                 "su-text-shadow-title su-shadow-white dark:su-shadow-black-true su-text-left su-w-full su-break-words su-my-0 md:su-rs-py-6 lg:su-rs-py-5 md:su-text-right su-font-serif",
                 titleSize,
               ].join(" ")}
-            >
-              {title}
-            </h1>
+              content={title}
+              elementType="h1"
+            />
           </div>
           <div className="su-hidden md:su-block md:su-col-span-1 md:su-col-start-8 lg:su-col-start-9 lg:su-col-span-4 su-h-full lg:su-hidden">
             <div className="su-bg-gradient-light-red su-h-full su-w-3 su-left-0 su-top-0 su-mx-auto" />
