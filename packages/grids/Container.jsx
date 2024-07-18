@@ -58,7 +58,7 @@ export function Container({
     <div
       className={cnb(
         "su-mx-auto su-component-container",
-        widthClasses[width],
+        widthClasses[width?.toLowerCase()],
         paddingX ? "su-container-px" : "",
         paddingYClasses[paddingY]
       )}
