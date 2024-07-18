@@ -17,7 +17,7 @@ import LinkListItem from "./components/LinkListItem";
  */
 export default function LinkList({ search }) {
   const [isClient, setIsClient] = useState(false);
-  const [relatedStoryData, setRelatedStoryData] = useState(null);
+  // const [relatedStoryData, setRelatedStoryData] = useState(null);
   const [linkItems, setLinkItems] = useState([]);
   const links = [];
   const audienceCookie = getCookie("preferences_personalisation");
@@ -36,28 +36,28 @@ export default function LinkList({ search }) {
   // effects
   useEffect(() => {
     if (isClient && typeof window.pageController !== "undefined") {
-      if (!relatedStoryData) {
-        const pageData = window.pageController;
+      // if (!relatedStoryData) {
+      const pageData = window.pageController;
 
-        let behaviouralData = null;
-        if (pageData.topicsQuery) {
-          behaviouralData = pageData.topicsQuery();
-        }
-
-        const asyncFetch = async () => {
-          const fbData = await getFB(pageData, behaviouralData);
-
-          setRelatedStoryData(fbData);
-
-          fbData.forEach((link) => {
-            links.push(<LinkListItem title={link.title} url={link.indexUrl} />);
-          });
-
-          setLinkItems(links);
-        };
-
-        asyncFetch();
+      let behaviouralData = null;
+      if (pageData.topicsQuery) {
+        behaviouralData = pageData.topicsQuery();
       }
+
+      const asyncFetch = async () => {
+        const fbData = await getFB(pageData, behaviouralData);
+
+        // setRelatedStoryData(fbData);
+
+        fbData.forEach((link) => {
+          links.push(<LinkListItem title={link.title} url={link.indexUrl} />);
+        });
+
+        setLinkItems(links);
+      };
+
+      asyncFetch();
+      // }
     } else {
       setIsClient(true);
     }
@@ -67,7 +67,7 @@ export default function LinkList({ search }) {
     <div
       data-role="link-list-wrapper"
       className={`${
-        isClient && linkItems.length > 0 ? "" : "su-link-list-no-stories"
+        linkItems.length > 0 ? "" : "su-link-list-no-stories"
       } su-fixed su-opacity-0 su--bottom-[100 su-left-0 su-left-1/2 su-right-1/2 su-translate-x-[-50%] su-max-w-[482px] su-p-20 su-bg-foggy-light lg:dark:su-bg-black-true dark:su-bg-black su-linklist-mob-width su-rounded-tl-[8px] su-rounded-tr-[8px] su-transition su-z-[49] su-px-30 su-linklist-mob-width lg:su-z-[1] lg:su-bg-white lg:su-relative lg:su-bottom-0 lg:su-opacity-100 lg:su-p-0 lg:su-w-full`}
     >
       <div className="su-flex">
@@ -88,29 +88,27 @@ export default function LinkList({ search }) {
           <ChevronRight />
         </button>
       </div>
-      {isClient && linkItems.length > 0 && (
-        <div
-          className="su-max-h-1000 su-h-0 su-overflow-hidden su-transition lg:su-h-auto"
-          id="link-drawer"
-          data-role="link-drawer"
-        >
-          {linkItems[0] && (
-            <article className="su-border-b su-border-b-black-20 dark:su-border-b-black-70 su-pb-15 su-mt-[23.65px] lg:su-pb-36">
-              {linkItems[0]}
-            </article>
-          )}
+      <div
+        className="su-max-h-1000 su-h-0 su-overflow-hidden su-transition lg:su-h-auto"
+        id="link-drawer"
+        data-role="link-drawer"
+      >
+        {linkItems[0] && (
+          <article className="su-border-b su-border-b-black-20 dark:su-border-b-black-70 su-pb-15 su-mt-[23.65px] lg:su-pb-36">
+            {linkItems[0]}
+          </article>
+        )}
 
-          {linkItems[1] && (
-            <article className="su-border-b dark:su-border-b-black-70 su-border-b-black-20 su-py-15 lg:su-py-36">
-              {linkItems[1]}
-            </article>
-          )}
+        {linkItems[1] && (
+          <article className="su-border-b dark:su-border-b-black-70 su-border-b-black-20 su-py-15 lg:su-py-36">
+            {linkItems[1]}
+          </article>
+        )}
 
-          {linkItems[2] && (
-            <article className="su-pt-15 lg:su-pt-36">{linkItems[2]}</article>
-          )}
-        </div>
-      )}
+        {linkItems[2] && (
+          <article className="su-pt-15 lg:su-pt-36">{linkItems[2]}</article>
+        )}
+      </div>
     </div>
   );
 }
