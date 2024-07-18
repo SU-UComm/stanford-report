@@ -148,10 +148,11 @@
   function suTrackerGenerateTopicsReport() {
     console.log(
       "cookie: preferences_topics",
-      window.pageController.myTopics.data
+      window.pageController?.myTopics?.data
     );
+
     console.log("My top topics");
-    console.table(getTopTopics(window.pageController.myTopics.data.topics));
+    console.table(getTopTopics(window.pageController?.myTopics?.data?.topics));
     console.log("Behavioural FB query", suTrackerGenerateTopicsQuery());
   }
 
