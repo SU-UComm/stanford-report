@@ -45,7 +45,7 @@ import getCookie from "../../packages/utils/cookieGet";
         props.search.currentPage
       }]&num_ranks=12&sort=date`;
 
-      if (props.search.contentType === "Video") {
+      if (props.contentType === "Video") {
         fallbackFbUrl += "&meta_taxonomyContentTypeId=28207";
         fbUrl += "&meta_taxonomyContentTypeId=28207";
       }
