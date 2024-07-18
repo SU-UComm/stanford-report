@@ -40,7 +40,9 @@ const paddingYClasses = {
   4: "su-rs-py-4",
   5: "su-rs-py-5",
   6: "su-rs-py-6",
+  7: "su-rs-py-7",
   8: "su-rs-py-8",
+  9: "su-rs-py-9",
   10: "su-rs-py-10",
 };
 
