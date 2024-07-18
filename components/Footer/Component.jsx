@@ -34,7 +34,7 @@ export default function Footer({ site, navigation }) {
   }, [isClient]);
 
   return (
-    <footer className="su-shadow-[0px_-3px_6px_0px_rgba(0,0,0,0.1)] su-pt-70 lg:su-pt-[17.5rem] dark:su-shadow-[0px_-3px_6px_0px_rgba(46,45,41,0.5)]">
+    <footer className="su-shadow-[0px_-3px_6px_0px_rgba(0,0,0,0.1)] su-pt-70 lg:su-pt-[17.5rem] dark:su-shadow-[0px_-3px_6px_0px_rgba(46,45,41,0.5)] su-bg-white dark:su-bg-black-true">
       <TopBar audience={audience} site={site} navigation={navigation} />
       <BottomBar site={site} navigation={navigation} />
     </footer>
