@@ -80,6 +80,21 @@
     };
     if (!topTopics) return noOutput;
 
+    // when there is only 1 top topic but we are not viewing that topic,
+    // then show the topic of the page we are viewing also
+    const currentPageTopicId = Number(window.pageController.mainTopicId);
+    if (
+      topTopics.length === 1 &&
+      Number(topTopics[0].id) !== currentPageTopicId
+    ) {
+      // if we are on a story that is not of the same topic, load both topics
+      topTopics.push({
+        id: currentPageTopicId,
+        topic: window.pageController.mainTopic,
+        fallbackTopic: true,
+      });
+    }
+
     const persona = getCookie("preferences_personalisation");
     const fbUrl =
       "https://news.stanford.edu/_api/fb/query?profile=stanford-report-push-search&collection=sug~sp-stanford-report-search";
