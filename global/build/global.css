@@ -1803,6 +1803,10 @@ Subscribe to Stanford Report Marketo form styles
 :is(.su-dark .marketo-sr-subscribe-form.mktoForm .mktoButton:focus){--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);--tw-ring-opacity:1;--tw-ring-color:rgb(255 255 255 / var(--tw-ring-opacity))}
 @media (min-width: 768px){
 .marketo-sr-subscribe-form.mktoForm .mktoButton{padding-left:3rem;padding-right:3rem;padding-top:1.2rem;padding-bottom:1.4rem;font-size:2rem}}
+/**
+ * Campaign page global styles
+ */
+.su-page-campaign, .su-page-campaign body{--tw-bg-opacity:1;background-color:rgb(249 249 249 / var(--tw-bg-opacity))}
 .scrollable-list__item::after{display:inline-block;vertical-align:middle}
 [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{float:left;margin-top:0.2rem;margin-right:0.9rem;padding:0;font-family:"Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif;font-size:7.2rem;font-weight:700;line-height:35px}
 @media (min-width: 768px){
@@ -2203,6 +2207,11 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-rs-pl-9{padding-left:16.2rem}}
 @media (min-width: 1500px){
 .su-rs-pl-9{padding-left:17.1rem}}
+.su-rs-py-9{padding-top:7rem;padding-bottom:7rem;}
+@media (min-width: 768px){
+.su-rs-py-9{padding-top:16.2rem;padding-bottom:16.2rem}}
+@media (min-width: 1500px){
+.su-rs-py-9{padding-top:17.1rem;padding-bottom:17.1rem}}
 .su-rs-my-10{margin-top:8rem;margin-bottom:8rem;}
 @media (min-width: 768px){
 .su-rs-my-10{margin-top:21.6rem;margin-bottom:21.6rem}}
