@@ -1,9 +1,9 @@
 {
-  "storiesCount": 5,
-  "APIrespCount": 30,
+  "storiesCount": 20,
+  "APIrespCount": 80,
   "sourcePath": "/stories/%",
   "assetExclusions": "",
-  "contentTypeExclusions": "",
-  "APIdateRange": "1 week",
-  "publishedDateMax": "Past 6 months"
+  "contentTypeExclusions": "28200",
+  "APIdateRange": "2 weeks",
+  "publishedDateMax": "Past 2 years"
 }

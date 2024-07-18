@@ -18,7 +18,7 @@ export default async function popularStoriesFetcher(
   }
 
   adapter.url = `${FB_JSON_URL}?profile=stanford-report-push-search&collection=sug~sp-stanford-report-search&num_ranks=${
-    storiesCount + 5
+    storiesCount + 15
   }&query=[${assets.join(
     " "
   )}]&query_not=[${exclusionContentTypes} ${exclusionIDs}]${dateRangeQuery}`;

@@ -76,19 +76,25 @@ export default async (args, info) => {
   } = args;
 
   const dateRangeNumeric = getAPIDateRange(APIdateRange);
-  let exclusionContentTypes = contentTypeExclusions
-    .split(",")
-    .map((num) => `taxonomyContentTypeId:${num}`)
-    .join(" ");
+  let exclusionContentTypes =
+    contentTypeExclusions && contentTypeExclusions.length > 0
+      ? contentTypeExclusions
+          .split(",")
+          .map((num) => `taxonomyContentTypeId:${num}`)
+          .join(" ")
+      : "";
 
   // default exclusion types
   exclusionContentTypes +=
     " taxonomyContentTypeId:28201 taxonomyContentTypeId:28216 taxonomyContentTypeId:28210";
 
-  const exclusionIDs = assetExclusions
-    .split(",")
-    .map((num) => `id:${num}`)
-    .join(" ");
+  const exclusionIDs =
+    assetExclusions && assetExclusions.length > 0
+      ? assetExclusions
+          .split(",")
+          .map((num) => `id:${num}`)
+          .join(" ")
+      : "";
   const publishedDateRangeNumeric = getMaxPublishedRange(publishedDateMax);
 
   // Today's date
