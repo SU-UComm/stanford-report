@@ -27,8 +27,8 @@ import relatedStoryData from "./scripts/relatedStory";
     props.audienceData = "external";
   }
   if (pageData?.isStory) {
-    // const fbStoryData = await relatedStoryData(pageData, audienceData);
-    // props.relatedStoryData = fbStoryData;
+    const fbStoryData = await relatedStoryData(pageData, audienceData);
+    props.relatedStoryData = fbStoryData;
   }
   // set the props we need, to a window variable
   window.suHeaderProps = props;
