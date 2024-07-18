@@ -17,29 +17,42 @@
     }
     document.cookie = `${name}=${value || ""}${expires}; path=/`;
   }
-  
+
   function htmlDecode(input) {
-    var doc = new DOMParser().parseFromString(input, "text/html");
+    const doc = new DOMParser().parseFromString(input, "text/html");
     return doc.documentElement.textContent;
   }
   function formatDate(date) {
-    const day = String(date.getDate()).padStart(2, '0');
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const day = String(date.getDate()).padStart(2, "0");
+    const monthNames = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
     const month = monthNames[date.getMonth()];
     const year = date.getFullYear();
-    
+
     return `${day}${month}${year}`;
   }
-  
+
   // returns an array of the top 5 topics
   function getTopTopics(topics) {
-      if (!topics || topics.length === 0) return null;
-      const topTopics = topics.filter((topic) => topic.count > 1);
-      if (topTopics.length === 0) return null;
-      const sorted = topTopics.sort((a, b) => b.count - a.count);
-      
-      // Return the top 5 topics
-      return sorted.slice(0, 5);
+    if (!topics || topics.length === 0) return null;
+    const topTopics = topics.filter((topic) => topic.count > 1);
+    if (topTopics.length === 0) return null;
+    const sorted = topTopics.sort((a, b) => b.count - a.count);
+
+    // Return the top 5 topics
+    return sorted.slice(0, 5);
   }
 
   function translatePersonalisationProfile(profile) {
@@ -62,24 +75,47 @@
     const topTopics = getTopTopics(suTopicTracker.topics);
     // when there are no topics to show
     const noOutput = {
-      "behavioural": false,
-      "query": null
+      behavioural: false,
+      query: null,
+    };
+    if (!topTopics) return noOutput;
+
+    // when there is only 1 top topic but we are not viewing that topic,
+    // then show the topic of the page we are viewing also
+    const currentPageTopicId = Number(window.pageController.mainTopicId);
+    if (
+      topTopics.length === 1 &&
+      Number(topTopics[0].id) !== currentPageTopicId
+    ) {
+      // if we are on a story that is not of the same topic, load both topics
+      topTopics.push({
+        id: currentPageTopicId,
+        topic: window.pageController.mainTopic,
+        fallbackTopic: true,
+      });
     }
-    if(!topTopics) return noOutput;
 
     const persona = getCookie("preferences_personalisation");
-    const fbUrl = "https://news.stanford.edu/_api/fb/query?profile=stanford-report-push-search&collection=sug~sp-stanford-report-search";
-   
-    let includeQuery = `&query=[${topTopics.map((item) => `taxonomyContentMainTopicId:${item.id} taxonomyContentTopicsId:${item.id} taxonomyContentSubtopicsId:${item.id} `).join("")}]`;
+    const fbUrl =
+      "https://news.stanford.edu/_api/fb/query?profile=stanford-report-push-search&collection=sug~sp-stanford-report-search";
+
+    const includeQuery = `&query=[${topTopics
+      .map(
+        (item) =>
+          `taxonomyContentMainTopicId:${item.id} taxonomyContentTopicsId:${item.id} taxonomyContentSubtopicsId:${item.id} `
+      )
+      .join("")}]`;
 
     // what we dont want
-    let excludeQuery = `&query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 taxonomyContentTypeId:28201 ${suTopicTracker.viewed.map((item) => `id:${item} `).join("")}]`;
+    const excludeQuery = `&query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 taxonomyContentTypeId:28201 ${suTopicTracker.viewed
+      .map((item) => `id:${item} `)
+      .join("")}]`;
 
-    let personaQuery = `&meta_taxonomyAudienceText=${translatePersonalisationProfile(
-        persona
-      )}`;
+    const personaQuery = `&meta_taxonomyAudienceText=${translatePersonalisationProfile(
+      persona
+    )}`;
 
-    let configQuery = `&sort=date&log=false`;
+    const configQuery = `&sort=date&log=false`;
 
     // Today's date
     const today = new Date();
@@ -91,14 +127,32 @@
 
     const dateRangeQuery = `&f.Date%7Cd=d>${dateRange}<${todayFormatted}`;
 
-    const compiledQuery = fbUrl + includeQuery + excludeQuery + personaQuery + configQuery + dateRangeQuery;
-    const partialQuery = includeQuery + excludeQuery + personaQuery + configQuery + dateRangeQuery;
+    const compiledQuery =
+      fbUrl +
+      includeQuery +
+      excludeQuery +
+      personaQuery +
+      configQuery +
+      dateRangeQuery;
+    const partialQuery =
+      includeQuery + excludeQuery + personaQuery + configQuery + dateRangeQuery;
     const output = {
-      "behavioural": true,
-      "query": compiledQuery,
-      "partialQuery": partialQuery
-    }
+      behavioural: true,
+      query: compiledQuery,
+      partialQuery,
+    };
     return output;
+  }
+
+  // generate report
+  function suTrackerGenerateTopicsReport() {
+    console.log(
+      "cookie: preferences_topics",
+      window.pageController.myTopics.data
+    );
+    console.log("My top topics");
+    console.table(getTopTopics(window.pageController.myTopics.data.topics));
+    console.log("Behavioural FB query", suTrackerGenerateTopicsQuery());
   }
 
   // Function to initialize or update the suTopicTracker cookie
@@ -113,40 +167,44 @@
       if (!suTopicTracker.viewed.includes(storyId)) {
         suTopicTracker.viewed.push(storyId);
       } else {
-          // revisited page
-          hasViewedStory = true;
+        // revisited page
+        hasViewedStory = true;
       }
     }
 
     if (window.pageController.mainTopicId) {
-        const topicId = Number(window.pageController.mainTopicId);
-        const topicName = htmlDecode(window.pageController.mainTopic);
-        const topicIndex = suTopicTracker.topics.findIndex((topic) => topic.id === topicId);
-        
-        if (topicIndex > -1) {
-            suTopicTracker.topics[topicIndex].count += 1;
-        } else {
-            suTopicTracker.topics.push({ id: topicId, count: 1, topic: topicName});
-        }
-    }
-    
-    // dont log the same story view more than once
-    if (!hasViewedStory){
-        setCookie("preferences_topics", JSON.stringify(suTopicTracker), 120);
+      const topicId = Number(window.pageController.mainTopicId);
+      const topicName = htmlDecode(window.pageController.mainTopic);
+      const topicIndex = suTopicTracker.topics.findIndex(
+        (topic) => topic.id === topicId
+      );
+
+      if (topicIndex > -1) {
+        suTopicTracker.topics[topicIndex].count += 1;
+      } else {
+        suTopicTracker.topics.push({ id: topicId, count: 1, topic: topicName });
+      }
     }
 
+    // dont log the same story view more than once
+    if (!hasViewedStory) {
+      setCookie("preferences_topics", JSON.stringify(suTopicTracker), 120);
+    }
+    window.pageController.myTopics.data = suTopicTracker;
   }
 
   // Run the function after the page has loaded
   // window.addEventListener("load", function () {
-    if (window.pageController) {
-      const cdpConsentCookie = JSON.parse(getCookie("squiz.cdp.consent"));
-      // do we have consent data?
-      const consented = cdpConsentCookie?.CDPConsent;
-      if (consented) {
-        suTrackerSetTopics()
-      }
-      window.pageController.topicsQuery = suTrackerGenerateTopicsQuery;
+  if (window.pageController) {
+    window.pageController.myTopics = {};
+    const cdpConsentCookie = JSON.parse(getCookie("squiz.cdp.consent"));
+    // do we have consent data?
+    const consented = cdpConsentCookie?.CDPConsent;
+    if (consented) {
+      suTrackerSetTopics();
     }
+    window.pageController.topicsQuery = suTrackerGenerateTopicsQuery;
+    window.pageController.topicsReport = suTrackerGenerateTopicsReport;
+  }
   // });
 })();

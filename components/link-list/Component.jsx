@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react";
 // import specific templates for the component
 import { SidebarHeading } from "../../packages/headings/Heading";
 import ChevronRight from "../../packages/SVG-library/ChevronRight";
-import relatedStory from "./scripts/relatedStory";
-import fbBehavioural from "./scripts/fbBehavioural";
+import fbFetcher from "./scripts/fbFetcher";
 import getCookie from "../../packages/utils/cookieGet";
 import LinkListItem from "./components/LinkListItem";
 
@@ -24,7 +23,7 @@ export default function LinkList({ search }) {
   const audienceCookie = getCookie("preferences_personalisation");
   // get FB data
   const getFB = async (pageData, behaviouralData = null) => {
-    const data = await relatedStory(
+    const data = await fbFetcher(
       search,
       pageData,
       audienceCookie,
