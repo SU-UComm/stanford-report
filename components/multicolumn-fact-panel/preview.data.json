@@ -17,5 +17,6 @@
             "iconSet": "solid",
             "content": "<p>Families earning less than $150,000 with typical assets pay no tuition.</p>"
         }
-    ]
+    ],
+    "paddingY": "3"
 }

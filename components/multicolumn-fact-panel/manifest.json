@@ -3,14 +3,14 @@
   "name": "multicolumn-fact-panel",
   "version": "0.0.1",
   "namespace": "stanford-components",
-  "description": "This component displays facts with icons in a multi-column layout.",
+  "description": "This component displays up to 3 facts with FontAwesome icons in a multi-column layout.",
   "displayName": "Multicolumn Fact Panel",
   "mainFunction": "main",
   "icon": {
-    "id": "format_align_left",
+    "id": "view_column",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "green"
     }
   },
   "functions": [
