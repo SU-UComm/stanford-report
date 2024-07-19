@@ -76,15 +76,21 @@ export default async (args, info) => {
   let { assetExclusions, contentTypeExclusions } = args;
 
   assetExclusions = assetExclusions.trim();
-  // Check for and remove any trailing commas
+  // Check for and remove any trailing or leading commas
   if (assetExclusions.endsWith(",")) {
     assetExclusions = assetExclusions.slice(0, -1);
   }
+  if (assetExclusions.startsWith(",")) {
+    assetExclusions = assetExclusions.slice(1);
+  }
 
   contentTypeExclusions = contentTypeExclusions.trim();
-  // Check for and remove any trailing commas
+  // Check for and remove any trailing or leading commas
   if (contentTypeExclusions.endsWith(",")) {
     contentTypeExclusions = contentTypeExclusions.slice(0, -1);
+  }
+  if (contentTypeExclusions.startsWith(",")) {
+    contentTypeExclusions = contentTypeExclusions.slice(1);
   }
 
   const dateRangeNumeric = getAPIDateRange(APIdateRange);
