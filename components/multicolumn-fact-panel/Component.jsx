@@ -29,7 +29,7 @@ export default function MulticolumnFactPanel({
   facts,
 }) {
   return (
-    <Container width="cc" paddingY={paddingY}>
+    <Container width="cc" paddingY={paddingY} className="su-break-words">
       {eyebrow && (
         /**
          * This is a SODA recommended pattern for accessibility.
@@ -45,29 +45,33 @@ export default function MulticolumnFactPanel({
         </span>
       )}
       {title && (
-        <h2 className="su-type-4 su-rs-mb-8 dark:su-text-white su-max-w-700">
+        <h2 className="su-type-4 su-rs-mb-5 dark:su-text-white su-max-w-700">
           {eyebrow && <span className="su-sr-only">{`${eyebrow}:`}</span>}
           {title}
         </h2>
       )}
-      <div className="su-flex su-flex-col su-items-stretch lg:su-flex-row su-divide-y-2 lg:su-divide-y-0 lg:su-divide-x-2 su-divide-black-30">
-        {facts.map((fact) => (
-          <div
-            key={fact.icon}
-            className="su-flex su-flex-col su-items-center su-flex-1 su-mx-auto su-max-w-[33rem] md:su-max-w-500 lg:su-max-w-none su-px-30 md:su-px-38 2xl:su-px-[6.6rem] su-rs-py-3"
-          >
-            <FAIcon
-              icon={fact.icon}
-              set={fact.iconSet}
-              className="su-rs-mb-1 su-rs-mt-4 lg:su-mt-0 su-text-[5rem] xl:su-text-[6rem]"
-            />
-            <XssSafeContent
-              content={fact.content}
-              className="su-text-24 md:su-text-[3.3rem] lg:su-text-[2.8rem] xl:su-text-[3.3rem] su-font-serif *:su-leading-display last:*:su-mb-0 su-text-center su-rs-mb-4 lg-su-mb-0"
-            />
-          </div>
-        ))}
-      </div>
+      {!!facts?.length && (
+        <div className="su-flex su-flex-col su-items-stretch lg:su-flex-row su--mt-34 md:su--mt-58 lg:su-mt-0 2xl:su-mt-200 su-divide-y-2 lg:su-divide-y-0 lg:su-divide-x-2 su-divide-black-30 dark:su-divide-black-60">
+          {facts?.map((fact) => (
+            <div
+              key={fact.icon}
+              className="su-flex su-flex-col su-items-center su-flex-1 su-mx-auto su-max-w-[33rem] md:su-max-w-500 lg:su-max-w-800 su-px-30 md:su-px-38 2xl:su-px-[6.6rem] su-rs-py-3"
+            >
+              <FAIcon
+                icon={fact.icon}
+                set={fact.iconSet}
+                // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+                width={70}
+                className="su-rs-mb-1 su-rs-mt-4 lg:su-mt-0 su-text-[5rem] xl:su-text-[6rem] su-text-black-50"
+              />
+              <XssSafeContent
+                content={fact.content}
+                className="su-text-black dark:su-text-white su-text-24 md:su-text-[3.3rem] lg:su-text-[2.8rem] xl:su-text-[3.3rem] su-font-serif *:su-leading-display last:*:su-mb-0 su-text-center su-rs-mb-4 lg:su-mb-0"
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </Container>
   );
 }
