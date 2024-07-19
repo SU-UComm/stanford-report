@@ -5,7 +5,8 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
- * We currently include the free solid and regular styles of FontAwesome icons
+ * We currently include the free solid and regular sets of FontAwesome icons.
+ * We can expand this to include more sets including the PRO ones in the future.
  * https://fontawesome.com/search?q=imae&o=r&m=free&s=regular%2Csolid
  */
 
@@ -17,7 +18,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
  * The name of the icon
  *
  * @param {string} set
- * The icon set (far for regular, fas for solid)
+ * The FontAwesome icon set - solid | regular
  *
  * @param {object} props
  * Any other props you want to pass to the FontAwesomeIcon component
@@ -26,9 +27,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
  * @return {JSX.element}
  */
 
-export function FAIcon({ icon, set, ...props }) {
-  // Add all the FA icons in the solid and regular families to the library so you can use any of them
-  library.add(fas, far);
+const iconSets = {
+  regular: "far",
+  solid: "fas",
+};
 
-  return <FontAwesomeIcon icon={[set, icon]} {...props} />;
+export function FAIcon({ icon, set, ...props }) {
+  // Add all the FA icons in the regular and solid sets to the library so you can use any of them
+  library.add(far, fas);
+
+  // eslint-disable-next-line security/detect-object-injection
+  return <FontAwesomeIcon icon={[iconSets[set], icon]} {...props} />;
 }
