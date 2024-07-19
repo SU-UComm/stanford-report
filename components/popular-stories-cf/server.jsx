@@ -69,17 +69,31 @@ export default async (args, info) => {
     storiesCount,
     APIrespCount,
     sourcePath,
-    assetExclusions,
-    contentTypeExclusions,
     APIdateRange,
     publishedDateMax,
   } = args;
 
+  let { assetExclusions, contentTypeExclusions } = args;
+
+  assetExclusions = assetExclusions.trim();
+  // Check for and remove any trailing commas
+  if (assetExclusions.endsWith(",")) {
+    assetExclusions = assetExclusions.slice(0, -1);
+  }
+
+  contentTypeExclusions = contentTypeExclusions.trim();
+  // Check for and remove any trailing commas
+  if (contentTypeExclusions.endsWith(",")) {
+    contentTypeExclusions = contentTypeExclusions.slice(0, -1);
+  }
+
   const dateRangeNumeric = getAPIDateRange(APIdateRange);
+
   let exclusionContentTypes =
     contentTypeExclusions && contentTypeExclusions.length > 0
       ? contentTypeExclusions
           .split(",")
+          .map((num) => num.trim())
           .map((num) => `taxonomyContentTypeId:${num}`)
           .join(" ")
       : "";
@@ -92,9 +106,11 @@ export default async (args, info) => {
     assetExclusions && assetExclusions.length > 0
       ? assetExclusions
           .split(",")
+          .map((num) => num.trim())
           .map((num) => `id:${num}`)
           .join(" ")
       : "";
+
   const publishedDateRangeNumeric = getMaxPublishedRange(publishedDateMax);
 
   // Today's date
