@@ -137,7 +137,7 @@ export default async (args, info) => {
                       requestSource: "eyeball"
                       edgeResponseStatus_lt: 300
                       AND: [
-                          { clientRequestPath_like: "${sourcePath}" }
+                          { clientRequestPath_like: "${sourcePath.trim()}" }
                           { clientRequestPath_notlike: "%/_admin%" }
                       ]
                   }

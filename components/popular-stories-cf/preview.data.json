@@ -1,7 +1,7 @@
 {
   "storiesCount": 20,
   "APIrespCount": 30,
-  "sourcePath": "/stories/%",
+  "sourcePath": "/stories/% ",
   "assetExclusions": "",
   "contentTypeExclusions": "28200",
   "APIdateRange": "2 weeks",
