@@ -1,4 +1,5 @@
 import React from "react";
+import { cnb } from "cnbuilder";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../../packages/grids/Container";
 import { FAIcon } from "../../packages/icons/FAIcon";
@@ -51,8 +52,8 @@ export default function MulticolumnFactPanel({
         </h2>
       )}
       {!!facts?.length && (
-        <div className="su-flex su-flex-col su-items-stretch lg:su-flex-row su--mt-34 md:su--mt-58 lg:su-mt-0 2xl:su-mt-200 su-divide-y-2 lg:su-divide-y-0 lg:su-divide-x-2 su-divide-black-30 dark:su-divide-black-60">
-          {facts?.map((fact) => (
+        <div className="su-flex su-flex-col su-items-stretch lg:su-flex-row su-gap-34 md:su-gap-61 lg:su-gap-0 lg:su-mt-162 2xl:su-mt-171 su-divide-y-2 lg:su-divide-y-0 lg:su-divide-x-2 su-divide-black-30 dark:su-divide-black-60">
+          {facts.map((fact, index) => (
             <div
               key={fact.icon}
               className="su-flex su-flex-col su-items-center su-flex-1 su-mx-auto su-max-w-[33rem] md:su-max-w-500 lg:su-max-w-800 su-px-30 md:su-px-38 2xl:su-px-[6.6rem] su-rs-py-3"
@@ -62,11 +63,14 @@ export default function MulticolumnFactPanel({
                 set={fact.iconSet}
                 // Add a width to prevent getting a flash of huge icon before the CSS fully loads
                 width={70}
-                className="su-rs-mb-1 su-rs-mt-4 lg:su-mt-0 su-text-[5rem] xl:su-text-[6rem] su-text-black-50"
+                className={cnb(
+                  "su-rs-mb-1 su-text-[5rem] xl:su-text-[6rem] su-text-black-50",
+                  index > 0 && "su-mt-34 md:su-mt-61 lg:su-mt-0"
+                )}
               />
               <XssSafeContent
                 content={fact.content}
-                className="su-text-black dark:su-text-white su-text-24 md:su-text-[3.3rem] lg:su-text-[2.8rem] xl:su-text-[3.3rem] su-font-serif *:su-leading-display last:*:su-mb-0 su-text-center su-rs-mb-4 lg:su-mb-0"
+                className="su-text-black dark:su-text-white su-text-24 md:su-text-[3.3rem] lg:su-text-[2.8rem] xl:su-text-[3.3rem] su-font-serif *:su-leading-display last:*:su-mb-0 su-text-center"
               />
             </div>
           ))}
