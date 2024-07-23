@@ -1,0 +1,12 @@
+{
+  "image": "matrix-asset://api-identifier/99100",
+  "quote": "“I honestly applied to Stanford kind of on a whim. I checked the box that I needed financial aid, and it’s been a huge help, especially through the pandemic. I haven’t had to take any loans, and I’m graduating without any debt. I’m eternally grateful for that.”",
+  "quoteAlignment": "center",
+  "ctaDetails": {
+    "ctaText": "Meet",
+    "ctaTextHighlight": "Jane Stanford",
+    "ctaSubtext": "’21, international student from Earth",
+    "externalUrl": "https://news.stanford.edu/2021/09/30/protecting-wetlands/",
+    "isNewWindow": true
+  }
+}

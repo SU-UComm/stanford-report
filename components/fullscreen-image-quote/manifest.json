@@ -1,0 +1,132 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "fullscreen-image-quote",
+  "version": "0.0.1",
+  "namespace": "stanford-components",
+  "description": "This component displays a fullscreen image with a quote and CTA.",
+  "displayName": "Fullscreen Image quote",
+  "mainFunction": "main",
+  "icon": {
+    "id": "format_quote",
+    "color": {
+      "type": "enum",
+      "value": "teal"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {
+          "image": {
+            "title": "Background image",
+            "type": "string",
+            "format": "matrix-asset-uri"
+          },
+          "quote": {
+            "title": "Quote",
+            "type": "string",
+            "default": "...it came with such a generous financial aid package, that made the decision really easy for me. I just figured, okay, if it’s the cheapest option and it’s Stanford, might as well take it."
+          },
+          "ctaDetails": {
+            "title": "CTA details",
+            "required": [],
+            "description": "Enter the details for the CTA link.",
+            "properties": {
+              "ctaText": {
+                "title": "CTA text",
+                "description": "The first part of the CTA text (not underlined).",
+                "type": "string",
+                "default": "Meet"
+              },
+              "ctaTextHighlight": {
+                "title": "CTA text highlight",
+                "description": "The second part of the CTA text (underlined).",
+                "type": "string",
+                "default": "Jane Stanford"
+              },
+              "ctaSubtext": {
+                "title": "CTA subtext",
+                "type": "string",
+                "description": "Line of smaller text below the CTA.",
+                "default": "’21, international student from Earth"
+              },
+              "internalUrl": {
+                "title": "Internal link (Matrix asset link)",
+                "type": "string",
+                "description": "Select a page/asset to link to. If this field is filled out, it will be used instead of the external link field below.",
+                "format": "matrix-asset-uri"
+              },
+              "externalUrl": {
+                "title": "External (manual) link",
+                "type": "string",
+                "description": "Enter the full URL, including https://. A diagonal arrow icon will be automatically added after the button text if the URL does not contain news.stanford.edu."
+              },
+              "isNewWindow": {
+                "title": "Open link in a new window",
+                "type": "boolean",
+                "default": false
+              }
+            }
+          },
+          "quoteAlignment": {
+            "title": "Quote vertical alignment",
+            "type": "string",
+            "default": "top",
+            "enum": [
+              "top",
+              "center",
+              "bottom"
+            ]
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/campaign.html"
+          }
+        }
+      }
+    }
+  }
+}
