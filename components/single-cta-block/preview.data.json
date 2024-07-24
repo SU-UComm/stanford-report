@@ -5,9 +5,8 @@
     "image": "matrix-asset://api-identifier/128612",
     "isCard": false,
     "ctaConfiguration": {
-        "ctaText": "CTA button",
-        "ctaType": "link",
-        "internalUrl": "matrix-asset://api-identifier/28192",
+        "ctaText": "Download brochure (PDF)",
+        "ctaType": "download",
         "externalUrl": "https://google.com"
     }
 }

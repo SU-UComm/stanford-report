@@ -90,6 +90,7 @@ export default function SingleCtaBlock({
           />
           {ctaText && (
             <LinkButton
+              ctaType={ctaType}
               variant="gradient"
               size="large"
               buttonText={ctaText}
