@@ -23,14 +23,11 @@ export default function sidebarNavigation({
   menu,
 }) {
   const [navOpen, setNavOpen] = useState(false);
-  const [showMobileButton, setShowMobileButton] = useState(false);
 
   useEffect(() => {
     if (window.innerWidth > 991) {
-      setShowMobileButton(false);
       setNavOpen(true);
     } else if (window.innerWidth < 991) {
-      setShowMobileButton(true);
       setNavOpen(false);
     }
   }, []);
@@ -38,10 +35,8 @@ export default function sidebarNavigation({
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 991) {
-        setShowMobileButton(false);
         setNavOpen(true);
       } else if (window.innerWidth < 991) {
-        setShowMobileButton(true);
         setNavOpen(false);
       }
     };
@@ -55,31 +50,26 @@ export default function sidebarNavigation({
 
   return (
     <>
-      {showMobileButton && (
-        <button
-          aria-controls="sidebar-navigation"
-          aria-label={
-            navOpen
-              ? "Close section navigation menu"
-              : "Open section navigation menu"
-          }
-          aria-expanded={!!navOpen}
-          type="button"
-          onClick={() => setNavOpen(!navOpen)}
-          className={cnb(
-            "su-flex su-items-center su-w-full su-h-[5.6rem] su-p-10 su-text-left su-font-semibold su-border-2 su-border-digital-red su-text-digital-red dark:su-border-dark-mode-red dark:su-text-dark-mode-red",
-            navOpen &&
-              "su-bg-digital-red su-text-white dark:su-bg-dark-mode-red dark:aria-expanded:su-text-black-true"
-          )}
-        >
-          <span className="su-flex-auto">
-            {navOpen ? "Close" : "Section menu"}
-          </span>
-          {navOpen ? <Close /> : <BurgerBar />}
-        </button>
-      )}
+      <button
+        aria-controls="sidebar-navigation"
+        aria-label="Toggle visibility of section menu"
+        aria-expanded={!!navOpen}
+        type="button"
+        onClick={() => setNavOpen(!navOpen)}
+        className={cnb(
+          "lg:su-hidden su-flex su-items-center su-w-full su-h-[5.6rem] su-p-10 su-text-left su-font-semibold su-border-2 su-border-digital-red su-text-digital-red dark:su-border-dark-mode-red dark:su-text-dark-mode-red",
+          navOpen &&
+            "su-bg-digital-red su-text-white dark:su-bg-dark-mode-red dark:aria-expanded:su-text-black-true"
+        )}
+      >
+        <span className="su-flex-auto">
+          {navOpen ? "Close" : "Section menu"}
+        </span>
+        {navOpen ? <Close /> : <BurgerBar />}
+      </button>
+
       {navOpen && (
-        <nav id="sidebar-navigation" className="" aria-label="Sidebar menu">
+        <nav id="sidebar-navigation" aria-label="Sidebar menu">
           <ul className="su-list-none su-p-0">
             <li className="su-m-0">
               <LinkItem
