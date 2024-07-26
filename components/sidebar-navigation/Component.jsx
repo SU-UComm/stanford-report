@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { cnb } from "cnbuilder";
 import useKeypress from "../../packages/utils/useKeypress";
+import useOnClickOutside from "../../packages/utils/useOnClickOutside";
 
 // import specific templates for the component
 import BurgerBar from "../../packages/SVG-library/BurgerBar";
@@ -55,6 +56,11 @@ export default function sidebarNavigation({
     }
   });
 
+  const ref = useRef(null);
+  useOnClickOutside(ref, () => {
+    setNavOpen(false);
+  });
+
   return (
     <>
       <button
@@ -76,7 +82,7 @@ export default function sidebarNavigation({
       </button>
 
       {navOpen && (
-        <nav id="sidebar-navigation" aria-label="Sidebar menu">
+        <nav ref={ref} id="sidebar-navigation" aria-label="Sidebar menu">
           <ul className="su-list-none su-p-0">
             <li className="su-m-0">
               <LinkItem
