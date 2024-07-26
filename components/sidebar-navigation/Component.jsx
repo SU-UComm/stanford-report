@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { cnb } from "cnbuilder";
+import useKeypress from "../../packages/utils/useKeypress";
 
 // import specific templates for the component
 import BurgerBar from "../../packages/SVG-library/BurgerBar";
@@ -47,6 +48,12 @@ export default function sidebarNavigation({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useKeypress("Escape", () => {
+    if (setNavOpen) {
+      setNavOpen(false);
+    }
+  });
 
   return (
     <>
