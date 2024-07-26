@@ -57,14 +57,17 @@ export default function sidebarNavigation({
     <>
       {showMobileButton && (
         <button
-          data-role="sidebar-navigation-toggle"
           aria-controls="sidebar-navigation"
-          aria-label="sidebar-navigation"
+          aria-label={
+            navOpen
+              ? "Close section navigation menu"
+              : "Open section navigation menu"
+          }
           aria-expanded={!!navOpen}
           type="button"
           onClick={() => setNavOpen(!navOpen)}
           className={cnb(
-            "lg:su-hidden su-flex su-items-center su-w-full su-h-[5.6rem] su-p-10 su-text-left su-font-semibold su-border-2 su-border-digital-red su-text-digital-red dark:su-border-dark-mode-red dark:su-text-dark-mode-red",
+            "su-flex su-items-center su-w-full su-h-[5.6rem] su-p-10 su-text-left su-font-semibold su-border-2 su-border-digital-red su-text-digital-red dark:su-border-dark-mode-red dark:su-text-dark-mode-red",
             navOpen &&
               "su-bg-digital-red su-text-white dark:su-bg-dark-mode-red dark:aria-expanded:su-text-black-true"
           )}
@@ -76,7 +79,7 @@ export default function sidebarNavigation({
         </button>
       )}
       {navOpen && (
-        <nav className="" data-role="sidebar-navigation-wrapper">
+        <nav id="sidebar-navigation" className="" aria-label="Sidebar menu">
           <ul className="su-list-none su-p-0">
             <li className="su-m-0">
               <LinkItem
