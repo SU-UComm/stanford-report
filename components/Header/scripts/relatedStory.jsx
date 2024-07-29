@@ -33,9 +33,9 @@ export default async function relatedStoryData(pageData = null, audience = "") {
       pageData.id
     }]&sort=date&num_ranks=1&log=false`;
 
-    if (pageData.search.contentType === "Video") {
-      fallbackFbUrl += "&meta_taxonomyContentTypeText=Video";
-      fbUrl += "&meta_taxonomyContentTypeText=Video";
+    if (pageData.contentType === "Video") {
+      fallbackFbUrl += "&meta_taxonomyContentTypeId=28207";
+      fbUrl += "&meta_taxonomyContentTypeId=28207";
     }
 
     adapter.url = fbUrl;
