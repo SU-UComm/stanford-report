@@ -1,18 +1,32 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
-import { cnb } from "cnbuilder";
-import * as styles from "./styles";
-
-// import specific templates for the component
 import { Container } from "../../packages/grids/Container";
+import { FAIcon } from "../../packages/icons/FAIcon";
+import * as styles from "./styles";
 
 /**
  * Fullscreen Image Quote component
  *
  * @param {string} quote
  * The quote to display
- * @param {string} imageUrl
- * The URL of the background image
+ *
+ * @param {string} quoteHAlign
+ * The horizontal alignment of the quote: "left" | "right"
+ *
+ * @param {string} quoteVAlign
+ * The vertical alignment of the quote: "top" | "center" | "bottom"
+ *
+ * @param {object} imageData
+ * The data of the background image
+ *
+ * @param {object} mobileImageData
+ * The data of the background image for mobile
+ *
+ * @param {string} internalLinkUrl
+ * The internal link URL
+ *
+ * @param {object} ctaDetails
+ * The different fields for the CTA
  *
  * @returns {JSX.Element}
  * @constructor
@@ -22,8 +36,8 @@ export default function FullscreenImageQuote({
   quote,
   quoteHAlign,
   quoteVAlign,
-  imageUrl,
-  mobileImageUrl,
+  imageData,
+  mobileImageData,
   internalLinkUrl,
   ctaDetails,
 }) {
@@ -38,31 +52,45 @@ export default function FullscreenImageQuote({
     <Container width="full" paddingX={false} className={styles.root}>
       <div className={styles.contentWrapper(quoteVAlign)}>
         <blockquote className={styles.blockquote(quoteHAlign)}>
-          <p className="su-font-serif su-text-24 md:su-text-[3.3rem] lg:su-text-24 xl:su-text-[2.8rem] 2xl:su-text-[3.3rem] su-leading-display su-max-w-[55rem] lg:su-max-w-600 su-mb-0">
-            {quote}
-          </p>
-          <span className="su-inline-block su-text-[2.6rem] md:su-text-[2.9rem] su-font-bold su-leading-display su-mr-02em">
-            {ctaPreText}
-          </span>
-          <a
-            href={externalUrl || internalLinkUrl}
-            target={isNewWindow ? "_blank" : undefined}
-            rel={isRealExternalLink ? "noopener nofollow" : undefined}
-            className="su-rs-mt-1 su-inline-block su-text-[2.6rem] md:su-text-[2.9rem] su-font-bold su-leading-display su-text-white su-underline su-decoration-dark-mode-red su-underline-offset-4 hocus:su-decoration-white hocus:su-text-white su-transition-all"
-          >
-            {ctaText}
-          </a>
-          <div className="su-card-paragraph su-leading-display su-mt-9">
-            {ctaSubtext}
-          </div>
+          {quote && <p className={styles.quote}>{quote}</p>}
+          {ctaText && (
+            <div className={styles.cta}>
+              <span className={styles.ctaPreText}>{ctaPreText}</span>
+              <a
+                href={externalUrl || internalLinkUrl}
+                target={isNewWindow ? "_blank" : undefined}
+                rel={isRealExternalLink ? "noopener nofollow" : undefined}
+                className={styles.ctaLink}
+              >
+                {ctaText}
+                {/* Use this whitespace-nowrap trick so icon won't get pushed to the next line on its own */}
+                <span className={styles.ctaIconWrapper}>
+                  &#65279;
+                  <FAIcon
+                    icon={isRealExternalLink ? "arrow-up" : "chevron-right"}
+                    title={isRealExternalLink ? "link is external" : undefined}
+                    className={styles.ctaIcon(isRealExternalLink)}
+                  />
+                </span>
+              </a>
+            </div>
+          )}
+          {ctaSubtext && <div className={styles.ctaSubtext}>{ctaSubtext}</div>}
         </blockquote>
       </div>
+      {mobileImageData?.url && (
+        <img
+          src={mobileImageData?.url}
+          alt={mobileImageData?.attributes?.alt || ""}
+          className={styles.mobileImage}
+        />
+      )}
       <img
-        src={imageUrl}
-        alt=""
-        className="su-object-cover su-w-full su-h-full su-p-20"
+        src={imageData?.url}
+        alt={imageData?.attributes?.alt || ""}
+        className={styles.image(!!mobileImageData?.url)}
       />
-      <div className={styles.overlay(quoteHAlign)} />
+      <div aria-hidden className={styles.overlay(quoteHAlign)} />
     </Container>
   );
 }

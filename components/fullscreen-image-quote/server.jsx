@@ -8,13 +8,11 @@ export default async (args, info) => {
   if (args?.image) {
     imageData = await basicAssetUri(ctx, args.image);
   }
-  const imageUrl = imageData?.url;
 
   let mobileImageData = null;
   if (args?.mobileImage) {
     mobileImageData = await basicAssetUri(ctx, args.mobileImage);
   }
-  const mobileImageUrl = mobileImageData?.url;
 
   let linkUrl = null;
   if (args?.ctaDetails?.internalUrl) {
@@ -24,8 +22,8 @@ export default async (args, info) => {
 
   const renderProps = {
     ...args,
-    imageUrl,
-    mobileImageUrl,
+    imageData,
+    mobileImageData,
     internalLinkUrl,
   };
 
