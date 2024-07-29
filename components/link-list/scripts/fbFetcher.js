@@ -25,8 +25,7 @@ export default async function fbFetcher(
       }]
       &meta_taxonomyAudienceText=${translatePersonalisationProfile(
         personalisation
-      )}&num_ranks=3&sort=date&log=false
-    `;
+      )}&num_ranks=3&sort=date&log=false&meta_isTeaser=false`;
     let fbUrl = defaultFbUrl;
 
     if (behaviouralData && behaviouralData?.behavioural) {
@@ -34,7 +33,7 @@ export default async function fbFetcher(
       ?profile=${search.profile}
       &collection=${search.collection}${
         behaviouralData.partialQuery
-      }&num_ranks=3&log=false`;
+      }&num_ranks=3&log=false&meta_isTeaser=false`;
     }
 
     // uglify the URL
@@ -61,7 +60,7 @@ export default async function fbFetcher(
           search.collection
         }&query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 taxonomyContentTypeId:28201 id:${
           pageData.id
-        }]&num_ranks=3&sort=date&log=false`;
+        }]&num_ranks=3&sort=date&log=false&meta_isTeaser=false`;
         adapter.url = finalFallbackFbUrl.replace(/\n+|\t+| {2,}/g, "");
         const finalBackupResultData = await adapter.fetch();
         stories = finalBackupResultData.response?.resultPacket?.results || null;
