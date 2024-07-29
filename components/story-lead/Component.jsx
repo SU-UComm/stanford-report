@@ -81,7 +81,7 @@ export default function StoryLead({ content, variant }) {
   letterSvgs.set("y", <LetterY />);
   letterSvgs.set("z", <LetterZ />);
 
-  let formattedContent = content;
+  let formattedContent = content.replace(/’/g, "'");
   let selectedSvg = null;
 
   if (hasContent) {
@@ -94,11 +94,11 @@ export default function StoryLead({ content, variant }) {
       const truncatedFirstWord = firstWord.substring(1);
       formattedContent =
         truncatedFirstWord.length > 0
-          ? content.replace(
+          ? formattedContent.replace(
               firstWord,
               `<span aria-hidden="true">${truncatedFirstWord}</span><span class="sr-only">${firstWord}</span>`
             )
-          : content.replace(
+          : formattedContent.replace(
               firstWord,
               `<span class="sr-only">${firstWord}</span>`
             );
