@@ -25,32 +25,54 @@
             "type": "string",
             "format": "matrix-asset-uri"
           },
+          "mobileImage": {
+            "title": "Mobile background image",
+            "type": "string",
+            "format": "matrix-asset-uri"
+          },
           "quote": {
             "title": "Quote",
             "type": "string",
             "default": "...it came with such a generous financial aid package, that made the decision really easy for me. I just figured, okay, if it’s the cheapest option and it’s Stanford, might as well take it."
+          },
+          "quoteVAlign": {
+            "title": "Quote vertical alignment",
+            "type": "string",
+            "default": "center",
+            "enum": [
+              "top",
+              "center",
+              "bottom"
+            ]
+          },
+          "quoteHAlign": {
+            "title": "Quote horizontal alignment",
+            "type": "string",
+            "default": "left",
+            "enum": [
+              "left",
+              "right"
+            ]
           },
           "ctaDetails": {
             "title": "CTA details",
             "required": [],
             "description": "Enter the details for the CTA link.",
             "properties": {
-              "ctaText": {
-                "title": "CTA text",
-                "description": "The first part of the CTA text (not underlined).",
+              "ctaPreText": {
+                "title": "Short take before the CTA label",
                 "type": "string",
                 "default": "Meet"
               },
-              "ctaTextHighlight": {
-                "title": "CTA text highlight",
-                "description": "The second part of the CTA text (underlined).",
-                "type": "string",
-                "default": "Jane Stanford"
+              "ctaText": {
+                "title": "CTA label",
+                "type": "string"
               },
+
               "ctaSubtext": {
                 "title": "CTA subtext",
-                "type": "string",
                 "description": "Line of smaller text below the CTA.",
+                "type": "string",
                 "default": "’21, international student from Earth"
               },
               "internalUrl": {
@@ -70,16 +92,6 @@
                 "default": false
               }
             }
-          },
-          "quoteAlignment": {
-            "title": "Quote vertical alignment",
-            "type": "string",
-            "default": "top",
-            "enum": [
-              "top",
-              "center",
-              "bottom"
-            ]
           }
         },
         "required": []
