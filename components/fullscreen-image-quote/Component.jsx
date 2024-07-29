@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import { cnb } from "cnbuilder";
 
@@ -27,12 +28,16 @@ export default function FullscreenImageQuote({
 }) {
   const { ctaPreText, ctaText, ctaSubtext, externalUrl, isNewWindow } =
     ctaDetails;
+  // Check externalUrl field to see if it is actually external
+  // Do not use external arrow icon and rel attributes if link has news.stanford.edu
+  const isRealExternalLink =
+    !!externalUrl && !externalUrl?.includes("news.stanford.edu");
 
   return (
     <Container
       width="full"
       paddingX={false}
-      className="su-aspect-w-1 su-aspect-h-2 sm:su-aspect-w-3 sm:su-aspect-h-4 lg:su-aspect-w-16 lg:su-aspect-h-9 2xl:su-aspect-w-2 2xl:su-aspect-h-1 su-bg-white dark:su-bg-black-true su-text-white"
+      className="su-aspect-w-1 su-aspect-h-2 sm:su-aspect-w-3 sm:su-aspect-h-4 lg:su-aspect-w-3 lg:su-aspect-h-2 2xl:su-aspect-w-2 2xl:su-aspect-h-1 su-bg-white dark:su-bg-black-true su-text-white"
     >
       <div className="su-absolute su-inset-0 su-flex su-items-end su-z-20 su-h-full su-p-20">
         <blockquote className={cnb("su-rs-py-8 su-cc su-ml-0")}>
@@ -43,8 +48,10 @@ export default function FullscreenImageQuote({
             {ctaPreText}
           </span>
           <a
-            href={internalLinkUrl || externalUrl}
-            className="su-inline-block su-text-[2.6rem] md:su-text-[2.9rem] su-font-bold su-leading-display su-text-white su-underline su-decoration-digital-red-light su-underline-offset-4 hocus:su-decoration-white hocus:su-text-white"
+            href={externalUrl || internalLinkUrl}
+            target={isNewWindow ? "_blank" : undefined}
+            rel={isRealExternalLink ? "noopener nofollow" : undefined}
+            className="su-inline-block su-text-[2.6rem] md:su-text-[2.9rem] su-font-bold su-leading-display su-text-white su-underline su-decoration-dark-mode-red su-underline-offset-4 hocus:su-decoration-white hocus:su-text-white su-transition-all"
           >
             {ctaText}
           </a>
