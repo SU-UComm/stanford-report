@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import { cnb } from "cnbuilder";
+import * as styles from "./styles";
 
 // import specific templates for the component
 import { Container } from "../../packages/grids/Container";
@@ -34,14 +35,10 @@ export default function FullscreenImageQuote({
     !!externalUrl && !externalUrl?.includes("news.stanford.edu");
 
   return (
-    <Container
-      width="full"
-      paddingX={false}
-      className="su-aspect-w-1 su-aspect-h-2 sm:su-aspect-w-3 sm:su-aspect-h-4 lg:su-aspect-w-3 lg:su-aspect-h-2 2xl:su-aspect-w-2 2xl:su-aspect-h-1 su-bg-white dark:su-bg-black-true su-text-white"
-    >
-      <div className="su-absolute su-inset-0 su-flex su-items-end su-z-20 su-h-full su-p-20">
-        <blockquote className={cnb("su-rs-py-8 su-cc su-ml-0")}>
-          <p className="su-font-serif su-text-24 md:su-text-[3.3rem] lg:su-text-24 xl:su-text-[2.8rem] 2xl:su-text-[3.3rem] su-leading-display su-max-w-[55rem] lg:su-max-w-600">
+    <Container width="full" paddingX={false} className={styles.root}>
+      <div className={styles.contentWrapper(quoteVAlign)}>
+        <blockquote className={styles.blockquote(quoteHAlign)}>
+          <p className="su-font-serif su-text-24 md:su-text-[3.3rem] lg:su-text-24 xl:su-text-[2.8rem] 2xl:su-text-[3.3rem] su-leading-display su-max-w-[55rem] lg:su-max-w-600 su-mb-0">
             {quote}
           </p>
           <span className="su-inline-block su-text-[2.6rem] md:su-text-[2.9rem] su-font-bold su-leading-display su-mr-02em">
@@ -51,7 +48,7 @@ export default function FullscreenImageQuote({
             href={externalUrl || internalLinkUrl}
             target={isNewWindow ? "_blank" : undefined}
             rel={isRealExternalLink ? "noopener nofollow" : undefined}
-            className="su-inline-block su-text-[2.6rem] md:su-text-[2.9rem] su-font-bold su-leading-display su-text-white su-underline su-decoration-dark-mode-red su-underline-offset-4 hocus:su-decoration-white hocus:su-text-white su-transition-all"
+            className="su-rs-mt-1 su-inline-block su-text-[2.6rem] md:su-text-[2.9rem] su-font-bold su-leading-display su-text-white su-underline su-decoration-dark-mode-red su-underline-offset-4 hocus:su-decoration-white hocus:su-text-white su-transition-all"
           >
             {ctaText}
           </a>
@@ -65,7 +62,7 @@ export default function FullscreenImageQuote({
         alt=""
         className="su-object-cover su-w-full su-h-full su-p-20"
       />
-      <div className="su-absolute su-inset-0 su-z-10 su-border-[2rem] su-border-white dark:su-border-black-true su-bg-gradient-to-t lg:su-bg-gradient-to-r su-from-black-true" />
+      <div className={styles.overlay(quoteHAlign)} />
     </Container>
   );
 }
