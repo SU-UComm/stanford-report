@@ -3813,8 +3813,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .md\:su-basefont-23{font-size:2.3rem}}}
 @media (min-width: 992px){
 .lg\:su-aspect-h-2{--tw-aspect-h:2}
-.lg\:su-aspect-w-3{position:relative;padding-bottom:calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);--tw-aspect-w:3}
-.lg\:su-aspect-w-3 > *{position:absolute;height:100%;width:100%;top:0;right:0;bottom:0;left:0}
 .lg\:su-rs-py-5{padding-top:3.8rem;padding-bottom:3.8rem;}
 @media (min-width: 768px){
 .lg\:su-rs-py-5{padding-top:7.2rem;padding-bottom:7.2rem}}
