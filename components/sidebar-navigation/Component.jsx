@@ -74,7 +74,10 @@ export default function SidebarNavigation({
           ariaExpanded={!!navOpen}
           onClick={() => setNavOpen(!navOpen)}
           className={cnb(
-            "lg:su-hidden su-flex su-items-center su-w-full su-h-[5.6rem] su-p-10 su-text-left su-font-semibold su-border-2 su-border-digital-red su-text-digital-red dark:su-border-dark-mode-red dark:su-text-dark-mode-red",
+            "lg:su-hidden su-transition-all su-flex su-items-center su-w-full su-h-[5.6rem] su-p-15 su-text-left su-font-semibold su-shadow-[inset_0_0_0_2px_rgba(177,4,14,1)] su-text-digital-red",
+            "hocus:su-shadow-[inset_0_0_0_3px_rgba(177,4,14,1)]",
+            "dark:su-shadow-[inset_0_0_0_2px_rgba(236,9,9,1)] dark:su-text-dark-mode-red",
+            "dark:hocus:su-shadow-[inset_0_0_0_3px_rgba(236,9,9,1)]",
             navOpen &&
               "su-bg-digital-red su-text-white dark:su-bg-dark-mode-red dark:aria-expanded:su-text-black-true"
           )}

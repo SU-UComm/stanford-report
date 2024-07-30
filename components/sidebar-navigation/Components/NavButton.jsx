@@ -32,7 +32,7 @@ export default function NavButton({
       onClick={onClick}
       className={className}
     >
-      <span className="su-flex-auto">{buttonText}</span>
+      <span className="su-flex-auto su-leading-[0]">{buttonText}</span>
       {icon || ""}
     </button>
   );
