@@ -18,7 +18,6 @@ import LinkItem from "./Components/LinkItem";
  */
 
 export default function sidebarNavigation({
-  asset_assetid,
   asset_short_name,
   asset_url,
   active,
@@ -62,7 +61,7 @@ export default function sidebarNavigation({
   });
 
   return (
-    <>
+    <div ref={ref}>
       <button
         aria-controls="sidebar-navigation"
         aria-label="Toggle visibility of section menu"
@@ -82,7 +81,7 @@ export default function sidebarNavigation({
       </button>
 
       {navOpen && (
-        <nav ref={ref} id="sidebar-navigation" aria-label="Sidebar menu">
+        <nav id="sidebar-navigation" aria-label="Sidebar menu">
           <ul className="su-list-none su-p-0">
             <li className="su-m-0">
               <LinkItem
@@ -135,6 +134,6 @@ export default function sidebarNavigation({
           </ul>
         </nav>
       )}
-    </>
+    </div>
   );
 }
