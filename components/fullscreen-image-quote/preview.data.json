@@ -1,9 +1,9 @@
 {
   "image": "matrix-asset://api-identifier/99100",
-  "quote": "“I honestly applied to Stanford kind of on a whim. I checked the box that I needed financial aid, and it’s been a huge help, especially through the pandemic. I haven’t had to take any loans, and I’m graduating without any debt. I’m eternally grateful for that.”",
+  "quote": "<p>“I honestly applied to Stanford kind of on a whim. I checked the box that I needed financial aid, and it’s been a huge help, especially through the pandemic. I haven’t had to take any loans, and I’m graduating without any debt. I’m eternally grateful for that.”</p>",
   "quoteVAlign": "bottom",
   "quoteHAlign": "left",
-  "removeTopSpacing": true,
+  "removeTopSpacing": false,
   "ctaDetails": {
     "ctaPreText": "Meet",
     "ctaText": "Jane Stanford",

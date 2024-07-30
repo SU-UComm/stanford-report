@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../../packages/grids/Container";
 import { FAIcon } from "../../packages/icons/FAIcon";
 import * as styles from "./styles";
@@ -8,7 +9,7 @@ import * as styles from "./styles";
  * Fullscreen Image Quote component
  *
  * @param {string} quote
- * The quote to display
+ * The quote text from the WYSIWYG
  *
  * @param {string} quoteHAlign
  * The horizontal alignment of the quote: "left" | "right"
@@ -60,7 +61,7 @@ export default function FullscreenImageQuote({
     >
       <div className={styles.contentWrapper(quoteVAlign)}>
         <blockquote className={styles.blockquote(quoteHAlign)}>
-          {quote && <p className={styles.quote}>{quote}</p>}
+          {quote && <XssSafeContent content={quote} className={styles.quote} />}
           {ctaText && (
             <div className={styles.cta}>
               <span className={styles.ctaPreText}>{ctaPreText}</span>
@@ -76,7 +77,6 @@ export default function FullscreenImageQuote({
                   &#65279;
                   <FAIcon
                     icon={isRealExternalLink ? "arrow-up" : "chevron-right"}
-                    width={24}
                     title={isRealExternalLink ? "link is external" : undefined}
                     className={styles.ctaIcon(isRealExternalLink)}
                   />
