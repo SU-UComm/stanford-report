@@ -1,26 +1,30 @@
 import React, { useState, useEffect, useRef } from "react";
 import { cnb } from "cnbuilder";
+import { FAIcon } from "../../packages/icons/FAIcon";
+
+// import custom hooks
 import useKeypress from "../../packages/utils/useKeypress";
 import useOnClickOutside from "../../packages/utils/useOnClickOutside";
 
-// import specific templates for the component
-import BurgerBar from "../../packages/SVG-library/BurgerBar";
-import Close from "../../packages/SVG-library/Close";
-import NavContent from "./Components/NavContent";
+// import sub-components
 import NavButton from "./Components/NavButton";
+import NavContent from "./Components/NavContent";
 
 /**
- * Base component
+ * Sidebar Navigation component
  *
- * @param {string} title The component title
- * ... any other options needed
- * @returns {JSX.Element}
+ * @param {string} asset_url URL of the parent page asset
+ * @param {string} asset_short_name Short name (title) of the parent page asset
+ * @param {boolean} active Indicates if the nav item is the current page
+ * @param {array} menu An array of nested pages
+ *
+ * @returns {SidebarNavigation}
  * @constructor
  */
 
-export default function sidebarNavigation({
-  asset_short_name,
+export default function SidebarNavigation({
   asset_url,
+  asset_short_name,
   active,
   menu,
 }) {
@@ -74,7 +78,25 @@ export default function sidebarNavigation({
             "su-bg-digital-red su-text-white dark:su-bg-dark-mode-red dark:aria-expanded:su-text-black-true"
         )}
         buttonText={navOpen ? "Close" : "Section menu"}
-        icon={navOpen ? <Close /> : <BurgerBar />}
+        icon={
+          navOpen ? (
+            <FAIcon
+              icon="xmark"
+              set="solid"
+              // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+              width={24}
+              className="su-text-[3rem]"
+            />
+          ) : (
+            <FAIcon
+              icon="bars"
+              set="solid"
+              // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+              width={24}
+              className="su-text-[3rem]"
+            />
+          )
+        }
       />
 
       {navOpen && (
