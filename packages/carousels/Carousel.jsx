@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import hash from "object-hash";
@@ -19,6 +19,7 @@ export function Carousel({
   const swiperRef = useRef();
   const [sliderInit, setSliderInit] = useState(false); // Flag slider initiated
   const hasSlides = slides.length > 0;
+  const [useFocus, setUseFocus] = useState(false); // Focus flag initiated
 
   const variants = new Map();
   variants.set("cards", {
@@ -133,6 +134,36 @@ export function Carousel({
     loop: true,
   });
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (e.detail) {
+      setUseFocus(false);
+    } else {
+      setUseFocus(true);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("DOMContentLoaded", function () {
+      const paginationBtns = document.querySelectorAll(
+        "button.swiper-pagination-bullet"
+      );
+      paginationBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          handleClick(e);
+        });
+      });
+      const arrowBtns = document.querySelectorAll(
+        "button.component-slider-btn"
+      );
+      arrowBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          handleClick(e);
+        });
+      });
+    });
+  }, [useFocus]);
+
   return hasSlides ? (
     <div className={`component-slider ${isDark ? "su-slider-dark" : ""}`}>
       <Swiper
@@ -174,7 +205,9 @@ export function Carousel({
                     return slide;
                   })();
 
-              slideTarget.focus();
+              if (useFocus) {
+                slideTarget.focus();
+              }
             }, 300);
           }
 

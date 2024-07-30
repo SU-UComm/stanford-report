@@ -7,5 +7,6 @@ module.exports = function () {
     "dark-mode": {
       red: "#EC0909",
     },
+    'campaign-fog': "#F9F9F9",
   };
 };

@@ -37,10 +37,7 @@
               "layout": {
                 "title": "Layout",
                 "type": "string",
-                "enum": [
-                  "Title & Content",
-                  "Content Only"
-                ],
+                "enum": ["Title & Content", "Content Only"],
                 "default": "Title & Content"
               },
               "caption": {
@@ -61,9 +58,7 @@
                 "maxItems": 20,
                 "items": {
                   "type": "object",
-                  "required": [
-                    "image"
-                  ],
+                  "required": ["image"],
                   "properties": {
                     "image": {
                       "title": "Image asset",
@@ -116,20 +111,14 @@
               },
               "backgroundColor": {
                 "title": "Background Color",
-                "enum": [
-                  "Grey",
-                  "Transparent"
-                ],
+                "enum": ["Grey", "Transparent"],
                 "type": "string",
                 "default": "Grey"
               },
               "width": {
                 "title": "Width",
                 "type": "string",
-                "enum": [
-                  "Wide",
-                  "Content"
-                ],
+                "enum": ["Wide", "Content"],
                 "default": "Wide"
               }
             }

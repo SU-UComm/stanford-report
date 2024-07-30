@@ -602,7 +602,7 @@ audio::-webkit-media-controls-panel {
 * Main page wrapper
 */
 .su-page {
-  @apply su-w-full su-overflow-hidden;
+  @apply su-w-full;
 }
 
 .su-page:not(.su-page-has-sidebar)
@@ -640,8 +640,8 @@ audio::-webkit-media-controls-panel {
   @apply su-mb-0 !important;
 }
 
-.su-page--top-margin .su-upper-content {
-  @apply su-rs-mt-5;
+.su-page--top-margin:not(.su-page-story-featured) .su-upper-content {
+  @apply su-rs-pt-7;
 }
 
 .su-upper-content > [data-component] + * {
@@ -650,10 +650,6 @@ audio::-webkit-media-controls-panel {
 
 [data-component="leadership-hero-hannah"] {
   @apply su-rs-mt-8 !important;
-}
-
-[data-component="basic-story-hero"] {
-  @apply su-rs-mt-6 !important;
 }
 
 [data-component="default-hero"],
@@ -1145,16 +1141,22 @@ Subscribe to Stanford Report Marketo form styles
 }
 
 /* Checkbox styles */
-.marketo-sr-subscribe-form.mktoForm .mktoCheckboxList {
+.marketo-sr-subscribe-form.mktoForm .mktoCheckboxList,
+.marketo-sr-subscribe-form.mktoForm .mktoRadioList {
   @apply su-grid su-grid-cols-[auto_1fr] su-gap-x-14 su-gap-y-24 su-mt-20 su-p-0;
 }
 
-.marketo-sr-subscribe-form.mktoForm .mktoCheckboxList label {
+.marketo-sr-subscribe-form.mktoForm .mktoCheckboxList label,
+.marketo-sr-subscribe-form.mktoForm .mktoRadioList label {
   @apply su-text-18 su-mt-01em su-leading-display su-cursor-pointer peer-hover:su-underline;
 }
 
-.marketo-sr-subscribe-form.mktoForm input[type="checkbox"] {
+.marketo-sr-subscribe-form.mktoForm input[type="checkbox"],
+.marketo-sr-subscribe-form.mktoForm input[type="radio"] {
   @apply su-w-auto su-text-digital-blue su-cursor-pointer hocus:su-ring-digital-blue-light/40 dark:hocus:su-ring-digital-blue-vivid/60 hocus:su-ring-4 su-border-black-50 dark:su-border-black-30 dark:hocus:su-border-digital-blue-light dark:su-bg-black-true dark:checked:su-bg-digital-blue su-border-2 su-rounded hocus:su-border-digital-blue checked:su-border-digital-blue-light dark:checked:su-border-digital-blue-light focus:su-ring-offset-0 focus:su-outline-none checked:hocus:su-bg-digital-blue-dark dark:checked:hocus:su-bg-digital-blue-vivid;
+}
+.marketo-sr-subscribe-form.mktoForm input[type="radio"] {
+  @apply su-rounded-full;
 }
 
 /* Marketo puts the asterisk before the label text(?) so
@@ -1188,4 +1190,11 @@ Subscribe to Stanford Report Marketo form styles
 
 .marketo-sr-subscribe-form.mktoForm .mktoButton {
   @apply su-button hocus:su-underline su-leading-display md:su-px-30 md:su-pt-12 md:su-pb-14 su-text-18 md:su-text-20 su-transition-colors dark:hocus:su-ring-1 dark:hocus:su-ring-white;
+}
+
+/**
+ * Campaign page global styles
+ */
+.su-page-campaign, .su-page-campaign body {
+  @apply su-bg-campaign-fog;
 }
