@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "fullscreen-image-quote",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "namespace": "stanford-components",
   "description": "This component displays a fullwidth image with a quote and CTA.",
   "displayName": "Fullscreen Image Quote",
@@ -33,7 +33,7 @@
           "quote": {
             "title": "Quote",
             "description": "Quote or body content. Please include the quotation marks if this is a quote.",
-            "type": "FormattedText"
+            "format": "multi-line"
           },
           "quoteVAlign": {
             "title": "Quote vertical alignment",

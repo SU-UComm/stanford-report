@@ -30,7 +30,7 @@ export const blockquote = (quoteHAlign) =>
     quoteHAligns[quoteHAlign]
   );
 export const quote =
-  "su-font-serif su-text-24 md:su-text-[3.3rem] lg:su-text-24 xl:su-text-[2.8rem] 2xl:su-text-[3.3rem] *:su-leading-display su-max-w-[55rem] xl:su-max-w-600 last:*:su-mb-0";
+  "su-font-serif su-text-24 md:su-text-[3.3rem] lg:su-text-24 xl:su-text-[2.8rem] 2xl:su-text-[3.3rem] su-leading-display su-max-w-[55rem] xl:su-max-w-600 su-mb-0 su-whitespace-pre-line";
 
 export const cta = "su-rs-mt-1";
 export const ctaPreText =
