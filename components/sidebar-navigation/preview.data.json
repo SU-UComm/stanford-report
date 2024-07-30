@@ -3,25 +3,57 @@
   "asset_assetid": "156984",
   "asset_url": "https://news.stanford.edu/squizdevreport/development/sidenav",
   "asset_short_name": "Sidenav",
+<<<<<<< HEAD
+<<<<<<< HEAD
   "active": false,
+=======
+>>>>>>> 540a2224 (- Initial setup of `sidebar-navigation` component)
+=======
+  "active": false,
+>>>>>>> ac1f7d67 (- Add left-sidebar.html preview file)
   "menu": [
     {
       "asset_assetid": "156985",
       "asset_url": "https://news.stanford.edu/squizdevreport/development/sidenav/lvl-1-page-01",
       "asset_short_name": "Lvl 1 page 01",
+<<<<<<< HEAD
+<<<<<<< HEAD
       "active": false,
+=======
+>>>>>>> 540a2224 (- Initial setup of `sidebar-navigation` component)
+=======
+      "active": false,
+>>>>>>> ac1f7d67 (- Add left-sidebar.html preview file)
       "asset_children": [
         {
           "asset_short_name": "Sub page",
           "asset_assetid": "156987",
+<<<<<<< HEAD
+<<<<<<< HEAD
           "asset_url": "https://news.stanford.edu/squizdevreport/development/sidenav/lvl-1-page-01/sub-page",
           "active": true
+=======
+          "asset_url": "https://news.stanford.edu/squizdevreport/development/sidenav/lvl-1-page-01/sub-page"
+>>>>>>> 540a2224 (- Initial setup of `sidebar-navigation` component)
+=======
+          "asset_url": "https://news.stanford.edu/squizdevreport/development/sidenav/lvl-1-page-01/sub-page",
+          "active": true
+>>>>>>> ac1f7d67 (- Add left-sidebar.html preview file)
         },
         {
           "asset_short_name": "Sub page 02",
           "asset_assetid": "156988",
+<<<<<<< HEAD
+<<<<<<< HEAD
           "asset_url": "https://news.stanford.edu/squizdevreport/development/sidenav/lvl-1-page-01/sub-page-02",
           "active": false
+=======
+          "asset_url": "https://news.stanford.edu/squizdevreport/development/sidenav/lvl-1-page-01/sub-page-02"
+>>>>>>> 540a2224 (- Initial setup of `sidebar-navigation` component)
+=======
+          "asset_url": "https://news.stanford.edu/squizdevreport/development/sidenav/lvl-1-page-01/sub-page-02",
+          "active": false
+>>>>>>> ac1f7d67 (- Add left-sidebar.html preview file)
         }
       ]
     },
@@ -29,7 +61,14 @@
       "asset_assetid": "156986",
       "asset_url": "https://news.stanford.edu/squizdevreport/development/sidenav/lvl-1-page-02",
       "asset_short_name": "Lvl 1 page 02",
+<<<<<<< HEAD
+<<<<<<< HEAD
       "active": false,
+=======
+>>>>>>> 540a2224 (- Initial setup of `sidebar-navigation` component)
+=======
+      "active": false,
+>>>>>>> ac1f7d67 (- Add left-sidebar.html preview file)
       "asset_children": null
     }
   ]
