@@ -3,14 +3,14 @@
   "name": "fullscreen-image-quote",
   "version": "0.0.1",
   "namespace": "stanford-components",
-  "description": "This component displays a fullscreen image with a quote and CTA.",
-  "displayName": "Fullscreen Image quote",
+  "description": "This component displays a fullwidth image with a quote and CTA.",
+  "displayName": "Fullscreen Image Quote",
   "mainFunction": "main",
   "icon": {
     "id": "format_quote",
     "color": {
       "type": "enum",
-      "value": "teal"
+      "value": "red"
     }
   },
   "functions": [
