@@ -44,6 +44,11 @@ import getCookie from "../../packages/utils/cookieGet";
       }&query_not=[taxonomyContentTypeId:28210 taxonomyContentTypeId:28216 taxonomyContentTypeId:28201 id:${
         props.search.currentPage
       }]&num_ranks=12&sort=date`;
+
+      if (props.search.contentType === "Video") {
+        fallbackFbUrl += "&meta_taxonomyContentTypeId=28207";
+        fbUrl += "&meta_taxonomyContentTypeId=28207";
+      }
     }
 
     // Check if we have a URL to fetch data from
