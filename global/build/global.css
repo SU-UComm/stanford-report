@@ -3935,6 +3935,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-peer\/light:checked ~ .peer-checked\/light\:before\:su-rotate-180::before{content:var(--tw-content);--tw-rotate:180deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-peer\/light:checked ~ .peer-checked\/light\:after\:su-translate-x-\[-2rem\]::after{content:var(--tw-content);--tw-translate-x:-2rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-peer\/light:checked ~ .peer-checked\/light\:after\:su-border-digital-red::after{content:var(--tw-content);--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity))}
+.aria-expanded\:su-text-black-true[aria-expanded="true"]{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}
 .aria-pressed\:su-bg-transparent[aria-pressed="true"]{background-color:transparent}
 .aria-pressed\:su-text-white[aria-pressed="true"]{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .su-group\/front[aria-hidden="true"] .group-aria-hidden\/front\:su-opacity-0{opacity:0}
