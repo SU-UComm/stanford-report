@@ -12,9 +12,16 @@
       class="report-header--story report-header su-pb-[11rem] md:su-pb-[17.7rem] lg:su-pb-[19.3rem] su-bg-black"
     >
       <div
-        class="su-bg-digital-red su-fixed"
+        class="su-bg-digital-red su-fixed su-z-50"
         style="height: 100px; width: 100%"
-      ></div>
+      >
+      <button
+        id="toggle"
+        class="su-p-7 su-border-2 su-text-white su-border-white dark:su-border-black-true dark:su-text-black-true"
+      >
+        Dark/Light Mode Toggle
+      </button>
+      </div>
     </header>
     <main
       role="main"
@@ -29,5 +36,16 @@
       <div class="su-above-footer"></div>
     </main>
     [component://static-footer]
+    <script>
+      const b = document.getElementById("toggle");
+      const e = document.querySelector("html");
+      b.addEventListener("click", (event) => {
+        if (e.classList.contains("su-dark")) {
+          e.classList.remove("su-dark");
+        } else {
+          e.classList.add("su-dark");
+        }
+      });
+    </script>
   </body>
 </html>
