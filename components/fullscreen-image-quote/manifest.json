@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "fullscreen-image-quote",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "This component displays a fullwidth image with a quote and CTA.",
   "displayName": "Fullscreen Image Quote",
@@ -32,8 +32,8 @@
           },
           "quote": {
             "title": "Quote",
-            "type": "string",
-            "default": "...it came with such a generous financial aid package, that made the decision really easy for me. I just figured, okay, if it’s the cheapest option and it’s Stanford, might as well take it."
+            "description": "Quote or body content. Please include the quotation marks if this is a quote.",
+            "type": "FormattedText"
           },
           "quoteVAlign": {
             "title": "Quote vertical alignment",
@@ -54,26 +54,32 @@
               "right"
             ]
           },
+          "removeTopSpacing": {
+            "title": "Remove top spacing",
+            "description": "Enable this to remove the spacing above this component, e.g., when it is not the first item in a series of this component.",
+            "type": "boolean",
+            "default": false
+          },
           "ctaDetails": {
             "title": "CTA details",
             "required": [],
             "description": "Enter the details for the CTA link.",
             "properties": {
               "ctaPreText": {
-                "title": "Short take before the CTA label",
+                "title": "Short text before the CTA label",
                 "type": "string",
                 "default": "Meet"
               },
               "ctaText": {
-                "title": "CTA label",
+                "title": "CTA text",
+                "description": "Text for the actual CTA link portion.",
                 "type": "string"
               },
-
               "ctaSubtext": {
                 "title": "CTA subtext",
                 "description": "Line of smaller text below the CTA.",
                 "type": "string",
-                "default": "’21, international student from Earth"
+                "default": "’21, international student"
               },
               "internalUrl": {
                 "title": "Internal link (Matrix asset link)",
@@ -84,7 +90,7 @@
               "externalUrl": {
                 "title": "External (manual) link",
                 "type": "string",
-                "description": "Enter the full URL, including https://. A diagonal arrow icon will be automatically added after the button text if the URL does not contain news.stanford.edu."
+                "description": "Enter the full URL, including https://. A diagonal arrow icon will be automatically used after the CTA text if the URL does not contain news.stanford.edu."
               },
               "isNewWindow": {
                 "title": "Open link in a new window",

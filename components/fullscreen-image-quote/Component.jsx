@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../../packages/grids/Container";
 import { FAIcon } from "../../packages/icons/FAIcon";
 import * as styles from "./styles";
@@ -8,13 +9,16 @@ import * as styles from "./styles";
  * Fullscreen Image Quote component
  *
  * @param {string} quote
- * The quote to display
+ * The quote text from the WYSIWYG
  *
  * @param {string} quoteHAlign
  * The horizontal alignment of the quote: "left" | "right"
  *
  * @param {string} quoteVAlign
  * The vertical alignment of the quote: "top" | "center" | "bottom"
+ *
+ * @param {boolean} removeTopSpacing
+ * When this is true, the component will be shifted up to eliminate the spacing between itself and the component above.
  *
  * @param {object} imageData
  * The data of the background image
@@ -36,6 +40,7 @@ export default function FullscreenImageQuote({
   quote,
   quoteHAlign,
   quoteVAlign,
+  removeTopSpacing,
   imageData,
   mobileImageData,
   internalLinkUrl,
@@ -49,10 +54,14 @@ export default function FullscreenImageQuote({
     !!externalUrl && !externalUrl?.includes("news.stanford.edu");
 
   return (
-    <Container width="full" paddingX={false} className={styles.root}>
+    <Container
+      width="full"
+      paddingX={false}
+      className={styles.root(removeTopSpacing)}
+    >
       <div className={styles.contentWrapper(quoteVAlign)}>
         <blockquote className={styles.blockquote(quoteHAlign)}>
-          {quote && <p className={styles.quote}>{quote}</p>}
+          {quote && <XssSafeContent content={quote} className={styles.quote} />}
           {ctaText && (
             <div className={styles.cta}>
               <span className={styles.ctaPreText}>{ctaPreText}</span>
