@@ -16,6 +16,9 @@ import * as styles from "./styles";
  * @param {string} quoteVAlign
  * The vertical alignment of the quote: "top" | "center" | "bottom"
  *
+ * @param {boolean} removeTopSpacing
+ * When this is true, the component will be shifted up to eliminate the spacing between itself and the component above.
+ *
  * @param {object} imageData
  * The data of the background image
  *
@@ -36,6 +39,7 @@ export default function FullscreenImageQuote({
   quote,
   quoteHAlign,
   quoteVAlign,
+  removeTopSpacing,
   imageData,
   mobileImageData,
   internalLinkUrl,
@@ -49,7 +53,11 @@ export default function FullscreenImageQuote({
     !!externalUrl && !externalUrl?.includes("news.stanford.edu");
 
   return (
-    <Container width="full" paddingX={false} className={styles.root}>
+    <Container
+      width="full"
+      paddingX={false}
+      className={styles.root(removeTopSpacing)}
+    >
       <div className={styles.contentWrapper(quoteVAlign)}>
         <blockquote className={styles.blockquote(quoteHAlign)}>
           {quote && <p className={styles.quote}>{quote}</p>}
@@ -68,6 +76,7 @@ export default function FullscreenImageQuote({
                   &#65279;
                   <FAIcon
                     icon={isRealExternalLink ? "arrow-up" : "chevron-right"}
+                    width={24}
                     title={isRealExternalLink ? "link is external" : undefined}
                     className={styles.ctaIcon(isRealExternalLink)}
                   />

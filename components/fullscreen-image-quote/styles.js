@@ -12,8 +12,11 @@ export const quoteHAligns = {
   right: "su-mr-0 su-ml-auto lg:su-pl-0",
 };
 
-export const root =
-  "su-aspect-w-1 su-aspect-h-2 sm:su-aspect-w-3 sm:su-aspect-h-4 lg:su-aspect-w-3 lg:su-aspect-h-2 2xl:su-aspect-w-2 2xl:su-aspect-h-1 su-bg-black-true su-text-white";
+export const root = (removeTopSpacing) =>
+  cnb(
+    "su-aspect-w-1 su-aspect-h-2 sm:su-aspect-w-3 sm:su-aspect-h-4 lg:su-aspect-w-3 lg:su-aspect-h-2 2xl:su-aspect-w-2 2xl:su-aspect-h-1 su-bg-black-true su-text-white",
+    removeTopSpacing && "su--mt-50 md:su--mt-56 2xl:su--mt-58"
+  );
 
 export const contentWrapper = (quoteVAlign) =>
   cnb(
