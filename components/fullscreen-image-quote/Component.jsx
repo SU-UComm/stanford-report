@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
-import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../../packages/grids/Container";
 import { FAIcon } from "../../packages/icons/FAIcon";
 import * as styles from "./styles";
@@ -9,7 +8,7 @@ import * as styles from "./styles";
  * Fullscreen Image Quote component
  *
  * @param {string} quote
- * The quote text from the WYSIWYG
+ * The quote/content text
  *
  * @param {string} quoteHAlign
  * The horizontal alignment of the quote: "left" | "right"
@@ -19,6 +18,7 @@ import * as styles from "./styles";
  *
  * @param {boolean} removeTopSpacing
  * When this is true, the component will be shifted up to eliminate the spacing between itself and the component above.
+ * This is useful when several Fullscreen Image Quotes are stacked on top of each other.
  *
  * @param {object} imageData
  * The data of the background image
@@ -61,7 +61,7 @@ export default function FullscreenImageQuote({
     >
       <div className={styles.contentWrapper(quoteVAlign)}>
         <blockquote className={styles.blockquote(quoteHAlign)}>
-          {quote && <XssSafeContent content={quote} className={styles.quote} />}
+          {quote && <p className={styles.quote}>{quote}</p>}
           {ctaText && (
             <div className={styles.cta}>
               <span className={styles.ctaPreText}>{ctaPreText}</span>
@@ -76,6 +76,7 @@ export default function FullscreenImageQuote({
                 <span className={styles.ctaIconWrapper}>
                   &#65279;
                   <FAIcon
+                    width={18}
                     icon={isRealExternalLink ? "arrow-up" : "chevron-right"}
                     title={isRealExternalLink ? "link is external" : undefined}
                     className={styles.ctaIcon(isRealExternalLink)}

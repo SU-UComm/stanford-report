@@ -2841,6 +2841,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-text-ellipsis{text-overflow:ellipsis}
 .su-whitespace-nowrap{white-space:nowrap}
 .su-whitespace-pre{white-space:pre}
+.su-whitespace-pre-line{white-space:pre-line}
 .su-break-words{overflow-wrap:break-word}
 .su-rounded{border-radius:0.3rem}
 .su-rounded-\[100px\]{border-radius:100px}
