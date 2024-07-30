@@ -66,47 +66,56 @@ export default function SidebarNavigation({
   });
 
   return (
-    <div ref={ref}>
-      <NavButton
-        ariaControls="sidebar-navigation"
-        ariaLabel="Toggle visibility of section menu"
-        ariaExpanded={!!navOpen}
-        onClick={() => setNavOpen(!navOpen)}
-        className={cnb(
-          "lg:su-hidden su-flex su-items-center su-w-full su-h-[5.6rem] su-p-10 su-text-left su-font-semibold su-border-2 su-border-digital-red su-text-digital-red dark:su-border-dark-mode-red dark:su-text-dark-mode-red",
-          navOpen &&
-            "su-bg-digital-red su-text-white dark:su-bg-dark-mode-red dark:aria-expanded:su-text-black-true"
+    <>
+      <div ref={ref} className="lg:su-hidden">
+        <NavButton
+          ariaControls="sidebar-navigation"
+          ariaLabel="Toggle visibility of section menu"
+          ariaExpanded={!!navOpen}
+          onClick={() => setNavOpen(!navOpen)}
+          className={cnb(
+            "lg:su-hidden su-flex su-items-center su-w-full su-h-[5.6rem] su-p-10 su-text-left su-font-semibold su-border-2 su-border-digital-red su-text-digital-red dark:su-border-dark-mode-red dark:su-text-dark-mode-red",
+            navOpen &&
+              "su-bg-digital-red su-text-white dark:su-bg-dark-mode-red dark:aria-expanded:su-text-black-true"
+          )}
+          buttonText={navOpen ? "Close" : "Section menu"}
+          icon={
+            navOpen ? (
+              <FAIcon
+                icon="xmark"
+                set="solid"
+                // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+                width={24}
+                className="su-text-[3rem]"
+              />
+            ) : (
+              <FAIcon
+                icon="bars"
+                set="solid"
+                // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+                width={24}
+                className="su-text-[3rem]"
+              />
+            )
+          }
+        />
+        {navOpen && (
+          <NavContent
+            asset_url={asset_url}
+            asset_short_name={asset_short_name}
+            active={active}
+            menu={menu}
+          />
         )}
-        buttonText={navOpen ? "Close" : "Section menu"}
-        icon={
-          navOpen ? (
-            <FAIcon
-              icon="xmark"
-              set="solid"
-              // Add a width to prevent getting a flash of huge icon before the CSS fully loads
-              width={24}
-              className="su-text-[3rem]"
-            />
-          ) : (
-            <FAIcon
-              icon="bars"
-              set="solid"
-              // Add a width to prevent getting a flash of huge icon before the CSS fully loads
-              width={24}
-              className="su-text-[3rem]"
-            />
-          )
-        }
-      />
-
-      {navOpen && (
+      </div>
+      <div className="su-hidden lg:su-block">
         <NavContent
           asset_url={asset_url}
           asset_short_name={asset_short_name}
           active={active}
           menu={menu}
         />
-      )}
-    </div>
+      </div>
+    </>
   );
 }
