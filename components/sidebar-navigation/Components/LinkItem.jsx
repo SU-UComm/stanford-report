@@ -3,8 +3,12 @@ import { cnb } from "cnbuilder";
 
 /**
  * Link Item for Sidebar Navigation
+ * @param {string} level Pass "one" or "two" to control the nesting indent
+ * @param {string} url URL of the page asset
+ * @param {string} active Indicates if the nav item is the current page
+ * @param {string} shortName Short name (title) of the page asset
  *
- * @returns {JSX.Element}
+ * @returns {LinkItem}
  * @constructor
  */
 export default function LinkItem({ level, url, shortName, active }) {

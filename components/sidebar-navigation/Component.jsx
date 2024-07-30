@@ -6,7 +6,8 @@ import useOnClickOutside from "../../packages/utils/useOnClickOutside";
 // import specific templates for the component
 import BurgerBar from "../../packages/SVG-library/BurgerBar";
 import Close from "../../packages/SVG-library/Close";
-import LinkItem from "./Components/LinkItem";
+import NavContent from "./Components/NavContent";
+import NavButton from "./Components/NavButton";
 
 /**
  * Base component
@@ -62,77 +63,27 @@ export default function sidebarNavigation({
 
   return (
     <div ref={ref}>
-      <button
-        aria-controls="sidebar-navigation"
-        aria-label="Toggle visibility of section menu"
-        aria-expanded={!!navOpen}
-        type="button"
+      <NavButton
+        ariaControls="sidebar-navigation"
+        ariaLabel="Toggle visibility of section menu"
+        ariaExpanded={!!navOpen}
         onClick={() => setNavOpen(!navOpen)}
         className={cnb(
           "lg:su-hidden su-flex su-items-center su-w-full su-h-[5.6rem] su-p-10 su-text-left su-font-semibold su-border-2 su-border-digital-red su-text-digital-red dark:su-border-dark-mode-red dark:su-text-dark-mode-red",
           navOpen &&
             "su-bg-digital-red su-text-white dark:su-bg-dark-mode-red dark:aria-expanded:su-text-black-true"
         )}
-      >
-        <span className="su-flex-auto">
-          {navOpen ? "Close" : "Section menu"}
-        </span>
-        {navOpen ? <Close /> : <BurgerBar />}
-      </button>
+        buttonText={navOpen ? "Close" : "Section menu"}
+        icon={navOpen ? <Close /> : <BurgerBar />}
+      />
 
       {navOpen && (
-        <nav id="sidebar-navigation" aria-label="Sidebar menu">
-          <ul className="su-list-none su-p-0">
-            <li className="su-m-0">
-              <LinkItem
-                level="one"
-                url={asset_url}
-                shortName={asset_short_name}
-                active={active}
-              />
-            </li>
-            {menu && menu.length ? (
-              <>
-                {menu.map(
-                  (item) =>
-                    item && (
-                      <li key={item.asset_assetid} className="su-m-0">
-                        <LinkItem
-                          level="one"
-                          url={item.asset_url}
-                          shortName={item.asset_short_name}
-                          active={item.active}
-                        />
-                        {item.asset_children &&
-                          item.asset_children !== null && (
-                            <ul className="su-list-none su-p-0">
-                              {item.asset_children.map(
-                                (subitem) =>
-                                  item && (
-                                    <li
-                                      key={subitem.asset_assetid}
-                                      className="su-m-0"
-                                    >
-                                      <LinkItem
-                                        level="two"
-                                        url={subitem.asset_url}
-                                        shortName={subitem.asset_short_name}
-                                        active={subitem.active}
-                                      />
-                                    </li>
-                                  )
-                              )}
-                            </ul>
-                          )}
-                      </li>
-                    )
-                )}
-              </>
-            ) : (
-              ""
-            )}
-          </ul>
-        </nav>
+        <NavContent
+          asset_url={asset_url}
+          asset_short_name={asset_short_name}
+          active={active}
+          menu={menu}
+        />
       )}
     </div>
   );
