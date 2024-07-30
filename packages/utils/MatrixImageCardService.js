@@ -1,5 +1,3 @@
-import formatMediaCardDataMatrix from "./formatMediaCardDataMatrix";
-
 export default class MatrixImageCardService {
   constructor({ API_IDENTIFIER, BASE_DOMAIN }) {
     this.API_IDENTIFIER = API_IDENTIFIER;
