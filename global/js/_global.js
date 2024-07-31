@@ -7,6 +7,7 @@ import '../../components/stories-carousel/client.jsx';
 import '../../components/single-text-block/client.jsx';
 import '../../components/single-image-video/client.jsx';
 import '../../components/single-featured-content/client.jsx';
+import '../../components/sidebar-navigation/client.jsx';
 import '../../components/related-story/client.jsx';
 import '../../components/pullquote/client.jsx';
 import '../../components/popular-stories-cf/client.jsx';

@@ -138,7 +138,7 @@ export default function Header({ site, navigation, search }) {
                   type="button"
                 >
                   <span className="su-relative su-size-32">
-                    <BurgerBar />
+                    <BurgerBar className="su-hidden md:su-block su-absolute su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2" />
                     <MobileBurgerBar />
                   </span>
 
