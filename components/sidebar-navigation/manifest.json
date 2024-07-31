@@ -1,16 +1,16 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
-  "name": "basic-story-hero",
-  "version": "2.0.3",
+  "name": "sidebar-navigation",
+  "version": "0.0.1",
   "namespace": "stanford-components",
-  "description": "The basic story hero appears on basic story pages",
-  "displayName": "Basic story hero",
+  "description": "A navigation element used for a collection of basic informational pages.",
+  "displayName": "Sidebar Navigation",
   "mainFunction": "main",
   "icon": {
-    "id": "flag",
+    "id": "foundation",
     "color": {
       "type": "enum",
-      "value": "pink"
+      "value": "gray"
     }
   },
   "functions": [
@@ -19,7 +19,14 @@
       "entry": "./dist/server.cjs",
       "input": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "title": {
+            "title": "Heading",
+            "description": "The heading text",
+            "type": "string",
+            "default": "Lorem ipsum dolor"
+          }
+        },
         "required": []
       },
       "output": {
@@ -55,7 +62,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/basicstory.html"
+            "path": "../../packages/__globalPreview/left-sidebar.html"
           }
         }
       }
