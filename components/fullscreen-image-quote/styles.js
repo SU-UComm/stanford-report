@@ -32,13 +32,13 @@ export const contentWrapper = (quoteVAlign) =>
 
 export const blockquote = (quoteHAlign) =>
   cnb(
-    "su-py-17 sm:su-py-[6.8rem] xl:su-py-140 su-cc",
+    "su-py-17 sm:su-py-[6.8rem] xl:su-py-100 2xl:su-py-140 su-cc lg:su-max-w-[50%]",
     quoteHAligns[quoteHAlign]
   );
 export const quote =
   "su-font-serif su-text-22 md:su-text-[3.3rem] lg:su-text-24 xl:su-text-[2.8rem] 2xl:su-text-[3.3rem] su-leading-display su-max-w-[55rem] xl:su-max-w-600 su-mb-0 su-whitespace-pre-line";
 
-export const cta = "su-rs-mt-1";
+export const cta = "su-rs-mt-1 su-max-w-[55rem] xl:su-max-w-600";
 export const ctaPreText =
   "su-inline su-text-22 md:su-text-[2.9rem] lg:su-text-24 2xl:su-text-[2.9rem] su-font-bold su-leading-display su-mr-02em";
 export const ctaLink =

@@ -87,9 +87,11 @@ export default function FullscreenImageQuote({
                   />
                 </span>
               </a>
+              {ctaSubtext && (
+                <div className={styles.ctaSubtext}>{ctaSubtext}</div>
+              )}
             </div>
           )}
-          {ctaSubtext && <div className={styles.ctaSubtext}>{ctaSubtext}</div>}
         </blockquote>
       </div>
       {mobileImageData?.url && (
