@@ -73,9 +73,14 @@ export default function sidebarNavigation({
       )}
       {navOpen && (
         <nav className="" data-role="sidebar-navigation-wrapper">
-          <ul>
+          <ul className="su-list-none su-p-0">
             <li>
-              <a href={asset_url}>{asset_short_name}</a>
+              <a
+                className="su-p-10 su-border-l-5 su-no-underline su-border-white hocus:su-underline active:su-underline hocus:su-border-digital-red active:su-border-digital-red"
+                href={asset_url}
+              >
+                {asset_short_name}
+              </a>
             </li>
             {menu && menu.length ? (
               <>
@@ -83,15 +88,23 @@ export default function sidebarNavigation({
                   (item) =>
                     item && (
                       <li key={item.asset_assetid}>
-                        <a href={item.asset_url}>{item.asset_short_name}</a>
+                        <a
+                          className="su-p-10 su-border-l-5 su-no-underline su-border-white hocus:su-underline active:su-underline hocus:su-border-digital-red active:su-border-digital-red"
+                          href={item.asset_url}
+                        >
+                          {item.asset_short_name}
+                        </a>
                         {item.asset_children &&
                           item.asset_children !== null && (
-                            <ul>
+                            <ul className="su-list-none su-p-0">
                               {item.asset_children.map(
                                 (subitem) =>
                                   item && (
                                     <li key={subitem.asset_assetid}>
-                                      <a href={subitem.asset_url}>
+                                      <a
+                                        className="su-p-10 su-pl-25 su-border-l-5 su-no-underline su-border-white hocus:su-underline active:su-underline hocus:su-border-digital-red active:su-border-digital-red"
+                                        href={subitem.asset_url}
+                                      >
                                         {subitem.asset_short_name}
                                       </a>
                                     </li>
