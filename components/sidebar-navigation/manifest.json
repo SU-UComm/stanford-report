@@ -62,15 +62,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-<<<<<<< HEAD
-<<<<<<< HEAD
             "path": "../../packages/__globalPreview/left-sidebar.html"
-=======
-            "path": "../../packages/__globalPreview/preview.html"
->>>>>>> 540a2224 (- Initial setup of `sidebar-navigation` component)
-=======
-            "path": "../../packages/__globalPreview/left-sidebar.html"
->>>>>>> ac1f7d67 (- Add left-sidebar.html preview file)
           }
         }
       }

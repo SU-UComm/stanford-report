@@ -1,36 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { cnb } from "cnbuilder";
+import { FAIcon } from "../../packages/icons/FAIcon";
 
-// import specific templates for the component
-import BurgerBar from "../../packages/SVG-library/BurgerBar";
-import Close from "../../packages/SVG-library/Close";
-import LinkItem from "./Components/LinkItem";
+// import custom hooks
+import useKeypress from "../../packages/utils/useKeypress";
+import useOnClickOutside from "../../packages/utils/useOnClickOutside";
+
+// import sub-components
+import NavButton from "./Components/NavButton";
+import NavContent from "./Components/NavContent";
 
 /**
- * Base component
+ * Sidebar Navigation component
  *
- * @param {string} title The component title
- * ... any other options needed
- * @returns {JSX.Element}
+ * @param {string} asset_url URL of the parent page asset
+ * @param {string} asset_short_name Short name (title) of the parent page asset
+ * @param {boolean} active Indicates if the nav item is the current page
+ * @param {array} menu An array of nested pages
+ *
+ * @returns {SidebarNavigation}
  * @constructor
  */
 
-export default function sidebarNavigation({
-  asset_assetid,
-  asset_short_name,
+export default function SidebarNavigation({
   asset_url,
+  asset_short_name,
   active,
   menu,
 }) {
   const [navOpen, setNavOpen] = useState(false);
-  const [showMobileButton, setShowMobileButton] = useState(false);
 
   useEffect(() => {
     if (window.innerWidth > 991) {
-      setShowMobileButton(false);
       setNavOpen(true);
     } else if (window.innerWidth < 991) {
-      setShowMobileButton(true);
       setNavOpen(false);
     }
   }, []);
@@ -38,10 +41,8 @@ export default function sidebarNavigation({
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 991) {
-        setShowMobileButton(false);
         setNavOpen(true);
       } else if (window.innerWidth < 991) {
-        setShowMobileButton(true);
         setNavOpen(false);
       }
     };
@@ -53,82 +54,71 @@ export default function sidebarNavigation({
     };
   }, []);
 
+  useKeypress("Escape", () => {
+    if (setNavOpen) {
+      setNavOpen(false);
+    }
+  });
+
+  const ref = useRef(null);
+  useOnClickOutside(ref, () => {
+    setNavOpen(false);
+  });
+
   return (
     <>
-      {showMobileButton && (
-        <button
-          data-role="sidebar-navigation-toggle"
-          aria-controls="sidebar-navigation"
-          aria-label="sidebar-navigation"
-          aria-expanded={!!navOpen}
-          type="button"
+      <div ref={ref} className="lg:su-hidden">
+        <NavButton
+          ariaControls="sidebar-navigation"
+          ariaLabel="Toggle visibility of section menu"
+          ariaExpanded={!!navOpen}
           onClick={() => setNavOpen(!navOpen)}
           className={cnb(
-            "lg:su-hidden su-flex su-items-center su-w-full su-h-[5.6rem] su-p-10 su-text-left su-font-semibold su-border-2 su-border-digital-red su-text-digital-red dark:su-border-dark-mode-red dark:su-text-dark-mode-red",
+            "lg:su-hidden su-transition-all su-flex su-items-center su-w-full su-h-[5.6rem] su-p-15 su-text-left su-font-semibold su-shadow-[inset_0_0_0_2px_rgba(177,4,14,1)] su-text-digital-red",
+            "hocus:su-shadow-[inset_0_0_0_3px_rgba(177,4,14,1)]",
+            "dark:su-shadow-[inset_0_0_0_2px_rgba(236,9,9,1)] dark:su-text-dark-mode-red",
+            "dark:hocus:su-shadow-[inset_0_0_0_3px_rgba(236,9,9,1)]",
             navOpen &&
               "su-bg-digital-red su-text-white dark:su-bg-dark-mode-red dark:aria-expanded:su-text-black-true"
           )}
-        >
-          <span className="su-flex-auto">
-            {navOpen ? "Close" : "Section menu"}
-          </span>
-          {navOpen ? <Close /> : <BurgerBar />}
-        </button>
-      )}
-      {navOpen && (
-        <nav className="" data-role="sidebar-navigation-wrapper">
-          <ul className="su-list-none su-p-0">
-            <li className="su-m-0">
-              <LinkItem
-                level="one"
-                url={asset_url}
-                shortName={asset_short_name}
-                active={active}
+          buttonText={navOpen ? "Close" : "Section menu"}
+          icon={
+            navOpen ? (
+              <FAIcon
+                icon="xmark"
+                set="solid"
+                // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+                width={24}
+                className="su-text-[3rem]"
               />
-            </li>
-            {menu && menu.length ? (
-              <>
-                {menu.map(
-                  (item) =>
-                    item && (
-                      <li key={item.asset_assetid} className="su-m-0">
-                        <LinkItem
-                          level="one"
-                          url={item.asset_url}
-                          shortName={item.asset_short_name}
-                          active={item.active}
-                        />
-                        {item.asset_children &&
-                          item.asset_children !== null && (
-                            <ul className="su-list-none su-p-0">
-                              {item.asset_children.map(
-                                (subitem) =>
-                                  item && (
-                                    <li
-                                      key={subitem.asset_assetid}
-                                      className="su-m-0"
-                                    >
-                                      <LinkItem
-                                        level="two"
-                                        url={subitem.asset_url}
-                                        shortName={subitem.asset_short_name}
-                                        active={subitem.active}
-                                      />
-                                    </li>
-                                  )
-                              )}
-                            </ul>
-                          )}
-                      </li>
-                    )
-                )}
-              </>
             ) : (
-              ""
-            )}
-          </ul>
-        </nav>
-      )}
+              <FAIcon
+                icon="bars"
+                set="solid"
+                // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+                width={24}
+                className="su-text-[3rem]"
+              />
+            )
+          }
+        />
+        {navOpen && (
+          <NavContent
+            asset_url={asset_url}
+            asset_short_name={asset_short_name}
+            active={active}
+            menu={menu}
+          />
+        )}
+      </div>
+      <div className="su-hidden lg:su-block">
+        <NavContent
+          asset_url={asset_url}
+          asset_short_name={asset_short_name}
+          active={active}
+          menu={menu}
+        />
+      </div>
     </>
   );
 }
