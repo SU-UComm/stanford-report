@@ -19,6 +19,7 @@ export default function sidebarNavigation({
   asset_assetid,
   asset_short_name,
   asset_url,
+  active,
   menu,
 }) {
   const [navOpen, setNavOpen] = useState(false);
@@ -81,6 +82,7 @@ export default function sidebarNavigation({
                 level="one"
                 url={asset_url}
                 shortName={asset_short_name}
+                active={active}
               />
             </li>
             {menu && menu.length ? (
@@ -93,6 +95,7 @@ export default function sidebarNavigation({
                           level="one"
                           url={item.asset_url}
                           shortName={item.asset_short_name}
+                          active={item.active}
                         />
                         {item.asset_children &&
                           item.asset_children !== null && (
@@ -108,6 +111,7 @@ export default function sidebarNavigation({
                                         level="two"
                                         url={subitem.asset_url}
                                         shortName={subitem.asset_short_name}
+                                        active={subitem.active}
                                       />
                                     </li>
                                   )
