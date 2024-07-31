@@ -58,14 +58,15 @@ export default function sidebarNavigation({
       {showMobileButton && (
         <button
           data-role="sidebar-navigation-toggle"
-          data-active="false"
           aria-controls="sidebar-navigation"
           aria-label="sidebar-navigation"
+          aria-expanded={!!navOpen}
           type="button"
           onClick={() => setNavOpen(!navOpen)}
           className={cnb(
-            "lg:su-hidden su-flex su-items-center su-w-full su-h-[5.6rem] su-p-10 su-text-left su-font-semibold su-border-digital-red su-text-digital-red su-border-2",
-            navOpen && "su-bg-digital-red su-text-white"
+            "lg:su-hidden su-flex su-items-center su-w-full su-h-[5.6rem] su-p-10 su-text-left su-font-semibold su-border-2 su-border-digital-red su-text-digital-red dark:su-border-dark-mode-red dark:su-text-dark-mode-red",
+            navOpen &&
+              "su-bg-digital-red su-text-white dark:su-bg-dark-mode-red dark:aria-expanded:su-text-black-true"
           )}
         >
           <span className="su-flex-auto">
