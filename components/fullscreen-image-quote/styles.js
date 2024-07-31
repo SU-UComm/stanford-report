@@ -9,7 +9,13 @@ export const quoteVAligns = {
 
 export const quoteHAligns = {
   left: "su-ml-0 su-mr-auto lg:su-pr-0",
-  right: "su-mr-0 su-ml-auto lg:su-pl-0",
+  right: "su-ml-0 su-mr-auto lg:su-mr-0 lg:su-ml-auto lg:su-pl-0",
+};
+
+export const imageVPositions = {
+  top: "su-object-top",
+  center: "su-object-center",
+  bottom: "su-object-bottom",
 };
 
 export const root = (removeTopSpacing) =>
@@ -26,30 +32,32 @@ export const contentWrapper = (quoteVAlign) =>
 
 export const blockquote = (quoteHAlign) =>
   cnb(
-    "su-py-17 sm:su-py-[6.8rem] xl:su-py-140 su-cc ",
+    "su-py-17 sm:su-py-[6.8rem] xl:su-py-140 su-cc",
     quoteHAligns[quoteHAlign]
   );
 export const quote =
-  "su-font-serif su-text-24 md:su-text-[3.3rem] lg:su-text-24 xl:su-text-[2.8rem] 2xl:su-text-[3.3rem] su-leading-display su-max-w-[55rem] xl:su-max-w-600 su-mb-0 su-whitespace-pre-line";
+  "su-font-serif su-text-22 md:su-text-[3.3rem] lg:su-text-24 xl:su-text-[2.8rem] 2xl:su-text-[3.3rem] su-leading-display su-max-w-[55rem] xl:su-max-w-600 su-mb-0 su-whitespace-pre-line";
 
 export const cta = "su-rs-mt-1";
 export const ctaPreText =
-  "su-inline su-text-[2.6rem] md:su-text-[2.9rem] su-font-bold su-leading-display su-mr-02em";
+  "su-inline su-text-22 md:su-text-[2.9rem] lg:su-text-24 2xl:su-text-[2.9rem] su-font-bold su-leading-display su-mr-02em";
 export const ctaLink =
-  "su-group su-inline su-text-[2.6rem] md:su-text-[2.9rem] su-font-bold su-leading-display su-text-white dark:su-text-white su-underline su-decoration-dark-mode-red su-underline-offset-4 su-decoration-[3px] hocus:su-decoration-white hocus:su-text-white dark:hocus:su-text-white su-transition-all";
+  "su-group su-inline su-text-22 md:su-text-[2.9rem] lg:su-text-24 2xl:su-text-[2.9rem] su-font-bold su-leading-display su-text-white dark:su-text-white su-underline su-decoration-dark-mode-red su-underline-offset-4 su-decoration-[3px] hocus:su-decoration-white hocus:su-text-white dark:hocus:su-text-white su-transition-all";
 export const ctaIconWrapper = "su-whitespace-nowrap";
 export const ctaIcon = (isRealExternalLink) =>
   cnb(
-    "su-ml-04em su-text-19 md:su-text-22 su-transition-transform su-text-dark-mode-red group-hocus:su-translate-x-02em group-hocus:su-text-white",
-    isRealExternalLink &&
-      "su-rotate-45 group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em"
+    "su-ml-04em su-text-[0.75em] su-transition-transform su-text-dark-mode-red group-hocus:su-text-white",
+    isRealExternalLink
+      ? "su-rotate-45 group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em"
+      : "group-hocus:su-translate-x-02em"
   );
 export const ctaSubtext = "su-card-paragraph su-leading-display su-mt-9";
 
-export const image = (hasMobileImage) =>
+export const image = (hasMobileImage, imageVPosition) =>
   cnb(
     "su-object-cover su-w-full su-h-full su-p-20",
-    hasMobileImage && "su-hidden lg:su-block"
+    hasMobileImage && "su-hidden lg:su-block",
+    imageVPositions[imageVPosition]
   );
 export const mobileImage =
   "su-object-cover su-w-full su-h-full su-p-20 lg:su-hidden";

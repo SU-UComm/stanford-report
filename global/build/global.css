@@ -2931,7 +2931,9 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-object-scale-down{object-fit:scale-down}
 .su-object-\[left_center\]{object-position:left center}
 .su-object-\[right_center\]{object-position:right center}
+.su-object-bottom{object-position:bottom}
 .su-object-center{object-position:center}
+.su-object-top{object-position:top}
 .su-p-0{padding:0}
 .su-p-10{padding:1rem}
 .su-p-12{padding:1.2rem}
@@ -3058,6 +3060,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-font-sans{font-family:"Source Sans 3", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif}
 .su-font-serif{font-family:"Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif}
 .\!su-text-23{font-size:2.3rem !important}
+.su-text-09em{font-size:0.9em}
 .su-text-12{font-size:1.2rem}
 .su-text-14{font-size:1.4rem}
 .su-text-15{font-size:1.5rem}
@@ -3073,6 +3076,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-text-25{font-size:2.5rem}
 .su-text-26{font-size:2.6rem}
 .su-text-28{font-size:2.8rem}
+.su-text-\[0\.75em\]{font-size:0.75em}
 .su-text-\[0\.8em\]{font-size:0.8em}
 .su-text-\[0\.9em\]{font-size:0.9em}
 .su-text-\[1\.433rem\]{font-size:1.433rem}
@@ -3082,7 +3086,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-text-\[14px\]{font-size:14px}
 .su-text-\[2\.0rem\]{font-size:2.0rem}
 .su-text-\[2\.4rem\]{font-size:2.4rem}
-.su-text-\[2\.6rem\]{font-size:2.6rem}
 .su-text-\[3\.5rem\]{font-size:3.5rem}
 .su-text-\[33px\]{font-size:33px}
 .su-text-\[35px\]{font-size:35px}
@@ -4792,6 +4795,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\32xl\:su-mt-171{margin-top:17.1rem}
 .\32xl\:su-flex-row{flex-direction:row}
 .\32xl\:su-px-\[6\.6rem\]{padding-left:6.6rem;padding-right:6.6rem}
+.\32xl\:su-text-\[2\.9rem\]{font-size:2.9rem}
 .\32xl\:su-text-\[3\.3rem\]{font-size:3.3rem}}
 .\[\&\>\*\:last-child\]\:su-mb-0>*:last-child{margin-bottom:0}
 .\[\&\>\*\:last-child\]\:after\:su-content-\[\'\\u201D\'\]>*:last-child::after{--tw-content:'\u201D';content:var(--tw-content)}

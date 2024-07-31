@@ -23,6 +23,9 @@ import * as styles from "./styles";
  * @param {object} imageData
  * The data of the background image
  *
+ * @param {string} imageVPosition
+ * The crop position (object-position) of the image: "top" | "center" | "bottom"
+ *
  * @param {object} mobileImageData
  * The data of the background image for mobile
  *
@@ -42,6 +45,7 @@ export default function FullscreenImageQuote({
   quoteVAlign,
   removeTopSpacing,
   imageData,
+  imageVPosition,
   mobileImageData,
   internalLinkUrl,
   ctaDetails,
@@ -98,7 +102,7 @@ export default function FullscreenImageQuote({
       <img
         src={imageData?.url}
         alt={imageData?.attributes?.alt || ""}
-        className={styles.image(!!mobileImageData?.url)}
+        className={styles.image(!!mobileImageData?.url, imageVPosition)}
       />
       <div aria-hidden className={styles.overlay(quoteHAlign)} />
     </Container>

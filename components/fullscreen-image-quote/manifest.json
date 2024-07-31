@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "fullscreen-image-quote",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "namespace": "stanford-components",
   "description": "This component displays a fullwidth image with a quote and CTA.",
   "displayName": "Fullscreen Image Quote",
@@ -21,12 +21,25 @@
         "type": "object",
         "properties": {
           "image": {
-            "title": "Background image",
+            "title": "Background image (landscape orientation)",
+            "description": "The preferred aspect ratio for the image is 3x2. On the largest screens (> 1500px), the image will be cropped to a 2x1 aspect ratio.",
             "type": "string",
             "format": "matrix-asset-uri"
           },
+          "imageVPosition": {
+            "title": "Vertical position of the background image",
+            "description": "This setting will only be used if the above image aspect ratio is taller than its container. It will determine which portion of the image is shown if the image is cropped on some screen sizes.",
+            "type": "string",
+            "default": "center",
+            "enum": [
+              "top",
+              "center",
+              "bottom"
+            ]
+          },
           "mobileImage": {
-            "title": "Mobile background image",
+            "title": "Mobile background image (portrait orientation)",
+            "description": "if provided, this image will be shown for phones and tablets. The preferred aspect ratio is 3x4. On mobile phones, it will be cropped to a 2x1 aspect ratio and the middle part of the image will be shown.",
             "type": "string",
             "format": "matrix-asset-uri"
           },
