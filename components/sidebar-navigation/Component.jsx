@@ -26,10 +26,10 @@ export default function sidebarNavigation({
   const [showMobileButton, setShowMobileButton] = useState(false);
 
   useEffect(() => {
-    if (window.innerWidth > 767) {
+    if (window.innerWidth > 991) {
       setShowMobileButton(false);
       setNavOpen(true);
-    } else if (window.innerWidth < 767) {
+    } else if (window.innerWidth < 991) {
       setShowMobileButton(true);
       setNavOpen(false);
     }
@@ -37,10 +37,10 @@ export default function sidebarNavigation({
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 767) {
+      if (window.innerWidth > 991) {
         setShowMobileButton(false);
         setNavOpen(true);
-      } else if (window.innerWidth < 767) {
+      } else if (window.innerWidth < 991) {
         setShowMobileButton(true);
         setNavOpen(false);
       }
@@ -64,7 +64,7 @@ export default function sidebarNavigation({
           type="button"
           onClick={() => setNavOpen(!navOpen)}
           className={cnb(
-            "md:su-hidden su-flex su-items-center su-w-full su-h-[5.6rem] su-p-10 su-text-left su-font-semibold su-border-digital-red su-text-digital-red su-border-2",
+            "lg:su-hidden su-flex su-items-center su-w-full su-h-[5.6rem] su-p-10 su-text-left su-font-semibold su-border-digital-red su-text-digital-red su-border-2",
             navOpen && "su-bg-digital-red su-text-white"
           )}
         >

@@ -640,7 +640,8 @@ audio::-webkit-media-controls-panel {
   @apply su-mb-0 !important;
 }
 
-.su-page--top-margin:not(.su-page-story-featured) .su-upper-content {
+.su-page--top-margin:not(.su-page-story-featured, .su-page-has-sidebar--left)
+  .su-upper-content {
   @apply su-rs-pt-7;
 }
 
@@ -673,16 +674,8 @@ audio::-webkit-media-controls-panel {
   @apply su-max-w-[1312px] su-mx-auto su-flex su-flex-wrap lg:su-flex-nowrap su-justify-between lg:su-gap-50;
 }
 
-.su-page-has-sidebar.su-page-has-sidebar--left .su-sidebar-content-wrap {
-  @apply su-max-w-[1312px] su-mx-auto su-flex su-flex-wrap su-flex-row-reverse lg:su-flex-nowrap su-justify-between lg:su-gap-50;
-}
-
 .su-page-has-sidebar .su-page-content {
   @apply su-w-[calc(100%-40px)] su-mx-20 md:su-mx-50 md:su-w-[calc(100%-100px)] lg:su-mx-0 md:su-px-[7.65%] lg:su-ml-[16.66%] lg:su-w-1/2 lg:su-grow lg:su-px-0;
-}
-
-.su-page-has-sidebar.su-page-has-sidebar--left .su-page-content {
-  @apply su-w-[calc(100%-40px)] su-mx-20 md:su-mx-50 md:su-w-[calc(100%-100px)] lg:su-mx-0 md:su-px-[7.65%] lg:su-mr-[16.66%] lg:su-w-1/2 lg:su-grow lg:su-px-0;
 }
 
 .su-page-has-sidebar .su-page-content > *:first-child {
@@ -699,10 +692,6 @@ audio::-webkit-media-controls-panel {
 
 .su-page-has-sidebar .su-page-sidebar {
   @apply su-flex su-flex-col md:su-flex-row lg:su-flex-col su-justify-between su-gap-32 md:su-gap-[8.4rem] lg:su-gap-95 lg:su-max-h-[230rem] su-mx-20 md:su-mx-50 lg:su-mx-0 md:su-px-[7.65%] lg:su-px-0 lg:su-ml-auto lg:su-w-1/4 lg:su-mr-[8.33%] su-w-full lg:su-max-w-[29.8rem] su-mt-38 md:su-mt-110 lg:su-mt-0 su-mb-[10rem] md:su-mb-[16.2rem] lg:su-mb-95;
-}
-
-.su-page-has-sidebar.su-page-has-sidebar--left .su-page-sidebar--left {
-  @apply su-flex su-flex-col md:su-flex-row lg:su-flex-col su-justify-between su-gap-32 md:su-gap-[8.4rem] lg:su-gap-95 lg:su-max-h-[230rem] su-mx-20 md:su-mx-50 lg:su-mx-0 md:su-px-[7.65%] lg:su-px-0 lg:su-mr-auto lg:su-w-1/4 lg:su-ml-[8.33%] su-w-full lg:su-max-w-[29.8rem] su-mt-38 md:su-mt-110 lg:su-mt-0 su-mb-[10rem] md:su-mb-[16.2rem] lg:su-mb-95;
 }
 
 .su-page-story-featured .su-upper-content,
@@ -1207,6 +1196,55 @@ Subscribe to Stanford Report Marketo form styles
 /**
  * Campaign page global styles
  */
-.su-page-campaign, .su-page-campaign body {
+.su-page-campaign,
+.su-page-campaign body {
   @apply su-bg-campaign-fog;
+}
+
+/* Grid setup for page with left sidebar. Need to refactor all page layouts similar to this. */
+/* Grid areas: u = upper-content, a = aside(sidebar), c = page-content  */
+.su-page.su-page-has-sidebar--left .su-page-wrap {
+  @apply su-cc su-grid su-grid-cols-6 su-grid-gap su-gap-y-0 md:su-grid-cols-12 su-rs-pt-7;
+  grid-template-areas:
+    "a a a a a a"
+    "u u u u u u"
+    "c c c c c c";
+}
+
+.su-page.su-page-has-sidebar--left .su-page-wrap .su-upper-content {
+  grid-area: u;
+}
+
+.su-page.su-page-has-sidebar--left .su-page-wrap .su-page-content {
+  @apply su-m-0 su-p-0 su-w-full;
+  grid-area: c;
+}
+
+.su-page.su-page-has-sidebar--left .su-page-wrap .su-page-sidebar--left {
+  grid-area: a;
+}
+
+@media screen and (min-width: 768px) {
+  .su-page.su-page-has-sidebar--left .su-page-wrap {
+    grid-template-areas:
+      "a a a a a a a a a a a a"
+      "u u u u u u u u u u u u"
+      "c c c c c c c c c c c c";
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .su-page.su-page-has-sidebar--left .su-page-wrap {
+    grid-template-areas:
+      "u u u u u u u u u u u u"
+      "a a a c c c c c c c c c";
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .su-page.su-page-has-sidebar--left .su-page-wrap {
+    grid-template-areas:
+      ". u u u u u u u u u u ."
+      ". a a a c c c c c c . .";
+  }
 }
