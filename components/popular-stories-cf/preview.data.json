@@ -2,8 +2,8 @@
   "storiesCount": 20,
   "APIrespCount": 30,
   "sourcePath": "/stories/%",
-  "assetExclusions": "",
-  "contentTypeExclusions": "28200",
+  "assetExclusions": "81645",
+  "contentTypeExclusions": "28201, 28216, 28210",
   "APIdateRange": "1 month",
   "publishedDateMax": "Past 2 years"
 }

@@ -88,7 +88,12 @@ export default async (args, info) => {
     contentTypeExclusions && contentTypeExclusions.length > 0
       ? contentTypeExclusions
           .split(",")
-          .map((num) => `taxonomyContentTypeId:${num}`)
+          .map(
+            (num) =>
+              `${
+                num.trim() !== "" ? `taxonomyContentTypeId:${num.trim()}` : ""
+              }`
+          )
           .join(" ")
       : "";
 
@@ -100,7 +105,7 @@ export default async (args, info) => {
     assetExclusions && assetExclusions.length > 0
       ? assetExclusions
           .split(",")
-          .map((num) => `id:${num}`)
+          .map((num) => `${num.trim() !== "" ? `id:${num.trim()}` : ""}`)
           .join(" ")
       : "";
 
@@ -119,7 +124,7 @@ export default async (args, info) => {
                       requestSource: "eyeball"
                       edgeResponseStatus_lt: 300
                       AND: [
-                          { clientRequestPath_like: "${sourcePath}" }
+                          { clientRequestPath_like: "${sourcePath.trim()}" }
                           { clientRequestPath_notlike: "%/_admin%" }
                       ]
                   }
