@@ -93,16 +93,12 @@ export default function StoryLead({ content, variant }) {
 
     if (variant === "Featured Story") {
       const truncatedFirstWord = firstWord.trim().substring(1);
-      formattedContent =
+      formattedContent = formattedContent.replace(
+        firstWord,
         truncatedFirstWord.length > 0
-          ? content.replace(
-              firstWord,
-              `<span aria-hidden="true">${truncatedFirstWord}</span><span class="sr-only">${firstWord}</span>`
-            )
-          : content.replace(
-              firstWord,
-              `<span class="sr-only">${firstWord}</span>`
-            );
+          ? `<span aria-hidden="true">${truncatedFirstWord}</span><span class="sr-only">${firstWord}</span>`
+          : `<span class="sr-only">${firstWord}</span>`
+      );
     }
   }
 
