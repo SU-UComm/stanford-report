@@ -95,11 +95,11 @@ export default function StoryLead({ content, variant }) {
       const truncatedFirstWord = firstWord.trim().substring(1);
       formattedContent =
         truncatedFirstWord.length > 0
-          ? formattedContent.replace(
+          ? content.replace(
               firstWord,
               `<span aria-hidden="true">${truncatedFirstWord}</span><span class="sr-only">${firstWord}</span>`
             )
-          : formattedContent.replace(
+          : content.replace(
               firstWord,
               `<span class="sr-only">${firstWord}</span>`
             );
