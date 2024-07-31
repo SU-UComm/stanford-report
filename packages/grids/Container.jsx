@@ -51,6 +51,7 @@ export function Container({
   width = "large",
   paddingX = true,
   paddingY = "none",
+  className,
 }) {
   const hasChildren = children !== undefined;
 
@@ -60,7 +61,8 @@ export function Container({
         "su-mx-auto su-component-container",
         widthClasses[width?.toLowerCase()],
         paddingX ? "su-container-px" : "",
-        paddingYClasses[paddingY]
+        paddingYClasses[paddingY],
+        className
       )}
     >
       {children}
