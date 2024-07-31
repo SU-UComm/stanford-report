@@ -4,6 +4,6 @@
   "sourcePath": "/stories/%",
   "assetExclusions": "",
   "contentTypeExclusions": "28200",
-  "APIdateRange": "2 weeks",
+  "APIdateRange": "1 month",
   "publishedDateMax": "Past 2 years"
 }

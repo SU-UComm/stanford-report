@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 import renderComponent from "../../packages/utils/render-component";
 import Component from "./Component";
 import FetchAdapter from "../../packages/utils/fetchAdapter";
@@ -10,14 +9,7 @@ function getDateRange(range) {
     date.setDate(date.getDate() - range);
   }
 
-  // const year = date.getFullYear();
-  // const month =
-  //   date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth();
-  // const day = date.getDate();
-
   return date.toISOString();
-
-  // return `${year}-${month}-${day}`;
 }
 
 function formatDate(date) {
@@ -47,19 +39,35 @@ function getAPIDateRange(date) {
     "1 week": 7,
     "2 weeks": 14,
     "1 month": 30,
-    "6 months": 180,
-    "1 year": 365,
   };
   return dateRangeMap[date];
 }
 
-function getMaxPublishedRange(date) {
+function getMaxPublishedDate(lengthOfTime) {
   const dateRangeMap = {
-    "Past 6 months": 0.5,
-    "Past 1 year": 1,
-    "Past 2 years": 2,
+    "Past 6 months": {
+      days: 0,
+      months: -6,
+      years: 0,
+    },
+    "Past 1 year": {
+      days: 0,
+      months: 0,
+      years: -1,
+    },
+    "Past 2 years": {
+      days: 0,
+      months: 0,
+      years: -2,
+    },
   };
-  return dateRangeMap[date];
+
+  // Subtract the max published date from today
+  const date = new Date();
+  date.setDate(date.getDate() + dateRangeMap[lengthOfTime].days);
+  date.setMonth(date.getMonth() + dateRangeMap[lengthOfTime].months);
+  date.setFullYear(date.getFullYear() + dateRangeMap[lengthOfTime].years);
+  return date;
 }
 
 export default async (args, info) => {
@@ -95,19 +103,9 @@ export default async (args, info) => {
           .map((num) => `id:${num}`)
           .join(" ")
       : "";
-  const publishedDateRangeNumeric = getMaxPublishedRange(publishedDateMax);
 
-  // Today's date
-  const today = new Date();
-  const todayFormatted = formatDate(today);
-  // Date from input
-  const rangeDate = new Date();
-  rangeDate.setFullYear(today.getFullYear() - publishedDateRangeNumeric);
-  const dateRange = formatDate(rangeDate);
-
-  const dateRangeQuery = `&f.Date%7Cd=d>${dateRange}<${todayFormatted}`;
-
-  // 2024-05-01T00:00:00.000Z
+  const dateRange = formatDate(getMaxPublishedDate(publishedDateMax));
+  const dateRangeQuery = `meta_d1=${dateRange}`;
 
   const payload = {
     query: `query Viewer {

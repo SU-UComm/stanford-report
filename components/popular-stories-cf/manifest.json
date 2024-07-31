@@ -82,7 +82,7 @@
             "description": "Input for Cloudflare to source the most popular stories over the selected duration",
             "type": "string",
             "default": "1 week",
-            "enum": ["1 week", "2 weeks", "1 month", "6 months", "1 year"]
+            "enum": ["1 week", "2 weeks", "1 month"]
           },
           "publishedDateMax": {
             "title": "Published Date Maximum Range",

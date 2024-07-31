@@ -21,7 +21,7 @@ export default async function popularStoriesFetcher(
     storiesCount + 15
   }&query=[${assets.join(
     " "
-  )}]&query_not=[${exclusionContentTypes} ${exclusionIDs}]${dateRangeQuery}`;
+  )}]&${dateRangeQuery}&query_not=[${exclusionContentTypes} ${exclusionIDs}]`;
   const data = await adapter.fetch();
 
   return data?.response?.resultPacket?.results.slice(0, storiesCount);
