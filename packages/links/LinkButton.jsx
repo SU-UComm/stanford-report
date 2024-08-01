@@ -56,7 +56,7 @@ export function LinkButton({
   if (ctaType === "email") {
     icon = "envelope";
   } else if (ctaType === "download") {
-    icon = "download";
+    icon = "arrow-down-to-line";
   } else if (isRealExternalLink) {
     icon = "arrow-up";
   }
@@ -84,17 +84,16 @@ export function LinkButton({
         ctaType === "download") && (
         <FAIcon
           icon={icon}
-          set={ctaType === "email" ? "regular" : "solid"}
+          set="regular"
           title={
             isRealExternalLink && ctaType !== "download" ? "External link" : ""
           }
           className={cnb(
-            "su-inline-block su-shrink-0 su-text-white group-hocus:su-text-white  su-ml-06em su-transition-transform",
+            "su-inline-block su-shrink-0 su-text-white group-hocus:su-text-white su-text-[0.9em] su-ml-06em su-transition-transform",
             variant === "gradient" &&
               "dark:su-text-black-true dark:group-hocus:su-text-white su-duration-100",
-            icon === "arrow-up"
-              ? "su-text-[0.9em] su-rotate-45 group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em"
-              : "su-text-[0.8em]",
+            icon === "arrow-up" &&
+              "su-rotate-45 group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em",
             ctaType === "email" && "group-hocus:su-translate-x-02em",
             ctaType === "download" && "group-hocus:su-translate-y-02em"
           )}

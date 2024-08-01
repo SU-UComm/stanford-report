@@ -27,18 +27,17 @@
             "default": "Eyebrow"
           },
           "title": {
-            "title": "Title",
-            "description": "The Title",
+            "title": "Heading",
             "type": "string",
             "default": "Title Lorem ipsum dolor"
           },
           "description": {
             "title": "Description",
-            "description": "This is the description",
+            "description": "Body content/description",
             "type": "FormattedText"
           },
           "image": {
-            "title": "Image",
+            "title": "Optional image",
             "type": "string",
             "format": "matrix-asset-uri"
           },
