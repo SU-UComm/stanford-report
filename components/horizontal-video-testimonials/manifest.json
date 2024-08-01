@@ -1,0 +1,95 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "horizontal-video-testimonials",
+  "version": "0.0.1",
+  "namespace": "stanford-components",
+  "description": "A section with a listing of horizontal video cards, with a section title and link to watch more.",
+  "displayName": "Horizontal Video Testimonials",
+  "mainFunction": "main",
+  "icon": {
+    "id": "video_chat",
+    "color": {
+      "type": "enum",
+      "value": "blue"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {
+          "headingConfiguration": {
+            "title": "Section Heading Configuration",
+            "description": "The heading for the section, appearing above the grid of cards. If the title is empty, the heading and call to action link will be hidden.",
+            "type": "object",
+            "required": [],
+            "properties": {
+              "title": {
+                "title": "Heading",
+                "type": "string",
+                "default": "Meet more students"
+              },
+              "ctaText": {
+                "title": "Heading CTA link text",
+                "type": "string",
+                "default": "Watch all"
+              },
+              "ctaUrl": {
+                "title": "Matrix Asset Link",
+                "type": "string",
+                "description": "Select an asset to link to. If this field is filled out, it will be used instead of the manual link",
+                "format": "matrix-asset-uri"
+              },
+              "ctaManualUrl": {
+                "title": "External/Manual Link",
+                "type": "string",
+                "description": "Enter the full URL, including https://",
+                "default": "https://news.stanford.edu/video"
+              }
+            }
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/campaign.html"
+          }
+        }
+      }
+    }
+  }
+}
