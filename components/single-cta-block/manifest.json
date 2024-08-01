@@ -7,10 +7,10 @@
   "displayName": "Single CTA Block",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "arrow_circle_right",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "red"
     }
   },
   "functions": [
@@ -75,7 +75,7 @@
               "externalUrl": {
                 "title": "External (manual) link",
                 "type": "string",
-                "description": "Enter the full URL, including https://. A diagonal arrow icon will be automatically added after the button text if the URL does not contain news.stanford.edu."
+                "description": "Enter the full URL, including https://. A diagonal arrow icon will be automatically added after the button text if the URL does not contain news.stanford.edu and if the CTA type is link."
               },
               "email": {
                 "title": "Email address",
