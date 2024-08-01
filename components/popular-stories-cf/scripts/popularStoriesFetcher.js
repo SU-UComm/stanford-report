@@ -24,5 +24,5 @@ export default async function popularStoriesFetcher(
   )}]&${dateRangeQuery}&query_not=[${exclusionContentTypes} ${exclusionIDs}]`;
   const data = await adapter.fetch();
 
-  return data?.response?.resultPacket?.results.slice(0, storiesCount);
+  return data?.response?.resultPacket?.results;
 }

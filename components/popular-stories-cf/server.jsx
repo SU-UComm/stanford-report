@@ -184,7 +184,7 @@ export default async (args, info) => {
       });
     });
 
-    data = sortedData;
+    data = sortedData.slice(0, storiesCount);
   } else {
     data = [];
   }
