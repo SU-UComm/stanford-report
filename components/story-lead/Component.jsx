@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../../packages/grids/Container";
@@ -29,6 +30,15 @@ import {
   LetterY,
   LetterZ,
 } from "../../packages/SVG-library/SVG";
+
+function decodeHtml(html) {
+  if (typeof document !== "undefined") {
+    const txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+  }
+  return html; // Return the original string if not in a browser environment
+}
 
 /**
  * Renders out the Story Lead component
@@ -82,12 +92,14 @@ export default function StoryLead({ content, variant }) {
   letterSvgs.set("z", <LetterZ />);
 
   let formattedContent = content.replace(/’/g, "'");
+  formattedContent = decodeHtml(formattedContent);
   formattedContent = formattedContent.replace("&nbsp;", " ");
+  formattedContent = formattedContent.replace(" ", " ");
   let selectedSvg = null;
 
   if (hasContent) {
     const textContent = formattedContent.replace(/(<([^>]+)>)/gi, "");
-    const firstWord = textContent.replace(" ", " ").trim().split(" ")[0];
+    const firstWord = textContent.trim().split(" ")[0];
     const firstLetter = firstWord[0];
     selectedSvg = letterSvgs.get(firstLetter.toLowerCase());
 
@@ -101,6 +113,8 @@ export default function StoryLead({ content, variant }) {
       );
     }
   }
+  console.log("content: ", content);
+  console.log(decodeHtml(content));
 
   return hasContent ? (
     <Container width="narrow">
