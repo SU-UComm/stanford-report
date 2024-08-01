@@ -174,6 +174,17 @@ export default async (args, info) => {
         FB_JSON_URL,
       }
     );
+
+    const sortedData = [];
+
+    // Change the order that FB sent back to match the actual popular order
+    urls.forEach((url) => {
+      data.forEach((item) => {
+        if (item.liveUrl.includes(url)) sortedData.push(item);
+      });
+    });
+
+    data = sortedData;
   } else {
     data = [];
   }
