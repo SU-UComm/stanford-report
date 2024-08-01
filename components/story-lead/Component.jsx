@@ -30,15 +30,6 @@ import {
   LetterZ,
 } from "../../packages/SVG-library/SVG";
 
-function decodeHtml(str) {
-  if (typeof document !== "undefined") {
-    const txt = document.createElement("textarea");
-    txt.innerHTML = str;
-    return txt.textContent;
-  }
-  return str; // Return the original string if not in a browser environment
-}
-
 /**
  * Renders out the Story Lead component
  *
@@ -91,7 +82,6 @@ export default function StoryLead({ content, variant }) {
   letterSvgs.set("z", <LetterZ />);
 
   let formattedContent = content.replace(/’/g, "'");
-  // formattedContent = decodeHtml(formattedContent);
   formattedContent = formattedContent.replace("&nbsp;", " ");
   formattedContent = formattedContent.replace(/\s+/g, " ");
 
