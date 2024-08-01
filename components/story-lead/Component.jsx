@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../../packages/grids/Container";
@@ -94,21 +93,18 @@ export default function StoryLead({ content, variant }) {
   let formattedContent = content.replace(/’/g, "'");
   formattedContent = decodeHtml(formattedContent);
   formattedContent = formattedContent.replace("&nbsp;", " ");
-  // formattedContent = formattedContent.replace(/\s+/g, " ");
+  formattedContent = formattedContent.replace(/\s+/g, " ");
+
   let selectedSvg = null;
 
   if (hasContent) {
     const textContent = formattedContent.replace(/(<([^>]+)>)/gi, "");
-    console.log("textContent:", textContent);
     const firstWord = textContent.trim().split(" ")[0];
     const firstLetter = firstWord[0];
-    console.log("firstWord", firstWord);
-    console.log("firstLetter: |", firstLetter, "|");
     selectedSvg = letterSvgs.get(firstLetter.toLowerCase());
 
     if (variant === "Featured Story") {
       const truncatedFirstWord = firstWord.trim().substring(1);
-      console.log("truncatedFirstWord: |", truncatedFirstWord, "|");
       formattedContent =
         truncatedFirstWord.length > 0
           ? formattedContent.replace(
@@ -120,9 +116,7 @@ export default function StoryLead({ content, variant }) {
               `<span class="sr-only">${firstWord}</span>`
             );
     }
-    console.log("formattedContent", formattedContent);
   }
-  console.log("content: |", content, "|");
 
   return hasContent ? (
     <Container width="narrow">
