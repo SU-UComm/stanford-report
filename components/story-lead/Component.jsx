@@ -31,13 +31,14 @@ import {
   LetterZ,
 } from "../../packages/SVG-library/SVG";
 
-function decodeHtml(html) {
+function decodeHtml(str) {
   if (typeof document !== "undefined") {
     const txt = document.createElement("textarea");
-    txt.innerHTML = html;
-    return txt.value;
+    txt.innerHTML = str;
+    console.log("decodeHTML:", txt.textContent);
+    return txt.textContent;
   }
-  return html; // Return the original string if not in a browser environment
+  return str; // Return the original string if not in a browser environment
 }
 
 /**
@@ -94,27 +95,35 @@ export default function StoryLead({ content, variant }) {
   let formattedContent = content.replace(/’/g, "'");
   formattedContent = decodeHtml(formattedContent);
   formattedContent = formattedContent.replace("&nbsp;", " ");
-  formattedContent = formattedContent.replace(" ", " ");
+  formattedContent = formattedContent.replace(/\s+/g, " ");
   let selectedSvg = null;
 
   if (hasContent) {
     const textContent = formattedContent.replace(/(<([^>]+)>)/gi, "");
+    console.log("textContent:", textContent);
     const firstWord = textContent.trim().split(" ")[0];
     const firstLetter = firstWord[0];
+    console.log("firstWord", firstWord);
+    console.log("firstLetter: |", firstLetter, "|");
     selectedSvg = letterSvgs.get(firstLetter.toLowerCase());
 
     if (variant === "Featured Story") {
       const truncatedFirstWord = firstWord.trim().substring(1);
-      formattedContent = formattedContent.replace(
-        firstWord,
+      console.log("truncatedFirstWord: |", truncatedFirstWord, "|");
+      formattedContent =
         truncatedFirstWord.length > 0
-          ? `<span aria-hidden="true">${truncatedFirstWord}</span><span class="sr-only">${firstWord}</span>`
-          : `<span class="sr-only">${firstWord}</span>`
-      );
+          ? formattedContent.replace(
+              firstWord,
+              `<span aria-hidden="true">${truncatedFirstWord}</span><span class="sr-only">${firstWord}</span>`
+            )
+          : formattedContent.replace(
+              firstWord,
+              `<span class="sr-only">${firstWord}</span>`
+            );
     }
+    console.log("formattedContent", formattedContent);
   }
-  console.log("content: ", content);
-  console.log(decodeHtml(content));
+  console.log("content: |", content, "|");
 
   return hasContent ? (
     <Container width="narrow">
