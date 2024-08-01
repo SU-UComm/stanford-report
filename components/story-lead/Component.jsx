@@ -35,7 +35,6 @@ function decodeHtml(str) {
   if (typeof document !== "undefined") {
     const txt = document.createElement("textarea");
     txt.innerHTML = str;
-    console.log("decodeHTML:", txt.textContent);
     return txt.textContent;
   }
   return str; // Return the original string if not in a browser environment
@@ -95,7 +94,7 @@ export default function StoryLead({ content, variant }) {
   let formattedContent = content.replace(/’/g, "'");
   formattedContent = decodeHtml(formattedContent);
   formattedContent = formattedContent.replace("&nbsp;", " ");
-  formattedContent = formattedContent.replace(/\s+/g, " ");
+  // formattedContent = formattedContent.replace(/\s+/g, " ");
   let selectedSvg = null;
 
   if (hasContent) {
