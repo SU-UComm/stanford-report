@@ -87,7 +87,7 @@ export default function StoryLead({ content, variant }) {
 
   if (hasContent) {
     const textContent = formattedContent.replace(/(<([^>]+)>)/gi, "");
-    const firstWord = textContent.trim().split(" ")[0];
+    const firstWord = textContent.replace(" ", " ").trim().split(" ")[0];
     const firstLetter = firstWord[0];
     selectedSvg = letterSvgs.get(firstLetter.toLowerCase());
 
