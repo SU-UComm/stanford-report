@@ -1,0 +1,144 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "single-cta-block",
+  "version": "0.0.1",
+  "namespace": "stanford-components",
+  "description": "A block of text content with a CTA and optional image.",
+  "displayName": "Single CTA Block",
+  "mainFunction": "main",
+  "icon": {
+    "id": "arrow_circle_right",
+    "color": {
+      "type": "enum",
+      "value": "red"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {
+          "eyebrow": {
+            "title": "Eyebrow",
+            "description": "This is the superheading above the title.",
+            "type": "string",
+            "default": "Eyebrow"
+          },
+          "title": {
+            "title": "Heading",
+            "type": "string",
+            "default": "Title Lorem ipsum dolor"
+          },
+          "description": {
+            "title": "Description",
+            "description": "Body content/description",
+            "type": "FormattedText"
+          },
+          "image": {
+            "title": "Optional image",
+            "type": "string",
+            "format": "matrix-asset-uri"
+          },
+          "isCard": {
+            "title": "Render content inside a card?",
+            "description": "If true, the content will be wrapped in a card with padding and background color.",
+            "type": "boolean",
+            "default": false
+          },
+          "ctaConfiguration": {
+            "title": "CTA configuration",
+            "description": "Fields for the CTA at the bottom of the content.",
+            "required": [],
+            "properties": {
+              "ctaText": {
+                "title": "CTA text",
+                "type": "string"
+              },
+              "ctaType": {
+                "title": "CTA type",
+                "type": "string",
+                "default": "right",
+                "enum": [
+                  "download",
+                  "email",
+                  "link"
+                ]
+              },
+              "internalUrl": {
+                "title": "Internal link (Matrix asset link)",
+                "type": "string",
+                "description": "Select a page/asset for internal linking. If this field is filled out, it will be used instead of the external link field below.",
+                "format": "matrix-asset-uri"
+              },
+              "externalUrl": {
+                "title": "External (manual) link",
+                "type": "string",
+                "description": "Enter the full URL, including https://. A diagonal arrow icon will be automatically added after the button text if the URL does not contain news.stanford.edu and if the CTA type is link."
+              },
+              "email": {
+                "title": "Email address",
+                "type": "string",
+                "description": "If the CTA type is an email, enter the email address here."
+              },
+              "isNewWindow": {
+                "title": "Open link in a new window",
+                "type": "boolean",
+                "default": false
+              }
+            }
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/28192": {
+      "type": "file",
+      "path": "mocked-uris/28192.json"
+    },
+    "matrix-asset://api-identifier/128612": {
+      "type": "file",
+      "path": "mocked-uris/128612.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/campaign.html"
+          }
+        }
+      }
+    }
+  }
+}
