@@ -9,6 +9,8 @@ import { cnb } from "cnbuilder";
  * @param {string} width The width of the container
  * @param {string} paddingX Horizontal padding for the container
  * @param {string} paddingY Vertical padding for the container
+ * @param {string} marginTop Top margin for the container
+ * @param {string} marginBottom Bottom margin for the container
  * @returns {JSX.Element}
  * @constructor
  */
