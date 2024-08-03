@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "single-cta-block",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "A block of text content with a CTA and optional image.",
   "displayName": "Single CTA Block",
@@ -42,10 +42,50 @@
             "format": "matrix-asset-uri"
           },
           "isCard": {
-            "title": "Render content inside a card?",
+            "title": "Render content inside a card",
             "description": "If true, the content will be wrapped in a card with padding and background color.",
             "type": "boolean",
             "default": false
+          },
+          "marginTop": {
+            "title": "Spacing above (top margin)",
+            "description": "Add spacing above the component. 'Base' is the smallest with '10' (default) being the largest option. Selecting 'default' will use the default site-wide vertical spacing between components.",
+            "type": "string",
+            "default": "8",
+            "enum": [
+              "default",
+              "base",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10"
+            ]
+          },
+          "marginBottom": {
+            "title": "Spacing below (bottom margin)",
+            "description": "Add spacing below the component. 'Base' is the smallest with '10' (default) being the largest option. Selecting 'default' will use the default site-wide vertical spacing between components.",
+            "type": "string",
+            "default": "8",
+            "enum": [
+              "default",
+              "base",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10"
+            ]
           },
           "ctaConfiguration": {
             "title": "CTA configuration",
@@ -58,8 +98,9 @@
               },
               "ctaType": {
                 "title": "CTA type",
+                "description": "Select the type of CTA - link, download, or email. The appropriate icon will be added after the CTA text depending on your selection.",
                 "type": "string",
-                "default": "right",
+                "default": "link",
                 "enum": [
                   "download",
                   "email",

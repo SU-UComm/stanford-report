@@ -27,7 +27,7 @@ const widthClasses = {
 };
 
 /**
- * Padding options based on the Decanter responsive spacing system.
+ * Padding and margin options based on the Decanter responsive spacing system.
  * Base is the smallest step and 10 is the largest.
  * https://github.com/SU-SWS/decanter/blob/main/src/plugins/components/responsive-spacing/responsive-spacing.js
  */
@@ -46,11 +46,44 @@ const paddingYClasses = {
   10: "su-rs-py-10",
 };
 
+// The "default" option for margins means using the default margin between components defined in the _global.css
+const marginTopClasses = {
+  default: "",
+  base: "su-rs-mt-0",
+  1: "su-rs-mt-1",
+  2: "su-rs-mt-2",
+  3: "su-rs-mt-3",
+  4: "su-rs-mt-4",
+  5: "su-rs-mt-5",
+  6: "su-rs-mt-6",
+  7: "su-rs-mt-7",
+  8: "su-rs-mt-8",
+  9: "su-rs-mt-9",
+  10: "su-rs-mt-10",
+};
+
+const marginBottomClasses = {
+  default: "",
+  base: "su-rs-mb-0",
+  1: "su-rs-mb-1",
+  2: "su-rs-mb-2",
+  3: "su-rs-mb-3",
+  4: "su-rs-mb-4",
+  5: "su-rs-mb-5",
+  6: "su-rs-mb-6",
+  7: "su-rs-mb-7",
+  8: "su-rs-mb-8",
+  9: "su-rs-mb-9",
+  10: "su-rs-mb-10",
+};
+
 export function Container({
   children,
   width = "large",
   paddingX = true,
   paddingY = "none",
+  marginTop = "default",
+  marginBottom = "default",
 }) {
   const hasChildren = children !== undefined;
 
@@ -60,7 +93,9 @@ export function Container({
         "su-mx-auto su-component-container",
         widthClasses[width?.toLowerCase()],
         paddingX ? "su-container-px" : "",
-        paddingYClasses[paddingY]
+        paddingYClasses[paddingY],
+        marginTopClasses[marginTop],
+        marginBottomClasses[marginBottom]
       )}
     >
       {children}
