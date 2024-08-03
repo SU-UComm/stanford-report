@@ -1,6 +1,7 @@
 import React from "react";
 import { cnb } from "cnbuilder";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
+import { Container } from "../../packages/grids/Container";
 import { LinkButton } from "../../packages/links/LinkButton";
 
 /**
@@ -39,11 +40,18 @@ export default function SingleCtaBlock({
   ctaConfiguration,
   internalLinkUrl,
   isCard,
+  marginTop,
+  marginBottom,
 }) {
   const { ctaText, ctaType, externalUrl, email, isNewWindow } =
     ctaConfiguration;
   return (
-    <div className="su-cc">
+    <Container
+      width="cc"
+      marginTop={marginTop}
+      marginBottom={marginBottom}
+      paddingX={false}
+    >
       <div
         className={cnb(
           "su-flex su-flex-col-reverse xl:su-flex-row-reverse su-items-center su-justify-center su-gap-34 xl:su-gap-60 su-rounded-[8px] su-break-words su-text-black dark:su-text-white",
@@ -85,7 +93,10 @@ export default function SingleCtaBlock({
           )}
           <XssSafeContent
             data-test="single-text-block-content"
-            className="su-mx-auto su-text-center su-max-w-prose-wide su-type-1 *:su-leading-snug last:*:su-mb-0 dark:su-text-white"
+            className={cnb(
+              "su-mx-auto su-text-center su-max-w-prose-wide su-type-1 *:su-leading-snug last:*:su-mb-0 dark:su-text-white",
+              imageUrl && "xl:su-text-left"
+            )}
             content={description}
           />
           {ctaText && (
@@ -110,6 +121,6 @@ export default function SingleCtaBlock({
           />
         )}
       </div>
-    </div>
+    </Container>
   );
 }

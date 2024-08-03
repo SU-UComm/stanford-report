@@ -84,12 +84,13 @@ export function LinkButton({
         ctaType === "download") && (
         <FAIcon
           icon={icon}
+          width={size === "large" ? 30 : 20}
           set="regular"
           title={
             isRealExternalLink && ctaType !== "download" ? "External link" : ""
           }
           className={cnb(
-            "su-inline-block su-shrink-0 su-text-white group-hocus:su-text-white su-text-[0.9em] su-ml-06em su-transition-transform",
+            "fa-fw su-inline-block su-shrink-0 su-text-white group-hocus:su-text-white su-text-[0.9em] su-ml-04em su-transition-transform",
             variant === "gradient" &&
               "dark:su-text-black-true dark:group-hocus:su-text-white su-duration-100",
             icon === "arrow-up" &&
