@@ -81,7 +81,7 @@ export default function StoryLead({ content, variant }) {
   letterSvgs.set("y", <LetterY />);
   letterSvgs.set("z", <LetterZ />);
 
-  let formattedContent = content.replace(/’/g, "'");
+  let formattedContent = content ? content.replace(/’/g, "'") : "";
   formattedContent = formattedContent.replace("&nbsp;", " ");
   formattedContent = formattedContent.replace(/\s+/g, " ");
 
