@@ -31,14 +31,16 @@ export function ExternalLink({
     <a
       data-test={`size-${ctaSize}`}
       className={[
-        "su-component-external-link su-flex su-items-center su-flex-nowrap su-no-underline hover:su-underline",
+        "su-group su-component-external-link su-flex su-items-center su-flex-nowrap su-no-underline hover:su-underline",
         "su-text-digital-red hover:su-text-digital-red dark:su-text-dark-mode-red",
         ctaSizeClasses.get(ctaSize),
       ].join(" ")}
       href={liveUrl}
     >
       <span data-test="ctaText">{ctaText}</span>
-      <ExternalArrow />
+      <span className="group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform">
+        <ExternalArrow />
+      </span>
     </a>
   ) : (
     ""
