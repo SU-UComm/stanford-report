@@ -3,7 +3,7 @@ name: CI/CD runner
 on:
   push:
     branches:
-      - main
+      - master
       - develop
       - feature/github-actions
 

@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "leadership-hero",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "namespace": "stanford-components",
   "description": "Leadership hero and title area.",
   "displayName": "Leadership Messages Hero",
@@ -55,7 +55,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/frontend.html"
+            "path": "frontend.html"
           }
         }
       }
