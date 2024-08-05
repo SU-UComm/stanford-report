@@ -81,24 +81,27 @@ export default function StoryLead({ content, variant }) {
   letterSvgs.set("y", <LetterY />);
   letterSvgs.set("z", <LetterZ />);
 
-  let formattedContent = content;
+  let formattedContent = content.replace(/’/g, "'");
+  formattedContent = formattedContent.replace("&nbsp;", " ");
+  formattedContent = formattedContent.replace(/\s+/g, " ");
+
   let selectedSvg = null;
 
   if (hasContent) {
     const textContent = formattedContent.replace(/(<([^>]+)>)/gi, "");
-    const firstWord = textContent.split(" ")[0];
+    const firstWord = textContent.trim().split(" ")[0];
     const firstLetter = firstWord[0];
     selectedSvg = letterSvgs.get(firstLetter.toLowerCase());
 
     if (variant === "Featured Story") {
-      const truncatedFirstWord = firstWord.substring(1);
+      const truncatedFirstWord = firstWord.trim().substring(1);
       formattedContent =
         truncatedFirstWord.length > 0
-          ? content.replace(
+          ? formattedContent.replace(
               firstWord,
               `<span aria-hidden="true">${truncatedFirstWord}</span><span class="sr-only">${firstWord}</span>`
             )
-          : content.replace(
+          : formattedContent.replace(
               firstWord,
               `<span class="sr-only">${firstWord}</span>`
             );
