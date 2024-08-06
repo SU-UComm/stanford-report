@@ -30,6 +30,7 @@ import {
   ExternalArrow,
 } from "../SVG-library/SVG";
 import CardThumbnail from "./CardThumbnail";
+import { FAIcon } from "../icons/FAIcon";
 
 /**
  * This function will return the appropriate heading font
@@ -236,9 +237,14 @@ export default function VerticalCard({
               elementType="a"
             />
             {isRealExternalLink && (
-              <span className="su-inline-block *:su-inline-block *:su-size-1em su--ml-1em su-translate-x-1em group-hocus:su-translate-x-[1.1em] group-hocus:su--translate-y-01em su-transition-transform">
-                <ExternalArrow />
-              </span>
+              <FAIcon
+                icon="arrow-up-right"
+                set="regular"
+                // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+                width={cardSize === "featured" ? 20 : 15}
+                height="auto"
+                className="su-inline-block su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
+              />
             )}
           </h2>
         )}
@@ -253,9 +259,14 @@ export default function VerticalCard({
               elementType="a"
             />
             {isRealExternalLink && (
-              <span className="su-inline-block *:su-inline-block *:su-size-1em su--ml-1em su-translate-x-1em group-hocus:su-translate-x-[1.1em] group-hocus:su--translate-y-01em su-transition-transform">
-                <ExternalArrow />
-              </span>
+              <FAIcon
+                icon="arrow-up-right"
+                set="regular"
+                // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+                width={cardSize === "featured" ? 20 : 15}
+                height="auto"
+                className="su-inline-block su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
+              />
             )}
           </h3>
         )}
