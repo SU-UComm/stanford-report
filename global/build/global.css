@@ -3987,6 +3987,8 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\*\:last\:su-mb-0:last-child > *{margin-bottom:0}
 .last\:\*\:su-mb-0 > *:last-child{margin-bottom:0}
 .focus-within\:su-shadow-md:focus-within{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}
+.hover\:su--translate-y-01em:hover{--tw-translate-y:-0.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+.hover\:su-translate-x-01em:hover{--tw-translate-x:0.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .hover\:su-border-black-40:hover{--tw-border-opacity:1;border-color:rgb(171 171 169 / var(--tw-border-opacity))}
 .hover\:su-border-black-70:hover{--tw-border-opacity:1;border-color:rgb(109 108 105 / var(--tw-border-opacity))}
 .hover\:su-border-digital-red:hover{--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity))}
@@ -4346,6 +4348,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .md\:su-items-center{align-items:center}
 .md\:su-justify-start{justify-content:flex-start}
 .md\:su-justify-center{justify-content:center}
+.md\:su-gap-0{gap:0}
 .md\:su-gap-12{gap:1.2rem}
 .md\:su-gap-13{gap:1.3rem}
 .md\:su-gap-18{gap:1.8rem}
