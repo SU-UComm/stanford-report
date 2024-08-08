@@ -3,7 +3,7 @@
 
 A consistent approach to Componenet Services.
 
-The Stanford University Component Service uses Taiwind CSS and REACT and is incorporated into this package.
+The Stanford University Component Service uses Tailwind CSS and REACT and is incorporated into this package.
 
 
 ## System dependencies
@@ -12,22 +12,24 @@ https://docs.squiz.net/component-service/latest/getting-started/index.html#insta
 
 ## Getting started
 
-Clone this project
+1. Clone this project
 
 ```bash
   git clone git@gitlab.squiz.net:stanford/components.git
 ```
 
-Go to the project directory
+2. Add environment variables to your .env file. Please request them from developers on the team.
+
+3. Go to the project directory
 
 ```bash
   cd components
 ```
 
-Install dependencies
+4. Install dependencies
 
 ```bash
-  npm install
+  FONTAWESOME_PACKAGE_TOKEN=YOUR_FA_PACKAGE_TOKEN npm install
 ```
 
 ## Directory structure
