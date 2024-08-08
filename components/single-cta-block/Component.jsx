@@ -16,8 +16,8 @@ import { LinkButton } from "../../packages/links/LinkButton";
  * @param {string} description
  * The content of the block from the WYSIWYG
  *
- * @param {string} imageUrl
- * The URL of the optional image to display
+ * @param {object} imageData
+ * The data for the optional image
  *
  * @param {string} internalLinkUrl
  * The internal Matrix URL if it is entered
@@ -28,6 +28,12 @@ import { LinkButton } from "../../packages/links/LinkButton";
  * @param {boolean} isCard
  * Whether to render the content inside a card
  *
+ * @param {string} marginTop
+ * The top margin of the component
+ *
+ * @param {string} marginBottom
+ * The bottom margin of the component
+ *
  * @returns {JSX.Element}
  * @constructor
  */
@@ -36,7 +42,7 @@ export default function SingleCtaBlock({
   title,
   eyebrow,
   description,
-  imageUrl,
+  imageData,
   ctaConfiguration,
   internalLinkUrl,
   isCard,
@@ -95,7 +101,7 @@ export default function SingleCtaBlock({
             data-test="single-text-block-content"
             className={cnb(
               "su-mx-auto su-text-center su-max-w-prose-wide su-type-1 *:su-leading-snug last:*:su-mb-0 dark:su-text-white",
-              imageUrl && "xl:su-text-left"
+              imageData?.url && "xl:su-text-left"
             )}
             content={description}
           />
@@ -113,10 +119,10 @@ export default function SingleCtaBlock({
             />
           )}
         </div>
-        {imageUrl && (
+        {imageData?.url && (
           <img
-            src={imageUrl}
-            alt=""
+            src={imageData.url}
+            alt={imageData.attributes?.alt || ""}
             className="su-w-1/2 sm:su-w-1/3 xl:su-w-1/4 su-shrink-0"
           />
         )}
