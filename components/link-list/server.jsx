@@ -10,6 +10,9 @@ export default async (args) => {
   adapter.url = args.dataUrl;
   siteData = await adapter.fetch();
 
+  delete siteData.site;
+  delete siteData.navigation;
+
   const renderProps = {
     ...args,
     ...siteData,
