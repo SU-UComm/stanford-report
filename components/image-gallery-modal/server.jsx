@@ -17,9 +17,12 @@ export default async (args, info) => {
 
   // get the cards data
   data = await adapter.getCards(images);
-  // console.log(JSON.stringify(data));
 
-  const imageData = data.map((item) => formatCardDataImage(item));
+  const imageData = data.map((image, index) => {
+    const imgData = formatCardDataImage(image);
+
+    return { ...imgData, caption: images[`${index}`]?.caption };
+  });
 
   const renderProps = {
     ...args,
