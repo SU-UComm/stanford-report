@@ -2,19 +2,19 @@
   "cards": [
     {
       "cardType": "Book",
-      "image": "matrix-asset://api-identifier/128612",
-      "title": "One Auden and the Muse of History",
-      "author": "Susannah Young-ah Gottlieb",
-      "teaserText": "First concentrating on W. H. Auden's work from the late 1930s, when he seeks to understand the poet's responsibility in the face of a triumphant fascism, to the late 1950s, when he discerns an irreconcilable \"divorce\" between poetry...",
-      "linkUrl": ""
-    },
-    {
-      "cardType": "Book",
       "image": "matrix-asset://api-identifier/128610",
       "title": "Two Example Two",
       "author": "Susannah Young-ah Gottlieb",
       "teaserText": "Second ipsum dolor sit amet this is a slightly shorter teaser to test how this visually displays.",
       "linkUrl": "https://www.squiz.net"
+    },
+    {
+      "cardType": "Book",
+      "image": "matrix-asset://api-identifier/128612",
+      "title": "One Auden and the Muse of History",
+      "author": "Susannah Young-ah Gottlieb",
+      "teaserText": "First concentrating on W. H. Auden's work from the late 1930s, when he seeks to understand the poet's responsibility in the face of a triumphant fascism, to the late 1950s, when he discerns an irreconcilable \"divorce\" between poetry...",
+      "linkUrl": ""
     },
     {
       "cardType": "Podcast",
