@@ -61,7 +61,7 @@ export default function InteractivePhotoCard({
                   {eyebrow}
                 </div>
               )}
-              <h2 className="su-grow su-type-4 su-font-bold su-font-sans su-type su-rs-mb-0">
+              <h2 className="su-grow su-type-4 su-font-bold su-font-sans su-text-black dark:su-text-black su-rs-mb-0">
                 {title}
               </h2>
               <button

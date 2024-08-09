@@ -8,7 +8,6 @@ export default async (args, info) => {
   if (args?.image) {
     imageData = await basicAssetUri(ctx, args.image);
   }
-  const imageUrl = imageData?.url;
 
   let linkUrl = null;
   if (args?.ctaConfiguration?.internalUrl) {
@@ -18,7 +17,7 @@ export default async (args, info) => {
 
   const renderProps = {
     ...args,
-    imageUrl,
+    imageData,
     internalLinkUrl,
   };
 
