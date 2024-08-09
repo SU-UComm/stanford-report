@@ -86,6 +86,7 @@ export function Container({
   paddingY = "none",
   marginTop = "default",
   marginBottom = "default",
+  className,
 }) {
   const hasChildren = children !== undefined;
 
@@ -97,7 +98,8 @@ export function Container({
         paddingX ? "su-container-px" : "",
         paddingYClasses[paddingY],
         marginTopClasses[marginTop],
-        marginBottomClasses[marginBottom]
+        marginBottomClasses[marginBottom],
+        className
       )}
     >
       {children}

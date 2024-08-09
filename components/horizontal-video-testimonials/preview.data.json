@@ -1,3 +1,6 @@
 {
-    "title": "Welcome to Stanford University!"
+    "title": "Meet more students",
+    "ctaText": "Watch all",
+    "ctaManualUrl": "https://news.stanford.edu/video",
+    "bgImage": "matrix-asset://api-identifier/99100"
 }

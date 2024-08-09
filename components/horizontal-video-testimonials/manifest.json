@@ -20,8 +20,8 @@
       "input": {
         "type": "object",
         "properties": {
-          "headingConfiguration": {
-            "title": "Section Heading Configuration",
+          "sectionConfiguration": {
+            "title": "Section Configuration",
             "description": "The heading for the section, appearing above the grid of cards. If the title is empty, the heading and call to action link will be hidden.",
             "type": "object",
             "required": [],
@@ -47,7 +47,96 @@
                 "type": "string",
                 "description": "Enter the full URL, including https://",
                 "default": "https://news.stanford.edu/video"
+              },
+              "bgImage": {
+                "title": "Background Image",
+                "description": "Select a background image for the section. A dark overlay will be applied over the image.",
+                "type": "string",
+                "format": "matrix-asset-uri"
+              },
+              "marginTop": {
+                "title": "Spacing above (top margin)",
+                "description": "Add spacing above the component. 'Base' is the smallest with '10' (default) being the largest option. Selecting 'default' will use the default site-wide vertical spacing between components.",
+                "type": "string",
+                "default": "10",
+                "enum": [
+                  "default",
+                  "base",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "10"
+                ]
+              },
+              "marginBottom": {
+                "title": "Spacing below (bottom margin)",
+                "description": "Add spacing below the component. 'Base' is the smallest with '10' (default) being the largest option. Selecting 'default' will use the default site-wide vertical spacing between components.",
+                "type": "string",
+                "default": "10",
+                "enum": [
+                  "default",
+                  "base",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "10"
+                ]
               }
+            }
+          },
+          "testimonials": {
+            "title": "Video Testimonials",
+            "description": "Enter the details for each video testimonial card.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "title": "Title"
+                },
+                "description": {
+                  "title": "Description",
+                  "description": "This is the description/body copy.",
+                  "type": "FormattedText"
+                },
+                "videoImage": {
+                  "title": "Video preview image",
+                  "description": "Select an image to use as the video preview.",
+                  "type": "string",
+                  "format": "matrix-asset-uri"
+                },
+                "youtubeId": {
+                  "title": "Youtube video ID",
+                  "description": "Enter the video ID from YouTube.",
+                  "type": "string"
+                },
+                "internalUrl": {
+                  "title": "Story link (Matrix asset link)",
+                  "type": "string",
+                  "description": "Select a page/asset to link to. If this field is filled out, it will be used instead of the manual link field below.",
+                  "format": "matrix-asset-uri"
+                },
+                "externalUrl": {
+                  "title": "Manual story link",
+                  "type": "string",
+                  "description": "Enter the full URL, including https://."
+                }
+              },
+              "required": []
             }
           }
         },
@@ -76,6 +165,12 @@
   ],
   "staticFiles": {
     "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    }
   },
   "previews": {
     "default": {
