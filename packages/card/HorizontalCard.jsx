@@ -29,6 +29,7 @@ import {
   Podcast,
   BookOpenCover,
 } from "../SVG-library/SVG";
+import { FAIcon } from "../icons/FAIcon";
 
 import EventStartEndDate from "./EventStartEndDate";
 
@@ -161,10 +162,13 @@ export default function HorizontalCard({
   );
   titleSize.set("small", "su-text-18 su-font-semibold su-leading-[21.495px]");
 
+  const isRealExternalLink =
+    !!liveUrl && !liveUrl?.includes("news.stanford.edu");
+
   return (
     <article
       aria-label={title}
-      className={`listing-item su-flex ${cardGap.get(cardSize)}`}
+      className={`listing-item su-flex ${cardGap.get(cardSize)} su-relative`}
       data-testid="horizontal-card"
     >
       {cardSize === "large" && imageUrl && (
@@ -215,14 +219,23 @@ export default function HorizontalCard({
         <h3
           className={`${cardTitleFont(cardSize)} ${titleSize.get(
             cardSize
-          )} ${cardTitleFont(cardSize)} su-font-sans su-my-0`}
+          )} ${cardTitleFont(cardSize)} su-font-sans su-my-0 su-group`}
         >
           <XssSafeContent
-            className="hocus:su-text-digital-red hocus:su-underline su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
+            className="su-stretched-link group-hocus:su-text-digital-red group-hocus:su-underline su-transition su-text-black dark:su-text-white dark:group-hocus:su-text-dark-mode-red"
             content={title}
             href={liveUrl}
             elementType="a"
           />
+          {isRealExternalLink && (
+            <FAIcon
+              icon="arrow-up-right"
+              set="regular"
+              // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+              width={12}
+              className="su-inline-block su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
+            />
+          )}
         </h3>
 
         {/* only small cards will have the date */}
