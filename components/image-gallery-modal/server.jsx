@@ -15,13 +15,17 @@ export default async (args, info) => {
   // Set our card service
   adapter.setCardService(service);
 
+  const filteredImages = images.filter(
+    (item, index, self) =>
+      index === self.findIndex((t) => t.image === item.image)
+  );
+
   // get the cards data
   data = await adapter.getCards(images);
-
   const imageData = data.map((image, index) => {
     const imgData = formatCardDataImage(image);
 
-    return { ...imgData, caption: images[`${index}`]?.caption };
+    return { ...imgData, caption: filteredImages[`${index}`]?.caption };
   });
 
   const renderProps = {
