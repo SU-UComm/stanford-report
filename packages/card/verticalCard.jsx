@@ -27,6 +27,7 @@ import {
   Video,
   Podcast,
   BookOpenCover,
+  ExternalArrow,
 } from "../SVG-library/SVG";
 import CardThumbnail from "./CardThumbnail";
 
@@ -185,10 +186,13 @@ export default function VerticalCard({
     }__data/assets/image/0015/130443/Quad-Arch-Close.png`;
   }
 
+  const isRealExternalLink =
+    !!liveUrl && !liveUrl?.includes("news.stanford.edu");
+
   return (
     <article
       aria-label={title}
-      className="su-component-card su-relative su-w-full"
+      className="su-component-card su-group su-relative su-w-full"
       data-testid="vertical-card"
     >
       {displayThumbnail && (
@@ -231,6 +235,11 @@ export default function VerticalCard({
               href={liveUrl}
               elementType="a"
             />
+            {isRealExternalLink && (
+              <span className="su-inline-block *:su-inline-block *:su-size-1em su--ml-1em su-translate-x-1em group-hocus:su-translate-x-[1.1em] group-hocus:su--translate-y-01em su-transition-transform">
+                <ExternalArrow />
+              </span>
+            )}
           </h2>
         )}
         {headingLvl === 3 && (
@@ -243,6 +252,11 @@ export default function VerticalCard({
               href={liveUrl}
               elementType="a"
             />
+            {isRealExternalLink && (
+              <span className="su-inline-block *:su-inline-block *:su-size-1em su--ml-1em su-translate-x-1em group-hocus:su-translate-x-[1.1em] group-hocus:su--translate-y-01em su-transition-transform">
+                <ExternalArrow />
+              </span>
+            )}
           </h3>
         )}
 
