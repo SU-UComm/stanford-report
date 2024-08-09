@@ -193,7 +193,7 @@ export default function VerticalCard({
   return (
     <article
       aria-label={title}
-      className="su-component-card su-group su-relative su-w-full"
+      className="su-component-card su-relative su-w-full"
       data-testid="vertical-card"
     >
       {displayThumbnail && (
@@ -210,28 +210,30 @@ export default function VerticalCard({
       )}
 
       {taxonomy && (
-        <p
+        <span
           data-testid="vertical-card-taxonomy"
-          className={`su-relative su-z-10 su-mb-13 su-font-semibold ${taxonomySize(
+          className={`su-relative su-inline-block su-z-10 su-mb-13 su-font-semibold ${taxonomySize(
             cardSize
           )}`} // size
         >
           <XssSafeContent
-            className="hocus:su-underline focus:!su-underline focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
+            className="hocus:su-underline hocus:su-text-black focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
             content={taxonomy}
             href={taxonomyUrl}
             elementType="a"
           />
-        </p>
+        </span>
       )}
 
       <div className={`su-flex su-flex-wrap ${gapSize(cardSize)}`}>
         {headingLvl === 2 && (
           <h2
-            className={`su-w-full ${titleSize(cardSize)} su-font-serif su-my-0`}
+            className={`su-w-full ${titleSize(
+              cardSize
+            )} su-font-serif su-my-0 su-group`}
           >
             <XssSafeContent
-              className="focus:su-outline-0 focus:before:su-ring hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
+              className="su-stretched-link focus:su-outline-0 focus:before:su-ring hocus:su-underline hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
               content={title}
               href={liveUrl}
               elementType="a"
@@ -250,10 +252,12 @@ export default function VerticalCard({
         )}
         {headingLvl === 3 && (
           <h3
-            className={`su-w-full ${titleSize(cardSize)} su-font-serif su-my-0`}
+            className={`su-w-full ${titleSize(
+              cardSize
+            )} su-font-serif su-my-0 su-group`}
           >
             <XssSafeContent
-              className="focus:su-outline-0 focus:before:su-ring hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
+              className="su-stretched-link focus:su-outline-0 focus:before:su-ring hocus:su-underline hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
               content={title}
               href={liveUrl}
               elementType="a"
