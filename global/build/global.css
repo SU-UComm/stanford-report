@@ -2916,6 +2916,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-bg-black-30{--tw-bg-opacity:1;background-color:rgb(192 192 191 / var(--tw-bg-opacity))}
 .su-bg-black-40{--tw-bg-opacity:1;background-color:rgb(171 171 169 / var(--tw-bg-opacity))}
 .su-bg-black-true{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
+.su-bg-black-true\/70{background-color:rgb(0 0 0 / 0.7)}
 .su-bg-black\/\[0\.33\]{background-color:rgb(46 45 41 / 0.33)}
 .su-bg-digital-green-dark{--tw-bg-opacity:1;background-color:rgb(0 111 84 / var(--tw-bg-opacity))}
 .su-bg-digital-red{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity))}
@@ -4031,6 +4032,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .hocus\:su-bg-digital-red:hover{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity))}
 .hocus\:su-bg-none:hover{background-image:none}
 .hocus\:su-text-black:hover{--tw-text-opacity:1;color:rgb(46 45 41 / var(--tw-text-opacity))}
+.hocus\:su-text-dark-mode-red:hover{--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
 .hocus\:su-text-digital-red:hover{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
 .hocus\:su-text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .hocus\:su-underline:hover{text-decoration-line:underline}
@@ -4047,6 +4049,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .hocus\:su-bg-digital-red:focus{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity))}
 .hocus\:su-bg-none:focus{background-image:none}
 .hocus\:su-text-black:focus{--tw-text-opacity:1;color:rgb(46 45 41 / var(--tw-text-opacity))}
+.hocus\:su-text-dark-mode-red:focus{--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
 .hocus\:su-text-digital-red:focus{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
 .hocus\:su-text-white:focus{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .hocus\:su-underline:focus{text-decoration-line:underline}
@@ -4340,6 +4343,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .md\:su-items-start{align-items:flex-start}
 .md\:su-items-end{align-items:flex-end}
 .md\:su-items-center{align-items:center}
+.md\:su-items-baseline{align-items:baseline}
 .md\:su-justify-start{justify-content:flex-start}
 .md\:su-justify-center{justify-content:center}
 .md\:su-gap-12{gap:1.2rem}
@@ -4811,6 +4815,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\32xl\:su--mt-58{margin-top:-5.8rem}
 .\32xl\:su-mt-171{margin-top:17.1rem}
 .\32xl\:su-flex-row{flex-direction:row}
+.\32xl\:su-px-\[17rem\]{padding-left:17rem;padding-right:17rem}
 .\32xl\:su-px-\[6\.6rem\]{padding-left:6.6rem;padding-right:6.6rem}
 .\32xl\:su-py-140{padding-top:14rem;padding-bottom:14rem}
 .\32xl\:su-text-\[2\.9rem\]{font-size:2.9rem}
