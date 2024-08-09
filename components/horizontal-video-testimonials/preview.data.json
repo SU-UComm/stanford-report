@@ -1,6 +1,22 @@
 {
-    "title": "Meet more students",
-    "ctaText": "Watch all",
-    "ctaManualUrl": "https://news.stanford.edu/video",
-    "bgImage": "matrix-asset://api-identifier/99100"
+    "sectionConfiguration": {
+        "title": "Meet more students",
+        "ctaText": "Watch all",
+        "ctaManualUrl": "https://news.stanford.edu/video",
+        "bgImage": "matrix-asset://api-identifier/99100"
+    },
+    "testimonials": [
+        {
+            "heading": "Alma, Class of 2024",
+            "youtubeId": "LoUdz1saXJU",
+            "videoImage": "matrix-asset://api-identifier/99100",
+            "description": "The master’s student and Knight-Hennessy scholar is challenging notions of what it means to be a scholar, a soldier and a pageant winner. “The greatest things in life lie on the other side of fear.”"
+        },
+        {
+            "heading": "Adam, Class of 2024",
+            "youtubeId": "MLhdcQTTvA",
+            "videoImage": "matrix-asset://api-identifier/99100",
+            "description": "Adam Nayak, winner of the 2022 J.E. Wallace Sterling Award for outstanding leadership and service, will graduate in June with a bachelor’s degree in civil and environmental engineering and a minor in comparative studies in race and ethnicity."
+        }
+    ]
 }

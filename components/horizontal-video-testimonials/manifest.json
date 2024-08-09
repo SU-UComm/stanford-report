@@ -27,7 +27,7 @@
             "required": [],
             "properties": {
               "title": {
-                "title": "Heading",
+                "title": "Section heading",
                 "type": "string",
                 "default": "Meet more students"
               },
@@ -104,9 +104,9 @@
             "items": {
               "type": "object",
               "properties": {
-                "title": {
-                  "type": "string",
-                  "title": "Title"
+                "heading": {
+                  "title": "Card heading",
+                  "type": "string"
                 },
                 "description": {
                   "title": "Description",
@@ -124,13 +124,13 @@
                   "description": "Enter the video ID from YouTube.",
                   "type": "string"
                 },
-                "internalUrl": {
+                "internalStoryUrl": {
                   "title": "Story link (Matrix asset link)",
                   "type": "string",
                   "description": "Select a page/asset to link to. If this field is filled out, it will be used instead of the manual link field below.",
                   "format": "matrix-asset-uri"
                 },
-                "externalUrl": {
+                "manualStoryUrl": {
                   "title": "Manual story link",
                   "type": "string",
                   "description": "Enter the full URL, including https://."

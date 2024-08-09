@@ -8,21 +8,18 @@ import { LinkedHeading } from "../../packages/headings/Heading";
 /**
  * Horizontal Video Testimonials component
  *
- * @param {string} title
- * Heading of the section
- * ... any other options needed
  * @returns {JSX.Element}
  * @constructor
  */
 
 export default function HorizontalVideoTestimonials({
-  title,
-  ctaText,
-  ctaManualUrl,
+  sectionConfiguration,
+  ctaInternalUrl,
   bgImageUrl,
-  marginTop,
-  marginBottom,
+  testimonialsArray,
 }) {
+  const { title, ctaText, ctaManualUrl, marginTop, marginBottom } =
+    sectionConfiguration;
   return (
     <Container
       width="full"
@@ -39,7 +36,9 @@ export default function HorizontalVideoTestimonials({
           isAlwaysLight
           className="2xl:su-px-[17rem] su-rs-mb-4"
         />
+        <div className={styles.cardGrid} />
       </Container>
+
       <img src={bgImageUrl} alt="" className={styles.bgImage} />
       <div aria-hidden className={styles.overlay} />
     </Container>
