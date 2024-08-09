@@ -27,7 +27,6 @@ import {
   Video,
   Podcast,
   BookOpenCover,
-  ExternalArrow,
 } from "../SVG-library/SVG";
 import CardThumbnail from "./CardThumbnail";
 import { FAIcon } from "../icons/FAIcon";
