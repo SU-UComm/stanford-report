@@ -28,6 +28,7 @@ import '../../components/in-the-news/client.jsx';
 import '../../components/in-brief/client.jsx';
 import '../../components/image-quote/client.jsx';
 import '../../components/image-gallery-modal/client.jsx';
+import '../../components/fullscreen-image-quote/client.jsx';
 import '../../components/featured-content/client.jsx';
 import '../../components/feature-story-hero/client.jsx';
 import '../../components/fact-callout/client.jsx';

@@ -11,6 +11,7 @@ import { cnb } from "cnbuilder";
  * @param {string} paddingY Vertical padding for the container
  * @param {string} marginTop Top margin for the container
  * @param {string} marginBottom Bottom margin for the container
+ * @param {string} className Additional classes for the container
  * @returns {JSX.Element}
  * @constructor
  */
@@ -86,6 +87,7 @@ export function Container({
   paddingY = "none",
   marginTop = "default",
   marginBottom = "default",
+  className,
 }) {
   const hasChildren = children !== undefined;
 
@@ -97,7 +99,8 @@ export function Container({
         paddingX ? "su-container-px" : "",
         paddingYClasses[paddingY],
         marginTopClasses[marginTop],
-        marginBottomClasses[marginBottom]
+        marginBottomClasses[marginBottom],
+        className
       )}
     >
       {children}
