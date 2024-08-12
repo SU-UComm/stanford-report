@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 import renderComponent from "../../packages/utils/render-component";
 import Component from "./Component";
 import FetchAdapter from "../../packages/utils/fetchAdapter";
@@ -6,26 +5,112 @@ import popularStoriesFetcher from "./scripts/popularStoriesFetcher";
 
 function getDateRange(range) {
   const date = new Date();
-
   if (range) {
     date.setDate(date.getDate() - range);
   }
 
-  const year = date.getFullYear();
-  const month =
-    date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth();
-  const day = date.getDate();
-
   return date.toISOString();
+}
 
-  // return `${year}-${month}-${day}`;
+function formatDate(date) {
+  const day = String(date.getDate()).padStart(2, "0");
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const month = monthNames[date.getMonth()];
+  const year = date.getFullYear();
+
+  return `${day}${month}${year}`;
+}
+
+function getAPIDateRange(date) {
+  const dateRangeMap = {
+    "1 week": 7,
+    "2 weeks": 14,
+    "1 month": 30,
+  };
+  return dateRangeMap[date];
+}
+
+function getMaxPublishedDate(lengthOfTime) {
+  const dateRangeMap = {
+    "Past 6 months": {
+      days: 0,
+      months: -6,
+      years: 0,
+    },
+    "Past 1 year": {
+      days: 0,
+      months: 0,
+      years: -1,
+    },
+    "Past 2 years": {
+      days: 0,
+      months: 0,
+      years: -2,
+    },
+  };
+
+  // Subtract the max published date from today
+  const date = new Date();
+  date.setDate(date.getDate() + dateRangeMap[lengthOfTime].days);
+  date.setMonth(date.getMonth() + dateRangeMap[lengthOfTime].months);
+  date.setFullYear(date.getFullYear() + dateRangeMap[lengthOfTime].years);
+  return date;
 }
 
 export default async (args, info) => {
   const adapter = new FetchAdapter();
   const { FB_JSON_URL, MGT_API, CF_ANALYTICS_API } = info.set.environment;
+  const {
+    storiesCount,
+    APIrespCount,
+    sourcePath,
+    assetExclusions,
+    contentTypeExclusions,
+    APIdateRange,
+    publishedDateMax,
+  } = args;
 
-  // 2024-05-01T00:00:00.000Z
+  const dateRangeNumeric = getAPIDateRange(APIdateRange);
+  let exclusionContentTypes =
+    contentTypeExclusions && contentTypeExclusions.length > 0
+      ? contentTypeExclusions
+          .split(",")
+          .map(
+            (num) =>
+              `${
+                num.trim() !== "" ? `taxonomyContentTypeId:${num.trim()}` : ""
+              }`
+          )
+          .join(" ")
+      : "";
+
+  // default exclusion types
+  exclusionContentTypes +=
+    " taxonomyContentTypeId:28201 taxonomyContentTypeId:28216 taxonomyContentTypeId:28210";
+
+  const exclusionIDs =
+    assetExclusions && assetExclusions.length > 0
+      ? assetExclusions
+          .split(",")
+          .map((num) => `${num.trim() !== "" ? `id:${num.trim()}` : ""}`)
+          .join(" ")
+      : "";
+
+  const dateRange = formatDate(getMaxPublishedDate(publishedDateMax));
+  const dateRangeQuery = `meta_d1=${dateRange}`;
 
   const payload = {
     query: `query Viewer {
@@ -33,18 +118,18 @@ export default async (args, info) => {
           zones(filter: { zoneTag_in: ["4f245bec971a45ca38091352b2e11951"] }) {
               httpRequestsAdaptiveGroups(
                   filter: {
-                      datetime_gt: "${getDateRange(7)}"
+                      datetime_gt: "${getDateRange(dateRangeNumeric)}"
                       datetime_lt: "${getDateRange()}"
                       clientRequestHTTPHost: "news.stanford.edu"
                       requestSource: "eyeball"
                       edgeResponseStatus_lt: 300
                       AND: [
-                          { clientRequestPath_like: "/stories/%" }
+                          { clientRequestPath_like: "${sourcePath.trim()}" }
                           { clientRequestPath_notlike: "%/_admin%" }
                       ]
                   }
                   orderBy: [count_DESC]
-                  limit: 10
+                  limit: ${APIrespCount}
               ) {
                   count
                   dimensions {
@@ -79,9 +164,27 @@ export default async (args, info) => {
       }
     );
 
-    data = await popularStoriesFetcher(urls, {
-      FB_JSON_URL,
+    data = await popularStoriesFetcher(
+      urls,
+      storiesCount,
+      exclusionContentTypes,
+      exclusionIDs,
+      dateRangeQuery,
+      {
+        FB_JSON_URL,
+      }
+    );
+
+    const sortedData = [];
+
+    // Change the order that FB sent back to match the actual popular order
+    urls.forEach((url) => {
+      data.forEach((item) => {
+        if (item.liveUrl.includes(url)) sortedData.push(item);
+      });
     });
+
+    data = sortedData.slice(0, storiesCount);
   } else {
     data = [];
   }
