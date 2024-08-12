@@ -216,7 +216,7 @@ export default function VerticalCard({
           )}`} // size
         >
           <XssSafeContent
-            className="su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline hocus:su-text-black hocus:dark:su-text-white hover:su-outline-0 hover:su-ring"
+            className="su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline hocus:su-text-black hocus:dark:su-text-white focus:su-outline-0 focus:su-ring"
             content={taxonomy}
             href={taxonomyUrl}
             elementType="a"
