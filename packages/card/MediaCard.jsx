@@ -1,6 +1,6 @@
 import React from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
-import { BookOpenCover, ExternalArrow, Podcast } from "../SVG-library/SVG";
+import { BookOpenCover, Podcast } from "../SVG-library/SVG";
 import { SidebarHeading } from "../headings/Heading";
 import { FAIcon } from "../icons/FAIcon";
 
