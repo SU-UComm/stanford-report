@@ -1,5 +1,4 @@
 import React from "react";
-import { ExternalArrow } from "../SVG-library/SVG";
 import { FAIcon } from "../icons/FAIcon";
 
 /**
@@ -45,6 +44,7 @@ export function ExternalLink({
         // Add a width to prevent getting a flash of huge icon before the CSS fully loads
         width={12}
         className="su-inline-block su-ml-5 su-text-18 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
+        data-testid="svg-externalarrow"
       />
     </a>
   ) : (
