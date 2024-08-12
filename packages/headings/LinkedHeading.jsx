@@ -22,12 +22,12 @@ export function LinkedHeading({
   ctaLink,
   ctaNewWindow,
   isAlwaysLight,
-  className
+  className,
 }) {
   return title !== "" && title !== undefined ? (
     <div
       className={cnb(
-        "su-component-line-heading su-flex su-flex-wrap su-items-center md:su-items-baseline su-gap-5 su-gap-x-13 md:su-gap-13",
+        "su-component-line-heading su-flex su-flex-wrap su-items-baseline su-gap-5 su-gap-x-13 md:su-gap-13",
         className
       )}
     >

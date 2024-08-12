@@ -44,11 +44,7 @@ export function HorizontalVideoCard({
     <article className={styles.root}>
       <div className={styles.contentWrapper}>
         <h3 className={styles.heading}>{heading}</h3>
-        <XssSafeContent
-          elementType="p"
-          content={description}
-          className={styles.description}
-        />
+        <XssSafeContent content={description} className={styles.description} />
       </div>
       <div className={styles.imageWrapper}>
         <img

@@ -25,6 +25,7 @@ export default function HorizontalVideoTestimonials({
     <Container
       width="full"
       paddingY={10}
+      paddingX={false}
       marginTop={marginTop}
       marginBottom={marginBottom}
       className={styles.root}

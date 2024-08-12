@@ -6,4 +6,4 @@ export const cardGrid =
 export const bgImage =
   "su-absolute su-size-full su-inset-0 su-object-cover su-inset-0";
 export const overlay =
-  "su-absolute su-size-full su-inset-0 su-z-10 su-bg-black-true/60";
+  "su-absolute su-size-full su-inset-0 su-z-10 su-bg-gradient-to-b su-from-black-true/75 su-to-black-true/60";
