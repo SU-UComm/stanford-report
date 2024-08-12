@@ -1,18 +1,18 @@
 import React from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { far } from "@fortawesome/free-regular-svg-icons";
+import { fas } from "@fortawesome/pro-solid-svg-icons";
+import { far } from "@fortawesome/pro-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
- * We currently include the free solid and regular sets of FontAwesome icons.
- * We can expand this to include more sets including the PRO ones in the future.
- * https://fontawesome.com/search?q=imae&o=r&m=free&s=regular%2Csolid
+ * We currently include the PRO solid and regular sets of FontAwesome icons.
+ * We can expand this to include more sets in the future as needed.
+ * https://fontawesome.com/search?o=r&s=solid%2Cregular
  */
 
 /**
  * A wrapper component for FontAwesome icons that allow you to use any icon from the free solid and regular styles
- * https://fontawesome.com/search?q=imae&o=r&m=free&s=regular%2Csolid
+ * https://fontawesome.com/search?o=r&s=solid%2Cregular
  *
  * @param {string} icon
  * The name of the icon
