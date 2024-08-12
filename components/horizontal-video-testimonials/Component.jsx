@@ -41,13 +41,15 @@ export default function HorizontalVideoTestimonials({
         {!!testimonialsArray?.length && (
           <ul className={styles.cardGrid}>
             {testimonialsArray.map((testimonial) => (
-              <li key={testimonial.videoId}>
+              <li key={testimonial.youtubeId}>
                 <HorizontalVideoCard
                   heading={testimonial.heading}
                   description={testimonial.description}
                   youtubeId={testimonial.youtubeId}
                   videoImageUrl={testimonial.videoImageData?.url}
-                  videoImageAlt={testimonial.videoImageData?.alt}
+                  videoImageAlt={
+                    testimonial.videoImageData?.alt || testimonial.heading
+                  }
                   internalUrl={testimonial.internalStoryUrl}
                   manualUrl={testimonial.manualStoryUrl}
                 />

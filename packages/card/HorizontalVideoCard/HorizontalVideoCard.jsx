@@ -1,6 +1,7 @@
 import React from "react";
 import { cnb } from "cnbuilder";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
+import CardThumbnail from "../CardThumbnail";
 import * as styles from "./HorizontalVideoCard.styles";
 
 /**
@@ -47,10 +48,12 @@ export function HorizontalVideoCard({
         <XssSafeContent content={description} className={styles.description} />
       </div>
       <div className={styles.imageWrapper}>
-        <img
-          src={videoImageUrl}
-          alt={videoImageAlt || ""}
-          className="su-w-full"
+        <CardThumbnail
+          imageUrl={videoImageUrl}
+          alt={videoImageAlt}
+          aspectRatio={`card-featured`}
+          videoUrl={youtubeId}
+          size="featured"
         />
       </div>
     </article>
