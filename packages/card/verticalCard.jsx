@@ -216,7 +216,7 @@ export default function VerticalCard({
           )}`} // size
         >
           <XssSafeContent
-            className="hocus:su-underline hocus:su-text-black focus:su-outline-0 focus:su-ring su-text-digital-red su-no-underline hover:su-text-digital-red dark:su-text-dark-mode-red hover:dark:su-text-dark-mode-red"
+            className="su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline hocus:su-text-black hocus:dark:su-text-white hover:su-outline-0 hover:su-ring"
             content={taxonomy}
             href={taxonomyUrl}
             elementType="a"
@@ -243,8 +243,7 @@ export default function VerticalCard({
                 set="regular"
                 // Add a width to prevent getting a flash of huge icon before the CSS fully loads
                 width={cardSize === "featured" ? 20 : 15}
-                height="auto"
-                className="su-inline-block su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
+                className="su-inline-block su-h-auto su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
               />
             )}
           </h2>
@@ -267,8 +266,7 @@ export default function VerticalCard({
                 set="regular"
                 // Add a width to prevent getting a flash of huge icon before the CSS fully loads
                 width={cardSize === "featured" ? 20 : 15}
-                height="auto"
-                className="su-inline-block su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
+                className="su-inline-block su-h-auto su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
               />
             )}
           </h3>
