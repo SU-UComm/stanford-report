@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "fullscreen-image-quote",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "namespace": "stanford-components",
   "description": "This component displays a fullwidth image with a quote and CTA.",
   "displayName": "Fullscreen Image Quote",
@@ -22,13 +22,13 @@
         "properties": {
           "image": {
             "title": "Background image (landscape orientation)",
-            "description": "The preferred aspect ratio for the image is 3x2. On the largest screens (> 1500px), the image will be cropped to a 2x1 aspect ratio.",
+            "description": "The preferred aspect ratio for the image is 3x2. On the largest screens (> 1500px), the image will be cropped to a 2x1 aspect ratio. This background image will be shown on all screen sizes unless a mobile image is also selected below.",
             "type": "string",
             "format": "matrix-asset-uri"
           },
           "imageVPosition": {
-            "title": "Vertical position of the background image",
-            "description": "This setting will only be used if the above image aspect ratio is taller than its container. It will determine which portion of the image is shown if the image is cropped on some screen sizes.",
+            "title": "Vertical crop position of the background image",
+            "description": "This setting will only be used if the above image's aspect ratio is taller than its container. It will determine which portion of the image is shown if the image is cropped on some screen sizes.",
             "type": "string",
             "default": "center",
             "enum": [
@@ -39,18 +39,19 @@
           },
           "mobileImage": {
             "title": "Mobile background image (portrait orientation)",
-            "description": "if provided, this image will be shown for phones and tablets. The preferred aspect ratio is 3x4. On mobile phones, it will be cropped to a 2x1 aspect ratio and the middle part of the image will be shown.",
+            "description": "If provided, this image will be shown for phones and tablets (up to screen size 991px). The preferred aspect ratio of the uploaded image is 3x4. On mobile phones, it will be cropped to a 1x2 aspect ratio and the middle part of the image will be shown.",
             "type": "string",
             "format": "matrix-asset-uri"
           },
           "quote": {
-            "title": "Quote",
-            "description": "Quote or body content. Please include the quotation marks if this is a quote.",
+            "title": "Quote (or body content)",
+            "description": "Please include the quotation marks if this is a quote. They are not automatically included for content versatility.",
             "type": "string",
             "format": "multi-line"
           },
           "quoteVAlign": {
-            "title": "Quote vertical alignment",
+            "title": "Quote vertical alignment (desktop)",
+            "description": "This setting will set the vertical alignment of the quote text on desktop. On smaller screens, the quote will always be displayed at the bottom of the component.",
             "type": "string",
             "default": "center",
             "enum": [
@@ -70,7 +71,7 @@
           },
           "removeTopSpacing": {
             "title": "Remove top spacing",
-            "description": "Enable this to remove the spacing above this component, e.g., when it is not the first item in a series of this component.",
+            "description": "Enable this to remove the spacing above this component, e.g., when this is not the first item in a series of this component.",
             "type": "boolean",
             "default": false
           },
@@ -98,7 +99,7 @@
               "internalUrl": {
                 "title": "Internal link (Matrix asset link)",
                 "type": "string",
-                "description": "Select a page/asset to link to. If this field is filled out, it will be used instead of the external link field below.",
+                "description": "Select a Matrix page/asset to link to. If you prefer to paste the full URL manually, use the 'External (manual) link' field below instead.",
                 "format": "matrix-asset-uri"
               },
               "externalUrl": {
