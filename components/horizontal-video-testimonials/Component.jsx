@@ -30,13 +30,13 @@ export default function HorizontalVideoTestimonials({
       marginBottom={marginBottom}
       className={styles.root}
     >
-      <Container width="cc" paddingX={false} className="su-relative su-z-30">
+      <Container width="cc" paddingX={false} className={styles.wrapper}>
         <LinkedHeading
           title={title}
           ctaText={ctaText}
-          ctaLink={ctaManualUrl}
+          ctaLink={ctaManualUrl || ctaInternalUrl}
           isAlwaysLight
-          className="2xl:su-px-[17rem] su-rs-mb-4"
+          className={styles.sectionHeading}
         />
         {!!testimonialsArray?.length && (
           <ul className={styles.cardGrid}>
@@ -50,7 +50,7 @@ export default function HorizontalVideoTestimonials({
                   videoImageAlt={
                     testimonial.videoImageData?.alt || testimonial.heading
                   }
-                  internalUrl={testimonial.internalStoryUrl}
+                  internalUrl={testimonial.internalStoryLink}
                   manualUrl={testimonial.manualStoryUrl}
                 />
               </li>

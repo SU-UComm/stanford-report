@@ -31,15 +31,15 @@ export default async (args, info) => {
         description,
         videoImage,
         youtubeId,
-        storyUrl,
+        internalStoryUrl,
         manualStoryUrl,
       } = testimonial;
 
-      let internalStoryLink = null;
-      if (storyUrl) {
-        internalStoryLink = await basicAssetUri(ctx, storyUrl);
+      let internalLink = null;
+      if (internalStoryUrl) {
+        internalLink = await basicAssetUri(ctx, internalStoryUrl);
       }
-      const internalStoryUrl = internalStoryLink?.url;
+      const internalStoryLink = internalLink?.url;
 
       let videoImageData = null;
       if (videoImage) {
@@ -51,7 +51,7 @@ export default async (args, info) => {
         description,
         videoImageData,
         youtubeId,
-        internalStoryUrl,
+        internalStoryLink,
         manualStoryUrl,
       };
     })

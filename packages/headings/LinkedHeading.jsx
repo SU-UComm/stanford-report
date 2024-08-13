@@ -1,7 +1,6 @@
 import React from "react";
 import { cnb } from "cnbuilder";
 import { FAIcon } from "../icons/FAIcon";
-import { ChevronRight } from "../SVG-library/SVG";
 
 /**
  * Renders out the linked heading, as seen here: https://www.figma.com/file/Fxe0NRKM09lCA3oCkHXHwB/FINAL----Landing-Pages----Home?type=design&node-id=1440-21954&mode=dev
