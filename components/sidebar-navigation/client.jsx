@@ -1,13 +1,36 @@
 import { hydrateComponent } from "@squiz/xaccel-component-client-helpers";
 import Component from "./Component";
+import FetchAdapter from "../../packages/utils/fetchAdapter";
 
-(function () {
+(async function () {
   const componentName = "sidebar-navigation";
-  const base = document.querySelector(
-    `[data-hydration-component="${componentName}"]`
-  );
+  const base = document.querySelector(`[data-component="${componentName}"]`);
 
   if (!base) return;
 
+  // Get our current props
+  const props = JSON.parse(base.getAttribute("data-hydration-props"));
+
+  console.log(props.root);
+  console.log(base);
+
+  // Construct call to menu API
+  let navURL = "";
+  const parent = props.root;
+  if (props.root) {
+    navURL = `https://news.stanford.edu/_api/mx/menu?loc=${parent}/site-data-no-cors`;
+  }
+
+  const adapter = new FetchAdapter();
+
+  if (parent !== "") {
+    adapter.url = navURL;
+  }
+
+  const navData = await adapter.fetch();
+
+  console.log(navData);
+
+  // Hydrate the component
   hydrateComponent({ Component, componentName });
 })();
