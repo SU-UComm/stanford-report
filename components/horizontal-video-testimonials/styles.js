@@ -1,6 +1,6 @@
 export const root = "su-relative su-overflow-hidden su-bg-black";
 export const wrapper = "su-relative su-z-30";
-export const sectionHeading = "2xl:su-px-[17rem] su-rs-mb-4";
+export const sectionHeading = "2xl:su-px-[17rem] su-rs-mb-5";
 export const cardGrid =
   "su-relative su-grid su-gap-20 su-z-30 su-list-unstyled *:su-mb-0";
 export const bgImage =

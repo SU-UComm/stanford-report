@@ -1,5 +1,6 @@
 import React from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
+import { FAIcon } from "../../icons/FAIcon";
 import CardThumbnail from "../CardThumbnail";
 import * as styles from "./HorizontalVideoCard.styles";
 
@@ -46,18 +47,39 @@ export function HorizontalVideoCard({
   return (
     <article className={styles.root}>
       <div className={styles.contentWrapper}>
-        {(internalUrl || manualUrl) ? (
-          <a
-            href={internalUrl || manualUrl}
-            className={styles.link}
-            rel={isRealExternalLink ? "noopener noreferrer" : undefined}
-          >
-            <h3 className={styles.heading}>{heading}</h3>
-          </a>
+        {internalUrl || manualUrl ? (
+          <h3 className={styles.heading}>
+            <a
+              href={internalUrl || manualUrl}
+              className={styles.link}
+              rel={isRealExternalLink ? "noopener noreferrer" : undefined}
+            >
+              {heading}
+              {isRealExternalLink && (
+                // Use this whitespace-nowrap trick so icon won't get pushed to the next line on its own
+                <span className={styles.linkIconWrapper}>
+                  &#65279;
+                  <FAIcon
+                    icon="arrow-up-right"
+                    set="regular"
+                    title="(link is external)"
+                    // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+                    width={24}
+                    className={styles.linkIcon}
+                  />
+                </span>
+              )}
+            </a>
+          </h3>
         ) : (
           <h3 className={styles.heading}>{heading}</h3>
         )}
-        <XssSafeContent content={description} className={styles.description} />
+        {!!description && (
+          <XssSafeContent
+            content={description}
+            className={styles.description}
+          />
+        )}
       </div>
       <div className={styles.imageWrapper}>
         <CardThumbnail

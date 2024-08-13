@@ -3256,6 +3256,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-text-\[49px\]{font-size:49px}
 .su-text-\[5\.5rem\]{font-size:5.5rem}
 .su-text-\[5rem\]{font-size:5rem}
+.su-text-\[0\.8em\]{font-size:0.8em}
 .\!su-font-bold{font-weight:700 !important}
 .su-font-black{font-weight:900}
 .su-font-bold{font-weight:700}
@@ -3339,6 +3340,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-no-underline{text-decoration-line:none}
 .su-decoration-dark-mode-red{text-decoration-color:#EC0909}
 .su-decoration-digital-red-light{text-decoration-color:#E50808}
+.su-decoration-digital-red-xlight{text-decoration-color:#F83535}
 .su-decoration-white{text-decoration-color:#fff}
 .su-decoration-2{text-decoration-thickness:2px}
 .su-decoration-\[3px\]{text-decoration-thickness:3px}

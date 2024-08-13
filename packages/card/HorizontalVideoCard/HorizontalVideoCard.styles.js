@@ -3,9 +3,14 @@ export const root =
 
 export const contentWrapper =
   "su-w-full lg:su-basis-[50%] xl:su-basis-[40%] 2xl:su-basis-[30%]";
+
 export const heading = "su-type-3 su-leading-display su-rs-mb-0";
 export const link =
-  "su-stretched-link su-no-underline hocus:su-underline su-text-black hocus:su-text-digital-red dark:su-text-white dark:hocus:su-text-dark-mode-red focus:su-outline-none";
+  "su-group su-stretched-link su-no-underline hocus:su-underline su-text-black hocus:su-text-digital-red dark:su-text-white dark:hocus:su-text-dark-mode-red focus:su-outline-none";
+export const linkIconWrapper = "su-whitespace-nowrap";
+export const linkIcon =
+  "fa-fw su-inline-block su-align-middle su-text-[0.8em] su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform";
+
 export const description =
   "su-max-w-prose md:su-max-w-[45ch] lg:su-max-w-none su-card-paragraph *:last:su-mb-0 *:su-leading-display xl:*:su-leading-snug";
 

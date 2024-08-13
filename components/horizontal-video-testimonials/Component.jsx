@@ -24,7 +24,7 @@ export default function HorizontalVideoTestimonials({
   return (
     <Container
       width="full"
-      paddingY={10}
+      paddingY="10"
       paddingX={false}
       marginTop={marginTop}
       marginBottom={marginBottom}
@@ -40,21 +40,28 @@ export default function HorizontalVideoTestimonials({
         />
         {!!testimonialsArray?.length && (
           <ul className={styles.cardGrid}>
-            {testimonialsArray.map((testimonial) => (
-              <li key={testimonial.youtubeId}>
-                <HorizontalVideoCard
-                  heading={testimonial.heading}
-                  description={testimonial.description}
-                  youtubeId={testimonial.youtubeId}
-                  videoImageUrl={testimonial.videoImageData?.url}
-                  videoImageAlt={
-                    testimonial.videoImageData?.alt || testimonial.heading
-                  }
-                  internalUrl={testimonial.internalStoryLink}
-                  manualUrl={testimonial.manualStoryUrl}
-                />
-              </li>
-            ))}
+            {testimonialsArray.map(
+              ({
+                youtubeId,
+                heading,
+                description,
+                videoImageData,
+                internalStoryLink,
+                manualStoryUrl,
+              }) => (
+                <li key={youtubeId}>
+                  <HorizontalVideoCard
+                    heading={heading}
+                    description={description}
+                    youtubeId={youtubeId}
+                    videoImageUrl={videoImageData?.url}
+                    videoImageAlt={videoImageData?.alt || heading}
+                    internalUrl={internalStoryLink}
+                    manualUrl={manualStoryUrl}
+                  />
+                </li>
+              )
+            )}
           </ul>
         )}
       </Container>

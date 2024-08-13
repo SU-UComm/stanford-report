@@ -37,26 +37,26 @@
                 "default": "Watch all"
               },
               "ctaUrl": {
-                "title": "Matrix Asset Link",
+                "title": "Matrix asset link",
                 "type": "string",
                 "description": "Select an asset to link to. If this field is filled out, it will be used instead of the manual link",
                 "format": "matrix-asset-uri"
               },
               "ctaManualUrl": {
-                "title": "External/Manual Link",
+                "title": "External/Manual link",
                 "type": "string",
                 "description": "Enter the full URL, including https://",
                 "default": "https://news.stanford.edu/video"
               },
               "bgImage": {
-                "title": "Background Image",
+                "title": "Background image",
                 "description": "Select a background image for the section. A dark overlay will be applied over the image.",
                 "type": "string",
                 "format": "matrix-asset-uri"
               },
               "marginTop": {
                 "title": "Spacing above (top margin)",
-                "description": "Add spacing above the component. 'Base' is the smallest with '10' (default) being the largest option. Selecting 'default' will use the default site-wide vertical spacing between components.",
+                "description": "Add spacing above the section. 'Base' is the smallest with '10' (default) being the largest option. Selecting 'default' will use the default site-wide vertical spacing between components.",
                 "type": "string",
                 "default": "10",
                 "enum": [
@@ -76,7 +76,7 @@
               },
               "marginBottom": {
                 "title": "Spacing below (bottom margin)",
-                "description": "Add spacing below the component. 'Base' is the smallest with '10' (default) being the largest option. Selecting 'default' will use the default site-wide vertical spacing between components.",
+                "description": "Add spacing below the section. 'Base' is the smallest with '10' (default) being the largest option. Selecting 'default' will use the default site-wide vertical spacing between components.",
                 "type": "string",
                 "default": "10",
                 "enum": [
@@ -127,13 +127,13 @@
                 "internalStoryUrl": {
                   "title": "Story link (Matrix asset link)",
                   "type": "string",
-                  "description": "Select a Matrix page/asset to link to. If you prefer to paste the full URL manually, use the 'Manual story link' field below instead.",
+                  "description": "Select a Matrix page/asset to link to. If you prefer to paste the full URL manually, use the 'External/Manual story link' field below instead.",
                   "format": "matrix-asset-uri"
                 },
                 "manualStoryUrl": {
-                  "title": "Manual story link",
+                  "title": "External/Manual story link",
                   "type": "string",
-                  "description": "Enter the full URL, including https://."
+                  "description": "Enter the full URL, including https://. A diagonal arrow icon will be automatically applied after the card heading link if the URL does not contain news.stanford.edu."
                 }
               },
               "required": []
