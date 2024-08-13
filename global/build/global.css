@@ -3994,8 +3994,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .hover\:su-text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .hover\:su-underline:hover{text-decoration-line:underline}
 .hover\:su-shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}
-.hover\:su-outline-0:hover{outline-width:0px}
-.hover\:su-ring:hover{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}
 .focus\:su-border-digital-blue:focus{--tw-border-opacity:1;border-color:rgb(0 108 184 / var(--tw-border-opacity))}
 .focus\:su-bg-black:focus{--tw-bg-opacity:1;background-color:rgb(46 45 41 / var(--tw-bg-opacity))}
 .focus\:su-bg-digital-red:focus{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity))}
