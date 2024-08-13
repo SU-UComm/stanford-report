@@ -1,5 +1,4 @@
 import React from "react";
-import { cnb } from "cnbuilder";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import CardThumbnail from "../CardThumbnail";
 import * as styles from "./HorizontalVideoCard.styles";

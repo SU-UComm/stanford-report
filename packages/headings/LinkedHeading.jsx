@@ -34,7 +34,7 @@ export function LinkedHeading({
     >
       <h2
         className={cnb(
-          "su-text-28 su-font-serif md:su-text-[35px] lg:su-text-[48px] su-w-full md:su-w-auto su-mb-0",
+          "su-type-3 su-font-serif su-w-full md:su-w-auto su-mb-0",
           isAlwaysLight
             ? "su-text-white dark:su-text-white"
             : "su-text-black dark:su-text-white"
