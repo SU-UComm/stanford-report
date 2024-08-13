@@ -51,10 +51,10 @@ export function LinkedHeading({
           href={ctaLink}
           target={ctaNewWindow ? "_blank" : undefined}
           className={cnb(
-            "su-group su-flex su-no-underline hocus:su-underline su-transition su-items-center md:su-items-end md:su-mb-8 lg:su-mb-12  su-flex-nowrap su-align-baseline su-gap-20 md:su-gap-13 su-text-19 su-underline-offset-4",
+            "su-group su-flex su-no-underline hocus:su-underline su-transition su-items-center md:su-items-end md:su-mb-8 lg:su-mb-12 su-flex-nowrap su-align-baseline su-gap-20 md:su-gap-13 su-text-19 su-underline-offset-4 dark:su-text-white",
             isAlwaysLight
-              ? "su-text-white dark:su-text-white hocus:su-text-white dark:hocus:su-text-white su-decoration-2"
-              : "su-text-black dark:su-text-white hocus:su-text-digital-red dark:hocus:su-text-dark-mode-red"
+              ? "su-text-white hocus:su-text-white dark:hocus:su-text-white su-decoration-2"
+              : "su-text-black hocus:su-text-digital-red dark:hocus:su-text-dark-mode-red"
           )}
           rel="noreferrer"
         >

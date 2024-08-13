@@ -1,8 +1,18 @@
 import React, { useState } from "react";
-import VideoPlay from "../SVG-library/VideoPlay";
+import { cnb } from "cnbuilder";
 import MediaRatio from "../media/MediaRatio";
 import Modal from "../modal/ModalWrapper";
 import EmbedVideo from "../media/EmbedVideo";
+import { FAIcon } from "../icons/FAIcon";
+
+const videoPlayClasses = {
+  small: "su-left-13 su-bottom-13 [&>svg]:su-text-[4rem]",
+  medium:
+    "su-left-13 su-bottom-13 md:su-left-27 md:su-bottom-27 [&>svg]:su-text-[4rem] [&>svg]:md:su-text-[6rem]",
+  large: "su-left-13 su-bottom-13 [&>svg]:su-text-[4rem]",
+  featured:
+    "su-left-13 su-bottom-13 md:su-left-27 md:su-bottom-27 [&>svg]:su-text-[4rem] [&>svg]:md:su-text-[6rem]",
+};
 
 export default function CardThumbnail({
   imageUrl,
@@ -13,21 +23,6 @@ export default function CardThumbnail({
   title = "",
   videoIconClasses,
 }) {
-  const videoPlayClasses = new Map();
-  videoPlayClasses.set(
-    "featured",
-    "su-left-13 su-bottom-13 md:su-left-27 md:su-bottom-27 [&>svg]:su-size-40 [&>svg]:md:su-size-60"
-  );
-  videoPlayClasses.set("large", "su-left-13 su-bottom-13 [&>svg]:su-size-40");
-  videoPlayClasses.set(
-    "medium",
-    "su-left-27 su-bottom-27 [&>svg]:su-size-40 [&>svg]:md:su-size-60"
-  );
-  videoPlayClasses.set(
-    "small",
-    "su-left-13 su-bottom-13 [&>svg]:su-w-40 [&>svg]:su-h-40"
-  );
-
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = () => {
@@ -53,11 +48,19 @@ export default function CardThumbnail({
         >
           {videoUrl && (
             <span
-              className={`su-absolute ${videoPlayClasses.get(
-                size
-              )} ${videoIconClasses}`}
+              className={cnb(
+                "su-absolute su-leading-none",
+                // eslint-disable-next-line security/detect-object-injection
+                videoPlayClasses[size],
+                videoIconClasses
+              )}
             >
-              <VideoPlay />
+              <FAIcon
+                data-testid="svg-videoplay"
+                set="regular"
+                icon="circle-play"
+                className="su-text-white dark:su-text-white su-drop-shadow-[0px_14px_28px_rgba(0,0,0,0.20)]"
+              />
             </span>
           )}
         </MediaRatio>

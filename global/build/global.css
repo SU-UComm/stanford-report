@@ -3236,6 +3236,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-text-26{font-size:2.6rem}
 .su-text-28{font-size:2.8rem}
 .su-text-\[0\.75em\]{font-size:0.75em}
+.su-text-\[0\.8em\]{font-size:0.8em}
 .su-text-\[0\.9em\]{font-size:0.9em}
 .su-text-\[1\.433rem\]{font-size:1.433rem}
 .su-text-\[1\.4rem\]{font-size:1.4rem}
@@ -3256,7 +3257,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-text-\[49px\]{font-size:49px}
 .su-text-\[5\.5rem\]{font-size:5.5rem}
 .su-text-\[5rem\]{font-size:5rem}
-.su-text-\[0\.8em\]{font-size:0.8em}
 .\!su-font-bold{font-weight:700 !important}
 .su-font-black{font-weight:900}
 .su-font-bold{font-weight:700}
@@ -5003,17 +5003,15 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 @media (min-width: 768px){
 .md\:\[\&\>p\]\:\!su-text-19>p{font-size:1.9rem !important}}
 .\[\&\>svg\]\:su-mt-3>svg{margin-top:0.3rem}
-.\[\&\>svg\]\:su-size-40>svg{width:4rem;height:4rem}
-.\[\&\>svg\]\:su-h-40>svg{height:4rem}
 .\[\&\>svg\]\:su-h-43>svg{height:4.3rem}
-.\[\&\>svg\]\:su-w-40>svg{width:4rem}
 .\[\&\>svg\]\:su-w-41>svg{width:4.1rem}
 .\[\&\>svg\]\:su-translate-y-1>svg{--tw-translate-y:0.1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+.\[\&\>svg\]\:su-text-\[4rem\]>svg{font-size:4rem}
 @media (min-width: 768px){
 .md\:\[\&\>svg\]\:su--mt-2>svg{margin-top:-0.2rem}
-.\[\&\>svg\]\:md\:su-size-60>svg{width:6rem;height:6rem}
 .md\:\[\&\>svg\]\:su-h-\[102px\]>svg{height:102px}
-.md\:\[\&\>svg\]\:su-w-\[97px\]>svg{width:97px}}
+.md\:\[\&\>svg\]\:su-w-\[97px\]>svg{width:97px}
+.\[\&\>svg\]\:md\:su-text-\[6rem\]>svg{font-size:6rem}}
 @media (min-width: 992px){
 .lg\:\[\&\>svg\]\:su-mt-4>svg{margin-top:0.4rem}}
 
