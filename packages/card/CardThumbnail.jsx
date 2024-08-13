@@ -11,19 +11,17 @@ export default function CardThumbnail({
   videoUrl,
   size = "small",
   title = "",
+  videoIconClasses,
 }) {
   const videoPlayClasses = new Map();
   videoPlayClasses.set(
     "featured",
-    "su-left-27 su-bottom-27 [&>svg]:su-w-40 [&>svg]:su-h-40 [&>svg]:md:su-w-60 [&>svg]:md:su-h-60"
+    "su-left-13 su-bottom-13 md:su-left-27 md:su-bottom-27 [&>svg]:su-size-40 [&>svg]:md:su-size-60"
   );
-  videoPlayClasses.set(
-    "large",
-    "su-left-13 su-bottom-13 [&>svg]:su-w-40 [&>svg]:su-h-40"
-  );
+  videoPlayClasses.set("large", "su-left-13 su-bottom-13 [&>svg]:su-size-40");
   videoPlayClasses.set(
     "medium",
-    "su-left-27 su-bottom-27 [&>svg]:su-w-40 [&>svg]:su-h-40 [&>svg]:md:su-w-60 [&>svg]:md:su-h-60"
+    "su-left-27 su-bottom-27 [&>svg]:su-size-40 [&>svg]:md:su-size-60"
   );
   videoPlayClasses.set(
     "small",
@@ -43,18 +41,22 @@ export default function CardThumbnail({
   return videoUrl ? (
     <>
       <button
-        className="su-component-card-thumbnail su-block su-relative su-z-10 su-size-full"
+        className="su-component-card-thumbnail su-group su-block su-relative su-z-10 su-size-full"
         type="button"
         aria-haspopup="dialog"
         onClick={() => handleClick()}
       >
         <MediaRatio
           imageUrl={imageUrl}
-          imageAlt={`${alt} (opens in a modal)`}
+          imageAlt={`Open video ${alt || ""} in a modal`}
           aspectRatio={aspectRatio}
         >
           {videoUrl && (
-            <span className={`su-absolute ${videoPlayClasses.get(size)}`}>
+            <span
+              className={`su-absolute ${videoPlayClasses.get(
+                size
+              )} ${videoIconClasses}`}
+            >
               <VideoPlay />
             </span>
           )}

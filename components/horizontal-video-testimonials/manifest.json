@@ -115,7 +115,7 @@
                 },
                 "videoImage": {
                   "title": "Video preview image",
-                  "description": "Select an image to use as the video preview.",
+                  "description": "Select an image to use as the video preview. The aspect ratio of the image displayed will be 16x9.",
                   "type": "string",
                   "format": "matrix-asset-uri"
                 },
@@ -127,7 +127,7 @@
                 "internalStoryUrl": {
                   "title": "Story link (Matrix asset link)",
                   "type": "string",
-                  "description": "Select a page/asset to link to. If this field is filled out, it will be used instead of the manual link field below.",
+                  "description": "Select a Matrix page/asset to link to. If you prefer to paste the full URL manually, use the 'Manual story link' field below instead.",
                   "format": "matrix-asset-uri"
                 },
                 "manualStoryUrl": {

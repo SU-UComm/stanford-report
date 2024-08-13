@@ -41,19 +41,34 @@ export function HorizontalVideoCard({
   internalUrl,
   manualUrl,
 }) {
+  const isRealExternalLink =
+    !!manualUrl && !manualUrl?.includes("news.stanford.edu");
+
   return (
     <article className={styles.root}>
       <div className={styles.contentWrapper}>
-        <h3 className={styles.heading}>{heading}</h3>
+        {(internalUrl || manualUrl) ? (
+          <a
+            href={internalUrl || manualUrl}
+            className={styles.link}
+            rel={isRealExternalLink ? "noopener noreferrer" : undefined}
+          >
+            <h3 className={styles.heading}>{heading}</h3>
+          </a>
+        ) : (
+          <h3 className={styles.heading}>{heading}</h3>
+        )}
         <XssSafeContent content={description} className={styles.description} />
       </div>
       <div className={styles.imageWrapper}>
         <CardThumbnail
           imageUrl={videoImageUrl}
           alt={videoImageAlt}
-          aspectRatio={`card-featured`}
+          title={heading}
+          aspectRatio="card-featured"
           videoUrl={youtubeId}
           size="featured"
+          videoIconClasses={styles.videoIcon}
         />
       </div>
     </article>

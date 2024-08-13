@@ -1,5 +1,6 @@
 import React from "react";
 import { cnb } from "cnbuilder";
+import { FAIcon } from "../icons/FAIcon";
 import { ChevronRight } from "../SVG-library/SVG";
 
 /**
@@ -53,19 +54,23 @@ export function LinkedHeading({
           href={ctaLink}
           target={ctaNewWindow ? "_blank" : undefined}
           className={cnb(
-            "su-flex su-no-underline hocus:su-underline su-transition su-items-center md:su-items-end md:su-mb-8 lg:su-mb-12  su-flex-nowrap su-align-baseline su-gap-20 md:su-gap-13 su-text-19",
+            "su-group su-flex su-no-underline hocus:su-underline su-transition su-items-center md:su-items-end md:su-mb-8 lg:su-mb-12  su-flex-nowrap su-align-baseline su-gap-20 md:su-gap-13 su-text-19 su-underline-offset-4",
             isAlwaysLight
-              ? "su-text-white dark:su-text-white hocus:su-text-dark-mode-red dark:hocus:su-text-dark-mode-red"
+              ? "su-text-white dark:su-text-white hocus:su-text-white dark:hocus:su-text-white su-decoration-2"
               : "su-text-black dark:su-text-white hocus:su-text-digital-red dark:hocus:su-text-dark-mode-red"
           )}
           rel="noreferrer"
         >
-          <span className="su-flex su-gap-2 su-items-center">
+          <span className="su-flex su-gap-2 su-items-baseline">
             <span>
               {ctaText} <span className="sr-only">{title}</span>
             </span>
-
-            <ChevronRight />
+            <FAIcon
+              icon="chevron-right"
+              set="solid"
+              width={18}
+              className="fa-fw su-text-14 group-hocus:su-translate-x-02em su-transition-transform"
+            />
           </span>
         </a>
       )}
