@@ -4,6 +4,7 @@ import VideoPlay from "../../packages/SVG-library/VideoPlay";
 import Modal from "../../packages/modal/ModalWrapper";
 import EmbedVideo from "../../packages/media/EmbedVideo";
 import { Container } from "../../packages/grids/Container";
+import { FAIcon } from "../../packages/icons/FAIcon";
 
 /**
  * Campaign Hero
@@ -55,27 +56,41 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
           />
         </div>
 
-        <div className="su-cc su-grid su-grid-cols-6 md:su-grid-cols-12 su-grid-gap su-relative su-z-[2] -su-mt-500">
-          {quoteConfig.include === true ? (
-            <div className="su-col-span-6 md:su-col-start-1 md:su-col-span-12 lg:su-col-start-3 lg:su-col-span-8 su-text-white su-text-center">
-              <h1 className="su-fluid-type-6">{textConfig.title}</h1>
+        <div className="su-cc su-relative su-z-[2] -su-mt-500 su-rs-pb-6">
+          <h1
+            className={cnb(
+              "su-fluid-type-6 su-text-white su-text-center su-max-w-1000 su-mx-auto su-mb-0 su-text-balance",
+              !quoteConfig.include && "su-mb-450"
+            )}
+          >
+            {textConfig.title}
+          </h1>
+          {quoteConfig.include ? (
+            <>
               <p
-                className={cnb(
-                  quoteConfig.quote ? "su-type-3 su-leading-snug" : ""
-                )}
+                className={
+                  quoteConfig.quote
+                    ? "su-rs-mt-3 su-rs-mb-1 su-text-white su-text-center su-type-3 su-leading-snug su-max-w-800 su-mx-auto"
+                    : ""
+                }
               >
                 {textConfig.intro}
               </p>
               {quoteConfig.youtubeId && (
-                <span className="su-inline-block hocus:su-animate-pulse hocus:su-scale-110 su-transition-all">
+                <>
                   <button
-                    className="su-component-card-thumbnail su-block su-relative su-z-10 su-w-full su-h-full"
+                    className="su-component-card-thumbnail su-block su-relative su-z-10 su-size-full hocus:su-animate-pulse hocus:su-scale-110 su-transition-all su-w-fit su-mx-auto su-rs-mb-4"
                     type="button"
                     aria-haspopup="dialog"
+                    aria-label="Open full video in a modal"
                     onClick={() => handleClick()}
                   >
-                    <span className="su-hidden">Play video</span>
-                    <VideoPlay />
+                    <FAIcon
+                      icon="circle-play"
+                      set="regular"
+                      width={75}
+                      className="su-text-[4.5rem] md:su-text-[7.5rem] su-text-white"
+                    />
                   </button>
                   {isModalOpen && (
                     <Modal
@@ -86,21 +101,23 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
                       <EmbedVideo videoId={quoteConfig.youtubeId} />
                     </Modal>
                   )}
-                </span>
+                </>
               )}
-            </div>
-          ) : (
-            <>
-              <h1 className="su-type-6 su-text-white su-text-center su-mb-450 su-col-span-6 md:su-col-start-1 md:su-col-span-12 lg:su-col-start-3 lg:su-col-span-8 ">
-                {textConfig.title}
-              </h1>
-              <p className="su-type-3 su-col-span-8 su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-200 su-py-38 su-mb-0 su-ml-80">
-                {textConfig.intro}
-              </p>
             </>
+          ) : (
+            <p className="su-type-3 su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-32 md:su-pl-48 2xl:su-pl-200 su-py-38 su-mb-0 2xl:su-ml-80">
+              {textConfig.intro}
+            </p>
           )}
           {quoteConfig.include === true && (
-            <div className="su-rs-pt-2 su-rs-px-5 su-rs-pb-6 su-col-start-2 su-col-span-10 su-text-white su-flex su-items-center su-flex-col su-gap-2xl md:su-flex-row su-border-t su-border-black-30 su-relative su-z-[2]">
+            <div className="su-rs-pt-2 su-rs-px-5 su-text-white su-flex su-items-center su-flex-col su-gap-44 lg:su-flex-row-reverse su-border-t su-border-black-30 su-relative su-z-[2] su-max-w-1200 su-mx-auto">
+              <div className="su-rounded-full su-size-160 md:su-size-200 2xl:su-size-300 su-grow su-shrink-0 su-basis-auto su-overflow-hidden">
+                <img
+                  src={quoteConfig.image}
+                  alt="quote placeholder for local dev"
+                  className="su-object-cover su-w-full su-h-full"
+                />
+              </div>
               <blockquote cite="" className="su-type-1">
                 <p className="su-font-serif su-leading-display">
                   “{quoteConfig.quote}”
@@ -119,13 +136,6 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
                   {quoteConfig.extra && `, ${quoteConfig.extra}`}
                 </footer>
               </blockquote>
-              <div className="su-rounded-full su-w-[300px] su-h-[300px] su-grow su-shrink-0 su-basis-auto su-overflow-hidden">
-                <img
-                  src={quoteConfig.image}
-                  alt="quote placeholder for local dev"
-                  className="su-object-cover su-w-full su-h-full"
-                />
-              </div>
             </div>
           )}
         </div>
