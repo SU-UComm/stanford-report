@@ -3,8 +3,6 @@ import { cnb } from "cnbuilder";
 import VideoPlay from "../../packages/SVG-library/VideoPlay";
 import Modal from "../../packages/modal/ModalWrapper";
 import EmbedVideo from "../../packages/media/EmbedVideo";
-
-// import specific templates for the component
 import { Container } from "../../packages/grids/Container";
 
 /**
@@ -60,15 +58,15 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
         <div className="su-cc su-grid su-grid-cols-6 md:su-grid-cols-12 su-grid-gap su-relative su-z-[2] -su-mt-500">
           {quoteConfig.include === true ? (
             <div className="su-col-span-6 md:su-col-start-1 md:su-col-span-12 lg:su-col-start-3 lg:su-col-span-8 su-text-white su-text-center">
-              <h1 className="su-type-6">{textConfig.title}</h1>
+              <h1 className="su-fluid-type-6">{textConfig.title}</h1>
               <p
                 className={cnb(
-                  quoteConfig.quote ? "su-type-3 su-leading-[1.3]" : ""
+                  quoteConfig.quote ? "su-type-3 su-leading-snug" : ""
                 )}
               >
                 {textConfig.intro}
               </p>
-              {quoteConfig.videoUrl && (
+              {quoteConfig.youtubeId && (
                 <span className="su-inline-block hocus:su-animate-pulse hocus:su-scale-110 su-transition-all">
                   <button
                     className="su-component-card-thumbnail su-block su-relative su-z-10 su-w-full su-h-full"
@@ -85,7 +83,7 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
                       title="Modal"
                       onClose={handleCloseModal}
                     >
-                      <EmbedVideo videoId={quoteConfig.videoUrl} />
+                      <EmbedVideo videoId={quoteConfig.youtubeId} />
                     </Modal>
                   )}
                 </span>

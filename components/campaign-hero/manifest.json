@@ -146,9 +146,9 @@
                       "description": "Typically an image of the person quoted.",
                       "type": "string"
                     },
-                    "videoUrl": {
-                      "title": "YouTube Video URL",
-                      "description": "A video that will play in a modal.",
+                    "youtubeId": {
+                      "title": "YouTube Video ID",
+                      "description": "The ID of the YouTube video that will play in a modal.",
                       "type": "string"
                     }
                   }
@@ -166,21 +166,7 @@
             "location": "header",
             "file": {
               "type": "css",
-              "filepath": "main.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react@18/umd/react.production.min.js"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "js",
-              "filepath": "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+              "filepath": "global.css"
             }
           },
           {
@@ -206,7 +192,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "../../packages/__globalPreview/campaign.html"
           }
         }
       }
