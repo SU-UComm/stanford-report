@@ -51,7 +51,7 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
           )}
           {/* Gradient overlay */}
           <div
-            className="su-absolute su-block su-w-full su-h-full su-top-0 su-bg-gradient-to-t su-from-black-true su-z-[1]"
+            className="su-absolute su-block su-size-full su-top-0 su-bg-gradient-to-t su-from-black-true su-z-[1]"
             aria-hidden="true"
           />
         </div>
@@ -105,17 +105,17 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
               )}
             </>
           ) : (
-            <p className="su-type-3 su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-32 md:su-pl-48 2xl:su-pl-200 su-py-38 su-mb-0 2xl:su-ml-80">
+            <p className="su-type-3 su-max-w-1200 su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-32 md:su-pl-48 2xl:su-pl-200 su-py-38 su-mb-0 2xl:su-ml-80">
               {textConfig.intro}
             </p>
           )}
           {quoteConfig.include === true && (
             <div className="su-rs-pt-2 su-rs-px-5 su-text-white su-flex su-items-center su-flex-col su-gap-44 lg:su-flex-row-reverse su-border-t su-border-black-30 su-relative su-z-[2] su-max-w-1200 su-mx-auto">
-              <div className="su-rounded-full su-size-160 md:su-size-200 2xl:su-size-300 su-grow su-shrink-0 su-basis-auto su-overflow-hidden">
+              <div className="su-rounded-full su-size-160 md:su-size-200 2xl:su-size-300 su-shrink-0 su-overflow-hidden">
                 <img
                   src={quoteConfig.image}
                   alt="quote placeholder for local dev"
-                  className="su-object-cover su-w-full su-h-full"
+                  className="su-object-cover su-size-full"
                 />
               </div>
               <blockquote cite="" className="su-type-1">
