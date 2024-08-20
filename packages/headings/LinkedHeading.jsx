@@ -46,6 +46,7 @@ export function LinkedHeading({
       />
 
       {ctaLink && (
+        // eslint-disable-next-line react/jsx-no-target-blank
         <a
           data-test="cta"
           href={ctaLink}
@@ -56,7 +57,6 @@ export function LinkedHeading({
               ? "su-text-white hocus:su-text-white/95 dark:hocus:su-text-white/95"
               : "su-text-black hocus:su-text-digital-red dark:hocus:su-text-dark-mode-red"
           )}
-          rel="noreferrer"
         >
           <span className="su-flex su-gap-2 su-items-baseline">
             <span>
