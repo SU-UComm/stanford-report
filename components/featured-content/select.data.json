@@ -1,6 +1,6 @@
 {
   "headingConfiguration": {
-    "title": "Featured Content Grid",
+    "title": "",
     "ctaText": "View all",
     "ctaUrl": "matrix-asset://api-identifier/89422"
   },
@@ -8,10 +8,10 @@
     "source": "Select",
     "cards": [
       {
-        "cardAsset": "matrix-asset://api-identifier/136326"
+        "cardAsset": "matrix-asset://api-identifier/157991"
       },
       {
-        "cardAsset": "matrix-asset://api-identifier/137195"
+        "cardAsset": "matrix-asset://api-identifier/157852"
       },
       {
         "cardAsset": "matrix-asset://api-identifier/136755"
