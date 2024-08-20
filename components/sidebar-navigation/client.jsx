@@ -11,14 +11,11 @@ import FetchAdapter from "../../packages/utils/fetchAdapter";
   // Get our current props
   const props = JSON.parse(base.getAttribute("data-hydration-props"));
 
-  console.log(props.root);
-  console.log(base);
-
   // Construct call to menu API
   let navURL = "";
   const parent = props.root;
   if (props.root) {
-    navURL = `https://news.stanford.edu/_api/mx/menu?loc=${parent}/site-data-no-cors`;
+    navURL = `https://news.stanford.edu/_api/dev/mx/menu?loc=${parent}`;
   }
 
   const adapter = new FetchAdapter();
@@ -29,8 +26,10 @@ import FetchAdapter from "../../packages/utils/fetchAdapter";
 
   const navData = await adapter.fetch();
 
-  console.log(navData);
+  props.navData = navData;
+
+  base.setAttribute("data-hydration-props", JSON.stringify(props));
 
   // Hydrate the component
-  hydrateComponent({ Component, componentName });
+  hydrateComponent({ Component, componentName: "sidebar-navigation" });
 })();

@@ -13,9 +13,10 @@ import LinkItem from "./LinkItem";
  */
 
 export default function NavContent({
+  id,
   asset_url,
   asset_short_name,
-  active,
+  asset_assetid,
   menu,
 }) {
   return (
@@ -26,7 +27,7 @@ export default function NavContent({
             level="one"
             url={asset_url}
             shortName={asset_short_name}
-            active={active}
+            active={id === asset_assetid ? "true" : "false"}
           />
         </li>
         {menu && menu.length ? (
@@ -39,7 +40,7 @@ export default function NavContent({
                       level="one"
                       url={item.asset_url}
                       shortName={item.asset_short_name}
-                      active={item.active}
+                      active={id === asset_assetid ? "true" : "false"}
                     />
                     {item.asset_children && item.asset_children !== null && (
                       <ul className="su-list-none su-p-0">
@@ -54,7 +55,9 @@ export default function NavContent({
                                   level="two"
                                   url={subitem.asset_url}
                                   shortName={subitem.asset_short_name}
-                                  active={subitem.active}
+                                  active={
+                                    id === asset_assetid ? "true" : "false"
+                                  }
                                 />
                               </li>
                             )
