@@ -9,6 +9,18 @@ import { LinkedHeading } from "../../packages/headings/Heading";
 /**
  * Horizontal Video Testimonials component
  *
+ * @param {object} sectionConfiguration
+ * Field data for the section
+ *
+ * @param {string} ctaInternalUrl
+ * The internal URL for the CTA from the Matrix asset selection
+ *
+ * @param {string} bgImageUrl
+ * The background image URL from the Matrix asset selection
+ *
+ * @param {array} testimonialsArray
+ * An array of testimonial objects that will be used to render the video cards
+ *
  * @returns {JSX.Element}
  * @constructor
  */
@@ -65,8 +77,12 @@ export default function HorizontalVideoTestimonials({
           </ul>
         )}
       </Container>
-      <img src={bgImageUrl} alt="" className={styles.bgImage} />
-      <div aria-hidden className={styles.overlay} />
+      {bgImageUrl && (
+        <>
+          <img src={bgImageUrl} alt="" className={styles.bgImage} />
+          <div aria-hidden className={styles.overlay} />
+        </>
+      )}
     </Container>
   );
 }
