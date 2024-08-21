@@ -2,7 +2,7 @@ export const root =
   "su-relative su-flex su-flex-col lg:su-flex-row su-gap-30 md:su-gap-38 2xl:su-gap-72 su-items-start lg:su-items-center su-p-34 md:su-p-61 lg:su-p-38 2xl:su-pl-76 su-bg-white dark:su-bg-black-true su-text-black dark:su-text-white";
 
 export const contentWrapper =
-  "su-w-full lg:su-basis-[50%] xl:su-basis-[40%] 2xl:su-basis-[30%]";
+  "su-relative su-w-full lg:su-basis-[50%] xl:su-basis-[40%] 2xl:su-basis-[30%]";
 
 export const heading = "su-type-3 su-leading-display su-rs-mb-0";
 export const link =
