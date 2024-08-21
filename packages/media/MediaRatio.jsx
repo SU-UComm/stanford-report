@@ -16,7 +16,7 @@ export default function MediaRatio({
 
   return (
     <span
-      className={`su-component-media-ratio su-overflow-hidden su-relative su-w-full su-block su-w-full su-h-full ${aspectRatioMap.get(
+      className={`su-component-media-ratio su-overflow-hidden su-relative su-size-full su-block ${aspectRatioMap.get(
         aspectRatio
       )}`}
     >
@@ -30,7 +30,7 @@ export default function MediaRatio({
       )}
       {imageUrl && (
         <img
-          className="su-absolute su-object-cover su-object-center su-size-full su-w-full su-h-full"
+          className="su-absolute su-object-cover su-object-center su-size-full"
           src={imageUrl}
           alt={imageAlt}
         />
