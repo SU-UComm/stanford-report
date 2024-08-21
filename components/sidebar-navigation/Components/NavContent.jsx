@@ -19,7 +19,6 @@ export default function NavContent({
   asset_assetid,
   menu,
 }) {
-  console.log(id, asset_assetid);
   return (
     <nav id="sidebar-navigation" aria-label="Sidebar menu">
       <ul className="su-list-none su-p-0">
