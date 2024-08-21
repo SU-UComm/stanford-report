@@ -1,7 +1,8 @@
 import React from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
-import { BookOpenCover, ExternalArrow, Podcast } from "../SVG-library/SVG";
+import { BookOpenCover, Podcast } from "../SVG-library/SVG";
 import { SidebarHeading } from "../headings/Heading";
+import { FAIcon } from "../icons/FAIcon";
 
 // TODO: Clean up TW classes with px, and properties with more than one value, e.g., md:su-gap-36 md:su-gap-48
 
@@ -84,9 +85,13 @@ export default function MediaCard({
               >
                 <XssSafeContent content={title} elementType="span" />
                 {isRealExternalLink && (
-                  <span className="su-inline-block *:su-inline-block *:su-size-1em su--ml-1em su-translate-x-1em group-hocus:su-translate-x-[1.1em] group-hocus:su--translate-y-01em su-transition-transform">
-                    <ExternalArrow />
-                  </span>
+                  <FAIcon
+                    icon="arrow-up-right"
+                    set="regular"
+                    // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+                    width={24}
+                    className="su-h-auto su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
+                  />
                 )}
               </a>
             )}
