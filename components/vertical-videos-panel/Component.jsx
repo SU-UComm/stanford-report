@@ -1,5 +1,5 @@
 import React from "react";
-import CardThumbnail from "../../packages/card/CardThumbnail";
+import { VerticalVideoCard } from "../../packages/card/VerticalVideoCard/VerticalVideoCard";
 import { Container } from "../../packages/grids/Container";
 import { LinkedHeading } from "../../packages/headings/Heading";
 import * as styles from "./styles";
@@ -53,13 +53,12 @@ export default function VerticalVideosPanel({
             {videosArray.map(
               ({ youtubeId, heading, subheading, videoImageData }) => (
                 <li key={youtubeId}>
-                  <CardThumbnail
-                    imageUrl={videoImageData?.url}
-                    alt={videoImageData?.alt}
-                    title={heading}
-                    aspectRatio="card-featured"
-                    videoUrl={youtubeId}
-                    size="featured"
+                  <VerticalVideoCard
+                    heading={heading}
+                    subheading={subheading}
+                    youtubeId={youtubeId}
+                    videoImageUrl={videoImageData?.url}
+                    videoImageAlt={videoImageData?.alt || heading}
                   />
                 </li>
               )
