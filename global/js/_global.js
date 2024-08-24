@@ -1,3 +1,4 @@
+import '../../components/vertical-videos-panel/client.jsx';
 import '../../components/topic-subtopic-listing/client.jsx';
 import '../../components/text-callout/client.jsx';
 import '../../components/subtopics-subnav/client.jsx';
