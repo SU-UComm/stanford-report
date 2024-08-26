@@ -99,6 +99,7 @@ export default function SidebarNavigation({ id, navData }) {
         />
         {navOpen && (
           <NavContent
+            id={id}
             asset_url={navData.asset_url}
             asset_short_name={navData.asset_short_name}
             menu={navData.menu}

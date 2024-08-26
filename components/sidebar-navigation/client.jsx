@@ -26,11 +26,10 @@ import FetchAdapter from "../../packages/utils/fetchAdapter";
 
   const navData = await adapter.fetch();
 
+  // Combine props and navData
   props.navData = navData;
 
   base.setAttribute("data-hydration-props", JSON.stringify(props));
-
-  console.log(props);
 
   // Hydrate the component
   hydrateComponent({ Component, componentName: "sidebar-navigation" });
