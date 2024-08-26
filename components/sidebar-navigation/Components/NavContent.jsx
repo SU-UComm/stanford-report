@@ -27,7 +27,7 @@ export default function NavContent({
             level="one"
             url={asset_url}
             shortName={asset_short_name}
-            active={id === asset_assetid ? "page" : ""}
+            active={id === parseInt(asset_assetid) ? "page" : ""}
           />
         </li>
         {menu && menu.length ? (
@@ -40,7 +40,7 @@ export default function NavContent({
                       level="one"
                       url={item.asset_url}
                       shortName={item.asset_short_name}
-                      active={id === item.asset_assetid ? "page" : ""}
+                      active={id === parseInt(item.asset_assetid) ? "page" : ""}
                     />
                     {item.asset_children && item.asset_children !== null && (
                       <ul className="su-list-none su-p-0">
@@ -56,7 +56,9 @@ export default function NavContent({
                                   url={subitem.asset_url}
                                   shortName={subitem.asset_short_name}
                                   active={
-                                    id === subitem.asset_assetid ? "page" : ""
+                                    id === parseInt(subitem.asset_assetid)
+                                      ? "page"
+                                      : ""
                                   }
                                 />
                               </li>
