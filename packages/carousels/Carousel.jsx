@@ -58,14 +58,14 @@ export function Carousel({
         centeredSlides: true,
       },
       768: {
-        slidesPerView: 1.8,
+        slidesPerView: 1.9,
         spaceBetween: 50,
         centeredSlides: true,
       },
     },
-    slidesPerView: 1.5,
-    spaceBetween: 40,
-    variantClassName: "component-slider-single component-slider-peek",
+    slidesPerView: 1,
+    variantClassName:
+      "component-slider-single component-slider-vertical-videos component-slider-peek",
     loop: true,
   });
   variants.set("media", {

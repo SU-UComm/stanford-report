@@ -207,6 +207,11 @@ svg {
   @apply su-opacity-[.27] md:su-opacity-100 su-pointer-events-none md:su-pointer-events-auto;
 }
 
+.component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-prev > *,
+.component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-next > * {
+  @apply su-opacity-40 su-pointer-events-none;
+}
+
 .component-slider .component-slider-pagination {
   @apply su-static su-flex su-gap-10 su-text-left;
 }

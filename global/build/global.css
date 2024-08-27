@@ -660,6 +660,8 @@ h6{font-family:"Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roma
 @media (min-width: 768px){
 .component-slider-single.component-slider-peek .swiper-slide-prev > *,
 .component-slider-single.component-slider-peek .swiper-slide-next > *{pointer-events:auto;opacity:1}}
+.component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-prev > *,
+.component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-next > *{pointer-events:none;opacity:0.25}
 .component-slider .component-slider-pagination{position:static;display:flex;gap:1rem;text-align:left}
 .component-slider .swiper-pagination-bullet{margin-left:0;margin-right:0;height:2rem;width:2rem;border-width:2px;border-style:solid;--tw-border-opacity:1;border-color:rgb(192 192 191 / var(--tw-border-opacity));background-color:transparent;opacity:1;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 :is(.su-dark .component-slider .swiper-pagination-bullet){--tw-border-opacity:1;border-color:rgb(118 118 116 / var(--tw-border-opacity))}
@@ -2612,6 +2614,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-mt-\[3\.2rem\]{margin-top:3.2rem}
 .su-mt-\[71px\]{margin-top:71px}
 .su-mt-auto{margin-top:auto}
+.su-mb-61{margin-bottom:6.1rem}
 .su-box-border{box-sizing:border-box}
 .su-block{display:block}
 .su-inline-block{display:inline-block}
@@ -2960,6 +2963,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-bg-black-30{--tw-bg-opacity:1;background-color:rgb(192 192 191 / var(--tw-bg-opacity))}
 .su-bg-black-40{--tw-bg-opacity:1;background-color:rgb(171 171 169 / var(--tw-bg-opacity))}
 .su-bg-black-true{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
+.su-bg-black-true\/75{background-color:rgb(0 0 0 / 0.75)}
 .su-bg-black\/\[0\.33\]{background-color:rgb(46 45 41 / 0.33)}
 .su-bg-digital-green-dark{--tw-bg-opacity:1;background-color:rgb(0 111 84 / var(--tw-bg-opacity))}
 .su-bg-digital-red{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity))}
@@ -4277,10 +4281,10 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 :is(.su-dark .su-group:focus-within .dark\:group-hocus-within\:su-text-digital-red-light){--tw-text-opacity:1;color:rgb(229 8 8 / var(--tw-text-opacity))}
 :is(.su-dark .su-group:hover .dark\:group-hocus-within\:su-text-digital-red-light){--tw-text-opacity:1;color:rgb(229 8 8 / var(--tw-text-opacity))}
 @media (min-width: 576px){
-.sm\:su-left-\[10\%\]{left:10%}
-.sm\:su-right-\[10\%\]{right:10%}
 .sm\:su-bottom-61{bottom:6.1rem}
 .sm\:su-left-48{left:4.8rem}
+.sm\:su-left-\[10\%\]{left:10%}
+.sm\:su-right-\[10\%\]{right:10%}
 .sm\:su-col-span-10{grid-column:span 10 / span 10}
 .sm\:su-col-span-4{grid-column:span 4 / span 4}
 .sm\:su-col-span-6{grid-column:span 6 / span 6}
@@ -4610,15 +4614,15 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 @media (min-width: 992px){
 .lg\:su-relative{position:relative}
 .lg\:su-bottom-0{bottom:0}
+.lg\:su-bottom-34{bottom:3.4rem}
 .lg\:su-bottom-38{bottom:3.8rem}
 .lg\:su-bottom-\[15\.5rem\]{bottom:15.5rem}
+.lg\:su-left-32{left:3.2rem}
 .lg\:su-left-38{left:3.8rem}
 .lg\:su-right-0{right:0}
 .lg\:su-top-0{top:0}
 .lg\:su-top-\[239px\]{top:239px}
 .lg\:su-top-\[240px\]{top:240px}
-.lg\:su-left-32{left:3.2rem}
-.lg\:su-bottom-34{bottom:3.4rem}
 .lg\:su-z-\[1\]{z-index:1}
 .lg\:su-order-2{order:2}
 .lg\:su-col-span-3{grid-column:span 3 / span 3}
