@@ -13,7 +13,7 @@ const videoPlayClasses = {
   featured:
     "su-left-13 su-bottom-13 md:su-left-27 md:su-bottom-27 [&>svg]:su-text-[4rem] [&>svg]:md:su-text-[6rem]",
   "vertical-video":
-    "su-left-32 su-bottom-34 md:su-left-48 md:su-bottom-61 [&>svg]:su-text-[6rem]",
+    "su-left-32 su-bottom-34 sm:su-left-48 sm:su-bottom-61 lg:su-left-32 lg:su-bottom-34 2xl:su-left-48 2xl:su-bottom-61 [&>svg]:su-text-[6rem]",
 };
 
 export default function CardThumbnail({
@@ -76,7 +76,11 @@ export default function CardThumbnail({
           title="Modal"
           onClose={handleCloseModal}
         >
-          <EmbedVideo videoId={videoUrl} title={`Watch ${title}`} />
+          <EmbedVideo
+            isVertical={size === "vertical-video"}
+            videoId={videoUrl}
+            title={`Watch ${title}`}
+          />
         </Modal>
       )}
     </>

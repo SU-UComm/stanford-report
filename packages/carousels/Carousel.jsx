@@ -45,6 +45,29 @@ export function Carousel({
     variantClassName: "component-slider-cards component-slider-peek",
     loop: true,
   });
+  variants.set("vertical-videos", {
+    breakpoints: {
+      0: {
+        slidesPerView: 1.4,
+        spaceBetween: 20,
+        centeredSlides: true,
+      },
+      576: {
+        slidesPerView: 1.6,
+        spaceBetween: 20,
+        centeredSlides: true,
+      },
+      768: {
+        slidesPerView: 1.8,
+        spaceBetween: 50,
+        centeredSlides: true,
+      },
+    },
+    slidesPerView: 1.5,
+    spaceBetween: 40,
+    variantClassName: "component-slider-single component-slider-peek",
+    loop: true,
+  });
   variants.set("media", {
     breakpoints: {
       0: {

@@ -1,7 +1,8 @@
-import React from "react";
-import { VerticalVideoCard } from "../../packages/card/VerticalVideoCard/VerticalVideoCard";
+import React, { useState, useEffect } from "react";
+import { Carousel } from "../../packages/carousels/Carousel";
 import { Container } from "../../packages/grids/Container";
 import { LinkedHeading } from "../../packages/headings/Heading";
+import { VerticalVideoCard } from "../../packages/card/VerticalVideoCard/VerticalVideoCard";
 import * as styles from "./styles";
 
 /**
@@ -31,6 +32,28 @@ export default function VerticalVideosPanel({
 }) {
   const { title, ctaText, ctaManualUrl, marginTop, marginBottom } =
     sectionConfiguration;
+
+  const [cards, setCards] = useState([]);
+  const cardData = [];
+
+  if (videosArray?.length) {
+    videosArray.forEach((card) => {
+      cardData.push(
+        <VerticalVideoCard
+          heading={card.heading}
+          subheading={card.subheading}
+          youtubeId={card.youtubeId}
+          videoImageUrl={card.videoImageData?.url}
+          videoImageAlt={card.videoImageData?.alt || card.heading}
+        />
+      );
+    });
+  }
+
+  useEffect(() => {
+    setCards(cardData);
+  }, []);
+
   return (
     <Container
       width="full"
@@ -40,32 +63,32 @@ export default function VerticalVideosPanel({
       marginBottom={marginBottom}
       className={styles.root}
     >
-      <Container width="cc" paddingX={false} className={styles.wrapper}>
-        <LinkedHeading
-          title={title}
-          ctaText={ctaText}
-          ctaLink={ctaManualUrl || ctaInternalUrl}
-          isAlwaysLight
-          className={styles.sectionHeading}
-        />
+      <div className={styles.wrapper}>
+        <div className="su-cc">
+          <LinkedHeading
+            title={title}
+            ctaText={ctaText}
+            ctaLink={ctaManualUrl || ctaInternalUrl}
+            isAlwaysLight
+            className={styles.sectionHeading}
+          />
+        </div>
         {!!videosArray?.length && (
-          <ul className={styles.cardGrid}>
-            {videosArray.map(
-              ({ youtubeId, heading, subheading, videoImageData }) => (
-                <li key={youtubeId}>
-                  <VerticalVideoCard
-                    heading={heading}
-                    subheading={subheading}
-                    youtubeId={youtubeId}
-                    videoImageUrl={videoImageData?.url}
-                    videoImageAlt={videoImageData?.alt || heading}
-                  />
-                </li>
-              )
-            )}
-          </ul>
+          <>
+            <div className="lg:su-hidden">
+              <Carousel
+                variant="vertical-videos"
+                slides={cards}
+                isDark
+                uniqueClass="vertical-video"
+              />
+            </div>
+            <div className="su-cc">
+              <ul className={styles.cardGrid}>{cardData}</ul>
+            </div>
+          </>
         )}
-      </Container>
+      </div>
       {bgImageUrl && (
         <>
           <img src={bgImageUrl} alt="" className={styles.bgImage} />
