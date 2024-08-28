@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Carousel } from "../../packages/carousels/Carousel";
 import { Container } from "../../packages/grids/Container";
 import { LinkedHeading } from "../../packages/headings/Heading";
@@ -33,7 +33,6 @@ export default function VerticalVideosPanel({
   const { title, ctaText, ctaManualUrl, marginTop, marginBottom } =
     sectionConfiguration;
 
-  const [cards, setCards] = useState([]);
   const cardData = [];
 
   if (videosArray?.length) {
@@ -50,10 +49,6 @@ export default function VerticalVideosPanel({
       );
     });
   }
-
-  useEffect(() => {
-    setCards(cardData);
-  }, []);
 
   return (
     <Container
@@ -76,16 +71,21 @@ export default function VerticalVideosPanel({
         </div>
         {!!videosArray?.length && (
           <>
-            <div className="lg:su-hidden">
-              <Carousel
-                variant="vertical-videos"
-                slides={cards}
-                isDark
-                uniqueClass="vertical-video"
-              />
-            </div>
-            <div className="su-cc">
-              <ul className={styles.cardGrid}>{cardData}</ul>
+            {/* Only render carousel if there are more than 1 videos */}
+            {videosArray.length > 1 && (
+              <div className="lg:su-hidden">
+                <Carousel
+                  variant="vertical-videos"
+                  slides={cardData}
+                  isDark
+                  uniqueClass="vertical-video"
+                />
+              </div>
+            )}
+            <div className={styles.cardGridWrapper(videosArray.length === 1)}>
+              <div className={styles.cardGrid(videosArray.length === 1)}>
+                {cardData}
+              </div>
             </div>
           </>
         )}

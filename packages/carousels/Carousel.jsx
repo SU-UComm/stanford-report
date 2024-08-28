@@ -64,6 +64,7 @@ export function Carousel({
       },
     },
     slidesPerView: 1,
+    initialSlide: 0,
     variantClassName:
       "component-slider-single component-slider-vertical-videos component-slider-peek",
     loop: true,

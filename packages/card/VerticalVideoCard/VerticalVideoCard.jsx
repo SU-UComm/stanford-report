@@ -33,6 +33,10 @@ export function VerticalVideoCard({
 }) {
   return (
     <article className={styles.root}>
+      <div className={styles.contentWrapper}>
+        <h3 className={styles.heading}>{heading}</h3>
+        <p className={styles.subheading}>{subheading}</p>
+      </div>
       <div className={styles.imageWrapper}>
         <CardThumbnail
           imageUrl={videoImageUrl}
@@ -43,10 +47,6 @@ export function VerticalVideoCard({
           size="vertical-video"
           videoIconClasses={styles.videoIcon}
         />
-      </div>
-      <div className={styles.contentWrapper}>
-        <h3 className={styles.heading}>{heading}</h3>
-        <p className={styles.subheading}>{subheading}</p>
       </div>
     </article>
   );
