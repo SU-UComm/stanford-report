@@ -101,6 +101,7 @@
             "description": "Enter the details for each vertical video card.",
             "type": "array",
             "minItems": 1,
+            "maxItems": 3,
             "items": {
               "type": "object",
               "properties": {
