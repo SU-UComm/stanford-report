@@ -661,11 +661,29 @@ h6{font-family:"Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roma
 .component-slider-single.component-slider-peek .swiper-slide-prev > *,
 .component-slider-single.component-slider-peek .swiper-slide-next > *{pointer-events:auto;opacity:1}}
 .component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-prev > *,
-.component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-next > *{pointer-events:none;opacity:0.25}
+.component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-next > *{pointer-events:none;opacity:0.4}
 .component-slider .component-slider-pagination{position:static;display:flex;gap:1rem;text-align:left}
 .component-slider .swiper-pagination-bullet{margin-left:0;margin-right:0;height:2rem;width:2rem;border-width:2px;border-style:solid;--tw-border-opacity:1;border-color:rgb(192 192 191 / var(--tw-border-opacity));background-color:transparent;opacity:1;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 :is(.su-dark .component-slider .swiper-pagination-bullet){--tw-border-opacity:1;border-color:rgb(118 118 116 / var(--tw-border-opacity))}
 .component-slider.su-slider-dark .swiper-pagination-bullet{margin-left:0;margin-right:0;height:2rem;width:2rem;border-width:2px;border-style:solid;--tw-border-opacity:1;border-color:rgb(118 118 116 / var(--tw-border-opacity));background-color:transparent;opacity:1;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls{padding-left:20px;padding-right:20px;margin-left:auto;margin-right:auto;}
+@media (min-width: 576px){
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls{padding-left:30px;padding-right:30px}}
+@media (min-width: 768px){
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls{padding-left:50px;padding-right:50px}}
+@media (min-width: 992px){
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls{padding-left:80px;padding-right:80px}}
+@media (min-width: 1200px){
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls{padding-left:100px;padding-right:100px}}
+@media (min-width: 1500px){
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls{padding-left:100px;padding-right:100px}}
+@media only screen and (min-width: 1700px){
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls{padding-left:calc((100% - 1500px)/2);padding-right:calc((100% - 1500px)/2)}}
+ .su-centered-container .component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls,.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .su-centered-container,.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .su-cc{padding-left:0;padding-right:0}
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet{border-width:2px;--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity))}
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet:hover{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet:focus{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet.swiper-pagination-bullet-active{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity));--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
 .component-slider .swiper-pagination-lock{pointer-events:none}
 .component-slider .swiper-pagination-horizontal.component-slider-pagination{flex-wrap:wrap}
 .component-slider
@@ -699,7 +717,7 @@ h6{font-family:"Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roma
 :is(.su-dark .component-slider .component-slider-btn){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
 :is(.su-dark .component-slider .component-slider-btn:hover){--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 :is(.su-dark .component-slider .component-slider-btn:focus){--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
-.component-slider.su-slider-dark .component-slider-btn{position:relative;top:auto;bottom:0;height:37px;min-width:37px;max-width:37px;border-radius:9999px;border-width:2px;border-style:solid;--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity));transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
+.component-slider.su-slider-dark .component-slider-btn{position:relative;top:auto;bottom:0;height:37px;min-width:37px;max-width:37px;border-radius:9999px;border-width:2px;border-style:solid;--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity));transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 .component-slider.su-slider-dark .component-slider-btn:hover{--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .component-slider.su-slider-dark .component-slider-btn:focus{--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 /*
@@ -2540,6 +2558,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-mb-58{margin-bottom:5.8rem}
 .su-mb-6{margin-bottom:0.6rem}
 .su-mb-60{margin-bottom:6rem}
+.su-mb-61{margin-bottom:6.1rem}
 .su-mb-8{margin-bottom:0.8rem}
 .su-mb-9{margin-bottom:0.9rem}
 .su-mb-\[-\.5em\]{margin-bottom:-.5em}
@@ -2614,7 +2633,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-mt-\[3\.2rem\]{margin-top:3.2rem}
 .su-mt-\[71px\]{margin-top:71px}
 .su-mt-auto{margin-top:auto}
-.su-mb-61{margin-bottom:6.1rem}
 .su-box-border{box-sizing:border-box}
 .su-block{display:block}
 .su-inline-block{display:inline-block}

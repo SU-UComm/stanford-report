@@ -224,6 +224,18 @@ svg {
   @apply su-mx-0 su-transition su-opacity-100 su-w-20 su-h-20 su-bg-transparent su-border-2 su-border-solid su-border-black-60;
 }
 
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls {
+  @apply su-cc;
+}
+
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet {
+  @apply su-border-2 su-border-white hocus:su-border-dark-mode-red;
+}
+
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply su-border-dark-mode-red su-bg-dark-mode-red;
+}
+
 .component-slider .swiper-pagination-lock {
   @apply su-pointer-events-none;
 }
@@ -280,7 +292,7 @@ svg {
 }
 
 .component-slider.su-slider-dark .component-slider-btn {
-  @apply su-transition hocus:su-text-white hocus:su-bg-dark-mode-red hocus:su-text-white su-relative su-min-w-[37px] su-max-w-[37px] su-h-[37px] su-top-auto su-bottom-0 su-border-solid su-border-2 su-border-dark-mode-red su-rounded-full;
+  @apply su-transition su-text-white hocus:su-bg-dark-mode-red hocus:su-text-white su-relative su-min-w-[37px] su-max-w-[37px] su-h-[37px] su-top-auto su-bottom-0 su-border-solid su-border-2 su-border-dark-mode-red su-rounded-full;
 }
 
 /*

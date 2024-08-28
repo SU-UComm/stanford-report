@@ -221,8 +221,8 @@ export function Carousel({
               const slide = swiper.$wrapperEl?.[0].querySelector(
                 ".swiper-slide-active"
               );
-              const slideTarget = slide.querySelector("h2 a, h3 a")
-                ? slide.querySelector("h2 a, h3 a")
+              const slideTarget = slide.querySelector("h2 a, h3 a, button")
+                ? slide.querySelector("h2 a, h3 a, button")
                 : (() => {
                     slide.setAttribute("tabindex", "-1");
                     return slide;

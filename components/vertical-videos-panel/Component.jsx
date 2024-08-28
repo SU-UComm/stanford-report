@@ -40,6 +40,7 @@ export default function VerticalVideosPanel({
     videosArray.forEach((card) => {
       cardData.push(
         <VerticalVideoCard
+          key={card.youtubeId}
           heading={card.heading}
           subheading={card.subheading}
           youtubeId={card.youtubeId}
@@ -92,7 +93,7 @@ export default function VerticalVideosPanel({
       {bgImageUrl && (
         <>
           <img src={bgImageUrl} alt="" className={styles.bgImage} />
-          <div aria-hidden className={styles.overlay} />
+          <div aria-hidden="true" className={styles.overlay} />
         </>
       )}
     </Container>
