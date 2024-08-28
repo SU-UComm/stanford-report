@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "horizontal-video-testimonials",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "namespace": "stanford-components",
   "description": "A section with a listing of horizontal video cards, with a section title and link to watch more.",
   "displayName": "Horizontal Video Testimonials",
@@ -39,13 +39,13 @@
               "ctaUrl": {
                 "title": "Matrix asset link",
                 "type": "string",
-                "description": "Select an asset to link to. If this field is filled out, it will be used instead of the manual link",
+                "description": "Select an Matrix asset/page to link to.",
                 "format": "matrix-asset-uri"
               },
               "ctaManualUrl": {
                 "title": "External/Manual link",
                 "type": "string",
-                "description": "Enter the full URL, including https://",
+                "description": "Enter the full URL, including https://. If this field is filled out, it will be used instead of the Matrix asset link.",
                 "default": "https://news.stanford.edu/video"
               },
               "bgImage": {
