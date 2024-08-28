@@ -64,7 +64,7 @@ export default function CardThumbnail({
                 data-testid="svg-videoplay"
                 set="regular"
                 icon="circle-play"
-                className="su-text-white dark:su-text-white su-drop-shadow-[0px_10px_20px_rgba(0,0,0,0.30)"
+                className="su-text-white dark:su-text-white su-drop-shadow-[0px_10px_20px_rgba(0,0,0,0.30)]"
               />
             </span>
           )}
