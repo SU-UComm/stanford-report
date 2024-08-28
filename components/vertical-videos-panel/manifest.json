@@ -3,11 +3,11 @@
   "name": "vertical-videos-panel",
   "version": "0.0.1",
   "namespace": "stanford-components",
-  "description": "A section that displays up to 3 vertical YouTube videos, with a section title and link to watch more.",
+  "description": "A section that displays up to 3 vertical YouTube videos, with a section title and link to watch more. On smaller devices, the videos will be displayed in a carousel if there are more than 1.",
   "displayName": "Vertical Videos Panel",
   "mainFunction": "main",
   "icon": {
-    "id": "video_chat",
+    "id": "video_library",
     "color": {
       "type": "enum",
       "value": "blue"
@@ -22,7 +22,7 @@
         "properties": {
           "sectionConfiguration": {
             "title": "Section Configuration",
-            "description": "The heading for the section, appearing above the video previews. If the title is empty, the heading and call to action link will be hidden.",
+            "description": "The heading for the section, appearing above the video cards. If the title is empty, the heading and call to action link will be hidden.",
             "type": "object",
             "required": [],
             "properties": {
@@ -39,7 +39,7 @@
               "ctaUrl": {
                 "title": "Matrix asset link",
                 "type": "string",
-                "description": "Select an asset to link to. If this field is filled out, it will be used instead of the manual link",
+                "description": "Select an asset/page to link to. If this field is filled out, it will be used instead of the manual link",
                 "format": "matrix-asset-uri"
               },
               "ctaManualUrl": {

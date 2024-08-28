@@ -36,18 +36,20 @@ export default function VerticalVideosPanel({
   const cardData = [];
 
   if (videosArray?.length) {
-    videosArray.forEach((card) => {
-      cardData.push(
-        <VerticalVideoCard
-          key={card.youtubeId}
-          heading={card.heading}
-          subheading={card.subheading}
-          youtubeId={card.youtubeId}
-          videoImageUrl={card.videoImageData?.url}
-          videoImageAlt={card.videoImageData?.alt || card.heading}
-        />
-      );
-    });
+    videosArray.forEach(
+      ({ youtubeId, heading, subheading, videoImageData }) => {
+        cardData.push(
+          <VerticalVideoCard
+            key={youtubeId}
+            heading={heading}
+            subheading={subheading}
+            youtubeId={youtubeId}
+            videoImageUrl={videoImageData?.url}
+            videoImageAlt={videoImageData?.alt || heading}
+          />
+        );
+      }
+    );
   }
 
   return (
@@ -60,7 +62,7 @@ export default function VerticalVideosPanel({
       className={styles.root}
     >
       <div className={styles.wrapper}>
-        <div className="su-cc">
+        <div className={styles.headingWrapper}>
           <LinkedHeading
             title={title}
             ctaText={ctaText}
@@ -73,7 +75,7 @@ export default function VerticalVideosPanel({
           <>
             {/* Only render carousel if there are more than 1 videos */}
             {videosArray.length > 1 && (
-              <div className="lg:su-hidden">
+              <div className={styles.carouselWrapper}>
                 <Carousel
                   variant="vertical-videos"
                   slides={cardData}
