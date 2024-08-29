@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Carousel } from "../../packages/carousels/Carousel";
 import { Container } from "../../packages/grids/Container";
 import { LinkedHeading } from "../../packages/headings/Heading";
@@ -33,6 +33,7 @@ export default function VerticalVideosPanel({
   const { title, ctaText, ctaManualUrl, marginTop, marginBottom } =
     sectionConfiguration;
 
+  const [cards, setCards] = useState([]);
   const cardData = [];
 
   if (videosArray?.length) {
@@ -40,7 +41,7 @@ export default function VerticalVideosPanel({
       ({ youtubeId, heading, subheading, videoImageData }) => {
         cardData.push(
           <VerticalVideoCard
-            key={youtubeId}
+            key={`${youtubeId}-${heading}`}
             heading={heading}
             subheading={subheading}
             youtubeId={youtubeId}
@@ -51,6 +52,11 @@ export default function VerticalVideosPanel({
       }
     );
   }
+
+  // Can't get rid of the useEffect otherwise it would mess up the carousel slides
+  useEffect(() => {
+    setCards(cardData);
+  }, []);
 
   return (
     <Container
@@ -78,7 +84,7 @@ export default function VerticalVideosPanel({
               <div className={styles.carouselWrapper}>
                 <Carousel
                   variant="vertical-videos"
-                  slides={cardData}
+                  slides={cards}
                   isDark
                   uniqueClass="vertical-video"
                 />

@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "vertical-videos-panel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
   "description": "A section that displays up to 3 vertical YouTube videos, with a section title and link to watch more. On smaller devices, the videos will be displayed in a carousel if there are more than 1.",
   "displayName": "Vertical Videos Panel",
@@ -164,6 +164,14 @@
     "matrix-asset://api-identifier/28192": {
       "type": "file",
       "path": "mocked-uris/28192.json"
+    },
+    "matrix-asset://api-identifier/128610": {
+      "type": "file",
+      "path": "mocked-uris/128610.json"
+    },
+    "matrix-asset://api-identifier/125800": {
+      "type": "file",
+      "path": "mocked-uris/125800.json"
     }
   },
   "previews": {

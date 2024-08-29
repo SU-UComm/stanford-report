@@ -51,20 +51,22 @@ export function Carousel({
         slidesPerView: 1.4,
         spaceBetween: 20,
         centeredSlides: true,
+        initialSlide: 0,
       },
       576: {
         slidesPerView: 1.6,
         spaceBetween: 20,
         centeredSlides: true,
+        initialSlide: 0,
       },
       768: {
         slidesPerView: 1.9,
         spaceBetween: 50,
         centeredSlides: true,
+        initialSlide: 0,
       },
     },
     slidesPerView: 1,
-    initialSlide: 0,
     variantClassName:
       "component-slider-single component-slider-vertical-videos component-slider-peek",
     loop: true,
