@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import hash from "object-hash";
 import { Carousel } from "../../packages/carousels/Carousel";
 import { Container } from "../../packages/grids/Container";
 import { LinkedHeading } from "../../packages/headings/Heading";
@@ -35,6 +36,7 @@ export default function VerticalVideosPanel({
 
   const [cards, setCards] = useState([]);
   const cardData = [];
+  const uniqueClass = hash.MD5(JSON.stringify(videosArray));
 
   if (videosArray?.length) {
     videosArray.forEach(
@@ -86,7 +88,7 @@ export default function VerticalVideosPanel({
                   variant="vertical-videos"
                   slides={cards}
                   isDark
-                  uniqueClass="vertical-video"
+                  uniqueClass={uniqueClass}
                 />
               </div>
             )}

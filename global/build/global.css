@@ -682,7 +682,8 @@ h6{font-family:"Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roma
  .su-centered-container .component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls,.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .su-centered-container,.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .su-cc{padding-left:0;padding-right:0}
 .component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet{border-width:2px;--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity))}
 .component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet:hover{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
-.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet:focus{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet:focus-visible{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet:active{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
 .component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet.swiper-pagination-bullet-active{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity));--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
 .component-slider .swiper-pagination-lock{pointer-events:none}
 .component-slider .swiper-pagination-horizontal.component-slider-pagination{flex-wrap:wrap}
@@ -692,12 +693,15 @@ h6{font-family:"Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roma
   --swiper-pagination-bullet-horizontal-gap: 0;
   margin: 0 !important;
 }
-.component-slider.su-slider-dark .swiper-pagination-bullet:hover,
+.component-slider.su-slider-dark .swiper-pagination-bullet:hover{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+.component-slider.su-slider-dark .swiper-pagination-bullet:focus-visible{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
 .component-slider.su-slider-dark .swiper-pagination-bullet:active{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
-.component-slider .swiper-pagination-bullet:hover,
+.component-slider .swiper-pagination-bullet:hover{--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity))}
+.component-slider .swiper-pagination-bullet:focus-visible{--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity))}
 .component-slider .swiper-pagination-bullet:active{--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity))}
-:is(.su-dark .component-slider .swiper-pagination-bullet:hover),:is(.su-dark 
-.component-slider .swiper-pagination-bullet:active){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+:is(.su-dark .component-slider .swiper-pagination-bullet:hover){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+:is(.su-dark .component-slider .swiper-pagination-bullet:focus-visible){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+:is(.su-dark .component-slider .swiper-pagination-bullet:active){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
 .component-slider .swiper-pagination-bullet.swiper-pagination-bullet-active{--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity));--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity))}
 :is(.su-dark .component-slider .swiper-pagination-bullet.swiper-pagination-bullet-active){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity));--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
 .component-slider.su-slider-dark
@@ -713,13 +717,17 @@ h6{font-family:"Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roma
 .component-slider .component-slider-prev svg{--tw-rotate:180deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .component-slider .component-slider-btn{position:relative;top:auto;bottom:0;height:3.7rem;min-width:3.7rem;max-width:3.7rem;border-radius:9999px;border-width:2px;--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity));transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 .component-slider .component-slider-btn:hover{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
-.component-slider .component-slider-btn:focus{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
+.component-slider .component-slider-btn:focus-visible{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 :is(.su-dark .component-slider .component-slider-btn){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
-:is(.su-dark .component-slider .component-slider-btn:hover){--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
-:is(.su-dark .component-slider .component-slider-btn:focus){--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
+:is(.su-dark .component-slider .component-slider-btn:hover){--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
+:is(.su-dark .component-slider .component-slider-btn:focus-visible){--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
+:is(.su-dark .component-slider .component-slider-btn:hover){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
+:is(.su-dark .component-slider .component-slider-btn:focus){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .component-slider.su-slider-dark .component-slider-btn{position:relative;top:auto;bottom:0;height:37px;min-width:37px;max-width:37px;border-radius:9999px;border-width:2px;border-style:solid;--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity));transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
-.component-slider.su-slider-dark .component-slider-btn:hover{--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
-.component-slider.su-slider-dark .component-slider-btn:focus{--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
+.component-slider.su-slider-dark .component-slider-btn:hover{--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
+.component-slider.su-slider-dark .component-slider-btn:focus-visible{--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
+.component-slider.su-slider-dark .component-slider-btn:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
+.component-slider.su-slider-dark .component-slider-btn:focus{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 /*
 *   Global modal
 */
