@@ -70,15 +70,17 @@ export default function VerticalVideosPanel({
       className={styles.root}
     >
       <div className={styles.wrapper}>
-        <div className={styles.headingWrapper}>
-          <LinkedHeading
-            title={title}
-            ctaText={ctaText}
-            ctaLink={ctaManualUrl || ctaInternalUrl}
-            isAlwaysLight={!!bgImageUrl}
-            className={styles.sectionHeading}
-          />
-        </div>
+        {title && (
+          <div className={styles.headingWrapper}>
+            <LinkedHeading
+              title={title}
+              ctaText={ctaText}
+              ctaLink={ctaManualUrl || ctaInternalUrl}
+              isAlwaysLight={!!bgImageUrl}
+              className={styles.sectionHeading}
+            />
+          </div>
+        )}
         {!!videosArray?.length && (
           <>
             {/* Only render carousel if there are more than 1 videos */}

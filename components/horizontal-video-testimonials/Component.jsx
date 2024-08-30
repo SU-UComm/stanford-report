@@ -43,13 +43,15 @@ export default function HorizontalVideoTestimonials({
       className={styles.root}
     >
       <Container width="cc" paddingX={false} className={styles.wrapper}>
-        <LinkedHeading
-          title={title}
-          ctaText={ctaText}
-          ctaLink={ctaManualUrl || ctaInternalUrl}
-          isAlwaysLight
-          className={styles.sectionHeading}
-        />
+        {title && (
+          <LinkedHeading
+            title={title}
+            ctaText={ctaText}
+            ctaLink={ctaManualUrl || ctaInternalUrl}
+            isAlwaysLight
+            className={styles.sectionHeading}
+          />
+        )}
         {!!testimonialsArray?.length && (
           <ul className={styles.cardGrid}>
             {testimonialsArray.map(
