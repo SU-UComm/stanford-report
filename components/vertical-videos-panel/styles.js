@@ -1,7 +1,6 @@
 import { cnb } from "cnbuilder";
 
-export const root =
-  "su-relative su-overflow-hidden su-bg-black-true su-break-words";
+export const root = "su-relative su-break-words";
 export const wrapper = "su-relative su-z-30";
 export const headingWrapper = "su-cc";
 export const sectionHeading = "2xl:su-px-[17rem] su-rs-mb-5";

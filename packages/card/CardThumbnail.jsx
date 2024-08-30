@@ -48,13 +48,18 @@ export default function CardThumbnail({
           imageAlt={`Open video ${alt || ""} in a modal`}
           aspectRatio={aspectRatio}
         >
+          {/* Add a dark overlay over the image when used in Vertical Video Cards */}
           {size === "vertical-video" && (
-            <div className="su-absolute su-inset-0 su-bg-gradient-to-t su-from-black-true/90 su-via-30% su-via-black-true/60 su-pointer-events-none su-z-20" />
+            <div
+              aria-hidden="true"
+              className="su-absolute su-inset-0 su-bg-gradient-to-t su-from-black-true/80 su-via-30% su-via-black-true/60 su-pointer-events-none su-z-20"
+            />
           )}
           {videoUrl && (
             <span
               className={cnb(
-                "su-absolute su-leading-none su-z-30",
+                "su-absolute su-leading-none",
+                size === "vertical-video" && "su-z-30",
                 // eslint-disable-next-line security/detect-object-injection
                 videoPlayClasses[size],
                 videoIconClasses

@@ -191,7 +191,7 @@ svg {
 
 .component-slider-peek .swiper-slide-prev > *,
 .component-slider-peek .swiper-slide-next > * {
-  @apply su-opacity-[.27] md:su-opacity-100 su-pointer-events-none md:su-pointer-events-auto;
+  @apply su-opacity-25 md:su-opacity-100 su-pointer-events-none md:su-pointer-events-auto;
 }
 
 .component-slider-single.component-slider-peek {
@@ -204,11 +204,16 @@ svg {
 
 .component-slider-single.component-slider-peek .swiper-slide-prev > *,
 .component-slider-single.component-slider-peek .swiper-slide-next > * {
-  @apply su-opacity-[.27] md:su-opacity-100 su-pointer-events-none md:su-pointer-events-auto;
+  @apply su-opacity-25 md:su-opacity-100 su-pointer-events-none md:su-pointer-events-auto;
 }
 
 .component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-prev > *,
 .component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-next > * {
+  @apply su-opacity-25 su-pointer-events-none;
+}
+
+.su-slider-dark .component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-prev > *,
+.su-slider-dark .component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-next > * {
   @apply su-opacity-40 su-pointer-events-none;
 }
 
@@ -217,14 +222,14 @@ svg {
 }
 
 .component-slider .swiper-pagination-bullet {
-  @apply su-mx-0 su-transition su-opacity-100 su-w-20 su-h-20 su-bg-transparent su-border-2 su-border-solid su-border-black-30 dark:su-border-black-60;
+  @apply su-mx-0 su-transition su-opacity-100 su-w-20 su-h-20 su-bg-transparent su-border-2 su-border-solid su-border-black-40 dark:su-border-black-60;
 }
 
 .component-slider.su-slider-dark .swiper-pagination-bullet {
   @apply su-mx-0 su-transition su-opacity-100 su-w-20 su-h-20 su-bg-transparent su-border-2 su-border-solid su-border-black-60;
 }
 
-.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls {
+.component-slider .component-slider-vertical-videos + .component-slider-controls {
   @apply su-cc;
 }
 
@@ -1262,4 +1267,9 @@ Subscribe to Stanford Report Marketo form styles
 .su-page-campaign,
 .su-page-campaign body {
   @apply su-bg-campaign-fog;
+}
+
+.su-page-campaign.su-dark,
+.su-page-campaign.su-dark body {
+  @apply su-bg-black-true;
 }
