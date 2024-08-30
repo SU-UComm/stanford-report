@@ -52,7 +52,7 @@ export default function CardThumbnail({
           {size === "vertical-video" && (
             <div
               aria-hidden="true"
-              className="su-absolute su-inset-0 su-bg-gradient-to-t su-from-black-true/80 su-via-30% su-via-black-true/60 su-pointer-events-none su-z-20"
+              className="su-absolute su-inset-0 su-bg-gradient-to-t su-from-black-true/80 su-via-80% su-via-black-true/10 su-pointer-events-none su-z-20"
             />
           )}
           {videoUrl && (
