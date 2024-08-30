@@ -12,6 +12,8 @@ const videoPlayClasses = {
   large: "su-left-13 su-bottom-13 [&>svg]:su-text-[4rem]",
   featured:
     "su-left-13 su-bottom-13 md:su-left-27 md:su-bottom-27 [&>svg]:su-text-[4rem] [&>svg]:md:su-text-[6rem]",
+  "vertical-video":
+    "su-left-32 su-bottom-34 sm:su-left-48 sm:su-bottom-61 lg:su-left-32 lg:su-bottom-34 2xl:su-left-48 2xl:su-bottom-61 [&>svg]:su-text-[6rem]",
 };
 
 export default function CardThumbnail({
@@ -46,10 +48,18 @@ export default function CardThumbnail({
           imageAlt={`Open video ${alt || ""} in a modal`}
           aspectRatio={aspectRatio}
         >
+          {/* Add a dark overlay over the image when used in Vertical Video Cards */}
+          {size === "vertical-video" && (
+            <div
+              aria-hidden="true"
+              className="su-absolute su-inset-0 su-bg-gradient-to-t su-from-black-true/80 su-via-30% su-via-black-true/60 su-pointer-events-none su-z-20"
+            />
+          )}
           {videoUrl && (
             <span
               className={cnb(
                 "su-absolute su-leading-none",
+                size === "vertical-video" && "su-z-30",
                 // eslint-disable-next-line security/detect-object-injection
                 videoPlayClasses[size],
                 videoIconClasses
@@ -71,7 +81,11 @@ export default function CardThumbnail({
           title="Modal"
           onClose={handleCloseModal}
         >
-          <EmbedVideo videoId={videoUrl} title={`Watch ${title}`} />
+          <EmbedVideo
+            isVertical={size === "vertical-video"}
+            videoId={videoUrl}
+            title={`Watch ${title}`}
+          />
         </Modal>
       )}
     </>

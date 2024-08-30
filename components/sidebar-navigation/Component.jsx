@@ -22,12 +22,7 @@ import NavContent from "./Components/NavContent";
  * @constructor
  */
 
-export default function SidebarNavigation({
-  asset_url,
-  asset_short_name,
-  active,
-  menu,
-}) {
+export default function SidebarNavigation({ id, navData }) {
   const [navOpen, setNavOpen] = useState(false);
 
   useEffect(() => {
@@ -104,19 +99,20 @@ export default function SidebarNavigation({
         />
         {navOpen && (
           <NavContent
-            asset_url={asset_url}
-            asset_short_name={asset_short_name}
-            active={active}
-            menu={menu}
+            asset_url={navData.asset_url}
+            asset_short_name={navData.asset_short_name}
+            menu={navData.menu}
+            asset_assetid={navData.asset_assetid}
           />
         )}
       </div>
       <div className="su-hidden lg:su-block">
         <NavContent
-          asset_url={asset_url}
-          asset_short_name={asset_short_name}
-          active={active}
-          menu={menu}
+          id={id}
+          asset_url={navData.asset_url}
+          asset_short_name={navData.asset_short_name}
+          menu={navData.menu}
+          asset_assetid={navData.asset_assetid}
         />
       </div>
     </>

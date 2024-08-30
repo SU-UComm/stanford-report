@@ -1,12 +1,12 @@
 import React from "react";
 
 export default function EmbedVideo(props) {
-  const { videoId, className, noAutoPlay, title } = props;
+  const { videoId, className, noAutoPlay, title, isVertical } = props;
 
   return (
     <iframe
-      width="560"
-      height="315"
+      width={isVertical ? 315 : 560}
+      height={isVertical ? 560 : 315}
       className={className}
       src={`https://www.youtube.com/embed/${videoId}?si=vYU81uVmaV7GSju2&amp;autoplay=${
         noAutoPlay ? 0 : 1
