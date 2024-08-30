@@ -11,7 +11,7 @@ export const cardGrid = (isSingleVideo) =>
   cnb(
     "su-relative su-mx-auto su-flex  su-justify-center su-gap-20 xl:su-gap-40 su-z-30",
     isSingleVideo
-      ? "*:su-basis-4/5 *:su-max-w-[45rem] *:lg:max-w-none *:lg:su-basis-1/3"
+      ? "*:su-basis-4/5 *:su-max-w-[45rem] *:lg:su-max-w-none *:lg:su-basis-1/3"
       : "*:lg:su-basis-1/3"
   );
 export const carouselWrapper = "lg:su-hidden";
