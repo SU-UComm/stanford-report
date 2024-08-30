@@ -2,9 +2,10 @@ import React from "react";
 
 // import specific templates for the component
 import { Container } from "../../packages/grids/Container";
-import { SidebarHeading } from "../../packages/headings/Heading";
 import {
   Podcast,
+  FeaturedAudio,
+  FeaturedReading,
   ExternalArrow,
   BookOpenCover,
 } from "../../packages/SVG-library/SVG";
@@ -111,8 +112,8 @@ function MediaType({ type }) {
 function FeaturedHeading({ type }) {
   switch (type) {
     case "Podcast":
-      return <SidebarHeading icon="Featured audio" title="Featured audio" />;
+      return <FeaturedAudio variant="light" />;
     default:
-      return <SidebarHeading icon="Featured reading" title="Featured book" />;
+      return <FeaturedReading variant="light" />;
   }
 }
