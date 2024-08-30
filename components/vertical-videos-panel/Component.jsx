@@ -63,7 +63,7 @@ export default function VerticalVideosPanel({
   return (
     <Container
       width="full"
-      paddingY="10"
+      paddingY={bgImageUrl ? "10" : ""}
       paddingX={false}
       marginTop={marginTop}
       marginBottom={marginBottom}
@@ -75,7 +75,7 @@ export default function VerticalVideosPanel({
             title={title}
             ctaText={ctaText}
             ctaLink={ctaManualUrl || ctaInternalUrl}
-            isAlwaysLight
+            isAlwaysLight={!!bgImageUrl}
             className={styles.sectionHeading}
           />
         </div>
@@ -87,7 +87,7 @@ export default function VerticalVideosPanel({
                 <Carousel
                   variant="vertical-videos"
                   slides={cards}
-                  isDark
+                  isDark={!!bgImageUrl}
                   uniqueClass={uniqueClass}
                 />
               </div>
