@@ -663,7 +663,9 @@ h6{font-family:"Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roma
 .component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-prev > *,
 .component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-next > *{pointer-events:none;opacity:0.25}
 .su-slider-dark .component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-prev > *,
-.su-slider-dark .component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-next > *{pointer-events:none;opacity:0.4}
+.su-slider-dark .component-slider-single.component-slider-peek.component-slider-vertical-videos .swiper-slide-next > *{pointer-events:none;opacity:1}
+.su-slider-dark .component-slider-vertical-videos .swiper-slide-prev article > *,
+.su-slider-dark .component-slider-vertical-videos .swiper-slide-next article > *{opacity:0.4}
 .component-slider .component-slider-pagination{position:static;display:flex;gap:1rem;text-align:left}
 .component-slider .swiper-pagination-bullet{margin-left:0;margin-right:0;height:2rem;width:2rem;border-width:2px;border-style:solid;--tw-border-opacity:1;border-color:rgb(171 171 169 / var(--tw-border-opacity));background-color:transparent;opacity:1;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 :is(.su-dark .component-slider .swiper-pagination-bullet){--tw-border-opacity:1;border-color:rgb(118 118 116 / var(--tw-border-opacity))}
@@ -682,7 +684,7 @@ h6{font-family:"Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roma
 @media only screen and (min-width: 1700px){
 .component-slider .component-slider-vertical-videos + .component-slider-controls{padding-left:calc((100% - 1500px)/2);padding-right:calc((100% - 1500px)/2)}}
  .su-centered-container .component-slider .component-slider-vertical-videos + .component-slider-controls,.component-slider .component-slider-vertical-videos + .component-slider-controls .su-centered-container,.component-slider .component-slider-vertical-videos + .component-slider-controls .su-cc{padding-left:0;padding-right:0}
-.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet{border-width:2px;--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity))}
+.component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet{border-width:2px;--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity));--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
 .component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet:hover{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
 .component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet:focus-visible{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
 .component-slider.su-slider-dark .component-slider-vertical-videos + .component-slider-controls .swiper-pagination-bullet:active{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
@@ -725,7 +727,7 @@ h6{font-family:"Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roma
 :is(.su-dark .component-slider .component-slider-btn:focus-visible){--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
 :is(.su-dark .component-slider .component-slider-btn:hover){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 :is(.su-dark .component-slider .component-slider-btn:focus){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
-.component-slider.su-slider-dark .component-slider-btn{position:relative;top:auto;bottom:0;height:37px;min-width:37px;max-width:37px;border-radius:9999px;border-width:2px;border-style:solid;--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity));transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
+.component-slider.su-slider-dark .component-slider-btn{position:relative;top:auto;bottom:0;height:37px;min-width:37px;max-width:37px;border-radius:9999px;border-width:2px;border-style:solid;--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity));--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity));transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 .component-slider.su-slider-dark .component-slider-btn:hover{--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
 .component-slider.su-slider-dark .component-slider-btn:focus-visible{--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
 .component-slider.su-slider-dark .component-slider-btn:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
@@ -3022,7 +3024,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-via-black-true{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #000000 var(--tw-gradient-via-position), var(--tw-gradient-to)}
 .su-via-black-true\/10{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(0 0 0 / 0.1) var(--tw-gradient-via-position), var(--tw-gradient-to)}
 .su-via-digital-red-light{--tw-gradient-to:rgb(229 8 8 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #E50808 var(--tw-gradient-via-position), var(--tw-gradient-to)}
-.su-via-70\%{--tw-gradient-via-position:70%}
 .su-via-80\%{--tw-gradient-via-position:80%}
 .su-to-black-true{--tw-gradient-to:#000000 var(--tw-gradient-to-position)}
 .su-to-black-true\/60{--tw-gradient-to:rgb(0 0 0 / 0.6) var(--tw-gradient-to-position)}
