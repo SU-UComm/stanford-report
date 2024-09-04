@@ -2,10 +2,9 @@ import React from "react";
 
 // import specific templates for the component
 import { Container } from "../../packages/grids/Container";
+import { SidebarHeading } from "../../packages/headings/Heading";
 import {
   Podcast,
-  FeaturedAudio,
-  FeaturedReading,
   ExternalArrow,
   BookOpenCover,
 } from "../../packages/SVG-library/SVG";
@@ -40,49 +39,52 @@ export default function MediaFeature({
   return (
     <Container width="full" paddingX={false}>
       <section className="su-py-45 su-px-20 su-flex su-justify-center su-relative md:su-py-72 md:su-px-50">
-        <a href={linkUrl} className="su-media-feature-title-link su-group">
-          <div className="su-max-w-[1086px] su-flex su-flex-col su-items-center su-z-[2] su-relative su-p-38 before:su-content-[''] before:su-bg-foggy-light before:su-w-full before:su-h-full before:su-opacity-90 before:su-absolute before:su-z-[-1] before:su-top-0 before:su-left-0 md:su-flex-row md:su-gap-20 md:su-items-start lg:su-p-48 lg:su-gap-48">
-            {/* <div className="su-h-[224px] su-w-[224px] su-relative su-shrink-0 md:su-w-[182px] md:su-h-[182px] lg:su-w-[292px] lg:su-h-[292px]"> */}
-            <div
-              className={`${
-                mediaType === "Podcast" &&
-                "su-w-[224px] md:su-w-[182px] lg:su-w-[292px]"
-              } su-h-[224px] md:su-h-[182px] lg:su-h-[292px] su-relative su-shrink-0 ${
-                mediaType === "Book" && "media-feature__thumb"
-              }`}
-            >
-              <img
-                // src="https://picsum.photos/600/250"
-                src={imageData.url}
-                alt={imageData.attributes.alt}
-                className={thumbMap.get(mediaType)}
-                // className="su-media-card-thumb su-size-full su-object-scale-down su-object-center"
-                // className="su-absolute su-object-cover su-rounded-[8px] su-z-[2] su-flex-1 su-size-full su-shadow-[0px_4px_7px_0px_rgba(0,0,0,0.15)]"
-              />
+        <div className="su-max-w-[1086px] su-flex su-flex-col su-items-center su-z-[2] su-relative su-p-38 before:su-content-[''] before:su-bg-foggy-light before:su-w-full before:su-h-full before:su-opacity-90 before:su-absolute before:su-z-[-1] before:su-top-0 before:su-left-0 md:su-flex-row md:su-gap-20 md:su-items-start lg:su-p-48 lg:su-gap-48">
+          {/* <div className="su-h-[224px] su-w-[224px] su-relative su-shrink-0 md:su-w-[182px] md:su-h-[182px] lg:su-w-[292px] lg:su-h-[292px]"> */}
+          <div
+            className={`${
+              mediaType === "Podcast" &&
+              "su-w-[224px] md:su-w-[182px] lg:su-w-[292px]"
+            } su-h-[224px] md:su-h-[182px] lg:su-h-[292px] su-relative su-shrink-0 ${
+              mediaType === "Book" && "media-feature__thumb"
+            }`}
+          >
+            <img
+              // src="https://picsum.photos/600/250"
+              src={imageData.url}
+              alt={imageData.attributes.alt}
+              className={thumbMap.get(mediaType)}
+              // className="su-media-card-thumb su-size-full su-object-scale-down su-object-center"
+              // className="su-absolute su-object-cover su-rounded-[8px] su-z-[2] su-flex-1 su-size-full su-shadow-[0px_4px_7px_0px_rgba(0,0,0,0.15)]"
+            />
+          </div>
+
+          <div>
+            <div className="su-py-20 su-w-full md:su-pb-27 md:su-pt-0 *:dark:su-text-black">
+              <FeaturedHeading type={mediaType} />
             </div>
 
-            <div>
-              <div className="su-py-20 su-w-full md:su-pb-27 md:su-pt-0 *:dark:su-text-black">
-                <FeaturedHeading type={mediaType} />
-              </div>
-
+            <a
+              href={linkUrl}
+              className="su-media-feature-title-link su-stretched-link su-group"
+            >
               <h3 className="su-text-[35px] su-font-bold su-leading-tight su-m-0 su-pb-8 md:su-pb-19 md:su-text-[40px] lg:su-text-[43px]">
                 {title}
                 <span className="su-hidden lg:su-inline-block su-relative su-top-12 [&>*]:su-stroke-digital-red dark:[&>*]:su-stroke-dark-mode-red su-transition group-hocus:su--translate-y-01em group-hocus:su-translate-x-01em [&>svg]:su-translate-y-1">
                   <ExternalArrow size="large" />
                 </span>
               </h3>
+            </a>
 
-              <div className="su-w-full su-flex su-gap-[0.6rem] su-text-18 su-text-black-70 su-font-semibold su-items-center su-pb-15 su-leading-snug md:su-pb-19 md:su-text-16">
-                <MediaType type={mediaType} />
-              </div>
-
-              <p className="su-text-18 su-w-full su-m-0 su-leading-[125%] su-text-black su-font-normal md:su-text-19 lg:su-text-21">
-                {teaserText}
-              </p>
+            <div className="su-w-full su-flex su-gap-[0.6rem] su-text-18 su-text-black-70 su-font-semibold su-items-center su-pb-15 su-leading-snug md:su-pb-19 md:su-text-16">
+              <MediaType type={mediaType} />
             </div>
+
+            <p className="su-text-18 su-w-full su-m-0 su-leading-[125%] su-text-black su-font-normal md:su-text-19 lg:su-text-21">
+              {teaserText}
+            </p>
           </div>
-        </a>
+        </div>
 
         <img
           // src="https://picsum.photos/1300/"
@@ -112,8 +114,8 @@ function MediaType({ type }) {
 function FeaturedHeading({ type }) {
   switch (type) {
     case "Podcast":
-      return <FeaturedAudio variant="light" />;
+      return <SidebarHeading icon="Featured audio" title="Featured audio" />;
     default:
-      return <FeaturedReading variant="light" />;
+      return <SidebarHeading icon="Featured reading" title="Featured book" />;
   }
 }
