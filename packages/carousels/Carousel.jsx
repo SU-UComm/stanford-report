@@ -45,6 +45,32 @@ export function Carousel({
     variantClassName: "component-slider-cards component-slider-peek",
     loop: true,
   });
+  variants.set("vertical-videos", {
+    breakpoints: {
+      0: {
+        slidesPerView: 1.4,
+        spaceBetween: 20,
+        centeredSlides: true,
+        initialSlide: 0,
+      },
+      576: {
+        slidesPerView: 1.6,
+        spaceBetween: 20,
+        centeredSlides: true,
+        initialSlide: 0,
+      },
+      768: {
+        slidesPerView: 1.9,
+        spaceBetween: 50,
+        centeredSlides: true,
+        initialSlide: 0,
+      },
+    },
+    slidesPerView: 1,
+    variantClassName:
+      "component-slider-single component-slider-vertical-videos component-slider-peek",
+    loop: true,
+  });
   variants.set("media", {
     breakpoints: {
       0: {
@@ -198,8 +224,8 @@ export function Carousel({
               const slide = swiper.$wrapperEl?.[0].querySelector(
                 ".swiper-slide-active"
               );
-              const slideTarget = slide.querySelector("h2 a, h3 a")
-                ? slide.querySelector("h2 a, h3 a")
+              const slideTarget = slide.querySelector("h2 a, h3 a, button")
+                ? slide.querySelector("h2 a, h3 a, button")
                 : (() => {
                     slide.setAttribute("tabindex", "-1");
                     return slide;

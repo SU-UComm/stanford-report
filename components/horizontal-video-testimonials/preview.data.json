@@ -2,6 +2,7 @@
     "sectionConfiguration": {
         "title": "Meet more students",
         "ctaText": "Watch all",
+        "ctaUrl": "matrix-asset://api-identifier/28192",
         "ctaManualUrl": "https://news.stanford.edu/video",
         "bgImage": "matrix-asset://api-identifier/99100",
         "marginBottom": "9"
