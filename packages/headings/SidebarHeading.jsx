@@ -31,37 +31,35 @@ export function SidebarHeading({
   icon,
   headingSize = "h2",
   color = "grey",
-  lightVariant = "light", // let components override light mode rendering of icons
-  darkVariant = "dark", // let components override dark mode rendering of icons
 }) {
   const iconMap = new Map();
   iconMap.set("announcement", {
-    light: <Announcement variant={lightVariant} />,
-    dark: <Announcement variant={darkVariant} />,
+    light: <Announcement variant="light" />,
+    dark: <Announcement variant="dark" />,
   });
   iconMap.set("eventscalendar", {
-    light: <EventsCalendar variant={lightVariant} />,
-    dark: <EventsCalendar variant={darkVariant} />,
+    light: <EventsCalendar variant="light" />,
+    dark: <EventsCalendar variant="dark" />,
   });
   iconMap.set("bullseyePointer", {
-    light: <BullseyePointer variant={lightVariant} />,
-    dark: <BullseyePointer variant={darkVariant} />,
+    light: <BullseyePointer variant="light" />,
+    dark: <BullseyePointer variant="dark" />,
   });
   iconMap.set("Featured reading", {
-    light: <FeaturedReading variant={lightVariant} />,
-    dark: <FeaturedReading variant={darkVariant} />,
+    light: <FeaturedReading variant="light" />,
+    dark: <FeaturedReading variant="dark" />,
   });
   iconMap.set("Featured audio", {
-    light: <FeaturedAudio variant={lightVariant} />,
-    dark: <FeaturedAudio variant={darkVariant} />,
+    light: <FeaturedAudio variant="light" />,
+    dark: <FeaturedAudio variant="dark" />,
   });
   iconMap.set("mediagallery", {
-    light: <MediaGallery variant={lightVariant} />,
-    dark: <MediaGallery variant={darkVariant} />,
+    light: <MediaGallery variant="light" />,
+    dark: <MediaGallery variant="dark" />,
   });
   iconMap.set("trendingup", {
-    light: <TrendingUp variant={lightVariant} />,
-    dark: <TrendingUp variant={darkVariant} />,
+    light: <TrendingUp variant="light" />,
+    dark: <TrendingUp variant="dark" />,
   });
 
   const colorClassMap = new Map();
