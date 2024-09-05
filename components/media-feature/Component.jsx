@@ -114,20 +114,8 @@ function MediaType({ type }) {
 function FeaturedHeading({ type }) {
   switch (type) {
     case "Podcast":
-      return (
-        <SidebarHeading
-          icon="Featured audio"
-          title="Featured audio"
-          darkVariant="light"
-        />
-      );
+      return <SidebarHeading icon="Featured audio" title="Featured audio" />;
     default:
-      return (
-        <SidebarHeading
-          icon="Featured reading"
-          title="Featured book"
-          darkVariant="light"
-        />
-      );
+      return <SidebarHeading icon="Featured reading" title="Featured book" />;
   }
 }
