@@ -64,17 +64,17 @@ export default function MediaFeature({
               <FeaturedHeading type={mediaType} />
             </div>
 
-            <a
-              href={linkUrl}
-              className="su-media-feature-title-link su-stretched-link su-group"
-            >
-              <h3 className="su-text-[35px] su-font-bold su-leading-tight su-m-0 su-pb-8 md:su-pb-19 md:su-text-[40px] lg:su-text-[43px]">
+            <h3 className="su-text-[35px] su-font-bold su-leading-tight su-m-0 su-pb-8 md:su-pb-19 md:su-text-[40px] lg:su-text-[43px]">
+              <a
+                href={linkUrl}
+                className="su-media-feature-title-link su-stretched-link su-group"
+              >
                 {title}
                 <span className="su-hidden lg:su-inline-block su-relative su-top-12 [&>*]:su-stroke-digital-red dark:[&>*]:su-stroke-dark-mode-red su-transition group-hocus:su--translate-y-01em group-hocus:su-translate-x-01em [&>svg]:su-translate-y-1">
                   <ExternalArrow size="large" />
                 </span>
-              </h3>
-            </a>
+              </a>
+            </h3>
 
             <div className="su-w-full su-flex su-gap-[0.6rem] su-text-18 su-text-black-70 su-font-semibold su-items-center su-pb-15 su-leading-snug md:su-pb-19 md:su-text-16">
               <MediaType type={mediaType} />
