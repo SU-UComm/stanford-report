@@ -7,10 +7,10 @@
   "displayName": "Sidebar Navigation",
   "mainFunction": "main",
   "icon": {
-    "id": "foundation",
+    "id": "summarize",
     "color": {
-      "type": "enum",
-      "value": "gray"
+      "type": "hex",
+      "value": "#8C1515"
     }
   },
   "functions": [

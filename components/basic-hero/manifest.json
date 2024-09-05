@@ -55,7 +55,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/frontend.html"
+            "path": "../../packages/__globalPreview/basic-page.html"
           }
         }
       }
