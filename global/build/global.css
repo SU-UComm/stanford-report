@@ -1897,20 +1897,6 @@ Subscribe to Stanford Report Marketo form styles
 .marketo-sr-subscribe-form.mktoForm .mktoButton{padding-left:3rem;padding-right:3rem;padding-top:1.2rem;padding-bottom:1.4rem;font-size:2rem}}
 /* Grid setup for page with left sidebar. Need to refactor all page layouts similar to this. */
 /* Grid areas: u = upper-content, a = aside(sidebar), c = page-content  */
-.su-page.su-page-has-sidebar--left .su-page-wrap{padding-left:20px;padding-right:20px;margin-left:auto;margin-right:auto;}
-@media (min-width: 576px){
-.su-page.su-page-has-sidebar--left .su-page-wrap{padding-left:30px;padding-right:30px}}
-@media (min-width: 768px){
-.su-page.su-page-has-sidebar--left .su-page-wrap{padding-left:50px;padding-right:50px}}
-@media (min-width: 992px){
-.su-page.su-page-has-sidebar--left .su-page-wrap{padding-left:80px;padding-right:80px}}
-@media (min-width: 1200px){
-.su-page.su-page-has-sidebar--left .su-page-wrap{padding-left:100px;padding-right:100px}}
-@media (min-width: 1500px){
-.su-page.su-page-has-sidebar--left .su-page-wrap{padding-left:100px;padding-right:100px}}
-@media only screen and (min-width: 1700px){
-.su-page.su-page-has-sidebar--left .su-page-wrap{padding-left:calc((100% - 1500px)/2);padding-right:calc((100% - 1500px)/2)}}
- .su-centered-container .su-page.su-page-has-sidebar--left .su-page-wrap,.su-page.su-page-has-sidebar--left .su-page-wrap .su-centered-container,.su-page.su-page-has-sidebar--left .su-page-wrap .su-cc{padding-left:0;padding-right:0}
 .su-page.su-page-has-sidebar--left .su-page-wrap{grid-gap:20px;gap:20px;}
 @media (min-width: 992px){
 .su-page.su-page-has-sidebar--left .su-page-wrap{grid-gap:36px;gap:36px}}
@@ -1923,9 +1909,9 @@ Subscribe to Stanford Report Marketo form styles
 .su-page.su-page-has-sidebar--left .su-page-wrap{padding-top:10.8rem}}
 @media (min-width: 1500px){
 .su-page.su-page-has-sidebar--left .su-page-wrap{padding-top:11.4rem}}
-.su-page.su-page-has-sidebar--left .su-page-wrap{display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));row-gap:0}
+.su-page.su-page-has-sidebar--left .su-page-wrap{margin-left:auto;margin-right:auto;display:grid;width:100%;max-width:141.2rem;grid-template-columns:repeat(6, minmax(0, 1fr));row-gap:0;padding-left:2rem;padding-right:2rem}
 @media (min-width: 768px){
-.su-page.su-page-has-sidebar--left .su-page-wrap{grid-template-columns:repeat(12, minmax(0, 1fr))}}
+.su-page.su-page-has-sidebar--left .su-page-wrap{grid-template-columns:repeat(12, minmax(0, 1fr));padding-left:5rem;padding-right:5rem}}
 .su-page.su-page-has-sidebar--left .su-page-wrap {
   grid-template-areas:
     "a a a a a a"
@@ -1945,7 +1931,7 @@ Subscribe to Stanford Report Marketo form styles
     grid-template-areas:
       "a a a a a a a a a a a a"
       "u u u u u u u u u u u u"
-      "c c c c c c c c c c c c";
+      ". c c c c c c c c c c .";
   }
 }
 @media screen and (min-width: 992px) {
@@ -3034,6 +3020,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-flex-grow{flex-grow:1}
 .su-grow{flex-grow:1}
 .su-basis-1{flex-basis:0.1rem}
+.su-basis-4{flex-basis:0.4rem}
 .-su-translate-x-1{--tw-translate-x:-0.1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .-su-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .-su-translate-y-1{--tw-translate-y:-0.1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
@@ -3225,6 +3212,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-from-digital-red-light{--tw-gradient-from:#E50808 var(--tw-gradient-from-position);--tw-gradient-to:rgb(229 8 8 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
 .su-from-white{--tw-gradient-from:#fff var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
 .su-via-\[rgb\(255_255_255\/\.5\)_8\%\]{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(255 255 255/.5) 8% var(--tw-gradient-via-position), var(--tw-gradient-to)}
+.su-via-black-true{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #000000 var(--tw-gradient-via-position), var(--tw-gradient-to)}
 .su-via-black-true\/10{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(0 0 0 / 0.1) var(--tw-gradient-via-position), var(--tw-gradient-to)}
 .su-via-digital-red-light{--tw-gradient-to:rgb(229 8 8 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #E50808 var(--tw-gradient-via-position), var(--tw-gradient-to)}
 .su-via-80\%{--tw-gradient-via-position:80%}
