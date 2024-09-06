@@ -1812,20 +1812,6 @@ Subscribe to Stanford Report Marketo form styles
 .marketo-sr-subscribe-form.mktoForm .mktoButton{padding-left:3rem;padding-right:3rem;padding-top:1.2rem;padding-bottom:1.4rem;font-size:2rem}}
 /* Grid setup for page with left sidebar. Need to refactor all page layouts similar to this. */
 /* Grid areas: u = upper-content, a = aside(sidebar), c = page-content  */
-.su-page.su-page-has-sidebar--left .su-page-wrap{padding-left:20px;padding-right:20px;margin-left:auto;margin-right:auto;}
-@media (min-width: 576px){
-.su-page.su-page-has-sidebar--left .su-page-wrap{padding-left:30px;padding-right:30px}}
-@media (min-width: 768px){
-.su-page.su-page-has-sidebar--left .su-page-wrap{padding-left:50px;padding-right:50px}}
-@media (min-width: 992px){
-.su-page.su-page-has-sidebar--left .su-page-wrap{padding-left:80px;padding-right:80px}}
-@media (min-width: 1200px){
-.su-page.su-page-has-sidebar--left .su-page-wrap{padding-left:100px;padding-right:100px}}
-@media (min-width: 1500px){
-.su-page.su-page-has-sidebar--left .su-page-wrap{padding-left:100px;padding-right:100px}}
-@media only screen and (min-width: 1700px){
-.su-page.su-page-has-sidebar--left .su-page-wrap{padding-left:calc((100% - 1500px)/2);padding-right:calc((100% - 1500px)/2)}}
- .su-centered-container .su-page.su-page-has-sidebar--left .su-page-wrap,.su-page.su-page-has-sidebar--left .su-page-wrap .su-centered-container,.su-page.su-page-has-sidebar--left .su-page-wrap .su-cc{padding-left:0;padding-right:0}
 .su-page.su-page-has-sidebar--left .su-page-wrap{grid-gap:20px;gap:20px;}
 @media (min-width: 992px){
 .su-page.su-page-has-sidebar--left .su-page-wrap{grid-gap:36px;gap:36px}}
@@ -1838,9 +1824,9 @@ Subscribe to Stanford Report Marketo form styles
 .su-page.su-page-has-sidebar--left .su-page-wrap{padding-top:10.8rem}}
 @media (min-width: 1500px){
 .su-page.su-page-has-sidebar--left .su-page-wrap{padding-top:11.4rem}}
-.su-page.su-page-has-sidebar--left .su-page-wrap{display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));row-gap:0}
+.su-page.su-page-has-sidebar--left .su-page-wrap{margin-left:auto;margin-right:auto;display:grid;width:100%;max-width:141.2rem;grid-template-columns:repeat(6, minmax(0, 1fr));row-gap:0;padding-left:2rem;padding-right:2rem}
 @media (min-width: 768px){
-.su-page.su-page-has-sidebar--left .su-page-wrap{grid-template-columns:repeat(12, minmax(0, 1fr))}}
+.su-page.su-page-has-sidebar--left .su-page-wrap{grid-template-columns:repeat(12, minmax(0, 1fr));padding-left:5rem;padding-right:5rem}}
 .su-page.su-page-has-sidebar--left .su-page-wrap {
   grid-template-areas:
     "a a a a a a"
@@ -1860,7 +1846,7 @@ Subscribe to Stanford Report Marketo form styles
     grid-template-areas:
       "a a a a a a a a a a a a"
       "u u u u u u u u u u u u"
-      "c c c c c c c c c c c c";
+      ". c c c c c c c c c c .";
   }
 }
 @media screen and (min-width: 992px) {
@@ -2580,9 +2566,11 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-inset-0{inset:0}
 .su--left-80{left:-8rem}
 .su-bottom-0{bottom:0}
+.su-bottom-100{bottom:10rem}
 .su-bottom-13{bottom:1.3rem}
 .su-bottom-20{bottom:2rem}
 .su-bottom-27{bottom:2.7rem}
+.su-bottom-34{bottom:3.4rem}
 .su-bottom-38{bottom:3.8rem}
 .su-bottom-4{bottom:0.4rem}
 .su-bottom-\[-100px\]{bottom:-100px}
@@ -2593,6 +2581,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-left-20{left:2rem}
 .su-left-27{left:2.7rem}
 .su-left-3{left:0.3rem}
+.su-left-32{left:3.2rem}
 .su-left-38{left:3.8rem}
 .su-left-8{left:0.8rem}
 .su-left-9{left:0.9rem}
@@ -2786,6 +2775,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-aspect-\[1\/1\]{aspect-ratio:1/1}
 .su-aspect-\[16\/9\]{aspect-ratio:16/9}
 .su-aspect-\[3\/2\]{aspect-ratio:3/2}
+.su-aspect-\[9\/16\]{aspect-ratio:9/16}
 .su-size-100{width:10rem;height:10rem}
 .su-size-13{width:1.3rem;height:1.3rem}
 .su-size-14{width:1.4rem;height:1.4rem}
@@ -2943,6 +2933,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-flex-grow{flex-grow:1}
 .su-grow{flex-grow:1}
 .su-basis-1{flex-basis:0.1rem}
+.su-basis-4{flex-basis:0.4rem}
 .-su-translate-x-1{--tw-translate-x:-0.1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .-su-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .-su-translate-y-1{--tw-translate-y:-0.1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
@@ -3112,6 +3103,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-bg-black-30{--tw-bg-opacity:1;background-color:rgb(192 192 191 / var(--tw-bg-opacity))}
 .su-bg-black-40{--tw-bg-opacity:1;background-color:rgb(171 171 169 / var(--tw-bg-opacity))}
 .su-bg-black-true{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
+.su-bg-black-true\/75{background-color:rgb(0 0 0 / 0.75)}
 .su-bg-black\/\[0\.33\]{background-color:rgb(46 45 41 / 0.33)}
 .su-bg-digital-green-dark{--tw-bg-opacity:1;background-color:rgb(0 111 84 / var(--tw-bg-opacity))}
 .su-bg-digital-red{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity))}
@@ -3127,12 +3119,16 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}
 .su-from-black-true{--tw-gradient-from:#000000 var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
 .su-from-black-true\/75{--tw-gradient-from:rgb(0 0 0 / 0.75) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
+.su-from-black-true\/80{--tw-gradient-from:rgb(0 0 0 / 0.8) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
 .su-from-digital-red{--tw-gradient-from:#B1040E var(--tw-gradient-from-position);--tw-gradient-to:rgb(177 4 14 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
 .su-from-digital-red-dark{--tw-gradient-from:#820000 var(--tw-gradient-from-position);--tw-gradient-to:rgb(130 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
 .su-from-digital-red-light{--tw-gradient-from:#E50808 var(--tw-gradient-from-position);--tw-gradient-to:rgb(229 8 8 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
 .su-from-white{--tw-gradient-from:#fff var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
 .su-via-\[rgb\(255_255_255\/\.5\)_8\%\]{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(255 255 255/.5) 8% var(--tw-gradient-via-position), var(--tw-gradient-to)}
+.su-via-black-true{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #000000 var(--tw-gradient-via-position), var(--tw-gradient-to)}
+.su-via-black-true\/10{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(0 0 0 / 0.1) var(--tw-gradient-via-position), var(--tw-gradient-to)}
 .su-via-digital-red-light{--tw-gradient-to:rgb(229 8 8 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #E50808 var(--tw-gradient-via-position), var(--tw-gradient-to)}
+.su-via-80\%{--tw-gradient-via-position:80%}
 .su-to-black-true{--tw-gradient-to:#000000 var(--tw-gradient-to-position)}
 .su-to-black-true\/60{--tw-gradient-to:rgb(0 0 0 / 0.6) var(--tw-gradient-to-position)}
 .su-to-cardinal-red-dark{--tw-gradient-to:#820000 var(--tw-gradient-to-position)}
@@ -3177,6 +3173,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-px-22{padding-left:2.2rem;padding-right:2.2rem}
 .su-px-29{padding-left:2.9rem;padding-right:2.9rem}
 .su-px-30{padding-left:3rem;padding-right:3rem}
+.su-px-32{padding-left:3.2rem;padding-right:3.2rem}
 .su-px-35{padding-left:3.5rem;padding-right:3.5rem}
 .su-px-36{padding-left:3.6rem;padding-right:3.6rem}
 .su-px-38{padding-left:3.8rem;padding-right:3.8rem}
@@ -3307,6 +3304,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-text-\[2\.0rem\]{font-size:2.0rem}
 .su-text-\[2\.4rem\]{font-size:2.4rem}
 .su-text-\[3\.5rem\]{font-size:3.5rem}
+.su-text-\[3\.6rem\]{font-size:3.6rem}
 .su-text-\[33px\]{font-size:33px}
 .su-text-\[35px\]{font-size:35px}
 .su-text-\[39px\]{font-size:39px}
@@ -4084,6 +4082,8 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\*\:su-h-\[40px\] > *{height:40px}
 .\*\:su-w-\[40px\] > *{width:40px}
 .\*\:su-w-full > *{width:100%}
+.\*\:su-max-w-\[45rem\] > *{max-width:45rem}
+.\*\:su-basis-4\/5 > *{flex-basis:80%}
 .\*\:su-font-sans > *{font-family:"Source Sans 3", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif}
 .\*\:su-text-16 > *{font-size:1.6rem}
 .\*\:su-text-18 > *{font-size:1.8rem}
@@ -4411,6 +4411,9 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 :is(.su-dark .su-group:focus-within .dark\:group-hocus-within\:su-text-digital-red-light){--tw-text-opacity:1;color:rgb(229 8 8 / var(--tw-text-opacity))}
 :is(.su-dark .su-group:hover .dark\:group-hocus-within\:su-text-digital-red-light){--tw-text-opacity:1;color:rgb(229 8 8 / var(--tw-text-opacity))}
 @media (min-width: 576px){
+.sm\:su-bottom-120{bottom:12rem}
+.sm\:su-bottom-61{bottom:6.1rem}
+.sm\:su-left-48{left:4.8rem}
 .sm\:su-left-\[10\%\]{left:10%}
 .sm\:su-right-\[10\%\]{right:10%}
 .sm\:su-col-span-10{grid-column:span 10 / span 10}
@@ -4439,6 +4442,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .sm\:su-text-23{font-size:2.3rem}
 .sm\:su-text-24{font-size:2.4rem}
 .sm\:su-text-\[22\.5px\]{font-size:22.5px}
+.sm\:su-text-\[4\.8rem\]{font-size:4.8rem}
 .sm\:su-text-\[6\.1rem\]{font-size:6.1rem}
 .sm\:su-leading-\[27px\]{line-height:27px}
 .sm\:su-leading-\[28\.75px\]{line-height:28.75px}}
@@ -4739,8 +4743,11 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 @media (min-width: 992px){
 .lg\:su-relative{position:relative}
 .lg\:su-bottom-0{bottom:0}
+.lg\:su-bottom-34{bottom:3.4rem}
 .lg\:su-bottom-38{bottom:3.8rem}
+.lg\:su-bottom-80{bottom:8rem}
 .lg\:su-bottom-\[15\.5rem\]{bottom:15.5rem}
+.lg\:su-left-32{left:3.2rem}
 .lg\:su-left-38{left:3.8rem}
 .lg\:su-right-0{right:0}
 .lg\:su-top-0{top:0}
@@ -4941,6 +4948,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .lg\:su-text-\[128px\]{font-size:128px}
 .lg\:su-text-\[2\.1rem\]{font-size:2.1rem}
 .lg\:su-text-\[2\.8rem\]{font-size:2.8rem}
+.lg\:su-text-\[3\.6rem\]{font-size:3.6rem}
 .lg\:su-text-\[32px\]{font-size:32px}
 .lg\:su-text-\[33px\]{font-size:33px}
 .lg\:su-text-\[4\.3rem\]{font-size:4.3rem}
@@ -4969,6 +4977,8 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\*\:lg\:su-size-100 > *{width:10rem;height:10rem}
 .\*\:lg\:su-h-\[100px\] > *{height:100px}
 .\*\:lg\:su-w-\[100px\] > *{width:100px}
+.\*\:lg\:su-max-w-none > *{max-width:none}
+.\*\:lg\:su-basis-1\/3 > *{flex-basis:33.333333%}
 .\*\:lg\:su-text-19 > *{font-size:1.9rem}
 .lg\:\*\:su-text-21 > *{font-size:2.1rem}
 .lg\:\*\:su-text-26 > *{font-size:2.6rem}
@@ -5021,6 +5031,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .xl\:su-translate-y-\[-220px\]{--tw-translate-y:-220px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .xl\:su-grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}
 .xl\:su-flex-row-reverse{flex-direction:row-reverse}
+.xl\:su-gap-40{gap:4rem}
 .xl\:su-gap-60{gap:6rem}
 .xl\:su-py-100{padding-top:10rem;padding-bottom:10rem}
 .xl\:su-pl-170{padding-left:17rem}
@@ -5029,20 +5040,26 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .xl\:su-text-\[3\.3rem\]{font-size:3.3rem}
 .xl\:su-text-\[6\.4rem\]{font-size:6.4rem}
 .xl\:su-text-\[6rem\]{font-size:6rem}
+.xl\:su-leading-snug{line-height:1.3}
 .xl\:\*\:su-leading-snug > *{line-height:1.3}}
 @media (min-width: 1500px){
+.\32xl\:su-bottom-120{bottom:12rem}
+.\32xl\:su-bottom-61{bottom:6.1rem}
+.\32xl\:su-left-48{left:4.8rem}
 .\32xl\:su--mt-58{margin-top:-5.8rem}
 .\32xl\:su-mt-171{margin-top:17.1rem}
 .\32xl\:su-basis-\[30\%\]{flex-basis:30%}
 .\32xl\:su-basis-\[70\%\]{flex-basis:70%}
 .\32xl\:su-flex-row{flex-direction:row}
 .\32xl\:su-gap-72{gap:7.2rem}
+.\32xl\:su-px-48{padding-left:4.8rem;padding-right:4.8rem}
 .\32xl\:su-px-\[17rem\]{padding-left:17rem;padding-right:17rem}
 .\32xl\:su-px-\[6\.6rem\]{padding-left:6.6rem;padding-right:6.6rem}
 .\32xl\:su-py-140{padding-top:14rem;padding-bottom:14rem}
 .\32xl\:su-pl-76{padding-left:7.6rem}
 .\32xl\:su-text-\[2\.9rem\]{font-size:2.9rem}
-.\32xl\:su-text-\[3\.3rem\]{font-size:3.3rem}}
+.\32xl\:su-text-\[3\.3rem\]{font-size:3.3rem}
+.\32xl\:su-text-\[4\.8rem\]{font-size:4.8rem}}
 .\[\&\>\*\:last-child\]\:su-mb-0>*:last-child{margin-bottom:0}
 .\[\&\>\*\:last-child\]\:after\:su-content-\[\'\\u201D\'\]>*:last-child::after{--tw-content:'\u201D';content:var(--tw-content)}
 .\[\&\>\*\:last-child\]\:after\:su-content-\[\'\201D\'\]>*:last-child::after{--tw-content:'”';content:var(--tw-content)}
@@ -5069,6 +5086,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\[\&\>svg\]\:su-w-41>svg{width:4.1rem}
 .\[\&\>svg\]\:su-translate-y-1>svg{--tw-translate-y:0.1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .\[\&\>svg\]\:su-text-\[4rem\]>svg{font-size:4rem}
+.\[\&\>svg\]\:su-text-\[6rem\]>svg{font-size:6rem}
 @media (min-width: 768px){
 .md\:\[\&\>svg\]\:su--mt-2>svg{margin-top:-0.2rem}
 .md\:\[\&\>svg\]\:su-h-\[102px\]>svg{height:102px}
