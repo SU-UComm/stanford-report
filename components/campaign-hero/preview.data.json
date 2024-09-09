@@ -1,6 +1,6 @@
 {
   "bkgConfig": {
-    "type": "Image",
+    "type": "Video",
     "bkgImage": "https://picsum.photos/seed/picsum/2000/1500",
     "bkgVideo": "https://player.vimeo.com/video/904625167"
   },

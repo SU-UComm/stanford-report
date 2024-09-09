@@ -31,11 +31,11 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
         <div className="su-sticky su-h-screen su-top-0">
           {/* Background video */}
           {bkgConfig.type === "Video" && bkgConfig.bkgVideo ? (
-            <div className="su-relative su-w-full su-h-screen su-overflow-hidden">
+            <div className="su-relative su-w-screen su-h-screen su-overflow-hidden">
               <iframe
                 src={`${bkgConfig.bkgVideo}?background=1`}
                 title="video"
-                className="bkg-loop su-absolute su-box-border su-min-w-full su-min-h-full su-w-[177.77777778vh] su-h-[56.25vw] su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
+                className="bkg-loop su-absolute su-box-border su-aspect-[16/9] su-min-w-full su-min-h-full su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
                 allow="autoplay; fullscreen"
                 allowFullScreen
               />
@@ -50,15 +50,15 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
           )}
           {/* Gradient overlay */}
           <div
-            className="su-absolute su-block su-size-full su-top-0 su-bg-gradient-to-t su-from-black-true su-z-[1]"
+            className="su-absolute su-block su-size-full su-top-0 su-bg-black-true/20 su-z-[1]"
             aria-hidden="true"
           />
         </div>
 
-        <div className="su-cc su-relative su-z-[2] -su-mt-800 su-rs-pb-6">
+        <div className="su-cc su-relative su-z-[2] su-mt-[-70vh] lg:su-rs-pb-6 su-bg-gradient-to-t su-from-black-true">
           <h1
             className={cnb(
-              "su-fluid-type-6 su-text-white su-text-center su-max-w-1000 su-mx-auto su-mb-0 su-text-balance",
+              "su-fluid-type-6 su-text-white su-text-shadow-lg su-text-center su-max-w-1000 su-mx-auto su-mb-0 su-text-balance",
               !quoteConfig.include && "su-mb-450"
             )}
           >
@@ -106,7 +106,7 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
                 <div className="su-max-w-1200 su-mx-auto">
                   <button
                     type="button"
-                    className="su-flex su-gap-10 su-items-end su-text-16 su-leading-display su-mr-0 su-ml-auto su-text-white su-w-fit su-mb-14"
+                    className="su-flex su-gap-10 su-items-end su-text-16 su-leading-display su-mr-0 su-ml-auto su-text-white su-w-fit hocus-visible:su-underline su-underline-offset-2 su-py-14"
                   >
                     Pause background
                     <FAIcon
@@ -125,7 +125,7 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
             </p>
           )}
           {quoteConfig.include === true && (
-            <div className="su-rs-pt-2 su-rs-px-5 su-text-white su-flex su-items-center su-flex-col su-gap-44 lg:su-flex-row-reverse su-border-t su-border-black-30 su-relative su-z-[2] su-max-w-1200 su-mx-auto">
+            <div className="su-hidden su-rs-pt-2 su-rs-px-5 su-text-white lg:su-flex su-items-center su-flex-col su-gap-44 lg:su-flex-row-reverse su-border-t su-border-black-30 su-relative su-z-[2] su-max-w-1200 su-mx-auto">
               <div className="su-rounded-full su-size-160 md:su-size-200 2xl:su-size-300 su-shrink-0 su-overflow-hidden">
                 <img
                   src={quoteConfig.image}
@@ -155,6 +155,37 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
           )}
         </div>
       </section>
+      {quoteConfig.include === true && (
+        <div className="su-cc lg:su-hidden su-w-full su-relative su-bg-black-true">
+          <div className="su-rs-pt-2 su-rs-pb-5 su-rs-px-3 su-text-white su-flex su-items-center su-flex-col su-gap-44 lg:su-flex-row-reverse su-border-t su-border-black-30 su-relative su-z-[2]">
+            <div className="su-rounded-full su-size-160 md:su-size-200 2xl:su-size-300 su-shrink-0 su-overflow-hidden">
+              <img
+                src={quoteConfig.image}
+                alt="quote placeholder for local dev"
+                className="su-object-cover su-size-full"
+              />
+            </div>
+            <blockquote cite="" className="su-type-1">
+              <p className="su-font-serif su-leading-display">
+                “{quoteConfig.quote}”
+              </p>
+              <footer className="su-font-bold">
+                {quoteConfig.quoteLink ? (
+                  <a
+                    href={quoteConfig.quoteLink}
+                    className="su-font-bold su-text-white su-decoration-dark-mode-red su-underline-offset-[3px] su-decoration-[0.12em] hocus:su-no-underline hocus-visible:su-text-dark-mode-red"
+                  >
+                    {quoteConfig.name}
+                  </a>
+                ) : (
+                  <span>{quoteConfig.name}</span>
+                )}
+                {quoteConfig.extra && `, ${quoteConfig.extra}`}
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      )}
     </Container>
   );
 }
