@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { cnb } from "cnbuilder";
-import VideoPlay from "../../packages/SVG-library/VideoPlay";
 import Modal from "../../packages/modal/ModalWrapper";
 import EmbedVideo from "../../packages/media/EmbedVideo";
 import { Container } from "../../packages/grids/Container";
@@ -27,12 +26,12 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
   };
 
   return (
-    <Container width="full" paddingX={false}>
+    <Container width="full" paddingX={false} className="su-relative">
       <section>
-        <div className="su-sticky su-h-[100vh] su-top-0">
+        <div className="su-sticky su-h-screen su-top-0">
           {/* Background video */}
-          {bkgConfig.bkgVideo ? (
-            <div className="su-relative su-w-full su-h-[100vh] su-overflow-hidden">
+          {bkgConfig.type === "Video" && bkgConfig.bkgVideo ? (
+            <div className="su-relative su-w-full su-h-screen su-overflow-hidden">
               <iframe
                 src={`${bkgConfig.bkgVideo}?background=1`}
                 title="video"
@@ -56,7 +55,7 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
           />
         </div>
 
-        <div className="su-cc su-relative su-z-[2] -su-mt-500 su-rs-pb-6">
+        <div className="su-cc su-relative su-z-[2] -su-mt-800 su-rs-pb-6">
           <h1
             className={cnb(
               "su-fluid-type-6 su-text-white su-text-center su-max-w-1000 su-mx-auto su-mb-0 su-text-balance",
@@ -102,6 +101,22 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
                     </Modal>
                   )}
                 </>
+              )}
+              {bkgConfig.type === "Video" && bkgConfig.bkgVideo && (
+                <div className="su-max-w-1200 su-mx-auto">
+                  <button
+                    type="button"
+                    className="su-flex su-gap-10 su-items-end su-text-16 su-leading-display su-mr-0 su-ml-auto su-text-white su-w-fit su-mb-14"
+                  >
+                    Pause background
+                    <FAIcon
+                      icon="circle-pause"
+                      set="regular"
+                      width={20}
+                      className="su-text-20 su-text-white"
+                    />
+                  </button>
+                </div>
               )}
             </>
           ) : (
