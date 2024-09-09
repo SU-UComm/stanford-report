@@ -14,11 +14,11 @@ export default async (args, info) => {
   }
   const bgImageUrl = bgImageData?.url;
 
-  let ctaUrl = null;
-  if (args?.ctaUrl) {
-    ctaUrl = await basicAssetUri(ctx, args?.ctaUrl);
+  let ctaLink = null;
+  if (args.sectionConfiguration?.ctaUrl) {
+    ctaLink = await basicAssetUri(ctx, args.sectionConfiguration?.ctaUrl);
   }
-  const ctaInternalUrl = ctaUrl?.url;
+  const ctaInternalUrl = ctaLink?.url;
 
   /**
    * Testimonials data
