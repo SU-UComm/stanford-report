@@ -4,6 +4,8 @@ import Modal from "../../packages/modal/ModalWrapper";
 import EmbedVideo from "../../packages/media/EmbedVideo";
 import { Container } from "../../packages/grids/Container";
 import { FAIcon } from "../../packages/icons/FAIcon";
+import HeroQuote from "./HeroQuote";
+import * as styles from "./styles";
 
 /**
  * Campaign Hero
@@ -17,7 +19,6 @@ import { FAIcon } from "../../packages/icons/FAIcon";
 export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  // const [iframeNode, setIframeNode] = useState(null);
   const iframeRef = useRef(null);
 
   const handleClick = () => {
@@ -63,10 +64,10 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
   }, []);
 
   return (
-    <Container width="full" paddingX={false} className="su-relative">
+    <Container width="full" paddingX={false} className={styles.root}>
       <section>
-        <div className="su-sticky su-h-screen su-top-0">
-          {/* Background video */}
+        <div className={styles.bgWrapper}>
+          {/* Background video or image */}
           {bkgConfig.type === "Video" && bkgConfig.bkgVideo ? (
             <div className="su-relative su-w-screen su-h-screen su-overflow-hidden">
               <iframe
@@ -116,7 +117,7 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
               {quoteConfig.youtubeId && (
                 <>
                   <button
-                    className="su-component-card-thumbnail su-block su-relative su-z-10 su-size-full hocus:su-animate-pulse hocus:su-scale-110 su-transition-all su-w-fit su-mx-auto su-rs-mb-4"
+                    className="su-component-card-thumbnail su-block su-relative su-z-10 su-size-full hocus:su-animate-pulse hocus:su-scale-110 su-transition-all su-w-fit su-mx-auto su-rs-mb-2"
                     type="button"
                     aria-haspopup="dialog"
                     aria-label="Open full video in a modal"
@@ -145,7 +146,7 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
                   <button
                     type="button"
                     onClick={togglePlayPause}
-                    className="su-group su-flex su-gap-10 su-items-end su-text-16 su-leading-display su-mr-0 su-ml-auto su-text-white su-w-fit hocus-visible:su-underline su-underline-offset-2 su-py-14"
+                    className="su-group su-flex su-gap-10 su-items-end su-text-16 su-leading-display su-mr-0 su-ml-auto su-text-white su-w-fit hocus-visible:su-underline su-underline-offset-2 su-py-14 su--mt-24"
                   >
                     {`${!isPlaying ? "Play" : "Pause"} background`}
                     <FAIcon
@@ -163,67 +164,27 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
               {textConfig.intro}
             </p>
           )}
-          {quoteConfig.include === true && (
-            <div className="su-hidden su-rs-pt-2 su-rs-px-5 su-text-white lg:su-flex su-items-center su-flex-col su-gap-44 lg:su-flex-row-reverse su-border-t su-border-black-30 su-relative su-z-[2] su-max-w-1200 su-mx-auto">
-              <div className="su-rounded-full su-size-160 md:su-size-200 2xl:su-size-300 su-shrink-0 su-overflow-hidden">
-                <img
-                  src={quoteConfig.image}
-                  alt="quote placeholder for local dev"
-                  className="su-object-cover su-size-full"
-                />
-              </div>
-              <blockquote cite="" className="su-type-1">
-                <p className="su-font-serif su-leading-display">
-                  “{quoteConfig.quote}”
-                </p>
-                <footer className="su-font-bold">
-                  {quoteConfig.quoteLink ? (
-                    <a
-                      href={quoteConfig.quoteLink}
-                      className="su-font-bold su-text-white su-decoration-dark-mode-red su-underline-offset-[3px] su-decoration-[0.12em] hocus:su-no-underline hocus:su-text-dark-mode-red"
-                    >
-                      {quoteConfig.name}
-                    </a>
-                  ) : (
-                    <span>{quoteConfig.name}</span>
-                  )}
-                  {quoteConfig.extra && `, ${quoteConfig.extra}`}
-                </footer>
-              </blockquote>
-            </div>
+          {quoteConfig.include && quoteConfig?.quote && (
+            <HeroQuote
+              image={quoteConfig.image}
+              quote={quoteConfig.quote}
+              name={quoteConfig.name}
+              quoteLink={quoteConfig.quoteLink}
+              extra={quoteConfig.extra}
+              className="su-hidden lg:su-block su-max-w-1200 su-mx-auto"
+            />
           )}
         </div>
       </section>
-      {quoteConfig.include === true && (
-        <div className="su-cc lg:su-hidden su-w-full su-relative su-bg-black-true">
-          <div className="su-rs-pt-2 su-rs-pb-5 su-rs-px-3 su-text-white su-flex su-items-center su-flex-col su-gap-44 lg:su-flex-row-reverse su-border-t su-border-black-30 su-relative su-z-[2]">
-            <div className="su-rounded-full su-size-160 md:su-size-200 2xl:su-size-300 su-shrink-0 su-overflow-hidden">
-              <img
-                src={quoteConfig.image}
-                alt="quote placeholder for local dev"
-                className="su-object-cover su-size-full"
-              />
-            </div>
-            <blockquote cite="" className="su-type-1">
-              <p className="su-font-serif su-leading-display">
-                “{quoteConfig.quote}”
-              </p>
-              <footer className="su-font-bold">
-                {quoteConfig.quoteLink ? (
-                  <a
-                    href={quoteConfig.quoteLink}
-                    className="su-font-bold su-text-white su-decoration-dark-mode-red su-underline-offset-[3px] su-decoration-[0.12em] hocus:su-no-underline hocus-visible:su-text-dark-mode-red"
-                  >
-                    {quoteConfig.name}
-                  </a>
-                ) : (
-                  <span>{quoteConfig.name}</span>
-                )}
-                {quoteConfig.extra && `, ${quoteConfig.extra}`}
-              </footer>
-            </blockquote>
-          </div>
-        </div>
+      {quoteConfig.include && quoteConfig?.quote && (
+        <HeroQuote
+          image={quoteConfig.image}
+          quote={quoteConfig.quote}
+          name={quoteConfig.name}
+          quoteLink={quoteConfig.quoteLink}
+          extra={quoteConfig.extra}
+          className="su-cc lg:su-hidden su-bg-black-true"
+        />
       )}
     </Container>
   );
