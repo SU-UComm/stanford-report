@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { cnb } from "cnbuilder";
 import Modal from "../../packages/modal/ModalWrapper";
 import EmbedVideo from "../../packages/media/EmbedVideo";
@@ -16,6 +16,8 @@ import { FAIcon } from "../../packages/icons/FAIcon";
 
 export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [videoPlaying, setVideoPlaying] = useState("pause");
+  const [iframeNode, setIframeNode] = useState(null);
 
   const handleClick = () => {
     setIsModalOpen(true);
@@ -23,6 +25,32 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+  };
+
+  useEffect(() => {
+    if (iframeNode) {
+      iframeNode?.contentWindow.postMessage(
+        JSON.stringify({ method: videoPlaying }),
+        "*"
+      );
+    }
+
+    if (iframeNode && !iframeNode.dataset.loaded) {
+      setTimeout(() => {
+        const { top } = iframeNode.getBoundingClientRect();
+
+        if (top < window.innerHeight) {
+          setVideoPlaying("play");
+
+          iframeNode.dataset.loaded = "true";
+        }
+      }, 200);
+    }
+  }, [videoPlaying, iframeNode]);
+
+  // events
+  const handleIframeLoad = ({ target }) => {
+    setIframeNode(target);
   };
 
   return (
@@ -38,6 +66,7 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
                 className="bkg-loop su-absolute su-box-border su-aspect-[16/9] su-min-w-full su-min-h-full su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
                 allow="autoplay; fullscreen"
                 allowFullScreen
+                onLoad={handleIframeLoad}
               />
             </div>
           ) : (
@@ -106,14 +135,25 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
                 <div className="su-max-w-1200 su-mx-auto">
                   <button
                     type="button"
-                    className="su-flex su-gap-10 su-items-end su-text-16 su-leading-display su-mr-0 su-ml-auto su-text-white su-w-fit hocus-visible:su-underline su-underline-offset-2 su-py-14"
+                    onClick={() =>
+                      setVideoPlaying(
+                        videoPlaying === "pause" ? "play" : "pause"
+                      )
+                    }
+                    className="su-group su-flex su-gap-10 su-items-end su-text-16 su-leading-display su-mr-0 su-ml-auto su-text-white su-w-fit hocus-visible:su-underline su-underline-offset-2 su-py-14"
                   >
-                    Pause background
+                    {`${
+                      videoPlaying === "pause" ? "Play" : "Pause"
+                    } background`}
                     <FAIcon
-                      icon="circle-pause"
+                      icon={
+                        videoPlaying === "pause"
+                          ? "circle-play"
+                          : "circle-pause"
+                      }
                       set="regular"
                       width={20}
-                      className="su-text-20 su-text-white"
+                      className="su-text-20 su-text-white group-hocus-visible:su-animate-pulse group-hocus-visible:su-scale-110"
                     />
                   </button>
                 </div>
