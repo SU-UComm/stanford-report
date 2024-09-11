@@ -10,13 +10,27 @@ import * as styles from "./styles";
 /**
  * Campaign Hero
  *
- * @param {string} title The component title
- * ... any other options needed
+ * @param {object} bkgConfig
+ * Background configuration - could be image or looping video from Vimeo
+ *
+ * @param {object} textConfig
+ * Text configuration - title and intro text for the hero
+ *
+ * @param {object} quoteConfig
+ * Quote configuration - fields for the optional quote at the bottom of the hero
+ *
  * @returns {JSX.Element}
  * @constructor
  */
 
-export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
+export default function CampaignHero({
+  bkgConfig,
+  textConfig,
+  quoteConfig,
+  bkgImageData,
+  quoteImageData,
+  quoteInternalLinkUrl,
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const iframeRef = useRef(null);
@@ -74,27 +88,26 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
                 ref={iframeRef}
                 src={`${bkgConfig.bkgVideo}?background=1`}
                 title="video"
-                className="bkg-loop su-absolute su-box-border su-aspect-[16/9] su-min-w-full su-min-h-full su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
+                className="su-absolute su-box-border su-aspect-[16/9] su-min-w-full su-min-h-full su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
                 allow="autoplay; fullscreen"
                 allowFullScreen
               />
             </div>
           ) : (
             <img
-              src={bkgConfig.bkgImage}
-              // src={bgImageData.url}
+              src={bkgImageData?.url}
               className="su-object-cover su-size-full"
-              alt=""
+              alt={bkgImageData?.alt || ""}
             />
           )}
           {/* Gradient overlay */}
           <div
-            className="su-absolute su-block su-size-full su-top-0 su-bg-black-true/20 su-z-[1]"
+            className="su-absolute su-block su-size-full su-top-0 su-bg-black-true/20 su-z-10"
             aria-hidden="true"
           />
         </div>
 
-        <div className="su-cc su-relative su-z-[2] su-mt-[-70vh] lg:su-rs-pb-6 su-bg-gradient-to-t su-from-black-true">
+        <div className="su-cc su-relative su-z-20 su-mt-[-70vh] su-bg-gradient-to-t su-from-black-true">
           <h1
             className={cnb(
               "su-fluid-type-6 su-text-white su-text-shadow-lg su-text-center su-max-w-1000 su-mx-auto su-mb-0 su-text-balance",
@@ -117,7 +130,7 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
               {quoteConfig.youtubeId && (
                 <>
                   <button
-                    className="su-component-card-thumbnail su-block su-relative su-z-10 su-size-full hocus:su-animate-pulse hocus:su-scale-110 su-transition-all su-w-fit su-mx-auto su-rs-mb-2"
+                    className="su-block su-relative su-z-10 su-size-full hocus:su-animate-pulse hocus:su-scale-110 su-transition-all su-w-fit su-mx-auto su-rs-mb-2"
                     type="button"
                     aria-haspopup="dialog"
                     aria-label="Open full video in a modal"
@@ -164,28 +177,32 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
               {textConfig.intro}
             </p>
           )}
+          {/* Desktop quote - background video or image is shown through beneath the quote content */}
           {quoteConfig.include && quoteConfig?.quote && (
             <HeroQuote
-              image={quoteConfig.image}
+              imageSrc={quoteImageData?.url}
+              imageAlt={quoteImageData?.alt}
               quote={quoteConfig.quote}
               name={quoteConfig.name}
-              quoteLink={quoteConfig.quoteLink}
+              quoteLink={quoteInternalLinkUrl}
               extra={quoteConfig.extra}
               className="su-hidden lg:su-block su-max-w-1200 su-mx-auto"
             />
           )}
         </div>
+        {/* Mobile quote - is displayed over a solid black background below the portion with the background image/video  */}
+        {quoteConfig.include && quoteConfig?.quote && (
+          <HeroQuote
+            imageSrc={quoteImageData?.url}
+            imageAlt={quoteImageData?.alt}
+            quote={quoteConfig.quote}
+            name={quoteConfig.name}
+            quoteLink={quoteInternalLinkUrl || quoteConfig.quoteManualLink}
+            extra={quoteConfig.extra}
+            className="su-cc lg:su-hidden su-bg-black-true"
+          />
+        )}
       </section>
-      {quoteConfig.include && quoteConfig?.quote && (
-        <HeroQuote
-          image={quoteConfig.image}
-          quote={quoteConfig.quote}
-          name={quoteConfig.name}
-          quoteLink={quoteConfig.quoteLink}
-          extra={quoteConfig.extra}
-          className="su-cc lg:su-hidden su-bg-black-true"
-        />
-      )}
     </Container>
   );
 }

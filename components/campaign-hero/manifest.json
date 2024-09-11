@@ -49,7 +49,8 @@
                     "bkgImage": {
                       "title": "Background image",
                       "description": "Choose a background image.",
-                      "type": "string"
+                      "type": "string",
+                      "format": "matrix-asset-uri"
                     }
                   }
                 }
@@ -97,7 +98,6 @@
           },
           "quoteConfig": {
             "title": "Quote",
-            "description": "",
             "type": "object",
             "required": ["include"],
             "properties": {
@@ -118,10 +118,10 @@
                   }
                 },
                 "then": {
-                  "required": ["quote", "name", "image"],
+                  "required": ["quote", "name"],
                   "properties": {
                     "quote": {
-                      "title": "Quote Text",
+                      "title": "Quote text",
                       "description": "The quoted text. Do not include quotation marks, they will display automatically",
                       "type": "string",
                       "format": "multi-line"
@@ -136,15 +136,22 @@
                       "description": "Extra text for attribution, if needed. Could be a job title or descriptive information.",
                       "type": "string"
                     },
-                    "quoteLink": {
-                      "title": "Quote Link",
-                      "description": "Link for quote name attribution, if needed.",
+                    "quoteInternalUrl": {
+                      "title": "Quote internal link (Matrix asset link)",
+                      "type": "string",
+                      "description": "Link for quote name attribution, if needed. Select a Matrix page/asset to link to. If you prefer to paste the full URL manually, use the 'Quote manual/external link' field below instead.",
+                      "format": "matrix-asset-uri"
+                    },
+                    "quoteManualUrl": {
+                      "title": "Quote manual/external link",
+                      "description": "Link for quote name attribution, if needed. Enter the full URL, including https://.",
                       "type": "string"
                     },
                     "image": {
                       "title": "Image",
-                      "description": "Typically an image of the person quoted.",
-                      "type": "string"
+                      "description": "Typically an image of the person quoted. It will be displayed in as a circular thumbnail next to the quote. A square image would work best.",
+                      "type": "string",
+                      "format": "matrix-asset-uri"
                     },
                     "youtubeId": {
                       "title": "YouTube Video ID",
@@ -182,6 +189,16 @@
   ],
   "staticFiles": {
     "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/28192": {
+      "type": "file",
+      "path": "mocked-uris/28192.json"
+    }
   },
   "previews": {
     "default": {

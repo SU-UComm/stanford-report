@@ -2,7 +2,8 @@ import React from "react";
 import { cnb } from "cnbuilder";
 
 export default function HeroQuote({
-  image,
+  imageSrc,
+  imageAlt,
   quote,
   name,
   quoteLink,
@@ -11,12 +12,12 @@ export default function HeroQuote({
 }) {
   return (
     <div className={cnb("su-w-full su-relative", className)}>
-      <div className="su-rs-pt-2 su-rs-pb-5 su-rs-px-3 su-text-white su-flex su-items-center su-flex-col su-gap-44 lg:su-flex-row-reverse su-border-t su-border-black-30 su-relative su-z-[2]">
-        {image && (
+      <div className="su-rs-pt-2 su-rs-pb-6 su-rs-px-3 su-text-white su-flex su-items-center su-flex-col su-gap-44 lg:su-flex-row-reverse su-border-t su-border-black-30 su-relative su-z-[2]">
+        {imageSrc && (
           <div className="su-rounded-full su-size-160 md:su-size-200 2xl:su-size-300 su-shrink-0 su-overflow-hidden">
             <img
-              src={image}
-              alt="quote placeholder for local dev"
+              src={imageSrc}
+              alt={imageAlt || ""}
               className="su-object-cover su-size-full"
             />
           </div>
