@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { cnb } from "cnbuilder";
 import Modal from "../../packages/modal/ModalWrapper";
 import EmbedVideo from "../../packages/media/EmbedVideo";
@@ -16,8 +16,9 @@ import { FAIcon } from "../../packages/icons/FAIcon";
 
 export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [videoPlaying, setVideoPlaying] = useState("pause");
-  const [iframeNode, setIframeNode] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  // const [iframeNode, setIframeNode] = useState(null);
+  const iframeRef = useRef(null);
 
   const handleClick = () => {
     setIsModalOpen(true);
@@ -27,31 +28,39 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
     setIsModalOpen(false);
   };
 
+  // Toggles play/pause when button is clicked
+  const togglePlayPause = () => {
+    setIsPlaying((prev) => !prev);
+  };
+
+  // Send postMessage to Vimeo iframe to play/pause video
   useEffect(() => {
-    if (iframeNode) {
-      iframeNode?.contentWindow.postMessage(
-        JSON.stringify({ method: videoPlaying }),
+    const iframe = iframeRef.current;
+    if (iframe && iframe.contentWindow) {
+      iframe.contentWindow.postMessage(
+        JSON.stringify({ method: isPlaying ? "play" : "pause" }),
         "*"
       );
     }
+  }, [isPlaying]);
 
-    if (iframeNode && !iframeNode.dataset.loaded) {
-      setTimeout(() => {
-        const { top } = iframeNode.getBoundingClientRect();
+  // Pause video when it's out of viewport using IntersectionObserver
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        setIsPlaying(entry.isIntersecting);
+      },
+      { threshold: 0.2 } // Adjust threshold as needed
+    );
 
-        if (top < window.innerHeight) {
-          setVideoPlaying("play");
+    const iframe = iframeRef.current;
+    if (iframe) observer.observe(iframe);
 
-          iframeNode.dataset.loaded = "true";
-        }
-      }, 200);
-    }
-  }, [videoPlaying, iframeNode]);
-
-  // events
-  const handleIframeLoad = ({ target }) => {
-    setIframeNode(target);
-  };
+    return () => {
+      if (iframe) observer.unobserve(iframe);
+    };
+  }, []);
 
   return (
     <Container width="full" paddingX={false} className="su-relative">
@@ -61,12 +70,12 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
           {bkgConfig.type === "Video" && bkgConfig.bkgVideo ? (
             <div className="su-relative su-w-screen su-h-screen su-overflow-hidden">
               <iframe
+                ref={iframeRef}
                 src={`${bkgConfig.bkgVideo}?background=1`}
                 title="video"
                 className="bkg-loop su-absolute su-box-border su-aspect-[16/9] su-min-w-full su-min-h-full su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
                 allow="autoplay; fullscreen"
                 allowFullScreen
-                onLoad={handleIframeLoad}
               />
             </div>
           ) : (
@@ -135,22 +144,12 @@ export default function CampaignHero({ bkgConfig, textConfig, quoteConfig }) {
                 <div className="su-max-w-1200 su-mx-auto">
                   <button
                     type="button"
-                    onClick={() =>
-                      setVideoPlaying(
-                        videoPlaying === "pause" ? "play" : "pause"
-                      )
-                    }
+                    onClick={togglePlayPause}
                     className="su-group su-flex su-gap-10 su-items-end su-text-16 su-leading-display su-mr-0 su-ml-auto su-text-white su-w-fit hocus-visible:su-underline su-underline-offset-2 su-py-14"
                   >
-                    {`${
-                      videoPlaying === "pause" ? "Play" : "Pause"
-                    } background`}
+                    {`${!isPlaying ? "Play" : "Pause"} background`}
                     <FAIcon
-                      icon={
-                        videoPlaying === "pause"
-                          ? "circle-play"
-                          : "circle-pause"
-                      }
+                      icon={!isPlaying ? "circle-play" : "circle-pause"}
                       set="regular"
                       width={20}
                       className="su-text-20 su-text-white group-hocus-visible:su-animate-pulse group-hocus-visible:su-scale-110"
