@@ -16,15 +16,17 @@ import { Container } from "../../packages/grids/Container";
 export default function BasicHero(props) {
   const { title, titleAlignment } = props;
   return (
-    <div className="su-flex su-justify-between su-flex-wrap su-rs-mb-5">
-      <h1
-        className={cnb(
-          "su-font-serif su-mb-0",
-          titleAlignment === "center" && "su-text-center su-mx-auto"
-        )}
-      >
-        {title}
-      </h1>
-    </div>
+    <Container>
+      <div className="su-flex su-justify-between su-flex-wrap su-rs-mb-5">
+        <h1
+          className={cnb(
+            "su-font-serif su-mb-0",
+            titleAlignment === "center" && "su-text-center su-mx-auto"
+          )}
+        >
+          {title}
+        </h1>
+      </div>
+    </Container>
   );
 }
