@@ -31,6 +31,12 @@ export default function CampaignHero({
   quoteImageData,
   quoteInternalLinkUrl,
 }) {
+  const isBgVideo = bkgConfig?.type === "Video" && bkgConfig?.bkgVideo;
+  // The condition for putting the intro at the bottom of the banner in a pulled left style
+  const isIntroPulledLeft =
+    !quoteConfig.include &&
+    bkgConfig.type === "Image" &&
+    !quoteConfig.youtubeId;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const iframeRef = useRef(null);
@@ -79,116 +85,117 @@ export default function CampaignHero({
 
   return (
     <Container width="full" paddingX={false} className={styles.root}>
-      <section>
-        <div className={styles.bgWrapper}>
+      <section className="su-relative">
+        <div className="su-relative">
           {/* Background video or image */}
-          {bkgConfig.type === "Video" && bkgConfig.bkgVideo ? (
-            <div className="su-relative su-w-screen su-h-screen su-overflow-hidden">
-              <iframe
-                ref={iframeRef}
-                src={`${bkgConfig.bkgVideo}?background=1`}
-                title="video"
-                className="su-absolute su-box-border su-aspect-[16/9] su-min-w-full su-min-h-full su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2"
-                allow="autoplay; fullscreen"
-                allowFullScreen
-              />
+          {isBgVideo ? (
+            <div className={styles.bgWrapper}>
+              <div className={styles.bgVideoWrapper}>
+                <iframe
+                  ref={iframeRef}
+                  src={`${bkgConfig.bkgVideo}?background=1`}
+                  title="background video"
+                  className={styles.bgVideoIframe}
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                />
+              </div>
             </div>
           ) : (
-            <img
-              src={bkgImageData?.url}
-              className="su-object-cover su-size-full"
-              alt={bkgImageData?.alt || ""}
-            />
+            <div className="su-absolute su-top-0 su-size-full">
+              <img
+                src={bkgImageData?.url}
+                className="su-object-cover su-size-full"
+                alt={bkgImageData?.alt || ""}
+              />
+            </div>
           )}
           {/* Gradient overlay */}
           <div
             className="su-absolute su-block su-size-full su-top-0 su-bg-black-true/20 su-z-10"
             aria-hidden="true"
           />
-        </div>
 
-        <div className="su-cc su-relative su-z-20 su-mt-[-70vh] su-bg-gradient-to-t su-from-black-true">
-          <h1
-            className={cnb(
-              "su-fluid-type-6 su-text-white su-text-shadow-lg su-text-center su-max-w-1000 su-mx-auto su-mb-0 su-text-balance",
-              !quoteConfig.include && "su-mb-450"
-            )}
-          >
-            {textConfig.title}
-          </h1>
-          {quoteConfig.include ? (
-            <>
+          {/* Hero content */}
+          <div className={styles.contentWrapper(bkgConfig.type)}>
+            <h1 className={styles.title(isBgVideo, isIntroPulledLeft)}>
+              {textConfig.title}
+            </h1>
+            {/* Display center aligned intro below h1 if quote is included */}
+            {!isIntroPulledLeft && (
               <p
-                className={
-                  quoteConfig.quote
-                    ? "su-rs-mt-3 su-rs-mb-1 su-text-white su-text-center su-type-3 su-leading-snug su-max-w-800 su-mx-auto"
-                    : ""
-                }
+                className={styles.introCentered(
+                  quoteConfig?.youtubeId,
+                  isBgVideo
+                )}
               >
                 {textConfig.intro}
               </p>
-              {quoteConfig.youtubeId && (
-                <>
-                  <button
-                    className="su-block su-relative su-z-10 su-size-full hocus:su-animate-pulse hocus:su-scale-110 su-transition-all su-w-fit su-mx-auto su-rs-mb-2"
-                    type="button"
-                    aria-haspopup="dialog"
-                    aria-label="Open full video in a modal"
-                    onClick={() => handleClick()}
+            )}
+            {/* Button to open YouTube modal */}
+            {quoteConfig.youtubeId && (
+              <>
+                <button
+                  className={styles.bgVideoButton(bkgConfig.type)}
+                  type="button"
+                  aria-haspopup="dialog"
+                  aria-label="Open full video in a modal"
+                  onClick={() => handleClick()}
+                >
+                  <FAIcon
+                    icon="circle-play"
+                    set="regular"
+                    width={75}
+                    className="su-text-[4.5rem] md:su-text-[7.5rem] su-text-white"
+                  />
+                </button>
+                {isModalOpen && (
+                  <Modal
+                    titleId="video-modal"
+                    title="Modal"
+                    onClose={handleCloseModal}
                   >
-                    <FAIcon
-                      icon="circle-play"
-                      set="regular"
-                      width={75}
-                      className="su-text-[4.5rem] md:su-text-[7.5rem] su-text-white"
-                    />
-                  </button>
-                  {isModalOpen && (
-                    <Modal
-                      titleId="video-modal"
-                      title="Modal"
-                      onClose={handleCloseModal}
-                    >
-                      <EmbedVideo videoId={quoteConfig.youtubeId} />
-                    </Modal>
-                  )}
-                </>
-              )}
-              {bkgConfig.type === "Video" && bkgConfig.bkgVideo && (
-                <div className="su-max-w-1200 su-mx-auto">
-                  <button
-                    type="button"
-                    onClick={togglePlayPause}
-                    className="su-group su-flex su-gap-10 su-items-end su-text-16 su-leading-display su-mr-0 su-ml-auto su-text-white su-w-fit hocus-visible:su-underline su-underline-offset-2 su-py-14 su--mt-24"
-                  >
-                    {`${!isPlaying ? "Play" : "Pause"} background`}
-                    <FAIcon
-                      icon={!isPlaying ? "circle-play" : "circle-pause"}
-                      set="regular"
-                      width={20}
-                      className="su-text-20 su-text-white group-hocus-visible:su-animate-pulse group-hocus-visible:su-scale-110"
-                    />
-                  </button>
-                </div>
-              )}
-            </>
-          ) : (
-            <p className="su-type-3 su-max-w-1200 su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-32 md:su-pl-48 2xl:su-pl-200 su-py-38 su-mb-0 2xl:su-ml-80">
-              {textConfig.intro}
-            </p>
-          )}
-          {/* Desktop quote - background video or image is shown through beneath the quote content */}
-          {quoteConfig.include && quoteConfig?.quote && (
-            <HeroQuote
-              imageSrc={quoteImageData?.url}
-              imageAlt={quoteImageData?.alt}
-              quote={quoteConfig.quote}
-              name={quoteConfig.name}
-              quoteLink={quoteInternalLinkUrl}
-              extra={quoteConfig.extra}
-              className="su-hidden lg:su-block su-max-w-1200 su-mx-auto"
-            />
-          )}
+                    <EmbedVideo videoId={quoteConfig.youtubeId} />
+                  </Modal>
+                )}
+              </>
+            )}
+            {/* Button to play/pause background video */}
+            {bkgConfig.type === "Video" && bkgConfig.bkgVideo && (
+              <div className="su-max-w-1200 su-mx-auto">
+                <button
+                  type="button"
+                  onClick={togglePlayPause}
+                  className="su-group su-flex su-gap-10 su-items-end su-text-16 su-leading-display su-mr-0 su-ml-auto su-text-white su-w-fit hocus-visible:su-underline su-underline-offset-2 su-py-14 su--mt-24"
+                >
+                  {`${!isPlaying ? "Play" : "Pause"} background`}
+                  <FAIcon
+                    icon={!isPlaying ? "circle-play" : "circle-pause"}
+                    set="regular"
+                    width={20}
+                    className="su-text-20 su-text-white group-hocus-visible:su-animate-pulse group-hocus-visible:su-scale-110"
+                  />
+                </button>
+              </div>
+            )}
+            {isIntroPulledLeft && (
+              <p className="su-type-3 su-max-w-1200 su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-32 md:su-pl-48 2xl:su-pl-200 su-py-38 su-mb-0 2xl:su-ml-80">
+                {textConfig.intro}
+              </p>
+            )}
+            {/* Desktop quote - background video or image is shown through beneath the quote content */}
+            {quoteConfig.include && quoteConfig?.quote && (
+              <HeroQuote
+                imageSrc={quoteImageData?.url}
+                imageAlt={quoteImageData?.alt}
+                quote={quoteConfig.quote}
+                name={quoteConfig.name}
+                quoteLink={quoteInternalLinkUrl}
+                extra={quoteConfig.extra}
+                className="su-hidden lg:su-block su-max-w-1200 su-mx-auto"
+              />
+            )}
+          </div>
         </div>
         {/* Mobile quote - is displayed over a solid black background below the portion with the background image/video  */}
         {quoteConfig.include && quoteConfig?.quote && (
