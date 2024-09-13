@@ -1,16 +1,16 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "campaign-hero",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "namespace": "stanford-components",
-  "description": "Stanford university Hero for use on Campaign pages.",
+  "description": "Hero component for use on Campaign pages.",
   "displayName": "Campaign Hero",
   "mainFunction": "main",
   "icon": {
     "id": "foundation",
     "color": {
       "type": "enum",
-      "value": "gray"
+      "value": "green"
     }
   },
   "functions": [
@@ -27,7 +27,7 @@
             "required": ["type"],
             "properties": {
               "type": {
-                "title": "Background Type",
+                "title": "Background type",
                 "default": "Image",
                 "enum": ["Image", "Video"],
                 "type": "string"
@@ -78,7 +78,7 @@
             ]
           },
           "textConfig": {
-            "title": "Title & Introduction",
+            "title": "Title & introduction",
             "type": "object",
             "required": ["title", "intro"],
             "properties": {
@@ -92,9 +92,15 @@
                 "title": "Intro",
                 "description": "Introduction text that displays below the headline.",
                 "type": "string",
+                "format": "multi-line",
                 "default": "Lorem ipsum dolor"
               }
             }
+          },
+          "youtubeId": {
+            "title": "YouTube video ID",
+            "description": "The ID of the YouTube video that will play in a modal.",
+            "type": "string"
           },
           "quoteConfig": {
             "title": "Quote",
@@ -102,7 +108,7 @@
             "required": ["include"],
             "properties": {
               "include": {
-                "title": "Would you like to include a quote?",
+                "title": "Would you like to include a quote at the bottom of the hero?",
                 "default": true,
                 "type": "boolean"
               }
@@ -133,7 +139,7 @@
                     },
                     "extra": {
                       "title": "Extra",
-                      "description": "Extra text for attribution, if needed. Could be a job title or descriptive information.",
+                      "description": "Extra text after the name for attribution, if needed. Could be a job title or descriptive information.",
                       "type": "string"
                     },
                     "quoteInternalUrl": {
@@ -149,14 +155,9 @@
                     },
                     "image": {
                       "title": "Image",
-                      "description": "Typically an image of the person quoted. It will be displayed in as a circular thumbnail next to the quote. A square image would work best.",
+                      "description": "Typically a headshot of the person quoted. It will be displayed in as a circular thumbnail next to the quote. A square image would work best.",
                       "type": "string",
                       "format": "matrix-asset-uri"
-                    },
-                    "youtubeId": {
-                      "title": "YouTube Video ID",
-                      "description": "The ID of the YouTube video that will play in a modal.",
-                      "type": "string"
                     }
                   }
                 }

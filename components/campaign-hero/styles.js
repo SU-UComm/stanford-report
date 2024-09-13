@@ -1,11 +1,20 @@
 import { cnb } from "cnbuilder";
 
 export const root = "su-relative";
+export const section = "su-relative";
+export const heroWrapper = "su-relative";
 export const bgWrapper = "su-sticky su-h-screen su-top-0 su-bg-black";
 export const bgVideoWrapper =
-  "su-relative su-w-screen su-h-screen su-overflow-hidden";
+  "su-relative su-w-full su-h-screen su-overflow-hidden";
 export const bgVideoIframe =
   "su-absolute su-aspect-[16/9] su-min-w-full su-min-h-full su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2";
+export const bgImageWrapper = "su-absolute su-top-0 su-size-full";
+export const bgImage = "su-object-cover su-size-full";
+export const overlay = (hasQuote) =>
+  cnb(
+    "su-absolute su-block su-size-full su-top-0 su-bg-black-true/20 su-z-10",
+    hasQuote ? "" : ""
+  );
 
 export const contentWrapper = (bkgType) =>
   cnb(
@@ -26,6 +35,8 @@ export const bgVideoButton = (bkgType) =>
     "su-block su-relative su-z-10 su-size-full hocus:su-animate-pulse hocus:su-scale-110 su-transition-all su-w-fit su-mx-auto ",
     bkgType === "Video" ? "su-rs-mb-2" : "lg:su-mb-38"
   );
+export const playYoutubeIcon =
+  "su-text-[4.5rem] md:su-text-[7.5rem] su-text-white";
 
 export const introCentered = (hasYoutube, isBgVideo) =>
   cnb(

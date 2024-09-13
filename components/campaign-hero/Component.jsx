@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { cnb } from "cnbuilder";
 import Modal from "../../packages/modal/ModalWrapper";
 import EmbedVideo from "../../packages/media/EmbedVideo";
 import { Container } from "../../packages/grids/Container";
@@ -16,6 +15,9 @@ import * as styles from "./styles";
  * @param {object} textConfig
  * Text configuration - title and intro text for the hero
  *
+ * @param {string} youtubeId
+ * YouTube ID of the video that will play in a modal
+ *
  * @param {object} quoteConfig
  * Quote configuration - fields for the optional quote at the bottom of the hero
  *
@@ -26,17 +28,25 @@ import * as styles from "./styles";
 export default function CampaignHero({
   bkgConfig,
   textConfig,
+  youtubeId,
   quoteConfig,
   bkgImageData,
   quoteImageData,
   quoteInternalLinkUrl,
 }) {
+  // Conditionals for code readability
   const isBgVideo = bkgConfig?.type === "Video" && bkgConfig?.bkgVideo;
-  // The condition for putting the intro at the bottom of the banner in a pulled left style
+  const hasQuote = quoteConfig?.include && quoteConfig?.quote;
+
+  /**
+   * The condition to display a pulled left intro.
+   * 1. Quote is not included
+   * 2. Background is an image
+   * 3. No YouTube video to play in a modal
+   */
   const isIntroPulledLeft =
-    !quoteConfig.include &&
-    bkgConfig.type === "Image" &&
-    !quoteConfig.youtubeId;
+    !quoteConfig.include && bkgConfig.type === "Image" && !youtubeId;
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const iframeRef = useRef(null);
@@ -85,8 +95,8 @@ export default function CampaignHero({
 
   return (
     <Container width="full" paddingX={false} className={styles.root}>
-      <section className="su-relative">
-        <div className="su-relative">
+      <section className={styles.section}>
+        <div className={styles.heroWrapper}>
           {/* Background video or image */}
           {isBgVideo ? (
             <div className={styles.bgWrapper}>
@@ -102,19 +112,16 @@ export default function CampaignHero({
               </div>
             </div>
           ) : (
-            <div className="su-absolute su-top-0 su-size-full">
+            <div className={styles.bgImageWrapper}>
               <img
                 src={bkgImageData?.url}
-                className="su-object-cover su-size-full"
+                className={styles.bgImage}
                 alt={bkgImageData?.alt || ""}
               />
             </div>
           )}
           {/* Gradient overlay */}
-          <div
-            className="su-absolute su-block su-size-full su-top-0 su-bg-black-true/20 su-z-10"
-            aria-hidden="true"
-          />
+          {/* <div className={styles.overlay(hasQuote)} aria-hidden="true" /> */}
 
           {/* Hero content */}
           <div className={styles.contentWrapper(bkgConfig.type)}>
@@ -123,17 +130,12 @@ export default function CampaignHero({
             </h1>
             {/* Display center aligned intro below h1 if quote is included */}
             {!isIntroPulledLeft && (
-              <p
-                className={styles.introCentered(
-                  quoteConfig?.youtubeId,
-                  isBgVideo
-                )}
-              >
+              <p className={styles.introCentered(youtubeId, isBgVideo)}>
                 {textConfig.intro}
               </p>
             )}
             {/* Button to open YouTube modal */}
-            {quoteConfig.youtubeId && (
+            {youtubeId && (
               <>
                 <button
                   className={styles.bgVideoButton(bkgConfig.type)}
@@ -146,22 +148,24 @@ export default function CampaignHero({
                     icon="circle-play"
                     set="regular"
                     width={75}
-                    className="su-text-[4.5rem] md:su-text-[7.5rem] su-text-white"
+                    className={styles.playYoutubeIcon}
                   />
                 </button>
                 {isModalOpen && (
                   <Modal
-                    titleId="video-modal"
-                    title="Modal"
+                    titleId="youtube-modal-title"
                     onClose={handleCloseModal}
                   >
-                    <EmbedVideo videoId={quoteConfig.youtubeId} />
+                    <h2 className="su-sr-only" id="youtube-modal-title">
+                      YouTube Video
+                    </h2>
+                    <EmbedVideo videoId={youtubeId} />
                   </Modal>
                 )}
               </>
             )}
             {/* Button to play/pause background video */}
-            {bkgConfig.type === "Video" && bkgConfig.bkgVideo && (
+            {isBgVideo && (
               <div className="su-max-w-1200 su-mx-auto">
                 <button
                   type="button"
@@ -184,7 +188,7 @@ export default function CampaignHero({
               </p>
             )}
             {/* Desktop quote - background video or image is shown through beneath the quote content */}
-            {quoteConfig.include && quoteConfig?.quote && (
+            {hasQuote && (
               <HeroQuote
                 imageSrc={quoteImageData?.url}
                 imageAlt={quoteImageData?.alt}
@@ -197,8 +201,8 @@ export default function CampaignHero({
             )}
           </div>
         </div>
-        {/* Mobile quote - is displayed over a solid black background below the portion with the background image/video  */}
-        {quoteConfig.include && quoteConfig?.quote && (
+        {/* Mobile quote - displayed over a solid black background below the hero content */}
+        {hasQuote && (
           <HeroQuote
             imageSrc={quoteImageData?.url}
             imageAlt={quoteImageData?.alt}
