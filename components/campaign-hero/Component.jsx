@@ -121,13 +121,11 @@ export default function CampaignHero({
             </div>
           )}
           {/* Gradient overlay */}
-          {/* <div className={styles.overlay(hasQuote)} aria-hidden="true" /> */}
+          <div className={styles.overlay(hasQuote)} aria-hidden="true" />
 
           {/* Hero content */}
-          <div className={styles.contentWrapper(bkgConfig.type)}>
-            <h1 className={styles.title(isBgVideo, isIntroPulledLeft)}>
-              {textConfig.title}
-            </h1>
+          <div className={styles.contentWrapper(isBgVideo, isIntroPulledLeft)}>
+            <h1 className={styles.title(isBgVideo)}>{textConfig.title}</h1>
             {/* Display center aligned intro below h1 if quote is included */}
             {!isIntroPulledLeft && (
               <p className={styles.introCentered(youtubeId, isBgVideo)}>
@@ -183,7 +181,7 @@ export default function CampaignHero({
               </div>
             )}
             {isIntroPulledLeft && (
-              <p className="su-type-3 su-max-w-1200 su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-32 md:su-pl-48 2xl:su-pl-200 su-py-38 su-mb-0 2xl:su-ml-80">
+              <p className="su-type-3 su-max-w-1200 su-ml-0 su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-32 md:su-pl-48 2xl:su-pl-200 su-py-38 su-mb-0 su-rs-mt-10">
                 {textConfig.intro}
               </p>
             )}

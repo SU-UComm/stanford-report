@@ -3071,6 +3071,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-to-olive{--tw-gradient-to:#8F993E var(--tw-gradient-to-position)}
 .su-to-plum{--tw-gradient-to:#620059 var(--tw-gradient-to-position)}
 .su-to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}
+.su-to-black-true\/20{--tw-gradient-to:rgb(0 0 0 / 0.2) var(--tw-gradient-to-position)}
 .su-to-50\%{--tw-gradient-to-position:50%}
 .su-bg-cover{background-size:cover}
 .su-bg-center{background-position:center}
@@ -4905,6 +4906,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .lg\:su-pt-\[17\.5rem\]{padding-top:17.5rem}
 .lg\:su-pt-\[27px\]{padding-top:27px}
 .lg\:su-pt-\[30vw\]{padding-top:30vw}
+.lg\:su-pt-\[26vw\]{padding-top:26vw}
 .lg\:su-text-left{text-align:left}
 .lg\:su-text-14{font-size:1.4rem}
 .lg\:su-text-15{font-size:1.5rem}
