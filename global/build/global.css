@@ -643,7 +643,7 @@ h6{font-family:"Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roma
 .component-slider-cards{margin-left:0;margin-right:0}}
 .component-slider .swiper-slide > *{transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 .component-slider-peek .swiper-slide-prev > *,
-.component-slider-peek .swiper-slide-next > *{pointer-events:none;opacity:.27}
+.component-slider-peek .swiper-slide-next > *{pointer-events:none;opacity:0.25}
 @media (min-width: 768px){
 .component-slider-peek .swiper-slide-prev > *,
 .component-slider-peek .swiper-slide-next > *{pointer-events:auto;opacity:1}}
@@ -656,14 +656,92 @@ h6{font-family:"Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roma
 @media (min-width: 768px){
 .component-slider-cards.component-slider-peek{margin-left:0;margin-right:0}}
 .component-slider-single.component-slider-peek .swiper-slide-prev > *,
-.component-slider-single.component-slider-peek .swiper-slide-next > *{pointer-events:none;opacity:.27}
+.component-slider-single.component-slider-peek .swiper-slide-next > *{pointer-events:none;opacity:0.25}
 @media (min-width: 768px){
 .component-slider-single.component-slider-peek .swiper-slide-prev > *,
 .component-slider-single.component-slider-peek .swiper-slide-next > *{pointer-events:auto;opacity:1}}
+.component-slider-single.component-slider-peek.component-slider-vertical-videos
+  .swiper-slide-prev
+  > *,
+.component-slider-single.component-slider-peek.component-slider-vertical-videos
+  .swiper-slide-next
+  > *{pointer-events:none;opacity:0.25}
+.su-slider-dark
+  .component-slider-single.component-slider-peek.component-slider-vertical-videos
+  .swiper-slide-prev
+  > *,
+.su-slider-dark
+  .component-slider-single.component-slider-peek.component-slider-vertical-videos
+  .swiper-slide-next
+  > *{pointer-events:none;opacity:1}
+.su-slider-dark
+  .component-slider-vertical-videos
+  .swiper-slide-prev
+  article
+  > *,
+.su-slider-dark
+  .component-slider-vertical-videos
+  .swiper-slide-next
+  article
+  > *{opacity:0.4}
 .component-slider .component-slider-pagination{position:static;display:flex;gap:1rem;text-align:left}
-.component-slider .swiper-pagination-bullet{margin-left:0;margin-right:0;height:2rem;width:2rem;border-width:2px;border-style:solid;--tw-border-opacity:1;border-color:rgb(192 192 191 / var(--tw-border-opacity));background-color:transparent;opacity:1;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
+.component-slider .swiper-pagination-bullet{margin-left:0;margin-right:0;height:2rem;width:2rem;border-width:2px;border-style:solid;--tw-border-opacity:1;border-color:rgb(171 171 169 / var(--tw-border-opacity));background-color:transparent;opacity:1;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 :is(.su-dark .component-slider .swiper-pagination-bullet){--tw-border-opacity:1;border-color:rgb(118 118 116 / var(--tw-border-opacity))}
 .component-slider.su-slider-dark .swiper-pagination-bullet{margin-left:0;margin-right:0;height:2rem;width:2rem;border-width:2px;border-style:solid;--tw-border-opacity:1;border-color:rgb(118 118 116 / var(--tw-border-opacity));background-color:transparent;opacity:1;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
+.component-slider
+  .component-slider-vertical-videos
+  + .component-slider-controls{padding-left:20px;padding-right:20px;margin-left:auto;margin-right:auto;}
+@media (min-width: 576px){
+.component-slider
+  .component-slider-vertical-videos
+  + .component-slider-controls{padding-left:30px;padding-right:30px}}
+@media (min-width: 768px){
+.component-slider
+  .component-slider-vertical-videos
+  + .component-slider-controls{padding-left:50px;padding-right:50px}}
+@media (min-width: 992px){
+.component-slider
+  .component-slider-vertical-videos
+  + .component-slider-controls{padding-left:80px;padding-right:80px}}
+@media (min-width: 1200px){
+.component-slider
+  .component-slider-vertical-videos
+  + .component-slider-controls{padding-left:100px;padding-right:100px}}
+@media (min-width: 1500px){
+.component-slider
+  .component-slider-vertical-videos
+  + .component-slider-controls{padding-left:100px;padding-right:100px}}
+@media only screen and (min-width: 1700px){
+.component-slider
+  .component-slider-vertical-videos
+  + .component-slider-controls{padding-left:calc((100% - 1500px)/2);padding-right:calc((100% - 1500px)/2)}}
+ .su-centered-container .component-slider
+  .component-slider-vertical-videos
+  + .component-slider-controls,.component-slider
+  .component-slider-vertical-videos
+  + .component-slider-controls .su-centered-container,.component-slider
+  .component-slider-vertical-videos
+  + .component-slider-controls .su-cc{padding-left:0;padding-right:0}
+.component-slider.su-slider-dark
+  .component-slider-vertical-videos
+  + .component-slider-controls
+  .swiper-pagination-bullet{border-width:2px;--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity));--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
+.component-slider.su-slider-dark
+  .component-slider-vertical-videos
+  + .component-slider-controls
+  .swiper-pagination-bullet:hover{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+.component-slider.su-slider-dark
+  .component-slider-vertical-videos
+  + .component-slider-controls
+  .swiper-pagination-bullet:focus-visible{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+.component-slider.su-slider-dark
+  .component-slider-vertical-videos
+  + .component-slider-controls
+  .swiper-pagination-bullet:active{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+.component-slider.su-slider-dark
+  .component-slider-vertical-videos
+  + .component-slider-controls
+  .swiper-pagination-bullet.swiper-pagination-bullet-active{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity));--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
 .component-slider .swiper-pagination-lock{pointer-events:none}
 .component-slider .swiper-pagination-horizontal.component-slider-pagination{flex-wrap:wrap}
 .component-slider
@@ -672,12 +750,15 @@ h6{font-family:"Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roma
   --swiper-pagination-bullet-horizontal-gap: 0;
   margin: 0 !important;
 }
-.component-slider.su-slider-dark .swiper-pagination-bullet:hover,
+.component-slider.su-slider-dark .swiper-pagination-bullet:hover{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+.component-slider.su-slider-dark .swiper-pagination-bullet:focus-visible{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
 .component-slider.su-slider-dark .swiper-pagination-bullet:active{--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
-.component-slider .swiper-pagination-bullet:hover,
+.component-slider .swiper-pagination-bullet:hover{--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity))}
+.component-slider .swiper-pagination-bullet:focus-visible{--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity))}
 .component-slider .swiper-pagination-bullet:active{--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity))}
-:is(.su-dark .component-slider .swiper-pagination-bullet:hover),:is(.su-dark 
-.component-slider .swiper-pagination-bullet:active){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+:is(.su-dark .component-slider .swiper-pagination-bullet:hover){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+:is(.su-dark .component-slider .swiper-pagination-bullet:focus-visible){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
+:is(.su-dark .component-slider .swiper-pagination-bullet:active){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
 .component-slider .swiper-pagination-bullet.swiper-pagination-bullet-active{--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity));--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity))}
 :is(.su-dark .component-slider .swiper-pagination-bullet.swiper-pagination-bullet-active){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity));--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
 .component-slider.su-slider-dark
@@ -693,13 +774,17 @@ h6{font-family:"Source Serif 4","Source Serif Pro",Georgia,Times,"Times New Roma
 .component-slider .component-slider-prev svg{--tw-rotate:180deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .component-slider .component-slider-btn{position:relative;top:auto;bottom:0;height:3.7rem;min-width:3.7rem;max-width:3.7rem;border-radius:9999px;border-width:2px;--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity));transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 .component-slider .component-slider-btn:hover{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
-.component-slider .component-slider-btn:focus{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
+.component-slider .component-slider-btn:focus-visible{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 :is(.su-dark .component-slider .component-slider-btn){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
-:is(.su-dark .component-slider .component-slider-btn:hover){--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
-:is(.su-dark .component-slider .component-slider-btn:focus){--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
-.component-slider.su-slider-dark .component-slider-btn{position:relative;top:auto;bottom:0;height:37px;min-width:37px;max-width:37px;border-radius:9999px;border-width:2px;border-style:solid;--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity));transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
-.component-slider.su-slider-dark .component-slider-btn:hover{--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
-.component-slider.su-slider-dark .component-slider-btn:focus{--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
+:is(.su-dark .component-slider .component-slider-btn:hover){--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
+:is(.su-dark .component-slider .component-slider-btn:focus-visible){--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
+:is(.su-dark .component-slider .component-slider-btn:hover){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
+:is(.su-dark .component-slider .component-slider-btn:focus){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
+.component-slider.su-slider-dark .component-slider-btn{position:relative;top:auto;bottom:0;height:37px;min-width:37px;max-width:37px;border-radius:9999px;border-width:2px;border-style:solid;--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity));--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity));transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
+.component-slider.su-slider-dark .component-slider-btn:hover{--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
+.component-slider.su-slider-dark .component-slider-btn:focus-visible{--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
+.component-slider.su-slider-dark .component-slider-btn:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
+.component-slider.su-slider-dark .component-slider-btn:focus{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 /*
 *   Global modal
 */
@@ -1868,6 +1953,8 @@ Subscribe to Stanford Report Marketo form styles
  */
 .su-page-campaign,
 .su-page-campaign body{--tw-bg-opacity:1;background-color:rgb(249 249 249 / var(--tw-bg-opacity))}
+.su-page-campaign.su-dark,
+.su-page-campaign.su-dark body{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
 .scrollable-list__item::after{display:inline-block;vertical-align:middle}
 [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{float:left;margin-top:0.2rem;margin-right:0.9rem;padding:0;font-family:"Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif;font-size:7.2rem;font-weight:700;line-height:35px}
 @media (min-width: 768px){
