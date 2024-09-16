@@ -12,7 +12,7 @@ export default function HeroQuote({
 }) {
   return (
     <div className={cnb("su-w-full su-relative su-z-20", className)}>
-      <div className="su-rs-pt-2 su-rs-pb-6 su-rs-px-5 su-text-white su-flex su-items-center su-flex-col su-gap-44 lg:su-flex-row-reverse su-border-t su-border-black-30 su-relative su-z-[2]">
+      <div className="su-rs-pt-2 su-rs-pb-6 su-rs-px-5 su-text-white su-flex su-items-center su-flex-col su-gap-44 lg:su-flex-row-reverse su-border-t su-border-black-30 su-relative">
         {imageSrc && (
           <div className="su-rounded-full su-size-160 md:su-size-200 2xl:su-size-300 su-shrink-0 su-overflow-hidden">
             <img

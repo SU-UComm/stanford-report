@@ -29,14 +29,11 @@ export const contentWrapper = (hasQuote, isBgVideo, isIntroPulledLeft) =>
     isBgVideo && "su-mt-[-70vh]",
     !(isBgVideo && !hasQuote) && "su-bg-gradient-to-t su-from-black-true"
   );
-export const title = (isBgVideo) =>
-  cnb(
-    "su-fluid-type-6 su-text-white su-text-shadow-lg su-text-center su-max-w-1000 su-mx-auto su-mb-0 su-text-balance",
-    !isBgVideo && ""
-  );
+export const title =
+  "su-fluid-type-6 su-text-white su-text-shadow-lg su-text-center su-max-w-1000 su-mx-auto su-mb-0 su-text-balance";
 export const introCentered = (hasYoutube, isBgVideo) =>
   cnb(
-    "su-rs-mt-3 su-text-white su-text-center su-type-3 su-mb-0 su-leading-snug su-max-w-800 su-mx-auto",
+    "su-rs-mt-3 su-text-white su-text-center su-type-3 last:*:su-mb-0 *:su-leading-snug su-max-w-800 su-mx-auto",
     !hasYoutube && !isBgVideo ? "su-rs-pb-6" : "su-rs-pb-1"
   );
 
@@ -57,7 +54,7 @@ export const playPauseButton = (hasYoutube) =>
 export const playPauseIcon =
   "su-text-20 su-text-white group-hocus-visible:su-animate-pulse group-hocus-visible:su-scale-110 su-transition-transform";
 export const introPulledLeft =
-  "su-type-3 su-max-w-1200 su-ml-0 su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-32 md:su-pl-48 2xl:su-pl-200 su-py-38 su-mb-0 su-rs-mt-10";
+  "su-type-3 su-max-w-1200 su-ml-0 *:su-leading-snug su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-32 md:su-pl-48 2xl:su-pl-200 su-py-38 last:*:su-mb-0 su-rs-mt-10";
 
 export const quote = "su-hidden lg:su-block su-max-w-1200 su-mx-auto";
 export const quoteMobile = "su-cc lg:su-hidden su-bg-black-true";

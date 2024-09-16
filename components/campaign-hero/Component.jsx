@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import Modal from "../../packages/modal/ModalWrapper";
 import EmbedVideo from "../../packages/media/EmbedVideo";
 import { Container } from "../../packages/grids/Container";
@@ -57,7 +58,7 @@ export default function CampaignHero({
     !quoteConfig.include && bkgConfig.type === "Image" && !youtubeId;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isUserPaused, setIsUserPaused] = useState(false); // Track if the video was manually paused
+  const [isUserPaused, setIsUserPaused] = useState(false); // Track if the video was paused by the user
   const [isPlaying, setIsPlaying] = useState(false);
   const iframeRef = useRef(null);
 
@@ -151,12 +152,13 @@ export default function CampaignHero({
               isIntroPulledLeft
             )}
           >
-            <h1 className={styles.title(isBgVideo)}>{textConfig.title}</h1>
+            <h1 className={styles.title}>{textConfig.title}</h1>
             {/* Display center aligned intro below h1 if quote is included */}
             {!isIntroPulledLeft && (
-              <p className={styles.introCentered(youtubeId, isBgVideo)}>
-                {textConfig.intro}
-              </p>
+              <XssSafeContent
+                content={textConfig.intro}
+                className={styles.introCentered(youtubeId, isBgVideo)}
+              />
             )}
             {/* Button to open YouTube modal */}
             {youtubeId && (
@@ -166,7 +168,7 @@ export default function CampaignHero({
                   type="button"
                   aria-haspopup="dialog"
                   aria-label="Open full video in a modal"
-                  onClick={() => handleClick()}
+                  onClick={handleClick}
                 >
                   <FAIcon
                     icon="circle-play"
@@ -207,7 +209,10 @@ export default function CampaignHero({
               </div>
             )}
             {isIntroPulledLeft && (
-              <p className={styles.introPulledLeft}>{textConfig.intro}</p>
+              <XssSafeContent
+                content={textConfig.intro}
+                className={styles.introPulledLeft}
+              />
             )}
             {/* Desktop quote - background video or image is shown through beneath the quote content */}
             {hasQuote && (

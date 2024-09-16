@@ -91,8 +91,7 @@
               "intro": {
                 "title": "Intro",
                 "description": "Introduction text that displays below the headline.",
-                "type": "string",
-                "format": "multi-line",
+                "type": "FormattedText",
                 "default": "Lorem ipsum dolor"
               }
             }
