@@ -127,10 +127,21 @@ export default function CampaignHero({
             </div>
           )}
           {/* Gradient overlay */}
-          <div className={styles.overlay(hasQuote)} aria-hidden="true" />
-
+          <div
+            className={styles.overlay(hasQuote, isBgVideo)}
+            aria-hidden="true"
+          />
+          {isBgVideo && hasQuote && (
+            <div className={styles.mobileVideoOverlay} aria-hidden="true" />
+          )}
           {/* Hero content */}
-          <div className={styles.contentWrapper(isBgVideo, isIntroPulledLeft)}>
+          <div
+            className={styles.contentWrapper(
+              hasQuote,
+              isBgVideo,
+              isIntroPulledLeft
+            )}
+          >
             <h1 className={styles.title(isBgVideo)}>{textConfig.title}</h1>
             {/* Display center aligned intro below h1 if quote is included */}
             {!isIntroPulledLeft && (
