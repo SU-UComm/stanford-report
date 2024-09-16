@@ -24,7 +24,7 @@ export default function HeroQuote({
         )}
         <blockquote className="su-type-1">
           <p className="su-font-serif su-leading-display">“{quote}”</p>
-          <footer className="su-font-bold">
+          <footer className="su-font-bold su-leading-snug">
             {quoteLink ? (
               <a
                 href={quoteLink}

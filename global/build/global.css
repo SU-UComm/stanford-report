@@ -2766,6 +2766,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-h-min{height:min-content}
 .su-h-px{height:1px}
 .su-h-screen{height:100vh}
+.su-h-\[max\(100vh\,100\%\)\]{height:max(100vh,100%)}
 .su-max-h-1000{max-height:100rem}
 .su-max-h-70{max-height:7rem}
 .su-max-h-\[103px\]{max-height:103px}
@@ -4216,10 +4217,18 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .hocus\:su-no-underline:focus{text-decoration-line:none}
 .hocus\:su-decoration-white:focus{text-decoration-color:#fff}
 .hocus\:su-shadow-\[inset_0_0_0_3px_rgba\(177\2c 4\2c 14\2c 1\)\]:focus{--tw-shadow:inset 0 0 0 3px rgba(177,4,14,1);--tw-shadow-colored:inset 0 0 0 3px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}
+.hocus-visible\:su-scale-110:hover{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+@keyframes su-pulse{
+50%{opacity:.5}}
+.hocus-visible\:su-animate-pulse:hover{animation:su-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}
 .hocus-visible\:su-text-dark-mode-red:hover{--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
 .hocus-visible\:su-text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .hocus-visible\:su-underline:hover{text-decoration-line:underline}
 .hocus-visible\:su-decoration-white:hover{text-decoration-color:#fff}
+.hocus-visible\:su-scale-110:focus-visible{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+@keyframes su-pulse{
+50%{opacity:.5}}
+.hocus-visible\:su-animate-pulse:focus-visible{animation:su-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}
 .hocus-visible\:su-text-dark-mode-red:focus-visible{--tw-text-opacity:1;color:rgb(236 9 9 / var(--tw-text-opacity))}
 .hocus-visible\:su-text-white:focus-visible{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .hocus-visible\:su-underline:focus-visible{text-decoration-line:underline}

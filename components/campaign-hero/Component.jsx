@@ -21,6 +21,15 @@ import * as styles from "./styles";
  * @param {object} quoteConfig
  * Quote configuration - fields for the optional quote at the bottom of the hero
  *
+ * @param {object} bkgImageData
+ * Data from the background image - src and alt text
+ *
+ * @param {object} quoteImageData
+ * Data from the quote image - src and alt text
+ *
+ * @param {string} quoteInternalLinkUrl
+ * The internal link URL for the quotee name if using Matrix asset link
+ *
  * @returns {JSX.Element}
  * @constructor
  */
@@ -126,7 +135,7 @@ export default function CampaignHero({
               />
             </div>
           )}
-          {/* Gradient overlay */}
+          {/* Dark overlays */}
           <div
             className={styles.overlay(hasQuote, isBgVideo)}
             aria-hidden="true"
@@ -185,7 +194,7 @@ export default function CampaignHero({
                 <button
                   type="button"
                   onClick={togglePlayPause}
-                  className={styles.playPauseButton}
+                  className={styles.playPauseButton(!!youtubeId)}
                 >
                   {`${isPlaying ? "Pause" : "Play"} background`}
                   <FAIcon

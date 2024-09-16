@@ -14,7 +14,7 @@ export const overlay = (hasQuote, isBgVideo) =>
   cnb(
     "su-absolute su-block su-top-0 su-z-10",
     isBgVideo && !hasQuote
-      ? "su-bg-gradient-to-t su-from-black-true su-w-full su-h-screen"
+      ? "su-bg-gradient-to-t su-from-black-true su-w-full su-h-[max(100vh,100%)]"
       : "su-bg-black-true/20 su-size-full"
   );
 export const mobileVideoOverlay =
@@ -42,15 +42,18 @@ export const introCentered = (hasYoutube, isBgVideo) =>
 
 export const bgVideoButton = (bkgType) =>
   cnb(
-    "su-block su-relative su-z-10 su-size-full hocus:su-animate-pulse hocus:su-scale-110 su-transition-all su-w-fit su-mx-auto ",
+    "su-block su-relative su-z-10 su-size-full hocus-visible:su-animate-pulse hocus-visible:su-scale-110 su-transition-all su-w-fit su-mx-auto ",
     bkgType === "Video" ? "su-rs-mb-2" : "lg:su-mb-38"
   );
 export const playYoutubeIcon =
   "su-text-[4.5rem] md:su-text-[7.5rem] su-text-white";
 export const srOnly = "su-sr-only";
 export const playPauseWrapper = "su-max-w-1200 su-mx-auto";
-export const playPauseButton =
-  "su-group su-flex su-gap-10 su-items-end su-text-16 su-leading-display su-mr-0 su-ml-auto su-text-white su-w-fit hocus-visible:su-underline su-underline-offset-2 su-py-14 su--mt-24";
+export const playPauseButton = (hasYoutube) =>
+  cnb(
+    "su-group su-flex su-gap-10 su-items-end su-text-16 su-leading-display su-mr-0 su-ml-auto su-text-white su-w-fit hocus-visible:su-underline su-underline-offset-2 su-py-14 ",
+    hasYoutube && "su--mt-24"
+  );
 export const playPauseIcon =
   "su-text-20 su-text-white group-hocus-visible:su-animate-pulse group-hocus-visible:su-scale-110 su-transition-transform";
 export const introPulledLeft =
