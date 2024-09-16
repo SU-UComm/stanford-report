@@ -48,6 +48,7 @@ export default function CampaignHero({
     !quoteConfig.include && bkgConfig.type === "Image" && !youtubeId;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isUserPaused, setIsUserPaused] = useState(false); // Track if the video was manually paused
   const [isPlaying, setIsPlaying] = useState(false);
   const iframeRef = useRef(null);
 
@@ -61,7 +62,8 @@ export default function CampaignHero({
 
   // Toggles play/pause when button is clicked
   const togglePlayPause = () => {
-    setIsPlaying((prev) => !prev);
+    setIsUserPaused((prev) => !prev); // Track manual pause state
+    setIsPlaying((prev) => !prev); // Toggle play/pause state
   };
 
   // Send postMessage to Vimeo iframe to play/pause video
@@ -80,7 +82,11 @@ export default function CampaignHero({
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
-        setIsPlaying(entry.isIntersecting);
+
+        // Only set play/pause based on IntersectionObserver if video is not manually paused
+        if (!isUserPaused) {
+          setIsPlaying(entry.isIntersecting);
+        }
       },
       { threshold: 0.2 } // Adjust threshold as needed
     );
@@ -91,7 +97,7 @@ export default function CampaignHero({
     return () => {
       if (iframe) observer.unobserve(iframe);
     };
-  }, []);
+  }, [isUserPaused]); // Re-run the effect if isUserPaused state changes
 
   return (
     <Container width="full" paddingX={false} className={styles.root}>
