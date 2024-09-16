@@ -154,7 +154,7 @@ export default function CampaignHero({
                     titleId="youtube-modal-title"
                     onClose={handleCloseModal}
                   >
-                    <h2 className="su-sr-only" id="youtube-modal-title">
+                    <h2 className={styles.srOnly} id="youtube-modal-title">
                       YouTube Video
                     </h2>
                     <EmbedVideo videoId={youtubeId} />
@@ -164,26 +164,24 @@ export default function CampaignHero({
             )}
             {/* Button to play/pause background video */}
             {isBgVideo && (
-              <div className="su-max-w-1200 su-mx-auto">
+              <div className={styles.playPauseWrapper}>
                 <button
                   type="button"
                   onClick={togglePlayPause}
-                  className="su-group su-flex su-gap-10 su-items-end su-text-16 su-leading-display su-mr-0 su-ml-auto su-text-white su-w-fit hocus-visible:su-underline su-underline-offset-2 su-py-14 su--mt-24"
+                  className={styles.playPauseButton}
                 >
-                  {`${!isPlaying ? "Play" : "Pause"} background`}
+                  {`${isPlaying ? "Pause" : "Play"} background`}
                   <FAIcon
                     icon={!isPlaying ? "circle-play" : "circle-pause"}
                     set="regular"
                     width={20}
-                    className="su-text-20 su-text-white group-hocus-visible:su-animate-pulse group-hocus-visible:su-scale-110"
+                    className={styles.playPauseIcon}
                   />
                 </button>
               </div>
             )}
             {isIntroPulledLeft && (
-              <p className="su-type-3 su-max-w-1200 su-ml-0 su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-32 md:su-pl-48 2xl:su-pl-200 su-py-38 su-mb-0 su-rs-mt-10">
-                {textConfig.intro}
-              </p>
+              <p className={styles.introPulledLeft}>{textConfig.intro}</p>
             )}
             {/* Desktop quote - background video or image is shown through beneath the quote content */}
             {hasQuote && (
@@ -194,7 +192,7 @@ export default function CampaignHero({
                 name={quoteConfig.name}
                 quoteLink={quoteInternalLinkUrl}
                 extra={quoteConfig.extra}
-                className="su-hidden lg:su-block su-max-w-1200 su-mx-auto"
+                className={styles.quote}
               />
             )}
           </div>
@@ -208,7 +206,7 @@ export default function CampaignHero({
             name={quoteConfig.name}
             quoteLink={quoteInternalLinkUrl || quoteConfig.quoteManualLink}
             extra={quoteConfig.extra}
-            className="su-cc lg:su-hidden su-bg-black-true"
+            className={styles.quoteMobile}
           />
         )}
       </section>
