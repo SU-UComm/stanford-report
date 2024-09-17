@@ -11,8 +11,8 @@ export default function HeroQuote({
   className,
 }) {
   return (
-    <div className={cnb("su-w-full su-relative", className)}>
-      <div className="su-rs-pt-2 su-rs-pb-6 su-rs-px-5 su-text-white su-flex su-items-center su-flex-col su-gap-44 lg:su-flex-row-reverse su-border-t su-border-black-30 su-relative su-z-[2]">
+    <div className={cnb("su-w-full su-relative su-z-20", className)}>
+      <div className="su-rs-pt-2 su-rs-pb-6 su-rs-px-5 su-text-white su-flex su-items-center su-flex-col su-gap-44 lg:su-flex-row-reverse su-border-t su-border-black-30 su-relative">
         {imageSrc && (
           <div className="su-rounded-full su-size-160 md:su-size-200 2xl:su-size-300 su-shrink-0 su-overflow-hidden">
             <img
@@ -24,11 +24,11 @@ export default function HeroQuote({
         )}
         <blockquote className="su-type-1">
           <p className="su-font-serif su-leading-display">“{quote}”</p>
-          <footer className="su-font-bold">
+          <footer className="su-font-bold su-leading-snug">
             {quoteLink ? (
               <a
                 href={quoteLink}
-                className="su-font-bold su-text-white su-decoration-dark-mode-red su-underline-offset-[3px] su-decoration-[0.12em] hocus:su-no-underline hocus-visible:su-text-dark-mode-red"
+                className="su-font-bold su-text-white dark:su-text-white su-underline su-decoration-dark-mode-red su-underline-offset-4 su-decoration-[3px] hocus-visible:su-decoration-white hocus-visible:su-text-white dark:hocus-visible:su-text-white su-transition-all"
               >
                 {name}
               </a>
