@@ -39,8 +39,7 @@ export default function MediaFeature({
   return (
     <Container width="full" paddingX={false}>
       <section className="su-py-45 su-px-20 su-flex su-justify-center su-relative md:su-py-72 md:su-px-50">
-        <div className="su-max-w-[1086px] su-flex su-flex-col su-items-center su-z-[2] su-relative su-p-38 before:su-content-[''] before:su-bg-foggy-light before:su-w-full before:su-h-full before:su-opacity-90 before:su-absolute before:su-z-[-1] before:su-top-0 before:su-left-0 md:su-flex-row md:su-gap-20 md:su-items-start lg:su-p-48 lg:su-gap-48">
-          {/* <div className="su-h-[224px] su-w-[224px] su-relative su-shrink-0 md:su-w-[182px] md:su-h-[182px] lg:su-w-[292px] lg:su-h-[292px]"> */}
+        <div className="su-group su-max-w-[1086px] su-flex su-flex-col su-items-center su-z-[2] su-relative su-p-38 before:su-content-[''] before:su-bg-foggy-light before:su-w-full before:su-h-full before:su-opacity-90 before:su-absolute before:su-z-[-1] before:su-top-0 before:su-left-0 md:su-flex-row md:su-gap-20 md:su-items-start lg:su-p-48 lg:su-gap-48">
           <div
             className={`${
               mediaType === "Podcast" &&
@@ -50,12 +49,9 @@ export default function MediaFeature({
             }`}
           >
             <img
-              // src="https://picsum.photos/600/250"
               src={imageData.url}
               alt={imageData.attributes.alt}
               className={thumbMap.get(mediaType)}
-              // className="su-media-card-thumb su-size-full su-object-scale-down su-object-center"
-              // className="su-absolute su-object-cover su-rounded-[8px] su-z-[2] su-flex-1 su-size-full su-shadow-[0px_4px_7px_0px_rgba(0,0,0,0.15)]"
             />
           </div>
 
@@ -64,14 +60,17 @@ export default function MediaFeature({
               <FeaturedHeading type={mediaType} />
             </div>
 
-            <a href={linkUrl} className="su-media-feature-title-link su-group">
-              <h3 className="su-text-[35px] su-font-bold su-leading-tight su-m-0 su-pb-8 md:su-pb-19 md:su-text-[40px] lg:su-text-[43px]">
+            <h3 className="su-text-[35px] su-font-bold su-leading-tight su-m-0 su-pb-8 md:su-pb-19 md:su-text-[40px] lg:su-text-[43px]">
+              <a
+                href={linkUrl}
+                className="su-media-feature-title-link su-stretched-link"
+              >
                 {title}
                 <span className="su-hidden lg:su-inline-block su-relative su-top-12 [&>*]:su-stroke-digital-red dark:[&>*]:su-stroke-dark-mode-red su-transition group-hocus:su--translate-y-01em group-hocus:su-translate-x-01em [&>svg]:su-translate-y-1">
                   <ExternalArrow size="large" />
                 </span>
-              </h3>
-            </a>
+              </a>
+            </h3>
 
             <div className="su-w-full su-flex su-gap-[0.6rem] su-text-18 su-text-black-70 su-font-semibold su-items-center su-pb-15 su-leading-snug md:su-pb-19 md:su-text-16">
               <MediaType type={mediaType} />
@@ -84,7 +83,6 @@ export default function MediaFeature({
         </div>
 
         <img
-          // src="https://picsum.photos/1300/"
           src={bgImageData.url}
           className="su-absolute su-size-full su-object-cover su-left-0 su-top-0 su-z-[1]"
           alt={bgImageData.attributes.alt}
