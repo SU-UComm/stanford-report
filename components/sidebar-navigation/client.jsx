@@ -34,5 +34,5 @@ import FetchAdapter from "../../packages/utils/fetchAdapter";
   base.setAttribute("data-hydration-props", JSON.stringify(props));
 
   // Hydrate the component
-  hydrateComponent({ Component, componentName: "sidebar-navigation" });
+  hydrateComponent({ Component, componentName });
 })();
