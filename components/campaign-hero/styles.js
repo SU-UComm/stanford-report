@@ -54,7 +54,7 @@ export const playPauseButton = (hasYoutube) =>
 export const playPauseIcon =
   "su-text-20 su-text-white group-hocus-visible:su-animate-pulse group-hocus-visible:su-scale-110 su-transition-transform";
 export const introPulledLeft =
-  "su-type-3 su-max-w-1200 su-ml-0 *:su-leading-snug su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-32 md:su-pl-48 2xl:su-pl-200 su-py-38 last:*:su-mb-0 su-rs-mt-10";
+  "su-type-3 lg:su-max-w-800 xl:su-max-w-1000 2xl:su-max-w-1100 su-ml-0 *:su-leading-snug su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-32 md:su-pl-48 lg:su-pl-100 2xl:su-pl-170 su-py-38 last:*:su-mb-0 su-rs-mt-10";
 
 export const quote = "su-hidden lg:su-block su-max-w-1200 su-mx-auto";
 export const quoteMobile = "su-cc lg:su-hidden su-bg-black-true";
