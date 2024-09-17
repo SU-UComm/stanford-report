@@ -66,7 +66,7 @@ export default function SidebarNavigation({ id, navData }) {
         <NavButton
           ariaControls="sidebar-navigation"
           ariaLabel="Toggle visibility of section menu"
-          ariaExpanded={!!navOpen}
+          ariaExpanded={!navOpen}
           onClick={() => setNavOpen(!navOpen)}
           className={cnb(
             "lg:su-hidden su-rs-mb-2 su-transition-all su-flex su-items-center su-w-full su-h-[5.6rem] su-p-15 su-text-left su-font-semibold su-shadow-[inset_0_0_0_2px_rgba(177,4,14,1)] su-text-digital-red",
