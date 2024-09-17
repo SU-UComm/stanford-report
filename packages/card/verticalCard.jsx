@@ -232,7 +232,7 @@ export default function VerticalCard({
             )} su-font-serif su-my-0 su-group`}
           >
             <XssSafeContent
-              className="su-stretched-link focus:su-outline-0 focus:before:su-ring hocus:su-underline hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
+              className="su-stretched-link focus:su-outline-none hocus:su-underline hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
               content={title}
               href={liveUrl}
               elementType="a"
@@ -255,7 +255,7 @@ export default function VerticalCard({
             )} su-font-serif su-my-0 su-group`}
           >
             <XssSafeContent
-              className="su-stretched-link focus:su-outline-0 focus:before:su-ring hocus:su-underline hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
+              className="su-stretched-link focus:su-outline-none hocus:su-underline hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
               content={title}
               href={liveUrl}
               elementType="a"
