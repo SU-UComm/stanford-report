@@ -1,6 +1,34 @@
 import React from "react";
 import { cnb } from "cnbuilder";
 
+/**
+ * Quote component that is optional in the Campaign Hero
+ *
+ * @param {string} imageSrc
+ * The source URL of the image
+ *
+ * @param {string} imageAlt
+ * The alt text of the image
+ *
+ * @param {string} quote
+ * The quote text
+ *
+ * @param {string} name
+ * The name of the quotee
+ *
+ * @param {string} quoteLink
+ * The link for the quotee name
+ *
+ * @param {string} extra
+ * Extra text after the name, e.g., title
+ *
+ * @param {string} className
+ * Additional classes to be passed to the outermost container of the component
+ *
+ * @returns {JSX.Element}
+ * @constructor
+ */
+
 export default function HeroQuote({
   imageSrc,
   imageAlt,

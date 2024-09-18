@@ -12,10 +12,12 @@ import FetchAdapter from "../../packages/utils/fetchAdapter";
   const props = JSON.parse(base.getAttribute("data-hydration-props"));
 
   // Construct call to menu API
+  // For local dev, set navURL to navURL = `https://news.stanford.edu/_api/dev/mx/menu?loc=${parent}`;
+  // the /dev in the URL avoids CORS errors locally.
   let navURL = "";
   const parent = props.root;
   if (props.root) {
-    navURL = `https://news.stanford.edu/_api/dev/mx/menu?loc=${parent}`;
+    navURL = `https://news.stanford.edu/_api/mx/menu?loc=${parent}`;
   }
 
   const adapter = new FetchAdapter();
@@ -32,5 +34,5 @@ import FetchAdapter from "../../packages/utils/fetchAdapter";
   base.setAttribute("data-hydration-props", JSON.stringify(props));
 
   // Hydrate the component
-  hydrateComponent({ Component, componentName: "sidebar-navigation" });
+  hydrateComponent({ Component, componentName });
 })();

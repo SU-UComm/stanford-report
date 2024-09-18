@@ -98,7 +98,7 @@ export default function CampaignHero({
           setIsPlaying(entry.isIntersecting);
         }
       },
-      { threshold: 0.2 } // Adjust threshold as needed
+      { threshold: 0 } // Adjust threshold as needed
     );
 
     const iframe = iframeRef.current;
@@ -132,7 +132,7 @@ export default function CampaignHero({
               <img
                 src={bkgImageData?.url}
                 className={styles.bgImage}
-                alt={bkgImageData?.alt || ""}
+                alt={bkgImageData?.attributes?.alt || ""}
               />
             </div>
           )}
@@ -152,8 +152,8 @@ export default function CampaignHero({
               isIntroPulledLeft
             )}
           >
-            <h1 className={styles.title}>{textConfig.title}</h1>
-            {/* Display center aligned intro below h1 if quote is included */}
+            <h2 className={styles.title}>{textConfig.title}</h2>
+            {/* Display center aligned intro below title if quote is included */}
             {!isIntroPulledLeft && (
               <XssSafeContent
                 content={textConfig.intro}
@@ -164,7 +164,7 @@ export default function CampaignHero({
             {youtubeId && (
               <>
                 <button
-                  className={styles.bgVideoButton(bkgConfig.type)}
+                  className={styles.bigVideoButton(isBgVideo)}
                   type="button"
                   aria-haspopup="dialog"
                   aria-label="Open full video in a modal"
@@ -218,10 +218,10 @@ export default function CampaignHero({
             {hasQuote && (
               <HeroQuote
                 imageSrc={quoteImageData?.url}
-                imageAlt={quoteImageData?.alt}
+                imageAlt={quoteImageData?.attributes?.alt}
                 quote={quoteConfig.quote}
                 name={quoteConfig.name}
-                quoteLink={quoteInternalLinkUrl}
+                quoteLink={quoteInternalLinkUrl || quoteConfig.quoteManualUrl}
                 extra={quoteConfig.extra}
                 className={styles.quote}
               />
@@ -232,10 +232,10 @@ export default function CampaignHero({
         {hasQuote && (
           <HeroQuote
             imageSrc={quoteImageData?.url}
-            imageAlt={quoteImageData?.alt}
+            imageAlt={quoteImageData?.attributes?.alt}
             quote={quoteConfig.quote}
             name={quoteConfig.name}
-            quoteLink={quoteInternalLinkUrl || quoteConfig.quoteManualLink}
+            quoteLink={quoteInternalLinkUrl || quoteConfig.quoteManualUrl}
             extra={quoteConfig.extra}
             className={styles.quoteMobile}
           />
