@@ -1957,8 +1957,6 @@ Subscribe to Stanford Report Marketo form styles
 .su-page-campaign body{--tw-bg-opacity:1;background-color:rgb(249 249 249 / var(--tw-bg-opacity))}
 .su-page-campaign.su-dark,
 .su-page-campaign.su-dark body{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
-.su-page-campaign div[data-component="campaign-hero"] + div{position:relative;--tw-bg-opacity:1;background-color:rgb(249 249 249 / var(--tw-bg-opacity))}
-.su-page-campaign.su-dark div[data-component="campaign-hero"] + div{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
 .scrollable-list__item::after{display:inline-block;vertical-align:middle}
 [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{float:left;margin-top:0.2rem;margin-right:0.9rem;padding:0;font-family:"Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif;font-size:7.2rem;font-weight:700;line-height:35px}
 @media (min-width: 768px){
@@ -2149,8 +2147,11 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 :is(.su-dark .su-bg-gradient-light-red-h-reverse){background-image:linear-gradient(to top left, var(--tw-gradient-stops));--tw-gradient-from:#279989 var(--tw-gradient-from-position);--tw-gradient-to:rgb(39 153 137 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to);--tw-gradient-to:rgb(39 153 137 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #279989 var(--tw-gradient-via-position), var(--tw-gradient-to);--tw-gradient-to:#8F993E var(--tw-gradient-to-position)}
 .su-aspect-h-16{--tw-aspect-h:16}
 .su-aspect-h-2{--tw-aspect-h:2}
+.su-aspect-h-9{--tw-aspect-h:9}
 .su-aspect-w-1{position:relative;padding-bottom:calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);--tw-aspect-w:1}
 .su-aspect-w-1 > *{position:absolute;height:100%;width:100%;top:0;right:0;bottom:0;left:0}
+.su-aspect-w-16{position:relative;padding-bottom:calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);--tw-aspect-w:16}
+.su-aspect-w-16 > *{position:absolute;height:100%;width:100%;top:0;right:0;bottom:0;left:0}
 .su-aspect-w-2{position:relative;padding-bottom:calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);--tw-aspect-w:2}
 .su-aspect-w-2 > *{position:absolute;height:100%;width:100%;top:0;right:0;bottom:0;left:0}
 .su-aspect-w-3{position:relative;padding-bottom:calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);--tw-aspect-w:3}
@@ -2798,6 +2799,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-h-\[300px\]{height:300px}
 .su-h-\[34\.2rem\]{height:34.2rem}
 .su-h-\[5\.6rem\]{height:5.6rem}
+.su-h-\[56\.25vw\]{height:56.25vw}
 .su-h-\[56px\]{height:56px}
 .su-h-\[60\%\]{height:60%}
 .su-h-\[66px\]{height:66px}
@@ -2854,6 +2856,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-w-\[103px\]{width:103px}
 .su-w-\[16\.66\%\]{width:16.66%}
 .su-w-\[165px\]{width:165px}
+.su-w-\[177\.77777778vh\]{width:177.77777778vh}
 .su-w-\[218px\]{width:218px}
 .su-w-\[22\.6rem\]{width:22.6rem}
 .su-w-\[224px\]{width:224px}
@@ -3428,6 +3431,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-break-words{word-break:break-word}
 .su-text-shadow-lg{text-shadow:0 8px 16px var(--tw-shadow-color)}
 .su-text-shadow-title{text-shadow:0px 0px 30px var(--tw-shadow-color), 0px 0px 30px var(--tw-shadow-color)}
+.\[clip-path\:inset\(0\)\]{clip-path:inset(0)}
 .\[perspective\:100rem\]{perspective:100rem}
 .\[taxonomyContentTypeId\:28201\]{taxonomy-content-type-id:28201}
 .\[transform-style\:preserve-3d\]{transform-style:preserve-3d}

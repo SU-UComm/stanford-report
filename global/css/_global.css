@@ -1311,11 +1311,3 @@ Subscribe to Stanford Report Marketo form styles
 .su-page-campaign.su-dark body {
   @apply su-bg-black-true;
 }
-
-.su-page-campaign div[data-component="campaign-hero"] + div {
-  @apply su-relative su-bg-campaign-fog;
-}
-
-.su-page-campaign.su-dark div[data-component="campaign-hero"] + div {
-  @apply su-bg-black-true;
-}
