@@ -1,13 +1,19 @@
 import { cnb } from "cnbuilder";
 
-export const root = "su-relative";
+// Using clip-path:inset(0) because overflow:hidden doesn't work with a position:sticky element inside
+export const root = "su-relative [clip-path:inset(0)]";
 export const section = "su-relative";
 export const heroWrapper = "su-relative";
 export const bgWrapper = "su-sticky su-h-screen su-top-0 su-bg-black";
 export const bgVideoWrapper =
   "su-relative su-w-full su-h-screen su-overflow-hidden";
+
+/**
+ * I tried using su-aspect-[16/9] instead of su-w-[177.77777778vh] su-h-[56.25vw],
+ * but it didn't work on Firefox for large screens
+ */
 export const bgVideoIframe =
-  "su-absolute su-aspect-[16/9] su-min-w-full su-min-h-full su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2";
+  "su-absolute su-w-[177.77777778vh] su-h-[56.25vw] su-min-w-full su-min-h-full su-top-1/2 su-left-1/2 -su-translate-x-1/2 -su-translate-y-1/2";
 export const bgImageWrapper = "su-absolute su-top-0 su-size-full";
 export const bgImage = "su-object-cover su-size-full";
 export const overlay = (hasQuote, isBgVideo) =>
