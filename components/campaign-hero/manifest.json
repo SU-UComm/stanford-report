@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "campaign-hero",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "namespace": "stanford-components",
   "description": "Hero component for use on Campaign pages.",
   "displayName": "Campaign Hero",
