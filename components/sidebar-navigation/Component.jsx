@@ -22,12 +22,7 @@ import NavContent from "./Components/NavContent";
  * @constructor
  */
 
-export default function SidebarNavigation({
-  asset_url,
-  asset_short_name,
-  active,
-  menu,
-}) {
+export default function SidebarNavigation({ id, navData }) {
   const [navOpen, setNavOpen] = useState(false);
 
   useEffect(() => {
@@ -71,10 +66,10 @@ export default function SidebarNavigation({
         <NavButton
           ariaControls="sidebar-navigation"
           ariaLabel="Toggle visibility of section menu"
-          ariaExpanded={!!navOpen}
+          ariaExpanded={!navOpen}
           onClick={() => setNavOpen(!navOpen)}
           className={cnb(
-            "lg:su-hidden su-transition-all su-flex su-items-center su-w-full su-h-[5.6rem] su-p-15 su-text-left su-font-semibold su-shadow-[inset_0_0_0_2px_rgba(177,4,14,1)] su-text-digital-red",
+            "lg:su-hidden su-rs-mb-2 su-transition-all su-flex su-items-center su-w-full su-h-[5.6rem] su-p-15 su-text-left su-font-semibold su-shadow-[inset_0_0_0_2px_rgba(177,4,14,1)] su-text-digital-red",
             "hocus:su-shadow-[inset_0_0_0_3px_rgba(177,4,14,1)]",
             "dark:su-shadow-[inset_0_0_0_2px_rgba(236,9,9,1)] dark:su-text-dark-mode-red",
             "dark:hocus:su-shadow-[inset_0_0_0_3px_rgba(236,9,9,1)]",
@@ -104,19 +99,21 @@ export default function SidebarNavigation({
         />
         {navOpen && (
           <NavContent
-            asset_url={asset_url}
-            asset_short_name={asset_short_name}
-            active={active}
-            menu={menu}
+            id={id}
+            asset_url={navData.asset_url}
+            asset_short_name={navData.asset_short_name}
+            menu={navData.menu}
+            asset_assetid={navData.asset_assetid}
           />
         )}
       </div>
       <div className="su-hidden lg:su-block">
         <NavContent
-          asset_url={asset_url}
-          asset_short_name={asset_short_name}
-          active={active}
-          menu={menu}
+          id={id}
+          asset_url={navData.asset_url}
+          asset_short_name={navData.asset_short_name}
+          menu={navData.menu}
+          asset_assetid={navData.asset_assetid}
         />
       </div>
     </>
