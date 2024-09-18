@@ -12,7 +12,7 @@ export const bgImageWrapper = "su-absolute su-top-0 su-size-full";
 export const bgImage = "su-object-cover su-size-full";
 export const overlay = (hasQuote, isBgVideo) =>
   cnb(
-    "su-absolute su-block su-top-0 su-z-10",
+    "su-absolute su-block su-top-0",
     isBgVideo && !hasQuote
       ? "su-bg-gradient-to-t su-from-black-true su-w-full su-h-[max(100vh,100%)]"
       : "su-bg-black-true/20 su-size-full"
@@ -27,6 +27,7 @@ export const contentWrapper = (hasQuote, isBgVideo, isIntroPulledLeft) =>
     !isBgVideo && !isIntroPulledLeft && "su-rs-pb-2",
     isIntroPulledLeft && "su-rs-pb-6",
     isBgVideo && "su-mt-[-70vh]",
+    isBgVideo && !hasQuote && "su-rs-pb-6",
     !(isBgVideo && !hasQuote) && "su-bg-gradient-to-t su-from-black-true"
   );
 export const title =
@@ -37,10 +38,10 @@ export const introCentered = (hasYoutube, isBgVideo) =>
     !hasYoutube && !isBgVideo ? "su-rs-pb-6" : "su-rs-pb-1"
   );
 
-export const bgVideoButton = (bkgType) =>
+export const bigVideoButton = (isBgVideo) =>
   cnb(
     "su-block su-relative su-z-10 su-size-full hocus-visible:su-animate-pulse hocus-visible:su-scale-110 su-transition-all su-w-fit su-mx-auto ",
-    bkgType === "Video" ? "su-rs-mb-2" : "lg:su-mb-38"
+    isBgVideo ? "su-rs-mb-2" : "lg:su-mb-38"
   );
 export const playYoutubeIcon =
   "su-text-[4.5rem] md:su-text-[7.5rem] su-text-white";

@@ -1024,6 +1024,8 @@ audio::-webkit-media-controls-panel {
   > .container
   > *:not([data-component]),
 .su-page:not(.su-page-has-sidebar) .su-page-content > span{width:84.75%;padding-left:5rem;padding-right:5rem}}
+/* Footer */
+div[data-component="footer-component"]{position:relative}
 /* Content page / pagebuilder WYSIWYG */
 .su-page-content > .container > span,
 .su-page-content > span:not([data-component]){display:block}
@@ -1912,6 +1914,8 @@ Subscribe to Stanford Report Marketo form styles
 .su-page-campaign body{--tw-bg-opacity:1;background-color:rgb(249 249 249 / var(--tw-bg-opacity))}
 .su-page-campaign.su-dark,
 .su-page-campaign.su-dark body{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
+.su-page-campaign div[data-component="campaign-hero"] + div{position:relative;--tw-bg-opacity:1;background-color:rgb(249 249 249 / var(--tw-bg-opacity))}
+.su-page-campaign.su-dark div[data-component="campaign-hero"] + div{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
 .scrollable-list__item::after{display:inline-block;vertical-align:middle}
 [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{float:left;margin-top:0.2rem;margin-right:0.9rem;padding:0;font-family:"Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif;font-size:7.2rem;font-weight:700;line-height:35px}
 @media (min-width: 768px){
@@ -2545,6 +2549,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-float-left{float:left}
 .\!su-m-0{margin:0 !important}
 .su-m-0{margin:0}
+.\!su-mx-0{margin-left:0 !important;margin-right:0 !important}
 .su--mx-18{margin-left:-1.8rem;margin-right:-1.8rem}
 .su-mx-0{margin-left:0;margin-right:0}
 .su-mx-50{margin-left:5rem;margin-right:5rem}
@@ -2771,6 +2776,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-max-h-\[103px\]{max-height:103px}
 .su-min-h-\[56px\]{min-height:56px}
 .su-min-h-full{min-height:100%}
+.\!su-w-full{width:100% !important}
 .su-w-08em{width:0.8em}
 .su-w-1{width:0.1rem}
 .su-w-1\/2{width:50%}
@@ -2826,6 +2832,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-min-w-\[24\.9rem\]{min-width:24.9rem}
 .su-min-w-\[56px\]{min-width:56px}
 .su-min-w-full{min-width:100%}
+.\!su-max-w-full{max-width:100% !important}
 .su-max-w-1000{max-width:100rem}
 .su-max-w-1200{max-width:120rem}
 .su-max-w-1500{max-width:150rem}
@@ -4823,7 +4830,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .lg\:su-max-w-\[63\.6rem\]{max-width:63.6rem}
 .lg\:su-max-w-\[633px\]{max-width:633px}
 .lg\:su-max-w-none{max-width:none}
-.lg\:su-max-w-900{max-width:90rem}
 .lg\:su-flex-1{flex:1 1 0%}
 .lg\:su-grow{flex-grow:1}
 .lg\:su-basis-\[30\%\]{flex-basis:30%}
@@ -4894,6 +4900,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .lg\:su-pb-\[8\.75px\]{padding-bottom:8.75px}
 .lg\:su-pb-\[95px\]{padding-bottom:95px}
 .lg\:su-pl-0{padding-left:0}
+.lg\:su-pl-100{padding-left:10rem}
 .lg\:su-pl-20{padding-left:2rem}
 .lg\:su-pl-27{padding-left:2.7rem}
 .lg\:su-pl-48{padding-left:4.8rem}
@@ -4910,8 +4917,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .lg\:su-pt-\[17\.5rem\]{padding-top:17.5rem}
 .lg\:su-pt-\[26vw\]{padding-top:26vw}
 .lg\:su-pt-\[27px\]{padding-top:27px}
-.lg\:su-pl-170{padding-left:17rem}
-.lg\:su-pl-100{padding-left:10rem}
 .lg\:su-text-left{text-align:left}
 .lg\:su-text-14{font-size:1.4rem}
 .lg\:su-text-15{font-size:1.5rem}
@@ -5002,9 +5007,9 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .xl\:su-mt-58{margin-top:5.8rem}
 .xl\:su-w-1\/4{width:25%}
 .xl\:su-min-w-\[35\.9rem\]{min-width:35.9rem}
+.xl\:su-max-w-1000{max-width:100rem}
 .xl\:su-max-w-600{max-width:60rem}
 .xl\:su-max-w-900{max-width:90rem}
-.xl\:su-max-w-1000{max-width:100rem}
 .xl\:su-basis-\[40\%\]{flex-basis:40%}
 .xl\:su-basis-\[60\%\]{flex-basis:60%}
 .xl\:su-translate-y-\[-220px\]{--tw-translate-y:-220px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
@@ -5028,7 +5033,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\32xl\:su--mt-58{margin-top:-5.8rem}
 .\32xl\:su-mt-171{margin-top:17.1rem}
 .\32xl\:su-size-300{width:30rem;height:30rem}
-.\32xl\:su-max-w-1200{max-width:120rem}
 .\32xl\:su-max-w-1100{max-width:110rem}
 .\32xl\:su-basis-\[30\%\]{flex-basis:30%}
 .\32xl\:su-basis-\[70\%\]{flex-basis:70%}
@@ -5038,10 +5042,9 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\32xl\:su-px-\[17rem\]{padding-left:17rem;padding-right:17rem}
 .\32xl\:su-px-\[6\.6rem\]{padding-left:6.6rem;padding-right:6.6rem}
 .\32xl\:su-py-140{padding-top:14rem;padding-bottom:14rem}
-.\32xl\:su-pl-200{padding-left:20rem}
+.\32xl\:su-pl-170{padding-left:17rem}
 .\32xl\:su-pl-76{padding-left:7.6rem}
 .\32xl\:su-pt-400{padding-top:40rem}
-.\32xl\:su-pl-170{padding-left:17rem}
 .\32xl\:su-text-\[2\.9rem\]{font-size:2.9rem}
 .\32xl\:su-text-\[3\.3rem\]{font-size:3.3rem}
 .\32xl\:su-text-\[4\.8rem\]{font-size:4.8rem}}

@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "campaign-hero",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "namespace": "stanford-components",
   "description": "Hero component for use on Campaign pages.",
   "displayName": "Campaign Hero",
@@ -48,7 +48,7 @@
                   "properties": {
                     "bkgImage": {
                       "title": "Background image",
-                      "description": "Choose a background image.",
+                      "description": "Select a background image in landscape orientation. A 3x2 aspect ratio generally works well.",
                       "type": "string",
                       "format": "matrix-asset-uri"
                     }
@@ -69,7 +69,7 @@
                   "properties": {
                     "bkgVideo": {
                       "title": "Background video",
-                      "description": "The looping video URL – we're using Vimeo for these.",
+                      "description": "Please enter the full Vimeo URL, including https://.",
                       "type": "string"
                     }
                   }
