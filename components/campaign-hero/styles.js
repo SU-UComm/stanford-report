@@ -23,8 +23,6 @@ export const overlay = (hasQuote, isBgVideo) =>
       ? "su-bg-gradient-to-t su-from-black-true su-w-full su-h-[max(100vh,100%)]"
       : "su-bg-black-true/20 su-size-full"
   );
-export const mobileVideoOverlay =
-  "su-absolute su-block lg:su-hidden su-w-full su-h-screen su-top-0 su-z-[11] su-bg-gradient-to-t su-from-black-true su-via-20% su-via-black-true";
 
 export const contentWrapper = (hasQuote, isBgVideo, isIntroPulledLeft) =>
   cnb(

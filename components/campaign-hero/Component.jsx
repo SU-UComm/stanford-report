@@ -141,9 +141,6 @@ export default function CampaignHero({
             className={styles.overlay(hasQuote, isBgVideo)}
             aria-hidden="true"
           />
-          {isBgVideo && hasQuote && (
-            <div className={styles.mobileVideoOverlay} aria-hidden="true" />
-          )}
           {/* Hero content */}
           <div
             className={styles.contentWrapper(
