@@ -13,6 +13,7 @@ export default function MediaRatio({
   aspectRatioMap.set("card-large", "su-aspect-[3/2]");
   aspectRatioMap.set("card-featured", "su-aspect-[16/9]");
   aspectRatioMap.set("square", "su-aspect-[1/1]");
+  aspectRatioMap.set("vertical-video", "su-aspect-[9/16]");
 
   return (
     <span

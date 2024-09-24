@@ -23,7 +23,7 @@ export default function LinkItem({ level, url, shortName, active }) {
         level === "two" && "su-pl-25 su-pt-0 su-pb-10"
       )}
       href={url}
-      aria-current={active ? "page" : "false"}
+      aria-current={active}
     >
       {shortName}
     </a>
