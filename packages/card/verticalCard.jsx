@@ -227,25 +227,25 @@ export default function VerticalCard({
       <div className={`su-flex su-flex-wrap ${gapSize(cardSize)}`}>
         {headingLvl === 2 && (
           <h2
-            className={`su-w-full ${titleSize(
-              cardSize
-            )} su-font-serif su-my-0 su-group`}
+            className={`su-w-full ${titleSize(cardSize)} su-font-serif su-my-0`}
           >
-            <XssSafeContent
-              className="su-stretched-link focus:su-outline-none hocus:su-underline hocus:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
-              content={title}
-              href={liveUrl}
-              elementType="a"
-            />
-            {isRealExternalLink && (
-              <FAIcon
-                icon="arrow-up-right"
-                set="regular"
-                // Add a width to prevent getting a flash of huge icon before the CSS fully loads
-                width={cardSize === "featured" ? 20 : 15}
-                className="su-inline-block su-h-auto su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
+            <span className="su-group">
+              <XssSafeContent
+                className="su-stretched-link focus:su-outline-none hocus:su-underline hocus:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
+                content={title}
+                href={liveUrl}
+                elementType="a"
               />
-            )}
+              {isRealExternalLink && (
+                <FAIcon
+                  icon="arrow-up-right"
+                  set="regular"
+                  // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+                  width={cardSize === "featured" ? 20 : 15}
+                  className="su-inline-block su-h-auto su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
+                />
+              )}
+            </span>
           </h2>
         )}
         {headingLvl === 3 && (
