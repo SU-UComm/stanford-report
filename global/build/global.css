@@ -548,7 +548,7 @@ table caption{font-size:1.32em;letter-spacing:-0.012em;}
 table caption{font-size:1.44em}}
 @media (min-width: 992px){
 table caption{font-size:1.56em}}
-table caption{font-family:"Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif;--tw-text-opacity:1;color:rgb(46 45 41 / var(--tw-text-opacity))}
+table caption{font-family:"Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif;font-weight:700;--tw-text-opacity:1;color:rgb(46 45 41 / var(--tw-text-opacity))}
 :is(.su-dark table caption){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .su-bg-gradient,
 .su-bg-gradient-before:before,

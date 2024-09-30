@@ -57,7 +57,7 @@ table th {
 }
 
 table caption {
-  @apply su-type-2 su-font-serif su-text-black dark:su-text-white;
+  @apply su-type-2 su-font-bold su-font-serif su-text-black dark:su-text-white;
 }
 
 .su-bg-gradient,
