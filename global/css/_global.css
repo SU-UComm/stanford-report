@@ -52,6 +52,14 @@ svg {
  */
 @tailwind utilities;
 
+table th {
+  @apply su-text-black dark:su-text-white;
+}
+
+table caption {
+  @apply su-type-1 su-text-black dark:su-text-white;
+}
+
 .su-bg-gradient,
 .su-bg-gradient-before:before,
 .su-bg-gradient-after:after {
