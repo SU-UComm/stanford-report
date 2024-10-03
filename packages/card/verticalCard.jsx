@@ -195,6 +195,7 @@ export default function VerticalCard({
       className="su-component-card su-relative su-w-full"
       data-testid="vertical-card"
     >
+      <h1>Hello!</h1>
       {displayThumbnail && (
         <div className={`${imageMargin(cardSize)}`}>
           <CardThumbnail

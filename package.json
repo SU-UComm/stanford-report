@@ -11,7 +11,7 @@
     "start": "npm-run-all -p start:*",
     "start:components": "node ./build/index.js --watch",
     "start:export": "node ./build/css-js-watcher.js",
-    "start:component-service": "dxp-next cmp dev .",
+    "start:component-service": "dxp-next cmp dev ./components",
     "test": "npm-run-all -p test:*",
     "test:eslint": "eslint .",
     "test:unit": "jest",
