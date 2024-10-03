@@ -16,7 +16,7 @@
   "functions": [
     {
       "name": "main",
-      "entry": "./dist/server.cjs",
+      "entry": "server.cjs",
       "input": {
         "type": "object",
         "properties": {
@@ -45,10 +45,17 @@
             "title": "Image Alignment",
             "type": "string",
             "default": "right",
-            "enum": ["left", "right"]
+            "enum": [
+              "left",
+              "right"
+            ]
           }
         },
-        "required": ["title", "content", "image"]
+        "required": [
+          "title",
+          "content",
+          "image"
+        ]
       },
       "output": {
         "responseType": "html",
@@ -86,7 +93,7 @@
     }
   ],
   "staticFiles": {
-    "locationRoot": "./dist"
+    "locationRoot": ""
   },
   "mockedUris": {
     "matrix-asset://api-identifier/99100": {
@@ -103,7 +110,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "preview.html"
           }
         }
       }

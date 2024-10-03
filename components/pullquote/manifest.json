@@ -22,7 +22,7 @@
   "functions": [
     {
       "name": "main",
-      "entry": "./dist/server.cjs",
+      "entry": "server.cjs",
       "input": {
         "type": "object",
         "required": [],
@@ -70,27 +70,12 @@
       },
       "output": {
         "responseType": "html",
-        "staticFiles": [
-          {
-            "location": "header",
-            "file": {
-              "type": "css",
-              "filepath": "global.css"
-            }
-          },
-          {
-            "location": "footer",
-            "file": {
-              "type": "js",
-              "filepath": "client.js"
-            }
-          }
-        ]
+        "staticFiles": []
       }
     }
   ],
   "staticFiles": {
-    "locationRoot": "./dist"
+    "locationRoot": ""
   },
   "mockedUris": {
     "matrix-asset://api-identifier/28207": {
@@ -179,7 +164,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "preview.html"
           }
         }
       }

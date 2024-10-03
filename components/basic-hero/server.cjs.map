@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["server.jsx"],
+  "sourcesContent": ["// This component is generated client side only, see client.jsx\nexport default async (args) => {\n  // return renderComponent({\n  //   Component,\n  //   componentName: \"basic-hero\",\n  //   args,\n  // });\n};\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AACA,IAAO,iBAAQ,OAAO,SAAS;AAM/B;",
+  "names": []
+}

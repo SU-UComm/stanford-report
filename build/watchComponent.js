@@ -19,18 +19,18 @@ export async function watchComponent(componentPath) {
   // Check that we have a client entry point
   if (clientEntryPoints.length > 0) {
     // Define our context
-    const clientOptions = esbuildClientOptions(
-      componentPath,
-      clientEntryPoints
-    );
+    // const clientOptions = esbuildClientOptions(
+    //   componentPath,
+    //   clientEntryPoints
+    // );
 
-    clientCtx = await esbuild.context({
-      ...clientOptions,
-      plugins: [
-        ...(clientOptions.plugins || []),
-        // reloadLogPlugin(componentPath, "client"),
-      ],
-    });
+    // clientCtx = await esbuild.context({
+    //   ...clientOptions,
+    //   plugins: [
+    //     ...(clientOptions.plugins || []),
+    //     // reloadLogPlugin(componentPath, "client"),
+    //   ],
+    // });
   }
 
   const serverOptions = esbuildServerOptions(componentPath, serverEntryPoints);
@@ -38,20 +38,20 @@ export async function watchComponent(componentPath) {
     ...serverOptions,
     plugins: [
       ...(serverOptions?.plugins || []),
-      tailwindWatchPlugin(
-        tailwindEntryPoints,
-        clientEntryPoints,
-        componentPath
-      ),
+      // tailwindWatchPlugin(
+      //   tailwindEntryPoints,
+      //   clientEntryPoints,
+      //   componentPath
+      // ),
       // reloadLogPlugin(componentPath, "server"),
     ],
   });
 
   const promises = [];
 
-  if (clientCtx && clientCtx.watch) {
-    promises.push(clientCtx.watch());
-  }
+  // if (clientCtx && clientCtx.watch) {
+  //   promises.push(clientCtx.watch());
+  // }
 
   if (serverCtx && serverCtx.watch) {
     promises.push(serverCtx.watch());

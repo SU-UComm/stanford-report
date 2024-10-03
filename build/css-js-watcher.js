@@ -14,28 +14,28 @@ const distFiles = async () => {
   await jsBundler();
   await cssGenerator();
 
-  const components = globSync(path.join(".", "components", "*/"));
-  for (let i = 0; i < components.length; i++) {
-    // Get the current component path
-    const distPath = `${components[i]}/dist/`;
+  // const components = globSync(path.join(".", "components", "*/"));
+  // for (let i = 0; i < components.length; i++) {
+  //   // Get the current component path
+  //   const distPath = `${components[i]}/dist/`;
 
-    const pathExists = fs.existsSync(distPath);
+  //   const pathExists = fs.existsSync(distPath);
 
-    if (!pathExists) {
-      // console.log(`Destination directory does not exist for ${components[i]}`);
-    } else {
-      fs.copyFile(globalOutputCss, `${distPath}global.css`, (err) => {
-        if (err) {
-          console.log(`Operation Failed for for ${components[i]}:  ${err}`);
-        }
-      });
-      fs.copyFile(globalOutputJs, `${distPath}global.js`, (err) => {
-        if (err) {
-          console.log(`Operation Failed for for ${components[i]}:  ${err}`);
-        }
-      });
-    }
-  }
+  //   if (!pathExists) {
+  //     // console.log(`Destination directory does not exist for ${components[i]}`);
+  //   } else {
+  //     fs.copyFile(globalOutputCss, `${distPath}global.css`, (err) => {
+  //       if (err) {
+  //         console.log(`Operation Failed for for ${components[i]}:  ${err}`);
+  //       }
+  //     });
+  //     fs.copyFile(globalOutputJs, `${distPath}global.js`, (err) => {
+  //       if (err) {
+  //         console.log(`Operation Failed for for ${components[i]}:  ${err}`);
+  //       }
+  //     });
+  //   }
+  // }
 };
 
 (async () => {

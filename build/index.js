@@ -1,17 +1,12 @@
 #!/usr/bin/env node
-import fs from "fs";
 import { globSync } from "glob";
 import args from "args";
 import path from "path";
 import { cleanDist } from "./cleanDist.js";
 import { buildComponent } from "./buildComponent.js";
 import { watchComponent } from "./watchComponent.js";
-import { cssGenerator } from "./cssGenerator.js";
-import { jsBundler } from "./jsBundler.js";
 
 const buildPath = "./global/build";
-const globalOutputCss = `${buildPath}/global.css`;
-const globalOutputJs = `${buildPath}/global.js`;
 
 // Setup our args
 args
@@ -38,17 +33,11 @@ const { watch, minify } = args.parse(process.argv);
     // Get the current component path
     const componentPath = components[i];
 
-    // Get the component folder name
-    const componentFolder = componentPath.split("/").at(-1);
-
-    // Log that we are building
-    // console.log(`Building for ${componentFolder}: \n`);
-
     // Define an array of our components promises
     const componentBuildPromises = [];
 
     // Clean the previously built files
-    // const cleanDistPromise = await cleanDist(componentPath);
+    const cleanDistPromise = await cleanDist(componentPath);
 
     let buildPromise = null;
 

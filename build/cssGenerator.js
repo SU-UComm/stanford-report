@@ -6,7 +6,6 @@ import postcssImport from "postcss-import";
 import tailwindcss from "tailwindcss";
 
 const buildPath = "./global/build";
-const globalInputCss = "./global/css/_global.css";
 const globalOutputCss = `${buildPath}/global.css`;
 
 // Function to process CSS using postcss
@@ -19,12 +18,13 @@ const processCSS = async (css) => {
 
 export async function cssGenerator() {
   // now find all main main.css component files and lib client css files
-  const mainCSS = globSync("./components/*/*.css");
-  // const libCSS = await glob("./components/*/dist/client.css");
+  const componentCSS = globSync("./components/!(_*)/*.css");
+  const globalCSS = globSync("./global/css/*.css", {
+    ignore: "./global/css/plugins/**/*",
+  });
   // Combine
   let combinedContent = "";
-  // [globalInputCss, ...mainCSS, ...libCSS].forEach((file) => {
-  [globalInputCss, ...mainCSS].forEach((file) => {
+  [...componentCSS, ...globalCSS].forEach((file) => {
     combinedContent += `${fs.readFileSync(file, "utf8")}\n`;
   });
   const processedCSS = await processCSS(combinedContent);

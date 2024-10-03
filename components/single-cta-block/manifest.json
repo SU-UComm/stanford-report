@@ -16,7 +16,7 @@
   "functions": [
     {
       "name": "main",
-      "entry": "./dist/server.cjs",
+      "entry": "server.cjs",
       "input": {
         "type": "object",
         "properties": {
@@ -102,7 +102,11 @@
                 "description": "Select the type of CTA - link, download, or email. The appropriate icon will be added after the CTA text depending on your selection. No icon will be displayed for internal links.",
                 "type": "string",
                 "default": "link",
-                "enum": ["download", "email", "link"]
+                "enum": [
+                  "download",
+                  "email",
+                  "link"
+                ]
               }
             },
             "allOf": [
@@ -122,7 +126,9 @@
                       "type": "string"
                     }
                   },
-                  "required": ["email"]
+                  "required": [
+                    "email"
+                  ]
                 },
                 "else": {
                   "properties": {
@@ -156,27 +162,12 @@
       },
       "output": {
         "responseType": "html",
-        "staticFiles": [
-          {
-            "location": "header",
-            "file": {
-              "type": "css",
-              "filepath": "global.css"
-            }
-          },
-          {
-            "location": "footer",
-            "file": {
-              "type": "js",
-              "filepath": "client.js"
-            }
-          }
-        ]
+        "staticFiles": []
       }
     }
   ],
   "staticFiles": {
-    "locationRoot": "./dist"
+    "locationRoot": ""
   },
   "mockedUris": {
     "matrix-asset://api-identifier/28192": {
@@ -197,7 +188,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/campaign.html"
+            "path": "campaign.html"
           }
         }
       }

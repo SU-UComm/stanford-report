@@ -16,7 +16,7 @@
   "functions": [
     {
       "name": "main",
-      "entry": "./dist/server.cjs",
+      "entry": "server.cjs",
       "input": {
         "type": "object",
         "properties": {
@@ -68,27 +68,12 @@
       },
       "output": {
         "responseType": "html",
-        "staticFiles": [
-          {
-            "location": "header",
-            "file": {
-              "type": "css",
-              "filepath": "global.css"
-            }
-          },
-          {
-            "location": "footer",
-            "file": {
-              "type": "js",
-              "filepath": "client.js"
-            }
-          }
-        ]
+        "staticFiles": []
       }
     }
   ],
   "staticFiles": {
-    "locationRoot": "./dist"
+    "locationRoot": ""
   },
   "mockedUris": {
     "matrix-asset://api-identifier/99100": {
@@ -113,7 +98,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "preview.html"
           }
         }
       }
@@ -126,7 +111,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/basicstory.html"
+            "path": "basicstory.html"
           }
         }
       }

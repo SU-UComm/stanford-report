@@ -22,11 +22,10 @@
   "functions": [
     {
       "name": "main",
-      "entry": "./dist/server.cjs",
+      "entry": "server.cjs",
       "input": {
         "type": "object",
-        "properties": {
-        },
+        "properties": {},
         "required": []
       },
       "output": {
@@ -65,7 +64,7 @@
     }
   ],
   "staticFiles": {
-    "locationRoot": "./dist"
+    "locationRoot": ""
   },
   "previews": {
     "default": {
@@ -76,11 +75,10 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/basicstory.html"
+            "path": "basicstory.html"
           }
         }
       }
     }
   }
 }
-

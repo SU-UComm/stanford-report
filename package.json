@@ -17,7 +17,8 @@
     "test:unit": "jest",
     "test:coverage": "jest --coverage",
     "export": "node ./build/css-js-exporter.js",
-    "manifest-namespace": "node ./build/manifest-namespace.js"
+    "manifest-namespace": "node ./build/manifest-namespace.js",
+    "new": "concurrently --kill-others \"node ./build/index.js --watch\" \"node ./build/css-js-watcher.js\" \"vite\" \"dxp-next cmp dev .\""
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +33,7 @@
     "args": "^5.0.3",
     "autoprefixer": "^10.4.16",
     "chalk": "^5.3.0",
+    "concurrently": "^9.0.1",
     "core-js": "^3.33.3",
     "decanter": "^7.3.0",
     "esbuild": "^0.19.5",
@@ -51,7 +53,8 @@
     "postcss-scss": "^4.0.9",
     "postcss-wrap": "^0.0.4",
     "rimraf": "^5.0.5",
-    "tailwindcss": "^3.3.5"
+    "tailwindcss": "^3.3.5",
+    "vite": "^5.4.8"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",

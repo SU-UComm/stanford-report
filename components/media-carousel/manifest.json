@@ -17,7 +17,7 @@
   "functions": [
     {
       "name": "main",
-      "entry": "./dist/server.cjs",
+      "entry": "server.cjs",
       "input": {
         "type": "object",
         "properties": {
@@ -34,7 +34,10 @@
                   "type": "string",
                   "title": "Type",
                   "default": "Book",
-                  "enum": ["Book", "Podcast"]
+                  "enum": [
+                    "Book",
+                    "Podcast"
+                  ]
                 },
                 "image": {
                   "type": "string",
@@ -59,7 +62,11 @@
                   "title": "Link Url"
                 }
               },
-              "required": ["cardType", "image", "title"]
+              "required": [
+                "cardType",
+                "image",
+                "title"
+              ]
             }
           }
         },
@@ -94,7 +101,7 @@
     }
   ],
   "staticFiles": {
-    "locationRoot": "./dist"
+    "locationRoot": ""
   },
   "mockedUris": {
     "matrix-asset://api-identifier/28207": {
@@ -191,7 +198,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "preview.html"
           }
         }
       }

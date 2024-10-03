@@ -7,7 +7,7 @@ export const esbuildDefaults = (componentPath, minify) => ({
   minify,
   treeShaking: true,
   sourcemap: "external",
-  outdir: path.join(componentPath, "dist"),
+  outdir: path.join(componentPath),
 });
 
 export const esbuildServerOptions = (componentPath, entryPoints, minify) => ({

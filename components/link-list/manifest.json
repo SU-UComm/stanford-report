@@ -16,7 +16,7 @@
   "functions": [
     {
       "name": "main",
-      "entry": "./dist/server.cjs",
+      "entry": "server.cjs",
       "input": {
         "type": "object",
         "properties": {
@@ -63,7 +63,7 @@
     }
   ],
   "staticFiles": {
-    "locationRoot": "./dist"
+    "locationRoot": ""
   },
   "previews": {
     "default": {
@@ -74,7 +74,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/sidebar.html"
+            "path": "sidebar.html"
           }
         }
       }

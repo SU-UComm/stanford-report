@@ -22,7 +22,7 @@
   "functions": [
     {
       "name": "main",
-      "entry": "./dist/server.cjs",
+      "entry": "server.cjs",
       "input": {
         "type": "object",
         "required": [],
@@ -53,27 +53,12 @@
       },
       "output": {
         "responseType": "html",
-        "staticFiles": [
-          {
-            "location": "header",
-            "file": {
-              "type": "css",
-              "filepath": "global.css"
-            }
-          },
-          {
-            "location": "footer",
-            "file": {
-              "type": "js",
-              "filepath": "client.js"
-            }
-          }
-        ]
+        "staticFiles": []
       }
     }
   ],
   "staticFiles": {
-    "locationRoot": "./dist"
+    "locationRoot": ""
   },
   "previews": {
     "default": {
@@ -84,7 +69,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "preview.html"
           }
         }
       }
@@ -97,7 +82,7 @@
             "path": "presscenter.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "preview.html"
           }
         }
       }
@@ -110,7 +95,7 @@
             "path": "announcements.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "preview.html"
           }
         }
       }
@@ -123,7 +108,7 @@
             "path": "inthenews.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "preview.html"
           }
         }
       }
@@ -136,7 +121,7 @@
             "path": "leadershipmessages.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "preview.html"
           }
         }
       }

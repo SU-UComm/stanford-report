@@ -16,7 +16,7 @@
   "functions": [
     {
       "name": "main",
-      "entry": "./dist/server.cjs",
+      "entry": "server.cjs",
       "input": {
         "type": "object",
         "required": [],
@@ -60,7 +60,9 @@
             "title": "Events section core configuration",
             "description": "The main purpose for these settings is to source the events API for the component.",
             "type": "object",
-            "required": ["eventsUrl"],
+            "required": [
+              "eventsUrl"
+            ],
             "properties": {
               "eventsUrl": {
                 "title": "Events API Endpiont",
@@ -77,7 +79,11 @@
               "numberOfEvents": {
                 "title": "Number of Events",
                 "default": 6,
-                "enum": [3, 6, 9],
+                "enum": [
+                  3,
+                  6,
+                  9
+                ],
                 "type": "integer"
               }
             }
@@ -86,27 +92,12 @@
       },
       "output": {
         "responseType": "html",
-        "staticFiles": [
-          {
-            "location": "header",
-            "file": {
-              "type": "css",
-              "filepath": "global.css"
-            }
-          },
-          {
-            "location": "footer",
-            "file": {
-              "type": "js",
-              "filepath": "client.js"
-            }
-          }
-        ]
+        "staticFiles": []
       }
     }
   ],
   "staticFiles": {
-    "locationRoot": "./dist"
+    "locationRoot": ""
   },
   "mockedUris": {
     "matrix-asset://api-identifier/28207": {
@@ -195,7 +186,7 @@
             "path": "preview.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
+            "path": "preview.html"
           }
         }
       }

@@ -2,7 +2,7 @@ import * as esbuild from "esbuild";
 import GlobalsPlugin from "esbuild-plugin-globals";
 import fs from "fs";
 import { globSync } from "glob";
-
+// ignore component directories that start with _
 const entryPoints = await globSync("./components/!(_*)/client.+(jsx|js)");
 const buildPath = "./global/build";
 const globalInputJs = "./global/js/_global.js";
@@ -29,7 +29,7 @@ export async function jsBundler() {
       bundle: true,
       outfile: globalOutputJs,
       minify: true,
-      treeShaking: false,
+      treeShaking: true,
       sourcemap: "external",
       format: "iife",
       target: "es2020",
