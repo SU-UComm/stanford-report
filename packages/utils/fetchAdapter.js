@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 
 /**
  * Orchestrates the fetching of data from

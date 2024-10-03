@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import fetch from "node-fetch";
+
 
 
 export async function fetchData(url, requestProps = null) {

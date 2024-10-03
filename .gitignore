@@ -4,3 +4,5 @@ components/.dxp/
 .DS_Store
 coverage
 .env
+components/server.cjs
+components/server.cjs.map

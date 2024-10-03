@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+
 import renderComponent from "../../packages/utils/render-component";
 import Component from "./Component";
 import CardDataAdapter from "../../packages/utils/CardDataAdapter";

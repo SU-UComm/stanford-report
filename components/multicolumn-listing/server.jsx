@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+
 import { encode } from "html-entities";
 import renderComponent from "../../packages/utils/render-component";
 import Component from "./Component";

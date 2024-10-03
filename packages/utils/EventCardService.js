@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+
 import formatCardDataEvents from "./formatCardDataEvents";
 
 export default class EventCardService {
