@@ -6,7 +6,7 @@ export const esbuildDefaults = (componentPath, minify) => ({
   bundle: true,
   minify,
   treeShaking: true,
-  sourcemap: "external",
+  external: ['react', 'react-dom', 'react-dom-server'],
   outdir: path.join(componentPath),
 });
 
@@ -16,6 +16,7 @@ export const esbuildServerOptions = (componentPath, entryPoints, minify) => ({
   format: "cjs",
   target: "node20",
   platform: "node",
+  sourcemap: false,
   outExtension: {
     ".js": ".cjs",
   },
@@ -27,6 +28,7 @@ export const esbuildClientOptions = (componentPath, entryPoints, minify) => ({
   format: "iife",
   target: "es2020",
   platform: "browser",
+  sourcemap: "external",
   plugins: [
     GlobalsPlugin({
       react: "React",

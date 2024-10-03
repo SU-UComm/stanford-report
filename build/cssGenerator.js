@@ -24,7 +24,7 @@ export async function cssGenerator() {
   });
   // Combine
   let combinedContent = "";
-  [...componentCSS, ...globalCSS].forEach((file) => {
+  [...globalCSS, ...componentCSS].forEach((file) => {
     combinedContent += `${fs.readFileSync(file, "utf8")}\n`;
   });
   const processedCSS = await processCSS(combinedContent);
