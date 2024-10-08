@@ -1,0 +1,26 @@
+{
+  "$schema": "http://localhost:3000/schemas/JobV1.json",
+  "name": "jr-su-topic-edit",
+  "displayName": "Topic edit job",
+  "version": "0.0.3",
+  "timeout": 600,
+  "concurrency": 30,
+  "mainFunction": "main",
+  "description": "When a Topic record is edited in Matrix, start a job to update Stories that use the Topic.",
+  "functions": [
+    {
+      "name": "main",
+      "entry": "main.js",
+      "input": {
+        "type": "object",
+        "properties": {
+          "topicId": {
+            "type": "string",
+            "description": "The asset ID of the incoming topic"
+          }
+        },
+        "required": ["topicId"]
+      }
+    }
+  ]
+}
