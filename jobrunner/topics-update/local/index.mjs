@@ -5,6 +5,7 @@ async function runJobLocally() {
   const context = {
     environment: {
       FB_SEARCH_ENDPOINT: process.env.FB_SEARCH_ENDPOINT,
+      MX_ENDPOINT: process.env.MX_ENDPOINT,
     },
   };
 

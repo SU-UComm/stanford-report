@@ -12,22 +12,19 @@ async function getTopicStoriesFromFunnelback(endpoint, topicId) {
 }
 
 // make the PUT request using the fetched XML data in the payload
-async function setMxFbUpdate(id) {
+async function setMxFbUpdate(id, envVars) {
   try {
     //
     const myHeaders = new Headers();
     myHeaders.append("pragma", "no-cache");
     myHeaders.append("cache-control", "no-cache");
-    const query = `?jrprompt=true&job=jr-su-topic-edit&storyid=${id}`;
-    const response = await fetch(
-      `https://news.stanford.edu/_designs/integration-points/funnelback/force-push-update-proxy${query}`,
-      {
-        method: "GET",
-        headers: {
-          "cache-control": "no-cache",
-        },
-      }
-    );
+    const query = `${id}`;
+    const response = await fetch(`${envVars.MX_ENDPOINT}${query}`, {
+      method: "GET",
+      headers: {
+        "cache-control": "no-cache",
+      },
+    });
     if (!response.ok) {
       throw new Error(`Error uploading data for ID: ${id}`);
     }
@@ -49,18 +46,10 @@ async function processRequests(data, concurrencyLimit = 1, envVars) {
   });
   console.log("originals", JSON.stringify(fbData));
 
-  const mxPayload = {
-    metadata_values: {
-      forceSearchUpdate: {
-        type: "metadata_field_select",
-        value: "true",
-      },
-    },
-  };
   for (const item of fbData) {
     const task = (async () => {
       try {
-        await setMxFbUpdate(item.id, envVars, mxPayload);
+        await setMxFbUpdate(item.id, envVars);
         console.log("processed", item.id);
       } catch (error) {
         console.error(`Error processing ID ${item.id}:`, error);
