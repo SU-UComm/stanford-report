@@ -17,7 +17,7 @@ import FetchAdapter from "../../packages/utils/fetchAdapter";
   let navURL = "";
   const parent = props.root;
   if (props.root) {
-    navURL = `https://news.stanford.edu/_api/mx/menu?loc=${parent}`;
+    navURL = `https://news.stanford.edu/_api/dev/mx/menu?loc=${parent}`;
   }
 
   const adapter = new FetchAdapter();
