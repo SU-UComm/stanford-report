@@ -149,7 +149,7 @@ export default function CampaignHero({
               isIntroPulledLeft
             )}
           >
-            <h2 className={styles.title}>{textConfig.title}</h2>
+            <h1 className={styles.title}>{textConfig.title}</h1>
             {/* Display center aligned intro below title if quote is included */}
             {!isIntroPulledLeft && (
               <XssSafeContent

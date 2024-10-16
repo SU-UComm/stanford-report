@@ -1,11 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "sidebar-navigation",
-<<<<<<< HEAD
-  "version": "1.0.1",
-=======
   "version": "1.0.2",
->>>>>>> hotfix/sidebar-nav
   "namespace": "stanford-components",
   "description": "A navigation element used for a collection of basic informational pages.",
   "displayName": "Sidebar Navigation",
