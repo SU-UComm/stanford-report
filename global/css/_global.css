@@ -683,6 +683,11 @@ audio::-webkit-media-controls-panel {
   @apply su-max-w-[73.2rem] md:su-w-[84.75%] su-mx-auto su-px-20 md:su-px-50;
 }
 
+/* Footer */
+div[data-component="footer-component"] {
+  @apply su-relative;
+}
+
 /* Content page / pagebuilder WYSIWYG */
 .su-page-content > .container > span,
 .su-page-content > span:not([data-component]) {
