@@ -44,6 +44,7 @@
                   "Press Center",
                   "Announcements",
                   "In the News",
+                  "University Updates",
                   "Leadership Messages"
                 ]
               }
@@ -134,6 +135,19 @@
           "inputData": {
             "type": "file",
             "path": "leadershipmessages.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "universityupdates": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "universityupdates.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
