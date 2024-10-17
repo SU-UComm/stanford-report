@@ -208,34 +208,19 @@ export default function VerticalCard({
         </div>
       )}
 
-      {taxonomy && (
-        <span
-          data-testid="vertical-card-taxonomy"
-          className={`su-relative su-inline-block su-z-10 su-mb-13 su-font-semibold ${taxonomySize(
-            cardSize
-          )}`} // size
-        >
-          <XssSafeContent
-            className="su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline hocus:su-text-black hocus:dark:su-text-white focus:su-outline-0"
-            content={taxonomy}
-            href={taxonomyUrl}
-            elementType="a"
-          />
-        </span>
-      )}
-
       <div className={`su-flex su-flex-wrap ${gapSize(cardSize)}`}>
         {headingLvl === 2 && (
           <h2
-            className={`su-w-full ${titleSize(cardSize)} su-font-serif su-my-0`}
+            className={`su-w-full ${titleSize(
+              cardSize
+            )} su-font-serif su-my-0 su-order-2`}
           >
-            <span className="su-group">
-              <XssSafeContent
-                className="su-stretched-link focus:su-outline-none hocus:su-underline hocus:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
-                content={title}
-                href={liveUrl}
-                elementType="a"
-              />
+            <a
+              className="su-group su-stretched-link focus:su-outline-none hocus:su-underline hocus:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
+              href={liveUrl}
+            >
+              {/* Title using XssSafeContent in case of HTML formatting needed – em, strong, etc.  */}
+              <XssSafeContent content={title} elementType="span" />
               {isRealExternalLink && (
                 <FAIcon
                   icon="arrow-up-right"
@@ -245,37 +230,54 @@ export default function VerticalCard({
                   className="su-inline-block su-h-auto su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
                 />
               )}
-            </span>
+            </a>
           </h2>
         )}
         {headingLvl === 3 && (
           <h3
             className={`su-w-full ${titleSize(
               cardSize
-            )} su-font-serif su-my-0 su-group`}
+            )} su-font-serif su-my-0 su-order-2`}
+          >
+            <a
+              href={liveUrl}
+              className="su-group su-stretched-link focus:su-outline-none hocus:su-underline hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
+            >
+              {/* Title using XssSafeContent in case of HTML formatting needed – em, strong, etc.  */}
+              <XssSafeContent content={title} elementType="span" />
+              {isRealExternalLink && (
+                <FAIcon
+                  icon="arrow-up-right"
+                  set="regular"
+                  // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+                  width={cardSize === "featured" ? 20 : 15}
+                  className="su-inline-block su-h-auto su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
+                />
+              )}
+            </a>
+          </h3>
+        )}
+
+        {taxonomy && (
+          <span
+            data-testid="vertical-card-taxonomy"
+            className={`su-relative su-inline-block su-z-10 su-font-semibold su-order-1 ${taxonomySize(
+              cardSize
+            )}`} // size
           >
             <XssSafeContent
-              className="su-stretched-link focus:su-outline-none hocus:su-underline hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
-              content={title}
-              href={liveUrl}
+              className="su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline hocus:su-text-black hocus:dark:su-text-white focus:su-outline-0"
+              content={taxonomy}
+              href={taxonomyUrl}
               elementType="a"
             />
-            {isRealExternalLink && (
-              <FAIcon
-                icon="arrow-up-right"
-                set="regular"
-                // Add a width to prevent getting a flash of huge icon before the CSS fully loads
-                width={cardSize === "featured" ? 20 : 15}
-                className="su-inline-block su-h-auto su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
-              />
-            )}
-          </h3>
+          </span>
         )}
 
         {type && (
           <p
             data-testid="vertical-card-type"
-            className={`su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-6 su-flex-nowrap su-items-center ${typeSize(
+            className={`su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-6 su-flex-nowrap su-items-center su-order-3 ${typeSize(
               cardSize
             )}`}
           >
@@ -287,7 +289,7 @@ export default function VerticalCard({
         {displayDescription && description && (
           <XssSafeContent
             className={[
-              "su-mb-0 su-w-full [&>*:last-child]:su-mb-0",
+              "su-mb-0 su-w-full [&>*:last-child]:su-mb-0 su-order-4",
               descriptionSize(cardSize),
             ].join(" ")}
             content={description}
