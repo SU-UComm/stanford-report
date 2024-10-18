@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
+import { cnb } from "cnbuilder";
 import {
   Alert,
   AnalysisAndInsights,
@@ -216,7 +217,11 @@ export default function VerticalCard({
             )} su-font-serif su-my-0 su-order-2`}
           >
             <a
-              className="su-group su-stretched-link focus:su-outline-none hocus:su-underline hocus:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red"
+              className={cnb(
+                "su-group su-stretched-link su-inline-block su-text-black dark:su-text-white hocus:su-underline hocus:su-text-digital-red su-transition dark:hocus:su-text-dark-mode-red",
+                "focus:su-outline-none focus-visible:su-ring-2 focus-visible:su-rounded focus-visible:su-ring-digital-red dark:focus-visible:su-ring-dark-mode-red focus-visible:su-outline-none",
+                "focus-visible:after:su-outline focus-visible:after:su-outline-offset-8 focus-visible:after:su-outline-digital-red dark:focus-visible:after:su-outline-dark-mode-red"
+              )}
               href={liveUrl}
             >
               {/* Title using XssSafeContent in case of HTML formatting needed – em, strong, etc.  */}
@@ -241,7 +246,11 @@ export default function VerticalCard({
           >
             <a
               href={liveUrl}
-              className="su-group su-stretched-link focus:su-outline-none hocus:su-underline hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
+              className={cnb(
+                "su-group su-stretched-link su-inline-block su-text-black dark:su-text-white hocus:su-underline hocus:su-text-digital-red su-transition dark:hocus:su-text-dark-mode-red",
+                "focus:su-outline-none focus-visible:su-ring-2 focus-visible:su-rounded focus-visible:su-ring-digital-red dark:focus-visible:su-ring-dark-mode-red focus-visible:su-outline-none",
+                "focus-visible:after:su-outline focus-visible:after:su-outline-offset-8 focus-visible:after:su-outline-digital-red dark:focus-visible:after:su-outline-dark-mode-red"
+              )}
             >
               {/* Title using XssSafeContent in case of HTML formatting needed – em, strong, etc.  */}
               <XssSafeContent content={title} elementType="span" />
@@ -266,7 +275,10 @@ export default function VerticalCard({
             )}`} // size
           >
             <XssSafeContent
-              className="su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline hocus:su-text-black hocus:dark:su-text-white focus:su-outline-0"
+              className={cnb(
+                "su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline hocus:su-text-black hocus:dark:su-text-white",
+                "focus:su-outline-none focus-visible:su-ring-2 focus-visible:su-rounded focus-visible:su-ring-black dark:focus-visible:su-ring-white focus-visible:su-outline-none"
+              )}
               content={taxonomy}
               href={taxonomyUrl}
               elementType="a"
