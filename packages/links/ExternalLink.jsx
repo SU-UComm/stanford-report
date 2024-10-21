@@ -1,4 +1,5 @@
 import React from "react";
+import { cnb } from "cnbuilder";
 import { FAIcon } from "../icons/FAIcon";
 
 /**
@@ -30,11 +31,11 @@ export function ExternalLink({
   return liveUrl ? (
     <a
       data-test={`size-${ctaSize}`}
-      className={[
-        "su-group su-component-external-link su-flex su-items-center su-flex-nowrap su-no-underline hover:su-underline",
-        "su-text-digital-red hover:su-text-digital-red dark:su-text-dark-mode-red",
-        ctaSizeClasses.get(ctaSize),
-      ].join(" ")}
+      className={cnb(
+        "su-group su-component-external-link su-flex su-items-center su-flex-nowrap su-text-digital-red su-no-underline dark:su-text-dark-mode-red",
+        "hocus:su-underline hocus:su-text-black dark:hocus:su-text-white",
+        ctaSizeClasses.get(ctaSize)
+      )}
       href={liveUrl}
     >
       <span data-test="ctaText">{ctaText}</span>
@@ -43,7 +44,7 @@ export function ExternalLink({
         set="regular"
         // Add a width to prevent getting a flash of huge icon before the CSS fully loads
         width={12}
-        className="su-inline-block su-ml-5 su-text-18 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
+        className="su-inline-block su-ml-5 su-text-18 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-text-black dark:group-hocus:su-text-white group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
         data-testid="svg-externalarrow"
       />
     </a>

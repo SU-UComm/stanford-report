@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
+import { cnb } from "cnbuilder";
 import {
   Alert,
   AnalysisAndInsights,
@@ -208,74 +209,87 @@ export default function VerticalCard({
         </div>
       )}
 
-      {taxonomy && (
-        <span
-          data-testid="vertical-card-taxonomy"
-          className={`su-relative su-inline-block su-z-10 su-mb-13 su-font-semibold ${taxonomySize(
-            cardSize
-          )}`} // size
-        >
-          <XssSafeContent
-            className="su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline hocus:su-text-black hocus:dark:su-text-white focus:su-outline-0 focus:su-ring"
-            content={taxonomy}
-            href={taxonomyUrl}
-            elementType="a"
-          />
-        </span>
-      )}
-
       <div className={`su-flex su-flex-wrap ${gapSize(cardSize)}`}>
         {headingLvl === 2 && (
           <h2
             className={`su-w-full ${titleSize(
               cardSize
-            )} su-font-serif su-my-0 su-group`}
+            )} su-font-serif su-my-0 su-order-2`}
           >
-            <XssSafeContent
-              className="su-stretched-link focus:su-outline-0 focus:before:su-ring hocus:su-underline hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
-              content={title}
+            <a
+              className={cnb(
+                "su-group su-stretched-link su-inline-block su-text-black dark:su-text-white hocus:su-underline hocus:su-text-digital-red su-transition dark:hocus:su-text-dark-mode-red",
+                "focus:su-outline-none focus-visible:su-ring-2 focus-visible:su-rounded focus-visible:su-ring-digital-red dark:focus-visible:su-ring-dark-mode-red focus-visible:su-outline-none",
+                "focus-visible:after:su-outline focus-visible:after:su-outline-offset-8 focus-visible:after:su-outline-digital-red dark:focus-visible:after:su-outline-dark-mode-red"
+              )}
               href={liveUrl}
-              elementType="a"
-            />
-            {isRealExternalLink && (
-              <FAIcon
-                icon="arrow-up-right"
-                set="regular"
-                // Add a width to prevent getting a flash of huge icon before the CSS fully loads
-                width={cardSize === "featured" ? 20 : 15}
-                className="su-inline-block su-h-auto su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
-              />
-            )}
+            >
+              {/* Title using XssSafeContent in case of HTML formatting needed – em, strong, etc.  */}
+              <XssSafeContent content={title} elementType="span" />
+              {isRealExternalLink && (
+                <FAIcon
+                  icon="arrow-up-right"
+                  set="regular"
+                  // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+                  width={cardSize === "featured" ? 20 : 15}
+                  className="su-inline-block su-h-auto su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
+                />
+              )}
+            </a>
           </h2>
         )}
         {headingLvl === 3 && (
           <h3
             className={`su-w-full ${titleSize(
               cardSize
-            )} su-font-serif su-my-0 su-group`}
+            )} su-font-serif su-my-0 su-order-2`}
+          >
+            <a
+              href={liveUrl}
+              className={cnb(
+                "su-group su-stretched-link su-inline-block su-text-black dark:su-text-white hocus:su-underline hocus:su-text-digital-red su-transition dark:hocus:su-text-dark-mode-red",
+                "focus:su-outline-none focus-visible:su-ring-2 focus-visible:su-rounded focus-visible:su-ring-digital-red dark:focus-visible:su-ring-dark-mode-red focus-visible:su-outline-none",
+                "focus-visible:after:su-outline focus-visible:after:su-outline-offset-8 focus-visible:after:su-outline-digital-red dark:focus-visible:after:su-outline-dark-mode-red"
+              )}
+            >
+              {/* Title using XssSafeContent in case of HTML formatting needed – em, strong, etc.  */}
+              <XssSafeContent content={title} elementType="span" />
+              {isRealExternalLink && (
+                <FAIcon
+                  icon="arrow-up-right"
+                  set="regular"
+                  // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+                  width={cardSize === "featured" ? 20 : 15}
+                  className="su-inline-block su-h-auto su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
+                />
+              )}
+            </a>
+          </h3>
+        )}
+
+        {taxonomy && (
+          <span
+            data-testid="vertical-card-taxonomy"
+            className={`su-relative su-inline-block su-z-10 su-font-semibold su-order-1 ${taxonomySize(
+              cardSize
+            )}`} // size
           >
             <XssSafeContent
-              className="su-stretched-link focus:su-outline-0 focus:before:su-ring hocus:su-underline hover:su-text-digital-red su-transition su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red before:su-absolute before:su-w-full before:su-h-full before:su-block before:su-top-0 before:su-left-0"
-              content={title}
-              href={liveUrl}
+              className={cnb(
+                "su-text-digital-red dark:su-text-dark-mode-red su-no-underline hocus:su-underline hocus:su-text-black hocus:dark:su-text-white",
+                "focus:su-outline-none focus-visible:su-ring-2 focus-visible:su-rounded focus-visible:su-ring-black dark:focus-visible:su-ring-white focus-visible:su-outline-none"
+              )}
+              content={taxonomy}
+              href={taxonomyUrl}
               elementType="a"
             />
-            {isRealExternalLink && (
-              <FAIcon
-                icon="arrow-up-right"
-                set="regular"
-                // Add a width to prevent getting a flash of huge icon before the CSS fully loads
-                width={cardSize === "featured" ? 20 : 15}
-                className="su-inline-block su-h-auto su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
-              />
-            )}
-          </h3>
+          </span>
         )}
 
         {type && (
           <p
             data-testid="vertical-card-type"
-            className={`su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-6 su-flex-nowrap su-items-center ${typeSize(
+            className={`su-flex su-font-semibold su-text-black-70 dark:su-text-black-60 su-my-0 su-gap-6 su-flex-nowrap su-items-center su-order-3 ${typeSize(
               cardSize
             )}`}
           >
@@ -287,7 +301,7 @@ export default function VerticalCard({
         {displayDescription && description && (
           <XssSafeContent
             className={[
-              "su-mb-0 su-w-full [&>*:last-child]:su-mb-0",
+              "su-mb-0 su-w-full [&>*:last-child]:su-mb-0 su-order-4",
               descriptionSize(cardSize),
             ].join(" ")}
             content={description}
