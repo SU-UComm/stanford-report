@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { cnb } from "cnbuilder";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import CardThumbnail from "./CardThumbnail";
 import {
@@ -224,21 +225,25 @@ export default function HorizontalCard({
             cardSize
           )} ${cardTitleFont(cardSize)} su-font-sans su-my-0 su-group`}
         >
-          <XssSafeContent
-            className="su-stretched-link group-hocus:su-text-digital-red group-hocus:su-underline su-transition su-text-black dark:su-text-white dark:group-hocus:su-text-dark-mode-red"
-            content={title}
+          <a
             href={liveUrl}
-            elementType="a"
-          />
-          {isRealExternalLink && (
-            <FAIcon
-              icon="arrow-up-right"
-              set="regular"
-              // Add a width to prevent getting a flash of huge icon before the CSS fully loads
-              width={cardSize === "small" ? 12 : 15}
-              className="su-inline-block su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
-            />
-          )}
+            className={cnb(
+              "su-group su-stretched-link su-inline-block su-text-black dark:su-text-white hocus:su-underline hocus:su-text-digital-red su-transition dark:hocus:su-text-dark-mode-red",
+              "focus:su-outline-none focus-visible:su-ring-2 focus-visible:su-rounded focus-visible:su-ring-digital-red dark:focus-visible:su-ring-dark-mode-red focus-visible:su-outline-none",
+              "focus-visible:after:su-outline focus-visible:after:su-outline-offset-8 focus-visible:after:su-outline-digital-red dark:focus-visible:after:su-outline-dark-mode-red"
+            )}
+          >
+            <XssSafeContent content={title} elementType="span" />
+            {isRealExternalLink && (
+              <FAIcon
+                icon="arrow-up-right"
+                set="regular"
+                // Add a width to prevent getting a flash of huge icon before the CSS fully loads
+                width={cardSize === "small" ? 12 : 15}
+                className="su-inline-block su-align-middle su-ml-5 su-text-digital-red dark:su-text-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
+              />
+            )}
+          </a>
         </h3>
 
         {/* only small cards will have the date */}
