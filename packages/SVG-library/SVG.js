@@ -58,6 +58,7 @@ export { default as Solutions } from "./Solutions";
 export { default as Survey } from "./Survey";
 export { default as Timeline } from "./Timeline";
 export { default as TipsAndTakeaways } from "./TipsAndTakeaways";
+export { default as UniversityUpdates } from "./UniversityUpdates";
 export { default as Video } from "./Video";
 export { default as ChevronRight } from "./ChevronRight";
 export { default as Close } from "./Close";
