@@ -23,6 +23,7 @@ import {
   Timeline,
   TipsAndTakeaways,
   TypeAnnouncement,
+  UniversityUpdates,
   News,
   QuestionAnswer,
   Video,
@@ -166,6 +167,8 @@ export default function VerticalCard({
   SVGMap.set("tips & takeaways", <TipsAndTakeaways />);
   SVGMap.set("tips &amp; takeaways", <TipsAndTakeaways />);
   SVGMap.set("tips&nbsp;&amp;&nbsp;takeaways", <TipsAndTakeaways />);
+  SVGMap.set("university&nbsp;updates", <UniversityUpdates />);
+  SVGMap.set("university updates", <UniversityUpdates />);
   SVGMap.set("announcement", <TypeAnnouncement />);
   SVGMap.set("news", <News />);
   SVGMap.set("q&amp;a", <QuestionAnswer />);
