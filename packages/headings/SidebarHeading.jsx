@@ -1,4 +1,7 @@
 import React from "react";
+import { cnb } from "cnbuilder";
+import { faSquareFull } from "@fortawesome/pro-solid-svg-icons";
+import { FAIcon } from "../icons/FAIcon";
 import {
   Announcement,
   EventsCalendar,
@@ -62,42 +65,29 @@ export function SidebarHeading({
     dark: <TrendingUp variant="dark" />,
   });
 
-  const colorClassMap = new Map();
-  colorClassMap.set(
-    "grey",
-    "su-text-black-90 dark:su-text-white su-font-semibold su-text-18 su-items-end"
-  );
-  colorClassMap.set(
-    "black",
-    "su-text-black dark:su-text-white su-font-bold su-text-20 md:su-text-28 su-items-start"
-  );
-  colorClassMap.set(
-    "media",
-    "su-text-black-90 dark:su-text-black-20 su-font-semibold su-text-18 su-items-center"
-  );
-
   const Tag = headingSize;
   return title !== "" ? (
-    <Tag
-      className={[
-        "su-component-sidebar-heading su-w-full su-flex su-flex-wrap su-gap-6 su-my-0 su-font-sans",
-        colorClassMap.get(color),
-      ].join(" ")}
-    >
-      {iconMap.get(icon) &&
-        "light" in iconMap.get(icon) &&
-        "dark" in iconMap.get(icon) && (
-          <>
-            <span data-test="icon" className="dark:su-hidden">
-              {iconMap.get(icon).light}
-            </span>
-            <span data-test="icon" className="su-hidden dark:su-block">
-              {iconMap.get(icon).dark}
-            </span>
-          </>
+    <div className="su-text-white su-component-sidebar-heading su-w-full su-flex su-gap-6 su-items-center su-my-0 su-font-sans">
+      <FAIcon
+        data-testid="icon"
+        set="solid"
+        icon={icon === "announcement" ? "calendar-days" : ""}
+        mask={faSquareFull}
+        className="su-bg-gradient-to-r su-from-digital-red su-to-digital-red-dark su-text-white"
+      />
+      <span
+        className={cnb(
+          color === "grey" &&
+            "su-text-black-90 dark:su-text-white su-font-semibold su-text-18 su-items-end",
+          color === "black" &&
+            "su-text-black dark:su-text-white su-font-bold su-text-20 md:su-text-28 su-items-start",
+          color === "media" &&
+            "su-text-black-90 dark:su-text-black-20 su-font-semibold su-text-18 su-items-center"
         )}
-      <span>{title}</span>
-    </Tag>
+      >
+        {title}
+      </span>
+    </div>
   ) : (
     ""
   );

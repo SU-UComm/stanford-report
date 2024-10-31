@@ -69,7 +69,7 @@ export default function MediaCard({
           <div className="su-mb-20 md:su-mb-27">
             <SidebarHeading
               headingSize="p"
-              icon={taxonomy}
+              icon="announcement"
               color="media"
               title={taxonomy}
             />
