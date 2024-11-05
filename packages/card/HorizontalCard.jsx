@@ -199,7 +199,7 @@ export default function HorizontalCard({
             imageUrl={imageUrl}
             alt={imageAlt}
             mediaType="image"
-            aspectRatio="card-small"
+            aspectRatio="square"
             size={cardSize}
           />
         </div>
