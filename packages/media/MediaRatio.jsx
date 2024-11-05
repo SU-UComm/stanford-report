@@ -1,4 +1,5 @@
 import React from "react";
+import { cnb } from "cnbuilder";
 
 export default function MediaRatio({
   children,
@@ -7,19 +8,17 @@ export default function MediaRatio({
   aspectRatio = "card-small",
   videoUrl,
 }) {
-  const aspectRatioMap = new Map();
-  aspectRatioMap.set("card-small", "su-aspect-[3/2]");
-  aspectRatioMap.set("card-medium", "su-aspect-[3/2]");
-  aspectRatioMap.set("card-large", "su-aspect-[3/2]");
-  aspectRatioMap.set("card-featured", "su-aspect-[16/9]");
-  aspectRatioMap.set("square", "su-aspect-[1/1]");
-  aspectRatioMap.set("vertical-video", "su-aspect-[9/16]");
-
   return (
     <span
-      className={`su-component-media-ratio su-overflow-hidden su-relative su-size-full su-block ${aspectRatioMap.get(
-        aspectRatio
-      )}`}
+      className={cnb(
+        "su-component-media-ratio su-overflow-hidden su-relative su-size-full su-block",
+        aspectRatio === "card-small" && "su-aspect-[3/2]",
+        aspectRatio === "card-medium" && "su-aspect-[3/2]",
+        aspectRatio === "card-large" && "su-aspect-[3/2]",
+        aspectRatio === "card-featured" && "su-aspect-[3/2]",
+        aspectRatio === "square" && "su-aspect-[1/1]",
+        aspectRatio === "vertical-video" && "su-aspect-[9/16]"
+      )}
     >
       {videoUrl && (
         // This is temporary and is likely to move to YouTube embeds
