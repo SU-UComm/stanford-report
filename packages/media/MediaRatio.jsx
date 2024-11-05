@@ -17,6 +17,7 @@ export default function MediaRatio({
         aspectRatio === "card-large" && "su-aspect-[3/2]",
         aspectRatio === "card-featured" && "su-aspect-[3/2]",
         aspectRatio === "square" && "su-aspect-[1/1]",
+        aspectRatio === "video" && "su-aspect-[16/9]",
         aspectRatio === "vertical-video" && "su-aspect-[9/16]"
       )}
     >
