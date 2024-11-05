@@ -1,6 +1,10 @@
 import React from "react";
 import { cnb } from "cnbuilder";
-import { faSquareFull } from "@fortawesome/pro-solid-svg-icons";
+import {
+  faRectangle,
+  faSquare,
+  faSquareFull,
+} from "@fortawesome/pro-solid-svg-icons";
 import { FAIcon } from "../icons/FAIcon";
 import {
   Announcement,
@@ -65,15 +69,18 @@ export function SidebarHeading({
     dark: <TrendingUp variant="dark" />,
   });
 
+  console.log(icon);
   const Tag = headingSize;
   return title !== "" ? (
     <div className="su-text-white su-component-sidebar-heading su-w-full su-flex su-gap-6 su-items-center su-my-0 su-font-sans">
       <FAIcon
         data-testid="icon"
         set="solid"
-        icon={icon === "announcement" ? "calendar-days" : ""}
-        mask={faSquareFull}
-        className="su-bg-gradient-to-r su-from-digital-red su-to-digital-red-dark su-text-white"
+        icon={
+          (icon === "announcement" && "megaphone",
+          icon === "eventscalendar" && "calendar-days")
+        }
+        className=" su-text-digital-red"
       />
       <span
         className={cnb(

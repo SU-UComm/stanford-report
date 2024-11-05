@@ -3228,9 +3228,9 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-text-palo-alto{--tw-text-opacity:1;color:rgb(23 94 84 / var(--tw-text-opacity))}
 .su-text-palo-verde{--tw-text-opacity:1;color:rgb(39 153 137 / var(--tw-text-opacity))}
 .su-text-plum{--tw-text-opacity:1;color:rgb(98 0 89 / var(--tw-text-opacity))}
+.su-text-transparent{color:transparent}
 .su-text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .su-text-white\/95{color:rgb(255 255 255 / 0.95)}
-.su-text-transparent{color:transparent}
 .su-underline{text-decoration-line:underline}
 .su-no-underline{text-decoration-line:none}
 .su-decoration-dark-mode-red{text-decoration-color:#EC0909}
