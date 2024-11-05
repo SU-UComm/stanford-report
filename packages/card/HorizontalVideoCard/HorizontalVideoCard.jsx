@@ -86,7 +86,7 @@ export function HorizontalVideoCard({
           imageUrl={videoImageUrl}
           alt={videoImageAlt}
           title={heading}
-          aspectRatio="card-featured"
+          aspectRatio="video"
           videoUrl={youtubeId}
           size="featured"
           videoIconClasses={styles.videoIcon}
