@@ -388,6 +388,10 @@ table caption {
 /*
 * Slider inside modal
 */
+.su-modal div {
+  @apply focus:su-outline-none;
+}
+
 .su-modal-content .component-slider {
   @apply su-absolute su-top-0 lg:su-top-50 su-left-0 su-w-full su-h-full;
 }
