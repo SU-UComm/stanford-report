@@ -826,6 +826,7 @@ table caption:is(.su-dark *){--tw-text-opacity:1;color:rgb(255 255 255 / var(--t
 /*
 * Slider inside modal
 */
+.su-modal div:focus{outline:2px solid transparent;outline-offset:2px}
 .su-modal-content .component-slider{position:absolute;top:0;left:0;height:100%;width:100%}
 @media (min-width: 992px){
 .su-modal-content .component-slider{top:5rem}}
