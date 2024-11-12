@@ -34,7 +34,7 @@
                   "type": "string",
                   "title": "Type",
                   "default": "Book",
-                  "enum": ["Book", "Podcast"]
+                  "enum": ["Book", "Magazine", "Podcast"]
                 },
                 "image": {
                   "type": "string",
@@ -73,13 +73,6 @@
             "file": {
               "type": "css",
               "filepath": "global.css"
-            }
-          },
-          {
-            "location": "header",
-            "file": {
-              "type": "css",
-              "filepath": "client.css"
             }
           },
           {
