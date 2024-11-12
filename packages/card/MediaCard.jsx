@@ -41,9 +41,6 @@ export default function MediaCard({
   const isRealExternalLink =
     !!liveUrl && !liveUrl?.includes("news.stanford.edu");
 
-  console.log("tax: ", taxonomy);
-  console.log("type: ", type);
-
   let typeIcon;
 
   if (type === "Book") {

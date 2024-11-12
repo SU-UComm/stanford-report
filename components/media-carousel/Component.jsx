@@ -30,8 +30,6 @@ export default function StoriesCarousel({ data }) {
     setCards(cardData);
   }, []);
 
-  console.log(cardData);
-
   return (
     <Container width="large">
       <Carousel variant="media" slides={cards} uniqueClass={uniqueClass} />
