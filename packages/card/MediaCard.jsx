@@ -1,6 +1,5 @@
 import React from "react";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
-import { BookOpenCover, Podcast } from "../SVG-library/SVG";
 import { SidebarHeading } from "../headings/Heading";
 import { FAIcon } from "../icons/FAIcon";
 
@@ -39,15 +38,18 @@ export default function MediaCard({
     author,
   },
 }) {
-  const iconMap = new Map();
-  iconMap.set(
-    "Featured reading",
-    <BookOpenCover className="su-w-[1.2em]" aria-hidden />
-  );
-  iconMap.set("Featured audio", <Podcast variant="outline" />);
-
   const isRealExternalLink =
     !!liveUrl && !liveUrl?.includes("news.stanford.edu");
+
+  let typeIcon;
+
+  if (type === "Book") {
+    typeIcon = "book-open-cover";
+  } else if (type === "Podcast") {
+    typeIcon = "microphone";
+  } else if (type === "Magazine") {
+    typeIcon = "book-open";
+  }
 
   return title ? (
     <article
@@ -108,8 +110,8 @@ export default function MediaCard({
           </div>
         )}
         {type && (
-          <div className="su-text-18 md:su-text-16 su-mb-15 md:su-mb-19 su-gap-6 su-text-black-70 dark:su-text-black-50 su-flex su-nowrap su-items-center su-leading-snug">
-            <span>{iconMap.get(taxonomy)}</span>
+          <div className="su-text-18 md:su-text-16 su-mb-15 md:su-mb-19 su-gap-6 su-text-black-70 dark:su-text-black-50 su-flex su-nowrap su-items-center su-leading-none">
+            <FAIcon icon={typeIcon} set="solid" />
             <span className="su-font-semibold">{type}</span>
           </div>
         )}

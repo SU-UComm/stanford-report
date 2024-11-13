@@ -17,7 +17,7 @@
       "linkUrl": ""
     },
     {
-      "cardType": "Podcast",
+      "cardType": "Magazine",
       "image": "matrix-asset://api-identifier/125800",
       "title": "Three Example Three",
       "author": "Susannah Young-ah Gottlieb",
@@ -25,7 +25,7 @@
       "linkUrl": "https://www.squiz.net"
     },
     {
-      "cardType": "Book",
+      "cardType": "Podcast",
       "image": "matrix-asset://api-identifier/128612",
       "title": "Four Example Four news.stanford.edu link",
       "author": "Susannah Young-ah Gottlieb",

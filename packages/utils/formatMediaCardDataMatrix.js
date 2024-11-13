@@ -5,7 +5,7 @@ export default function formatCardDataMatrix(cardData) {
   const imageUrl = cardData.image?.url;
   const imageAlt = cardData.image?.attributes?.alt;
   const taxonomy =
-    cardData.cardType === "Book" ? "Featured reading" : "Featured audio";
+    cardData.cardType === "Podcast" ? "Featured audio" : "Featured reading";
   const taxonomyUrl = undefined;
   const type = cardData.cardType;
   const { author } = cardData;
