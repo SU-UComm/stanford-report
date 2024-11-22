@@ -641,7 +641,9 @@ table caption:is(.su-dark *){--tw-text-opacity:1;color:rgb(255 255 255 / var(--t
 * Global slider/swiper styles
 */
 /* Rule below is scoped to media-carousel only because image shadow was getting cut off */
-div[data-component="media-carousel"] .component-slider .swiper{overflow:visible}
+/* div[data-component="media-carousel"] .component-slider .swiper {
+  @apply su-overflow-visible;
+} */
 .component-slider-cards .swiper-slide{position:relative;height:auto;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:250ms}
 .component-slider-cards .swiper-slide::before{position:absolute;top:0;left:-2rem;height:100%;width:0.1rem;content:var(--tw-content);--tw-bg-opacity:1;background-color:rgb(192 192 191 / var(--tw-bg-opacity))}
 .component-slider-cards .swiper-slide:is(.su-dark *)::before{content:var(--tw-content);--tw-bg-opacity:1;background-color:rgb(46 45 41 / var(--tw-bg-opacity))}

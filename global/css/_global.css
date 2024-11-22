@@ -182,9 +182,9 @@ table caption {
 */
 
 /* Rule below is scoped to media-carousel only because image shadow was getting cut off */
-div[data-component="media-carousel"] .component-slider .swiper {
+/* div[data-component="media-carousel"] .component-slider .swiper {
   @apply su-overflow-visible;
-}
+} */
 
 .component-slider-cards .swiper-slide {
   @apply su-transition su-relative su-h-auto before:su-absolute before:su-bg-black-30 before:dark:su-bg-black before:su-h-full before:su-w-1 before:su-top-0 before:su--left-20 md:before:su--left-36 lg:before:su--left-50;
