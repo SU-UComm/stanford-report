@@ -42,13 +42,17 @@ export default function MediaCard({
     !!liveUrl && !liveUrl?.includes("news.stanford.edu");
 
   let typeIcon;
+  let iconTestId;
 
   if (type === "Book") {
     typeIcon = "book-open-cover";
+    iconTestId = "svg-book-open-cover";
   } else if (type === "Podcast") {
     typeIcon = "microphone";
+    iconTestId = "svg-microphone";
   } else if (type === "Magazine") {
     typeIcon = "book-open";
+    iconTestId = "svg-book-open";
   }
 
   return title ? (
@@ -111,7 +115,7 @@ export default function MediaCard({
         )}
         {type && (
           <div className="su-text-18 md:su-text-16 su-mb-15 md:su-mb-19 su-gap-6 su-text-black-70 dark:su-text-black-50 su-flex su-nowrap su-items-center su-leading-none">
-            <FAIcon icon={typeIcon} set="solid" />
+            <FAIcon icon={typeIcon} set="solid" data-testid={iconTestId} />
             <span className="su-font-semibold">{type}</span>
           </div>
         )}
