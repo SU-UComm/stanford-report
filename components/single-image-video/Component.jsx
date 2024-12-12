@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
+import { cnb } from "cnbuilder";
 
 // import specific templates for the component
 import { Container } from "../../packages/grids/Container";
@@ -22,6 +24,7 @@ export default function SingleImageVideo({
   width,
   imageData,
   video,
+  section,
   // videoThumbData,
 }) {
   let captionCredit;
@@ -115,6 +118,35 @@ export default function SingleImageVideo({
   return (
     <Container width={width}>
       <section className="su-flex su-flex-col su-items-center su-gap-8 su-gap-15">
+        <div className="su-w-[100%] md:su-max-w-[60.7rem] lg:su-max-w-[63.6rem] su-mx-auto">
+          {section.title && (
+            <h2
+              className={cnb(
+                "su-text-center su-text-[3.5rem] su-leading-[4.179rem] su-font-bold",
+                "md:su-text-[4.0rem] md:su-leading-[4.776rem]",
+                "lg:su-text-[4.9rem] lg:su-leading-[6.37rem]"
+              )}
+            >
+              {section.title}
+            </h2>
+          )}
+
+          {section.summary && (
+            <XssSafeContent
+              className={cnb(
+                section.summaryAlign === "center"
+                  ? "su-text-center"
+                  : "su-text-left",
+                "su-wysiwyg-content su-rs-mt-0 su-text-[1.8rem] su-leading-[2.25rem] su-mt-[1.5rem]",
+                "md:su-text-[1.9rem] md:su-leading-[2.375rem] md:su-mt-[1.9rem]",
+                "lg:su-text-[2.1rem] lg:su-leading-[2.625rem]"
+              )}
+              elementType="div"
+              data-test="component-story-lead"
+              content={section.summary}
+            />
+          )}
+        </div>
         <div
           className={`su-relative${
             video && !video.youtubeid
