@@ -4360,6 +4360,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .md\:su-mb-30{margin-bottom:3rem}
 .md\:su-mb-60{margin-bottom:6rem}
 .md\:su-mb-8{margin-bottom:0.8rem}
+.md\:su-mb-9{margin-bottom:0.9rem}
 .md\:su-mb-\[3px\]{margin-bottom:3px}
 .md\:su-mb-\[5\.9rem\]{margin-bottom:5.9rem}
 .md\:su-mb-\[6\.05px\]{margin-bottom:6.05px}
@@ -4379,7 +4380,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .md\:su-mt-\[1\.9rem\]{margin-top:1.9rem}
 .md\:su-mt-\[4\.8rem\]{margin-top:4.8rem}
 .md\:su-mt-auto{margin-top:auto}
-.md\:su-mb-9{margin-bottom:0.9rem}
+.md\:su-mt-9{margin-top:0.9rem}
 .md\:su-block{display:block}
 .md\:su-inline{display:inline}
 .md\:su-flex{display:flex}
@@ -4582,6 +4583,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\*\:md\:su-mt-14 > *{margin-top:1.4rem}
 .\*\:md\:su-size-40 > *{width:4rem;height:4rem}
 .\*\:md\:su-size-\[55\.95px\] > *{width:55.95px;height:55.95px}
+.md\:\*\:su-size-40 > *{width:4rem;height:4rem}
 .\*\:md\:su-h-\[60px\] > *{height:60px}
 .\*\:md\:su-w-\[60px\] > *{width:60px}
 .\*\:md\:su-text-19 > *{font-size:1.9rem}
@@ -4683,6 +4685,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .lg\:su-mt-\[-131px\]{margin-top:-131px}
 .lg\:su-mt-\[0px\]{margin-top:0px}
 .lg\:su-mt-\[19\.5px\]{margin-top:19.5px}
+.lg\:su-mt-15{margin-top:1.5rem}
 .lg\:su-block{display:block}
 .lg\:su-inline-block{display:inline-block}
 .lg\:su-flex{display:flex}

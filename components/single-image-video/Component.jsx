@@ -117,38 +117,40 @@ export default function SingleImageVideo({
   return (
     <Container width={width} marginTop={marginTop} marginBottom={marginBottom}>
       <section className="su-flex su-flex-col su-items-center">
-        <div className="su-w-[100%] md:su-max-w-[60.7rem] lg:su-max-w-[63.6rem] su-mx-auto">
-          {section.title && (
-            <h2
-              className={cnb(
-                "su-text-center su-text-[3.5rem] su-leading-[4.179rem] su-font-bold",
-                "md:su-text-[4.0rem] md:su-leading-[4.776rem]",
-                "lg:su-text-[4.9rem] lg:su-leading-[6.37rem]"
-              )}
-            >
-              {section.title}
-            </h2>
-          )}
+        {(section.title || section.summary) && (
+          <div className="su-w-full md:su-max-w-[60.7rem] lg:su-max-w-[63.6rem] su-mx-auto su-rs-mb-3">
+            {section.title && (
+              <h2
+                className={cnb(
+                  "su-text-center su-text-[3.5rem] su-leading-[4.179rem] su-font-bold",
+                  "md:su-text-[4.0rem] md:su-leading-[4.776rem]",
+                  "lg:su-text-[4.9rem] lg:su-leading-[6.37rem]"
+                )}
+              >
+                {section.title}
+              </h2>
+            )}
 
-          {section.summary && (
-            <XssSafeContent
-              className={cnb(
-                section.summaryAlign === "center"
-                  ? "su-text-center"
-                  : "su-text-left",
-                "su-wysiwyg-content su-rs-mt-0 su-text-[1.8rem] su-leading-[2.25rem] su-mt-[1.5rem]",
-                "md:su-text-[1.9rem] md:su-leading-[2.375rem] md:su-mt-[1.9rem]",
-                "lg:su-text-[2.1rem] lg:su-leading-[2.625rem]"
-              )}
-              elementType="div"
-              data-test="component-story-lead"
-              content={section.summary}
-            />
-          )}
-        </div>
+            {section.summary && (
+              <XssSafeContent
+                className={cnb(
+                  section.summaryAlign === "center"
+                    ? "su-text-center"
+                    : "su-text-left",
+                  "su-wysiwyg-content su-rs-mt-0 su-text-[1.8rem] su-leading-[2.25rem] su-mt-[1.5rem]",
+                  "md:su-text-[1.9rem] md:su-leading-[2.375rem] md:su-mt-[1.9rem]",
+                  "lg:su-text-[2.1rem] lg:su-leading-[2.625rem]"
+                )}
+                elementType="div"
+                data-test="component-story-lead"
+                content={section.summary}
+              />
+            )}
+          </div>
+        )}
         <div
           className={cnb(
-            "su-relative su-rs-mt-3 su-mb-8 md:su-mb-9 lg:su-mb-15",
+            "su-relative",
             video && !video.youtubeid
               ? " su-w-full"
               : " su-w-full su-aspect-[16/9]"
@@ -177,7 +179,10 @@ export default function SingleImageVideo({
               />
 
               <span
-                className={`${playButtonIconSize} su-play-button-icon *:md:su-size-40 su-play-btn su-transition-all su-absolute su-bottom-20 su-left-20 md:su-left-27 md:su-bottom-27 md:su-block *:md:su-size-[55.95px]`}
+                className={cnb(
+                  playButtonIconSize,
+                  "su-play-button-icon su-play-btn su-transition-all su-absolute su-bottom-20 su-left-20 md:su-left-27 md:su-bottom-27 md:su-block"
+                )}
               >
                 <VideoPlay />
               </span>
@@ -185,9 +190,9 @@ export default function SingleImageVideo({
           )}
         </div>
 
-        <div className="su-flex su-gap-8 md:su-gap-22 su-w-full su-relative su-flex-col su-items-center lg:su-flex-row lg:su-items-start">
+        <div className="su-flex su-gap-8 md:su-gap-22 su-w-full su-relative su-flex-col su-items-center lg:su-flex-row lg:su-items-start su-mt-8 md:su-mt-9 lg:su-mt-15">
           <div className="su-mx-auto su-flex su-justify-center su-w-full">
-            <p className="dark:su-text-white su-m-0 su-text-14 su-max-w-[633px] su-leading-[16.72px] su-font-normal su-text-black-70 md:su-text-16 su-leading-[19.11px] md:su-text-left">
+            <p className="dark:su-text-white su-m-0 su-text-14 su-max-w-[633px] su-leading-[16.72px] su-font-normal su-text-black-70 md:su-text-16 md:su-leading-[19.11px] md:su-text-left">
               {captionCredit}
             </p>
           </div>
