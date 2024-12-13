@@ -25,11 +25,10 @@ export default function SingleImageVideo({
   imageData,
   video,
   section,
-  // videoThumbData,
+  marginTop,
+  marginBottom,
 }) {
   let captionCredit;
-  // const { url, attributes } = imageData;
-  // const { vimeoid, youtubeid } = video;
 
   if (caption && credit) {
     captionCredit = `${caption} | ${credit}`;
@@ -116,8 +115,8 @@ export default function SingleImageVideo({
   const videoTitle = video?.heading ? video.heading : "";
 
   return (
-    <Container width={width}>
-      <section className="su-flex su-flex-col su-items-center su-gap-8 su-gap-15">
+    <Container width={width} marginTop={marginTop} marginBottom={marginBottom}>
+      <section className="su-flex su-flex-col su-items-center">
         <div className="su-w-[100%] md:su-max-w-[60.7rem] lg:su-max-w-[63.6rem] su-mx-auto">
           {section.title && (
             <h2
@@ -148,19 +147,18 @@ export default function SingleImageVideo({
           )}
         </div>
         <div
-          className={`su-relative${
+          className={cnb(
+            "su-relative su-rs-mt-3 su-mb-8 md:su-mb-9 lg:su-mb-15",
             video && !video.youtubeid
               ? " su-w-full"
               : " su-w-full su-aspect-[16/9]"
-          }`}
+          )}
         >
           {!video ? (
             <img
-              // src="https://picsum.photos/800"
               src={imageData.url}
               alt={imageData.attributes.alt}
               className="su-w-full su-object-cover"
-              // className="su-size-full su-absolute su-object-cover su-top-[50%] su-translate-y-[-50%]"
             />
           ) : (
             <button
@@ -186,8 +184,6 @@ export default function SingleImageVideo({
             </button>
           )}
         </div>
-
-        {/* background=1 */}
 
         <div className="su-flex su-gap-8 md:su-gap-22 su-w-full su-relative su-flex-col su-items-center lg:su-flex-row lg:su-items-start">
           <div className="su-mx-auto su-flex su-justify-center su-w-full">
