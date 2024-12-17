@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
+import { cnb } from "cnbuilder";
 
 // import specific templates for the component
 import { Container } from "../../packages/grids/Container";
@@ -22,11 +24,11 @@ export default function SingleImageVideo({
   width,
   imageData,
   video,
-  // videoThumbData,
+  section,
+  marginTop,
+  marginBottom,
 }) {
   let captionCredit;
-  // const { url, attributes } = imageData;
-  // const { vimeoid, youtubeid } = video;
 
   if (caption && credit) {
     captionCredit = `${caption} | ${credit}`;
@@ -113,22 +115,52 @@ export default function SingleImageVideo({
   const videoTitle = video?.heading ? video.heading : "";
 
   return (
-    <Container width={width}>
-      <section className="su-flex su-flex-col su-items-center su-gap-8 su-gap-15">
+    <Container width={width} marginTop={marginTop} marginBottom={marginBottom}>
+      <section className="su-flex su-flex-col su-items-center">
+        {(section.title || section.summary) && (
+          <div className="su-w-full md:su-max-w-[60.7rem] lg:su-max-w-[63.6rem] su-mx-auto su-rs-mb-3">
+            {section.title && (
+              <h2
+                className={cnb(
+                  "su-text-center su-text-[3.5rem] su-leading-[4.179rem] su-font-bold",
+                  "md:su-text-[4.0rem] md:su-leading-[4.776rem]",
+                  "lg:su-text-[4.9rem] lg:su-leading-[6.37rem]"
+                )}
+              >
+                {section.title}
+              </h2>
+            )}
+
+            {section.summary && (
+              <XssSafeContent
+                className={cnb(
+                  section.summaryAlign === "center"
+                    ? "su-text-center"
+                    : "su-text-left",
+                  "su-wysiwyg-content su-rs-mt-0 su-text-[1.8rem] su-leading-[2.25rem] su-mt-[1.5rem]",
+                  "md:su-text-[1.9rem] md:su-leading-[2.375rem] md:su-mt-[1.9rem]",
+                  "lg:su-text-[2.1rem] lg:su-leading-[2.625rem]"
+                )}
+                elementType="div"
+                data-test="component-story-lead"
+                content={section.summary}
+              />
+            )}
+          </div>
+        )}
         <div
-          className={`su-relative${
+          className={cnb(
+            "su-relative",
             video && !video.youtubeid
               ? " su-w-full"
               : " su-w-full su-aspect-[16/9]"
-          }`}
+          )}
         >
           {!video ? (
             <img
-              // src="https://picsum.photos/800"
               src={imageData.url}
               alt={imageData.attributes.alt}
               className="su-w-full su-object-cover"
-              // className="su-size-full su-absolute su-object-cover su-top-[50%] su-translate-y-[-50%]"
             />
           ) : (
             <button
@@ -147,7 +179,10 @@ export default function SingleImageVideo({
               />
 
               <span
-                className={`${playButtonIconSize} su-play-button-icon *:md:su-size-40 su-play-btn su-transition-all su-absolute su-bottom-20 su-left-20 md:su-left-27 md:su-bottom-27 md:su-block *:md:su-size-[55.95px]`}
+                className={cnb(
+                  playButtonIconSize,
+                  "su-play-button-icon su-play-btn su-transition-all su-absolute su-bottom-20 su-left-20 md:su-left-27 md:su-bottom-27 md:su-block"
+                )}
               >
                 <VideoPlay />
               </span>
@@ -155,11 +190,9 @@ export default function SingleImageVideo({
           )}
         </div>
 
-        {/* background=1 */}
-
-        <div className="su-flex su-gap-8 md:su-gap-22 su-w-full su-relative su-flex-col su-items-center lg:su-flex-row lg:su-items-start">
+        <div className="su-flex su-gap-8 md:su-gap-22 su-w-full su-relative su-flex-col su-items-center lg:su-flex-row lg:su-items-start su-mt-8 md:su-mt-9 lg:su-mt-15">
           <div className="su-mx-auto su-flex su-justify-center su-w-full">
-            <p className="dark:su-text-white su-m-0 su-text-14 su-max-w-[633px] su-leading-[16.72px] su-font-normal su-text-black-70 md:su-text-16 su-leading-[19.11px] md:su-text-left">
+            <p className="dark:su-text-white su-m-0 su-text-14 su-max-w-[633px] su-leading-[16.72px] su-font-normal su-text-black-70 md:su-text-16 md:su-leading-[19.11px] md:su-text-left">
               {captionCredit}
             </p>
           </div>
