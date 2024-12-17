@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "single-image-video",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "namespace": "stanford-components",
   "description": "Use this to display a large image or video with a caption and credit. Title and summary are optional.",
   "displayName": "Single image or video",
@@ -85,7 +85,7 @@
           },
           "marginTop": {
             "title": "Spacing above (top margin)",
-            "description": "Add spacing above the component. 'Base' is the smallest with '10' (default) being the largest option. Selecting 'default' will use the default site-wide vertical spacing between components.",
+            "description": "Adjust spacing above the component - 'base' is the smallest, '10' is largest. Stories should most often use 'default' which adds site-wide default vertical spacing between components.",
             "type": "string",
             "default": "default",
             "enum": [
@@ -105,7 +105,7 @@
           },
           "marginBottom": {
             "title": "Spacing below (bottom margin)",
-            "description": "Add spacing below the component. 'Base' is the smallest with '10' (default) being the largest option. Selecting 'default' will use the default site-wide vertical spacing between components.",
+            "description": "Adjust spacing below the component - 'base' is the smallest, '10' is largest. Stories should most often use 'default' which adds site-wide default vertical spacing between components.",
             "type": "string",
             "default": "default",
             "enum": [
