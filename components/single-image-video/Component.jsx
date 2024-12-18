@@ -117,7 +117,7 @@ export default function SingleImageVideo({
   return (
     <Container width={width} marginTop={marginTop} marginBottom={marginBottom}>
       <section className="su-flex su-flex-col su-items-center">
-        {(section.title || section.summary) && (
+        {(section?.title || section?.summary) && (
           <div className="su-w-full md:su-max-w-[60.7rem] lg:su-max-w-[63.6rem] su-mx-auto su-rs-mb-3">
             {section?.title && (
               <h2
