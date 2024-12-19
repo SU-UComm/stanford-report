@@ -37,7 +37,7 @@ export default function PopularStories({ data }) {
   });
 
   return (
-    <div className="su-flex su-gap-[1.8rem] su-flex-col">
+    <div id="popular-stories" className="su-flex su-gap-[1.8rem] su-flex-col">
       <span className="[&>*]:su-font-bold">
         <SidebarHeading title="Popular stories" icon="trendingup" />
       </span>
