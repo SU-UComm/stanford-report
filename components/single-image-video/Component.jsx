@@ -117,9 +117,9 @@ export default function SingleImageVideo({
   return (
     <Container width={width} marginTop={marginTop} marginBottom={marginBottom}>
       <section className="su-flex su-flex-col su-items-center">
-        {(section.title || section.summary) && (
+        {(section?.title || section?.summary) && (
           <div className="su-w-full md:su-max-w-[60.7rem] lg:su-max-w-[63.6rem] su-mx-auto su-rs-mb-3">
-            {section.title && (
+            {section?.title && (
               <h2
                 className={cnb(
                   "su-text-center su-text-[3.5rem] su-leading-[4.179rem] su-font-bold",
@@ -127,11 +127,11 @@ export default function SingleImageVideo({
                   "lg:su-text-[4.9rem] lg:su-leading-[6.37rem]"
                 )}
               >
-                {section.title}
+                {section?.title}
               </h2>
             )}
 
-            {section.summary && (
+            {section?.summary && (
               <XssSafeContent
                 className={cnb(
                   section.summaryAlign === "center"
@@ -143,7 +143,7 @@ export default function SingleImageVideo({
                 )}
                 elementType="div"
                 data-test="component-story-lead"
-                content={section.summary}
+                content={section?.summary}
               />
             )}
           </div>

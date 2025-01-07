@@ -65,6 +65,7 @@ export default function LinkList({ search }) {
 
   return (
     <div
+      id="link-list"
       data-role="link-list-wrapper"
       className={`${
         linkItems.length > 0 ? "" : "su-link-list-no-stories"
