@@ -13,9 +13,8 @@ export default function CookieConsentBanner({
 }) {
   const markup = { __html: decode(statement) };
   return (
-    <div
+    <section
       id="cookie-consent-banner"
-      role="region"
       aria-labelledby="cookie-label"
       className="su-fixed su-z-50 su-bottom-0 su-left-0 su-right-0 su-top-auto su-bg-white dark:su-bg-black-true"
     >
@@ -46,6 +45,6 @@ export default function CookieConsentBanner({
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
