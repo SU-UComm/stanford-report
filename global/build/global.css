@@ -3136,6 +3136,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-text-\[2\.0rem\]{font-size:2.0rem}
 .su-text-\[2\.4rem\]{font-size:2.4rem}
 .su-text-\[3\.5rem\]{font-size:3.5rem}
+.su-text-\[3\.6rem\]{font-size:3.6rem}
 .su-text-\[33px\]{font-size:33px}
 .su-text-\[35px\]{font-size:35px}
 .su-text-\[39px\]{font-size:39px}
@@ -3148,7 +3149,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-text-\[49px\]{font-size:49px}
 .su-text-\[5\.5rem\]{font-size:5.5rem}
 .su-text-\[5rem\]{font-size:5rem}
-.su-text-\[3\.6rem\]{font-size:3.6rem}
 .\!su-font-bold{font-weight:700 !important}
 .su-font-black{font-weight:900}
 .su-font-bold{font-weight:700}
@@ -4308,8 +4308,8 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .sm\:su-text-23{font-size:2.3rem}
 .sm\:su-text-24{font-size:2.4rem}
 .sm\:su-text-\[22\.5px\]{font-size:22.5px}
-.sm\:su-text-\[6\.1rem\]{font-size:6.1rem}
 .sm\:su-text-\[4\.8rem\]{font-size:4.8rem}
+.sm\:su-text-\[6\.1rem\]{font-size:6.1rem}
 .sm\:su-leading-\[27px\]{line-height:27px}
 .sm\:su-leading-\[28\.75px\]{line-height:28.75px}}
 @media (min-width: 768px){
@@ -4814,6 +4814,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .lg\:su-text-\[128px\]{font-size:128px}
 .lg\:su-text-\[2\.1rem\]{font-size:2.1rem}
 .lg\:su-text-\[2\.8rem\]{font-size:2.8rem}
+.lg\:su-text-\[3\.6rem\]{font-size:3.6rem}
 .lg\:su-text-\[32px\]{font-size:32px}
 .lg\:su-text-\[33px\]{font-size:33px}
 .lg\:su-text-\[4\.3rem\]{font-size:4.3rem}
@@ -4822,7 +4823,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .lg\:su-text-\[70px\]{font-size:70px}
 .lg\:su-text-\[9\.5rem\]{font-size:9.5rem}
 .lg\:su-text-\[9\.6rem\]{font-size:9.6rem}
-.lg\:su-text-\[3\.6rem\]{font-size:3.6rem}
 .lg\:su-leading-\[1\.32\]{line-height:1.32}
 .lg\:su-leading-\[118\.75\%\]{line-height:118.75%}
 .lg\:su-leading-\[153\.6px\]{line-height:153.6px}
