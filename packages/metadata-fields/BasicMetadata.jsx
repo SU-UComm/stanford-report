@@ -126,7 +126,7 @@ export default function BasicMetadata({ data }) {
       {photographers && photographers.length ? (
         <div className="su-border-t border-t-black-20">
           <BasicFields
-            title={`Videographer${photographers.length > 1 ? "s" : ""}`}
+            title={`Photographer${photographers.length > 1 ? "s" : ""}`}
           >
             {photographers.map(
               (item) =>
