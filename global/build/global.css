@@ -3174,7 +3174,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-leading-\[17\.5px\]{line-height:17.5px}
 .su-leading-\[17px\]{line-height:17px}
 .su-leading-\[19\.106px\]{line-height:19.106px}
-.su-leading-\[19\.11px\]{line-height:19.11px}
 .su-leading-\[19\.1px\]{line-height:19.1px}
 .su-leading-\[2\.25rem\]{line-height:2.25rem}
 .su-leading-\[2\.3rem\]{line-height:2.3rem}
@@ -4569,8 +4568,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .md\:su-leading-display{line-height:1.2}
 .md\:su-opacity-\[0\.27\]{opacity:0.27}
 .\*\:md\:su-mt-14 > *{margin-top:1.4rem}
-.\*\:md\:su-size-40 > *{width:4rem;height:4rem}
-.\*\:md\:su-size-\[55\.95px\] > *{width:55.95px;height:55.95px}
 .\*\:md\:su-h-\[60px\] > *{height:60px}
 .\*\:md\:su-w-\[60px\] > *{width:60px}
 .\*\:md\:su-text-19 > *{font-size:1.9rem}

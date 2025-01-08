@@ -9,6 +9,7 @@ export default function BasicMetadata({ data }) {
     producers,
     writers,
     editors,
+    photographers,
     videographers,
     photography,
     media,
@@ -106,6 +107,28 @@ export default function BasicMetadata({ data }) {
         <div className="su-border-t border-t-black-20">
           <BasicFields title={`Editor${editors.length > 1 ? "s" : ""}`}>
             {editors.map(
+              (item) =>
+                item && (
+                  <p
+                    className="!su-m-0 su-text-21 su-leading-[1.25]"
+                    key={item.asset_assetid}
+                  >
+                    {item.asset_name}
+                  </p>
+                )
+            )}
+          </BasicFields>
+        </div>
+      ) : (
+        ""
+      )}
+
+      {photographers && photographers.length ? (
+        <div className="su-border-t border-t-black-20">
+          <BasicFields
+            title={`Videographer${photographers.length > 1 ? "s" : ""}`}
+          >
+            {photographers.map(
               (item) =>
                 item && (
                   <p
@@ -223,7 +246,7 @@ export default function BasicMetadata({ data }) {
                   <div className="" key={item.asset_assetid}>
                     <a
                       href={item.asset_url}
-                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18 su-leading-[26.25px]"
+                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18"
                     >
                       {item.asset_name}
                     </a>
