@@ -67,8 +67,8 @@ export default function FeaturedMetadata({ data }) {
     metaMap.push({
       name:
         photography.length > 1
-          ? "Photography directors"
-          : "Photography director",
+          ? "Directors of Photography"
+          : "Director of Photography",
       items: photography,
     });
   }
