@@ -8,6 +8,7 @@ export default function FeaturedMetadata({ data }) {
     producers,
     writers,
     editors,
+    photographers,
     videographers,
     photography,
     media,
@@ -49,17 +50,24 @@ export default function FeaturedMetadata({ data }) {
     });
   }
 
-  if (videographers && videographers.length) {
-    metaMap.push({
-      name: videographers.length > 1 ? "Videographers" : "Videographer",
-      items: videographers,
-    });
-  }
-
   if (editors && editors.length) {
     metaMap.push({
       name: editors.length > 1 ? "Editors" : "Editor",
       items: editors,
+    });
+  }
+
+  if (photographers && photographers.length) {
+    metaMap.push({
+      name: photographers.length > 1 ? "Photographers" : "Photographer",
+      items: photographers,
+    });
+  }
+
+  if (videographers && videographers.length) {
+    metaMap.push({
+      name: videographers.length > 1 ? "Videographers" : "Videographer",
+      items: videographers,
     });
   }
 
