@@ -127,7 +127,7 @@ export default function FeaturedMetadata({ data }) {
                   {meta.name !== "Campus unit" ? (
                     meta.items.map((item) => (
                       <p
-                        className="!su-m-0 su-text-16 su-leading-[125%] su-font-normal md:su-text-21"
+                        className="!su-m-0 su-text-16 su-leading-snug su-font-normal md:su-text-21"
                         key={item.asset_assetid}
                       >
                         {item.asset_name}
@@ -136,7 +136,7 @@ export default function FeaturedMetadata({ data }) {
                   ) : (
                     <a
                       href={meta.items.asset_url}
-                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18"
+                      className="su-no-underline su-leading-snug hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18"
                     >
                       {meta.items.asset_name}
                     </a>
@@ -170,7 +170,7 @@ export default function FeaturedMetadata({ data }) {
                   {meta.name !== "Campus unit" ? (
                     meta.items.map((item) => (
                       <p
-                        className="!su-m-0 su-text-16 su-leading-[125%] su-font-normal md:su-text-21"
+                        className="!su-m-0 su-text-16 su-leading-snug su-font-normal md:su-text-21"
                         key={item.asset_assetid}
                       >
                         {item.asset_name}
@@ -179,7 +179,7 @@ export default function FeaturedMetadata({ data }) {
                   ) : (
                     <a
                       href={meta.items.asset_url}
-                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18"
+                      className="su-no-underline su-leading-snug hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18"
                     >
                       {meta.items.asset_name}
                     </a>
@@ -228,7 +228,7 @@ export default function FeaturedMetadata({ data }) {
                 >
                   {media.map((item) => (
                     <div
-                      className="su-m-0 su-text-16 su-leading-[125%] su-font-normal su-flex su-flex-col su-gap-3 md:su-text-21"
+                      className="su-m-0 su-text-16 su-leading-snug su-font-normal su-flex su-flex-col su-gap-3 md:su-text-21"
                       key={item.asset_assetid}
                     >
                       {item.asset_name}
@@ -266,7 +266,7 @@ export default function FeaturedMetadata({ data }) {
       {campus &&
       ![null, undefined, "undefined", ""].includes(campus.asset_assetid) ? (
         <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
-          <h3 className="su-text-18 su-font-bold su-leading-[125%] su-font-sans !su-m-0">
+          <h3 className="su-text-18 su-font-bold su-leading-snug su-font-sans !su-m-0">
             Campus unit
           </h3>
 
@@ -277,7 +277,7 @@ export default function FeaturedMetadata({ data }) {
           ) : (
             <a
               href={campus.asset_url}
-              className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-19 su-font-semibold"
+              className="su-no-underline su-leading-snug hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-white hover:su-text-black su-text-19 su-font-semibold"
             >
               <div className="su-flex su-gap-20 su-max-w-[71.9rem] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
                 {campus.asset_name}
@@ -291,7 +291,7 @@ export default function FeaturedMetadata({ data }) {
 
       {relatedFiltered && relatedFiltered.length ? (
         <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
-          <h3 className="su-text-18 su-font-bold su-leading-[125%] su-font-sans !su-m-0">
+          <h3 className="su-text-18 su-font-bold su-leading-snug su-font-sans !su-m-0">
             Related topics
           </h3>
 
@@ -301,7 +301,7 @@ export default function FeaturedMetadata({ data }) {
                 <div key={item.asset_assetid}>
                   <a
                     href={item.asset_url}
-                    className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-19 su-font-semibold"
+                    className="su-no-underline su-leading-snug hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-white hover:su-text-black su-text-19 su-font-semibold"
                   >
                     {item.asset_name}
                   </a>
@@ -317,7 +317,7 @@ export default function FeaturedMetadata({ data }) {
       )}
 
       <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
-        <h3 className="su-text-18 su-font-bold su-leading-[125%] !su-m-0 su-font-sans">
+        <h3 className="su-text-18 su-font-bold su-leading-snug !su-m-0 su-font-sans">
           Share this story
         </h3>
 
