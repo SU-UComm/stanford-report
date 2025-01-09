@@ -125,17 +125,14 @@ export default function FeaturedMetadata({ data }) {
               <div className="su-w-full md:su-w-auto md:su-min-w-[17rem]">
                 <FeaturedField title={meta.name} alignment="center">
                   {meta.name !== "Campus unit" ? (
-                    meta.items.map(
-                      (item) =>
-                        item && (
-                          <p
-                            className="!su-m-0 su-text-16 su-leading-[125%] su-font-normal md:su-text-21"
-                            key={item.asset_assetid}
-                          >
-                            {item.asset_name}
-                          </p>
-                        )
-                    )
+                    meta.items.map((item) => (
+                      <p
+                        className="!su-m-0 su-text-16 su-leading-[125%] su-font-normal md:su-text-21"
+                        key={item.asset_assetid}
+                      >
+                        {item.asset_name}
+                      </p>
+                    ))
                   ) : (
                     <a
                       href={meta.items.asset_url}
@@ -171,17 +168,14 @@ export default function FeaturedMetadata({ data }) {
               <div className="su-w-full md:su-w-auto md:su-min-w-[170px]">
                 <FeaturedField title={meta.name} alignment="center">
                   {meta.name !== "Campus unit" ? (
-                    meta.items.map(
-                      (item) =>
-                        item && (
-                          <p
-                            className="!su-m-0 su-text-16 su-leading-[125%] su-font-normal md:su-text-21"
-                            key={item.asset_assetid}
-                          >
-                            {item.asset_name}
-                          </p>
-                        )
-                    )
+                    meta.items.map((item) => (
+                      <p
+                        className="!su-m-0 su-text-16 su-leading-[125%] su-font-normal md:su-text-21"
+                        key={item.asset_assetid}
+                      >
+                        {item.asset_name}
+                      </p>
+                    ))
                   ) : (
                     <a
                       href={meta.items.asset_url}
@@ -232,29 +226,26 @@ export default function FeaturedMetadata({ data }) {
                       : "su-flex su-gap-15 su-flex-col md:su-gap-25"
                   }`}
                 >
-                  {media.map(
-                    (item) =>
-                      item && (
-                        <div
-                          className="su-m-0 su-text-16 su-leading-[125%] su-font-normal su-flex su-flex-col su-gap-3 md:su-text-21"
-                          key={item.asset_assetid}
-                        >
-                          {item.asset_name}
-                          {item.asset_metadata_personEmail &&
-                            item.asset_metadata_personEmail.length > 0 && (
-                              <>
-                                <br />
-                                <a
-                                  href={`mailto:${item.asset_metadata_personEmail}`}
-                                  className="hocus:su-no-underline"
-                                >
-                                  {item.asset_metadata_personEmail}
-                                </a>
-                              </>
-                            )}
-                        </div>
-                      )
-                  )}
+                  {media.map((item) => (
+                    <div
+                      className="su-m-0 su-text-16 su-leading-[125%] su-font-normal su-flex su-flex-col su-gap-3 md:su-text-21"
+                      key={item.asset_assetid}
+                    >
+                      {item.asset_name}
+                      {item.asset_metadata_personEmail &&
+                        item.asset_metadata_personEmail.length > 0 && (
+                          <>
+                            <br />
+                            <a
+                              href={`mailto:${item.asset_metadata_personEmail}`}
+                              className="hocus:su-no-underline"
+                            >
+                              {item.asset_metadata_personEmail}
+                            </a>
+                          </>
+                        )}
+                    </div>
+                  ))}
                 </div>
               </FeaturedField>
             </div>
