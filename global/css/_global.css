@@ -964,7 +964,8 @@ WYSIWYG formatting styles
 .su-wysiwyg-content,
 .su-page-content > span,
 .container > span,
-.su-page-content > *:not([data-component], .container, .site-search) {
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) {
   @apply su-wysiwyg;
 }
 
@@ -972,7 +973,9 @@ WYSIWYG formatting styles
 .su-wysiwyg-content a,
 .su-page-content > span a,
 .container > span a,
-.su-page-content > *:not([data-component], .container, .site-search) a {
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content)
+  a {
   @apply hocus:su-no-underline;
 }
 
