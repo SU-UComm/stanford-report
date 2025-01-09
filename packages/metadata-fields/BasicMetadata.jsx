@@ -48,7 +48,7 @@ export default function BasicMetadata({ data }) {
           <BasicFields title={`Author${authors.length > 1 ? "s" : ""}`}>
             {authors.map((item) => (
               <p
-                className="!su-m-0 su-text-21 su-leading-[1.25]"
+                className="!su-m-0 su-text-21 su-leading-display"
                 key={item.asset_assetid}
               >
                 {item.asset_name}
@@ -65,7 +65,7 @@ export default function BasicMetadata({ data }) {
           <BasicFields title={`Producer${producers.length > 1 ? "s" : ""}`}>
             {producers.map((item) => (
               <p
-                className="!su-m-0 su-text-21 su-leading-[1.25]"
+                className="!su-m-0 su-text-21 su-leading-display"
                 key={item.asset_assetid}
               >
                 {item.asset_name}
@@ -82,7 +82,7 @@ export default function BasicMetadata({ data }) {
           <BasicFields title={`Writer${writers.length > 1 ? "s" : ""}`}>
             {writers.map((item) => (
               <p
-                className="!su-m-0 su-text-21 su-leading-[1.25]"
+                className="!su-m-0 su-text-21 su-leading-display"
                 key={item.asset_assetid}
               >
                 {item.asset_name}
@@ -99,7 +99,7 @@ export default function BasicMetadata({ data }) {
           <BasicFields title={`Editor${editors.length > 1 ? "s" : ""}`}>
             {editors.map((item) => (
               <p
-                className="!su-m-0 su-text-21 su-leading-[1.25]"
+                className="!su-m-0 su-text-21 su-leading-display"
                 key={item.asset_assetid}
               >
                 {item.asset_name}
@@ -118,7 +118,7 @@ export default function BasicMetadata({ data }) {
           >
             {photographers.map((item) => (
               <p
-                className="!su-m-0 su-text-21 su-leading-[1.25]"
+                className="!su-m-0 su-text-21 su-leading-display"
                 key={item.asset_assetid}
               >
                 {item.asset_name}
@@ -137,7 +137,7 @@ export default function BasicMetadata({ data }) {
           >
             {videographers.map((item) => (
               <p
-                className="!su-m-0 su-text-21 su-leading-[1.25]"
+                className="!su-m-0 su-text-21 su-leading-display"
                 key={item.asset_assetid}
               >
                 {item.asset_name}
@@ -158,7 +158,7 @@ export default function BasicMetadata({ data }) {
           >
             {photography.map((item) => (
               <p
-                className="!su-m-0 su-text-21 su-leading-[1.25]"
+                className="!su-m-0 su-text-21 su-leading-display"
                 key={item.asset_assetid}
               >
                 {item.asset_name}
@@ -182,7 +182,7 @@ export default function BasicMetadata({ data }) {
                       <br />
                       <a
                         href={`mailto:${item.asset_metadata_personEmail}`}
-                        className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18 su-leading-[26.25px]"
+                        className="hocus:su-no-underline hocus:su-text-digital-red dark:hocus:su-text-dark-mode-red su-text-18"
                       >
                         {item.asset_metadata_personEmail}
                       </a>
@@ -202,7 +202,7 @@ export default function BasicMetadata({ data }) {
           <BasicFields title="Campus unit">
             <a
               href={campus.asset_url}
-              className="su-no-underline su-leading-[22.5px] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18 su-leading-[26.25px]"
+              className="su-no-underline su-leading-display hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-white hover:su-text-black su-text-18"
             >
               {campus.asset_name}
             </a>
@@ -222,7 +222,7 @@ export default function BasicMetadata({ data }) {
               <div className="" key={item.asset_assetid}>
                 <a
                   href={item.asset_url}
-                  className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18"
+                  className="su-no-underline su-leading-display hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-white hover:su-text-black su-text-18"
                 >
                   {item.asset_name}
                 </a>
@@ -240,7 +240,7 @@ export default function BasicMetadata({ data }) {
             onClick={copyLink}
             data-role="copy-link"
             type="button"
-            className="su-text-digital-blue dark:su-text-digital-blue-vivid su-text-21 su-font-semibold su-mr-auto hocus:su-underline su-leading-[125%]"
+            className="su-text-digital-blue dark:su-text-digital-blue-vivid su-text-21 su-font-semibold su-mr-auto hocus:su-underline su-leading-display"
           >
             {copyLinkTitle}
 
