@@ -1487,11 +1487,13 @@ WYSIWYG formatting styles
 .su-wysiwyg-content > *:first-child,
 .su-page-content > span > *:first-child,
 .container > span > *:first-child,
-.su-page-content > *:not([data-component], .container, .site-search) > *:first-child{margin-top:-0.25em}
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) > *:first-child{margin-top:-0.25em}
 .su-wysiwyg-content > *:last-child,
 .su-page-content > span > *:last-child,
 .container > span > *:last-child,
-.su-page-content > *:not([data-component], .container, .site-search) > *:last-child{margin-bottom:0}
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) > *:last-child{margin-bottom:0}
 .su-wysiwyg-content p,.su-wysiwyg-content ol,.su-wysiwyg-content ul,.su-wysiwyg-content dl,
 .su-page-content > span p,
 .su-page-content > span ol,
@@ -1501,14 +1503,19 @@ WYSIWYG formatting styles
 .container > span ol,
 .container > span ul,
 .container > span dl,
-.su-page-content > *:not([data-component], .container, .site-search) p,
-.su-page-content > *:not([data-component], .container, .site-search) ol,
-.su-page-content > *:not([data-component], .container, .site-search) ul,
-.su-page-content > *:not([data-component], .container, .site-search) dl{margin-bottom:1.6em}
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) p,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) ol,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) ul,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) dl{margin-bottom:1.6em}
 .su-wysiwyg-content li p,
 .su-page-content > span li p,
 .container > span li p,
-.su-page-content > *:not([data-component], .container, .site-search) li p{margin-bottom:0.4em}
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) li p{margin-bottom:0.4em}
 .su-wysiwyg-content h2,.su-wysiwyg-content h3,.su-wysiwyg-content h4,.su-wysiwyg-content h5,.su-wysiwyg-content h6,
 .su-page-content > span h2,
 .su-page-content > span h3,
@@ -1520,11 +1527,16 @@ WYSIWYG formatting styles
 .container > span h4,
 .container > span h5,
 .container > span h6,
-.su-page-content > *:not([data-component], .container, .site-search) h2,
-.su-page-content > *:not([data-component], .container, .site-search) h3,
-.su-page-content > *:not([data-component], .container, .site-search) h4,
-.su-page-content > *:not([data-component], .container, .site-search) h5,
-.su-page-content > *:not([data-component], .container, .site-search) h6{margin-bottom:0.7em;clear:both;}
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h2,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h3,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h4,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h5,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h6{margin-bottom:0.7em;clear:both;}
 .su-wysiwyg-content h2:not(:first-child),.su-wysiwyg-content h3:not(:first-child),.su-wysiwyg-content h4:not(:first-child),.su-wysiwyg-content h5:not(:first-child),.su-wysiwyg-content h6:not(:first-child),
 .su-page-content > span h2:not(:first-child),
 .su-page-content > span h3:not(:first-child),
@@ -1536,11 +1548,16 @@ WYSIWYG formatting styles
 .container > span h4:not(:first-child),
 .container > span h5:not(:first-child),
 .container > span h6:not(:first-child),
-.su-page-content > *:not([data-component], .container, .site-search) h2:not(:first-child),
-.su-page-content > *:not([data-component], .container, .site-search) h3:not(:first-child),
-.su-page-content > *:not([data-component], .container, .site-search) h4:not(:first-child),
-.su-page-content > *:not([data-component], .container, .site-search) h5:not(:first-child),
-.su-page-content > *:not([data-component], .container, .site-search) h6:not(:first-child){margin-top:1.6em}
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h2:not(:first-child),
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h3:not(:first-child),
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h4:not(:first-child),
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h5:not(:first-child),
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h6:not(:first-child){margin-top:1.6em}
 .su-wysiwyg-content h2 a,.su-wysiwyg-content h3 a,.su-wysiwyg-content h4 a,.su-wysiwyg-content h5 a,.su-wysiwyg-content h6 a,
 .su-page-content > span h2 a,
 .su-page-content > span h3 a,
@@ -1552,11 +1569,16 @@ WYSIWYG formatting styles
 .container > span h4 a,
 .container > span h5 a,
 .container > span h6 a,
-.su-page-content > *:not([data-component], .container, .site-search) h2 a,
-.su-page-content > *:not([data-component], .container, .site-search) h3 a,
-.su-page-content > *:not([data-component], .container, .site-search) h4 a,
-.su-page-content > *:not([data-component], .container, .site-search) h5 a,
-.su-page-content > *:not([data-component], .container, .site-search) h6 a{text-decoration:none}
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h2 a,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h3 a,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h4 a,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h5 a,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h6 a{text-decoration:none}
 .su-wysiwyg-content h2 a:hover,.su-wysiwyg-content h2 a:focus,.su-wysiwyg-content h3 a:hover,.su-wysiwyg-content h3 a:focus,.su-wysiwyg-content h4 a:hover,.su-wysiwyg-content h4 a:focus,.su-wysiwyg-content h5 a:hover,.su-wysiwyg-content h5 a:focus,.su-wysiwyg-content h6 a:hover,.su-wysiwyg-content h6 a:focus,
 .su-page-content > span h2 a:hover,
 .su-page-content > span h2 a:focus,
@@ -1578,16 +1600,26 @@ WYSIWYG formatting styles
 .container > span h5 a:focus,
 .container > span h6 a:hover,
 .container > span h6 a:focus,
-.su-page-content > *:not([data-component], .container, .site-search) h2 a:hover,
-.su-page-content > *:not([data-component], .container, .site-search) h2 a:focus,
-.su-page-content > *:not([data-component], .container, .site-search) h3 a:hover,
-.su-page-content > *:not([data-component], .container, .site-search) h3 a:focus,
-.su-page-content > *:not([data-component], .container, .site-search) h4 a:hover,
-.su-page-content > *:not([data-component], .container, .site-search) h4 a:focus,
-.su-page-content > *:not([data-component], .container, .site-search) h5 a:hover,
-.su-page-content > *:not([data-component], .container, .site-search) h5 a:focus,
-.su-page-content > *:not([data-component], .container, .site-search) h6 a:hover,
-.su-page-content > *:not([data-component], .container, .site-search) h6 a:focus{text-decoration:underline}
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h2 a:hover,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h2 a:focus,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h3 a:hover,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h3 a:focus,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h4 a:hover,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h4 a:focus,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h5 a:hover,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h5 a:focus,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h6 a:hover,
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h6 a:focus{text-decoration:underline}
 .su-wysiwyg-content h2 + h3:not(:first-child),.su-wysiwyg-content h3 + h4:not(:first-child),.su-wysiwyg-content h4 + h5:not(:first-child),.su-wysiwyg-content h5 + h6:not(:first-child),
 .su-page-content > span h2 + h3:not(:first-child),
 .su-page-content > span h3 + h4:not(:first-child),
@@ -1597,19 +1629,27 @@ WYSIWYG formatting styles
 .container > span h3 + h4:not(:first-child),
 .container > span h4 + h5:not(:first-child),
 .container > span h5 + h6:not(:first-child),
-.su-page-content > *:not([data-component], .container, .site-search) h2 + h3:not(:first-child),
-.su-page-content > *:not([data-component], .container, .site-search) h3 + h4:not(:first-child),
-.su-page-content > *:not([data-component], .container, .site-search) h4 + h5:not(:first-child),
-.su-page-content > *:not([data-component], .container, .site-search) h5 + h6:not(:first-child){margin-top:1em}
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h2 + h3:not(:first-child),
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h3 + h4:not(:first-child),
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h4 + h5:not(:first-child),
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) h5 + h6:not(:first-child){margin-top:1em}
 /* STANFORD-819 */
 .su-wysiwyg-content a:hover,
 .su-page-content > span a:hover,
 .container > span a:hover,
-.su-page-content > *:not([data-component], .container, .site-search) a:hover{text-decoration-line:none}
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content)
+  a:hover{text-decoration-line:none}
 .su-wysiwyg-content a:focus,
 .su-page-content > span a:focus,
 .container > span a:focus,
-.su-page-content > *:not([data-component], .container, .site-search) a:focus{text-decoration-line:none}
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content)
+  a:focus{text-decoration-line:none}
 /* Set specfic spacing for paragraphs */
 [data-component="text-callout"] .su-wysiwyg-content p{margin-bottom:2rem}
 @media (min-width: 768px){
@@ -3159,7 +3199,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-leading{line-height:1.5}
 .su-leading-4{line-height:1rem}
 .su-leading-\[0\]{line-height:0}
-.su-leading-\[1\.25\]{line-height:1.25}
 .su-leading-\[1\.5\]{line-height:1.5}
 .su-leading-\[1\.672rem\]{line-height:1.672rem}
 .su-leading-\[1\.6rem\]{line-height:1.6rem}
@@ -3174,7 +3213,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-leading-\[17\.5px\]{line-height:17.5px}
 .su-leading-\[17px\]{line-height:17px}
 .su-leading-\[19\.106px\]{line-height:19.106px}
-.su-leading-\[19\.11px\]{line-height:19.11px}
 .su-leading-\[19\.1px\]{line-height:19.1px}
 .su-leading-\[2\.25rem\]{line-height:2.25rem}
 .su-leading-\[2\.3rem\]{line-height:2.3rem}
@@ -4028,6 +4066,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .hover\:su-border-digital-red:hover{--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity))}
 .hover\:su-bg-black:hover{--tw-bg-opacity:1;background-color:rgb(46 45 41 / var(--tw-bg-opacity))}
 .hover\:su-bg-transparent:hover{background-color:transparent}
+.hover\:su-text-black:hover{--tw-text-opacity:1;color:rgb(46 45 41 / var(--tw-text-opacity))}
 .hover\:su-text-digital-red:hover{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
 .hover\:su-text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .hover\:su-underline:hover{text-decoration-line:underline}
@@ -4569,8 +4608,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .md\:su-leading-display{line-height:1.2}
 .md\:su-opacity-\[0\.27\]{opacity:0.27}
 .\*\:md\:su-mt-14 > *{margin-top:1.4rem}
-.\*\:md\:su-size-40 > *{width:4rem;height:4rem}
-.\*\:md\:su-size-\[55\.95px\] > *{width:55.95px;height:55.95px}
 .\*\:md\:su-h-\[60px\] > *{height:60px}
 .\*\:md\:su-w-\[60px\] > *{width:60px}
 .\*\:md\:su-text-19 > *{font-size:1.9rem}

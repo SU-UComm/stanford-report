@@ -8,6 +8,7 @@ export default function FeaturedMetadata({ data }) {
     producers,
     writers,
     editors,
+    photographers,
     videographers,
     photography,
     media,
@@ -49,13 +50,6 @@ export default function FeaturedMetadata({ data }) {
     });
   }
 
-  if (videographers && videographers.length) {
-    metaMap.push({
-      name: videographers.length > 1 ? "Videographers" : "Videographer",
-      items: videographers,
-    });
-  }
-
   if (editors && editors.length) {
     metaMap.push({
       name: editors.length > 1 ? "Editors" : "Editor",
@@ -63,12 +57,26 @@ export default function FeaturedMetadata({ data }) {
     });
   }
 
+  if (photographers && photographers.length) {
+    metaMap.push({
+      name: photographers.length > 1 ? "Photographers" : "Photographer",
+      items: photographers,
+    });
+  }
+
+  if (videographers && videographers.length) {
+    metaMap.push({
+      name: videographers.length > 1 ? "Videographers" : "Videographer",
+      items: videographers,
+    });
+  }
+
   if (photography && photography.length) {
     metaMap.push({
       name:
         photography.length > 1
-          ? "Photography directors"
-          : "Photography director",
+          ? "Directors of Photography"
+          : "Director of Photography",
       items: photography,
     });
   }
@@ -117,21 +125,18 @@ export default function FeaturedMetadata({ data }) {
               <div className="su-w-full md:su-w-auto md:su-min-w-[17rem]">
                 <FeaturedField title={meta.name} alignment="center">
                   {meta.name !== "Campus unit" ? (
-                    meta.items.map(
-                      (item) =>
-                        item && (
-                          <p
-                            className="!su-m-0 su-text-16 su-leading-[125%] su-font-normal md:su-text-21"
-                            key={item.asset_assetid}
-                          >
-                            {item.asset_name}
-                          </p>
-                        )
-                    )
+                    meta.items.map((item) => (
+                      <p
+                        className="!su-m-0 su-text-16 su-leading-snug su-font-normal md:su-text-21"
+                        key={item.asset_assetid}
+                      >
+                        {item.asset_name}
+                      </p>
+                    ))
                   ) : (
                     <a
                       href={meta.items.asset_url}
-                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18"
+                      className="su-no-underline su-leading-snug hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18"
                     >
                       {meta.items.asset_name}
                     </a>
@@ -163,21 +168,18 @@ export default function FeaturedMetadata({ data }) {
               <div className="su-w-full md:su-w-auto md:su-min-w-[170px]">
                 <FeaturedField title={meta.name} alignment="center">
                   {meta.name !== "Campus unit" ? (
-                    meta.items.map(
-                      (item) =>
-                        item && (
-                          <p
-                            className="!su-m-0 su-text-16 su-leading-[125%] su-font-normal md:su-text-21"
-                            key={item.asset_assetid}
-                          >
-                            {item.asset_name}
-                          </p>
-                        )
-                    )
+                    meta.items.map((item) => (
+                      <p
+                        className="!su-m-0 su-text-16 su-leading-snug su-font-normal md:su-text-21"
+                        key={item.asset_assetid}
+                      >
+                        {item.asset_name}
+                      </p>
+                    ))
                   ) : (
                     <a
                       href={meta.items.asset_url}
-                      className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18"
+                      className="su-no-underline su-leading-snug hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-18"
                     >
                       {meta.items.asset_name}
                     </a>
@@ -224,29 +226,26 @@ export default function FeaturedMetadata({ data }) {
                       : "su-flex su-gap-15 su-flex-col md:su-gap-25"
                   }`}
                 >
-                  {media.map(
-                    (item) =>
-                      item && (
-                        <div
-                          className="su-m-0 su-text-16 su-leading-[125%] su-font-normal su-flex su-flex-col su-gap-3 md:su-text-21"
-                          key={item.asset_assetid}
-                        >
-                          {item.asset_name}
-                          {item.asset_metadata_personEmail &&
-                            item.asset_metadata_personEmail.length > 0 && (
-                              <>
-                                <br />
-                                <a
-                                  href={`mailto:${item.asset_metadata_personEmail}`}
-                                  className="hocus:su-no-underline"
-                                >
-                                  {item.asset_metadata_personEmail}
-                                </a>
-                              </>
-                            )}
-                        </div>
-                      )
-                  )}
+                  {media.map((item) => (
+                    <div
+                      className="su-m-0 su-text-16 su-leading-snug su-font-normal su-flex su-flex-col su-gap-3 md:su-text-21"
+                      key={item.asset_assetid}
+                    >
+                      {item.asset_name}
+                      {item.asset_metadata_personEmail &&
+                        item.asset_metadata_personEmail.length > 0 && (
+                          <>
+                            <br />
+                            <a
+                              href={`mailto:${item.asset_metadata_personEmail}`}
+                              className="hocus:su-no-underline"
+                            >
+                              {item.asset_metadata_personEmail}
+                            </a>
+                          </>
+                        )}
+                    </div>
+                  ))}
                 </div>
               </FeaturedField>
             </div>
@@ -267,7 +266,7 @@ export default function FeaturedMetadata({ data }) {
       {campus &&
       ![null, undefined, "undefined", ""].includes(campus.asset_assetid) ? (
         <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
-          <h3 className="su-text-18 su-font-bold su-leading-[125%] su-font-sans !su-m-0">
+          <h3 className="su-text-18 su-font-bold su-leading-snug su-font-sans !su-m-0">
             Campus unit
           </h3>
 
@@ -278,7 +277,7 @@ export default function FeaturedMetadata({ data }) {
           ) : (
             <a
               href={campus.asset_url}
-              className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-19 su-font-semibold"
+              className="su-no-underline su-leading-snug hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-white hover:su-text-black su-text-19 su-font-semibold"
             >
               <div className="su-flex su-gap-20 su-max-w-[71.9rem] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
                 {campus.asset_name}
@@ -292,7 +291,7 @@ export default function FeaturedMetadata({ data }) {
 
       {relatedFiltered && relatedFiltered.length ? (
         <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
-          <h3 className="su-text-18 su-font-bold su-leading-[125%] su-font-sans !su-m-0">
+          <h3 className="su-text-18 su-font-bold su-leading-snug su-font-sans !su-m-0">
             Related topics
           </h3>
 
@@ -302,7 +301,7 @@ export default function FeaturedMetadata({ data }) {
                 <div key={item.asset_assetid}>
                   <a
                     href={item.asset_url}
-                    className="su-no-underline su-leading-[125%] hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-dark-mode-red hover:su-text-digital-red su-text-19 su-font-semibold"
+                    className="su-no-underline su-leading-snug hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-white hover:su-text-black su-text-19 su-font-semibold"
                   >
                     {item.asset_name}
                   </a>
@@ -318,7 +317,7 @@ export default function FeaturedMetadata({ data }) {
       )}
 
       <div className="su-text-center su-rs-mt-4 su-flex su-flex-col su-gap-20 md:su-gap-26">
-        <h3 className="su-text-18 su-font-bold su-leading-[125%] !su-m-0 su-font-sans">
+        <h3 className="su-text-18 su-font-bold su-leading-snug !su-m-0 su-font-sans">
           Share this story
         </h3>
 
