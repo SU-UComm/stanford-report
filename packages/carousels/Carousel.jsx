@@ -245,11 +245,9 @@ export function Carousel({
           swiper.slides.forEach((slide) => {
             if (slide.classList.contains("swiper-slide-visible")) {
               slide.removeAttribute("aria-hidden");
-              slide.removeAttribute("tabindex");
               slide.removeAttribute("inert");
             } else {
               slide.setAttribute("aria-hidden", "true");
-              slide.setAttribute("tabindex", "0");
               slide.setAttribute("inert", "true");
             }
           });
@@ -287,7 +285,7 @@ export function Carousel({
       </Swiper>
       {slides.length > 1 && (
         <div className="component-slider-controls su-flex su-mt-45 lg:su-mt-48 su-items-center su-content-center">
-          <div
+          <nav
             aria-label="Slide Navigation"
             className={`component-slider-pagination component-slider-pagination-${uniqueClass} su-mr-full`}
           />
