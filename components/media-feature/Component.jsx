@@ -76,7 +76,7 @@ export default function MediaFeature({
               </a>
             </h3>
 
-            <div className="su-text-18 md:su-text-16 su-mb-15 md:su-mb-19 su-gap-6 su-text-black-70 dark:su-text-black-50 su-flex su-nowrap su-items-center su-leading-none">
+            <div className="su-text-18 md:su-text-16 su-mb-15 md:su-mb-19 su-gap-6 su-text-black-70 su-flex su-nowrap su-items-center su-leading-none">
               <FAIcon
                 icon={typeIcon}
                 set="solid"
