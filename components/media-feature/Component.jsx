@@ -64,7 +64,7 @@ export default function MediaFeature({
               <FeaturedHeading type={mediaType} />
             </div>
 
-            <h3 className="su-text-[35px] su-font-bold su-leading-tight su-m-0 su-pb-8 md:su-pb-19 md:su-text-[40px] lg:su-text-[43px]">
+            <h3 className="su-text-[35px] su-font-bold su-leading-tight su-mb-15 md:su-mb-19 md:su-text-[40px] lg:su-text-[43px]">
               <a
                 href={linkUrl}
                 className="su-media-feature-title-link su-stretched-link"
@@ -76,7 +76,7 @@ export default function MediaFeature({
               </a>
             </h3>
 
-            <div className="su-w-full su-flex su-gap-[0.6rem] su-text-18 su-text-black-70 su-font-semibold su-items-center su-pb-15 su-leading-snug md:su-pb-19 md:su-text-16">
+            <div className="su-text-18 md:su-text-16 su-mb-15 md:su-mb-19 su-gap-6 su-text-black-70 dark:su-text-black-50 su-flex su-nowrap su-items-center su-leading-none">
               <FAIcon
                 icon={typeIcon}
                 set="solid"
@@ -101,20 +101,6 @@ export default function MediaFeature({
     </Container>
   );
 }
-
-// function MediaType({ type }) {
-//   const iconMap = new Map();
-
-//   iconMap.set("Podcast", <Podcast variant="outline" />);
-//   iconMap.set("Book", <BookOpenCover className="su-w-[1.2em]" aria-hidden />);
-
-//   return (
-//     <>
-//       <span className="*:su-size-20">{iconMap.get(type)}</span>
-//       {type}
-//     </>
-//   );
-// }
 
 function FeaturedHeading({ type }) {
   switch (type) {
