@@ -1,4 +1,5 @@
 import React from "react";
+import { cnb } from "cnbuilder";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { SidebarHeading } from "../headings/Heading";
 import { FAIcon } from "../icons/FAIcon";
@@ -82,7 +83,12 @@ export default function MediaCard({
           </div>
         )}
         {title && (
-          <h3 className="su-text-[3.5rem] su-mb-5 su-leading-tight md:su-text-[4rem] lg:su-text-[4.3rem]">
+          <h3
+            className={cnb(
+              "su-text-[3.5rem] su-leading-tight md:su-text-[4rem] lg:su-text-[4.3rem]",
+              author ? "su-mb-5" : "su-mb-15 md:su-mb-19"
+            )}
+          >
             {liveUrl && (
               // eslint-disable-next-line jsx-a11y/control-has-associated-label
               <a
