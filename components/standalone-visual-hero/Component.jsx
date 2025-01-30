@@ -43,7 +43,7 @@ export default function StandaloneVisualHero(props) {
 
   return (
     <Container>
-      <div className="su-flex su-justify-between su-flex-wrap su-rs-mt-6">
+      <div className="su-flex su-justify-between su-flex-wrap">
         <span className="su-flex su-items-center su-justify-center su-text-16 md:su-basefont-23">
           <time className="su-m-0 su-mr-4 su-font-semibold">
             {pubDateFormatted}
@@ -64,11 +64,13 @@ export default function StandaloneVisualHero(props) {
       <h1 className="su-mt-32 sm:su-mt-45 xl:su-mt-58 su-font-serif">
         {title}
       </h1>
-      <XssSafeContent
-        className="su-font-serif su-intro-text su-mb-0 su-rs-mt-2 su-text-21 su-leading-[27.35px] md:su-text-28 md:su-leading-[36.47px]"
-        content={summary}
-        elementType="p"
-      />
+      {summary && (
+        <XssSafeContent
+          className="su-font-serif su-intro-text su-mb-0 su-rs-mt-2 su-text-21 su-leading-[27.35px] md:su-text-28 md:su-leading-[36.47px]"
+          content={summary}
+          elementType="p"
+        />
+      )}
     </Container>
   );
 }
