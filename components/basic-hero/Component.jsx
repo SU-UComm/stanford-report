@@ -20,7 +20,7 @@ export default function BasicHero(props) {
       <div className="su-flex su-justify-between su-flex-wrap su-rs-mb-5">
         <h1
           className={cnb(
-            "su-font-serif su-mb-0",
+            "su-font-serif su-mb-0 xl:su-text-[6.4rem]",
             titleAlignment === "center" && "su-text-center su-mx-auto"
           )}
         >
