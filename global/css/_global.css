@@ -1331,3 +1331,9 @@ Subscribe to Stanford Report Marketo form styles
 .su-page-campaign.su-dark body {
   @apply su-bg-black-true;
 }
+
+/* Federal Issues page syle overrides */
+.fed-issues .su-page .su-page-content > * {
+  width: 100%;
+  max-width: 90rem;
+}
