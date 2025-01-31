@@ -1379,3 +1379,7 @@ Subscribe to Stanford Report Marketo form styles
 .fed-issues .su-upper-content {
   @apply su-bg-cardinal-red su-text-white;
 }
+
+.fed-issues .su-upper-content h1 {
+  @apply su-rs-pb-7;
+}
