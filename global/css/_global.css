@@ -1333,7 +1333,16 @@ Subscribe to Stanford Report Marketo form styles
 }
 
 /* Federal Issues page syle overrides */
-.fed-issues .su-page .su-page-content > * {
+.fed-issues
+  .su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+  .su-page-content
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ) {
   width: 100%;
   max-width: 90rem;
 }
