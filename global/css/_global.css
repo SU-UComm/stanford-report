@@ -1346,3 +1346,11 @@ Subscribe to Stanford Report Marketo form styles
   width: 100%;
   max-width: 90rem;
 }
+
+.fed-issues
+  .su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+  .su-page-content
+  div
+  > h2 {
+  @apply su-type-1;
+}
