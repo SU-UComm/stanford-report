@@ -2050,6 +2050,17 @@ Subscribe to Stanford Report Marketo form styles
   width: 100%;
   max-width: 90rem;
 }
+.fed-issues .su-page-content > div:not([data-component], .site-search) ul > li {
+  padding-left: 4rem;
+}
+.fed-issues
+  .su-page-content
+  > div:not([data-component], .site-search)
+  ul
+  > li::before {
+  width: 1rem;
+  height: 1rem;
+}
 .scrollable-list__item::after{display:inline-block;vertical-align:middle}
 [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{float:left;margin-top:0.2rem;margin-right:0.9rem;padding:0;font-family:"Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif;font-size:7.2rem;font-weight:700;line-height:35px}
 @media (min-width: 768px){
