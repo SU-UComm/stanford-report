@@ -1331,3 +1331,51 @@ Subscribe to Stanford Report Marketo form styles
 .su-page-campaign.su-dark body {
   @apply su-bg-black-true;
 }
+
+/* Federal Issues page syle overrides */
+.fed-issues
+  .su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+  .su-page-content
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ) {
+  width: 100%;
+  max-width: 90rem;
+}
+
+.fed-issues
+  .su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+  .su-page-content
+  div
+  > h2 {
+  @apply su-type-2;
+}
+
+.fed-issues
+  .su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+  .su-page-content
+  .su-container-narrow {
+  width: 100%;
+  max-width: 90rem;
+}
+
+.fed-issues .su-page-content > div:not([data-component], .site-search) ul > li {
+  padding-left: 4rem;
+}
+
+.fed-issues
+  .su-page-content
+  > div:not([data-component], .site-search)
+  ul
+  > li::before {
+  width: 1rem;
+  height: 1rem;
+}
+
+.fed-issues .su-upper-content {
+  @apply su-bg-cardinal-red su-text-white;
+}
