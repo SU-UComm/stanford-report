@@ -1362,3 +1362,16 @@ Subscribe to Stanford Report Marketo form styles
   width: 100%;
   max-width: 90rem;
 }
+
+.fed-issues .su-page-content > div:not([data-component], .site-search) ul > li {
+  padding-left: 4rem;
+}
+
+.fed-issues
+  .su-page-content
+  > div:not([data-component], .site-search)
+  ul
+  > li::before {
+  width: 1rem;
+  height: 1rem;
+}
