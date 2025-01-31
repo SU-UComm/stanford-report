@@ -1352,5 +1352,13 @@ Subscribe to Stanford Report Marketo form styles
   .su-page-content
   div
   > h2 {
-  @apply su-type-1;
+  @apply su-type-2;
+}
+
+.fed-issues
+  .su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+  .su-page-content
+  .su-container-narrow {
+  width: 100%;
+  max-width: 90rem;
 }
