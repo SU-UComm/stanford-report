@@ -277,7 +277,7 @@ export default function FeaturedMetadata({ data }) {
           ) : (
             <a
               href={campus.asset_url}
-              className="su-no-underline su-leading-snug hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-white hover:su-text-black su-text-19 su-font-semibold"
+              className="su-leading-snug hocus:su-no-underline su-text-black hocus:su-text-digital-red dark:su-text-white dark:hocus:su-text-dark-mode-red su-text-19 su-font-semibold"
             >
               <div className="su-flex su-gap-20 su-max-w-[71.9rem] su-flex-col md:su-gap-x-27 md:su-gap-y-12 md:su-flex-row md:su-flex-wrap md:su-justify-center">
                 {campus.asset_name}
@@ -301,7 +301,7 @@ export default function FeaturedMetadata({ data }) {
                 <div key={item.asset_assetid}>
                   <a
                     href={item.asset_url}
-                    className="su-no-underline su-leading-snug hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-white hover:su-text-black su-text-19 su-font-semibold"
+                    className="su-leading-snug hocus:su-no-underline su-text-black hocus:su-text-digital-red dark:su-text-white dark:hocus:su-text-dark-mode-red su-text-19 su-font-semibold"
                   >
                     {item.asset_name}
                   </a>
