@@ -202,7 +202,7 @@ export default function BasicMetadata({ data }) {
           <BasicFields title="Campus unit">
             <a
               href={campus.asset_url}
-              className="su-no-underline su-leading-snug hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-white hover:su-text-black su-text-18"
+              className="su-w-fit su-leading-snug hocus:su-no-underline su-text-black hocus:su-text-digital-red dark:su-text-white dark:hocus:su-text-dark-mode-red su-text-18"
             >
               {campus.asset_name}
             </a>
@@ -222,7 +222,7 @@ export default function BasicMetadata({ data }) {
               <div className="" key={item.asset_assetid}>
                 <a
                   href={item.asset_url}
-                  className="su-no-underline su-leading-snug hover:su-underline su-text-digital-red dark:su-text-dark-mode-red dark:hover:su-text-white hover:su-text-black su-text-18"
+                  className="su-leading-snug hocus:su-no-underline su-text-black hocus:su-text-digital-red dark:su-text-white dark:hocus:su-text-dark-mode-red su-text-18"
                 >
                   {item.asset_name}
                 </a>
@@ -240,11 +240,11 @@ export default function BasicMetadata({ data }) {
             onClick={copyLink}
             data-role="copy-link"
             type="button"
-            className="su-text-digital-blue dark:su-text-digital-blue-vivid su-text-21 su-font-semibold su-mr-auto hocus:su-underline su-leading-snug"
+            className="su-group su-text-digital-blue dark:su-text-digital-blue-vivid su-text-21 su-font-semibold su-mr-auto hocus:su-underline hocus:su-text-black dark:hocus:su-text-white su-leading-snug su-transition-colors"
           >
             {copyLinkTitle}
 
-            <span className="*:su-inline-block *:su-ml-8">
+            <span className="*:su-inline-block *:su-ml-8 group-hocus:*:*:su-fill-current">
               <ShareLink />
             </span>
           </button>
