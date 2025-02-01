@@ -240,11 +240,11 @@ export default function BasicMetadata({ data }) {
             onClick={copyLink}
             data-role="copy-link"
             type="button"
-            className="su-text-digital-blue dark:su-text-digital-blue-vivid su-text-21 su-font-semibold su-mr-auto hocus:su-underline su-leading-snug"
+            className="su-group su-text-digital-blue dark:su-text-digital-blue-vivid su-text-21 su-font-semibold su-mr-auto hocus:su-underline hocus:su-text-black dark:hocus:su-text-white su-leading-snug su-transition-colors"
           >
             {copyLinkTitle}
 
-            <span className="*:su-inline-block *:su-ml-8">
+            <span className="*:su-inline-block *:su-ml-8 group-hocus:*:*:su-fill-current">
               <ShareLink />
             </span>
           </button>

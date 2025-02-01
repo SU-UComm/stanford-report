@@ -325,11 +325,11 @@ export default function FeaturedMetadata({ data }) {
           onClick={copyLink}
           type="button"
           data-role="copy-link"
-          className="su-text-digital-blue dark:su-text-digital-blue-vivid su-text-21 su-font-semibold su-mx-auto hocus:su-underline"
+          className="su-group su-text-digital-blue dark:su-text-digital-blue-vivid su-text-21 su-font-semibold su-mx-auto hocus:su-underline hocus:su-text-black dark:hocus:su-text-white su-transition-colors"
         >
           {copyLinkTitle}
 
-          <span className="*:su-inline-block *:su-ml-8">
+          <span className="*:su-inline-block *:su-ml-8 group-hocus:*:*:su-fill-current">
             <ShareLink />
           </span>
         </button>
