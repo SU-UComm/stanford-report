@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "single-cta-block",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "namespace": "stanford-components",
   "description": "A block of text content with a CTA and optional image.",
   "displayName": "Single CTA Block",
@@ -20,6 +20,12 @@
       "input": {
         "type": "object",
         "properties": {
+          "size": {
+            "title": "Component size",
+            "description": "If you are creating a campaign page, choose 'campaign'otherwise leave as 'normal'.",
+            "enum": ["normal", "campaign"],
+            "default": "normal"
+          },
           "eyebrow": {
             "title": "Eyebrow",
             "description": "This is the superheading above the title.",

@@ -7,6 +7,9 @@ import { LinkButton } from "../../packages/links/LinkButton";
 /**
  * Single CTA Block component
  *
+ * @param {string} size
+ * The sizing of the elements
+ *
  * @param {string} title
  * The title of the block
  *
@@ -39,6 +42,7 @@ import { LinkButton } from "../../packages/links/LinkButton";
  */
 
 export default function SingleCtaBlock({
+  size,
   title,
   eyebrow,
   description,
@@ -76,18 +80,31 @@ export default function SingleCtaBlock({
              */
             <span
               aria-hidden
-              className="su-block su-mx-auto su-mb-02em su-text-center su-text-black-60 dark:su-text-black-40 su-font-semibold su-type-1 su-leading-display"
+              className={cnb(
+                "su-block su-mx-auto su-mb-02em su-text-center su-text-black-60 dark:su-text-black-40 su-font-semibold su-type-1 su-leading-display",
+                size === "campaign" ? "su-type-1" : "su-type-0"
+              )}
             >
               {eyebrow}
             </span>
           )}
           {title && (
-            <div className="su-mx-auto xl:su-max-w-900 su-flex su-flex-col md:su-flex-row su-gap-20 su-items-center su-rs-mb-4">
+            <div
+              className={cnb(
+                "su-mx-auto xl:su-max-w-900 su-flex su-flex-col md:su-flex-row su-gap-20 su-items-center",
+                size === "campaign" ? "su-rs-mb-4" : "su-rs-mb-2"
+              )}
+            >
               <div
                 aria-hidden
                 className="su-relative md:su-top-06em su-hidden su-min-w-100 md:su-block su-grow su-shrink-0 su-h-4 su-bg-gradient-to-r su-from-digital-red-light su-to-digital-red-dark dark:su-from-palo-verde dark:su-to-olive su-w-auto"
               />
-              <h2 className="su-mx-auto su-text-center su-leading-tight su-type-4 dark:su-text-white su-mb-0">
+              <h2
+                className={cnb(
+                  "su-mx-auto su-text-center su-leading-tight dark:su-text-white su-mb-0",
+                  size === "campaign" ? "su-type-4" : "su-type-3"
+                )}
+              >
                 {eyebrow && <span className="su-sr-only">{`${eyebrow}:`}</span>}
                 {title}
               </h2>
@@ -100,7 +117,8 @@ export default function SingleCtaBlock({
           <XssSafeContent
             data-test="single-text-block-content"
             className={cnb(
-              "su-mx-auto su-text-center su-max-w-prose-wide su-type-1 *:su-leading-snug last:*:su-mb-0 dark:su-text-white",
+              "su-mx-auto su-text-center su-max-w-prose-wide *:su-leading-snug last:*:su-mb-0 dark:su-text-white",
+              size === "campaign" ? "su-type-1" : "su-text-18",
               imageData?.url && "xl:su-text-left"
             )}
             content={description}
@@ -109,13 +127,16 @@ export default function SingleCtaBlock({
             <LinkButton
               ctaType={ctaType}
               variant="gradient"
-              size="large"
+              size={size === "campaign" ? "large" : "default"}
               buttonText={ctaText}
               internalUrl={internalLinkUrl}
               externalUrl={externalUrl}
               email={email}
               isNewWindow={isNewWindow}
-              className="su-rs-mt-4 su-mx-auto"
+              className={cnb(
+                "su-mx-auto",
+                size === "campaign" ? "su-rs-mt-4" : "su-rs-mt-2"
+              )}
             />
           )}
         </div>

@@ -68,7 +68,7 @@ export function LinkButton({
         "su-group su-flex su-items-center su-w-fit hocus:su-underline",
         size === "large"
           ? "su-rs-py-0 su-rs-px-4 su-font-semibold su-type-1 dark:hocus:su-ring-2"
-          : "md:su-px-30 md:su-pt-12 md:su-pb-14 su-text-18 md:su-text-20 dark:hocus:su-ring-1",
+          : "su-px-30 su-pt-12 su-pb-14 su-text-18 md:su-text-20 dark:hocus:su-ring-1",
         variant === "gradient"
           ? "su-text-white hocus:su-text-white su-no-underline hocus:su-underline su-bg-gradient-to-r su-from-digital-red-light su-to-cardinal-red-dark hocus:su-bg-none hocus:su-bg-black dark:su-from-olive dark:su-to-palo-verde dark:su-text-black-true dark:hocus:su-text-white dark:hocus:su-ring-white"
           : "su-button dark:hocus:su-ring-white",
