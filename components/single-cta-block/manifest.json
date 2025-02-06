@@ -20,6 +20,12 @@
       "input": {
         "type": "object",
         "properties": {
+          "size": {
+            "title": "Component size",
+            "description": "If you are creating a campaign page, choose 'campaign'otherwise leave as 'normal'.",
+            "enum": ["normal", "campaign"],
+            "default": "normal"
+          },
           "eyebrow": {
             "title": "Eyebrow",
             "description": "This is the superheading above the title.",
