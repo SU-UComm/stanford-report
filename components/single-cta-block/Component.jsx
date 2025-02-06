@@ -57,7 +57,7 @@ export default function SingleCtaBlock({
     ctaConfiguration;
   return (
     <Container
-      width="cc"
+      width={size === "campaign" ? "cc" : "large"}
       marginTop={marginTop}
       marginBottom={marginBottom}
       paddingX={false}
@@ -65,9 +65,10 @@ export default function SingleCtaBlock({
       <div
         className={cnb(
           "su-flex su-flex-col-reverse xl:su-flex-row-reverse su-items-center su-justify-center su-gap-34 xl:su-gap-60 su-rounded-[8px] su-break-words su-text-black dark:su-text-white",
-          isCard
-            ? "su-rs-py-8 su-rs-px-4 su-border dark:su-border-2 su-border-black-30/30 dark:su-border-black su-shadow dark:su-shadow-black/80 su-bg-white dark:su-bg-black-true"
-            : ""
+          isCard &&
+            "su-rs-px-4 su-border dark:su-border-2 su-border-black-30/30 dark:su-border-black su-shadow dark:su-shadow-black/80 su-bg-white dark:su-bg-black-true",
+          isCard && size === "campaign" ? "su-rs-py-8" : "",
+          isCard && size === "normal" ? "su-rs-py-4" : ""
         )}
       >
         <div className="su-flex su-flex-col">
