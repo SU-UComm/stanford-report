@@ -80,50 +80,53 @@ export default function Base({
         )}
       >
         <Container width={width}>
-          <div className="su-w-[100%] md:su-max-w-[60.7rem] lg:su-max-w-[63.6rem] su-mx-auto">
-            <div
-              className={cnb(
-                "su-text-center [&>*]:su-justify-center [&>*]:su-rs-mb-0 su-flex su-flex-col su-gap-[2.1rem]",
-                "md:su-gap-[2.5rem]"
-              )}
-            >
-              {displayConfiguration.displayIconHeading && (
-                <SidebarHeading
-                  color="media"
-                  icon="mediagallery"
-                  title="Media gallery"
-                />
-              )}
+          {contentConfiguration.layout === "Title & Content" && (
+            <div className="su-w-[100%] md:su-max-w-[60.7rem] lg:su-max-w-[63.6rem] su-mx-auto">
+              <div
+                className={cnb(
+                  "su-text-center [&>*]:su-justify-center [&>*]:su-rs-mb-0 su-flex su-flex-col su-gap-[2.1rem]",
+                  "md:su-gap-[2.5rem]"
+                )}
+              >
+                {displayConfiguration.displayIconHeading &&
+                  contentConfiguration.layout === "Title & Content" && (
+                    <SidebarHeading
+                      color="media"
+                      icon="mediagallery"
+                      title="Media gallery"
+                    />
+                  )}
+
+                {contentConfiguration.layout === "Title & Content" && (
+                  <h2
+                    className={cnb(
+                      "su-text-[3.5rem] su-leading-[4.179rem] su-font-bold",
+                      "md:su-text-[4.0rem] md:su-leading-[4.776rem]",
+                      "lg:su-text-[4.9rem] lg:su-leading-[6.37rem]"
+                    )}
+                  >
+                    {contentConfiguration.title}
+                  </h2>
+                )}
+              </div>
 
               {contentConfiguration.layout === "Title & Content" && (
-                <h2
+                <XssSafeContent
                   className={cnb(
-                    "su-text-[3.5rem] su-leading-[4.179rem] su-font-bold",
-                    "md:su-text-[4.0rem] md:su-leading-[4.776rem]",
-                    "lg:su-text-[4.9rem] lg:su-leading-[6.37rem]"
+                    contentConfiguration.summaryAlign === "center"
+                      ? "su-text-center"
+                      : "su-text-left",
+                    "su-wysiwyg-content su-rs-mt-0 su-text-[1.8rem] su-leading-[2.25rem] su-mt-[1.5rem]",
+                    "md:su-text-[1.9rem] md:su-leading-[2.375rem] md:su-mt-[1.9rem]",
+                    "lg:su-text-[2.1rem] lg:su-leading-[2.625rem]"
                   )}
-                >
-                  {contentConfiguration.title}
-                </h2>
+                  elementType="div"
+                  data-test="component-story-lead"
+                  content={contentConfiguration.summary}
+                />
               )}
             </div>
-
-            {contentConfiguration.layout === "Title & Content" && (
-              <XssSafeContent
-                className={cnb(
-                  contentConfiguration.summaryAlign === "center"
-                    ? "su-text-center"
-                    : "su-text-left",
-                  "su-wysiwyg-content su-rs-mt-0 su-text-[1.8rem] su-leading-[2.25rem] su-mt-[1.5rem]",
-                  "md:su-text-[1.9rem] md:su-leading-[2.375rem] md:su-mt-[1.9rem]",
-                  "lg:su-text-[2.1rem] lg:su-leading-[2.625rem]"
-                )}
-                elementType="div"
-                data-test="component-story-lead"
-                content={contentConfiguration.summary}
-              />
-            )}
-          </div>
+          )}
 
           <button
             onClick={() => handleClick()}
@@ -131,9 +134,11 @@ export default function Base({
             aria-label="Open image gallery"
             type="button"
             className={cnb(
-              "su-grid su-grid-cols-2 su-mx-auto su-grid-rows-2 su-max-w-[1312px] su-gap-x-[0.691rem] su-gap-y-[0.572rem] su-mt-[3.2rem] su-pb-[1rem]",
-              "md:su-mt-[4.8rem] md:su-gap-x-[1.448rem] md:su-gap-y-[1.199rem]",
-              "lg:su-gap-x-[2.589rem] lg:su-gap-y-[2.143rem]"
+              "su-grid su-grid-cols-2 su-mx-auto su-grid-rows-2 su-max-w-[1312px] su-gap-x-[0.691rem] su-gap-y-[0.572rem] su-pb-[1rem]",
+              "md:su-gap-x-[1.448rem] md:su-gap-y-[1.199rem]",
+              "lg:su-gap-x-[2.589rem] lg:su-gap-y-[2.143rem]",
+              contentConfiguration.layout === "Title & Content" &&
+                "su-mt-[3.2rem] md:su-mt-[4.8rem]"
             )}
           >
             <ImageMosaic
