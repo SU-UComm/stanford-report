@@ -1108,13 +1108,25 @@ div[data-component="footer-component"]{position:relative}
 @media (min-width: 1500px){
 .su-page:not(.su-page-wrap--no-btm-margin) .su-page-wrap{margin-bottom:17.1rem}}
 .su-page.su-page--no-bottom-margin .su-page-wrap{margin-bottom:0 !important}
-.su-page--top-margin:not(.su-page-story-featured, .su-page-has-sidebar--left)
+.su-page--top-margin:not(
+    .su-page-story-featured,
+    .su-page-has-sidebar--left,
+    .su-page-story-standalone-visual
+  )
   .su-upper-content{padding-top:5rem;}
 @media (min-width: 768px){
-.su-page--top-margin:not(.su-page-story-featured, .su-page-has-sidebar--left)
+.su-page--top-margin:not(
+    .su-page-story-featured,
+    .su-page-has-sidebar--left,
+    .su-page-story-standalone-visual
+  )
   .su-upper-content{padding-top:10.8rem}}
 @media (min-width: 1500px){
-.su-page--top-margin:not(.su-page-story-featured, .su-page-has-sidebar--left)
+.su-page--top-margin:not(
+    .su-page-story-featured,
+    .su-page-has-sidebar--left,
+    .su-page-story-standalone-visual
+  )
   .su-upper-content{padding-top:11.4rem}}
 .su-upper-content > [data-component] + *{margin-top:5rem;}
 @media (min-width: 768px){
