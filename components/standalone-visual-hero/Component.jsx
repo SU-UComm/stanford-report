@@ -71,9 +71,8 @@ export default function StandaloneVisualHero(props) {
           </h1>
           {summary && (
             <XssSafeContent
-              className="su-font-serif su-intro-text su-mb-0 su-rs-mt-2 su-text-21 su-leading-[27.35px] md:su-text-28 md:su-leading-[36.47px]"
+              className="su-font-serif su-text-21 md:su-text-28 su-rs-mt-2 *:last:su-mb-0"
               content={summary}
-              elementType="p"
             />
           )}
         </div>
