@@ -3989,6 +3989,11 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .md\:su-basefont-23{font-size:2.3rem}}}
 @media (min-width: 992px){
 .lg\:su-aspect-h-2{--tw-aspect-h:2}
+.lg\:su-rs-mb-5{margin-bottom:3.8rem;}
+@media (min-width: 768px){
+.lg\:su-rs-mb-5{margin-bottom:7.2rem}}
+@media (min-width: 1500px){
+.lg\:su-rs-mb-5{margin-bottom:7.6rem}}
 .lg\:su-rs-py-5{padding-top:3.8rem;padding-bottom:3.8rem;}
 @media (min-width: 768px){
 .lg\:su-rs-py-5{padding-top:7.2rem;padding-bottom:7.2rem}}

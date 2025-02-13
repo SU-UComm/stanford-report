@@ -45,7 +45,7 @@ export default function StandaloneVisualHero(props) {
   const TopicTag = hasTopicLink ? "a" : "span";
 
   return (
-    <Container width="wide">
+    <Container width="wide" className="su-rs-pt-6 su-rs-mb-3 lg:su-rs-mb-5">
       <div className="su-grid su-gap su-grid-cols-6 md:su-grid-cols-12">
         <div className="su-col-span-6 su-col-start-1 md:su-col-span-10 md:su-col-start-2">
           <div className="su-flex su-justify-between su-flex-wrap">
