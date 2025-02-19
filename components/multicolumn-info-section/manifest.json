@@ -1,0 +1,185 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "multicolumn-info-section",
+  "version": "0.0.1",
+  "namespace": "stanford-components",
+  "description": "The multicolumn info section displays a title in column 1, WYSIWYG content in column 2, and an optional text callout in column",
+  "displayName": "Multicolumn Image",
+  "mainFunction": "main",
+  "environment": [
+    {
+      "name": "API_IDENTIFIER",
+      "required": true
+    }
+  ],
+  "icon": {
+    "id": "view_column",
+    "color": {
+      "type": "enum",
+      "value": "orange"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "colOne": {
+            "required": ["title"],
+            "title": "Column One",
+            "description": "The title is required and displays in the first column.",
+            "properties": {
+              "title": {
+                "title": "Title",
+                "description": "The title text.",
+                "type": "string",
+                "default": "Lorem ipsum dolor"
+              }
+            }
+          },
+          "colTwo": {
+            "required": ["infoText"],
+            "title": "Column Two",
+            "description": "Info text is required and displays in the second column.",
+            "properties": {
+              "infoText": {
+                "title": "Info text",
+                "description": "Descriptive, informational text.",
+                "type": "FormattedText"
+              }
+            }
+          },
+          "callout": {
+            "title": "Include text callout?",
+            "default": true,
+            "type": "boolean"
+          },
+          "colThree": {
+            "required": [],
+            "title": "Column Three",
+            "description": "Text callout displays in the third column.",
+            "properties": {
+              "title": {
+                "title": "Heading",
+                "description": "The heading text",
+                "type": "string"
+              },
+              "content": {
+                "title": "Content",
+                "description": "The text content for this component",
+                "type": "FormattedText"
+              },
+              "imageConfiguration": {
+                "title": "Image configuration",
+                "required": [],
+                "properties": {
+                  "image": {
+                    "title": "Image asset",
+                    "type": "string",
+                    "format": "matrix-asset-uri"
+                  },
+                  "caption": {
+                    "title": "Caption",
+                    "type": "string",
+                    "format": "multi-line"
+                  },
+                  "credit": {
+                    "title": "Credit",
+                    "type": "string"
+                  },
+                  "imagePlacement": {
+                    "title": "Image position",
+                    "enum": ["Below content", "Above content"],
+                    "type": "string",
+                    "default": "Below content"
+                  }
+                }
+              },
+              "buttonConfiguration": {
+                "title": "Button configuration",
+                "description": "Optionally add a link button at the bottom by filling out these fields.",
+                "required": [],
+                "properties": {
+                  "buttonText": {
+                    "title": "Button text",
+                    "type": "string"
+                  },
+                  "internalUrl": {
+                    "title": "Internal link (Matrix asset link)",
+                    "type": "string",
+                    "description": "Select a page/asset to link to. If this field is filled out, it will be used instead of the external link field below.",
+                    "format": "matrix-asset-uri"
+                  },
+                  "externalUrl": {
+                    "title": "External (manual) link",
+                    "type": "string",
+                    "description": "Enter the full URL, including https://. A diagonal arrow icon will be automatically added after the button text if the URL does not contain news.stanford.edu."
+                  },
+                  "isNewWindow": {
+                    "title": "Open link in a new window",
+                    "type": "boolean",
+                    "default": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "mockedUris": {
+    "matrix-asset://api-identifier/99100": {
+      "type": "file",
+      "path": "mocked-uris/99100.json"
+    },
+    "matrix-asset://api-identifier/125800": {
+      "type": "file",
+      "path": "mocked-uris/125800.json"
+    },
+    "matrix-asset://api-identifier/125801": {
+      "type": "file",
+      "path": "mocked-uris/125801.json"
+    }
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}
