@@ -35,10 +35,15 @@ export default function MulticolumnInfoSection({
   return (
     <Container width="wide">
       <div className="su-grid su-grid-cols-6 su-grid-gap su-gap-y-0 md:su-grid-cols-12 su-border-b su-rs-pb-5">
-        <h2 className="su-type-2 su-col-span-3">{colOne.title}</h2>
-        <XssSafeContent content={colTwo.infoText} className="su-col-span-6" />
+        <h2 className="su-type-2 su-col-span-full md:su-col-span-4 lg:su-col-span-3">
+          {colOne.title}
+        </h2>
+        <XssSafeContent
+          content={colTwo.infoText}
+          className="su-col-span-full md:su-col-span-8 lg:su-col-span-6"
+        />
         <TextCallout
-          containerClassName="su-col-span-3 su-w-full"
+          containerClassName="su-col-span-full md:su-col-span-8 md:su-col-start-5 lg:su-col-span-3"
           displayConfiguration={{
             title: colThree.title,
             content: colThree.content,

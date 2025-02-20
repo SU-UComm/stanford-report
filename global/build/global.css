@@ -4441,11 +4441,14 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .md\:su-col-span-4{grid-column:span 4 / span 4}
 .md\:su-col-span-7{grid-column:span 7 / span 7}
 .md\:su-col-span-8{grid-column:span 8 / span 8}
+.md\:su-col-span-3{grid-column:span 3 / span 3}
+.md\:su-col-span-6{grid-column:span 6 / span 6}
 .md\:su-col-start-1{grid-column-start:1}
 .md\:su-col-start-2{grid-column-start:2}
 .md\:su-col-start-5{grid-column-start:5}
 .md\:su-col-start-8{grid-column-start:8}
 .md\:su-col-start-9{grid-column-start:9}
+.md\:su-col-start-4{grid-column-start:4}
 .md\:su-mx-50{margin-left:5rem;margin-right:5rem}
 .md\:su-mx-\[8\.33\%\]{margin-left:8.33%;margin-right:8.33%}
 .md\:su-my-27{margin-top:2.7rem;margin-bottom:2.7rem}
@@ -4835,6 +4838,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .lg\:su-grid-cols-10{grid-template-columns:repeat(10, minmax(0, 1fr))}
 .lg\:su-grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}
 .lg\:su-grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}
+.lg\:su-grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}
 .lg\:su-flex-row{flex-direction:row}
 .lg\:su-flex-row-reverse{flex-direction:row-reverse}
 .lg\:su-flex-col{flex-direction:column}
