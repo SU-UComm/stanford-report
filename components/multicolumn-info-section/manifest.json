@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "namespace": "stanford-components",
   "description": "The multicolumn info section displays a title in column 1, WYSIWYG content in column 2, and an optional text callout in column",
-  "displayName": "Multicolumn Image",
+  "displayName": "Multicolumn Info Section",
   "mainFunction": "main",
   "environment": [
     {
