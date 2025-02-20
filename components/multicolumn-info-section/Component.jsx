@@ -32,6 +32,7 @@ export default function MulticolumnInfoSection({
 }) {
   console.log(imageData);
   console.log(internalLinkUrl);
+  console.log(internalLinkUrl);
   return (
     <Container width="wide">
       <div className="su-grid su-grid-cols-6 su-grid-gap su-gap-y-0 md:su-grid-cols-12 su-border-b su-rs-pb-5">
@@ -40,28 +41,33 @@ export default function MulticolumnInfoSection({
         </h2>
         <XssSafeContent
           content={colTwo.infoText}
-          className="su-col-span-full md:su-col-span-8 lg:su-col-span-6"
+          className={cnb(
+            "su-col-span-full md:su-col-span-8",
+            colThree.callout ? "lg:su-col-span-6" : "lg:su-col-span-7"
+          )}
         />
-        <TextCallout
-          containerClassName="su-col-span-full md:su-col-span-8 md:su-col-start-5 lg:su-col-span-3"
-          displayConfiguration={{
-            title: colThree.title,
-            content: colThree.content,
-          }}
-          imageConfiguration={{
-            image: colThree.imageConfiguration.image,
-            caption: colThree.imageConfiguration.caption,
-            credit: colThree.imageConfiguration.credit,
-            imagePlacement: colThree.imageConfiguration.imagePlacement,
-          }}
-          buttonConfiguration={{
-            buttonText: colThree.buttonConfiguration.buttonText,
-            externalURL: colThree.buttonConfiguration.externalURL,
-            internalUrl: internalLinkUrl,
-          }}
-          imageData={imageData}
-          internalLinkUrl={internalLinkUrl}
-        />
+        {colThree.callout && (
+          <TextCallout
+            containerClassName="su-col-span-full md:su-col-span-8 md:su-col-start-5 lg:su-col-span-3"
+            displayConfiguration={{
+              title: colThree.title,
+              content: colThree.content,
+            }}
+            imageConfiguration={{
+              image: colThree.imageConfiguration.image,
+              caption: colThree.imageConfiguration.caption,
+              credit: colThree.imageConfiguration.credit,
+              imagePlacement: colThree.imageConfiguration.imagePlacement,
+            }}
+            buttonConfiguration={{
+              buttonText: colThree.buttonConfiguration.buttonText,
+              externalUrl: colThree.buttonConfiguration.externalUrl,
+              internalUrl: internalLinkUrl,
+            }}
+            imageData={imageData}
+            internalLinkUrl={internalLinkUrl}
+          />
+        )}
       </div>
     </Container>
   );

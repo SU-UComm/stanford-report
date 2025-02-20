@@ -177,7 +177,33 @@
         "main": {
           "inputData": {
             "type": "file",
-            "path": "preview.data.json"
+            "path": "default.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "loaded": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "loaded.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "nocallout": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "nocallout.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
