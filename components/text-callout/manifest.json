@@ -58,10 +58,7 @@
               },
               "imagePlacement": {
                 "title": "Image position",
-                "enum": [
-                  "Below content",
-                  "Above content"
-                ],
+                "enum": ["Below content", "Above content"],
                 "type": "string",
                 "default": "Below content"
               }
@@ -148,6 +145,19 @@
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "basicstory": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/basicstory.html"
           }
         }
       }
