@@ -1,0 +1,98 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "two-column-text-callout",
+  "version": "0.0.1",
+  "namespace": "stanford-components",
+  "description": "This component displays up to 2 text callouts boxes in a two-column layout.",
+  "displayName": "Two Column Text Callout",
+  "mainFunction": "main",
+  "icon": {
+    "id": "foundation",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "title": "Section heading",
+            "type": "string",
+            "default": "Section heading"
+          },
+          "showTopBorder": {
+            "title": "Display horizontal divider at the top.",
+            "type": "boolean",
+            "default": true
+          },
+          "callouts": {
+            "title": "Text callouts",
+            "description": "Enter the title and content for each callout.",
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "properties": {
+                "heading": {
+                  "title": "Callout heading",
+                  "type": "string",
+                  "default": "Callout heading"
+                },
+                "content": {
+                  "title": "Content",
+                  "description": "The text content for the callout.",
+                  "type": "FormattedText"
+                }
+              },
+              "required": []
+            }
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    }
+  }
+}
