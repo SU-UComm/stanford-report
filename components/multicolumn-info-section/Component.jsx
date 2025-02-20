@@ -1,63 +1,63 @@
 import React from "react";
-
-// import specific templates for the component
-import hash from "object-hash";
-import { number } from "prop-types";
+import { cnb } from "cnbuilder";
+import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../../packages/grids/Container";
+import TextCallout from "../text-callout/Component";
 
 /**
- * Base component
+ * Multicolumn Info Section component
  *
- * @param {string} title The component title
- * ... any other options needed
+ * @param {string} title
+ * The title of the text block.
+ *
+ * @param {string} eyebrow
+ * The eyebrow/superheading.
+ *
+ * @param {string} paddingY
+ * Responsive vertical padding of the container
+ *
+ * @param {array} facts
+ * A array of 1 to 3 facts each with a FontAwesome icon and a text description.
+ *
  * @returns {JSX.Element}
  * @constructor
  */
 
-export default function MulticolumnImage({ data, imageCaptions }) {
-  const numberOfCaptions = imageCaptions.filter(Boolean).length;
-
-  // test
-  // data.forEach((img, i) => {
-  //   if (i === 1) img.url = "https://picsum.photos/400/800";
-  // });
-
-  const images = data.map((image, i) => (
-    <Image
-      src={image.url}
-      caption={imageCaptions[i]}
-      numberOfCaptions={numberOfCaptions}
-      key={hash.MD5(image)}
-    />
-  ));
-
+export default function MulticolumnInfoSection({
+  colOne,
+  colTwo,
+  colThree,
+  imageData,
+  internalLinkUrl,
+}) {
+  console.log(imageData);
+  console.log(internalLinkUrl);
   return (
     <Container width="wide">
-      <section className="su-flex su-flex-col su-items-center su-gap-8 md:su-gap-9">
-        <div className="su-flex su-gap-20 su-items-center lg:su-gap-48">
-          {images}
-        </div>
-
-        {numberOfCaptions === 1 && (
-          <p className="su-text-14 su-text-black-70 dark:su-text-black-30 su-font-normal su-max-w-[63.3rem] su-leading-[119.415%] su-text-center md:su-text-16 su-mb-0">
-            {imageCaptions.filter(Boolean)[0]}
-          </p>
-        )}
-      </section>
+      <div className="su-grid su-grid-cols-6 su-grid-gap su-gap-y-0 md:su-grid-cols-12 su-border-b su-rs-pb-5">
+        <h2 className="su-type-2 su-col-span-3">{colOne.title}</h2>
+        <XssSafeContent content={colTwo.infoText} className="su-col-span-6" />
+        <TextCallout
+          containerClassName="su-col-span-3 su-w-full"
+          displayConfiguration={{
+            title: colThree.title,
+            content: colThree.content,
+          }}
+          imageConfiguration={{
+            image: colThree.imageConfiguration.image,
+            caption: colThree.imageConfiguration.caption,
+            credit: colThree.imageConfiguration.credit,
+            imagePlacement: colThree.imageConfiguration.imagePlacement,
+          }}
+          buttonConfiguration={{
+            buttonText: colThree.buttonConfiguration.buttonText,
+            externalURL: colThree.buttonConfiguration.externalURL,
+            internalUrl: internalLinkUrl,
+          }}
+          imageData={imageData}
+          internalLinkUrl={internalLinkUrl}
+        />
+      </div>
     </Container>
-  );
-}
-
-function Image({ src, caption, numberOfCaptions }) {
-  return (
-    <div className="su-relative su-flex su-flex-col su-gap-8 su-flex-1">
-      <img src={src} className="su-object-cover" alt="" />
-
-      {caption && numberOfCaptions > 1 && (
-        <p className="su-text-14 su-text-black-70 dark:su-text-black-30 su-font-normal su-leading-[119.415%] su-text-center su-m-0 md:su-text-16">
-          {caption}
-        </p>
-      )}
-    </div>
   );
 }

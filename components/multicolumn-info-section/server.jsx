@@ -3,41 +3,30 @@ import Component from "./Component";
 import basicAssetUri from "../../packages/utils/basicAssetUri";
 
 export default async (args, info) => {
-  // eslint-disable-next-line no-unused-vars
   const { ctx } = info;
-  const { images } = args.contentConfiguration;
-  const imageData = [];
-  const imageCaptions = [];
+  const { image } = args.colThree.imageConfiguration;
+  const { internalUrl } = args.colThree.buttonConfiguration;
 
-  let data = null;
+  let linkUrl = null;
+  if (internalUrl) {
+    linkUrl = await basicAssetUri(ctx, internalUrl);
+  }
+  const internalLinkUrl = linkUrl?.url;
 
-  if (images.length) {
-    for (const image of images) {
-      imageData.push(await basicAssetUri(ctx, image.imageAsset));
-    }
+  let imageData = null;
 
-    images.forEach((image) => {
-      if (image.imageCaption) {
-        imageCaptions.push(image.imageCaption);
-
-        return;
-      }
-
-      imageCaptions.push("");
-    });
-
-    data = imageData;
+  if (image) {
+    imageData = await basicAssetUri(ctx, image);
   }
 
   const renderProps = {
     ...args,
-    data,
-    imageCaptions,
+    imageData,
+    internalLinkUrl,
   };
-
   return renderComponent({
     Component,
-    componentName: "multicolumn-image",
+    componentName: "multicolumn-info-section",
     args: renderProps,
   });
 };

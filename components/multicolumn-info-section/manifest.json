@@ -52,16 +52,16 @@
               }
             }
           },
-          "callout": {
-            "title": "Include text callout?",
-            "default": true,
-            "type": "boolean"
-          },
           "colThree": {
             "required": [],
             "title": "Column Three",
             "description": "Text callout displays in the third column.",
             "properties": {
+              "callout": {
+                "title": "Include text callout?",
+                "default": true,
+                "type": "boolean"
+              },
               "title": {
                 "title": "Heading",
                 "description": "The heading text",
@@ -165,6 +165,10 @@
     "matrix-asset://api-identifier/125801": {
       "type": "file",
       "path": "mocked-uris/125801.json"
+    },
+    "matrix-asset://api-identifier/28192": {
+      "type": "file",
+      "path": "mocked-uris/28192.json"
     }
   },
   "previews": {
