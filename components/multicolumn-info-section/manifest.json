@@ -27,6 +27,12 @@
         "type": "object",
         "required": [],
         "properties": {
+          "border": {
+            "title": "Include bottom border?",
+            "description": "Uncheck to remove the line that displays across the bottom of the component.",
+            "type": "boolean",
+            "default": true
+          },
           "colOne": {
             "required": ["title"],
             "title": "Column One",
