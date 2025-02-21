@@ -1274,7 +1274,7 @@ Subscribe to Stanford Report Marketo form styles
 /* Grid setup for page with left sidebar. Need to refactor all page layouts similar to this. */
 /* Grid areas: u = upper-content, a = aside(sidebar), c = page-content  */
 .su-page.su-page-has-sidebar--left .su-page-wrap {
-  @apply su-w-full su-max-w-[141.2rem] su-px-20 md:su-px-50 su-mx-auto su-grid su-rs-pt-7;
+  @apply su-w-full su-max-w-[141.2rem] su-px-20 md:su-px-50 su-mx-auto su-grid su-grid-cols-6 su-grid-gap su-gap-y-0 md:su-grid-cols-12 su-rs-pt-7;
   grid-template-areas:
     "a a a a a a"
     "u u u u u u"
