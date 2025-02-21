@@ -1196,6 +1196,16 @@ div[data-component="footer-component"]{position:relative}
 .su-page-has-sidebar .su-page-sidebar{margin-left:0;margin-right:0;margin-left:auto;margin-right:8.33%;margin-top:0;margin-bottom:9.5rem;max-height:230rem;width:25%;max-width:29.8rem;flex-direction:column;gap:9.5rem;padding-left:0;padding-right:0}}
 .su-page-story-featured .su-upper-content,
 .su-page-story-featured [data-component="feature-story-hero"]{margin-top:0 !important}
+.su-page.su-page-story-featured [data-component="text-callout"] > div{width:100%;max-width:732px}
+@media (min-width: 768px){
+.su-page.su-page-story-featured [data-component="text-callout"] > div{width:84.75%}}
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="text-callout"]
+  > div{width:100%;max-width:80rem}
 /*
 * Containers
 */
@@ -1662,11 +1672,12 @@ WYSIWYG formatting styles
   > *:not([data-component], .container, .site-search, .su-lower-content)
   a:focus{text-decoration-line:none}
 /* Set specfic spacing for paragraphs */
-[data-component="text-callout"] .su-wysiwyg-content p{margin-bottom:2rem}
+[data-component="text-callout"] .su-wysiwyg-content p{margin-bottom:2rem;}
 @media (min-width: 768px){
 [data-component="text-callout"] .su-wysiwyg-content p{margin-bottom:2.6rem}}
-@media (min-width: 1200px){
+@media (min-width: 1500px){
 [data-component="text-callout"] .su-wysiwyg-content p{margin-bottom:2.7rem}}
+[data-component="text-callout"] .su-wysiwyg-content p:last-child{margin-bottom:0}
 .su-wysiwyg-content ul ul,
 .su-wysiwyg-content ul ol,
 .su-wysiwyg-content ol ol,
@@ -2016,6 +2027,7 @@ Subscribe to Stanford Report Marketo form styles
       ". a a a c c c c c c . .";
   }
 }
+/* multicolumn-info-section Grid setup. */
 /**
  * Campaign page global styles
  */
@@ -3215,7 +3227,9 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-border-digital-red{--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity))}
 .su-border-transparent{border-color:transparent}
 .su-border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity))}
+.su-border-b-black{--tw-border-opacity:1;border-bottom-color:rgb(46 45 41 / var(--tw-border-opacity))}
 .su-border-b-black-20{--tw-border-opacity:1;border-bottom-color:rgb(213 213 212 / var(--tw-border-opacity))}
+.su-border-b-black-30{--tw-border-opacity:1;border-bottom-color:rgb(192 192 191 / var(--tw-border-opacity))}
 .su-border-b-black-70{--tw-border-opacity:1;border-bottom-color:rgb(109 108 105 / var(--tw-border-opacity))}
 .su-border-b-transparent{border-bottom-color:transparent}
 .su-border-r-black-30{--tw-border-opacity:1;border-right-color:rgb(192 192 191 / var(--tw-border-opacity))}
@@ -4483,6 +4497,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 :is(.su-dark .dark\:su-border-black-true){--tw-border-opacity:1;border-color:rgb(0 0 0 / var(--tw-border-opacity))}
 :is(.su-dark .dark\:su-border-dark-mode-red){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
 :is(.su-dark .dark\:su-border-white){--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity))}
+:is(.su-dark .dark\:su-border-b-black){--tw-border-opacity:1;border-bottom-color:rgb(46 45 41 / var(--tw-border-opacity))}
 :is(.su-dark .dark\:su-border-b-black-30){--tw-border-opacity:1;border-bottom-color:rgb(192 192 191 / var(--tw-border-opacity))}
 :is(.su-dark .dark\:su-border-b-black-70){--tw-border-opacity:1;border-bottom-color:rgb(109 108 105 / var(--tw-border-opacity))}
 :is(.su-dark .dark\:su-bg-black){--tw-bg-opacity:1;background-color:rgb(46 45 41 / var(--tw-bg-opacity))}
@@ -4837,6 +4852,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .md\:su-text-20{font-size:2rem}
 .md\:su-text-21{font-size:2.1rem}
 .md\:su-text-22{font-size:2.2rem}
+.md\:su-text-23{font-size:2.3rem}
 .md\:su-text-24{font-size:2.4rem}
 .md\:su-text-25{font-size:2.5rem}
 .md\:su-text-26{font-size:2.6rem}
@@ -5260,7 +5276,10 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\[\&\>\*\]\:su-stroke-current>*{stroke:currentColor}
 .\[\&\>\*\]\:su-stroke-digital-red>*{stroke:#B1040E}
 .\[\&\>\*\]\:su-font-bold>*{font-weight:700}
+.last\:\[\&\>\*\]\:su-mb-0>*:last-child{margin-bottom:0}
 :is(.su-dark .dark\:\[\&\>\*\]\:su-stroke-dark-mode-red>*){stroke:#EC0909}
+@media (min-width: 992px){
+.lg\:last\:\[\&\>\*\]\:su-mb-0>*:last-child{margin-bottom:0}}
 .\[\&\>li\]\:su-m-0>li{margin:0}
 .\[\&\>p\]\:su-m-0>p{margin:0}
 .\[\&\>p\]\:\!su-mb-0>p{margin-bottom:0 !important}

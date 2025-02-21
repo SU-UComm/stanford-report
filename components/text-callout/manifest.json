@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "text-callout",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "namespace": "stanford-components",
   "description": "This component is intended for displaying extra text content with a background color applied",
   "displayName": "Text Callout",
@@ -58,10 +58,7 @@
               },
               "imagePlacement": {
                 "title": "Image position",
-                "enum": [
-                  "Below content",
-                  "Above content"
-                ],
+                "enum": ["Below content", "Above content"],
                 "type": "string",
                 "default": "Below content"
               }
@@ -148,6 +145,19 @@
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "basicstory": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/basicstory.html"
           }
         }
       }
