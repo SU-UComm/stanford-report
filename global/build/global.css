@@ -1664,6 +1664,7 @@ WYSIWYG formatting styles
   a:focus{text-decoration-line:none}
 /* Set specfic spacing for paragraphs */
 [data-component="text-callout"] .su-wysiwyg-content p{margin-bottom:2rem}
+[data-component="text-callout"] .su-wysiwyg-content p:last-child{margin-bottom:0}
 @media (min-width: 768px){
 [data-component="text-callout"] .su-wysiwyg-content p{margin-bottom:2.6rem}}
 @media (min-width: 1200px){
@@ -2017,6 +2018,7 @@ Subscribe to Stanford Report Marketo form styles
       ". a a a c c c c c c . .";
   }
 }
+/* multicolumn-info-section Grid setup. */
 /**
  * Campaign page global styles
  */
@@ -3072,7 +3074,9 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-border-digital-red{--tw-border-opacity:1;border-color:rgb(177 4 14 / var(--tw-border-opacity))}
 .su-border-transparent{border-color:transparent}
 .su-border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity))}
+.su-border-b-black{--tw-border-opacity:1;border-bottom-color:rgb(46 45 41 / var(--tw-border-opacity))}
 .su-border-b-black-20{--tw-border-opacity:1;border-bottom-color:rgb(213 213 212 / var(--tw-border-opacity))}
+.su-border-b-black-30{--tw-border-opacity:1;border-bottom-color:rgb(192 192 191 / var(--tw-border-opacity))}
 .su-border-b-black-70{--tw-border-opacity:1;border-bottom-color:rgb(109 108 105 / var(--tw-border-opacity))}
 .su-border-t-black-40{--tw-border-opacity:1;border-top-color:rgb(171 171 169 / var(--tw-border-opacity))}
 .su-bg-black{--tw-bg-opacity:1;background-color:rgb(46 45 41 / var(--tw-bg-opacity))}
@@ -3212,6 +3216,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-pt-15{padding-top:1.5rem}
 .su-pt-20{padding-top:2rem}
 .su-pt-21{padding-top:2.1rem}
+.su-pt-27{padding-top:2.7rem}
 .su-pt-300{padding-top:30rem}
 .su-pt-32{padding-top:3.2rem}
 .su-pt-34{padding-top:3.4rem}
@@ -4299,6 +4304,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .dark\:su-border-black-true:is(.su-dark *){--tw-border-opacity:1;border-color:rgb(0 0 0 / var(--tw-border-opacity))}
 .dark\:su-border-dark-mode-red:is(.su-dark *){--tw-border-opacity:1;border-color:rgb(236 9 9 / var(--tw-border-opacity))}
 .dark\:su-border-white:is(.su-dark *){--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity))}
+.dark\:su-border-b-black:is(.su-dark *){--tw-border-opacity:1;border-bottom-color:rgb(46 45 41 / var(--tw-border-opacity))}
 .dark\:su-border-b-black-30:is(.su-dark *){--tw-border-opacity:1;border-bottom-color:rgb(192 192 191 / var(--tw-border-opacity))}
 .dark\:su-border-b-black-70:is(.su-dark *){--tw-border-opacity:1;border-bottom-color:rgb(109 108 105 / var(--tw-border-opacity))}
 .dark\:su-bg-black:is(.su-dark *){--tw-bg-opacity:1;background-color:rgb(46 45 41 / var(--tw-bg-opacity))}

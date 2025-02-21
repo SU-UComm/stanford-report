@@ -985,7 +985,7 @@ WYSIWYG formatting styles
 
 /* Set specfic spacing for paragraphs */
 [data-component="text-callout"] .su-wysiwyg-content p {
-  @apply su-mb-20 md:su-mb-26 xl:su-mb-27;
+  @apply su-mb-20 md:su-mb-26 xl:su-mb-27 last:su-mb-0;
 }
 
 .su-wysiwyg-content ul ul,
@@ -1322,6 +1322,8 @@ Subscribe to Stanford Report Marketo form styles
       ". a a a c c c c c c . .";
   }
 }
+
+/* multicolumn-info-section Grid setup. */
 
 /**
  * Campaign page global styles
