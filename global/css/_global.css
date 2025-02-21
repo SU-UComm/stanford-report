@@ -715,7 +715,11 @@ div[data-component="footer-component"] {
   @apply su-mb-0 !important;
 }
 
-.su-page--top-margin:not(.su-page-story-featured, .su-page-has-sidebar--left)
+.su-page--top-margin:not(
+    .su-page-story-featured,
+    .su-page-has-sidebar--left,
+    .su-page-story-standalone-visual
+  )
   .su-upper-content {
   @apply su-rs-pt-7;
 }

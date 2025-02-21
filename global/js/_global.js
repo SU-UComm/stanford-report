@@ -6,6 +6,7 @@ import '../../components/subtopics-subnav/client.jsx';
 import '../../components/subscribe-to-stanford/client.jsx';
 import '../../components/story-lead/client.jsx';
 import '../../components/stories-carousel/client.jsx';
+import '../../components/standalone-visual-hero/client.jsx';
 import '../../components/single-text-block/client.jsx';
 import '../../components/single-image-video/client.jsx';
 import '../../components/single-featured-content/client.jsx';

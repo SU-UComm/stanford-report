@@ -1,0 +1,64 @@
+{
+  "$schema": "http://localhost:3000/schemas/v1.json#",
+  "name": "standalone-visual-hero",
+  "version": "0.0.3",
+  "namespace": "stanford-components",
+  "description": "Standalone Visual story hero",
+  "displayName": "Standalone Visual Hero",
+  "mainFunction": "main",
+  "icon": {
+    "id": "foundation",
+    "color": {
+      "type": "enum",
+      "value": "gray"
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "entry": "./dist/server.cjs",
+      "input": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "output": {
+        "responseType": "html",
+        "staticFiles": [
+          {
+            "location": "header",
+            "file": {
+              "type": "css",
+              "filepath": "global.css"
+            }
+          },
+          {
+            "location": "footer",
+            "file": {
+              "type": "js",
+              "filepath": "client.js"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "staticFiles": {
+    "locationRoot": "./dist"
+  },
+  "previews": {
+    "default": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "frontend.html"
+          }
+        }
+      }
+    }
+  }
+}
