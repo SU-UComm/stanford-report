@@ -3063,7 +3063,6 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-flex-grow{flex-grow:1}
 .su-grow{flex-grow:1}
 .su-basis-1{flex-basis:0.1rem}
-.su-basis-1\/2{flex-basis:50%}
 .su-basis-4{flex-basis:0.4rem}
 .su-basis-auto{flex-basis:auto}
 .-su-translate-x-1{--tw-translate-x:-0.1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}

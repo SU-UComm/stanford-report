@@ -1,28 +1,28 @@
 import React from "react";
 import { cnb } from "cnbuilder";
-import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
+import InfoBox from "../../packages/info-box/InfoBox";
 import { Container } from "../../packages/grids/Container";
 
 /**
  * Two Column Text Callout component
  *
- * @param {string} title
+ * @param {string} heading
  * The title of the section.
  *
  * @param {boolean} showTopBorder
  * If true, display a horizontal divider above the title.
  *
- * @param {array} callouts
- * A array of 1 to 2 callouts each with a heading and WYSIWYG content.
+ * @param {array} calloutsArray
+ * A array of 1 to 2 callouts objects that will be used to render the text callouts.
  *
  * @returns {JSX.Element}
  * @constructor
  */
 
 export default function TwoColumnTextCallout({
-  title,
+  heading,
   showTopBorder = true,
-  callouts,
+  calloutsArray,
 }) {
   return (
     <Container
@@ -32,22 +32,25 @@ export default function TwoColumnTextCallout({
       )}
     >
       <h2 className="su-type-2 su-font-serif su-text-center su-w-auto su-rs-mb-2 dark:su-text-white">
-        {title}
+        {heading}
       </h2>
       <div className="su-flex su-grid-gap su-flex-col md:su-flex-row">
-        {callouts.map(({ heading, content }) => (
-          <div
-            key={heading}
-            className="su-block su-bg-fog-light dark:su-bg-black su-rs-p-2 md:su-basis-1/2"
-          >
-            <h3 className="su-type-0 su-font-bold su-leading-display su-m-0">
-              {heading}
-            </h3>
-            <XssSafeContent
-              content={content}
-              className="su-text-black dark:su-text-white su-text-18 *:su-leading-display last:*:su-mb-0"
-            />
-          </div>
+        {calloutsArray?.map((callout) => (
+          <InfoBox
+            key={callout.title}
+            containerClassName=""
+            title={callout.title}
+            content={callout.content}
+            image={callout.image}
+            caption={callout.caption}
+            credit={callout.credit}
+            imagePlacement={callout.imagePlacement}
+            buttonText={callout.buttonText}
+            externalUrl={callout.externalUrl}
+            imageData={callout.imageData}
+            internalLinkUrl={callout.internalLinkUrl}
+            isNewWindow={callout.isNewWindow}
+          />
         ))}
       </div>
     </Container>
