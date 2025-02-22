@@ -18,10 +18,11 @@ export default async (args, info) => {
         imageData = await basicAssetUri(ctx, image);
       }
 
-      let internalLinkUrl = null;
+      let linkUrl = null;
       if (internalUrl) {
-        internalLinkUrl = await basicAssetUri(ctx, internalUrl);
+        linkUrl = await basicAssetUri(ctx, internalUrl);
       }
+      const internalLinkUrl = linkUrl?.url;
 
       return {
         title,

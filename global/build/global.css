@@ -4232,6 +4232,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\*\:su-inline-block > *{display:inline-block}
 .\*\:su-size-14 > *{width:1.4rem;height:1.4rem}
 .\*\:su-h-\[40px\] > *{height:40px}
+.\*\:\*\:su-h-full > * > *{height:100%}
 .\*\:su-w-\[40px\] > *{width:40px}
 .\*\:su-w-full > *{width:100%}
 .\*\:su-max-w-\[45rem\] > *{max-width:45rem}
@@ -4754,6 +4755,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .md\:su-items-start{align-items:flex-start}
 .md\:su-items-end{align-items:flex-end}
 .md\:su-items-center{align-items:center}
+.md\:su-items-stretch{align-items:stretch}
 .md\:su-justify-start{justify-content:flex-start}
 .md\:su-justify-center{justify-content:center}
 .md\:su-gap-12{gap:1.2rem}

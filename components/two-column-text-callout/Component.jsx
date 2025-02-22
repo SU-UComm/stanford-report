@@ -34,14 +34,13 @@ export default function TwoColumnTextCallout({
       <h2 className="su-type-2 su-font-serif su-text-center su-w-auto su-rs-mb-2 dark:su-text-white">
         {heading}
       </h2>
-      <div className="su-flex su-grid-gap su-flex-col md:su-flex-row">
+      <div className="su-flex su-grid-gap su-flex-col md:su-flex-row md:su-items-stretch">
         {calloutsArray?.map((callout) => (
           <InfoBox
             key={callout.title}
-            containerClassName=""
+            containerClassName="su-flex"
             title={callout.title}
             content={callout.content}
-            image={callout.image}
             caption={callout.caption}
             credit={callout.credit}
             imagePlacement={callout.imagePlacement}

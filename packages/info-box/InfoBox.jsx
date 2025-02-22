@@ -53,7 +53,6 @@ export default function InfoBox({
   containerClassName,
   title,
   content,
-  image,
   imageData,
   caption,
   credit,
@@ -65,6 +64,7 @@ export default function InfoBox({
 }) {
   const captionCredit =
     caption && credit ? `${caption} | ${credit}` : caption || credit;
+  const hasImage = imageData?.url;
 
   return (
     <Container width="full" paddingX={false} className={containerClassName}>
@@ -80,7 +80,7 @@ export default function InfoBox({
 
         <div
           className={cnb(
-            image && imagePlacement === "Above content"
+            hasImage && imagePlacement === "Above content"
               ? "su-order-2"
               : "su-order-1",
             "su-flex su-flex-col su-gap-12"
@@ -97,7 +97,7 @@ export default function InfoBox({
           />
         </div>
 
-        {image && (
+        {hasImage && (
           <figure
             className={cnb(
               imagePlacement === "Above content"
@@ -108,7 +108,7 @@ export default function InfoBox({
           >
             <img
               src={imageData.url}
-              alt={imageData.attributes.alt || ""}
+              alt={imageData.attributes?.alt || ""}
               className="su-w-full"
             />
 
