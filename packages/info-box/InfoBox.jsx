@@ -19,9 +19,6 @@ import { LinkButton } from "../links/LinkButton";
  * @param {string} content
  * WYSIWYG text content
  *
- * @param {string} image
- * An image stored in Matrix.
- *
  * @param {object} imageData
  * The image's data object of the selected Matrix asset. We need the URL and alt text.
  *
