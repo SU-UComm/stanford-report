@@ -35,7 +35,9 @@ export default function MulticolumnInfoSection({
           content={colTwo.infoText}
           className={cnb(
             "su-col-span-full md:su-col-span-8",
-            colThree.callout ? "lg:su-col-span-6" : "lg:su-col-span-7"
+            colThree.callout
+              ? "lg:su-col-span-6 lg:last:[&>*]:su-mb-0"
+              : "lg:su-col-span-7 last:[&>*]:su-mb-0"
           )}
         />
         {colThree.callout && (
