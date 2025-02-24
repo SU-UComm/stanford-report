@@ -45,14 +45,13 @@ export default function MulticolumnInfoSection({
             containerClassName="su-col-span-full md:su-col-span-8 md:su-col-start-5 lg:su-col-span-3"
             title={colThree.title}
             content={colThree.content}
-            image={colThree.imageConfiguration.image}
+            imageData={imageData}
             caption={colThree.imageConfiguration.caption}
             credit={colThree.imageConfiguration.credit}
             imagePlacement={colThree.imageConfiguration.imagePlacement}
             buttonText={colThree.buttonConfiguration.buttonText}
             externalUrl={colThree.buttonConfiguration.externalUrl}
             internalUrl={internalLinkUrl}
-            imageData={imageData}
             internalLinkUrl={internalLinkUrl}
             isNewWindow={colThree.buttonConfiguration.isNewWindow}
           />
