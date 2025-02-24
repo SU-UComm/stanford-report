@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "multicolumn-info-section",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "namespace": "stanford-components",
   "description": "The multicolumn info section displays a title in column 1, WYSIWYG content in column 2, and an optional text callout in column",
   "displayName": "Multicolumn Info Section",
@@ -39,9 +39,9 @@
             "type": "boolean"
           },
           "colOne": {
-            "required": [],
+            "required": ["title"],
             "title": "Column One",
-            "description": "The title is required and displays in the first column.",
+            "description": "The title of the section. This is required and displays in the first column.",
             "properties": {
               "title": {
                 "title": "Title",
@@ -52,7 +52,7 @@
             }
           },
           "colTwo": {
-            "required": [],
+            "required": ["infoText"],
             "title": "Column Two",
             "description": "Info text is required and displays in the second column.",
             "properties": {
@@ -82,12 +82,12 @@
               "properties": {
                 "title": {
                   "title": "Heading",
-                  "description": "The heading text",
+                  "description": "The text callout heading text.",
                   "type": "string"
                 },
                 "content": {
                   "title": "Content",
-                  "description": "The text content for this component",
+                  "description": "The text content the text callout sidebar.",
                   "type": "FormattedText"
                 },
                 "imageConfiguration": {

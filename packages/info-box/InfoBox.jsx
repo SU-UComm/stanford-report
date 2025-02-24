@@ -91,6 +91,7 @@ export default function InfoBox({
               "last:*:su-mb-0"
             )}
             content={content}
+            elementType="div"
           />
         </div>
 
