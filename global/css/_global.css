@@ -1108,7 +1108,7 @@ WYSIWYG formatting styles
 .su-wysiwyg-content u,
 .su-page-content > div:not([data-component]) .underline,
 .su-page-content > div:not([data-component]) u {
-  @apply su-underline;
+  @apply su-underline hocus:su-no-underline;
 }
 
 .container > span .justify,

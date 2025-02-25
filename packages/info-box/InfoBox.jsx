@@ -48,6 +48,7 @@ import { LinkButton } from "../links/LinkButton";
  */
 export default function InfoBox({
   containerClassName,
+  innerClassName,
   title,
   content,
   imageData,
@@ -72,7 +73,12 @@ export default function InfoBox({
 
   return (
     <Container width="full" paddingX={false} className={containerClassName}>
-      <div className="su-flex su-flex-col su-p-20 md:su-p-36 su-justify-start su-items-start su-bg-fog-light lg:su-mx-auto dark:su-bg-black [&>p]:su-m-0 [&>p]:!su-mb-0 [&>p]:su-text-16 md:[&>p]:!su-text-19 last-of-type:[&>p]:!su-mb-0">
+      <div
+        className={cnb(
+          "su-flex su-flex-col su-justify-start su-items-start su-bg-fog-light lg:su-mx-auto dark:su-bg-black [&>p]:su-m-0 [&>p]:!su-mb-0 [&>p]:su-text-16 md:[&>p]:!su-text-19 last-of-type:[&>p]:!su-mb-0",
+          innerClassName
+        )}
+      >
         {title && (
           <div className="su-relative su-justify-start su-items-center su-w-full su-gap-3 su-flex su-overflow-hidden su-rs-mb-0">
             <div>

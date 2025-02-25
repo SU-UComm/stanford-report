@@ -20,6 +20,7 @@ export default function TextCallout({
 
   return (
     <InfoBox
+      innerClassName="su-p-20 md:su-p-36"
       title={title}
       content={content}
       image={image}
