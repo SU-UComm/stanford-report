@@ -38,6 +38,7 @@ export default function TwoColumnTextCallout({
         {calloutsArray?.map((callout) => (
           <InfoBox
             key={callout.title}
+            innerClassName="su-p-20 md:su-p-36"
             containerClassName="su-flex"
             title={callout.title}
             content={callout.content}
