@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "multicolumn-info-section",
-  "version": "0.0.9",
+  "version": "0.0",
   "namespace": "stanford-components",
   "description": "The multicolumn info section displays a title in column 1, WYSIWYG content in column 2, and an optional text callout in column",
   "displayName": "Multicolumn Info Section",
@@ -39,9 +39,7 @@
             "type": "boolean"
           },
           "colOne": {
-            "required": [
-              "title"
-            ],
+            "required": ["title"],
             "title": "Column One",
             "description": "The title of the section. This is required and displays in the first column.",
             "properties": {
@@ -54,9 +52,7 @@
             }
           },
           "colTwo": {
-            "required": [
-              "infoText"
-            ],
+            "required": ["infoText"],
             "title": "Column Two",
             "description": "Info text is required and displays in the second column.",
             "properties": {
@@ -76,9 +72,7 @@
                   "const": true
                 }
               },
-              "required": [
-                "callout"
-              ]
+              "required": ["callout"]
             },
             "then": {
               "properties": {
@@ -117,10 +111,7 @@
                         },
                         "imagePlacement": {
                           "title": "Image position",
-                          "enum": [
-                            "Below content",
-                            "Above content"
-                          ],
+                          "enum": ["Below content", "Above content"],
                           "type": "string",
                           "default": "Below content"
                         }
