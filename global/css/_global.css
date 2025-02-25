@@ -778,6 +778,82 @@ div[data-component="footer-component"] {
   @apply su-mt-0 !important;
 }
 
+.su-page.su-page-story-featured [data-component="text-callout"] > div {
+  @apply su-w-full su-max-w-[732px] md:su-w-[84.75%];
+}
+
+/** 
+  * Updates Page scoped max-width for contents
+*/
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="text-callout"]
+  > div {
+  @apply su-w-full su-px-20 sm:su-px-30 md:su-px-50 lg:su-px-80 xl:su-px-0 md:su-max-w-900 lg:su-max-w-[96rem] xl:su-max-w-800;
+}
+
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="pullquote"]
+  > div {
+  @apply su-w-full su-px-20 sm:su-px-30 md:su-px-50 lg:su-px-80 xl:su-px-0 md:su-max-w-900 lg:su-max-w-[96rem] xl:su-max-w-800;
+}
+
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div {
+  @apply su-w-full su-px-20 sm:su-px-30 md:su-px-50 lg:su-px-80 xl:su-px-0 md:su-max-w-900 lg:su-max-w-[96rem] xl:su-max-w-800;
+}
+
+/* This overrides the max-width in the container around the title/summary of the Single Image Video */
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div
+  > section
+  > div {
+  @apply md:su-max-w-none lg:su-max-w-none;
+}
+
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button-row"]
+  > div {
+  @apply su-w-full su-px-20 sm:su-px-30 md:su-px-50 lg:su-px-80 xl:su-px-0 md:su-max-w-900 lg:su-max-w-[96rem] xl:su-max-w-800;
+}
+
+.su-page:not(
+  .su-page-has-sidebar,
+  .su-page-story-featured,
+  .su-page-has-sidebar--left
+)
+  .su-page-content
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ) {
+  @apply su-w-full su-max-w-900;
+}
+
 /*
 * Containers
 */
