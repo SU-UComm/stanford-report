@@ -1,4 +1,5 @@
 import '../../components/vertical-videos-panel/client.jsx';
+import '../../components/two-column-text-callout/client.jsx';
 import '../../components/topic-subtopic-listing/client.jsx';
 import '../../components/text-callout/client.jsx';
 import '../../components/subtopics-subnav/client.jsx';
@@ -17,6 +18,7 @@ import '../../components/popular-stories-cf/client.jsx';
 import '../../components/popular-stories/client.jsx';
 import '../../components/policy-brief/client.jsx';
 import '../../components/multicolumn-listing/client.jsx';
+import '../../components/multicolumn-info-section/client.jsx';
 import '../../components/multicolumn-image/client.jsx';
 import '../../components/multicolumn-fact-panel/client.jsx';
 import '../../components/metadata-fields/client.jsx';

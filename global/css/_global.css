@@ -778,6 +778,20 @@ div[data-component="footer-component"] {
   @apply su-mt-0 !important;
 }
 
+.su-page.su-page-story-featured [data-component="text-callout"] > div {
+  @apply su-w-full su-max-w-[732px] md:su-w-[84.75%];
+}
+
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="text-callout"]
+  > div {
+  @apply su-w-full su-max-w-800;
+}
+
 /*
 * Containers
 */
@@ -985,7 +999,7 @@ WYSIWYG formatting styles
 
 /* Set specfic spacing for paragraphs */
 [data-component="text-callout"] .su-wysiwyg-content p {
-  @apply su-mb-20 md:su-mb-26 xl:su-mb-27;
+  @apply su-rs-mb-1 last:su-mb-0;
 }
 
 .su-wysiwyg-content ul ul,
@@ -1094,7 +1108,7 @@ WYSIWYG formatting styles
 .su-wysiwyg-content u,
 .su-page-content > div:not([data-component]) .underline,
 .su-page-content > div:not([data-component]) u {
-  @apply su-underline;
+  @apply su-underline hocus:su-no-underline;
 }
 
 .container > span .justify,
@@ -1322,6 +1336,8 @@ Subscribe to Stanford Report Marketo form styles
       ". a a a c c c c c c . .";
   }
 }
+
+/* multicolumn-info-section Grid setup. */
 
 /**
  * Campaign page global styles
