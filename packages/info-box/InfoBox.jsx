@@ -74,26 +74,27 @@ export default function InfoBox({
             <span className="su-w-full su-bg-black-40 dark:su-bg-black-70 su-h-px su-absolute su-bottom-4" />
           </div>
         </div>
-
-        <div
-          className={cnb(
-            hasImage && imagePlacement === "Above content"
-              ? "su-order-2"
-              : "su-order-1",
-            "su-flex su-flex-col su-gap-12"
-          )}
-        >
-          <XssSafeContent
+        {content && (
+          <div
             className={cnb(
-              "su-wysiwyg-content",
-              "*:su-text-16 *:md:su-text-19",
-              "*:su-leading",
-              "last:*:su-mb-0"
+              hasImage && imagePlacement === "Above content"
+                ? "su-order-2"
+                : "su-order-1",
+              "su-flex su-flex-col su-gap-12"
             )}
-            content={content}
-            elementType="div"
-          />
-        </div>
+          >
+            <XssSafeContent
+              className={cnb(
+                "su-wysiwyg-content",
+                "*:su-text-16 *:md:su-text-19",
+                "*:su-leading",
+                "last:*:su-mb-0"
+              )}
+              content={content}
+              elementType="div"
+            />
+          </div>
+        )}
 
         {hasImage && (
           <figure
