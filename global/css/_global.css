@@ -1403,3 +1403,7 @@ Subscribe to Stanford Report Marketo form styles
 .fed-issues .su-upper-content h1 {
   @apply su-rs-pb-7;
 }
+
+div[data-component="basic-hero"] a {
+  @apply su-text-white hocus:su-no-underline hocus:su-opacity-80;
+}
