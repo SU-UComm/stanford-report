@@ -782,14 +782,76 @@ div[data-component="footer-component"] {
   @apply su-w-full su-max-w-[732px] md:su-w-[84.75%];
 }
 
+/** 
+  * Updates Page scoped max-width for content elements
+*/
 .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button-row"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="pullquote"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div,
+  .su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
   [data-component="text-callout"]
   > div {
-  @apply su-w-full su-max-w-800;
+  @apply su-w-full su-px-20 md:su-px-50 xl:su-px-0 md:su-max-w-900 xl:su-max-w-800;
+}
+
+/* This overrides the max-width in the container around the title/summary of the Single Image Video
+ * It was inset in the regular view, but we want the title/summary to have the same width and max-width as the image/video
+*/
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div
+  > section
+  > div {
+  @apply md:su-max-w-none lg:su-max-w-none;
+}
+
+.su-page:not(
+  .su-page-has-sidebar,
+  .su-page-story-featured,
+  .su-page-has-sidebar--left
+)
+  .su-page-content
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ) {
+  @apply su-w-full su-max-w-900;
 }
 
 /*
@@ -1336,8 +1398,6 @@ Subscribe to Stanford Report Marketo form styles
       ". a a a c c c c c c . .";
   }
 }
-
-/* multicolumn-info-section Grid setup. */
 
 /**
  * Campaign page global styles

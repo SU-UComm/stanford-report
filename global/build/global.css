@@ -1199,13 +1199,152 @@ div[data-component="footer-component"]{position:relative}
 .su-page.su-page-story-featured [data-component="text-callout"] > div{width:100%;max-width:732px}
 @media (min-width: 768px){
 .su-page.su-page-story-featured [data-component="text-callout"] > div{width:84.75%}}
+/** 
+  * Updates Page scoped max-width for content elements
+*/
 .su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
+  [data-component="button"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button-row"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="pullquote"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
   [data-component="text-callout"]
-  > div{width:100%;max-width:80rem}
+  > div{width:100%;padding-left:2rem;padding-right:2rem}
+@media (min-width: 768px){
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button-row"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="pullquote"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="text-callout"]
+  > div{max-width:90rem;padding-left:5rem;padding-right:5rem}}
+@media (min-width: 1200px){
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button-row"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="pullquote"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div,
+  .su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="text-callout"]
+  > div{max-width:80rem;padding-left:0;padding-right:0}}
+/* This overrides the max-width in the container around the title/summary of the Single Image Video
+ * It was inset in the regular view, but we want the title/summary to have the same width and max-width as the image/video
+*/
+@media (min-width: 768px){
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div
+  > section
+  > div{max-width:none}}
+@media (min-width: 992px){
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div
+  > section
+  > div{max-width:none}}
+.su-page:not(
+  .su-page-has-sidebar,
+  .su-page-story-featured,
+  .su-page-has-sidebar--left
+)
+  .su-page-content
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ){width:100%;max-width:90rem}
 /*
 * Containers
 */
@@ -2043,7 +2182,6 @@ Subscribe to Stanford Report Marketo form styles
       ". a a a c c c c c c . .";
   }
 }
-/* multicolumn-info-section Grid setup. */
 /**
  * Campaign page global styles
  */
@@ -3477,6 +3615,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-text-\[2\.0rem\]{font-size:2.0rem}
 .su-text-\[2\.4rem\]{font-size:2.4rem}
 .su-text-\[3\.5rem\]{font-size:3.5rem}
+.su-text-\[3\.6rem\]{font-size:3.6rem}
 .su-text-\[33px\]{font-size:33px}
 .su-text-\[35px\]{font-size:35px}
 .su-text-\[39px\]{font-size:39px}
@@ -4658,6 +4797,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .sm\:su-text-23{font-size:2.3rem}
 .sm\:su-text-24{font-size:2.4rem}
 .sm\:su-text-\[22\.5px\]{font-size:22.5px}
+.sm\:su-text-\[4\.8rem\]{font-size:4.8rem}
 .sm\:su-text-\[6\.1rem\]{font-size:6.1rem}
 .sm\:su-leading-\[27px\]{line-height:27px}
 .sm\:su-leading-\[28\.75px\]{line-height:28.75px}}
@@ -5063,6 +5203,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .lg\:su-max-w-\[185px\]{max-width:185px}
 .lg\:su-max-w-\[29\.2rem\]{max-width:29.2rem}
 .lg\:su-max-w-\[29\.3rem\]{max-width:29.3rem}
+.lg\:su-max-w-\[293px\]{max-width:293px}
 .lg\:su-max-w-\[296px\]{max-width:296px}
 .lg\:su-max-w-\[35\.9rem\]{max-width:35.9rem}
 .lg\:su-max-w-\[38\.2rem\]{max-width:38.2rem}
@@ -5172,6 +5313,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .lg\:su-text-\[128px\]{font-size:128px}
 .lg\:su-text-\[2\.1rem\]{font-size:2.1rem}
 .lg\:su-text-\[2\.8rem\]{font-size:2.8rem}
+.lg\:su-text-\[3\.6rem\]{font-size:3.6rem}
 .lg\:su-text-\[32px\]{font-size:32px}
 .lg\:su-text-\[33px\]{font-size:33px}
 .lg\:su-text-\[4\.3rem\]{font-size:4.3rem}
@@ -5289,7 +5431,8 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\32xl\:su-pl-76{padding-left:7.6rem}
 .\32xl\:su-pt-400{padding-top:40rem}
 .\32xl\:su-text-\[2\.9rem\]{font-size:2.9rem}
-.\32xl\:su-text-\[3\.3rem\]{font-size:3.3rem}}
+.\32xl\:su-text-\[3\.3rem\]{font-size:3.3rem}
+.\32xl\:su-text-\[4\.8rem\]{font-size:4.8rem}}
 .\[\&\>\*\:last-child\]\:su-mb-0>*:last-child{margin-bottom:0}
 .\[\&\>\*\:last-child\]\:after\:su-content-\[\'\\u201D\'\]>*:last-child::after{--tw-content:'\u201D';content:var(--tw-content)}
 .\[\&\>\*\:last-child\]\:after\:su-content-\[\'\201D\'\]>*:last-child::after{--tw-content:'”';content:var(--tw-content)}
