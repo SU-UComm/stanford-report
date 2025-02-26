@@ -1061,7 +1061,7 @@ WYSIWYG formatting styles
 
 /* Set specfic spacing for paragraphs */
 [data-component="text-callout"] .su-wysiwyg-content p {
-  @apply su-mb-20 md:su-mb-26 xl:su-mb-27;
+  @apply su-rs-mb-1 last:su-mb-0;
 }
 
 .su-wysiwyg-content ul ul,
@@ -1170,7 +1170,7 @@ WYSIWYG formatting styles
 .su-wysiwyg-content u,
 .su-page-content > div:not([data-component]) .underline,
 .su-page-content > div:not([data-component]) u {
-  @apply su-underline;
+  @apply su-underline hocus:su-no-underline;
 }
 
 .container > span .justify,
