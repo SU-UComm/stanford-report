@@ -24,18 +24,18 @@ export default function MulticolumnInfoSection({
     <Container width="wide">
       <div
         className={cnb(
-          "su-grid su-grid-cols-6 su-grid-gap su-gap-y-0 md:su-grid-cols-12",
+          "su-grid lg:su-grid-cols-12 su-grid-gap su-gap-y-0 su-max-w-800 su-mx-auto lg:su-max-w-none",
           border &&
             "su-border-b su-rs-pb-5 su-border-b-black-30 dark:su-border-b-black"
         )}
       >
-        <h2 className="su-type-2 su-break-words su-col-span-full md:su-col-span-10 md:su-col-start-2 lg:su-col-span-8 xl:su-col-span-3">
+        <h2 className="su-type-2 su-break-words su-col-span-full lg:su-col-span-8 xl:su-col-span-3">
           {colOne.title}
         </h2>
         <XssSafeContent
           content={colTwo.infoText}
           className={cnb(
-            "su-col-span-full md:su-col-span-10 md:su-col-start-2 lg:su-col-span-8",
+            "su-col-span-full lg:su-col-span-8",
             callout
               ? "xl:su-col-span-6 xl:last:[&>*]:su-mb-0"
               : "xl:su-col-span-7 last:[&>*]:su-mb-0"
@@ -43,8 +43,8 @@ export default function MulticolumnInfoSection({
         />
         {callout && (
           <InfoBox
-            containerClassName="su-break-words su-col-span-full md:su-col-span-10 md:su-col-start-2 lg:su-col-span-4 lg:su-col-start-9 xl:su-col-span-3"
-            innerClassName="su-rs-p-0"
+            containerClassName="su-break-words su-col-span-full lg:su-col-span-4 lg:su-col-start-9 xl:su-col-span-3"
+            innerClassName="su-p-20 md:su-p-36 lg:su-px-20 lg:su-py-26"
             title={colThree.title}
             content={colThree.content}
             imageData={imageData}
