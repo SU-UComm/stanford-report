@@ -1405,5 +1405,5 @@ Subscribe to Stanford Report Marketo form styles
 }
 
 div[data-component="basic-hero"] a {
-  @apply su-text-white hocus:su-no-underline hocus:su-opacity-80;
+  @apply su-text-white hocus:su-no-underline hocus:su-opacity-80 dark:hocus:su-text-white;
 }
