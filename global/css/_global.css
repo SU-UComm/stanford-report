@@ -779,7 +779,7 @@ div[data-component="footer-component"] {
 }
 
 .su-page.su-page-story-featured [data-component="text-callout"] > div {
-  @apply su-w-full su-px-20 md:su-px-50 xl:su-px-0 md:su-w-[84.75%] md:su-max-w-[73.2rem] xl:su-max-w-[63.2rem] ;
+  @apply su-w-full su-px-20 md:su-px-50 xl:su-px-0 md:su-w-[84.75%] md:su-max-w-[73.2rem] xl:su-max-w-[63.2rem];
 }
 
 /** 
@@ -792,28 +792,56 @@ div[data-component="footer-component"] {
   )
   [data-component="button"]
   > div,
-  .su-page:not(
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
   [data-component="button-row"]
   > div,
-  .su-page:not(
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
   [data-component="pullquote"]
   > div,
-  .su-page:not(
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
   [data-component="single-image-video"]
   > div,
-  .su-page:not(
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button-row"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="pullquote"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div,
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
@@ -839,10 +867,10 @@ div[data-component="footer-component"] {
 }
 
 .su-page:not(
-  .su-page-has-sidebar,
-  .su-page-story-featured,
-  .su-page-has-sidebar--left
-)
+    .su-page-has-sidebar,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
   .su-page-content
   > *:not(
     [data-component],
@@ -1464,6 +1492,14 @@ Subscribe to Stanford Report Marketo form styles
   @apply su-rs-pb-7;
 }
 
+/* Link styles for basic hero on updates pages. */
 div[data-component="basic-hero"] a {
   @apply su-text-white hocus:su-no-underline hocus:su-opacity-80 dark:hocus:su-text-white;
+}
+
+/* Link styles to remove underline on :hocus for multicolumn-info-section component.
+The .su-wysiwyg-content class adds some odd stuff that I'm not sure we want here.
+Will need to further evaluate, but this will do for now. */
+div[data-component="multicolumn-info-section"] a {
+  @apply hocus:su-no-underline;
 }

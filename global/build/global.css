@@ -1212,28 +1212,56 @@ div[data-component="footer-component"]{position:relative}
   )
   [data-component="button"]
   > div,
-  .su-page:not(
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
   [data-component="button-row"]
   > div,
-  .su-page:not(
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
   [data-component="pullquote"]
   > div,
-  .su-page:not(
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
   [data-component="single-image-video"]
   > div,
-  .su-page:not(
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button-row"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="pullquote"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div,
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
@@ -1248,28 +1276,56 @@ div[data-component="footer-component"]{position:relative}
   )
   [data-component="button"]
   > div,
-  .su-page:not(
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
   [data-component="button-row"]
   > div,
-  .su-page:not(
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
   [data-component="pullquote"]
   > div,
-  .su-page:not(
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
   [data-component="single-image-video"]
   > div,
-  .su-page:not(
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button-row"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="pullquote"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div,
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
@@ -1284,28 +1340,56 @@ div[data-component="footer-component"]{position:relative}
   )
   [data-component="button"]
   > div,
-  .su-page:not(
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
   [data-component="button-row"]
   > div,
-  .su-page:not(
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
   [data-component="pullquote"]
   > div,
-  .su-page:not(
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
   [data-component="single-image-video"]
   > div,
-  .su-page:not(
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button-row"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="pullquote"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div,
+.su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
     .su-page-has-sidebar--left
@@ -1336,10 +1420,10 @@ div[data-component="footer-component"]{position:relative}
   > section
   > div{max-width:none}}
 .su-page:not(
-  .su-page-has-sidebar,
-  .su-page-story-featured,
-  .su-page-has-sidebar--left
-)
+    .su-page-has-sidebar,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
   .su-page-content
   > *:not(
     [data-component],
@@ -2247,11 +2331,17 @@ Subscribe to Stanford Report Marketo form styles
 .fed-issues .su-upper-content h1{padding-bottom:10.8rem}}
 @media (min-width: 1500px){
 .fed-issues .su-upper-content h1{padding-bottom:11.4rem}}
+/* Link styles for basic hero on updates pages. */
 div[data-component="basic-hero"] a{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 div[data-component="basic-hero"] a:hover{text-decoration-line:none;opacity:0.8}
 div[data-component="basic-hero"] a:focus{text-decoration-line:none;opacity:0.8}
 div[data-component="basic-hero"] a:hover:is(.su-dark *){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 div[data-component="basic-hero"] a:focus:is(.su-dark *){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
+/* Link styles to remove underline on :hocus for multicolumn-info-section component.
+The .su-wysiwyg-content class adds some odd stuff that I'm not sure we want here.
+Will need to further evaluate, but this will do for now. */
+div[data-component="multicolumn-info-section"] a:hover{text-decoration-line:none}
+div[data-component="multicolumn-info-section"] a:focus{text-decoration-line:none}
 .scrollable-list__item::after{display:inline-block;vertical-align:middle}
 [data-component="story-lead"] .su-story-first-letter > *:first-child::first-letter{float:left;margin-top:0.2rem;margin-right:0.9rem;padding:0;font-family:"Source Serif 4", "Source Serif Pro", Georgia, Times, "Times New Roman", serif;font-size:7.2rem;font-weight:700;line-height:35px}
 @media (min-width: 768px){
