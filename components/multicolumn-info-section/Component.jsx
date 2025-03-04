@@ -2,6 +2,7 @@ import React from "react";
 import { cnb } from "cnbuilder";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Container } from "../../packages/grids/Container";
+import { LinkButton } from "../../packages/links/LinkButton";
 import InfoBox from "../../packages/info-box/InfoBox";
 
 /**
@@ -17,6 +18,7 @@ export default function MulticolumnInfoSection({
   colOne,
   colTwo,
   colThree,
+  infoInternalLinkUrl,
   imageData,
   internalLinkUrl,
 }) {
@@ -32,15 +34,25 @@ export default function MulticolumnInfoSection({
         <h2 className="su-type-2 su-break-words su-col-span-full lg:su-col-span-8 xl:su-col-span-3">
           {colOne.title}
         </h2>
-        <XssSafeContent
-          content={colTwo.infoText}
+        <div
           className={cnb(
             "su-col-span-full lg:su-col-span-8",
             callout
               ? "xl:su-col-span-6 xl:last:[&>*]:su-mb-0"
               : "xl:su-col-span-7 last:[&>*]:su-mb-0"
           )}
-        />
+        >
+          <XssSafeContent content={colTwo.infoText} />
+          {colTwo.addButton && (
+            <LinkButton
+              buttonText={colTwo.buttonConfiguration.buttonText}
+              internalUrl={infoInternalLinkUrl}
+              externalUrl={colTwo.buttonConfiguration.externalUrl}
+              isNewWindow={colTwo.buttonConfiguration.isNewWindow}
+              className="su-rs-mt-1 su-order-3"
+            />
+          )}
+        </div>
         {callout && (
           <InfoBox
             containerClassName="su-break-words su-col-span-full lg:su-col-span-4 lg:su-col-start-9 xl:su-col-span-3"

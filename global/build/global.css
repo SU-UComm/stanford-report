@@ -1238,34 +1238,6 @@ div[data-component="footer-component"]{position:relative}
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
-  [data-component="button"]
-  > div,
-.su-page:not(
-    .su-page-story-basic,
-    .su-page-story-featured,
-    .su-page-has-sidebar--left
-  )
-  [data-component="button-row"]
-  > div,
-.su-page:not(
-    .su-page-story-basic,
-    .su-page-story-featured,
-    .su-page-has-sidebar--left
-  )
-  [data-component="pullquote"]
-  > div,
-.su-page:not(
-    .su-page-story-basic,
-    .su-page-story-featured,
-    .su-page-has-sidebar--left
-  )
-  [data-component="single-image-video"]
-  > div,
-.su-page:not(
-    .su-page-story-basic,
-    .su-page-story-featured,
-    .su-page-has-sidebar--left
-  )
   [data-component="text-callout"]
   > div{width:100%;padding-left:2rem;padding-right:2rem}
 @media (min-width: 768px){
@@ -1302,65 +1274,9 @@ div[data-component="footer-component"]{position:relative}
     .su-page-story-featured,
     .su-page-has-sidebar--left
   )
-  [data-component="button"]
-  > div,
-.su-page:not(
-    .su-page-story-basic,
-    .su-page-story-featured,
-    .su-page-has-sidebar--left
-  )
-  [data-component="button-row"]
-  > div,
-.su-page:not(
-    .su-page-story-basic,
-    .su-page-story-featured,
-    .su-page-has-sidebar--left
-  )
-  [data-component="pullquote"]
-  > div,
-.su-page:not(
-    .su-page-story-basic,
-    .su-page-story-featured,
-    .su-page-has-sidebar--left
-  )
-  [data-component="single-image-video"]
-  > div,
-.su-page:not(
-    .su-page-story-basic,
-    .su-page-story-featured,
-    .su-page-has-sidebar--left
-  )
   [data-component="text-callout"]
   > div{max-width:90rem;padding-left:5rem;padding-right:5rem}}
 @media (min-width: 1200px){
-.su-page:not(
-    .su-page-story-basic,
-    .su-page-story-featured,
-    .su-page-has-sidebar--left
-  )
-  [data-component="button"]
-  > div,
-.su-page:not(
-    .su-page-story-basic,
-    .su-page-story-featured,
-    .su-page-has-sidebar--left
-  )
-  [data-component="button-row"]
-  > div,
-.su-page:not(
-    .su-page-story-basic,
-    .su-page-story-featured,
-    .su-page-has-sidebar--left
-  )
-  [data-component="pullquote"]
-  > div,
-.su-page:not(
-    .su-page-story-basic,
-    .su-page-story-featured,
-    .su-page-has-sidebar--left
-  )
-  [data-component="single-image-video"]
-  > div,
 .su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
