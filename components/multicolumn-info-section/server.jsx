@@ -7,7 +7,7 @@ export default async (args, info) => {
   /* Button in second column, with infoText */
   const { infoInternalUrl } = args.colTwo.buttonConfiguration;
   const { image } = args.colThree.imageConfiguration;
-  /* Button in thirdd column, inside InfoBox */
+  /* Button in third column, inside InfoBox */
   const { internalUrl } = args.colThree.buttonConfiguration;
 
   /* Button in second column, with infoText */
@@ -17,7 +17,7 @@ export default async (args, info) => {
   }
   const infoInternalLinkUrl = infoLinkUrl?.url;
 
-  /* Button in thirdd column, inside InfoBox */
+  /* Button in third column, inside InfoBox */
   let linkUrl = null;
   if (internalUrl) {
     linkUrl = await basicAssetUri(ctx, internalUrl);
@@ -36,6 +36,7 @@ export default async (args, info) => {
     infoInternalLinkUrl,
     internalLinkUrl,
   };
+
   return renderComponent({
     Component,
     componentName: "multicolumn-info-section",
