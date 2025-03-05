@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "multicolumn-info-section",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "namespace": "stanford-components",
   "description": "The multicolumn info section displays a title in column 1, WYSIWYG content in column 2, and an optional text callout in column",
   "displayName": "Multicolumn Info Section",
@@ -89,7 +89,7 @@
                           "title": "Button text",
                           "type": "string"
                         },
-                        "internalUrl": {
+                        "infoInternalUrl": {
                           "title": "Internal link (Matrix asset link)",
                           "type": "string",
                           "description": "Select a page/asset to link to. If this field is filled out, it will be used instead of the external link field below.",

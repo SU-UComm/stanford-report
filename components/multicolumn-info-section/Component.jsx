@@ -22,8 +22,6 @@ export default function MulticolumnInfoSection({
   imageData,
   internalLinkUrl,
 }) {
-  console.log(infoInternalLinkUrl);
-  console.log(internalLinkUrl);
   return (
     <Container width="wide">
       <div
@@ -44,7 +42,12 @@ export default function MulticolumnInfoSection({
               : "xl:su-col-span-7 last:[&>*]:su-mb-0"
           )}
         >
-          <XssSafeContent content={colTwo.infoText} />
+          <XssSafeContent
+            content={colTwo.infoText}
+            className={cnb(
+              callout ? "xl:last:[&>*]:su-mb-0" : "last:[&>*]:su-mb-0"
+            )}
+          />
           {colTwo.addButton && (
             <LinkButton
               buttonText={colTwo.buttonConfiguration.buttonText}
