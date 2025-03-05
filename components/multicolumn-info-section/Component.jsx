@@ -22,6 +22,8 @@ export default function MulticolumnInfoSection({
   imageData,
   internalLinkUrl,
 }) {
+  console.log(infoInternalLinkUrl);
+  console.log(internalLinkUrl);
   return (
     <Container width="wide">
       <div
