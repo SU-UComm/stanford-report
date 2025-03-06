@@ -68,9 +68,15 @@ export default function BasicHero(props) {
         /* This feature is to come. Putting this here as placeholder. */
         <Container width="wide" className="su-rs-mb-3">
           <nav className="su-grid su-grid-cols-6 su-grid-gap su-gap-y-0 md:su-grid-cols-12">
-            <ul className="su-col-span-8 su-col-start-3 su-p-0">
-              <li className="su-inline">Parent page title</li>
-              <li className="su-inline">Child page title</li>
+            <ul className="su-col-span-8 su-col-start-3 su-p-0 su-text-18 su-font-semibold">
+              <li className="su-inline">
+                <a href="." className="!su-text-black">
+                  Stanford updates and resources on federal issues
+                </a>
+              </li>
+              <li className="su-inline su-text-cardinal-red before:su-content-['>'] before:su-mx-8">
+                Research
+              </li>
             </ul>
           </nav>
         </Container>
