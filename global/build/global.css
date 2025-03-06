@@ -2746,6 +2746,14 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-rs-mt-neg1{margin-top:1.2rem}}
 @media (min-width: 1500px){
 .su-rs-mt-neg1{margin-top:1.3rem}}
+.su-type-9{font-size:3.52em;letter-spacing:-0.026em;}
+.\!su-type-9{font-size:3.52em !important;letter-spacing:-0.026em !important;}
+@media (min-width: 768px){
+.su-type-9{font-size:5.16em}
+.\!su-type-9{font-size:5.16em !important}}
+@media (min-width: 992px){
+.su-type-9{font-size:7.45em}
+.\!su-type-9{font-size:7.45em !important}}
 .su-type-5{font-size:2.01em;letter-spacing:-0.018em;}
 @media (min-width: 768px){
 .su-type-5{font-size:2.49em}}
@@ -3044,6 +3052,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-max-h-1000{max-height:100rem}
 .su-max-h-70{max-height:7rem}
 .su-max-h-\[103px\]{max-height:103px}
+.su-min-h-\[5\.6rem\]{min-height:5.6rem}
 .su-min-h-\[56px\]{min-height:56px}
 .su-min-h-full{min-height:100%}
 .\!su-w-full{width:100% !important}
@@ -5047,6 +5056,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .lg\:su-max-w-\[118\.6rem\]{max-width:118.6rem}
 .lg\:su-max-w-\[185px\]{max-width:185px}
 .lg\:su-max-w-\[29\.2rem\]{max-width:29.2rem}
+.lg\:su-max-w-\[29\.3rem\]{max-width:29.3rem}
 .lg\:su-max-w-\[293px\]{max-width:293px}
 .lg\:su-max-w-\[296px\]{max-width:296px}
 .lg\:su-max-w-\[35\.9rem\]{max-width:35.9rem}

@@ -21,13 +21,14 @@ export default function BasicHero(props) {
     summary,
     updatesPage,
     backgroundColor,
+    relation,
     breadcrumb,
   } = props;
   return updatesPage === "yes" ? (
     <>
       <div
         className={cnb(
-          "su-rs-py-5",
+          relation === "child" ? "su-rs-py-4" : "su-rs-py-5",
           backgroundColor === "cardinal" &&
             "su-bg-gradient-to-t su-from-cardinal-red-dark su-from-5% su-via-cardinal-red su-via-50% su-to-cardinal-red-dark su-to-95%",
           backgroundColor === "digital red" && "su-bg-digital-red",
@@ -44,7 +45,8 @@ export default function BasicHero(props) {
           <h1
             className={cnb(
               "su-font-serif su-drop-shadow-md su-mb-0 su-col-span-full lg:su-col-span-10 lg:su-col-start-2",
-              titleAlignment === "center" && "su-text-center su-mx-auto"
+              titleAlignment === "center" && "su-text-center su-mx-auto",
+              relation === "child" && "su-type-3"
             )}
           >
             {title}
@@ -53,8 +55,8 @@ export default function BasicHero(props) {
             <XssSafeContent
               className={cnb(
                 "su-col-span-full lg:su-col-span-10 lg:su-col-start-2 xl:su-col-span-8 xl:su-col-start-3",
-                "su-font-serif su-mb-0 su-rs-mt-2 su-text-[1.125em]",
-                ""
+                "su-font-serif su-mb-0 su-rs-mt-2",
+                relation === "child" ? "su-text-18" : "su-text-[1.125em]"
               )}
               content={summary}
               elementType="div"
