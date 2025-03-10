@@ -21,17 +21,26 @@ export default function BasicHero(props) {
     summary,
     updatesPage,
     backgroundColor,
-    breadcrumb,
+    relation,
+    parentData,
   } = props;
+
+  let heroSummary = "";
+  if (parentData && parentData.parentSummary) {
+    heroSummary = parentData.parentSummary;
+  } else if (summary && relation === "child") {
+    heroSummary = parentData.parentSummary;
+  } else heroSummary = summary;
+
   return updatesPage === "yes" ? (
     <>
       <div
         className={cnb(
-          "su-rs-py-5",
+          relation === "child" ? "su-rs-py-3" : "su-rs-py-5",
           backgroundColor === "cardinal" &&
             "su-bg-gradient-to-t su-from-cardinal-red-dark su-from-5% su-via-cardinal-red su-via-50% su-to-cardinal-red-dark su-to-95%",
           backgroundColor === "digital red" && "su-bg-digital-red",
-          breadcrumb ? "su-rs-mb-0" : "su-rs-mb-3"
+          parentData ? "su-rs-mb-0" : "su-rs-mb-3"
         )}
       >
         <Container
@@ -44,33 +53,50 @@ export default function BasicHero(props) {
           <h1
             className={cnb(
               "su-font-serif su-drop-shadow-md su-mb-0 su-col-span-full lg:su-col-span-10 lg:su-col-start-2",
-              titleAlignment === "center" && "su-text-center su-mx-auto"
+              titleAlignment === "center" && "su-text-center su-mx-auto",
+              relation === "child" && "su-type-3"
             )}
           >
-            {title}
+            {parentData ? parentData.parentTitle : title}
           </h1>
-          {summary && (
+          {heroSummary && (
             <XssSafeContent
               className={cnb(
                 "su-col-span-full lg:su-col-span-10 lg:su-col-start-2 xl:su-col-span-8 xl:su-col-start-3",
-                "su-font-serif su-mb-0 su-rs-mt-2 su-text-[1.125em]",
-                ""
+                "su-font-serif su-mb-0 su-rs-mt-2",
+                relation === "child" ? "su-text-18" : "su-text-[1.125em]"
               )}
-              content={summary}
+              content={heroSummary}
               elementType="div"
             />
           )}
         </Container>
       </div>
-      {breadcrumb && (
-        /* This feature is to come. Putting this here as placeholder. */
-        <Container width="wide" className="su-rs-mb-3">
-          <nav className="su-grid su-grid-cols-6 su-grid-gap su-gap-y-0 md:su-grid-cols-12">
-            <ul className="su-col-span-8 su-col-start-3 su-p-0">
-              <li className="su-inline">Parent page title</li>
-              <li className="su-inline">Child page title</li>
+      {parentData && parentData.parentType === "page_content" && (
+        <Container
+          width="wide"
+          className="su-grid su-grid-cols-6 su-grid-gap su-gap-y-0 md:su-grid-cols-12"
+        >
+          <nav className="su-col-span-8 su-col-start-3 su-rs-mb-3">
+            <ul className="su-p-0 su-text-18 su-font-semibold">
+              <li className="su-inline">
+                <a href={parentData.parentUrl} className="!su-text-black">
+                  {parentData.parentTitle}
+                </a>
+              </li>
+              <li className="su-inline su-text-cardinal-red before:su-content-['>'] before:su-mx-8">
+                {title}
+              </li>
             </ul>
           </nav>
+          <h2 className="su-col-span-8 su-col-start-3">{title}</h2>
+          {summary && (
+            <XssSafeContent
+              className="su-col-span-8 su-col-start-3 su-text-[1.125em]"
+              content={summary}
+              elementType="div"
+            />
+          )}
         </Container>
       )}
     </>
