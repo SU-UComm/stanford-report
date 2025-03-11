@@ -54,7 +54,10 @@ export default function BasicHero(props) {
             className={cnb(
               "su-font-serif su-drop-shadow-md su-mb-0 su-col-span-full lg:su-col-span-10 lg:su-col-start-2",
               titleAlignment === "center" && "su-text-center su-mx-auto",
-              relation === "child" && "su-type-3"
+              relation === "child" && "su-type-3",
+              relation === "child" &&
+                parentData.parentTitleAlignment === "center" &&
+                "su-text-center su-mx-auto"
             )}
           >
             {parentData ? parentData.parentTitle : title}
@@ -77,26 +80,31 @@ export default function BasicHero(props) {
           width="wide"
           className="su-grid su-grid-cols-6 su-grid-gap su-gap-y-0 md:su-grid-cols-12"
         >
-          <nav className="su-col-span-8 su-col-start-3 su-rs-mb-3">
-            <ul className="su-p-0 su-text-18 su-font-semibold">
-              <li className="su-inline">
-                <a href={parentData.parentUrl} className="!su-text-black">
-                  {parentData.parentTitle}
-                </a>
-              </li>
-              <li className="su-inline su-text-cardinal-red before:su-content-['>'] before:su-mx-8">
-                {title}
-              </li>
-            </ul>
-          </nav>
-          <h2 className="su-col-span-8 su-col-start-3">{title}</h2>
-          {summary && (
-            <XssSafeContent
-              className="su-col-span-8 su-col-start-3 su-text-[1.125em]"
-              content={summary}
-              elementType="div"
-            />
-          )}
+          <div className="su-col-span-full lg:su-col-span-10 lg:su-col-start-2 xl:su-col-span-8 xl:su-col-start-3">
+            <nav aria-label="breadcrumb" className="su-rs-mb-3">
+              <ul className="su-p-0 su-text-18 su-font-semibold">
+                <li className="su-inline after:su-content-['>'] after:su-mx-6">
+                  <a href={parentData.parentUrl} className="!su-text-black">
+                    {parentData.parentTitle}
+                  </a>
+                </li>
+                <li
+                  aria-current="page"
+                  className="su-inline su-text-cardinal-red"
+                >
+                  {title}
+                </li>
+              </ul>
+            </nav>
+            <h2>{title}</h2>
+            {summary && (
+              <XssSafeContent
+                className="su-text-[1.125em]"
+                content={summary}
+                elementType="div"
+              />
+            )}
+          </div>
         </Container>
       )}
     </>
