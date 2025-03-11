@@ -164,45 +164,6 @@
           }
         }
       }
-    },
-    "loaded": {
-      "functionData": {
-        "main": {
-          "inputData": {
-            "type": "file",
-            "path": "loaded.data.json"
-          },
-          "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
-          }
-        }
-      }
-    },
-    "nocallout": {
-      "functionData": {
-        "main": {
-          "inputData": {
-            "type": "file",
-            "path": "nocallout.data.json"
-          },
-          "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
-          }
-        }
-      }
-    },
-    "infobutton": {
-      "functionData": {
-        "main": {
-          "inputData": {
-            "type": "file",
-            "path": "infobutton.data.json"
-          },
-          "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
-          }
-        }
-      }
     }
   }
 }
