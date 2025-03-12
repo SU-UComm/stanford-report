@@ -1,4 +1,5 @@
 import React from "react";
+import { cnb } from "cnbuilder";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
 import { Avatar } from "../quotes/Avatar";
 
@@ -38,7 +39,11 @@ export default function AvatarCard({
     >
       <h3 className="su-text-21 lg:su-text-24 su-leading-display su-flex-grow su-my-0 su-font-serif su-w-full">
         <XssSafeContent
-          className="su-transition su-text-black su-font-bold su-no-underline hocus:su-text-digital-red dark:su-text-white dark:hocus:su-text-dark-mode-red hocus:su-underline"
+          className={cnb(
+            "su-stretched-link su-inline-block su-transition su-text-black su-font-bold su-no-underline hocus:su-text-digital-red dark:su-text-white dark:hocus:su-text-dark-mode-red hocus:su-underline",
+            "focus:su-outline-none focus-visible:su-ring-2 focus-visible:su-rounded focus-visible:su-ring-digital-red dark:focus-visible:su-ring-dark-mode-red focus-visible:su-outline-none",
+            "focus-visible:after:su-outline focus-visible:after:su-outline-offset-8 focus-visible:after:su-outline-digital-red dark:focus-visible:after:su-outline-dark-mode-red"
+          )}
           content={title}
           href={liveUrl}
           elementType="a"
