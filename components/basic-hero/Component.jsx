@@ -84,13 +84,16 @@ export default function BasicHero(props) {
             <nav aria-label="breadcrumb" className="su-rs-mb-3">
               <ul className="su-p-0 su-text-18 su-font-semibold">
                 <li className="su-inline after:su-content-['>'] after:su-mx-6">
-                  <a href={parentData.parentUrl} className="!su-text-black">
+                  <a
+                    href={parentData.parentUrl}
+                    className="!su-text-black dark:!su-text-white"
+                  >
                     {parentData.parentTitle}
                   </a>
                 </li>
                 <li
                   aria-current="page"
-                  className="su-inline su-text-cardinal-red"
+                  className="su-inline su-text-cardinal-red dark:su-text-dark-mode-red"
                 >
                   {title}
                 </li>
