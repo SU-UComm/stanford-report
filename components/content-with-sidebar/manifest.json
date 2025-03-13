@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "content-with-sidebar",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "namespace": "stanford-components",
   "description": "Use this component to display WYSIWYG text with a Text Callout as a sidebar.",
   "displayName": "Content with sidebar",
@@ -158,6 +158,19 @@
           "inputData": {
             "type": "file",
             "path": "default.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "nosidebar": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "nosidebar.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
