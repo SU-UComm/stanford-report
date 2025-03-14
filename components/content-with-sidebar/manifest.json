@@ -164,19 +164,6 @@
           }
         }
       }
-    },
-    "nosidebar": {
-      "functionData": {
-        "main": {
-          "inputData": {
-            "type": "file",
-            "path": "nosidebar.data.json"
-          },
-          "wrapper": {
-            "path": "../../packages/__globalPreview/preview.html"
-          }
-        }
-      }
     }
   }
 }
