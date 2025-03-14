@@ -39,6 +39,7 @@ import '../../components/feature-story-hero/client.jsx';
 import '../../components/fact-callout/client.jsx';
 import '../../components/events-section/client.jsx';
 import '../../components/cta-cards-block/client.jsx';
+import '../../components/content-with-sidebar/client.jsx';
 import '../../components/content-carousel/client.jsx';
 import '../../components/combined-content-grid/client.jsx';
 import '../../components/campaign-hero/client.jsx';
