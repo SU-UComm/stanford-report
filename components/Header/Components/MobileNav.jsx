@@ -18,7 +18,7 @@ function MajorLinks({ items }) {
           return (
             <li className="su-mb-0 su-w-full" key={item.asset_assetid}>
               <a
-                className="su-text-black hocus:su-underline dark:su-text-white dark:hover:su-text-dark-mode-red su-text-20 md:su-text-26 su-leading-[3.1rem] focus:su-text-digital-red hover:su-text-digital-red su-font-bold su-no-underline su-transition"
+                className="su-text-black hocus:su-underline dark:su-text-white dark:hocus:su-text-dark-mode-red su-text-20 md:su-text-26 su-leading-[3.1rem] hocus:su-text-digital-red su-font-bold su-no-underline su-transition"
                 href={item.asset_url}
               >
                 {title}
@@ -80,7 +80,7 @@ function ContactLinks({ items }) {
               key={item.asset_assetid}
             >
               <a
-                className="su-text-black hocus:su-underline dark:su-text-white dark:hover:su-text-dark-mode-red su-text-14 focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
+                className="su-text-black hocus:su-underline dark:su-text-white dark:hocus:su-text-dark-mode-red su-text-14 hocus:su-text-digital-red su-font-semibold su-no-underline su-transition"
                 href={item.asset_url}
               >
                 {title}
@@ -112,18 +112,19 @@ function ExternalLinks({ items }) {
             >
               <a
                 target="_blank"
-                className="su-flex hocus:su-underline su-items-center su-text-black dark:su-text-white dark:hover:su-text-dark-mode-red su-text-14 focus:su-text-digital-red hover:su-text-digital-red su-font-semibold su-no-underline su-transition"
+                className="su-group su-flex hocus:su-underline su-items-center su-text-black dark:su-text-white dark:hocus:su-text-dark-mode-red su-text-14 hocus:su-text-digital-red su-font-semibold su-no-underline su-transition"
                 href={item.asset_attribute_redirect_url}
                 rel="noreferrer"
               >
                 <span className="su-mr-2">{title}</span>
                 <svg
-                  className="su-stroke-digital-red dark:su-stroke-dark-mode-red"
+                  className="su-stroke-digital-red dark:su-stroke-dark-mode-red group-hocus:su-translate-x-01em group-hocus:su--translate-y-01em su-transition-transform"
                   xmlns="http://www.w3.org/2000/svg"
                   width="23"
                   height="23"
                   viewBox="0 0 23 23"
                   fill="none"
+                  aria-hidden="true"
                 >
                   <path
                     d="M8.95664 7.07109L15.5563 7.07109M15.5563 7.07109L15.5563 13.6708M15.5563 7.07109L7.07102 15.5564"
@@ -243,7 +244,7 @@ export default function MobileNav({ navigation, search, audience }) {
 
           <hr
             aria-hidden="true"
-            className="su-block su-order-2 su-my-20 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
+            className="su-block su-order-2 su-my-20 md:su-my-27 su-w-[9.1rem] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
           />
 
           {audience === "external" && (
@@ -252,7 +253,7 @@ export default function MobileNav({ navigation, search, audience }) {
 
               <hr
                 aria-hidden="true"
-                className="su-block su-order-2 su-my-20 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
+                className="su-block su-order-2 su-my-20 md:su-my-27 su-w-[9.1rem] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
               />
             </>
           )}
@@ -263,7 +264,7 @@ export default function MobileNav({ navigation, search, audience }) {
 
               <hr
                 aria-hidden="true"
-                className="su-block su-order-2 su-my-20 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
+                className="su-block su-order-2 su-my-20 md:su-my-27 su-w-[9.1rem] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
               />
             </>
           )}
@@ -274,7 +275,7 @@ export default function MobileNav({ navigation, search, audience }) {
 
               <hr
                 aria-hidden="true"
-                className="su-block su-order-2 su-my-20 md:su-my-27 su-w-[91px] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
+                className="su-block su-order-2 su-my-20 md:su-my-27 su-w-[9.1rem] su-bg-black-10 dark:su-bg-black su-border-none su-h-2"
               />
             </>
           )}
@@ -283,7 +284,7 @@ export default function MobileNav({ navigation, search, audience }) {
 
           <button
             type="button"
-            className="report-header__menu-close su-absolute su-right-20 md:su-right-48 su-top-43 md:su-top-[75px] su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center hover:su-text-digital-red dark:hover:su-text-dark-mode-red"
+            className="report-header__menu-close su-absolute su-right-20 md:su-right-48 su-top-43 md:su-top-75 su-w-32 su-flex su-flex-wrap su-gap-3 su-justify-center hocus-visible:su-text-digital-red dark:hocus-visible:su-text-dark-mode-red"
             aria-expanded="true"
             aria-controls="menu"
             aria-labelledby="close-menu"
@@ -296,6 +297,7 @@ export default function MobileNav({ navigation, search, audience }) {
                 height="30"
                 viewBox="0 0 30 30"
                 fill="none"
+                aria-hidden="true"
               >
                 <path
                   fillRule="evenodd"
@@ -308,7 +310,7 @@ export default function MobileNav({ navigation, search, audience }) {
               Close menu
             </span>
             <span
-              className="su-text-[1.433rem] su-block su-font-semibold"
+              className="su-text-14 su-block su-font-semibold"
               aria-hidden="true"
             >
               Close
