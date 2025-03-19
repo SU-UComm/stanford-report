@@ -75,7 +75,7 @@ export default function BasicHero(props) {
           )}
         </Container>
       </div>
-      {parentData && parentData.parentType === "page_content" && (
+      {parentData && (
         <Container
           width="wide"
           className="su-grid su-grid-cols-6 su-grid-gap su-gap-y-0 md:su-grid-cols-12"
