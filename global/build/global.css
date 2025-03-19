@@ -1063,7 +1063,7 @@ audio::-webkit-media-controls-panel {
 * Main page wrapper
 */
 .su-page{width:100%}
-.su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+.su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left, .su-page-updates)
   .su-page-content
   > *:not(
     [data-component],
@@ -1072,15 +1072,15 @@ audio::-webkit-media-controls-panel {
     .su-above-footer,
     .su-upper-content
   ),
-.su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+.su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left, .su-page-updates)
   .su-page-content
   > .container
   > *:not([data-component]),
-.su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+.su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left, .su-page-updates)
   .su-page-content
   > span{margin-left:auto;margin-right:auto;max-width:73.2rem;padding-left:2rem;padding-right:2rem}
 @media (min-width: 768px){
-.su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+.su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left, .su-page-updates)
   .su-page-content
   > *:not(
     [data-component],
@@ -1089,11 +1089,11 @@ audio::-webkit-media-controls-panel {
     .su-above-footer,
     .su-upper-content
   ),
-.su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+.su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left, .su-page-updates)
   .su-page-content
   > .container
   > *:not([data-component]),
-.su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+.su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left, .su-page-updates)
   .su-page-content
   > span{width:84.75%;padding-left:5rem;padding-right:5rem}}
 /* Footer */
@@ -1229,7 +1229,8 @@ div[data-component="footer-component"]{position:relative}
 .su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
-    .su-page-has-sidebar--left
+    .su-page-has-sidebar--left,
+    .su-page-updates
   )
   [data-component="single-image-video"]
   > div,
@@ -1265,7 +1266,8 @@ div[data-component="footer-component"]{position:relative}
 .su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
-    .su-page-has-sidebar--left
+    .su-page-has-sidebar--left,
+    .su-page-updates
   )
   [data-component="single-image-video"]
   > div,
@@ -1301,7 +1303,8 @@ div[data-component="footer-component"]{position:relative}
 .su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
-    .su-page-has-sidebar--left
+    .su-page-has-sidebar--left,
+    .su-page-updates
   )
   [data-component="single-image-video"]
   > div,
@@ -1311,7 +1314,7 @@ div[data-component="footer-component"]{position:relative}
     .su-page-has-sidebar--left
   )
   [data-component="text-callout"]
-  > div{max-width:80rem;padding-left:0;padding-right:0}}
+  > div{max-width:85.867rem;padding-left:0;padding-right:0}}
 /* This overrides the max-width in the container around the title/summary of the Single Image Video
  * It was inset in the regular view, but we want the title/summary to have the same width and max-width as the image/video
 */
@@ -1319,7 +1322,8 @@ div[data-component="footer-component"]{position:relative}
 .su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
-    .su-page-has-sidebar--left
+    .su-page-has-sidebar--left,
+    .su-page-updates
   )
   [data-component="single-image-video"]
   > div
@@ -1329,7 +1333,8 @@ div[data-component="footer-component"]{position:relative}
 .su-page:not(
     .su-page-story-basic,
     .su-page-story-featured,
-    .su-page-has-sidebar--left
+    .su-page-has-sidebar--left,
+    .su-page-updates
   )
   [data-component="single-image-video"]
   > div
@@ -1347,7 +1352,68 @@ div[data-component="footer-component"]{position:relative}
     .su-lower-content,
     .su-above-footer,
     .su-upper-content
-  ){width:100%;max-width:90rem}
+  ){margin-left:auto;margin-right:auto;width:100%;max-width:85.867rem;padding-left:2rem;padding-right:2rem}
+@media (min-width: 768px){
+.su-page:not(
+    .su-page-has-sidebar,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  .su-page-content
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ){padding-left:5rem;padding-right:5rem}}
+@media (min-width: 1200px){
+.su-page:not(
+    .su-page-has-sidebar,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  .su-page-content
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ){padding-left:0;padding-right:0}}
+/* Updates page content area grid. */
+/* .su-page.su-page-updates .su-page-content {
+  @apply su-w-full su-max-w-[141.2rem] su-px-20 md:su-px-50 su-grid su-grid-cols-4 sm:su-grid-cols-12 su-grid-gap su-gap-y-0 su-mx-auto;
+}
+
+.su-page.su-page-updates
+  .su-page-content
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ),
+.su-page.su-page-updates [data-component="button"] > div,
+.su-page.su-page-updates [data-component="button-row"],
+.su-page.su-page-updates [data-component="pullquote"],
+.su-page.su-page-updates [data-component="single-image-video"],
+.su-page.su-page-updates [data-component="text-callout"] {
+  @apply su-col-span-full sm:su-col-start-2 sm:su-col-span-10 lg:su-col-start-2 lg:su-col-span-10 xl:su-col-start-3 xl:su-col-span-8;
+}
+
+.su-page.su-page-updates [data-component="single-image-video"] > div {
+  @apply su-px-20 md:su-px-50 xl:su-px-0;
+}
+
+.su-page.su-page-updates
+  [data-component="single-image-video"]
+  > div
+  > section
+  > div {
+  @apply md:su-max-w-none lg:su-max-w-none;
+} */
 /*
 * Containers
 */
@@ -2194,7 +2260,11 @@ Subscribe to Stanford Report Marketo form styles
 .su-page-campaign.su-dark body{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
 /* Federal Issues page syle overrides */
 .fed-issues
-  .su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+  .su-page:not(
+    .su-page-has-sidebar,
+    .su-page-has-sidebar--left,
+    .su-page-updates
+  )
   .su-page-content
   > *:not(
     [data-component],
@@ -4774,6 +4844,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .md\:su-max-w-\[482px\]{max-width:482px}
 .md\:su-max-w-\[60\.7rem\]{max-width:60.7rem}
 .md\:su-max-w-\[65\.5rem\]{max-width:65.5rem}
+.md\:su-max-w-none{max-width:none}
 .md\:su-basis-1\/2{flex-basis:50%}
 .md\:su-basis-1\/3{flex-basis:33.333333%}
 .md\:su-basis-\[39\.5\%\]{flex-basis:39.5%}

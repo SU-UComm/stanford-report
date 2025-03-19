@@ -178,7 +178,7 @@
         }
       }
     },
-    "basic": {
+    "basic-story": {
       "functionData": {
         "main": {
           "inputData": {
@@ -187,6 +187,19 @@
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/basicstory.html"
+          }
+        }
+      }
+    },
+    "updates-page": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/updates-page.html"
           }
         }
       }
