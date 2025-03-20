@@ -49,7 +49,7 @@ export default function LeadershipHero(props) {
           </TopicTag>
         )}
       </div>
-      <h1 className="su-mt-32 sm:su-mt-45 xl:su-mt-58 su-font-serif">
+      <h1 className="su-font-bold su-rs-mt-4 su-font-serif su-mb-0 xl:su-text-[6.4rem]">
         {title}
       </h1>
     </Container>
