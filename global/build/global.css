@@ -1382,10 +1382,30 @@ div[data-component="footer-component"]{position:relative}
     .su-upper-content
   ){padding-left:0;padding-right:0}}
 /* Updates page content area grid. */
-/* .su-page.su-page-updates .su-page-content {
-  @apply su-w-full su-max-w-[141.2rem] su-px-20 md:su-px-50 su-grid su-grid-cols-4 sm:su-grid-cols-12 su-grid-gap su-gap-y-0 su-mx-auto;
+.su-page.su-page-updates .su-page-content{grid-gap:20px;gap:20px;}
+@media (min-width: 992px){
+.su-page.su-page-updates .su-page-content{grid-gap:36px;gap:36px}}
+@media (min-width: 1200px){
+.su-page.su-page-updates .su-page-content{grid-gap:40px;gap:40px}}
+@media (min-width: 1500px){
+.su-page.su-page-updates .su-page-content{grid-gap:48px;gap:48px}}
+.su-page.su-page-updates .su-page-content{display:grid;width:100%;row-gap:0}
+@media (min-width: 768px){
+.su-page.su-page-updates .su-page-content{padding-left:5rem;padding-right:5rem}}
+.su-page.su-page-updates .su-page-content {
+  grid-template-columns: calc((100% - 1512px) / 2) repeat(12, 1fr) calc(
+      (100% - 1512px) / 2
+    );
 }
-
+.su-page.su-page-updates .su-page-content [data-component] {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+.su-page.su-page-updates .su-page-content [data-component] > div {
+  grid-column: 2 / 14;
+  padding: 0;
+}
 .su-page.su-page-updates
   .su-page-content
   > *:not(
@@ -1399,21 +1419,69 @@ div[data-component="footer-component"]{position:relative}
 .su-page.su-page-updates [data-component="button-row"],
 .su-page.su-page-updates [data-component="pullquote"],
 .su-page.su-page-updates [data-component="single-image-video"],
-.su-page.su-page-updates [data-component="text-callout"] {
-  @apply su-col-span-full sm:su-col-start-2 sm:su-col-span-10 lg:su-col-start-2 lg:su-col-span-10 xl:su-col-start-3 xl:su-col-span-8;
-}
-
-.su-page.su-page-updates [data-component="single-image-video"] > div {
-  @apply su-px-20 md:su-px-50 xl:su-px-0;
-}
-
+.su-page.su-page-updates [data-component="text-callout"]{grid-column:1 / -1}
+@media (min-width: 576px){
+.su-page.su-page-updates
+  .su-page-content
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ),
+.su-page.su-page-updates [data-component="button"] > div,
+.su-page.su-page-updates [data-component="button-row"],
+.su-page.su-page-updates [data-component="pullquote"],
+.su-page.su-page-updates [data-component="single-image-video"],
+.su-page.su-page-updates [data-component="text-callout"]{grid-column:span 10 / span 10;grid-column-start:2}}
+@media (min-width: 992px){
+.su-page.su-page-updates
+  .su-page-content
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ),
+.su-page.su-page-updates [data-component="button"] > div,
+.su-page.su-page-updates [data-component="button-row"],
+.su-page.su-page-updates [data-component="pullquote"],
+.su-page.su-page-updates [data-component="single-image-video"],
+.su-page.su-page-updates [data-component="text-callout"]{grid-column:span 10 / span 10;grid-column-start:2}}
+@media (min-width: 1200px){
+.su-page.su-page-updates
+  .su-page-content
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ),
+.su-page.su-page-updates [data-component="button"] > div,
+.su-page.su-page-updates [data-component="button-row"],
+.su-page.su-page-updates [data-component="pullquote"],
+.su-page.su-page-updates [data-component="single-image-video"],
+.su-page.su-page-updates [data-component="text-callout"]{grid-column:span 8 / span 8;grid-column-start:3}}
+.su-page.su-page-updates [data-component="single-image-video"] > div{padding-left:2rem;padding-right:2rem}
+@media (min-width: 768px){
+.su-page.su-page-updates [data-component="single-image-video"] > div{padding-left:5rem;padding-right:5rem}}
+@media (min-width: 1200px){
+.su-page.su-page-updates [data-component="single-image-video"] > div{padding-left:0;padding-right:0}}
+@media (min-width: 768px){
 .su-page.su-page-updates
   [data-component="single-image-video"]
   > div
   > section
-  > div {
-  @apply md:su-max-w-none lg:su-max-w-none;
-} */
+  > div{max-width:none}}
+@media (min-width: 992px){
+.su-page.su-page-updates
+  [data-component="single-image-video"]
+  > div
+  > section
+  > div{max-width:none}}
 /*
 * Containers
 */
