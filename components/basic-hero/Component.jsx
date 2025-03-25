@@ -43,16 +43,10 @@ export default function BasicHero(props) {
           parentData ? "su-rs-mb-0" : "su-rs-mb-3"
         )}
       >
-        <Container
-          width="wide"
-          className={cnb(
-            "su-grid su-grid-cols-6 su-grid-gap su-gap-y-0 md:su-grid-cols-12",
-            "su-text-white"
-          )}
-        >
+        <section className="su-page-grid su-text-white">
           <h1
             className={cnb(
-              "su-font-serif su-drop-shadow-md su-mb-0 su-col-span-full lg:su-col-span-10 lg:su-col-start-2",
+              "su-font-serif su-drop-shadow-md su-mb-0 su-col-span-full lg:su-col-span-8 lg:su-col-start-4",
               titleAlignment === "center" && "su-text-center su-mx-auto",
               relation === "child" && "su-type-3",
               relation === "child" &&
@@ -65,7 +59,7 @@ export default function BasicHero(props) {
           {heroSummary && (
             <XssSafeContent
               className={cnb(
-                "su-col-span-full lg:su-col-span-10 lg:su-col-start-2 xl:su-col-span-8 xl:su-col-start-3",
+                "su-col-span-full lg:su-col-span-10 lg:su-col-start-2 xl:su-col-span-7 xl:su-col-start-5",
                 "su-font-serif su-mb-0 su-rs-mt-2",
                 relation === "child" ? "su-text-18" : "su-text-[1.125em]"
               )}
@@ -73,14 +67,11 @@ export default function BasicHero(props) {
               elementType="div"
             />
           )}
-        </Container>
+        </section>
       </div>
       {parentData && (
-        <Container
-          width="wide"
-          className="su-grid su-grid-cols-6 su-grid-gap su-gap-y-0 md:su-grid-cols-12"
-        >
-          <div className="su-col-span-full lg:su-col-span-10 lg:su-col-start-2 xl:su-col-span-8 xl:su-col-start-3">
+        <section className="su-page-grid">
+          <div className="su-col-span-full lg:su-col-span-10 lg:su-col-start-2 xl:su-col-span-7 xl:su-col-start-5">
             <nav aria-label="breadcrumb" className="su-rs-mb-3">
               <ul className="su-p-0 su-text-18 su-font-semibold">
                 <li className="su-inline after:su-content-['>'] after:su-mx-6">
@@ -108,7 +99,7 @@ export default function BasicHero(props) {
               />
             )}
           </div>
-        </Container>
+        </section>
       )}
     </>
   ) : (
