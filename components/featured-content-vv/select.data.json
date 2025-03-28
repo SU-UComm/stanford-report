@@ -10,7 +10,8 @@
     "featuredDescriptionOverride": "",
     "relatedStory": "matrix-asset://api-identifier/157852",
     "youtubeId": "52H4lQIEQdk",
-    "videoImage": "matrix-asset://api-identifier/99100"
+    "videoImage": "matrix-asset://api-identifier/99100",
+    "relatedDescriptionOverride": ""
   },
   "displayConfiguration": {
     "alignment": "left"

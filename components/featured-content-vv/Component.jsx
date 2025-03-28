@@ -37,6 +37,14 @@ export default function FeaturedContentVV({
   }
 
   const relatedCardData = data[1];
+  if (
+    contentConfiguration.relatedDescriptionOverride !== "" &&
+    contentConfiguration.relatedDescriptionOverride !== null &&
+    contentConfiguration.relatedDescriptionOverride !== undefined
+  ) {
+    relatedCardData.description =
+      contentConfiguration.relatedDescriptionOverride;
+  }
 
   return (
     <Container width="large" data-component="featured-content">
