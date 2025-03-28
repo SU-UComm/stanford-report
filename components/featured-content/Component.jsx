@@ -32,6 +32,9 @@ export default function FeaturedContent({
     featuredCardData.description = contentConfiguration.featuredDescription;
   }
 
+  console.log(featuredCardData);
+  console.log(data);
+
   return (
     <Container width="large" data-component="featured-content">
       <LinkedHeading
