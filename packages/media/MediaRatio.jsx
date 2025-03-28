@@ -6,7 +6,6 @@ export default function MediaRatio({
   imageUrl,
   imageAlt,
   aspectRatio = "card-small",
-  mediaClassName,
   videoUrl,
   rounded,
 }) {

@@ -41,7 +41,11 @@ export default function CardThumbnail({
   return videoUrl ? (
     <>
       <button
-        className="su-z-100 su-component-card-thumbnail su-group su-block su-relative su-z-10 su-size-full"
+        className={cnb(
+          "su-z-100 su-component-card-thumbnail su-group su-block su-relative su-z-10 su-size-full",
+          size === "vertical-video-featured" &&
+            "focus:su-outline-none focus-visible:su-ring-[3px] focus-visible:su-ring-offset-8 focus-visible:su-ring-digital-red dark:focus-visible:su-ring-dark-mode-red focus-visible:su-outline-none"
+        )}
         type="button"
         aria-haspopup="dialog"
         onClick={() => handleClick()}
