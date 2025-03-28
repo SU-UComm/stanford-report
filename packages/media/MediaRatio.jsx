@@ -7,6 +7,7 @@ export default function MediaRatio({
   imageAlt,
   aspectRatio = "card-small",
   videoUrl,
+  rounded,
 }) {
   return (
     <span
@@ -18,7 +19,8 @@ export default function MediaRatio({
         aspectRatio === "card-featured" && "su-aspect-[3/2]",
         aspectRatio === "square" && "su-aspect-[1/1]",
         aspectRatio === "video" && "su-aspect-[16/9]",
-        aspectRatio === "vertical-video" && "su-aspect-[9/16]"
+        aspectRatio === "vertical-video" && "su-aspect-[9/16]",
+        rounded && "su-rounded-3xl"
       )}
     >
       {videoUrl && (
