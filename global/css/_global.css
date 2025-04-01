@@ -992,6 +992,7 @@ div[data-component="footer-component"] {
 
 /* Large contextual spacing */
 * + [data-component="featured-content"],
+* + [data-component="featured-content-vv"],
 * + [data-component="multicolumn-listing"],
 * + [data-component="combined-content-grid"],
 * + [data-component="events-section"],
@@ -1003,6 +1004,7 @@ div[data-component="footer-component"] {
 * + [data-component="single-featured-content"],
 * + [data-component="multicolumn-image"],
 [data-component="featured-content"] + *,
+[data-component="featured-content-vv"] + *,
 [data-component="image-quote"] + *,
 [data-component="media-feature"] + *,
 [data-component="campaign-cta"] + *,
@@ -1036,6 +1038,7 @@ div[data-component="footer-component"] {
 
 /* Where multicolumn listing follows featured content grid, remove margins to accommodate the line */
 [data-component="featured-content"] + [data-component="multicolumn-listing"],
+[data-component="featured-content-vv"] + [data-component="multicolumn-listing"],
 [data-component="combined-content-grid"]
   + [data-component="multicolumn-listing"],
 [data-component="single-featured-content"]
@@ -1054,6 +1057,18 @@ div[data-component="footer-component"] {
   .component-multicolumn-listing.has-no-title
   .su-component-container::before,
 [data-component="single-featured-content"]
+  + [data-component="multicolumn-listing"]
+  .component-multicolumn-listing.has-no-title
+  .su-component-container::before,
+[data-component="featured-content-vv"]
+  + [data-component="multicolumn-listing"]
+  .component-multicolumn-listing.has-no-title
+  .su-component-container::before,
+[data-component="combined-content-grid-vv"]
+  + [data-component="multicolumn-listing"]
+  .component-multicolumn-listing.has-no-title
+  .su-component-container::before,
+[data-component="single-featured-content-vv"]
   + [data-component="multicolumn-listing"]
   .component-multicolumn-listing.has-no-title
   .su-component-container::before {
