@@ -890,7 +890,7 @@ div[data-component="footer-component"] {
 .su-page.su-page-updates [data-component="pullquote"],
 .su-page.su-page-updates [data-component="single-image-video"],
 .su-page.su-page-updates [data-component="text-callout"] {
-  @apply su-col-span-full sm:su-col-start-2 sm:su-col-span-10 lg:su-col-start-2 lg:su-col-span-10 xl:su-col-start-5 xl:su-col-span-8;
+  @apply su-col-span-full sm:su-col-start-2 sm:su-col-span-10 lg:su-col-start-2 lg:su-col-span-10 xl:su-col-start-4 xl:su-col-span-8;
 }
 
 .su-page.su-page-updates [data-component="single-image-video"] > div {
