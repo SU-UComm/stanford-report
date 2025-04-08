@@ -4,7 +4,7 @@
       "cardType": "Book",
       "image": "matrix-asset://api-identifier/128610",
       "title": "Two Example Two",
-      "author": "Susannah Young-ah Gottlieb",
+      "author": "",
       "teaserText": "Second ipsum dolor sit amet this is a slightly shorter teaser to test how this visually displays.",
       "linkUrl": "https://www.squiz.net"
     },
@@ -17,7 +17,7 @@
       "linkUrl": ""
     },
     {
-      "cardType": "Podcast",
+      "cardType": "Magazine",
       "image": "matrix-asset://api-identifier/125800",
       "title": "Three Example Three",
       "author": "Susannah Young-ah Gottlieb",
@@ -25,7 +25,7 @@
       "linkUrl": "https://www.squiz.net"
     },
     {
-      "cardType": "Book",
+      "cardType": "Podcast",
       "image": "matrix-asset://api-identifier/128612",
       "title": "Four Example Four news.stanford.edu link",
       "author": "Susannah Young-ah Gottlieb",

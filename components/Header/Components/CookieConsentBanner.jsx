@@ -13,12 +13,16 @@ export default function CookieConsentBanner({
 }) {
   const markup = { __html: decode(statement) };
   return (
-    <div
+    <section
       id="cookie-consent-banner"
+      aria-labelledby="cookie-label"
       className="su-fixed su-z-50 su-bottom-0 su-left-0 su-right-0 su-top-auto su-bg-white dark:su-bg-black-true"
     >
       <div className="su-mx-auto su-component-container su-container-large su-container-px md:su-flex md:su-gap-45 su-my-20">
         <div className="su-text-[14px] md:su-text-[16px] su-leading-[17.5px] md:su-leading-[20px] su-mb-20 md:su-mb-0">
+          <h2 id="cookie-label" className="sr-only">
+            Stanford Report cookie usage information
+          </h2>
           <p dangerouslySetInnerHTML={markup} className="su-mb-0" />
         </div>
 
@@ -41,6 +45,6 @@ export default function CookieConsentBanner({
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

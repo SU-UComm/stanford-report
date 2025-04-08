@@ -15,6 +15,7 @@ export function FeaturedGrid({
   alignment = "left",
   hasNestedGrid = false,
   isNested = false,
+  includeVerticalVideo = false,
 }) {
   const alignClasses = new Map();
   alignClasses.set(
@@ -42,7 +43,8 @@ export function FeaturedGrid({
         <div
           className={[
             "su-relative su-flex su-flex-wrap su-grow before:su-w-full before:su-absolute before:su-bg-black-30 dark:before:su-bg-black",
-            "su-gap-80 md:su-gap-72 lg:su-gap-[76px]",
+            !includeVerticalVideo && "su-gap-80 md:su-gap-72 lg:su-gap-[76px]",
+            includeVerticalVideo && "su-gap-36",
             "before:md:su-w-px before:su-h-px before:md:su-h-full",
             "md:su-basis-[39.5%] lg:su-basis-[30%]",
             isNested
@@ -60,6 +62,7 @@ export function FeaturedGrid({
                 key={hash.MD5(item.props)}
                 placement={i + 1}
                 isNested={isNested}
+                includeVerticalVideo={includeVerticalVideo}
               >
                 {item}
               </FeaturedGridContent>

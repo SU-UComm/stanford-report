@@ -94,6 +94,7 @@ export default function TopicSubtopicListing({
     if (
       displayStyle === "Press Center" ||
       displayStyle === "Leadership Messages" ||
+      displayStyle === "University Updates" ||
       displayStyle === "Announcements" ||
       displayStyle === "In the News"
     ) {

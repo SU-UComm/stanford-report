@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "popular-stories-cf",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "namespace": "stanford-components",
   "description": "Displays a list of popular stories.",
   "displayName": "Popular Stories",

@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    [component://static-header]
-  </head>
-  <body class="dark:su-bg-black-true dark:su-text-white">
-    <a id="skiplinks" href="#main-content" class="skiplink">Skip to content</a>
-    <header
-      class="report-header--story report-header su-pb-[11rem] md:su-pb-[17.7rem] lg:su-pb-[19.3rem] su-bg-black"
-    >
-      <div
-        class="su-bg-digital-red su-fixed su-z-10"
-        style="height: 100px; width: 100%"
-      >
-        <button
-          id="toggle"
-          class="su-p-7 su-border-2 su-text-white su-border-white dark:su-border-black-true dark:su-text-black-true"
-        >
-          Dark/Light Mode Toggle
-        </button>
-      </div>
-    </header>
-    <main
-      role="main"
-      class="su-page su-page-wrap su-page--hero su-page--top-margin su-page--bottom-margin"
-    >
-      <div class="su-upper-content"></div>
-      <div class="su-page-content">
-        [component://output]
-        <div class="su-lower-content" id="component_130052"></div>
-        <div class="su-lower-content"></div>
-      </div>
-      <div class="su-above-footer"></div>
-    </main>
-    [component://static-footer]
-    <script>
-      const b = document.getElementById("toggle");
-      const e = document.querySelector("html");
-      b.addEventListener("click", (event) => {
-        if (e.classList.contains("su-dark")) {
-          e.classList.remove("su-dark");
-        } else {
-          e.classList.add("su-dark");
-        }
-      });
-    </script>
-  </body>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  [component://static-header]
+</head>
+
+<body class="dark:su-bg-black-true dark:su-text-white">
+  <a id="skiplinks" href="#main-content" class="skiplink">Skip to content</a>
+  <header
+    class="report-header--story report-header su-pb-[11rem] md:su-pb-[17.7rem] lg:su-pb-[19.3rem] su-bg-black su-z-50">
+    <div class="su-bg-digital-red su-fixed su-z-10" style="height: 100px; width: 100%">
+      <button id="toggle"
+        class="su-p-7 su-border-2 su-text-white su-border-white dark:su-border-black-true dark:su-text-black-true">
+        Dark/Light Mode Toggle
+      </button>
+    </div>
+  </header>
+  <main role="main" class="su-page su-page--hero su-page--top-margin su-page--bottom-margin su-page-updates">
+    <div class="su-upper-content">
+    </div>
+    <div class="su-page-content">
+      [component://output]
+      <p><strong>These three paragraphs are not part of the component, they represent text entered in the default Matrix
+          WYSIWYG
+          component.</strong> Lorem ipsum odor amet, consectetuer adipiscing elit. Morbi ornare ridiculus pharetra
+        finibus orci
+        elementum;
+        per nec. Ligula facilisis blandit a in suscipit dui. Cubilia est leo efficitur venenatis maecenas taciti vivamus
+        vel. Faucibus consectetur viverra sed, rutrum morbi viverra commodo. Maecenas posuere sed metus, auctor ultrices
+        sociosqu laoreet cubilia dapibus. Fermentum vivamus volutpat per; eros efficitur primis.</p>
+      <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Morbi ornare ridiculus pharetra finibus orci elementum;
+        per nec.
+        Ligula facilisis blandit a in suscipit dui. Cubilia est leo efficitur venenatis maecenas taciti vivamus vel.
+        Faucibus
+        consectetur viverra sed, rutrum morbi viverra commodo. Maecenas posuere sed metus, auctor ultrices sociosqu
+        laoreet
+        cubilia dapibus. Fermentum vivamus volutpat per; eros efficitur primis.</p>
+      <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Morbi ornare ridiculus pharetra finibus orci elementum;
+        per nec.
+        Ligula facilisis blandit a in suscipit dui. Cubilia est leo efficitur venenatis maecenas taciti vivamus vel.
+        Faucibus
+        consectetur viverra sed, rutrum morbi viverra commodo. Maecenas posuere sed metus, auctor ultrices sociosqu
+        laoreet
+        cubilia dapibus. Fermentum vivamus volutpat per; eros efficitur primis.</p>
+
+      <div class="su-lower-content" id="component_130052"></div>
+      <div class="su-lower-content"></div>
+    </div>
+    <div class="su-above-footer"></div>
+  </main>
+  [component://static-footer]
+  <script>
+    const b = document.getElementById("toggle");
+    const e = document.querySelector("html");
+    b.addEventListener("click", (event) => {
+      if (e.classList.contains("su-dark")) {
+        e.classList.remove("su-dark");
+      } else {
+        e.classList.add("su-dark");
+      }
+    });
+  </script>
+</body>
+
 </html>

@@ -181,6 +181,11 @@ table caption {
 * Global slider/swiper styles
 */
 
+/* Rule below is scoped to media-carousel only because image shadow was getting cut off */
+/* div[data-component="media-carousel"] .component-slider .swiper {
+  @apply su-overflow-visible;
+} */
+
 .component-slider-cards .swiper-slide {
   @apply su-transition su-relative su-h-auto before:su-absolute before:su-bg-black-30 before:dark:su-bg-black before:su-h-full before:su-w-1 before:su-top-0 before:su--left-20 md:before:su--left-36 lg:before:su--left-50;
 }
@@ -388,6 +393,10 @@ table caption {
 /*
 * Slider inside modal
 */
+.su-modal div {
+  @apply focus:su-outline-none;
+}
+
 .su-modal-content .component-slider {
   @apply su-absolute su-top-0 lg:su-top-50 su-left-0 su-w-full su-h-full;
 }
@@ -683,6 +692,11 @@ audio::-webkit-media-controls-panel {
   @apply su-max-w-[73.2rem] md:su-w-[84.75%] su-mx-auto su-px-20 md:su-px-50;
 }
 
+/* Footer */
+div[data-component="footer-component"] {
+  @apply su-relative;
+}
+
 /* Content page / pagebuilder WYSIWYG */
 .su-page-content > .container > span,
 .su-page-content > span:not([data-component]) {
@@ -701,7 +715,11 @@ audio::-webkit-media-controls-panel {
   @apply su-mb-0 !important;
 }
 
-.su-page--top-margin:not(.su-page-story-featured, .su-page-has-sidebar--left)
+.su-page--top-margin:not(
+    .su-page-story-featured,
+    .su-page-has-sidebar--left,
+    .su-page-story-standalone-visual
+  )
   .su-upper-content {
   @apply su-rs-pt-7;
 }
@@ -758,6 +776,82 @@ audio::-webkit-media-controls-panel {
 .su-page-story-featured .su-upper-content,
 .su-page-story-featured [data-component="feature-story-hero"] {
   @apply su-mt-0 !important;
+}
+
+.su-page.su-page-story-featured [data-component="text-callout"] > div {
+  @apply su-w-full su-px-20 md:su-px-50 xl:su-px-0 md:su-w-[84.75%] md:su-max-w-[73.2rem] xl:su-max-w-[63.2rem];
+}
+
+/** 
+  * Updates Page scoped max-width for content elements
+*/
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="button-row"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="pullquote"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div,
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="text-callout"]
+  > div {
+  @apply su-w-full su-px-20 md:su-px-50 xl:su-px-0 md:su-max-w-900 xl:su-max-w-800;
+}
+
+/* This overrides the max-width in the container around the title/summary of the Single Image Video
+ * It was inset in the regular view, but we want the title/summary to have the same width and max-width as the image/video
+*/
+.su-page:not(
+    .su-page-story-basic,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  [data-component="single-image-video"]
+  > div
+  > section
+  > div {
+  @apply md:su-max-w-none lg:su-max-w-none;
+}
+
+.su-page:not(
+    .su-page-has-sidebar,
+    .su-page-story-featured,
+    .su-page-has-sidebar--left
+  )
+  .su-page-content
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ) {
+  @apply su-w-full su-max-w-900;
 }
 
 /*
@@ -862,6 +956,7 @@ audio::-webkit-media-controls-panel {
 
 /* Large contextual spacing */
 * + [data-component="featured-content"],
+* + [data-component="featured-content-vv"],
 * + [data-component="multicolumn-listing"],
 * + [data-component="combined-content-grid"],
 * + [data-component="events-section"],
@@ -873,6 +968,7 @@ audio::-webkit-media-controls-panel {
 * + [data-component="single-featured-content"],
 * + [data-component="multicolumn-image"],
 [data-component="featured-content"] + *,
+[data-component="featured-content-vv"] + *,
 [data-component="image-quote"] + *,
 [data-component="media-feature"] + *,
 [data-component="campaign-cta"] + *,
@@ -906,6 +1002,7 @@ audio::-webkit-media-controls-panel {
 
 /* Where multicolumn listing follows featured content grid, remove margins to accommodate the line */
 [data-component="featured-content"] + [data-component="multicolumn-listing"],
+[data-component="featured-content-vv"] + [data-component="multicolumn-listing"],
 [data-component="combined-content-grid"]
   + [data-component="multicolumn-listing"],
 [data-component="single-featured-content"]
@@ -924,6 +1021,18 @@ audio::-webkit-media-controls-panel {
   .component-multicolumn-listing.has-no-title
   .su-component-container::before,
 [data-component="single-featured-content"]
+  + [data-component="multicolumn-listing"]
+  .component-multicolumn-listing.has-no-title
+  .su-component-container::before,
+[data-component="featured-content-vv"]
+  + [data-component="multicolumn-listing"]
+  .component-multicolumn-listing.has-no-title
+  .su-component-container::before,
+[data-component="combined-content-grid-vv"]
+  + [data-component="multicolumn-listing"]
+  .component-multicolumn-listing.has-no-title
+  .su-component-container::before,
+[data-component="single-featured-content-vv"]
   + [data-component="multicolumn-listing"]
   .component-multicolumn-listing.has-no-title
   .su-component-container::before {
@@ -950,7 +1059,8 @@ WYSIWYG formatting styles
 .su-wysiwyg-content,
 .su-page-content > span,
 .container > span,
-.su-page-content > *:not([data-component], .container, .site-search) {
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content) {
   @apply su-wysiwyg;
 }
 
@@ -958,13 +1068,15 @@ WYSIWYG formatting styles
 .su-wysiwyg-content a,
 .su-page-content > span a,
 .container > span a,
-.su-page-content > *:not([data-component], .container, .site-search) a {
+.su-page-content
+  > *:not([data-component], .container, .site-search, .su-lower-content)
+  a {
   @apply hocus:su-no-underline;
 }
 
 /* Set specfic spacing for paragraphs */
 [data-component="text-callout"] .su-wysiwyg-content p {
-  @apply su-mb-20 md:su-mb-26 xl:su-mb-27;
+  @apply su-rs-mb-1 last:su-mb-0;
 }
 
 .su-wysiwyg-content ul ul,
@@ -1073,7 +1185,7 @@ WYSIWYG formatting styles
 .su-wysiwyg-content u,
 .su-page-content > div:not([data-component]) .underline,
 .su-page-content > div:not([data-component]) u {
-  @apply su-underline;
+  @apply su-underline hocus:su-no-underline;
 }
 
 .container > span .justify,
@@ -1313,4 +1425,68 @@ Subscribe to Stanford Report Marketo form styles
 .su-page-campaign.su-dark,
 .su-page-campaign.su-dark body {
   @apply su-bg-black-true;
+}
+
+/* Federal Issues page syle overrides */
+.fed-issues
+  .su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+  .su-page-content
+  > *:not(
+    [data-component],
+    .container,
+    .su-lower-content,
+    .su-above-footer,
+    .su-upper-content
+  ) {
+  width: 100%;
+  max-width: 90rem;
+}
+
+.fed-issues
+  .su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+  .su-page-content
+  div
+  > h2 {
+  @apply su-type-2;
+}
+
+.fed-issues
+  .su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
+  .su-page-content
+  .su-container-narrow {
+  width: 100%;
+  max-width: 90rem;
+}
+
+.fed-issues .su-page-content > div:not([data-component], .site-search) ul > li {
+  padding-left: 4rem;
+}
+
+.fed-issues
+  .su-page-content
+  > div:not([data-component], .site-search)
+  ul
+  > li::before {
+  width: 1rem;
+  height: 1rem;
+}
+
+.fed-issues .su-upper-content {
+  @apply su-bg-cardinal-red su-text-white;
+}
+
+.fed-issues .su-upper-content h1 {
+  @apply su-rs-pb-7;
+}
+
+/* Link styles for basic hero on updates pages. */
+div[data-component="basic-hero"] a {
+  @apply su-text-white hocus:su-no-underline hocus:su-opacity-80 dark:hocus:su-text-white;
+}
+
+/* Link styles to remove underline on :hocus for multicolumn-info-section component.
+The .su-wysiwyg-content class adds some odd stuff that I'm not sure we want here.
+Will need to further evaluate, but this will do for now. */
+div[data-component="multicolumn-info-section"] a {
+  @apply hocus:su-no-underline;
 }

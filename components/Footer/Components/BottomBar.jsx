@@ -69,7 +69,7 @@ function SecondaryLinks({ navigation }) {
 export default function BottomBar({ site, navigation }) {
   const { footerPrimary, footerSecondary } = navigation;
   return (
-    <div className="su-flex lg:su-items-center  su-text-white su-bg-digital-red">
+    <div className="su-flex lg:su-items-center  su-text-white su-bg-cardinal-red">
       <div className="su-text-white su-flex su-pl-20 su-pr-20 md:su-pl-50 md:su-pr-50 su-mx-auto su-w-full su-max-w-[1412px]">
         <div className="bottom-footer su-pb-12 md:su-pb-25 lg:su-pb-32 su-grow su-flex su-flex-col lg:su-flex-row lg:su-gap-42">
           <div className="su-flex su-mx-auto">

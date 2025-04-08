@@ -1,6 +1,6 @@
 import React from "react";
+import { cnb } from "cnbuilder";
 import { XssSafeContent } from "@squiz/xaccel-xss-safe-content";
-import { BookOpenCover, Podcast } from "../SVG-library/SVG";
 import { SidebarHeading } from "../headings/Heading";
 import { FAIcon } from "../icons/FAIcon";
 
@@ -39,15 +39,22 @@ export default function MediaCard({
     author,
   },
 }) {
-  const iconMap = new Map();
-  iconMap.set(
-    "Featured reading",
-    <BookOpenCover className="su-w-[1.2em]" aria-hidden />
-  );
-  iconMap.set("Featured audio", <Podcast variant="outline" />);
-
   const isRealExternalLink =
     !!liveUrl && !liveUrl?.includes("news.stanford.edu");
+
+  let typeIcon;
+  let iconTestId;
+
+  if (type === "Book") {
+    typeIcon = "book-open-cover";
+    iconTestId = "svg-book-open-cover";
+  } else if (type === "Podcast") {
+    typeIcon = "microphone";
+    iconTestId = "svg-microphone";
+  } else if (type === "Magazine") {
+    typeIcon = "book-open";
+    iconTestId = "svg-book-open";
+  }
 
   return title ? (
     <article
@@ -76,7 +83,12 @@ export default function MediaCard({
           </div>
         )}
         {title && (
-          <h3 className="su-text-[3.5rem] su-mb-5 su-leading-tight md:su-text-[4rem] lg:su-text-[4.3rem]">
+          <h3
+            className={cnb(
+              "su-text-[3.5rem] su-leading-tight md:su-text-[4rem] lg:su-text-[4.3rem]",
+              author ? "su-mb-5" : "su-mb-15 md:su-mb-19"
+            )}
+          >
             {liveUrl && (
               // eslint-disable-next-line jsx-a11y/control-has-associated-label
               <a
@@ -108,8 +120,8 @@ export default function MediaCard({
           </div>
         )}
         {type && (
-          <div className="su-text-18 md:su-text-16 su-mb-15 md:su-mb-19 su-gap-6 su-text-black-70 dark:su-text-black-50 su-flex su-nowrap su-items-center su-leading-snug">
-            <span>{iconMap.get(taxonomy)}</span>
+          <div className="su-text-18 md:su-text-16 su-mb-15 md:su-mb-19 su-gap-6 su-text-black-70 dark:su-text-black-50 su-flex su-nowrap su-items-center su-leading-none">
+            <FAIcon icon={typeIcon} set="solid" data-testid={iconTestId} />
             <span className="su-font-semibold">{type}</span>
           </div>
         )}
