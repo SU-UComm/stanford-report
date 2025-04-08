@@ -1,4 +1,5 @@
-import job from "../main";
+// eslint-disable-next-line import/extensions
+import job from "../main.js";
 
 async function runJobLocally() {
   // replicate job runners context.environment
@@ -11,7 +12,7 @@ async function runJobLocally() {
 
   // replicate job runners input
   const input = {
-    topicId: "--28417--",
+    topicId: "168142",
   };
   // run the job!
   job(input, context);

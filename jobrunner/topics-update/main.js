@@ -1,32 +1,26 @@
 //
 
 // Handle requests to Funnelback
-async function getTopicStoriesFromFunnelback(endpoint, topicId) {
+async function getTopicStoriesFromFunnelback({ endpoint, topicId }) {
   try {
-    const query = `${endpoint}?profile=stanford-report-push-search&collection=sug~sp-stanford-report-search&query=[taxonomyContentMainTopicId:${topicId} taxonomyContentTopicsId:${topicId} taxonomyContentSubtopicsId:${topicId}]&num_ranks=1000&sort=date&log=false`;
-    const res = await fetch(`${query}`);
-    return await res.json();
+    const query = `${endpoint}?profile=stanford-report-global-search-dev_preview&collection=sug~sp-stanford-university-report-search-dev&query=[taxonomyContentMainTopicId:${topicId} taxonomyContentTopicsId:${topicId} taxonomyContentSubtopicsId:${topicId}]&num_ranks=1000&sort=date&log=false`;
+    const response = await fetch(`${query}`);
+    if (!response.ok) {
+      throw new Error(`Error fetching data from ${query}`);
+    }
+    return await response.json();
   } catch (err) {
-    console.log(err);
+    console.log("error", err);
   }
 }
 
 // make the PUT request using the fetched XML data in the payload
 async function setMxFbUpdate(id, envVars) {
   try {
-    //
-    const myHeaders = new Headers();
-    myHeaders.append("pragma", "no-cache");
-    myHeaders.append("cache-control", "no-cache");
-    const query = `${id}`;
-    const response = await fetch(`${envVars.MX_ENDPOINT}${query}`, {
-      method: "GET",
-      headers: {
-        "cache-control": "no-cache",
-      },
-    });
+    const query = `${envVars.MX_ENDPOINT}${id}`;
+    const response = await fetch(`${query}`);
     if (!response.ok) {
-      throw new Error(`Error uploading data for ID: ${id}`);
+      throw new Error(`Error pushing data for ID: ${id}`);
     }
     return response.json();
   } catch (err) {
@@ -35,38 +29,68 @@ async function setMxFbUpdate(id, envVars) {
 }
 
 // Function to process the GET and PUT requests concurrently with a limit
-async function processRequests(data, concurrencyLimit = 1, envVars) {
-  const executing = []; // Array to track ongoing requests
-
-  const fbData = data.map((item) => {
-    return {
-      id: item.listMetadata.id[0],
-      key: item.indexUrl,
-    };
-  });
+async function processRequests({
+  data = [],
+  concurrencyLimit = 1,
+  envVars = null,
+  reporting = true,
+}) {
+  const fbData = data.map((item) => ({
+    id: item.listMetadata.id[0],
+    key: item.indexUrl,
+  }));
+  if (reporting) {
+    console.log("REPORTING enabled");
+  }
   console.log("originals", JSON.stringify(fbData));
 
-  for (const item of fbData) {
-    const task = (async () => {
-      try {
+  // Function to process a single item
+  const processItem = async (item) => {
+    try {
+      if (!reporting) {
         await setMxFbUpdate(item.id, envVars);
-        console.log("processed", item.id);
-      } catch (error) {
-        console.error(`Error processing ID ${item.id}:`, error);
       }
-    })();
+      console.log("processed", item.id);
+      return { id: item.id, success: true };
+    } catch (error) {
+      console.error(`Error processing ID ${item.id}:`, error);
+      return { id: item.id, success: false, error };
+    }
+  };
 
-    executing.push(task);
+  // Queue to manage tasks
+  const results = [];
+  const executing = new Set();
 
-    // If we've reached the concurrency limit, wait for one of the requests to complete
-    if (executing.length >= concurrencyLimit) {
-      await Promise.race(executing);
-      executing.splice(executing.indexOf(Promise.race(executing)), 1); // Remove completed task
+  async function runTask(item) {
+    const promise = processItem(item);
+    executing.add(promise);
+
+    try {
+      const result = await promise;
+      results.push(result);
+    } finally {
+      executing.delete(promise); // Remove task when done (success or failure)
     }
   }
 
-  // Wait for all remaining requests to finish
+  // Process items with concurrency limit
+  const iterator = fbData.entries();
+  while (true) {
+    while (executing.size < concurrencyLimit) {
+      const { value, done } = iterator.next();
+      if (done) break;
+      const [, item] = value; // Ignore index, get item
+      runTask(item);
+    }
+    if (executing.size === 0) break;
+    await Promise.race(executing); // Wait for at least one task to finish
+  }
+
+  // Wait for all remaining tasks to complete
   await Promise.all(executing);
+
+  return results; // Return results for further processing if needed
 }
 
 module.exports = async function (input, context) {
@@ -87,10 +111,10 @@ module.exports = async function (input, context) {
     const envVars = context.environment;
     console.log("Topic Id:", topicId);
     // fetch the Story FB results that use the Topic ID
-    const fbData = await getTopicStoriesFromFunnelback(
-      envVars.FB_SEARCH_ENDPOINT,
-      topicId
-    );
+    const fbData = await getTopicStoriesFromFunnelback({
+      endpoint: envVars.FB_SEARCH_ENDPOINT,
+      topicId,
+    });
     const storiesToUpdate = fbData?.response?.resultPacket?.results;
 
     // finish if there are no stories to update
@@ -101,7 +125,12 @@ module.exports = async function (input, context) {
 
     console.log("stories matching", storiesToUpdate.length);
 
-    await processRequests(storiesToUpdate, 1, envVars);
+    await processRequests({
+      data: storiesToUpdate,
+      concurrencyLimit: 1,
+      envVars,
+      reporting: false,
+    });
     console.log("All requests completed");
   } catch (err) {
     console.log(err);
