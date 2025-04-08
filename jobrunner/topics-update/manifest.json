@@ -2,7 +2,7 @@
   "$schema": "http://localhost:3000/schemas/JobV1.json",
   "name": "jr-su-topic-edit",
   "displayName": "Topic edit job",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "timeout": 600,
   "concurrency": 30,
   "mainFunction": "main",
