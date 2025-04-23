@@ -93,6 +93,35 @@ async function processRequests({
   return results; // Return results for further processing if needed
 }
 
+async function topicUpdateActions({ topicId, envVars }) {
+  // fetch the Story FB results that use the Topic ID
+  const fbData = await getTopicStoriesFromFunnelback({
+    endpoint: envVars.FB_SEARCH_ENDPOINT,
+    topicId,
+  });
+  const storiesToUpdate = fbData?.response?.resultPacket?.results;
+
+  // finish if there are no stories to update
+  if (!storiesToUpdate || storiesToUpdate.length === 0) {
+    console.log("No Stories to update. Finishing job");
+    return;
+  }
+
+  console.log("stories matching", storiesToUpdate.length);
+
+  await processRequests({
+    data: storiesToUpdate,
+    concurrencyLimit: 1,
+    envVars,
+    reporting: false,
+  });
+  console.log("All requests completed");
+}
+
+async function topicDeleteActions({ topicId, envVars }) {
+  console.log("DELETE requests");
+}
+
 module.exports = async function (input, context) {
   // Some error handling
   if (!input) {
@@ -106,32 +135,34 @@ module.exports = async function (input, context) {
 
   try {
     // source our input variables
-    const { topicId = null } = input;
-    // source environment variables
+    const { topicId = null, action = null } = input;
     const envVars = context.environment;
-    console.log("Topic Id:", topicId);
-    // fetch the Story FB results that use the Topic ID
-    const fbData = await getTopicStoriesFromFunnelback({
-      endpoint: envVars.FB_SEARCH_ENDPOINT,
-      topicId,
-    });
-    const storiesToUpdate = fbData?.response?.resultPacket?.results;
-
-    // finish if there are no stories to update
-    if (!storiesToUpdate || storiesToUpdate.length === 0) {
-      console.log("No Stories to update. Finishing job");
-      return;
+    // source environment variables
+    if (!action) {
+      throw new Error(
+        `Error: action is missing/not defined. Recieved ${action}`
+      );
     }
+    if (!topicId) {
+      throw new Error(
+        `Error: topicId is missing/not defined. Recieved ${topicId}`
+      );
+    }
+    console.log("Topic action:", action);
+    console.log("Topic Id:", topicId);
 
-    console.log("stories matching", storiesToUpdate.length);
-
-    await processRequests({
-      data: storiesToUpdate,
-      concurrencyLimit: 1,
-      envVars,
-      reporting: false,
-    });
-    console.log("All requests completed");
+    switch (action) {
+      case "update":
+        topicUpdateActions({ topicId, envVars });
+        break;
+      case "delete":
+        topicDeleteActions({ topicId, envVars });
+        break;
+      default:
+        throw new Error(
+          `Error: The value of 'action' does not match a known action type. Recieved ${action}`
+        );
+    }
   } catch (err) {
     console.log(err);
   }

@@ -1,8 +1,8 @@
 {
   "$schema": "http://localhost:3000/schemas/JobV1.json",
   "name": "jr-su-topic-edit",
-  "displayName": "Topic edit job",
-  "version": "0.0.6",
+  "displayName": "Topic edit and delete job",
+  "version": "0.0.7",
   "timeout": 600,
   "concurrency": 30,
   "mainFunction": "main",
@@ -17,6 +17,19 @@
           "topicId": {
             "type": "string",
             "description": "The asset ID of the incoming topic"
+          },
+          "action": {
+            "type": "string",
+            "description": "The action to take. Are we Updating a Topic or Deleting a Topic?",
+            "enum": [
+              "update",
+              "delete"
+            ]
+          },
+          "topicData": {
+            "type": "string",
+            "description": "The previous topic data, containing the data to be removed.",
+            "default": {}
           }
         },
         "required": [

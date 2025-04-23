@@ -13,6 +13,7 @@ async function runJobLocally() {
   // replicate job runners input
   const input = {
     topicId: "168142",
+    action: "delete",
   };
   // run the job!
   job(input, context);
