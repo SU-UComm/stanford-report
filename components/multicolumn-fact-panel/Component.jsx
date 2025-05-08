@@ -29,6 +29,8 @@ export default function MulticolumnFactPanel({
   paddingY = "6",
   facts,
 }) {
+  const hasHeader = !!(eyebrow || title);
+
   return (
     <Container width="cc" paddingY={paddingY} className="su-break-words">
       {eyebrow && (
@@ -39,7 +41,7 @@ export default function MulticolumnFactPanel({
          * This way we don't get an orphaned span that appears before the heading in the card.
          */
         <span
-          aria-hidden
+          aria-hidden={title ? "true" : undefined}
           className="su-inline-block su-text-black-60 dark:su-text-black-40 su-font-semibold su-type-1 su-leading-display su-rs-mb-1"
         >
           {eyebrow}
@@ -52,7 +54,12 @@ export default function MulticolumnFactPanel({
         </h2>
       )}
       {!!facts?.length && (
-        <div className="su-flex su-flex-col su-items-stretch lg:su-flex-row su-gap-34 md:su-gap-61 lg:su-gap-0 lg:su-mt-162 2xl:su-mt-171 su-divide-y-2 lg:su-divide-y-0 lg:su-divide-x-2 su-divide-black-30 dark:su-divide-black-60">
+        <div
+          className={cnb(
+            "su-flex su-flex-col su-items-stretch lg:su-flex-row su-gap-34 md:su-gap-61 lg:su-gap-0 su-divide-y-2 lg:su-divide-y-0 lg:su-divide-x-2 su-divide-black-30 dark:su-divide-black-60",
+            hasHeader && "lg:su-mt-162 2xl:su-mt-171"
+          )}
+        >
           {facts.map((fact, index) => (
             <div
               key={fact.icon}
