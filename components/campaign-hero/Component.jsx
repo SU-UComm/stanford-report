@@ -222,7 +222,7 @@ export default function CampaignHero({
                 name={quoteConfig.name}
                 quoteLink={quoteInternalLinkUrl || quoteConfig.quoteManualUrl}
                 extra={quoteConfig.extra}
-                className={styles.quote(hasIntro)}
+                className={styles.quote(hasIntro, isBgVideo)}
               />
             )}
           </div>
@@ -236,7 +236,7 @@ export default function CampaignHero({
             name={quoteConfig.name}
             quoteLink={quoteInternalLinkUrl || quoteConfig.quoteManualUrl}
             extra={quoteConfig.extra}
-            className={styles.quoteMobile(hasIntro)}
+            className={styles.quoteMobile(hasIntro, isBgVideo)}
           />
         )}
       </section>
