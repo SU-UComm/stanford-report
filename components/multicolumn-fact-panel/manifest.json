@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "multicolumn-fact-panel",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "namespace": "stanford-components",
   "description": "This component displays up to 3 facts with FontAwesome icons in a multi-column layout.",
   "displayName": "Multicolumn Fact Panel",
@@ -23,14 +23,12 @@
           "eyebrow": {
             "title": "Eyebrow",
             "description": "This is the superheading above the title.",
-            "type": "string",
-            "default": "Eyebrow"
+            "type": "string"
           },
           "title": {
             "title": "Title",
             "description": "The title text.",
-            "type": "string",
-            "default": "Lorem ipsum dolor"
+            "type": "string"
           },
           "facts": {
             "title": "Facts",
