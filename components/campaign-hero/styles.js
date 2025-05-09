@@ -1,7 +1,7 @@
 import { cnb } from "cnbuilder";
 
 // Using clip-path:inset(0) because overflow:hidden doesn't work with a position:sticky element inside
-export const root = "su-relative [clip-path:inset(0)]";
+export const root = "su-relative [clip-path:inset(0)] su-bg-black-true";
 export const section = "su-relative";
 export const heroWrapper = "su-relative";
 export const bgWrapper = "su-sticky su-h-screen su-top-0 su-bg-black";
@@ -32,7 +32,7 @@ export const contentWrapper = (
 ) =>
   cnb(
     "su-cc su-relative su-z-20",
-    !isBgVideo && "su-pt-300 md:su-pt-[40vw] lsg:su-pt-[26vw] 2xl:su-pt-400",
+    !isBgVideo && "su-pt-300 md:su-pt-[40vw] lg:su-pt-[26vw] 2xl:su-pt-400",
     !isBgVideo &&
       !hasIntro &&
       !hasQuote &&
@@ -72,10 +72,13 @@ export const playPauseIcon =
 export const introPulledLeft =
   "su-type-3 lg:su-max-w-800 xl:su-max-w-1000 2xl:su-max-w-1100 su-ml-0 *:su-leading-snug su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-32 md:su-pl-48 lg:su-pl-100 2xl:su-pl-170 su-py-38 last:*:su-mb-0 su-rs-mt-10";
 
-export const quote = (hasIntro) =>
+export const quote = (hasIntro, isBgVideo) =>
   cnb(
     "su-hidden lg:su-block su-max-w-1200 su-mx-auto",
-    !hasIntro && "su-rs-mt-8"
+    !hasIntro && !isBgVideo && "su-rs-mt-8"
   );
-export const quoteMobile = (hasIntro) =>
-  cnb("su-cc lg:su-hidden su-bg-black-true", !hasIntro && "su-pt-80");
+export const quoteMobile = (hasIntro, isBgVideo) =>
+  cnb(
+    "su-cc lg:su-hidden su-bg-black-true",
+    !hasIntro && !isBgVideo && "su-pt-80"
+  );
