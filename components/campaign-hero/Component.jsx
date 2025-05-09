@@ -46,6 +46,7 @@ export default function CampaignHero({
 }) {
   // Conditionals for code readability
   const isBgVideo = bkgConfig?.type === "Video" && bkgConfig?.bkgVideo;
+  const hasIntro = !!textConfig?.intro;
   const hasQuote = quoteConfig?.include && quoteConfig?.quote;
 
   /**
@@ -144,6 +145,7 @@ export default function CampaignHero({
           {/* Hero content */}
           <div
             className={styles.contentWrapper(
+              hasIntro,
               hasQuote,
               isBgVideo,
               isIntroPulledLeft
@@ -151,7 +153,7 @@ export default function CampaignHero({
           >
             <h1 className={styles.title}>{textConfig.title}</h1>
             {/* Display center aligned intro below title if quote is included */}
-            {!isIntroPulledLeft && (
+            {!isIntroPulledLeft && hasIntro && (
               <XssSafeContent
                 content={textConfig.intro}
                 className={styles.introCentered(youtubeId, isBgVideo)}
@@ -161,7 +163,7 @@ export default function CampaignHero({
             {youtubeId && (
               <>
                 <button
-                  className={styles.bigVideoButton(isBgVideo)}
+                  className={styles.bigVideoButton(hasIntro, isBgVideo)}
                   type="button"
                   aria-haspopup="dialog"
                   aria-label="Open full video in a modal"
@@ -189,7 +191,7 @@ export default function CampaignHero({
             )}
             {/* Button to play/pause background video */}
             {isBgVideo && (
-              <div className={styles.playPauseWrapper}>
+              <div className={styles.playPauseWrapper(hasIntro)}>
                 <button
                   type="button"
                   onClick={togglePlayPause}
@@ -205,7 +207,7 @@ export default function CampaignHero({
                 </button>
               </div>
             )}
-            {isIntroPulledLeft && (
+            {isIntroPulledLeft && hasIntro && (
               <XssSafeContent
                 content={textConfig.intro}
                 className={styles.introPulledLeft}
@@ -220,7 +222,7 @@ export default function CampaignHero({
                 name={quoteConfig.name}
                 quoteLink={quoteInternalLinkUrl || quoteConfig.quoteManualUrl}
                 extra={quoteConfig.extra}
-                className={styles.quote}
+                className={styles.quote(hasIntro)}
               />
             )}
           </div>
@@ -234,7 +236,7 @@ export default function CampaignHero({
             name={quoteConfig.name}
             quoteLink={quoteInternalLinkUrl || quoteConfig.quoteManualUrl}
             extra={quoteConfig.extra}
-            className={styles.quoteMobile}
+            className={styles.quoteMobile(hasIntro)}
           />
         )}
       </section>
