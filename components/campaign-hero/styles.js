@@ -24,14 +24,23 @@ export const overlay = (hasQuote, isBgVideo) =>
       : "su-bg-black-true/20 su-size-full"
   );
 
-export const contentWrapper = (hasQuote, isBgVideo, isIntroPulledLeft) =>
+export const contentWrapper = (
+  hasIntro,
+  hasQuote,
+  isBgVideo,
+  isIntroPulledLeft
+) =>
   cnb(
     "su-cc su-relative su-z-20",
-    !isBgVideo && "su-pt-300 md:su-pt-[40vw] lg:su-pt-[26vw] 2xl:su-pt-400",
-    !isBgVideo && !isIntroPulledLeft && "su-rs-pb-2",
+    !isBgVideo && "su-pt-300 md:su-pt-[40vw] lsg:su-pt-[26vw] 2xl:su-pt-400",
+    !isBgVideo &&
+      !hasIntro &&
+      !hasQuote &&
+      "su-pb-300 md:su-pb-[40vw] lg:su-pb-[26vw] 2xl:su-pb-400",
+    !isBgVideo && !isIntroPulledLeft && hasIntro && "su-rs-pb-2",
     isIntroPulledLeft && "su-rs-pb-6",
     isBgVideo && "su-mt-[-70vh]",
-    isBgVideo && !hasQuote && "su-rs-pb-6",
+    isBgVideo && !hasQuote && !hasIntro && "su-rs-pb-6",
     !(isBgVideo && !hasQuote) && "su-bg-gradient-to-t su-from-black-true"
   );
 export const title =
@@ -42,15 +51,17 @@ export const introCentered = (hasYoutube, isBgVideo) =>
     !hasYoutube && !isBgVideo ? "su-rs-pb-6" : "su-rs-pb-1"
   );
 
-export const bigVideoButton = (isBgVideo) =>
+export const bigVideoButton = (hasIntro, isBgVideo) =>
   cnb(
     "su-block su-relative su-z-10 su-size-full hocus-visible:su-animate-pulse hocus-visible:su-scale-110 su-transition-all su-w-fit su-mx-auto ",
-    isBgVideo ? "su-rs-mb-2" : "lg:su-mb-38"
+    isBgVideo ? "su-rs-mb-2" : "lg:su-mb-38",
+    !hasIntro && "su-rs-mt-1"
   );
 export const playYoutubeIcon =
   "su-text-[4.5rem] md:su-text-[7.5rem] su-text-white";
 export const srOnly = "su-sr-only";
-export const playPauseWrapper = "su-max-w-1200 su-mx-auto";
+export const playPauseWrapper = (hasIntro) =>
+  cnb("su-max-w-1200 su-mx-auto", !hasIntro && "su-mt-150 md:su-mt-200");
 export const playPauseButton = (hasYoutube) =>
   cnb(
     "su-group su-flex su-gap-10 su-items-end su-text-16 su-leading-display su-mr-0 su-ml-auto su-text-white su-w-fit hocus-visible:su-underline su-underline-offset-2 su-py-14 ",
@@ -61,5 +72,10 @@ export const playPauseIcon =
 export const introPulledLeft =
   "su-type-3 lg:su-max-w-800 xl:su-max-w-1000 2xl:su-max-w-1100 su-ml-0 *:su-leading-snug su-text-white su-font-serif su-border-l su-border-color su-border-black-30 su-pl-32 md:su-pl-48 lg:su-pl-100 2xl:su-pl-170 su-py-38 last:*:su-mb-0 su-rs-mt-10";
 
-export const quote = "su-hidden lg:su-block su-max-w-1200 su-mx-auto";
-export const quoteMobile = "su-cc lg:su-hidden su-bg-black-true";
+export const quote = (hasIntro) =>
+  cnb(
+    "su-hidden lg:su-block su-max-w-1200 su-mx-auto",
+    !hasIntro && "su-rs-mt-8"
+  );
+export const quoteMobile = (hasIntro) =>
+  cnb("su-cc lg:su-hidden su-bg-black-true", !hasIntro && "su-pt-80");
