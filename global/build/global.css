@@ -2325,6 +2325,7 @@ Subscribe to Stanford Report Marketo form styles
 .su-page-campaign body{--tw-bg-opacity:1;background-color:rgb(249 249 249 / var(--tw-bg-opacity))}
 .su-page-campaign.su-dark,
 .su-page-campaign.su-dark body{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
+.su-dark-only .su-page-campaign body{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
 /* Federal Issues page syle overrides */
 .fed-issues
   .su-page:not(
@@ -3099,6 +3100,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-mt-15{margin-top:1.5rem}
 .su-mt-150{margin-top:15rem}
 .su-mt-17{margin-top:1.7rem}
+.su-mt-171{margin-top:17.1rem}
 .su-mt-18{margin-top:1.8rem}
 .su-mt-19{margin-top:1.9rem}
 .su-mt-2{margin-top:0.2rem}
