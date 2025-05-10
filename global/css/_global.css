@@ -1463,7 +1463,7 @@ Subscribe to Stanford Report Marketo form styles
   @apply su-bg-black-true;
 }
 
-.su-dark-only .su-page-campaign body {
+.su-dark-only body.su-page-campaign {
   @apply su-bg-black-true;
 }
 
