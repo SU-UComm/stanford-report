@@ -46,6 +46,7 @@ export function VerticalVideoCard({
           videoUrl={youtubeId}
           size="vertical-video"
           videoIconClasses={styles.videoIcon}
+          rounded
         />
       </div>
     </article>
