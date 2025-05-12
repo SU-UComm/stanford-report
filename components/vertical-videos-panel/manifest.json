@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "vertical-videos-panel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "namespace": "stanford-components",
   "description": "A section that displays up to 3 vertical YouTube videos, with a section title and link to watch more. On smaller devices, the videos will be displayed in a carousel if there are more than 1.",
   "displayName": "Vertical Videos Panel",
@@ -26,6 +26,12 @@
             "type": "object",
             "required": [],
             "properties": {
+              "alwaysDark": {
+                "title": "Always dark mode",
+                "description": "If checked, this component will always display in dark mode.",
+                "type": "boolean",
+                "default": false
+              },
               "title": {
                 "title": "Section heading",
                 "type": "string",
@@ -181,6 +187,19 @@
           "inputData": {
             "type": "file",
             "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/campaign.html"
+          }
+        }
+      }
+    },
+    "alwaysDark": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "alwaysDark.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/campaign.html"

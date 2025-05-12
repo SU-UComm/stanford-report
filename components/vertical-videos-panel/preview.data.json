@@ -1,5 +1,6 @@
 {
   "sectionConfiguration": {
+    "alwaysDark": false,
     "title": "Meet more students",
     "ctaText": "Watch all",
     "ctaUrl": "matrix-asset://api-identifier/28192",

@@ -16,6 +16,9 @@ import { FAIcon } from "../../packages/icons/FAIcon";
  * @param {string} paddingY
  * Responsive vertical padding of the container
  *
+ * @param {boolean} alwaysDark
+ * Toggle to always display the dark mode styles.
+ *
  * @param {array} facts
  * A array of 1 to 3 facts each with a FontAwesome icon and a text description.
  *

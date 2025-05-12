@@ -1,9 +1,17 @@
 import { cnb } from "cnbuilder";
 
-export const root = "su-relative su-break-words";
+export const root = (alwaysDark) =>
+  cnb(
+    "su-relative su-break-words",
+    alwaysDark && "su-bg-black-true dark:su-bg-black-true"
+  );
 export const wrapper = "su-relative su-z-30";
 export const headingWrapper = "su-cc";
-export const sectionHeading = "2xl:su-px-[17rem] su-rs-mb-5";
+export const sectionHeading = (alwaysDark) =>
+  cnb(
+    "2xl:su-px-[17rem] su-rs-mb-5",
+    alwaysDark && "su-text-white dark:su-text-white"
+  );
 
 export const cardGridWrapper = (isSingleVideo) =>
   cnb("su-cc", isSingleVideo ? "su-block" : "su-hidden lg:su-block");
