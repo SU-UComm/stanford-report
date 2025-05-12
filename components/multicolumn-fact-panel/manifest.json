@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "multicolumn-fact-panel",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "namespace": "stanford-components",
   "description": "This component displays up to 3 facts with FontAwesome icons in a multi-column layout.",
   "displayName": "Multicolumn Fact Panel",
@@ -48,10 +48,7 @@
                   "title": "FontAwesome icon set",
                   "description": "Select the icon set - solid or regular.",
                   "type": "string",
-                  "enum": [
-                    "solid",
-                    "regular"
-                  ],
+                  "enum": ["solid", "regular"],
                   "default": "solid"
                 },
                 "content": {
@@ -62,6 +59,12 @@
               },
               "required": []
             }
+          },
+          "alwaysDark": {
+            "title": "Always dark mode",
+            "description": "If checked, this component will always display in dark mode.",
+            "type": "boolean",
+            "default": false
           },
           "paddingY": {
             "title": "Vertical padding",
