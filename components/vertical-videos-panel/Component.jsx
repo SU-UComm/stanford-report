@@ -48,7 +48,6 @@ export default function VerticalVideosPanel({
             subheading={subheading}
             youtubeId={youtubeId}
             videoImageUrl={videoImageData?.url}
-            videoImageAlt={videoImageData?.alt || heading}
           />
         );
       }
