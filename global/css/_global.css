@@ -1429,7 +1429,11 @@ Subscribe to Stanford Report Marketo form styles
 
 /* There is a boolean in the Stanford Campaigns schema for always presenting the page dark mode. */
 .su-always-dark body.su-page-campaign {
-  @apply su-bg-black-true su-text-white;
+  @apply su-bg-black-true;
+}
+
+.su-always-dark .su-page-campaign main {
+  @apply su-text-white;
 }
 
 /* Federal Issues page syle overrides */
