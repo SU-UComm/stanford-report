@@ -202,7 +202,7 @@
             "path": "alwaysDark.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/campaign.html"
+            "path": "../../packages/__globalPreview/campaign-always-dark.html"
           }
         }
       }
