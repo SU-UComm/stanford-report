@@ -40,7 +40,7 @@ export default function HorizontalVideoTestimonials({
       paddingX={false}
       marginTop={marginTop}
       marginBottom={marginBottom}
-      className={styles.root}
+      className={styles.root(alwaysDark)}
     >
       <Container width="cc" paddingX={false} className={styles.wrapper}>
         {title && (
