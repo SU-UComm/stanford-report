@@ -23,6 +23,7 @@ export default function InteractivePhotoCard({
   content,
   imageUrl,
   imageAlignment,
+  alwaysDark,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const cardInnerRef = useRef(null);
@@ -52,7 +53,12 @@ export default function InteractivePhotoCard({
         >
           {/* Front of the content card */}
           <div
-            className="su-group/front su-relative su-bg-white su-backface-hidden su-rounded-[8px] su-shadow-lg su-min-w-full"
+            className={cnb(
+              "su-group/front su-relative su-backface-hidden su-rounded-[8px] su-min-w-full",
+              alwaysDark
+                ? "su-bg-black-true su-border-2 su-border-black"
+                : "su-bg-white su-shadow-lg"
+            )}
             aria-hidden={isFlipped}
           >
             <div className="su-flex su-flex-col su-h-full su-rs-px-5 su-rs-pt-6 su-rs-pb-4">
@@ -61,7 +67,14 @@ export default function InteractivePhotoCard({
                   {eyebrow}
                 </div>
               )}
-              <h2 className="su-grow su-type-4 su-font-bold su-font-sans su-text-black dark:su-text-black su-rs-mb-0">
+              <h2
+                className={cnb(
+                  "su-grow su-type-4 su-font-bold su-font-sans su-rs-mb-0",
+                  alwaysDark
+                    ? "su-text-white"
+                    : "su-text-black dark:su-text-black"
+                )}
+              >
                 {title}
               </h2>
               <button
@@ -70,15 +83,28 @@ export default function InteractivePhotoCard({
                 tabIndex={isFlipped ? -1 : undefined}
                 onClick={() => flipCard(180)}
                 aria-label="See additional information"
-                className="su-block su-ml-auto su-mr-0 su-bg-black su-text-white group-hover/front:su-bg-digital-red focus:su-bg-digital-red su-rounded-full su-p-10 su-stretched-link su-transition-all su-opacity-100 group-aria-hidden/front:su-opacity-0"
+                className={cnb(
+                  "su-block su-ml-auto su-mr-0 su-bg-black su-text-white su-rounded-full su-p-10 su-stretched-link su-transition-all su-opacity-100 group-aria-hidden/front:su-opacity-0",
+                  alwaysDark
+                    ? "su-bg-white su-text-black-true group-hover/front:su-bg-dark-mode-red focus:su-bg-dark-mode-red"
+                    : "su-bg-black su-text-white group-hover/front:su-bg-digital-red focus:su-bg-digital-red"
+                )}
               >
-                <Plus className="su-size-30 md:su-size-50 su-fill-none group-hover/front:su-scale-110 group-focus-within/front:su-scale-110 su-transition-transform" />
+                <Plus
+                  className={cnb(
+                    "su-size-30 md:su-size-50 su-fill-none group-hover/front:su-scale-110 group-focus-within/front:su-scale-110 su-transition-transform",
+                    alwaysDark ? "[&_path]:su-fill-black-true" : "su-fill-none"
+                  )}
+                />
               </button>
             </div>
           </div>
           {/* Back of the content card */}
           <div
-            className="su-group/back su-relative su-flex su-flex-col su-h-full su-min-w-full su-rounded-[8px] su-rs-px-5 su-rs-pt-6 su-rs-pb-4 su-bg-digital-red-dark su-text-white [transform:rotateY(180deg)_translate(100%,0)] su-backface-hidden su-transition-transform su-shadow-lg"
+            className={cnb(
+              "su-group/back su-relative su-flex su-flex-col su-h-full su-min-w-full su-rounded-[8px] su-rs-px-5 su-rs-pt-6 su-rs-pb-4 su-bg-digital-red-dark su-text-white [transform:rotateY(180deg)_translate(100%,0)] su-backface-hidden su-transition-transform",
+              !alwaysDark && "su-shadow-lg"
+            )}
             aria-hidden={!isFlipped}
           >
             <XssSafeContent
@@ -92,7 +118,12 @@ export default function InteractivePhotoCard({
               tabIndex={isFlipped ? undefined : -1}
               onClick={() => flipCard(0)}
               aria-label="Dismiss content"
-              className="su-block su-ml-auto su-mr-0 su-border-3 su-border-white su-rounded-full su-text-white focus:su-bg-black group-hover/back:su-bg-black su-p-7 lg:su-p-14 su-stretched-link su-transition-colors"
+              className={cnb(
+                "su-block su-ml-auto su-mr-0 su-border-3 su-border-white su-rounded-full su-text-white su-p-7 lg:su-p-14 su-stretched-link su-transition-colors",
+                alwaysDark
+                  ? "focus:su-bg-black-true group-hover/back:su-bg-black-true"
+                  : "focus:su-bg-black group-hover/back:su-bg-black"
+              )}
             >
               <ArrowsRotate className="su-size-30 lg:su-size-36 su-fill-none group-aria-hidden/back:invisible group-hover/back:su-rotate-45 su-transition-transform" />
             </button>
