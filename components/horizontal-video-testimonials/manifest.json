@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "horizontal-video-testimonials",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "namespace": "stanford-components",
   "description": "A section with a listing of horizontal video cards, with a section title and link to watch more.",
   "displayName": "Horizontal Video Testimonials",
@@ -204,7 +204,7 @@
             "path": "alwaysDark.data.json"
           },
           "wrapper": {
-            "path": "../../packages/__globalPreview/campaign.html"
+            "path": "../../packages/__globalPreview/campaign-always-dark.html"
           }
         }
       }

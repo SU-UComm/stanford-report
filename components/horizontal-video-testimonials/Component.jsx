@@ -36,7 +36,7 @@ export default function HorizontalVideoTestimonials({
   return (
     <Container
       width="full"
-      paddingY="10"
+      paddingY={bgImageUrl ? "10" : "base"}
       paddingX={false}
       marginTop={marginTop}
       marginBottom={marginBottom}
