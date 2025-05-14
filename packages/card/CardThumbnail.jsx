@@ -54,7 +54,10 @@ export default function CardThumbnail({
           imageUrl={imageUrl}
           imageAlt={`Open video ${alt || ""} in a modal`}
           aspectRatio={aspectRatio}
-          rounded={size === "vertical-video-featured" && rounded}
+          rounded={
+            (size === "vertical-video-featured" || size === "vertical-video") &&
+            rounded
+          }
         >
           {/* Add a dark overlay over the image when used in Vertical Video Cards */}
           {(size === "vertical-video" ||

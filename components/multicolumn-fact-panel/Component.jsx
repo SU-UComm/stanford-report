@@ -16,6 +16,9 @@ import { FAIcon } from "../../packages/icons/FAIcon";
  * @param {string} paddingY
  * Responsive vertical padding of the container
  *
+ * @param {boolean} alwaysDark
+ * Toggle to always display the dark mode styles.
+ *
  * @param {array} facts
  * A array of 1 to 3 facts each with a FontAwesome icon and a text description.
  *
@@ -28,9 +31,19 @@ export default function MulticolumnFactPanel({
   eyebrow,
   paddingY = "6",
   facts,
+  alwaysDark = false,
 }) {
+  const hasHeader = !!(eyebrow || title);
+
   return (
-    <Container width="cc" paddingY={paddingY} className="su-break-words">
+    <Container
+      width="cc"
+      paddingY={paddingY}
+      className={cnb(
+        "su-break-words",
+        alwaysDark && "su-bg-black-true dark:su-bg-black-true"
+      )}
+    >
       {eyebrow && (
         /**
          * This is a SODA recommended pattern for accessibility.
@@ -39,20 +52,40 @@ export default function MulticolumnFactPanel({
          * This way we don't get an orphaned span that appears before the heading in the card.
          */
         <span
-          aria-hidden
-          className="su-inline-block su-text-black-60 dark:su-text-black-40 su-font-semibold su-type-1 su-leading-display su-rs-mb-1"
+          aria-hidden={title ? "true" : undefined}
+          className={cnb(
+            "su-inline-block su-font-semibold su-type-1 su-leading-display su-rs-mb-1",
+            alwaysDark
+              ? "su-text-black-40 dark:su-text-black-40"
+              : "su-text-black-60"
+          )}
         >
           {eyebrow}
         </span>
       )}
       {title && (
-        <h2 className="su-type-4 su-rs-mb-5 dark:su-text-white su-max-w-700">
+        <h2
+          className={cnb(
+            "su-type-4 su-rs-mb-5 su-max-w-700",
+            alwaysDark
+              ? "su-text-white dark:su-text-white"
+              : "dark:su-text-white"
+          )}
+        >
           {eyebrow && <span className="su-sr-only">{`${eyebrow}:`}</span>}
           {title}
         </h2>
       )}
       {!!facts?.length && (
-        <div className="su-flex su-flex-col su-items-stretch lg:su-flex-row su-gap-34 md:su-gap-61 lg:su-gap-0 lg:su-mt-162 2xl:su-mt-171 su-divide-y-2 lg:su-divide-y-0 lg:su-divide-x-2 su-divide-black-30 dark:su-divide-black-60">
+        <div
+          className={cnb(
+            "su-flex su-flex-col su-items-stretch lg:su-flex-row su-gap-34 md:su-gap-61 lg:su-gap-0 su-divide-y-2 lg:su-divide-y-0 lg:su-divide-x-2 dark:su-divide-black-60",
+            hasHeader && "lg:su-mt-162 2xl:su-mt-171",
+            alwaysDark
+              ? "su-divide-black-60 dark:su-divide-black-60"
+              : "su-divide-black-30"
+          )}
+        >
           {facts.map((fact, index) => (
             <div
               key={fact.icon}
@@ -70,7 +103,12 @@ export default function MulticolumnFactPanel({
               />
               <XssSafeContent
                 content={fact.content}
-                className="su-text-black dark:su-text-white su-text-24 md:su-text-[3.3rem] lg:su-text-[2.8rem] xl:su-text-[3.3rem] su-font-serif *:su-leading-display last:*:su-mb-0 su-text-center"
+                className={cnb(
+                  "su-text-black su-text-24 md:su-text-[3.3rem] lg:su-text-[2.8rem] xl:su-text-[3.3rem] su-font-serif *:su-leading-display last:*:su-mb-0 su-text-center",
+                  alwaysDark
+                    ? "su-text-white dark:su-text-white"
+                    : "dark:su-text-white"
+                )}
               />
             </div>
           ))}

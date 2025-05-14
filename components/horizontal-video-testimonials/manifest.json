@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "horizontal-video-testimonials",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "namespace": "stanford-components",
   "description": "A section with a listing of horizontal video cards, with a section title and link to watch more.",
   "displayName": "Horizontal Video Testimonials",
@@ -26,6 +26,12 @@
             "type": "object",
             "required": [],
             "properties": {
+              "alwaysDark": {
+                "title": "Always dark mode",
+                "description": "If checked, this component will always display in dark mode.",
+                "type": "boolean",
+                "default": false
+              },
               "title": {
                 "title": "Section heading",
                 "type": "string",
@@ -186,6 +192,19 @@
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/campaign.html"
+          }
+        }
+      }
+    },
+    "alwaysDark": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "alwaysDark.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/campaign-always-dark.html"
           }
         }
       }

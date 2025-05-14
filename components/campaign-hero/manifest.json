@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "campaign-hero",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "namespace": "stanford-components",
   "description": "Hero component for use on Campaign pages.",
   "displayName": "Campaign Hero",
@@ -80,7 +80,7 @@
           "textConfig": {
             "title": "Title & introduction",
             "type": "object",
-            "required": ["title", "intro"],
+            "required": ["title"],
             "properties": {
               "title": {
                 "title": "Heading",
@@ -91,8 +91,7 @@
               "intro": {
                 "title": "Intro",
                 "description": "Introduction text that displays below the headline.",
-                "type": "FormattedText",
-                "default": "Lorem ipsum dolor"
+                "type": "FormattedText"
               }
             }
           },

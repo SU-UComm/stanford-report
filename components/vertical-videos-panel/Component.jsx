@@ -31,7 +31,7 @@ export default function VerticalVideosPanel({
   bgImageUrl,
   videosArray,
 }) {
-  const { title, ctaText, ctaManualUrl, marginTop, marginBottom } =
+  const { title, ctaText, ctaManualUrl, marginTop, marginBottom, alwaysDark } =
     sectionConfiguration;
 
   const [cards, setCards] = useState([]);
@@ -48,7 +48,6 @@ export default function VerticalVideosPanel({
             subheading={subheading}
             youtubeId={youtubeId}
             videoImageUrl={videoImageData?.url}
-            videoImageAlt={videoImageData?.alt || heading}
           />
         );
       }
@@ -67,7 +66,7 @@ export default function VerticalVideosPanel({
       paddingX={false}
       marginTop={marginTop}
       marginBottom={marginBottom}
-      className={styles.root}
+      className={styles.root(alwaysDark)}
     >
       <div className={styles.wrapper}>
         {title && (
@@ -76,8 +75,8 @@ export default function VerticalVideosPanel({
               title={title}
               ctaText={ctaText}
               ctaLink={ctaManualUrl || ctaInternalUrl}
-              isAlwaysLight={!!bgImageUrl}
-              className={styles.sectionHeading}
+              isAlwaysLight={!!bgImageUrl || alwaysDark}
+              className={styles.sectionHeading(alwaysDark)}
             />
           </div>
         )}
@@ -89,7 +88,7 @@ export default function VerticalVideosPanel({
                 <Carousel
                   variant="vertical-videos"
                   slides={cards}
-                  isDark={!!bgImageUrl}
+                  isDark={!!bgImageUrl || alwaysDark}
                   uniqueClass={uniqueClass}
                 />
               </div>

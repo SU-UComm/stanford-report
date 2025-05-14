@@ -31,16 +31,16 @@ export default function HorizontalVideoTestimonials({
   bgImageUrl,
   testimonialsArray,
 }) {
-  const { title, ctaText, ctaManualUrl, marginTop, marginBottom } =
+  const { title, ctaText, ctaManualUrl, marginTop, marginBottom, alwaysDark } =
     sectionConfiguration;
   return (
     <Container
       width="full"
-      paddingY="10"
+      paddingY={bgImageUrl ? "10" : "base"}
       paddingX={false}
       marginTop={marginTop}
       marginBottom={marginBottom}
-      className={styles.root}
+      className={styles.root(alwaysDark)}
     >
       <Container width="cc" paddingX={false} className={styles.wrapper}>
         {title && (
@@ -63,7 +63,7 @@ export default function HorizontalVideoTestimonials({
                 internalStoryLink,
                 manualStoryUrl,
               }) => (
-                <li key={youtubeId}>
+                <li key={youtubeId} className={styles.cardGridItem(bgImageUrl)}>
                   <HorizontalVideoCard
                     heading={heading}
                     description={description}
@@ -72,6 +72,7 @@ export default function HorizontalVideoTestimonials({
                     videoImageAlt={videoImageData?.alt || heading}
                     internalUrl={internalStoryLink}
                     manualUrl={manualStoryUrl}
+                    alwaysDark={!!alwaysDark}
                   />
                 </li>
               )

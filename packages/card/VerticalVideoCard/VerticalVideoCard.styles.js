@@ -1,5 +1,5 @@
 export const root =
-  "su-relative su-flex su-flex-col su-text-white su-bg-black-true";
+  "su-relative su-flex su-flex-col su-text-white su-bg-black-true su-rounded-3xl";
 
 export const imageWrapper = "su-relative su-w-full";
 export const videoIcon = "group-hocus:su-scale-110 su-transition-transform";
