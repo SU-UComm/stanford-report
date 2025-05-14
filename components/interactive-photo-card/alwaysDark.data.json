@@ -4,5 +4,5 @@
   "content": "<p>Almost half of all our undergrads receive need-based financial aid. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam ut venenatis tellus in. Nulla porttitor massa id neque aliquam vestibulum. Ac placerat vestibulum lectus mauris ultrices. Et netus et malesuada fames ac. Consectetur a erat nam at lectus urna. Feugiat pretium nibh.</p>",
   "image": "matrix-asset://api-identifier/99100",
   "imageAlignment": "left",
-  "alwaysDark": false
+  "alwaysDark": true
 }

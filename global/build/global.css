@@ -4480,6 +4480,8 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .hover\:su-shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}
 .focus\:su-border-digital-blue:focus{--tw-border-opacity:1;border-color:rgb(0 108 184 / var(--tw-border-opacity))}
 .focus\:su-bg-black:focus{--tw-bg-opacity:1;background-color:rgb(46 45 41 / var(--tw-bg-opacity))}
+.focus\:su-bg-black-true:focus{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
+.focus\:su-bg-dark-mode-red:focus{--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
 .focus\:su-bg-digital-red:focus{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity))}
 .focus\:su-text-digital-red:focus{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
 .focus\:su-text-white:focus{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
@@ -4503,6 +4505,8 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-group\/back:hover .group-hover\/back\:su-rotate-45{--tw-rotate:45deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group\/front:hover .group-hover\/front\:su-scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group\/back:hover .group-hover\/back\:su-bg-black{--tw-bg-opacity:1;background-color:rgb(46 45 41 / var(--tw-bg-opacity))}
+.su-group\/back:hover .group-hover\/back\:su-bg-black-true{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
+.su-group\/front:hover .group-hover\/front\:su-bg-dark-mode-red{--tw-bg-opacity:1;background-color:rgb(236 9 9 / var(--tw-bg-opacity))}
 .su-group\/front:hover .group-hover\/front\:su-bg-digital-red{--tw-bg-opacity:1;background-color:rgb(177 4 14 / var(--tw-bg-opacity))}
 .su-peer\/dark:checked ~ .peer-checked\/dark\:su-z-10{z-index:10}
 .su-peer\/light:checked ~ .peer-checked\/light\:su-z-10{z-index:10}
@@ -5437,4 +5441,5 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .\[\&\>svg\]\:md\:su-text-\[6rem\]>svg{font-size:6rem}}
 @media (min-width: 992px){
 .lg\:\[\&\>svg\]\:su-mt-4>svg{margin-top:0.4rem}}
+.\[\&_path\]\:su-fill-black-true path{fill:#000000}
 

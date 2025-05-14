@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "interactive-photo-card",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "namespace": "stanford-components",
   "description": "2 side by side cards with 1 being a photo and 1 being a fact with the ability to flip the card over for additional information.",
   "displayName": "Interactive Photo Card",
@@ -20,6 +20,12 @@
       "input": {
         "type": "object",
         "properties": {
+          "alwaysDark": {
+            "title": "Always dark mode",
+            "description": "If checked, this component will always display in dark mode.",
+            "type": "boolean",
+            "default": false
+          },
           "title": {
             "title": "Title",
             "type": "string",
@@ -104,6 +110,19 @@
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/preview.html"
+          }
+        }
+      }
+    },
+    "alwaysDark": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "alwaysDark.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/campaign-always-dark.html"
           }
         }
       }
