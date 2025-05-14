@@ -2,7 +2,7 @@ import { cnb } from "cnbuilder";
 
 export const root = (alwaysDark) =>
   cnb(
-    "su-rounded-[8px] su-relative su-flex su-flex-col lg:su-flex-row su-gap-30 md:su-gap-38 2xl:su-gap-72 su-items-start lg:su-items-center su-p-34 md:su-p-61 lg:su-p-38 2xl:su-pl-76",
+    "su-relative su-flex su-flex-col lg:su-flex-row su-gap-30 md:su-gap-38 2xl:su-gap-72 su-items-start lg:su-items-center su-p-34 md:su-p-61 lg:su-p-38 2xl:su-pl-76",
     alwaysDark
       ? "su-bg-black-true dark:su-bg-black-true su-text-white dark:su-text-white"
       : "su-bg-white dark:su-bg-black-true su-text-black dark:su-text-white"

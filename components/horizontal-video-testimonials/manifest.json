@@ -195,6 +195,19 @@
           }
         }
       }
+    },
+    "alwaysDark": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "alwaysDark.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/campaign.html"
+          }
+        }
+      }
     }
   }
 }
