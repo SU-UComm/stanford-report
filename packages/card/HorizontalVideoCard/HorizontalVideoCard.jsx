@@ -40,18 +40,19 @@ export function HorizontalVideoCard({
   videoImageAlt,
   internalUrl,
   manualUrl,
+  alwaysDark,
 }) {
   const isRealExternalLink =
     !!manualUrl && !manualUrl?.includes("news.stanford.edu");
 
   return (
-    <article className={styles.root}>
+    <article className={styles.root(alwaysDark)}>
       <div className={styles.contentWrapper}>
         {internalUrl || manualUrl ? (
-          <h3 className={styles.heading}>
+          <h3 className={styles.heading(alwaysDark)}>
             <a
               href={internalUrl || manualUrl}
-              className={styles.link}
+              className={styles.link(alwaysDark)}
               rel={isRealExternalLink ? "noopener noreferrer" : undefined}
             >
               {heading}
@@ -65,7 +66,7 @@ export function HorizontalVideoCard({
                     title="(link is external)"
                     // Add a width to prevent getting a flash of huge icon before the CSS fully loads
                     width={24}
-                    className={styles.linkIcon}
+                    className={styles.linkIcon(alwaysDark)}
                   />
                 </span>
               )}
