@@ -2325,6 +2325,7 @@ Subscribe to Stanford Report Marketo form styles
 .su-page-campaign body{--tw-bg-opacity:1;background-color:rgb(249 249 249 / var(--tw-bg-opacity))}
 .su-page-campaign.su-dark,
 .su-page-campaign.su-dark body{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
+.su-page-campaign body .center{text-align:center}
 /*
   There is a boolean in the Stanford Campaigns schema for always presenting the page dark mode.
   it applies the .su-always-dark class to the html tag.
