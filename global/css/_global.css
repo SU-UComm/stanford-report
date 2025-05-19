@@ -1426,7 +1426,9 @@ Subscribe to Stanford Report Marketo form styles
 .su-page-campaign.su-dark body {
   @apply su-bg-black-true;
 }
-
+.su-page-campaign body .center {
+  @apply su-text-center;
+}
 /*
   There is a boolean in the Stanford Campaigns schema for always presenting the page dark mode.
   it applies the .su-always-dark class to the html tag.

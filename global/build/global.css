@@ -2259,6 +2259,7 @@ Subscribe to Stanford Report Marketo form styles
 .su-page-campaign body{--tw-bg-opacity:1;background-color:rgb(249 249 249 / var(--tw-bg-opacity))}
 .su-page-campaign.su-dark,
 .su-page-campaign.su-dark body{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}
+.su-page-campaign body .center{text-align:center}
 /*
   There is a boolean in the Stanford Campaigns schema for always presenting the page dark mode.
   it applies the .su-always-dark class to the html tag.
@@ -4587,6 +4588,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-group:focus .group-hocus\:su-text-digital-red{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
 .su-group:focus .group-hocus\:su-text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .su-group:focus .group-hocus\:su-underline{text-decoration-line:underline}
+.su-group:focus .group-hocus\:\*\:\*\:su-fill-current > * > *{fill:currentColor}
 .su-group:hover .group-hocus\:su--translate-y-01em{--tw-translate-y:-0.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:hover .group-hocus\:su--translate-y-02em{--tw-translate-y:-0.2em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .su-group:hover .group-hocus\:su-translate-x-01em{--tw-translate-x:0.1em;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
@@ -4599,6 +4601,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .su-group:hover .group-hocus\:su-text-digital-red{--tw-text-opacity:1;color:rgb(177 4 14 / var(--tw-text-opacity))}
 .su-group:hover .group-hocus\:su-text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
 .su-group:hover .group-hocus\:su-underline{text-decoration-line:underline}
+.su-group:hover .group-hocus\:\*\:\*\:su-fill-current > * > *{fill:currentColor}
 .su-group:focus-visible .group-hocus-visible\:su-scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 @keyframes su-pulse{
 50%{opacity:.5}}
@@ -4880,6 +4883,7 @@ _::-webkit-full-page-media, _:future, :root .media-feature__thumb img {
 .md\:su-max-w-\[482px\]{max-width:482px}
 .md\:su-max-w-\[60\.7rem\]{max-width:60.7rem}
 .md\:su-max-w-\[65\.5rem\]{max-width:65.5rem}
+.md\:su-max-w-none{max-width:none}
 .md\:su-basis-1\/2{flex-basis:50%}
 .md\:su-basis-1\/3{flex-basis:33.333333%}
 .md\:su-basis-\[39\.5\%\]{flex-basis:39.5%}
