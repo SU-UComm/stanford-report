@@ -47,7 +47,7 @@ export default function InteractivePhotoCard({
         <div
           ref={cardInnerRef}
           className={cnb(
-            "su-flex su-relative [transform-style:preserve-3d] su-duration-1000",
+            "su-flex su-relative [transform-style:preserve-3d] su-duration-1000 su-max-w-full su-min-w-full",
             imageAlignment === "left" && "xl:su-order-2"
           )}
         >
