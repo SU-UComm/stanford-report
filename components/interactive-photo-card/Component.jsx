@@ -54,7 +54,7 @@ export default function InteractivePhotoCard({
           {/* Front of the content card */}
           <div
             className={cnb(
-              "su-group/front su-relative su-backface-hidden su-rounded-[8px] su-min-w-full",
+              "su-relative su-backface-hidden su-rounded-[8px] su-min-w-full",
               alwaysDark
                 ? "su-bg-black-true su-border-2 su-border-black"
                 : "su-bg-white su-shadow-lg"
@@ -84,15 +84,15 @@ export default function InteractivePhotoCard({
                 onClick={() => flipCard(180)}
                 aria-label="See additional information"
                 className={cnb(
-                  "su-block su-ml-auto su-mr-0 su-bg-black su-text-white su-rounded-full su-p-10 su-stretched-link su-transition-all su-opacity-100 group-aria-hidden/front:su-opacity-0",
+                  "su-group su-block su-ml-auto su-mr-0 su-bg-black su-text-white su-rounded-full su-p-10 su-transition-all su-opacity-100 aria-hidden:su-opacity-0",
                   alwaysDark
-                    ? "su-bg-white su-text-black-true group-hover/front:su-bg-dark-mode-red focus:su-bg-dark-mode-red"
-                    : "su-bg-black su-text-white group-hover/front:su-bg-digital-red focus:su-bg-digital-red"
+                    ? "su-bg-white su-text-black-true hocus:su-bg-dark-mode-red"
+                    : "su-bg-black su-text-white hocus:su-bg-digital-red"
                 )}
               >
                 <Plus
                   className={cnb(
-                    "su-size-30 md:su-size-50 su-fill-none group-hover/front:su-scale-110 group-focus-within/front:su-scale-110 su-transition-transform",
+                    "su-size-30 md:su-size-50 su-fill-none group-hover:su-scale-110 group-focus-within:su-scale-110 su-transition-transform",
                     alwaysDark ? "[&_path]:su-fill-black-true" : "su-fill-none"
                   )}
                 />
@@ -102,7 +102,7 @@ export default function InteractivePhotoCard({
           {/* Back of the content card */}
           <div
             className={cnb(
-              "su-group/back su-relative su-flex su-flex-col su-h-full su-min-w-full su-rounded-[8px] su-rs-px-5 su-rs-pt-6 su-rs-pb-4 su-bg-digital-red-dark su-text-white [transform:rotateY(180deg)_translate(100%,0)] su-backface-hidden su-transition-transform",
+              "su-relative su-flex su-flex-col su-h-full su-min-w-full su-rounded-[8px] su-rs-px-5 su-rs-pt-6 su-rs-pb-4 su-bg-digital-red-dark su-text-white [transform:rotateY(180deg)_translate(100%,0)] su-backface-hidden su-transition-transform",
               !alwaysDark && "su-shadow-lg"
             )}
             aria-hidden={!isFlipped}
@@ -119,13 +119,13 @@ export default function InteractivePhotoCard({
               onClick={() => flipCard(0)}
               aria-label="Dismiss content"
               className={cnb(
-                "su-block su-ml-auto su-mr-0 su-border-3 su-border-white su-rounded-full su-text-white su-p-7 lg:su-p-14 su-stretched-link su-transition-colors",
+                "su-group su-block su-ml-auto su-mr-0 su-border-3 su-border-white su-rounded-full su-text-white su-p-7 lg:su-p-14 su-transition-colors",
                 alwaysDark
-                  ? "focus:su-bg-black-true group-hover/back:su-bg-black-true"
-                  : "focus:su-bg-black group-hover/back:su-bg-black"
+                  ? "focus:su-bg-black-true hocus:su-bg-black-true"
+                  : "focus:su-bg-black hocus:su-bg-black"
               )}
             >
-              <ArrowsRotate className="su-size-30 lg:su-size-36 su-fill-none group-aria-hidden/back:invisible group-hover/back:su-rotate-45 su-transition-transform" />
+              <ArrowsRotate className="su-size-30 lg:su-size-36 su-fill-none aria-hidden:invisible group-hocus:su-rotate-45 su-transition-transform" />
             </button>
           </div>
         </div>
