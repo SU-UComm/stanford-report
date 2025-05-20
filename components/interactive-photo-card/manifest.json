@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "interactive-photo-card",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "namespace": "stanford-components",
   "description": "2 side by side cards with 1 being a photo and 1 being a fact with the ability to flip the card over for additional information.",
   "displayName": "Interactive Photo Card",
@@ -28,14 +28,12 @@
           },
           "title": {
             "title": "Title",
-            "type": "string",
-            "default": "Card title"
+            "type": "string"
           },
           "eyebrow": {
             "title": "Eyebrow",
             "description": "This is the superheading above the title.",
-            "type": "string",
-            "default": "Eyebrow"
+            "type": "string"
           },
           "content": {
             "title": "Content",
