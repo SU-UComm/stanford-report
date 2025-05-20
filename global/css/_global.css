@@ -1440,8 +1440,8 @@ body.su-page-campaign .center {
 .su-always-dark .su-page-campaign main {
   @apply su-text-white;
 }
-
-.su-always-dark .su-page-campaign main a {
+/* Links in default wysiwyg*/
+.su-always-dark .su-page-campaign .su-page-content > p a {
   @apply su-text-white hocus:su-text-dark-mode-red;
 }
 
@@ -1501,8 +1501,12 @@ body.su-page-campaign .center {
   @apply su-rs-pb-7;
 }
 
-/* Link styles for basic hero on updates pages. */
-div[data-component="basic-hero"] a {
+/* Link styles for basic hero on updates pages,
+   and Interactive Photo Card. Both have red backgrounds and
+   shoudn't use the site's default link styles.
+*/
+div[data-component="basic-hero"] a,
+div[data-component="interactive-photo-card"] a {
   @apply su-text-white hocus:su-no-underline hocus:su-opacity-80 dark:hocus:su-text-white;
 }
 
