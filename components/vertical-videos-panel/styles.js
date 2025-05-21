@@ -22,7 +22,7 @@ export const cardGrid = (isSingleVideo) =>
       ? "*:su-basis-4/5 *:su-max-w-[45rem] *:lg:su-max-w-none *:lg:su-basis-1/3"
       : "*:lg:su-basis-1/3"
   );
-export const carouselWrapper = "lg:su-hidden";
+export const carouselWrapper = "lg:su-hidden su-overflow-hidden";
 export const bgImage =
   "su-absolute su-size-full su-inset-0 su-object-cover su-inset-0";
 export const overlay =

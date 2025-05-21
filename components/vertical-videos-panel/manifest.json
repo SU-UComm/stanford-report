@@ -1,7 +1,7 @@
 {
   "$schema": "http://localhost:3000/schemas/v1.json#",
   "name": "vertical-videos-panel",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "namespace": "stanford-components",
   "description": "A section that displays up to 3 vertical YouTube videos, with a section title and link to watch more. On smaller devices, the videos will be displayed in a carousel if there are more than 1.",
   "displayName": "Vertical Videos Panel",
@@ -34,13 +34,11 @@
               },
               "title": {
                 "title": "Section heading",
-                "type": "string",
-                "default": "Meet more students"
+                "type": "string"
               },
               "ctaText": {
                 "title": "Heading CTA link text",
-                "type": "string",
-                "default": "Watch all"
+                "type": "string"
               },
               "ctaUrl": {
                 "title": "Matrix asset link",
@@ -51,8 +49,7 @@
               "ctaManualUrl": {
                 "title": "External/Manual link",
                 "type": "string",
-                "description": "Enter the full URL, including https://. If this field is filled out, it will be used instead of the Matrix asset link.",
-                "default": "https://news.stanford.edu/video"
+                "description": "Enter the full URL, including https://. If this field is filled out, it will be used instead of the Matrix asset link."
               },
               "bgImage": {
                 "title": "Background image",
