@@ -1449,6 +1449,14 @@ body.su-page-campaign .center {
   @apply su-text-white;
 }
 
+/* Multicolumn image captions on alwaysDark Campaign page. */
+.su-always-dark
+  body.su-page-campaign
+  div[data-component="multicolumn-image"]
+  p {
+  @apply su-text-black-30;
+}
+
 /* Federal Issues page syle overrides */
 .fed-issues
   .su-page:not(.su-page-has-sidebar, .su-page-has-sidebar--left)
