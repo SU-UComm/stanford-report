@@ -1452,7 +1452,7 @@ body.su-page-campaign .center {
 /* Multicolumn image captions on alwaysDark Campaign page. */
 .su-always-dark
   body.su-page-campaign
-  div[data-component="multicolumn-image"]
+  section[data-component="multicolumn-image"]
   p {
   @apply su-text-black-30;
 }
