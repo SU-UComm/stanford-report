@@ -197,6 +197,10 @@
     "matrix-asset://api-identifier/28192": {
       "type": "file",
       "path": "mocked-uris/28192.json"
+    },
+    "matrix-asset://api-identifier/168819": {
+      "type": "file",
+      "path": "mocked-uris/168819.json"
     }
   },
   "previews": {
@@ -206,6 +210,19 @@
           "inputData": {
             "type": "file",
             "path": "preview.data.json"
+          },
+          "wrapper": {
+            "path": "../../packages/__globalPreview/campaign.html"
+          }
+        }
+      }
+    },
+    "headlineOnly": {
+      "functionData": {
+        "main": {
+          "inputData": {
+            "type": "file",
+            "path": "headlineOnly.data.json"
           },
           "wrapper": {
             "path": "../../packages/__globalPreview/campaign.html"

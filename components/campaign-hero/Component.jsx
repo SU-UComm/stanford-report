@@ -138,10 +138,7 @@ export default function CampaignHero({
             </div>
           )}
           {/* Dark overlays */}
-          <div
-            className={styles.overlay(hasQuote, isBgVideo)}
-            aria-hidden="true"
-          />
+
           {/* Hero content */}
           <div
             className={styles.contentWrapper(
